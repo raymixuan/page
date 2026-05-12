@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>广西公安行业周报 | 2026.5.4-5.10</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #f5f6f8;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d5f8a 100%);
+    border-radius: 12px;
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .header-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header h1 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .header-meta { font-size: 12px; opacity: 0.85; }
+  .header-logo {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    font-size: 11px;
+    opacity: 0.6;
+    font-weight: 500;
+  }
+
+  /* Summary Card */
+  .summary-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .summary-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a3a5c;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .summary-title::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: #2d5f8a;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .summary-text {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.8;
+  }
+  .summary-text p { margin-bottom: 8px; }
+  .highlight {
+    background: #e8f2fc;
+    color: #1a5490;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag {
+    background: #f0f4f8;
+    color: #4a6b8a;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+  }
+
+  /* Opportunity Alert */
+  .opportunity {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf3e0 100%);
+    border: 1px solid #f0e0c0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .opp-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8a6625;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .opp-item {
+    font-size: 13px;
+    color: #6b5a3a;
+    padding: 6px 0;
+    border-bottom: 1px dashed #e8dcc8;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .opp-item:last-child { border-bottom: none; }
+  .opp-label { flex: 1; }
+  .opp-value {
+    color: #8a6625;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
+
+  /* News List */
+  .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin: 16px 0 10px;
+    padding-left: 8px;
+  }
+  .news-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .news-date {
+    background: #1a3a5c;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+  .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .news-source {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 8px;
+  }
+  .news-source span {
+    background: #f0f4f8;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+  .news-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-keywords { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .kw-tag {
+    background: #e8f0e8;
+    color: #3a6b3a;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+  }
+  .news-link {
+    display: block;
+    text-align: center;
+    background: #f5f8fb;
+    color: #2d5f8a;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #e0e8f0;
+    transition: all 0.2s;
+  }
+  .news-link:active {
+    background: #2d5f8a;
+    color: #fff;
+  }
+
+  /* Biz Hint */
+  .biz-hint {
+    background: #f8f9fa;
+    border-left: 3px solid #2d5f8a;
+    padding: 10px 12px;
+    margin-top: 10px;
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    color: #666;
+  }
+  .biz-hint strong { color: #2d5f8a; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    color: #aaa;
+  }
+  .footer-line { margin-bottom: 4px; }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .news-card { animation: fadeIn 0.3s ease-out; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-tag">WEEKLY BRIEFING</div>
+    <h1>广西公安行业情报简报</h1>
+    <div class="header-meta">2026年5月4日 - 5月10日 | 第19周</div>
+    <div class="header-logo">海康威视行业经理专用</div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-card">
+    <div class="summary-title">本周核心要点</div>
+    <div class="summary-text">
+      <p>本周广西公安行业情报聚焦<span class="highlight">"雪亮工程实战应用"</span>与<span class="highlight">"智慧边海防建设"</span>两大主线。</p>
+      <p>"五一"假期安保工作圆满收官，钦州依托天网监控平台与警用无人机实现精准防控，交通警情同比下降超10%。桂林灵川县"雪亮工程"2000余路高清摄像头再次发挥实战价值，成功协助搜救失联3天的七旬老人，彰显科技强警成效。</p>
+      <p>边海防领域持续发力。5月8日中国长安网专题报道广西"智慧海防"建设成果，钦州犀牛脚镇搭建边海防控大数据分析平台，百色、崇左等地智慧查验系统、AI目标识别、热成像无人机等前沿技术深度应用于边境管控。</p>
+      <p>基层综治方面，来宾兴宾区推进"一屏统揽、一网统管"建设，整合19个部门视频监控资源汇入雪亮工程，小平阳镇实现"一屏看全镇、一平台管全域"。</p>
+    </div>
+    <div class="tag-row">
+      <span class="tag">雪亮工程</span>
+      <span class="tag">天网监控</span>
+      <span class="tag">智慧边海防</span>
+      <span class="tag">无人机巡防</span>
+      <span class="tag">综治中心</span>
+    </div>
+  </div>
+
+  <!-- Opportunity Alert -->
+  <div class="opportunity">
+    <div class="opp-title">项目机会提示</div>
+    <div class="opp-item">
+      <span class="opp-label">临桂区雪亮工程服务项目（1261路摄像头）</span>
+      <span class="opp-value">625万</span>
+    </div>
+    <div class="opp-item">
+      <span class="opp-label">蒙山县公安局涉案车辆保管服务</span>
+      <span class="opp-value">105万</span>
+    </div>
+    <div class="opp-item">
+      <span class="opp-label">河池市公安局协同办公系统适配升级</span>
+      <span class="opp-value">95.5万</span>
+    </div>
+    <div class="opp-item">
+      <span class="opp-label">武宣县雪亮工程运维服务项目</span>
+      <span class="opp-value">26.9万</span>
+    </div>
+  </div>
+
+  <!-- News Section -->
+  <div class="section-title">本周重点新闻</div>
+
+  <!-- News 1 -->
+  <div class="news-card">
+    <div class="news-header">
+      <div class="news-title">桂林灵川：雪亮工程助力成功搜救失联3天七旬老人</div>
+      <div class="news-date">5月7日</div>
+    </div>
+    <div class="news-source">
+      <span>飞象网</span>
+      <span>中国移动广西桂林分公司</span>
+    </div>
+    <div class="news-desc">
+      桂林灵川县一名七旬老人失联三天，县应急管理局依托"智慧应急"指挥调度平台，充分激活"雪亮工程"视频监控全覆盖的核心优势，通过逐帧回放监控画面、精准比对行动轨迹，成功锁定老人位置并安全找回。桂林移动承建的灵川"雪亮工程"已建成2000多个高清摄像头，覆盖乡镇重点路段、田间地头、村口院落，为应急救援、治安防控、基层治理筑牢信息化"防护网"。
+    </div>
+    <div class="news-keywords">
+      <span class="kw-tag">雪亮工程</span>
+      <span class="kw-tag">视频监控</span>
+      <span class="kw-tag">应急救援</span>
+      <span class="kw-tag">千里眼平台</span>
+    </div>
+    <a class="news-link" href="http://www.cctime.com/html/2026-5-7/1734115.htm" target="_blank">查看原文 &rarr;</a>
+    <div class="biz-hint">
+      <strong>商机提示：</strong>灵川雪亮工程2000+路监控体系运行成熟，关注后续扩容、升级及运维服务需求。"智慧应急+雪亮工程"融合模式可向其他县域复制推广。
+    </div>
+  </div>
+
+  <!-- News 2 -->
+  <div class="news-card">
+    <div class="news-header">
+      <div class="news-title">广西：用群众力量筑牢守边护边人民防线</div>
+      <div class="news-date">5月8日</div>
+    </div>
+    <div class="news-source">
+      <span>中国长安网</span>
+      <span>广西法治日报</span>
+    </div>
+    <div class="news-desc">
+      广西边疆治理持续深化科技赋能。钦州市钦南区犀牛脚镇搭建边海防控大数据分析平台，集成渔船信息、渔民台账、潮汐规律等海量数据，精准筛查可疑航行轨迹，今年以来累计预警可疑"三无"船只16艘次。百色化峒边境检查站智慧查验系统24小时运行，日均查验1900辆车次。钦州在560余公里海岸线建成12个智慧警务站，集成高清视频监控、电子围栏等技术手段，构建海陆空立体化防控网络。
+    </div>
+    <div class="news-keywords">
+      <span class="kw-tag">智慧边海防</span>
+      <span class="kw-tag">大数据分析平台</span>
+      <span class="kw-tag">高清视频监控</span>
+      <span class="kw-tag">电子围栏</span>
+      <span class="kw-tag">AI识别</span>
+    </div>
+    <a class="news-link" href="http://www.chinapeace.gov.cn/chinapeace/c100056/2026-05/08/content_12836892.shtml" target="_blank">查看原文 &rarr;</a>
+    <div class="biz-hint">
+      <strong>商机提示：</strong>广西"智慧边海防"建设全面推进，涵盖高清监控、电子围栏、热成像无人机、大数据分析平台等多个细分领域，沿海地区项目机会明确。
+    </div>
+  </div>
+
+  <!-- News 3 -->
+  <div class="news-card">
+    <div class="news-header">
+      <div class="news-title">广西公安机关多措并举护航"五一"假期平安有序</div>
+      <div class="news-date">5月6日</div>
+    </div>
+    <div class="news-source">
+      <span>中国长安网</span>
+      <span>广西壮族自治区公安厅</span>
+    </div>
+    <div class="news-desc">
+      "五一"假期全区公安机关科学布警、精准防控。钦州市依托天网监控平台对道路流量进行预测和风险评估，警用无人机全面启用开展高空巡航和实时流量监测。防城港市公安局操作无人机开展空中巡逻，实时掌握路面动态。桂林市公安局充分发动"独秀义警"等群防群治力量，将平安触角延伸至景区景点、繁华商圈。岑溪市公安机关对KTV、酒吧、宾馆酒店等治安复杂场所开展"突击式"集中清查。
+    </div>
+    <div class="news-keywords">
+      <span class="kw-tag">天网监控</span>
+      <span class="kw-tag">警用无人机</span>
+      <span class="kw-tag">大型活动安保</span>
+      <span class="kw-tag">治安防控</span>
+    </div>
+    <a class="news-link" href="http://www.chinapeace.gov.cn/chinapeace/c100056/2026-05/06/content_12836646.shtml" target="_blank">查看原文 &rarr;</a>
+    <div class="biz-hint">
+      <strong>商机提示：</strong>"天网+无人机"组合成为假期安保标配，关注后续各地天网平台升级、无人机中队建设及相关运维服务项目。
+    </div>
+  </div>
+
+  <!-- News 4 -->
+  <div class="news-card">
+    <div class="news-header">
+      <div class="news-title">来宾兴宾区："一屏统揽、一网统管"综治中心建设成效显著</div>
+      <div class="news-date">5月5日</div>
+    </div>
+    <div class="news-source">
+      <span>来宾日报</span>
+      <span>广西新闻网</span>
+    </div>
+    <div class="news-desc">
+      来宾市兴宾区社会治安综合治理中心整合视频监控平台、公安专业化联网平台等多个信息化系统，纳管19个重要部门领域以及乡、村两级公共安全视频，均已汇入"雪亮工程"，打造"一屏统揽、一网统管"的综合指挥调度中心。小平阳镇将社会治理信息网、视频监控网、综治视联网接入数字县域社会治理云平台，实现"一屏看全镇、一平台管全域"。全市年度群众安全感及综治中心成效测评均位列全区第一方阵。
+    </div>
+    <div class="news-keywords">
+      <span class="kw-tag">雪亮工程</span>
+      <span class="kw-tag">综治中心</span>
+      <span class="kw-tag">一屏统揽</span>
+      <span class="kw-tag">社会治理云平台</span>
+    </div>
+    <a class="news-link" href="http://www.lbnews.com.cn/szxw/802181789106245.shtml" target="_blank">查看原文 &rarr;</a>
+    <div class="biz-hint">
+      <strong>商机提示：</strong>来宾"综治中心+雪亮工程+视联网"融合模式成效获认可，可向广西其他地市推广综治信息化整体解决方案。
+    </div>
+  </div>
+
+  <!-- Policy News -->
+  <div class="section-title">政策与采购动态</div>
+
+  <div class="news-card">
+    <div class="news-header">
+      <div class="news-title">广西"人工智能+"三年行动方案：推动智慧固疆与边境防控体系建设</div>
+      <div class="news-date">持续</div>
+    </div>
+    <div class="news-source">
+      <span>广西壮族自治区人民政府</span>
+      <span>桂政办发〔2025〕61号</span>
+    </div>
+    <div class="news-desc">
+      《广西深入实施"人工智能+"三年行动方案（2026-2028年）》明确提出：推动智慧固疆、护疆，构建信息化、立体化边境防控体系，稳步推进智慧边海防建设。围绕社会治理需求，开展智能监测巡检、辅助执法监管等典型场景规范应用。责任单位包括自治区数据局、公安厅等多部门协同推进。
+    </div>
+    <div class="news-keywords">
+      <span class="kw-tag">人工智能+</span>
+      <span class="kw-tag">智慧固疆</span>
+      <span class="kw-tag">边境防控体系</span>
+      <span class="kw-tag">智能监测</span>
+    </div>
+    <a class="news-link" href="http://www.gxzf.gov.cn/zwgk/fzgh/zxgh/t27094468.shtml" target="_blank">查看政策原文 &rarr;</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-line">广西公安行业情报简报 | 2026年第19周</div>
+    <div class="footer-line">信息来源：广西公安厅、中国长安网、广西新闻网等</div>
+    <div class="footer-line">关注关键词：智能感知 / 天网 / 雪亮工程 / 综治 / 派出所 / 执法办案 / 防控体系 / 安保</div>
+  </div>
+
+</div>
+</body>
+</html>

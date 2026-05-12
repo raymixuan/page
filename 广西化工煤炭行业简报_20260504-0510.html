@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>广西化工煤炭行业简报 | 2026.5.4-5.10</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #f5f6fa;
+            color: #333;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: #fff;
+            padding: 24px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .header-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-bottom: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .summary-section {
+            padding: 20px;
+            background: #fff;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8eaf6;
+        }
+        .section-title .icon {
+            width: 24px;
+            height: 24px;
+            background: #1a237e;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+        }
+        .summary-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #eef1ff 100%);
+            border-left: 4px solid #3949ab;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .summary-card p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+        }
+        .highlight {
+            color: #d32f2f;
+            font-weight: 600;
+        }
+        .opportunity-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 4px;
+            margin-top: 4px;
+        }
+        .news-list {
+            padding: 0 20px 20px;
+        }
+        .news-item {
+            background: #fff;
+            border: 1px solid #e8eaf6;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
+        }
+        .news-item:active {
+            transform: scale(0.98);
+        }
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .news-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a237e;
+            line-height: 1.5;
+            flex: 1;
+            padding-right: 10px;
+        }
+        .news-date {
+            font-size: 12px;
+            color: #888;
+            white-space: nowrap;
+            background: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .news-body {
+            font-size: 13.5px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        .news-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        .tag {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .tag-chem { background: #fff3e0; color: #e65100; }
+        .tag-coal { background: #eceff1; color: #37474f; }
+        .tag-safety { background: #fce4ec; color: #c62828; }
+        .tag-smart { background: #e3f2fd; color: #1565c0; }
+        .tag-project { background: #f3e5f5; color: #6a1b9a; }
+        .news-link {
+            display: block;
+            font-size: 13px;
+            color: #3949ab;
+            text-decoration: none;
+            padding: 8px 12px;
+            background: #f8f9ff;
+            border-radius: 6px;
+            border: 1px dashed #c5cae9;
+            text-align: center;
+            word-break: break-all;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            background: #f5f6fa;
+        }
+        .divider {
+            height: 8px;
+            background: #f5f6fa;
+        }
+        .insight-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #5d4037;
+        }
+        .insight-box strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-tag">海康威视 · 行业情报</div>
+            <h1>广西化工煤炭行业简报</h1>
+            <div class="header-meta">
+                <span>📅 2026.5.4 — 5.10</span>
+                <span>📍 广西区内</span>
+                <span>🔍 化工/煤炭/安防</span>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <div class="section-title">
+                <div class="icon">📋</div>
+                <span>本周总结与提炼</span>
+            </div>
+            <div class="summary-card">
+                <p>
+                    本周广西化工煤炭领域呈现<span class="highlight">"项目密集推进、安全管控升级、智能化需求凸显"</span>三大特征。钦州石化产业园恒逸120万吨煤化工项目预计2026年8月全面投产，华谊钦州基地三期甲醇制烯烃装置已中交进入试运行阶段，年产值将达千亿元级别。来宾绿色化工园区作为广西2020年以来首个获批的新建化工园区，正积极承接安徽晋煤中能化工等龙头项目入驻，填补西南地区绿色化工布局短板。
+                </p>
+                <p style="margin-top:10px;">
+                    在安防与智能化方面，<span class="highlight">防城港经济技术开发区化工园区安全风险智能化管控平台</span>正在招标运维服务（5月13日开标），标志着化工园区安全管控向数字化、智能化转型加速。吉利百矿集团启动2026年5-6月煤炭集中采购，覆盖百色、德保、田东等多地电厂，煤炭供应链活跃度提升。
+                </p>
+                <div style="margin-top:12px;">
+                    <span class="opportunity-tag">🔒 园区安防升级</span>
+                    <span class="opportunity-tag">🤖 智能化管控平台</span>
+                    <span class="opportunity-tag">📹 视频监控需求</span>
+                    <span class="opportunity-tag">🏭 新建化工园区</span>
+                    <span class="opportunity-tag">⚡ 能源监控</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="news-list">
+            <div class="section-title" style="padding:20px 0 14px;">
+                <div class="icon">📰</div>
+                <span>本周新闻摘要</span>
+            </div>
+
+            <!-- 新闻1 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">防城港化工园区安全风险智能化管控平台运维招标</div>
+                    <div class="news-date">2026-05-13</div>
+                </div>
+                <div class="news-body">
+                    防城港经济技术开发区化工园区安全风险智能化管控平台运行维护项目公开招标，提交投标文件截止时间为2026年5月13日9:30。该项目是化工园区安全管控数字化转型的标志性项目，涉及智能化平台运维服务。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-safety">安全管控</span>
+                    <span class="tag tag-smart">智能化平台</span>
+                    <span class="tag tag-chem">化工园区</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 安防机会：</strong>化工园区安全风险智能化管控平台建设及运维需求明确，涉及视频监控、AI分析、应急指挥等子系统，可直接对接海康威视园区安防解决方案。
+                </div>
+                <a class="news-link" href="http://ggzy.jgswj.gxzf.gov.cn/fcgggzy/jyxx/001002/001002005/001002005002/20260410/f046e4a2-9367-4cce-b7b8-abec87b9ab0d.html" target="_blank">🔗 查看招标公告原文</a>
+            </div>
+
+            <!-- 新闻2 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">吉利百矿集团2026年5-6月煤炭公开采购询价</div>
+                    <div class="news-date">2026-05-06</div>
+                </div>
+                <div class="news-body">
+                    吉利百矿集团发布2026年5-6月煤炭公开采购询价文件，采购方式包括港口车板提货（钦州港）、到岸舱底交货及送货到厂。交割地点覆盖百色百矿电厂、银海电厂、德保电厂、田东电厂等，交货日期为2026年5月1日前至5月31日。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-coal">煤炭采购</span>
+                    <span class="tag tag-project">能源项目</span>
+                    <span class="tag tag-project">百色</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 关联机会：</strong>煤炭运输及电厂安防监控、人员管理、车辆调度等智能化需求可延伸挖掘，特别是钦州港煤炭装卸环节的安防监控。
+                </div>
+                <a class="news-link" href="https://www.deepbids.cn/bids/zhaobiao_500193708.html" target="_blank">🔗 查看询价文件原文</a>
+            </div>
+
+            <!-- 新闻3 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">广西华谊能源化工危险废物处置服务招标</div>
+                    <div class="news-date">2026-05-08</div>
+                </div>
+                <div class="news-body">
+                    广西华谊能源化工有限公司就危险废物处置服务进行公开招标，服务期限至2027年12月31日。华谊钦州基地规划投资约143亿元，占地约1500亩，以煤为原料生产甲醇、醋酸、乙二醇等化工产品，是北部湾现代煤化工产业基地的核心项目。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-chem">煤化工</span>
+                    <span class="tag tag-safety">危废处置</span>
+                    <span class="tag tag-project">钦州</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 安防机会：</strong>危废处置环节对视频监控、环境监测、人员定位、安全预警等有刚性需求，可结合海康威视工业视觉及安消一体化方案切入。
+                </div>
+                <a class="news-link" href="https://365trade.com.cn/zfwzb/819032.jhtml" target="_blank">🔗 查看招标公告原文</a>
+            </div>
+
+            <!-- 新闻4 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">广西恒逸120万吨煤化工项目预计2026年8月全面投产</div>
+                    <div class="news-date">2025-09-07</div>
+                </div>
+                <div class="news-body">
+                    广西恒逸新材料有限公司年产120万吨己内酰胺—聚酰胺产业一体化及配套工程取得重大进展，33000Nm³/h空分二期工程首片冷箱板完成吊装，标志着项目设备安装进入核心施工阶段。项目预计2026年8月全面投产，总投资约220亿元，投产后将成为全球最大单体聚酰胺生产基地。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-chem">煤化工</span>
+                    <span class="tag tag-project">重大项目</span>
+                    <span class="tag tag-smart">智能化</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 安防机会：</strong>项目即将全面投产，投产前的安防系统建设、智能巡检、人员管理、应急指挥等需求窗口期有限，需抓紧对接。
+                </div>
+                <a class="news-link" href="http://mp.weixin.qq.com/s?__biz=MzI1MDM1MjQ0MA==&mid=2247535507&idx=1&sn=f870d5068af13e018ee4f9c819115646" target="_blank">🔗 查看项目进展详情</a>
+            </div>
+
+            <!-- 新闻5 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">来宾绿色化工园区积极承接龙头化工项目</div>
+                    <div class="news-date">2026-04-16</div>
+                </div>
+                <div class="news-body">
+                    来宾市委书记方毅会见安徽晋煤中能化工董事长张兆振一行，双方围绕优化绿色化工产业布局、推动产业链上下游协同发展深入洽谈。来宾绿色化工园区是广西2020年开展化工园区认定以来首个获批设立的新建化工园区，产业规划清晰，配套设施完善，开发空间广阔。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-chem">新建化工园区</span>
+                    <span class="tag tag-project">招商引资</span>
+                    <span class="tag tag-chem">来宾</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 安防机会：</strong>新建化工园区从规划阶段即需配套安防、智能化系统，可提前介入园区整体安防规划，提供从视频监控到智能分析的全套方案。
+                </div>
+                <a class="news-link" href="http://www.laibin.gov.cn/xwzx/zwdt/t27476551.shtml" target="_blank">🔗 查看新闻原文</a>
+            </div>
+
+            <!-- 新闻6 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">广西石化炼化一体化延伸（EVA项目）开工建设</div>
+                    <div class="news-date">2026-01-23</div>
+                </div>
+                <div class="news-body">
+                    广西石化在钦州启动30万吨/年管式法EVA和10万吨/年釜式法EVA装置建设，投资约45亿元，在305亿元一体化项目基础上延伸产业链。2026年1月已正式开工，预计2027-2028年投产，目标填补国内光伏级EVA缺口。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-chem">炼化一体化</span>
+                    <span class="tag tag-project">钦州</span>
+                    <span class="tag tag-smart">新材料</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 安防机会：</strong>新建EVA装置建设期及投产后，对高危工艺区域的视频监控、气体检测、人员定位、应急指挥等安防需求显著。
+                </div>
+                <a class="news-link" href="https://news.gmw.cn/2026-01/23/content_38552996.htm" target="_blank">🔗 查看项目详情</a>
+            </div>
+
+            <!-- 新闻7 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">广西新建石化和化工生产项目准入管理办法（试行）</div>
+                    <div class="news-date">2022-01-04</div>
+                </div>
+                <div class="news-body">
+                    广西印发新建石化和化工生产项目准入管理办法，明确新建项目必须进入已通过认定且安全风险等级评定不属A类、B类的化工园区，涉及"两重点一重大"的项目需采取自动控制系统、独立的安全仪表系统和其他安全设施，并应实现全流程自动化控制。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-safety">安全准入</span>
+                    <span class="tag tag-chem">政策</span>
+                    <span class="tag tag-smart">自动化控制</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 政策红利：</strong>政策强制要求"两重点一重大"项目配置自动控制系统和安全仪表系统，为安防、智能化产品进入化工项目提供政策依据。
+                </div>
+                <a class="news-link" href="http://gxt.gxzf.gov.cn/wzsy/tzgg_6719901/tzgg//t18677456.shtml" target="_blank">🔗 查看政策原文</a>
+            </div>
+
+            <!-- 新闻8 -->
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title">广西石化化工产业发展行动计划（2025—2027年）</div>
+                    <div class="news-date">2025-11-11</div>
+                </div>
+                <div class="news-body">
+                    广西发布石化化工产业发展行动计划，提出到2027年产值达3500亿元，规上企业1000家。规划打造北部湾沿边临海现代煤化工基地，推进华谊三期甲醇制烯烃及下游深加工项目投产，谋划煤制烯烃、煤制芳烃、煤制合成氨等新项目。
+                </div>
+                <div class="news-tags">
+                    <span class="tag tag-chem">产业规划</span>
+                    <span class="tag tag-coal">煤化工</span>
+                    <span class="tag tag-project">北部湾</span>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 长期机会：</strong>3500亿产值目标意味着大量新建、扩建项目将持续落地，安防、智能化需求将伴随项目全生命周期。
+                </div>
+                <a class="news-link" href="http://tzcjj.gxzf.gov.cn/yhzc/t26155666.shtml" target="_blank">🔗 查看行动计划原文</a>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="summary-section">
+            <div class="section-title">
+                <div class="icon">🎯</div>
+                <span>本周行动建议</span>
+            </div>
+            <div class="summary-card" style="border-left-color: #d32f2f;">
+                <p>
+                    <strong>1. 紧急跟进：</strong>防城港化工园区安全风险智能化管控平台运维项目5月13日开标，可了解后续运维及扩容需求。
+                </p>
+                <p style="margin-top:8px;">
+                    <strong>2. 重点拜访：</strong>钦州石化产业园（恒逸、华谊）投产在即，安防系统建设窗口期有限，需加快对接。
+                </p>
+                <p style="margin-top:8px;">
+                    <strong>3. 提前布局：</strong>来宾绿色化工园区处于招商引资阶段，可从园区规划层面切入安防整体方案。
+                </p>
+                <p style="margin-top:8px;">
+                    <strong>4. 关注政策：</strong>新建化工项目准入办法强制要求安全仪表系统和自动化控制，可作为方案设计依据。
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>简报生成时间：2026年5月12日</p>
+            <p>数据来源：广西壮族自治区政府网站、公共资源交易平台、行业媒体公开信息</p>
+            <p style="margin-top:6px;">仅供内部参考，请勿外传</p>
+        </div>
+    </div>
+</body>
+</html>
