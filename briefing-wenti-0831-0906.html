@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西文体卫健行业周报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏥 广西文体卫健行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西文体卫健行业呈现三大主线：<strong>一是医院安防与智慧医院采购密集落地</strong>，玉林市第一人民医院连续发布可视化一键式报警系统（重3）、体检中心监控系统采购，自治区人民医院桃源院区新增4个车辆出入口管理系统并推进双院区集中监控平台，梧州市红十字会医院64万元视频监控存储扩容成交，防城港市第一人民医院污水站视频监控、信息系统等保测评同步推进——医院综合安防平台、一键报警、车辆出入口、存储扩容构成当前最集中的采购点。</p>
+  <p><strong>二是重大医疗项目与公共卫生建设提速</strong>，自治区人民医院北院院区（国家重大传染病防治基地，投资5亿元、新增450床）扩建一期主体封顶，岑溪大业镇卫生院医共体项目1612万元招标，防城港区域医疗中心设备更新启动前期咨询；广西疾控免疫规划人工智能模型及智能体应用建设项目启动方案征集，公卫数字化向AI智能体演进。</p>
+  <p><strong>三是区运会筹备进入冲刺、文旅智慧化升温</strong>，第十六届区运会12月1日北海开幕，24个场馆已完成30余次风险排查、整改隐患100余项，赛事安保指挥、场馆安检与客流管控需求进入采购窗口；灵渠博物院数字展陈升级开放、南宁"智游南宁"文旅智能体服务超15万人次，平陆运河9月中旬通航催生"运河游"新场景。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>玉林市第一人民医院：可视化一键式报警系统（重3）+体检中心监控（6.24万），重点跟进</li>
+    <li>自治区人民医院桃源院区：新增4个车辆出入口（广告道闸+防砸雷达）、双院区集中监控平台</li>
+    <li>梧州市红十字会医院视频监控存储扩容（64万成交）：跟进后续联网平台与AI应用</li>
+    <li>防城港第一人民医院：污水站视频监控议价、等保测评中标、区域医疗中心设备更新前期咨询</li>
+    <li>区人民医院北院5亿扩建2028年竣工：院区综合安防、安检、停车系统随装修阶段进场</li>
+    <li>岑溪大业镇卫生院建设项目（1611.97万招标）：基层卫生院安防配套</li>
+    <li>区运会北海24个场馆：赛事安保指挥平台、安检门/X光机、客流分析、应急广播</li>
+    <li>广西疾控免疫规划AI智能体方案征集：AI+公卫数据平台合作窗口</li>
+  </ul>
+</div>
+
+<!-- 一、医院建设与智慧医院 -->
+<div class="section">
+  <div class="section-title">🏥 医院建设与智慧医院</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">重大项目</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://m.cbi360.net/dinggc/project/4476729154137542656.html" target="_blank" rel="noopener noreferrer">自治区人民医院北院院区扩建一期主体封顶，国家重大传染病防治基地投资5亿</a></h4>
+    <div class="card-body">
+      <p>建设库信息显示，自治区人民医院<strong>北院院区扩建一期（国家重大传染病防治基地）</strong>为三甲医院EPC项目，总投资约<strong>5亿元</strong>、新增床位<strong>450张</strong>，本周主体结构封顶，消防分包09-01确定，计划2028年底竣工。新院区综合安防平台、出入口管控、隔离病区视频对讲、安检与停车系统将随机电装修阶段分批进场。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.cbi360.net/dinggc/project/4476729154137542656.html" target="_blank" rel="noopener noreferrer">建设库</a> <span class="opp-tag">🎯 新院区综合安防/安检</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">前期咨询</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://www.fcgs.gov.cn/dyrmyy/tzgg/index.shtml" target="_blank" rel="noopener noreferrer">防城港市第一人民医院：自治区级区域医疗中心设备更新项目启动前期咨询</a></h4>
+    <div class="card-body">
+      <p>防城港市第一人民医院本周发布<strong>自治区级区域医疗中心设备更新项目前期咨询（设计）</strong>采购，医疗设备更新与信息化配套进入规划阶段；同期09-04信息系统等级保护测评（重1）公布中标。区域医疗中心建设将带动医技楼智能化、安防系统升级与数据中心扩容。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.fcgs.gov.cn/dyrmyy/tzgg/index.shtml" target="_blank" rel="noopener noreferrer">防城港市第一人民医院</a> <span class="opp-tag">🎯 医疗中心智能化规划</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标公告</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.jianyu360.cn/list/city/GX_WZ_S1" target="_blank" rel="noopener noreferrer">岑溪紧密型县域医共体：大业镇中心卫生院建设项目招标1611.97万元</a></h4>
+    <div class="card-body">
+      <p>梧州岑溪市<strong>紧密型县域医共体医疗服务能力提升——大业镇中心卫生院建设项目</strong>本周发布招标公告，预算<strong>1611.97万元</strong>，为基层卫生院标准化建设项目。新建/改建卫生院同步配套视频监控、一键报警、出入口管理与智慧病房呼叫系统，是县域医共体安防下沉的典型机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.jianyu360.cn/list/city/GX_WZ_S1" target="_blank" rel="noopener noreferrer">剑鱼标讯·梧州</a> <span class="opp-tag">🎯 基层卫生院安防配套</span></div>
+  </div>
+</div>
+
+<!-- 二、医院安防与就医系统 -->
+<div class="section">
+  <div class="section-title">🚨 医院安防与就医系统</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购公告</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1172_450900_1/" target="_blank" rel="noopener noreferrer">玉林市第一人民医院：可视化一键式报警系统采购（重3）</a></h4>
+    <div class="card-body">
+      <p>玉林市第一人民医院发布<strong>可视化一键式报警系统采购项目（重3）</strong>（ylsycg2026-16），在门诊、护士站、收费处、药房等重点部位部署可视一键报警终端，报警联动视频弹窗与安保指挥。同期城北门诊消防整改11.46万元（截止09-15）、兴业县人民医院双电源高压线路改造推进，医院平安医院建设投入持续。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1172_450900_1/" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 可视一键报警/安保联动</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购公告</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purchases/d8f29a403bf76a4058e090cd33923c2f.html" target="_blank" rel="noopener noreferrer">玉林市第一人民医院体检中心监控系统采购（重2），6.24万元</a></h4>
+    <div class="card-body">
+      <p>玉林市第一人民医院<strong>体检中心监控系统采购项目（重2）</strong>发布公告（ylsycg2026-26），预算<strong>6.2384万元</strong>，对体检中心公共区域、采血区、报告区进行视频监控补点与存储扩容。单体金额虽小，但反映医院科室级安防改造以"小快灵"方式持续释放，可形成标准化产品打包方案。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purchases/d8f29a403bf76a4058e090cd33923c2f.html" target="_blank" rel="noopener noreferrer">中国医采网</a> <span class="opp-tag">🎯 科室监控补点/存储</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">议价采购</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/newssearchyz-217772327.html" target="_blank" rel="noopener noreferrer">自治区人民医院桃源院区：新增4个车辆出入口管理系统，双院区集中监控平台搭建</a></h4>
+    <div class="card-body">
+      <p>自治区人民医院桃源院区招采信息：<strong>新增车辆出入口管理系统</strong>（覆盖4个出入口，含广告道闸、防砸雷达、车牌识别）08-28启动；全院UPS维保（桃源+北院）提出<strong>双院区集中监控平台搭建</strong>需求；09-01一号楼及教学综合楼高压供电改造议价（重二）。医院停车难治理与多院区安防一体化成为三甲医院建设重点。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchyz-217772327.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 出入口道闸/多院区平台</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">成交公告</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.jianyu360.cn/list/city/GX_WZ_S1" target="_blank" rel="noopener noreferrer">梧州市红十字会医院视频监控存储扩容采购成交，金额64万元</a></h4>
+    <div class="card-body">
+      <p>梧州市红十字会医院<strong>视频监控存储扩容采购</strong>本周成交，金额<strong>64万元</strong>，对全院监控录像存储周期与联网能力进行扩容升级，满足平安医院建设与等保要求。存量医院"摄像机超期服役+存储不足"问题普遍，存储扩容+平台联网+AI摄像机替换构成医院安防更新换代主线。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.jianyu360.cn/list/city/GX_WZ_S1" target="_blank" rel="noopener noreferrer">剑鱼标讯·梧州</a> <span class="opp-tag">🎯 存储扩容/AI摄像机替换</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">院内议价</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://www.fcgs.gov.cn/dyrmyy/tzgg/index.shtml" target="_blank" rel="noopener noreferrer">防城港市第一人民医院：污水站安装视频监控项目院内议价</a></h4>
+    <div class="card-body">
+      <p>防城港市第一人民医院发布<strong>污水站安装视频监控项目</strong>院内议价公告，对医疗污水处理站重点区域加装视频监控，满足环保排污监管与重点部位安防要求。医院后勤重点部位（污水站、液氧站、配电房、医废暂存）监控补点与环保在线监测联动需求增多。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.fcgs.gov.cn/dyrmyy/tzgg/index.shtml" target="_blank" rel="noopener noreferrer">防城港市第一人民医院</a> <span class="opp-tag">🎯 重点部位监控/环保联动</span></div>
+  </div>
+</div>
+
+<!-- 三、疾控与公共卫生 -->
+<div class="section">
+  <div class="section-title">🦠 疾控与公共卫生</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI+公卫</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.gxcdc.org.cn/html/ztbgg/cgxq/" target="_blank" rel="noopener noreferrer">广西疾控中心：免疫规划人工智能模型及智能体应用建设项目方案征集</a></h4>
+    <div class="card-body">
+      <p>广西疾控中心采购需求栏发布<strong>广西免疫规划人工智能模型及智能体应用建设项目</strong>方案征集公告，拟运用AI大模型与智能体技术提升疫苗接种管理、疑似异常反应监测与免疫规划数据治理能力，公卫数字化从信息系统向AI智能体升级，具备AI能力与数据平台经验的厂商迎来合作窗口。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxcdc.org.cn/html/ztbgg/cgxq/" target="_blank" rel="noopener noreferrer">广西疾病预防控制中心</a> <span class="opp-tag">🎯 AI智能体/数据平台</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">健康提示</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="https://www.gxnews.com.cn/staticpages/20260905/newgx6a9c167f-21990736.shtml" target="_blank" rel="noopener noreferrer">广西疾控发布9月健康提示：开学季聚集性疫情与洪涝次生灾害风险交织</a></h4>
+    <div class="card-body">
+      <p>广西疾控中心发布9月健康提示，重点防范<strong>蚊媒传染病、食源性疾病、肠道传染病及洪涝次生公共卫生风险</strong>，提示开学季学校、托幼机构聚集性疫情防控压力增大。校园晨午检、发热筛查、环境消杀监管与传染病多渠道监测预警需求上升，红外测温、AI晨检设备迎季节性窗口。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxnews.com.cn/staticpages/20260905/newgx6a9c167f-21990736.shtml" target="_blank" rel="noopener noreferrer">广西新闻网</a> <span class="opp-tag">🎯 AI晨检/测温筛查</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">卫健动态</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/gs/" target="_blank" rel="noopener noreferrer">广西卫健委各市动态：灾后防疫、视力筛查车、卒中中心建设齐推进</a></h4>
+    <div class="card-body">
+      <p>自治区卫健委各市动态本周更新：崇左疾控开展台风"紫檀"灾后<strong>饮用水卫生监测与灾后防疫</strong>；柳州红十字会医院广西首辆青少年<strong>视力筛查车"眼健康15号"</strong>启程，车载筛查设备下乡进校；桂东人民医院获批自治区"三级卒中中心"。移动筛查车车载视频记录、体检数据管理与基层公卫设备需求活跃。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/gs/" target="_blank" rel="noopener noreferrer">广西卫健委</a> <span class="opp-tag">🎯 车载监控/移动筛查数字化</span></div>
+  </div>
+</div>
+
+<!-- 四、区运会与体育赛事 -->
+<div class="section">
+  <div class="section-title">🏟️ 区运会与体育赛事</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">赛事筹备</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680412100438557199/" target="_blank" rel="noopener noreferrer">第十六届区运会12月1日北海开幕：24个场馆完成30余次风险排查、整改隐患100余项</a></h4>
+    <div class="card-body">
+      <p>第十六届区运会进入百日冲刺，北海体育馆将承担9项赛事（9/14—11/23陆续测试），南珠广场设文体市集。本周消息称<strong>24个场馆已开展30余次安全风险排查、整改隐患100余项</strong>；竞赛日程1.0版09-01公布，群众匹克球、帆船等赛事先期开赛。中国—东盟（北海）体育实训基地总投资约6亿元、3.68万座席同步推进，赛事<strong>安保指挥平台、场馆安检、客流分析、应急广播</strong>采购进入窗口期。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680412100438557199/" target="_blank" rel="noopener noreferrer">今日头条·北海发布</a> <span class="opp-tag">🎯 赛事安保/场馆安检</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">赛事活动</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://m.sohu.com/a/1071084036_121106875/" target="_blank" rel="noopener noreferrer">"桂野仙踪"体育消费嘉年华桂林开幕，"恒佳杯"气排球锦标赛9月中柳州挥拍</a></h4>
+    <div class="card-body">
+      <p>09-01，<strong>"桂野仙踪"体育消费嘉年华</strong>在桂林开幕，融合户外运动、体育消费与文旅场景；09-02消息，<strong>"恒佳杯"广西气排球锦标赛</strong>将于9/12—13在柳州李宁体育馆举行。大型群众赛事密集，场馆人员安检、票证人脸核验、看台客流监测与赛事直播视频保障需求随之增加。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.sohu.com/a/1071084036_121106875/" target="_blank" rel="noopener noreferrer">搜狐·广西体育</a> <span class="opp-tag">🎯 人脸核验/客流监测</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">赛事公告</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://tyj.gxzf.gov.cn/zntj/" target="_blank" rel="noopener noreferrer">2026中国（广西）—东盟青少年无人机足球邀请赛裁判名单公示</a></h4>
+    <div class="card-body">
+      <p>自治区体育局发布<strong>2026中国（广西）—东盟青少年无人机足球邀请赛</strong>裁判名单公示，低空经济+体育赛事融合场景落地广西。此类室内无人机赛事对场馆空域防护、飞行区域电子围栏、观众席防护与赛事录播有特殊要求，是体育场馆安防的新增细分场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/zntj/" target="_blank" rel="noopener noreferrer">广西体育局</a> <span class="opp-tag">🎯 低空赛事防护/录播</span></div>
+  </div>
+</div>
+
+<!-- 五、文旅文博智慧化 -->
+<div class="section">
+  <div class="section-title">🏞️ 文旅文博智慧化</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">文博焕新</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/sh/2026/09-05/10691091.shtml" target="_blank" rel="noopener noreferrer">灵渠博物院展陈升级开放：3D扫描+全息投影；平陆运河通航催生"运河游"</a></h4>
+    <div class="card-body">
+      <p>中新网报道，桂林兴安<strong>灵渠博物院</strong>展陈升级后开放，运用<strong>3D扫描、全息投影、徐霞客游灵渠场景复原</strong>等数字技术打造沉浸式展陈；同时平陆运河预计9月中旬通航，南宁交投推进平陆运河（南宁段）水上观光客运航线，"运河游"成为文旅新IP。文博场馆智慧安检、客流热力分析、文物展柜防护与景区智慧调度需求同步升温。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/sh/2026/09-05/10691091.shtml" target="_blank" rel="noopener noreferrer">中国新闻网</a> <span class="opp-tag">🎯 文博安检/客流分析</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI+文旅</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://wgl.nanning.gov.cn/gzcy/zxtadf/t6714714.html" target="_blank" rel="noopener noreferrer">南宁"智游南宁"文旅智能体上线，累计服务超15万人次、交易144万元</a></h4>
+    <div class="card-body">
+      <p>南宁市文广旅局提案答复披露：<strong>"智游南宁"文旅智能体</strong>已在邕州古城等场景提供实时导览、沉浸式导航服务，上线累计服务超<strong>15万人次</strong>、带动交易<strong>144万元</strong>；南宁正打造5个"AI+文旅"标杆场景（AI+微短剧、AI+科普展陈、AI+演艺等）。景区侧智能导览终端、客流分析摄像头、停车诱导与智慧广播配套空间大。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://wgl.nanning.gov.cn/gzcy/zxtadf/t6714714.html" target="_blank" rel="noopener noreferrer">南宁市文广旅局</a> <span class="opp-tag">🎯 景区客流/智慧导览</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西文体卫健行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
