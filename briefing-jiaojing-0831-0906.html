@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西交警道路交通行业简报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🚦 广西交警道路交通行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 12 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是南宁"空地一体化"智治模式获全国标杆级报道。</strong>14套警用无人机智慧机巢+66套手飞无人机接入公安交通集成指挥平台，近10万电子围栏点位每5分钟自动巡查，叠加110个全息智慧路口、168条绿波，畅行指数全国省会第一——智慧交管前端感知与平台融合需求继续扩容。</p>
+  <p><strong>二是无人机空地协同执法成为全区标配。</strong>夏季整治第八波次（8/31—9/6）在省际检查站和执法服务站同步铺开，崇左、玉林、柳州均以"无人机巡查+地面查缉"模式开展飙车炸街整治，玉林单轮出动警力578人次。</p>
+  <p><strong>三是运维与通信服务采购集中释放。</strong>梧州交警发布高速监控运维（107.75万）+智能交通可视化管控系统运维（159.61万）合计267万元意向；南宁交管业务系统网络通信服务128.3万元竞争性磋商、清障车辆租赁630万元中标。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>梧州交警 · 高速智能监控运维 107.75万 + 智能交通可视化管控运维 159.61万，预计10月采购</li>
+    <li>南宁交管支队 · 业务系统网络通信服务 128.3 万元，响应截止 9-14</li>
+    <li>南宁交管 · 清障车辆租赁服务中标 630 万元（金盾清障）</li>
+    <li>南宁青英隧道信号交替放行测试 · 全时段监测数据动态优化，后续路口改造机会</li>
+    <li>南宁无人机机巢/手飞扩容 · 14套机巢+66套手飞接入集成指挥平台，各市可复制</li>
+    <li>崇左飙车整治已用无人机 · 崇左智能交通三期（1550万，9月采购）持续跟进</li>
+  </ul>
+</div>
+
+<!-- 一、智慧交管标杆与信号优化 -->
+<div class="section">
+  <div class="section-title">🚦 智慧交管标杆与信号优化</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧交管</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="http://chinapeace.gov.cn/chinapeace/c100056/2026-09/04/content_12854988.shtml" target="_blank" rel="noopener noreferrer">南宁城市交通精细化治理：14套无人机机巢+66套手飞接入集成指挥平台，畅行指数全国省会第一</a></h4>
+    <div class="card-body">
+      <p>法治日报、中国长安网重点报道：南宁建成<strong>14套警用无人机智慧机巢+66套手飞无人机，统一接入公安交通集成指挥平台</strong>，近10万个电子围栏点位每5分钟自动巡查；全市<strong>110个全息智慧路口、168条绿波协调线路（绿波率55.8%）</strong>，交通畅行指数全国省会（首府）城市第一。空地一体化感知与AI研判深度融合，成为全国智慧交管样板。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://chinapeace.gov.cn/chinapeace/c100056/2026-09/04/content_12854988.shtml" target="_blank" rel="noopener noreferrer">中国长安网</a>、<a href="http://m.toutiao.com/group/7680752151194337843/" target="_blank" rel="noopener noreferrer">法治日报</a> <span class="opp-tag">🎯 机巢/全息路口</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">信号优化</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://m.weibo.cn/detail/5340242271801847" target="_blank" rel="noopener noreferrer">南宁青英隧道北进口信号灯交替放行测试：2车道改3车道+分车道管控</a></h4>
+    <div class="card-body">
+      <p>9月4日起，南宁交警对<strong>青英隧道北进口实施信号灯交替放行测试</strong>，将2车道渠化为3车道并实施分车道信号管控，系统<strong>全时段监测交通流数据并动态优化配时</strong>。该治理思路依赖精准流量检测与智能信号控制，为拥堵节点改造项目提供典型场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.weibo.cn/detail/5340242271801847" target="_blank" rel="noopener noreferrer">广西交通台</a> <span class="opp-tag">🎯 路口信号改造</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">护学保畅</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.nanning.gov.cn/ywzx/bmdt/2026nbmdt/t6714491.html" target="_blank" rel="noopener noreferrer">开学季：南宁71所学校周边信号灯切回常规配时，信号控制优化中心专项调控</a></h4>
+    <div class="card-body">
+      <p>秋季开学首日，南宁交警将<strong>71所学校周边信号灯由假期模式切回常规配时</strong>，信号控制优化中心对重点路段开展专项调控；护学岗与铁骑快处力量同步上岗。信号灯配时精细化管理已成为城市交通治理的常态化运营内容。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.nanning.gov.cn/ywzx/bmdt/2026nbmdt/t6714491.html" target="_blank" rel="noopener noreferrer">南宁市政府</a> <span class="opp-tag">🎯 信号配时服务</span></div>
+  </div>
+</div>
+
+<!-- 二、无人机空地执法 -->
+<div class="section">
+  <div class="section-title">🛰️ 无人机空地协同执法</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">整治行动</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7682381533110256168/" target="_blank" rel="noopener noreferrer">玉林飙车炸街集中整治：警力578人次，无人机空中巡航空地协同</a></h4>
+    <div class="card-body">
+      <p>9月4—5日凌晨，玉林交警开展飙车炸街专项整治，<strong>出动警力578人次，无人机空中巡逻与地面警力空地协同</strong>，共查处飙车违法行为78起、酒驾18起，捣毁非法改装窝点5个。无人机在发现炸街窝点、锁定改装车辆中发挥关键作用。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7682381533110256168/" target="_blank" rel="noopener noreferrer">玉林交警</a> <span class="opp-tag">🎯 无人机执法标配</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">整治行动</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681268588929483274/" target="_blank" rel="noopener noreferrer">崇左飙车炸街专项整治：警力96人次，无人机巡查查处109起</a></h4>
+    <div class="card-body">
+      <p>9月2日晚，崇左交警开展飙车炸街专项整治，<strong>出动警力96人次并启用无人机空中巡查</strong>，共查处各类违法109起，其中酒驾5起、飙车20起，扣留车辆20辆，排查取缔非法改装点4个。崇左作为边境城市，交管科技装备投入与边境防控形成联动。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681268588929483274/" target="_blank" rel="noopener noreferrer">崇左交警</a> <span class="opp-tag">🎯 边境城市无人机</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">空地联勤</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://m.weibo.cn/detail/5338833898179000" target="_blank" rel="noopener noreferrer">柳州交管"无人机空中巡查+铁骑"空地联合执法，查处违法8807起</a></h4>
+    <div class="card-body">
+      <p>柳州交警鱼峰二大队推行<strong>"无人机空中巡查+铁骑地面处置"空地联合执法模式</strong>，8月以来累计查处交通违法8807起，辖区事故起数、伤亡人数双下降。无人机空中发现拥堵、事故、违法停车后实时推送铁骑精准到场，执法效率显著提升。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.weibo.cn/detail/5338833898179000" target="_blank" rel="noopener noreferrer">柳州交警</a> <span class="opp-tag">🎯 空地联勤复制</span></div>
+  </div>
+</div>
+
+<!-- 三、集中整治与护学行动 -->
+<div class="section">
+  <div class="section-title">🚨 集中整治与护学行动</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">集中行动</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://www.gxzf.gov.cn/zzqzyxx/t28096529.shtml" target="_blank" rel="noopener noreferrer">广西夏季交通安全整治第八波次集中统一行动（8/31—9/6）</a></h4>
+    <div class="card-body">
+      <p>广西交警总队部署夏季交通安全整治第八波次集中统一行动，行动期8月31日至9月6日。全区依托<strong>省际检查站、交警执法服务站</strong>，严查疲劳驾驶、超员、超速、非法营运等突出违法。行动期间各类科技执法设备（卡口、测速、区间测速）满负荷运转。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/zzqzyxx/t28096529.shtml" target="_blank" rel="noopener noreferrer">广西政府网</a>、<a href="http://m.legaldaily.com.cn/index/content/2026-09/03/content_9451619.htm" target="_blank" rel="noopener noreferrer">法治网</a> <span class="opp-tag">🎯 卡口/执法站</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">护学岗</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://m.163.com/dy/article/L5PCH0KP0514K1Q0.html" target="_blank" rel="noopener noreferrer">全区14市同步启动开学季护学行动，来宾"一校一策"精准护畅</a></h4>
+    <div class="card-body">
+      <p>9月1日秋季开学，广西交警总队组织<strong>全区14个市同步启动护学岗机制</strong>，"警家校"联动护畅；来宾交警对城区学校实行<strong>"一校一策"交通组织</strong>，崇左等地同步部署。护学勤务带动学校周边视频监控、违停抓拍、信号灯配时等设施的排查升级需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.163.com/dy/article/L5PCH0KP0514K1Q0.html" target="_blank" rel="noopener noreferrer">广西交警总队</a> <span class="opp-tag">🎯 校园周边技防</span></div>
+  </div>
+</div>
+
+<!-- 四、招投标与运维服务 -->
+<div class="section">
+  <div class="section-title">💰 招投标与运维服务</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-2-440223174.html" target="_blank" rel="noopener noreferrer">梧州交警支队采购意向：高速监控运维107.75万 + 智能交通可视化管控运维159.61万</a></h4>
+    <div class="card-body">
+      <p>梧州市公安局交通警察支队发布两项采购意向：①<strong>高速公路交通安全智能监控设备运维（35个点位）预算107.75万元</strong>；②<strong>智能交通可视化综合管控系统运维（116个点位）预算159.61万元</strong>，预计2026年10月采购。两项合计约267万元，运维覆盖电警卡口、可视化管控平台。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-2-440223174.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 267万运维</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.gxruizhen.com/news/1393.html" target="_blank" rel="noopener noreferrer">南宁市公安局交管支队业务系统网络通信服务 · 预算128.3万元</a></h4>
+    <div class="card-body">
+      <p>南宁市公安局交通警察支队发布<strong>业务系统网络通信服务竞争性磋商公告</strong>，预算128.3万元（1分标115.3万元），含交管网/公安网/专网数据链路、<strong>12123"云哨"智能外呼、翼平安事故视频快处</strong>等业务支撑，项目编号NNZC2026-C3-990764-GXRZ，响应截止9月14日。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxruizhen.com/news/1393.html" target="_blank" rel="noopener noreferrer">广西瑞真招标</a> <span class="opp-tag">🎯 通信链路/视频快处</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4>南宁交管支队清障车辆租赁服务中标：南宁市金盾道路清障公司 · 630万元</h4>
+    <div class="card-body">
+      <p>南宁市公安局交通警察支队<strong>清障车辆租赁服务项目中标结果公布，南宁市金盾道路清障有限责任公司中标，金额630万元</strong>。事故/违停清障是交管勤务保障体系的重要环节，大额服务采购反映南宁交管勤务外包市场持续放量。</p>
+    </div>
+    <div class="card-source">来源：122交通网 <span class="opp-tag">🎯 交管勤务保障</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4>崇左"完善创城交通设施项目"集采部分发布9月采购意向</h4>
+    <div class="card-body">
+      <p>崇左市发布<strong>完善创建文明城市交通设施项目（集采部分）9月采购意向</strong>，涉及交通信号灯、标志标线、隔离护栏、电警卡口等道路交通设施的集中建设。叠加此前崇左交警智能交通三期（约1550万元）预计9月采购，桂西南边境城市交管设施升级进入密集释放期。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-26409-0-4-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 交通设施集采</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西交警道路交通行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
