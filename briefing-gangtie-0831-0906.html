@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西钢铁有色金属矿山行业周报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>⛏️ 广西钢铁有色金属矿山行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西钢铁有色矿山行业呈现三大主线：<strong>一是柳钢"AI+制造"进入规模化落地期</strong>，柳州1—7月工业技改投资同比增长35.5%，柳钢占全市黑色金属冶炼技改投资84.4%，自主"玄铁"钢铁大模型已部署33个AI模型，覆盖配矿、预测性维护等场景，效率提升8.5%，柳钢8个项目入选广西"AI+制造"名单；防城港基地冷轧厂"数据灯塔"、南国铜业智能仓储获中新网重点报道。</p>
+  <p><strong>二是智慧矿山规划与井下安全需求集中释放</strong>，广西华锡有色智能矿山规划项目本周成交，吉利百矿连续发布取水在线计量监测运维、贮灰场坝体安全监测服务采购，其东怀煤矿已建成井下4G/5G/UWB融合专网与人员精准定位系统；高峰矿业深部开采工程、铜坑选矿一期EPC等大型矿山工程持续推进。</p>
+  <p><strong>三是尾矿库与矿山安全监管加码</strong>，自治区层面启动2026年度尾矿库重金属污染防治技术服务招标（预算320万元），生态环境信息化建设项目同步公开招标；应急管理部令第22号发布，矿山安全监管趋严，在线监测、人员定位、AI视频监控成为合规刚需。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>尾矿库重金属污染防治技术服务（320万，投标截止09-21）：配套尾矿库在线监测、坝体位移/渗流监测传感器与视频监控</li>
+    <li>广西生态环境信息化建设项目（09-01公开招标）：环境监测数据平台、视频联网汇聚</li>
+    <li>华锡有色智能矿山规划已成交：规划落地阶段跟进井下人员定位、AI视频、集控中心建设订单</li>
+    <li>吉利百矿：贮灰场坝体安全监测、取水在线计量运维在采，东怀/跃进煤矿5G+UWB智慧矿山模式可复制至百矿系各矿</li>
+    <li>柳钢系技改密集开标：热轧/冷轧/动力厂多条产线改造，厂区智能安防、热成像、无人天车视频配套机会</li>
+    <li>国盛稀土自动化产线（192万中标候选）：窑炉自动线+自动化输送，厂区安防与工业视觉配套</li>
+    <li>高峰矿业100+105号矿体深部开采：深部开采安全避险"六大系统"、人员定位升级需求</li>
+  </ul>
+</div>
+
+<!-- 一、冶金钢铁智能化技改 -->
+<div class="section">
+  <div class="section-title">🏭 冶金钢铁智能化技改</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI+制造</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="http://news.qq.com/rain/a/20260905A05TB500" target="_blank" rel="noopener noreferrer">柳州前7月工业技改投资增长35.5%，柳钢"玄铁"大模型重塑钢铁生产</a></h4>
+    <div class="card-body">
+      <p>柳州日报报道，1—7月柳州工业技改投资同比增长<strong>35.5%</strong>，柳钢占全市黑色金属冶炼业技改投资<strong>84.4%</strong>。柳钢自主研发的"玄铁"钢铁大模型将配矿方案制定从72小时压缩至<strong>16分钟</strong>，设备预测性维护可提前72小时预警，已部署<strong>33个AI模型</strong>、生产效率提升8.5%，规划三年智能化覆盖率超80%。柳州同期入选国家首批技改城市试点。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://news.qq.com/rain/a/20260905A05TB500" target="_blank" rel="noopener noreferrer">柳州日报（腾讯新闻转载）</a> <span class="opp-tag">🎯 厂区AI视觉/热成像/集控中心</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智能制造</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681246463925699087/" target="_blank" rel="noopener noreferrer">当代广西："智"造之城——柳钢热轧集控室与"玄铁"大模型的20+N场景</a></h4>
+    <div class="card-body">
+      <p>当代广西杂志深度报道柳州智能制造：柳钢热轧厂集控室实现生产流程一屏统览，"玄铁"大模型由柳钢联合华为、中国移动广西公司共建，已覆盖<strong>铁前、炼钢、轧钢、物流、环保、安全</strong>等"20+N"业务场景。报道指出柳州正从传统工业城市向"智"造之城转型，AI质检、无人化作业、能耗优化成为钢厂技改标配。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681246463925699087/" target="_blank" rel="noopener noreferrer">当代广西</a> <span class="opp-tag">🎯 安全场景AI视频/环保监测</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">标杆案例</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/aseaninfo/2026/09-01/10687672.shtml" target="_blank" rel="noopener noreferrer">中新网：AI赋能实体经济——柳钢冷轧"数据灯塔"与南国铜业智能仓储</a></h4>
+    <div class="card-body">
+      <p>中新网《AI赋能实体经济》报道广西样本：柳钢防城港基地冷轧厂建成<strong>"数据灯塔"工厂</strong>，无人天车、5G桁架机械手、焊缝云质检全线投用，关键工序实现无人化；南国铜业建成<strong>智能仓储调度系统</strong>，铜产品出入库、物流调度全自动。两厂成为广西冶金行业AI融合标杆，带动上下游企业智能化改造需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/aseaninfo/2026/09-01/10687672.shtml" target="_blank" rel="noopener noreferrer">中国新闻网</a> <span class="opp-tag">🎯 无人天车视频/工业视觉质检</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招采动态</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.qcc.com/cfengxian/37941cb12695c392dc36dcef1ef69736.html" target="_blank" rel="noopener noreferrer">柳钢一周连发多项技改招采：热轧2032线传动升级中标、冷轧二期重卷提速招标</a></h4>
+    <div class="card-body">
+      <p>本周柳钢集团招采密集：09-03热轧2032mm线技改粗轧及卷取传动升级公布中标候选；09-02动力厂公辅技改热值仪改造中标候选、冷轧二期精整6#重卷机组提速改造启动招标；09-01热轧1450mm两加热炉品种拓展及<strong>安全提升改造</strong>立项；08-31冷轧1250mm酸轧线1#机架直流传动升级中标。另柳钢研究院、高端钢铁新材料创新中心在南宁揭牌，3800mm宽厚板拿下首单出口。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/cfengxian/37941cb12695c392dc36dcef1ef69736.html" target="_blank" rel="noopener noreferrer">企查查·柳钢集团招采</a> <span class="opp-tag">🎯 技改配套安防/动火作业监控</span></div>
+  </div>
+</div>
+
+<!-- 二、智慧矿山与井下安全 -->
+<div class="section">
+  <div class="section-title">⛏️ 智慧矿山与井下安全</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标公告</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-4-439981341.html" target="_blank" rel="noopener noreferrer">广西华锡有色智能矿山规划项目成交，智慧矿山顶层设计落地</a></h4>
+    <div class="card-body">
+      <p>采招网公告显示，广西华锡有色金属股份有限公司<strong>智能矿山规划项目</strong>本周发布成交公告，项目以邀请比质比价方式采购、08-31开启报价，由北京某单位成交。这标志着华锡系矿山（铜坑、高峰等）智能化建设完成顶层规划，后续将进入<strong>井下人员定位、5G专网、AI视频监控、无人采掘、集控中心</strong>等子系统分批建设阶段。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-4-439981341.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 智能矿山子系统建设订单</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购公告</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="https://www.qcc.com/cassets/0eea385b299aa60f90a0f8f5196b9837.html" target="_blank" rel="noopener noreferrer">吉利百矿采购取水在线计量监测设备运维服务</a></h4>
+    <div class="card-body">
+      <p>企查查招采信息显示，吉利百矿集团本周发布<strong>取水在线计量监测设备运维服务</strong>采购（09-05），同期09-01发布东怀/跃进煤矿矿用钢丝绳采购。百矿系煤矿正持续完善在线监测类设备的运维体系，取水计量、能耗监测、环保在线监测数据均需接入厂区智慧管理平台。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/cassets/0eea385b299aa60f90a0f8f5196b9837.html" target="_blank" rel="noopener noreferrer">企查查·吉利百矿招采</a> <span class="opp-tag">🎯 在线监测运维/环保视频</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购公告</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://www.qcc.com/cassets/0eea385b299aa60f90a0f8f5196b9837.html" target="_blank" rel="noopener noreferrer">吉利百矿贮灰场坝体安全监测服务采购，东怀煤矿5G+UWB智慧矿山成型</a></h4>
+    <div class="card-body">
+      <p>吉利百矿08-31发布<strong>贮灰场坝体安全监测服务</strong>采购，对电厂贮灰场坝体位移、渗流等实施在线安全监测。其东怀煤矿"5G+智慧矿山"已建成井下<strong>4G/5G/NB-IoT/UWB融合专网</strong>，10公里巷道5G全覆盖，UWB实现井下人员精准定位，为百色煤矿智能化改造树立样板。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/cassets/0eea385b299aa60f90a0f8f5196b9837.html" target="_blank" rel="noopener noreferrer">企查查·吉利百矿</a> <span class="opp-tag">🎯 坝体在线监测/UWB人员定位</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">工程招标</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.qcc.com/crun/be7c60d3277393094c7a030f16de89b4.html" target="_blank" rel="noopener noreferrer">南丹铜坑矿区锡锌矿选矿一期工程EPC总承包（重）流标</a></h4>
+    <div class="card-body">
+      <p>华锡铜坑矿业南丹铜坑矿区锡锌矿<strong>选矿一期工程EPC总承包</strong>（重新招标）本周公布流标，项目位于河池南丹，为大型有色采选改扩建工程。流标后预计调整条件重新组织招标，选矿厂智能化（磨矿分级自动控制、AI浮选、无人值守泵站）及厂区安防将随EPC同步建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/crun/be7c60d3277393094c7a030f16de89b4.html" target="_blank" rel="noopener noreferrer">企查查·华锡铜坑矿业</a> <span class="opp-tag">🎯 选矿厂无人值守/AI视频</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">工程动态</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.qcc.com/creport/03104292ef4b024381aa1eebd78225a3.html" target="_blank" rel="noopener noreferrer">高峰矿业100+105号矿体深部开采工程持续推进，安全智能化提升在即</a></h4>
+    <div class="card-body">
+      <p>河池南丹高峰矿业<strong>100+105号矿体深部开采工程</strong>本周多项配套招采推进：提升机房亮化工程08-31公布中标候选，降压站10KV联络线改造08-27成交，民爆库EPC前期工作推进。深部开采工程将从安全生产、智能化维度系统优化，安全避险"六大系统"升级、井下人员与设备定位、通风在线监测需求明确。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/creport/03104292ef4b024381aa1eebd78225a3.html" target="_blank" rel="noopener noreferrer">企查查·高峰矿业</a> <span class="opp-tag">🎯 深部矿井六大系统/定位</span></div>
+  </div>
+</div>
+
+<!-- 三、尾矿库与矿山安全监管 -->
+<div class="section">
+  <div class="section-title">🛰️ 尾矿库与矿山安全监管</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">公开招标</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28087875.shtml" target="_blank" rel="noopener noreferrer">广西2026年度尾矿库重金属污染防治技术服务公开招标，预算320万元</a></h4>
+    <div class="card-body">
+      <p>广西公共资源交易中心发布<strong>2026年度尾矿库重金属污染防治技术服务</strong>公开招标公告（编号GXZC2026-G3-002827-XGZX），预算<strong>320万元</strong>，投标截止09-21。项目面向全区尾矿库开展重金属污染排查、防治技术支撑，尾矿库坝体安全在线监测、渗滤液监测、视频监控联网为配套刚需。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28087875.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 尾矿库在线监测/视频联网</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">公开招标</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://sthjt.gxzf.gov.cn/zfxxgk/zfxxgkgl/fdzdgknr/zbcg/cggg/" target="_blank" rel="noopener noreferrer">广西环境信息中心生态环境信息化建设项目公开招标</a></h4>
+    <div class="card-body">
+      <p>广西生态环境厅采购公告栏本周更新：自治区环境信息中心<strong>生态环境信息化建设项目</strong>09-01启动公开招标，内容涵盖生态环境数据平台、监测物联感知与视频联网能力建设；同期08-31尾矿库污染防治服务项目并行推进。生态环境"一张图"对涉矿企业监测数据、视频图像汇聚需求增强。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://sthjt.gxzf.gov.cn/zfxxgk/zfxxgkgl/fdzdgknr/zbcg/cggg/" target="_blank" rel="noopener noreferrer">广西生态环境厅</a> <span class="opp-tag">🎯 环保监测平台/视频汇聚</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">监管政策</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://gx.chinamine-safety.gov.cn/disclosure/24/1.html" target="_blank" rel="noopener noreferrer">国家矿山安监局广西局：应急管理部令第22号发布，矿山安全监管持续加码</a></h4>
+    <div class="card-body">
+      <p>国家矿山安全监察局广西局本周公开应急管理部令第22号等监管规章信息，并通报事故调查处理情况（含东怀矿业"5·22"顶板事故调查）。新规对矿山<strong>安全监控、人员定位、通信联络、紧急避险</strong>等系统运行与监管提出更高要求，不达标矿山面临停产整改压力，在线监测系统运维与升级市场扩容。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.chinamine-safety.gov.cn/disclosure/24/1.html" target="_blank" rel="noopener noreferrer">国家矿山安监局广西局</a> <span class="opp-tag">🎯 安全监控/人员定位合规升级</span></div>
+  </div>
+</div>
+
+<!-- 四、铝铜稀土与产业活动 -->
+<div class="section">
+  <div class="section-title">🟫 铝铜稀土产业动态</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标候选</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.qcc.com/crun/86418c882ed0be61ea28d402a0834071.html" target="_blank" rel="noopener noreferrer">中稀广西稀土：国盛稀土自动化输送及窑炉自动线系统192万元中标候选公示</a></h4>
+    <div class="card-body">
+      <p>中国稀土集团广西板块本周公示：国盛稀土新建<strong>自动化输送系统、窑炉自动线系统</strong>项目中标候选人（江苏勃诚，中标金额约<strong>192万元</strong>，编号0747-2660SCCGX139）；08-31同步开展草酸集中采购。稀土冶炼分离产线自动化改造提速，高温窑炉区域热成像防火、厂区周界安防与工业视觉配套需求同步增长。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/crun/86418c882ed0be61ea28d402a0834071.html" target="_blank" rel="noopener noreferrer">企查查·中稀广西稀土</a> <span class="opp-tag">🎯 窑炉热成像/厂区周界安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">环评审批</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://www.pingguo.gov.cn/xxgk/fdzdgknr/zdlyxxgk/hjbh/jsxmhjyxpjsp/" target="_blank" rel="noopener noreferrer">平果市集中公示一批矿业/铝加工技改项目环评审批</a></h4>
+    <div class="card-body">
+      <p>百色平果市生态环境局08-31发布建设项目环评审批公告：锦石矿业<strong>年产3万吨石英砂酸洗技改</strong>、沐春新材料1万吨稀土铝合金、华磊4000吨铝粉等项目获批推进。平果作为广西铝产业核心集聚区，新材料与矿业技改项目密集上马，新建厂区环保在线监测、视频监控、人员通道管理需与主体工程"三同时"建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.pingguo.gov.cn/xxgk/fdzdgknr/zdlyxxgk/hjbh/jsxmhjyxpjsp/" target="_blank" rel="noopener noreferrer">平果市人民政府</a> <span class="opp-tag">🎯 新厂安防三同时/环保监测</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">产业突破</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://www.cnal.com/news-%E5%BB%A3%E8%A5%BF/index.shtml" target="_blank" rel="noopener noreferrer">广西金德大规格铝棒及7075高端铝棒试制成功，填补百色空白</a></h4>
+    <div class="card-body">
+      <p>世铝网报道，广西金德新材料<strong>Φ670/Φ584大规格铝棒</strong>及<strong>7075高端航空级铝棒</strong>试制成功，填补百色地区高端铝加工产品空白，产品可供应航空航天、新能源汽车领域。百色铝产业链向高端延伸，新建高端产线对熔铸区域温度监测、AGV/行车安全防护、全厂智能安防提出更高要求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.cnal.com/news-%E5%BB%A3%E8%A5%BF/index.shtml" target="_blank" rel="noopener noreferrer">世铝网</a> <span class="opp-tag">🎯 熔铸热成像/厂区智能安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">行业活动</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7682616017025106472/" target="_blank" rel="noopener noreferrer">第四届广西国际非金属矿工业博览会举行，绿色智能矿山成焦点</a></h4>
+    <div class="card-body">
+      <p>09-03至09-05，第四届广西国际非金属矿工业博览会举行，展会聚焦<strong>"双碳"目标下绿色矿山、智能矿山装备</strong>，非金属矿精深加工、环保治理、数字化采选技术集中亮相。广西碳酸钙、滑石、石英等非金属矿企业智能化改造意愿增强，矿山监测监控、无人化装备成为展区热点。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7682616017025106472/" target="_blank" rel="noopener noreferrer">今日头条·行业资讯</a> <span class="opp-tag">🎯 非金属矿智慧矿山拓展</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西钢铁有色金属矿山行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
