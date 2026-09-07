@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西工业企业行业简报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏭 广西工业企业行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 18 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西工业战线三大主线：<strong>一是"人工智能+制造"政策与场景密集落地</strong>，2026年第一批广西"人工智能+制造"名单发布，35个标志性产品、49个典型场景、14个高质量数据集入选；柳州同步发布今年第四批AI开放场景清单，累计开放176个场景，工业智改数转进入"揭榜挂帅"放量期。</p>
+  <p><strong>二是柳州机器人与智能工厂标杆效应凸显</strong>，智能机器人生态出海大会余温持续：1—7月柳州工业机器人产量增长878.3%、AI终端及机器人产值174.4亿元增长92%，已建成智能工厂/数字化车间167家；优必选Walker S2第1000台下线、柳钢"玄铁"大模型覆盖20+N场景，13个重大招商项目揽资超300亿元。</p>
+  <p><strong>三是临港园区与传统产业技改同步提速</strong>，平陆运河9月通航带动六景园区产值增长39.29%，防城港基地AI视觉质检达99.98%；柳化氯碱、百矿碳素、银海铝业、柳钢中金等技改采购密集挂网，厂区视频监控平台升级、智慧口岸建设需求明确释放。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西首批"AI+制造"名单98个标杆：入选企业扩产/复制期，工业视觉质检与AI巡检配套需求旺</li>
+    <li>柳州第四批AI开放场景清单：累计176个场景，工业生产/智能网联类场景可联合方案商揭榜</li>
+    <li>糖业"一行业一方案"数智化：10家糖企+10家服务商对接，糖厂无人值守/视觉计量空间大</li>
+    <li>银海铝业铝电解AI扫地机（26.5万）：电解铝高温高危场景机器人替代，可拓展视觉巡检</li>
+    <li>柳化氯碱32万吨氯化新材料（超10亿）：新建化工园区周界/防爆监控/消防一体化</li>
+    <li>百矿田田碳素成型车间自动化改造：车间少人化配套视频与安全联锁监控</li>
+    <li>北港新材料视频监控安防平台升级（9.5万）+零散监控72.5万：老厂平台迭代+点位补盲</li>
+    <li>爱店口岸智慧口岸一期造价咨询启动、东兴-芒街口岸周界安防/消防/智能审图系列采购</li>
+  </ul>
+</div>
+
+<!-- 一、"AI+制造"政策与名单 -->
+<div class="section">
+  <div class="section-title">🤖 "AI+制造"政策与名单</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://www.liuzhou.gov.cn/zjlz/xwzx/lzyw/202609/t20260901_3789561.shtml" target="_blank" rel="noopener noreferrer">2026年第一批广西"人工智能+制造"名单发布，柳州18项入选居首</a></h4>
+    <div class="card-body">
+      <p>自治区工信厅发布2026年第一批广西"人工智能+制造"名单，共<strong>35个标志性产品、49个典型应用场景、14个高质量数据集</strong>。柳州18项入选，含海格电气AI智慧运营平台、洛必德康养机器人、五菱轻型无人智能物流车、柳工AI大模型车载终端、久日机械AI视觉焊接等；梧州、北海、南宁高新区企业同步上榜。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.liuzhou.gov.cn/zjlz/xwzx/lzyw/202609/t20260901_3789561.shtml" target="_blank" rel="noopener noreferrer">柳州市人民政府 · 自治区工信厅</a> <span class="opp-tag">🎯 上榜企业扩产复制：工业视觉/AI巡检配套</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://fgw.liuzhou.gov.cn/xwzx/tzgg/202608/t20260831_3789204.shtml" target="_blank" rel="noopener noreferrer">柳州发布2026年第四批人工智能开放场景清单，累计176个场景</a></h4>
+    <div class="card-body">
+      <p>柳州市发改委发布2026年第四批人工智能开放场景清单，<strong>全市累计开放AI场景达176个</strong>，覆盖工业生产、智能网联汽车、低空经济、城市治理等领域，面向全球征集解决方案，推动"场景给机会、企业给产品"的双向对接机制常态化。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://fgw.liuzhou.gov.cn/xwzx/tzgg/202608/t20260831_3789204.shtml" target="_blank" rel="noopener noreferrer">柳州市发展和改革委员会</a> <span class="opp-tag">🎯 工业/园区场景揭榜，携视觉+大模型方案对接</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28096541.shtml" target="_blank" rel="noopener noreferrer">广西召开糖业数智化赋能对接座谈会，"一行业一方案"推进十大支柱产业</a></h4>
+    <div class="card-body">
+      <p>9月1日，自治区工信厅在南宁召开糖业数智化赋能对接座谈会，南宁、贵港、来宾、崇左四市工信局及<strong>10家重点糖企、10家数字化服务商</strong>参会，按"一行业一方案"路径推进糖业压榨、制炼、仓储物流全链条数智化，并向十大支柱产业逐行业复制推广。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28096541.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区工业和信息化厅</a> <span class="opp-tag">🎯 糖厂无人值守泵房/视觉计量/周界安防批量机会</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680808252086452770/" target="_blank" rel="noopener noreferrer">上半年广西十大支柱产业规上产值1.3万亿元增长7.8%</a></h4>
+    <div class="card-body">
+      <p>据当代广西读刊报道，上半年广西十大支柱产业规上工业产值达<strong>1.3万亿元、同比增长7.8%</strong>；1—7月全区对东盟进出口2482.1亿元创历史新高，电动载人汽车、锂电池、太阳能电池"新三样"出口亮眼，产业升级与外向型制造双轮驱动。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680808252086452770/" target="_blank" rel="noopener noreferrer">当代广西</a> <span class="opp-tag">🎯 出口型工厂扩产，厂区安消与智能物流配套</span></div>
+  </div>
+</div>
+
+<!-- 二、柳州智造：机器人与智能工厂 -->
+<div class="section">
+  <div class="section-title">🦾 柳州智造：机器人与智能工厂</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://gx.people.com.cn/n2/2026/0831/c179464-41682771.html" target="_blank" rel="noopener noreferrer">人民网：工业沃土"长出"智能方阵，柳州工业机器人产量增长878.3%</a></h4>
+    <div class="card-body">
+      <p>人民网聚焦柳州智能制造：1—7月<strong>工业机器人产量同比增长878.3%</strong>，AI终端及机器人产业产值174.4亿元、增长92%，出口交货值增长46.5%；全市已建成智能工厂/数字化车间167家，435家中小企业完成数智化改造；五菱智能岛入选全国首批"领航级智能工厂"培育，柳工建成5G智能工厂。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gx.people.com.cn/n2/2026/0831/c179464-41682771.html" target="_blank" rel="noopener noreferrer">人民网广西频道</a> <span class="opp-tag">🎯 167家智能工厂网络/视觉/安消升级持续投入</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.gxnews.com.cn/staticpages/20260903/newgx6a98cf03-21989594.shtml" target="_blank" rel="noopener noreferrer">广西日报：近40家企业超百款机器人聚柳，优必选Walker S2第1000台下线</a></h4>
+    <div class="card-body">
+      <p>智能机器人生态出海大会后，广西日报深读柳州机器人产业：<strong>近40家企业带来超百款机器人产品</strong>，优必选Walker S2工业机器人在柳第1000台正式下线，其超级智慧工厂年产超万台；参会嘉宾走进五菱智能岛工厂，近距离观摩无人物流车与柔性产线。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxnews.com.cn/staticpages/20260903/newgx6a98cf03-21989594.shtml" target="_blank" rel="noopener noreferrer">广西日报 · 广西云</a> <span class="opp-tag">🎯 机器人超级工厂厂区周界/能源管理配套</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681246463925699087/" target="_blank" rel="noopener noreferrer">"智"造之城：柳钢"玄铁"大模型覆盖20+N生产场景</a></h4>
+    <div class="card-body">
+      <p>当代广西《"智"造之城：AI赋能柳州》报道，柳钢联合华为、中国移动打造<strong>"玄铁"钢铁行业大模型</strong>，覆盖铁前、炼钢、轧钢、物流、环保、安全等20+N个场景，热轧集控室实现远程集中操控；AI应用从单点质检走向全流程协同，老工业基地智能化改造纵深推进。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681246463925699087/" target="_blank" rel="noopener noreferrer">当代广西</a> <span class="opp-tag">🎯 钢铁高温场景热成像/AI安全行为分析机会</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7682375689886794290/" target="_blank" rel="noopener noreferrer">柳州13个重大招商项目签约总投资超300亿元，含智慧电摩与机器人零部件园</a></h4>
+    <div class="card-body">
+      <p>柳州本周签下<strong>13个重大招商项目、总投资超300亿元</strong>，涵盖智慧电摩核心零部件配套产业园（20亿元、达产年产值50亿元）、东盟机器人核心零部件研发制造基地（12亿元、达产32亿元）及固态电池、激光、绿色化工等9个领域，新项目将带来一批新建智能产线与厂区。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7682375689886794290/" target="_blank" rel="noopener noreferrer">柳州市投资促进局 · 头条号</a> <span class="opp-tag">🎯 新建园区前期规划：弱电/安消/能耗一步到位</span></div>
+  </div>
+</div>
+
+<!-- 三、临港与园区工业智能化 -->
+<div class="section">
+  <div class="section-title">🌊 临港与园区工业智能化</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680885772777505299/" target="_blank" rel="noopener noreferrer">"智"汇边海：防城港基地AI视觉质检99.98%，"AI车间主任"年省300万</a></h4>
+    <div class="card-body">
+      <p>当代广西防城港AI调研行报道：柳钢防城港基地投用广西首个<strong>"5G+AI智能轧辊装载机"</strong>及拆捆、巡检机器人、云视觉桁架；大海粮油AI视觉质检准确率99.98%（广西先进级智能工厂）；红树林生态"AI车间主任"年省成本300万元；东兴跨境电商智能卡口、码头铁路智慧调度中心同步运转。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680885772777505299/" target="_blank" rel="noopener noreferrer">当代广西</a> <span class="opp-tag">🎯 粮油/钢铁临港工厂视觉质检+无人巡检复制</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://wap.chinanews.com/wap/detail/chs/zw/10689033.shtml" target="_blank" rel="noopener noreferrer">平陆运河9月通航，六景工业园区1—7月产值增长39.29%新签约157亿</a></h4>
+    <div class="card-body">
+      <p>中新网报道，平陆运河进入通航倒计时，南宁六景工业园区1—7月规上工业产值<strong>145.23亿元、增长39.29%</strong>，新签约重大项目4个总投资157亿元（百亿稀贵金属、五十亿林浆纸技改等），爱森造纸化学品15亿元项目2027年投产，园区280家企业临港布局加速。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.chinanews.com/wap/detail/chs/zw/10689033.shtml" target="_blank" rel="noopener noreferrer">中新网广西</a> <span class="opp-tag">🎯 157亿新开工项目厂区智能化配套前置跟进</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://www.gxylnews.com/xwk/yl/197001/t19700122_966088.html" target="_blank" rel="noopener noreferrer">玉林林产化工绿色智造：唯得纸业500万技改产能增15%、用电降20%</a></h4>
+    <div class="card-body">
+      <p>玉林日报聚焦林产化工绿色智造：高林林业获评<strong>国家级绿色工厂</strong>，废料回收系统与脲醛冷却技术6个月增效益1470万元；唯得纸业投入500万元绿色技改，产能提升15%、用电下降20%。林产、纸业企业节能降耗与智能化改造意愿强烈。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxylnews.com/xwk/yl/197001/t19700122_966088.html" target="_blank" rel="noopener noreferrer">玉林日报 · 广西云</a> <span class="opp-tag">🎯 造纸/林产企业能耗监测+消防预警双刚需</span></div>
+  </div>
+</div>
+
+<!-- 四、技改与重大产业项目 -->
+<div class="section">
+  <div class="section-title">🔧 技改与重大产业项目</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.yfbzb.com/inviteBid/detail/20260904_628383714.html" target="_blank" rel="noopener noreferrer">柳化氯碱32万吨/年氯化新材料项目一期推进，CPVC中试安装工程招标</a></h4>
+    <div class="card-body">
+      <p>广西柳化氯碱（鹿寨）<strong>32万吨/年氯化新材料产业集群项目一期总投资超10亿元</strong>，本周液化机组采购定标、钢质设备陆续成交；新材料分厂年产2000吨CPVC中试项目设备、工艺管道、电气仪表安装施工工程公开招标，项目进入设备安装高峰。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.yfbzb.com/inviteBid/detail/20260904_628383714.html" target="_blank" rel="noopener noreferrer">乙方宝招标 · 柳化氯碱</a> <span class="opp-tag">🎯 新建化工区防爆视频/周界/可燃气体联动</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.qcc.com/creport/c19a6d5fd85995c4688d20dbd6b322d9.html" target="_blank" rel="noopener noreferrer">百色广投银海铝业采购铝电解AI扫地机器人，预算26.5万元</a></h4>
+    <div class="card-body">
+      <p>广西广投智能科技发布询比公告：百色广投银海铝业<strong>铝电解智能扫地机项目（GTZN-2026-XB-024）预算26.5万元</strong>，采购铝电解AI扫地机器人及配套设施，10月交付。银海铝"复杂热态铝电解槽智能大模型"同期入选自治区"AI+制造"典型场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-1-440401449.html" target="_blank" rel="noopener noreferrer">采招网 · 企查查</a> <span class="opp-tag">🎯 电解铝高危车间机器人+热成像巡检拓展</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.qcc.com/creport/c19a6d5fd85995c4688d20dbd6b322d9.html" target="_blank" rel="noopener noreferrer">田林百矿田田碳素2026成型车间自动化改造项目补充公告</a></h4>
+    <div class="card-body">
+      <p>吉利百矿旗下田林百矿田田碳素<strong>2026成型车间自动化改造项目</strong>发布补充公告（8月27日首次招标），对碳素成型工序实施自动化升级，减少高温粉尘岗位人工干预，系百色铝产业链碳素配套环节的少人化改造项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/info-819529343.html" target="_blank" rel="noopener noreferrer">比地招标网 · 企查查</a> <span class="opp-tag">🎯 碳素车间粉尘环境防爆监控+安全联锁</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://m.dlzb.com/23-0-69271309-1.html" target="_blank" rel="noopener noreferrer">柳钢中金不锈钢热轧产线技改：粗轧新增对中装置公开招标</a></h4>
+    <div class="card-body">
+      <p>广西柳钢中金不锈钢（玉林）<strong>2026年热轧产线技改项目——粗轧新增对中装置</strong>公开招标，企业自筹100%出资；同期冷轧厂成品库行车智能化升级改造推进。中金已引入AI识别与视觉检测提升板带质量，玉林不锈钢产业链技改持续投入。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.dlzb.com/23-0-69271309-1.html" target="_blank" rel="noopener noreferrer">电力招标网 · 柳钢电子招标网</a> <span class="opp-tag">🎯 热轧产线工业视觉对中检测+行车安全监控</span></div>
+  </div>
+</div>
+
+<!-- 五、厂区安防消防与智慧口岸 -->
+<div class="section">
+  <div class="section-title">🛡️ 厂区安防消防与智慧口岸</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purchases/a1020cdac2adfe68a0c6eed3e320cba9.html" target="_blank" rel="noopener noreferrer">北港新材料视频监控安防管理平台升级服务采购，预算9.5万元</a></h4>
+    <div class="card-body">
+      <p>广西北港新材料（北海）发布<strong>视频监控安防管理平台升级服务采购（预算9.5万元）</strong>，针对老平台版本老旧问题，围绕规范化、数字化、一体化安防管控全面优化功能；同期公司零散视频监控设备供货及安装项目成交72.5万元，持续补齐厂区监控盲点。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purchases/a1020cdac2adfe68a0c6eed3e320cba9.html" target="_blank" rel="noopener noreferrer">中国招标投标公共服务平台（chinamae）</a> <span class="opp-tag">🎯 老钢厂平台联网升级+点位补盲，可复制</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-1-440107466.html" target="_blank" rel="noopener noreferrer">宁明爱店口岸扩大开放那呼通道智慧口岸项目（一期）造价咨询磋商</a></h4>
+    <div class="card-body">
+      <p>崇左宁明县爱店口岸扩大开放那呼通道<strong>智慧口岸项目（一期）全过程造价咨询</strong>发布竞争性磋商公告，项目节能报告已于6月获批，智慧口岸建设进入前期造价与招标准备阶段，面向边境口岸智能查验、通关监控一体化建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-1-440107466.html" target="_blank" rel="noopener noreferrer">采招网 · 宁明县采购网</a> <span class="opp-tag">🎯 智慧口岸：卡口监控/边检周界/车辆查验</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purcenters/7124/" target="_blank" rel="noopener noreferrer">东兴-芒街智慧口岸北仑河一桥旅客通道系列采购：周界安防/消防/智能审图</a></h4>
+    <div class="card-body">
+      <p>中越东兴—芒街智慧口岸北仑河一桥旅客通道改造本周密集挂网：<strong>周界安防系统、消防系统、动环监控、双视角X光机智能审图、智能模块化机房、门禁扩音与智能验讫章</strong>等分项陆续询比，由广西交科平台组织采购，智慧口岸技防体系成套装建。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purcenters/7124/" target="_blank" rel="noopener noreferrer">中国招标投标公共服务平台 · 广西交科</a> <span class="opp-tag">🎯 口岸周界/智能审图/机房动环多包段可投</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西工业企业行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
