@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西商贸物流行业周报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>📦 广西商贸物流行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西商贸物流行业最大主线是<strong>平陆运河通航倒计时下的通道预热</strong>："四川—平陆运河—越南"江海铁班列、"柳州—南宁港—海南洋浦"铁江海联运列车相继首发，北部湾港13个江海联运泊位改造基本完成，<strong>西部陆海新通道智慧水运大模型</strong>进入示范应用，船闸排挡由20分钟压缩至20秒。</p>
+  <p><strong>二是口岸智慧化持续领跑</strong>：友谊关"AI+通关物流"使审单进入"读秒时代"，浦寨—新清通道无人集卡累计出入境1786辆次，浦寨旅检试行连贯通关；南宁综保区"智慧通"30秒完成卡口放行，全国超1/3东盟进口水果经广西入境。</p>
+  <p><strong>三是冷链与智慧物流项目密集落地</strong>：广旅生鲜仓配中心揭牌运营，钦州9847万元智慧冷链中心、百色1.71亿元农产品交易及冷链项目进入招标/施工准备，崇左中泰冷链枢纽冷库制冷系统定标，<strong>中通服"视安仓储统一监控平台接入服务"</strong>直接释放仓储视频监控需求。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>中通服广西"视安仓储统一监控平台接入服务"询比：24个月框架、全区仓储点位，直接对口海康前端+平台</li>
+    <li>钦州乡村振兴智慧冷链物流中心一期（9847.73万元）：施工招标阶段，冷库周界/温控/机房动环可前置介入</li>
+    <li>百色农（副）产品交易中心及冷链物流项目（1.71亿元）：施工准备，交易市场安防+园区卡口规划窗口</li>
+    <li>崇左中泰合作区冷链综合物流枢纽信息化平台：保税仓储+冷链平台，视频与温控融合机会</li>
+    <li>平陆运河六景港区、北部湾港江海联运泊位：闸口智能感知、泊位调度可视化、港口周界安防</li>
+    <li>凭祥口岸"三进三出"扩"七进七出"+24小时智慧口岸：卡口扩容带动车牌识别、无人集卡区安防</li>
+    <li>广旅生鲜仓配中心：新建冷链仓储温区监控、分拣车间可视化</li>
+    <li>物流园招中标密集：玉林国际陆港、平南综合物流枢纽、中国—东盟跨境电商集散中心等道闸/监控预留预埋</li>
+  </ul>
+</div>
+
+<!-- 一、平陆运河与西部陆海新通道 -->
+<div class="section">
+  <div class="section-title">🚢 平陆运河与西部陆海新通道</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">通道动态</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="https://m.weibo.cn/detail/5340458961864560" target="_blank" rel="noopener noreferrer">"柳州—南宁港—平陆运河—海南洋浦"铁江海联运列车首发</a></h4>
+    <div class="card-body">
+      <p>9月5日，一列搭载"柳州制造"鱼峰特种水泥的平陆运河"铁江海"联运列车在<strong>南宁港六景作业区</strong>完成集结换装，标志"广西柳州—南宁港—平陆运河—海南洋浦港"铁江海联运列车首发。待运河通航后货物将搭乘"广星798"轮直达海南，<strong>全程一箱到底</strong>，较传统"铁路运抵防城港+客户自提船运"模式航程更短、中转更少、时效更稳、成本更低。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.weibo.cn/detail/5340458961864560" target="_blank" rel="noopener noreferrer">中国新闻网</a> <span class="opp-tag">🎯 内河港区监控/闸口调度</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">通道动态</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681851583491129865/" target="_blank" rel="noopener noreferrer">"四川—平陆运河—越南"江海铁多式联运班列首发</a></h4>
+    <div class="card-body">
+      <p>9月4日，满载化工产品的"四川—平陆运河—越南"江海铁多式联运班列从成都新津驶出，经铁路至<strong>南宁港六景港区报关登船</strong>，再走平陆运河出北部湾直达越南芹苴港。较传统川桂铁海联运铁路运距缩短150—200公里，<strong>单箱运输费用降低约1000元</strong>。未来四川出口越南、泰国、马来西亚的化工产品、太阳能光伏板、汽车零部件均可借道南下东盟。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681851583491129865/" target="_blank" rel="noopener noreferrer">四川日报·金台资讯</a> <span class="opp-tag">🎯 港区报关监管场所/危化箱查验</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧港口</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/aseaninfo/2026/09-03/10689802.shtml" target="_blank" rel="noopener noreferrer">北部湾港迎平陆运河通航时代：智慧水运大模型示范应用</a></h4>
+    <div class="card-body">
+      <p>北部湾港现有生产性泊位93个、年通过能力<strong>4.89亿吨</strong>，开通内外贸集装箱航线103条；分批次实施13个江海联运泊位适应性改造，11个已竣工投用、全部达千吨级内河船靠泊标准。<strong>西部陆海新通道智慧水运大模型</strong>构建3500万节点知识图谱，长洲船闸排挡方案由20分钟压缩至20秒内，钦州港72小时靠离泊计划由1.5小时压缩至1分钟，应急调度实现分钟级响应。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/aseaninfo/2026/09-03/10689802.shtml" target="_blank" rel="noopener noreferrer">中国新闻网</a> <span class="opp-tag">🎯 泊位感知/调度可视化/周界安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">港口发展</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://www.gx.xinhuanet.com/20260902/25a0a01919bd424fb881a42fb372ca30/c.html" target="_blank" rel="noopener noreferrer">钦州港片区：2025年吞吐量2.26亿吨，自动化码头领跑西部</a></h4>
+    <div class="card-body">
+      <p>钦州港建成30万吨级油码头、20万吨级集装箱单向航道、<strong>4个自动化集装箱码头</strong>，万吨级以上泊位54个；开通航线91条（东盟外贸48条），通达全球127个国家和地区590个港口。2025年完成港口吞吐量<strong>2.26亿吨</strong>、集装箱746.2万标箱，居全国港口第9位。已完成14个江海联运泊位改造，新增江海联运能力约4000万吨。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gx.xinhuanet.com/20260902/25a0a01919bd424fb881a42fb372ca30/c.html" target="_blank" rel="noopener noreferrer">新华网广西</a> <span class="opp-tag">🎯 自动化码头配套安防/无人集卡视频联动</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧航运</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.gx.chinanews.com.cn/kjny/" target="_blank" rel="noopener noreferrer">平陆运河通航在即，钦州电信5G-A网络赋能智慧航运</a></h4>
+    <div class="card-body">
+      <p>作为平陆运河通航前重要综合应急检验，中国电信钦州分公司提前调配<strong>5G通信应急车</strong>进场、开通5G-A网络，对演练现场通信容量实施动态监控调度，圆满完成通航前通信保障能力实战考验，为运河船闸调度、水上服务区及应急指挥提供高带宽、低时延的网络底座。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gx.chinanews.com.cn/kjny/" target="_blank" rel="noopener noreferrer">中新网广西</a> <span class="opp-tag">🎯 船闸/服务区视频回传、水上热成像</span></div>
+  </div>
+</div>
+
+<!-- 二、口岸保税与跨境通关 -->
+<div class="section">
+  <div class="section-title">🛃 口岸保税与跨境通关</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">通关政策</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/aseaninfo/2026/09-01/10688096.shtml" target="_blank" rel="noopener noreferrer">友谊关口岸浦寨旅检9月1日起试行连贯通关</a></h4>
+    <div class="card-body">
+      <p>9月1日起，中越边境广西友谊关口岸<strong>浦寨附属通道旅检</strong>试行8:00至19:30连贯通关，周末、节假日正常通关。此前该通道分时段通关、日均通行约2500人次，调整后跨境旅客流量预计明显增长，试行首日即有越南旅行团经浦寨入境凭祥开展"一日游"，边境餐饮、购物、夜游业态有望同步升温。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/aseaninfo/2026/09-01/10688096.shtml" target="_blank" rel="noopener noreferrer">中国新闻网</a> <span class="opp-tag">🎯 旅检通道客流统计/口岸周界</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧口岸</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://pxzhbsq.gxzf.gov.cn/xwzx/szxw/t28095939.shtml" target="_blank" rel="noopener noreferrer">崇左口岸振兴纪实：AI审单读秒、无人集卡24小时通关</a></h4>
+    <div class="card-body">
+      <p>友谊关"AI+通关物流"模式使<strong>单票审单从6分钟压缩到2分钟</strong>、单人日审单量从80票提至224票，整体车辆通关效率提升75%；浦寨—新清货运通道无人驾驶集卡累计出入境<strong>1786辆次</strong>，可24小时不间断通关；口岸通道正由"三进三出"扩能至"七进七出"。水口口岸二桥日通关能力升至1500柜，跨境电商监管中心8月18日投运。2025年友谊关进出口货值5965.1亿元，居边境陆路口岸第一。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://pxzhbsq.gxzf.gov.cn/xwzx/szxw/t28095939.shtml" target="_blank" rel="noopener noreferrer">广西凭祥综合保税区管委会</a> <span class="opp-tag">🎯 卡口扩容/无人集卡区安防/保税仓监管</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧通关</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.sohu.com/a/1071441277_121106875/" target="_blank" rel="noopener noreferrer">南宁邮局海关："智慧通"30秒卡口放行，3000余万票跨境电商无感通关</a></h4>
+    <div class="card-body">
+      <p>南宁国际铁路港首票<strong>铁水联运</strong>货物84吨在南宁报关放行后铁路直达钦州港同柜装船出口，实现"一次申报、一箱到底、数据互通、全程监管"。南宁综合保税区跨境电商"智慧通"模式使出口货物<strong>30秒左右完成卡口放行</strong>，通关时间压缩50%、整体通关时长压缩至1天，目的地口岸7×24小时无人化通关；累计服务615辆出口货车、保障3000余万票跨境电商货物出境。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.sohu.com/a/1071441277_121106875/" target="_blank" rel="noopener noreferrer">南宁海关发布</a> <span class="opp-tag">🎯 综保区卡口智能化/铁路港仓储监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">冷链跨境</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://gx.people.com.cn/n2/2026/0903/c179464-41685682.html" target="_blank" rel="noopener noreferrer">48小时鲜果直达：全国超三分之一东盟进口水果经广西入境</a></h4>
+    <div class="card-body">
+      <p>泰国榴莲、马来西亚山竹、越南椰子等果品在东盟原产地标准化采收、精细分拣、<strong>恒温锁鲜封装</strong>后全程冷链发运，依托西部陆海新通道陆海空铁多式联运，48小时即可从果园端上广西百姓餐桌。广西推行提前申报、预约查验、附条件提离等便利化举措，入境鲜果快速分拣、全域分拨，<strong>全国超1/3东盟进口水果经广西通关</strong>。9月17日中国—东盟丝路电商主题推介活动将在南宁举办。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gx.people.com.cn/n2/2026/0903/c179464-41685682.html" target="_blank" rel="noopener noreferrer">人民网广西频道</a> <span class="opp-tag">🎯 冷链分拨温湿度监测/口岸冷链查验</span></div>
+  </div>
+</div>
+
+<!-- 三、冷链物流与智慧仓储 -->
+<div class="section">
+  <div class="section-title">❄️ 冷链物流与智慧仓储</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">冷链投运</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.gxnews.com.cn/staticpages/20260904/newgx6a9a9bac-21990355.shtml" target="_blank" rel="noopener noreferrer">广旅生鲜仓配中心揭牌运营，打造国企生鲜供应链标杆</a></h4>
+    <div class="card-body">
+      <p>9月2日，广西旅游发展集团旗下<strong>广旅生鲜仓配中心</strong>揭牌运营，建成"基地直采—检验入库—专业仓储—分拣加工—冷链配送—终端销售"全链条闭环体系，建立农残检测、合格入库全流程质量把关机制，具备全品类生鲜食材覆盖能力，可同时满足日常稳定供应与<strong>应急状态食材保供</strong>双重需求，是广西补齐区域冷链物流短板的重点国企项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxnews.com.cn/staticpages/20260904/newgx6a9a9bac-21990355.shtml" target="_blank" rel="noopener noreferrer">广西云·广西日报</a> <span class="opp-tag">🎯 冷链温区监控/分拣可视化/园区周界</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-1-440178614.html" target="_blank" rel="noopener noreferrer">广西供应链公司2026年视安仓储统一监控平台接入服务采购</a></h4>
+    <div class="card-body">
+      <p>广西供应链公司2026年<strong>视安仓储统一监控平台接入服务</strong>采购项目公开询比，采购人为中通服广西分公司，服务期24个月，含现场踏勘与方案设计、设备安装及系统调试，订单下达后40天内完成安装验收，框架采购覆盖全区采购人指定仓储点位，要求设备稳定部署、系统正常运行。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-1-440178614.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 仓储视频统一平台，海康前端+平台直接对口</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧物流</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681699183627174450/" target="_blank" rel="noopener noreferrer">钦州烟草数智赋能物流：仓储分拣配送全链数字化</a></h4>
+    <div class="card-body">
+      <p>钦州烟草依托智能配送平台打通仓储、分拣、配送数据壁垒：数字化库存管理实现<strong>货位、库存、存储状态实时在线管控</strong>；运用二维码、NFC为车间设备与安全设施建立电子档案，巡检、上报、整改销号全流程闭环；自动化分拣实现订单自动解析、作业动态监控；智能调度动态优化配送线路。2026年上半年物流费用率降至0.64、同比下降3.28%。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681699183627174450/" target="_blank" rel="noopener noreferrer">金台资讯</a> <span class="opp-tag">🎯 烟草仓储安防联动/作业可视化/车辆调度</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">在建项目</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="https://m.ccpc360.com/nzjxm2171468.html" target="_blank" rel="noopener noreferrer">钦州乡村振兴智慧冷链物流中心（一期）施工招标，总投资9847.73万元</a></h4>
+    <div class="card-body">
+      <p>广西乡村振兴智慧冷链物流中心项目（一期）位于钦州，总投资约<strong>9847.73万元</strong>，资金已到位，建设内容含物流基地、<strong>保温仓库、数据中心</strong>等，目前处于施工招标阶段并面向国内采购设备，预计2026年三季度开工、2027年二季度完工。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.ccpc360.com/nzjxm2171468.html" target="_blank" rel="noopener noreferrer">中项网</a> <span class="opp-tag">🎯 冷库周界报警/物联温控/机房动环前置介入</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">在建项目</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.ccpc360.com/nzjxm2125598.html" target="_blank" rel="noopener noreferrer">百色农（副）产品交易中心及冷链物流基础设施项目（1.71亿元）施工准备</a></h4>
+    <div class="card-body">
+      <p>百色市农（副）产品交易中心及冷链物流基础设施建设项目总投资约<strong>1.71亿元</strong>，资金已到位，处于施工准备阶段并面向国内采购设备，预计2026年三季度开工、2027年二季度完工，建成后将补齐桂西农产品交易与冷链集散短板，带动区域农副产品流通规模化。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.ccpc360.com/nzjxm2125598.html" target="_blank" rel="noopener noreferrer">中项网</a> <span class="opp-tag">🎯 交易市场安防/冷链园区卡口/仓储监控规划</span></div>
+  </div>
+</div>
+
+<!-- 四、物流园区与招中标 -->
+<div class="section">
+  <div class="section-title">🏗️ 物流园区建设与招中标</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标公示</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-20698-451400-4-3.html" target="_blank" rel="noopener noreferrer">崇左中泰合作区多式联运冷链枢纽冷库制冷系统定标</a></h4>
+    <div class="card-body">
+      <p>崇左市中泰合作区<strong>多式联运保税仓储基础设施及多式联运（冷链）综合物流枢纽信息化平台设施项目</strong>—冷库子项目冷库制冷系统公开招标，推荐云南海辰节能科技有限公司为第一中标候选人；项目含保税仓储设施与冷链信息化平台，冷库临建工程同步推进，建成后将强化中泰产业园跨境冷链集散能力。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-20698-451400-4-3.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 冷链信息化平台视频+温控融合/保税仓监管</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标速递</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://m.yfbzb.com/zbzt/54/6/" target="_blank" rel="noopener noreferrer">一周物流招中标：跨境电商集散中心、陆港、物流枢纽密集推进</a></h4>
+    <div class="card-body">
+      <p>本周广西物流招标密集发布：<strong>中国—东盟跨境电商物流集散中心</strong>项目桩基勘察超前钻更正、平南县工业园区综合物流枢纽设计服务招标、玉林国际陆港核心区快递快运区及中药材物流园2#仓分包、南宁国际物流基地东片区场地平整、环江生鲜加工和冷链物流EPC延期开标、隆林百矿铝业物流门道闸采购、广西质量工程职院AI+物流应用实践中心磋商等。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.yfbzb.com/zbzt/54/6/" target="_blank" rel="noopener noreferrer">广西物流招标网（乙方宝）</a> <span class="opp-tag">🎯 园区新建期道闸/周界/监控预留预埋集中释放</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">平台动态</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://www.qcc.com/cassets/443313a2f0c51b4255a78d279d609dd4.html" target="_blank" rel="noopener noreferrer">桂物智慧科技：煤炭行业工业互联网平台入选2026年度广西名单</a></h4>
+    <div class="card-body">
+      <p>国有控股高新企业广西桂物智慧科技联合广西现代物流集团、广西供应链服务集团共建<strong>煤炭行业工业互联网平台</strong>，入选2026年度广西工业互联网平台名单；其自主研发的广西物流公共信息服务平台"行·好运"网已整合社会车辆<strong>超8.6万辆</strong>，累计服务货运量超2亿吨、货值突破3.7万亿元，并入选2026年省级工业互联网平台。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/cassets/443313a2f0c51b4255a78d279d609dd4.html" target="_blank" rel="noopener noreferrer">企查查·企业公开信息</a> <span class="opp-tag">🎯 大宗商品物流园车辆识别/作业监控平台融合</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西商贸物流行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
