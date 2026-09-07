@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西教育行业周报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🎓 广西教育行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周正值秋季开学，广西教育行业呈现三大主线：<strong>一是开学季校园安全检查全面铺开</strong>，教育部部署秋季开学安全工作，强调校园安保"4个100%"（保安员配备、封闭化管理、护学岗设置、一键式紧急报警+视频监控系统100%达标），并严查智能终端违规进校园；灵山、桂林、钦州等地公安联合教育部门对一键报警、视频监控、安防器械开展拉网式排查，存量设备运维与补点需求集中显现。</p>
+  <p><strong>二是智慧校园平台类项目密集招标</strong>，桂林中学智慧校园建设服务采购（预算73.1万元）启动竞争性磋商，要求两校区统一平台、AI赋能；右江民族医学院智慧校园一卡通建设公布中标、百东校区图书馆监控项目（50.24万元）竞谈截止09-08；广西民族师范学院智慧校园配送服务成交。</p>
+  <p><strong>三是教育信息化大额采购进入窗口期</strong>，崇左义务教育薄改能力提升<strong>信息化设备采购项目预公示金额达1380.82万元</strong>，上林AI监控网络接入（29.76万）、幼儿园设备（212万）、马山宿舍设施更新（281.62万）、梧州岑溪一小综合楼（813万）等县域教育项目批量放出，校园安防、明厨亮灶、教育终端市场同步扩容。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>桂林中学智慧校园建设服务（73.1万，截止09-14）：两校区统一平台+AI赋能，兼容一卡通/AI智慧体育</li>
+    <li>右江民族医学院图书馆公共区域监控（50.24万，截止09-08）：监控平台升级扩容、人脸抓拍机、电梯专用摄像机</li>
+    <li>崇左义教薄改信息化设备采购（预公示1380.82万）：县域大规模信息化打包项目，重点跟踪</li>
+    <li>上林县三里镇中心学校AI监控网络接入（29.76万竞价）：乡村学校AI监控补点</li>
+    <li>贺州职院监控二期采购意向：视频监控服务、智能门禁、门卫室及警务室设备</li>
+    <li>上林县幼儿园设备采购（212万，重1）/马山两类学校宿舍更新（281.62万中标）：附属安防与明厨亮灶配套</li>
+    <li>开学排查催生：一键报警装置运维更换、视频监控补点、明厨亮灶AI巡检刚需</li>
+  </ul>
+</div>
+
+<!-- 一、开学季校园安防 -->
+<div class="section">
+  <div class="section-title">🛡️ 开学季校园安防</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策部署</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681181947502002694/" target="_blank" rel="noopener noreferrer">教育部部署秋季开学安全：安保"4个100%"，严查智能终端进校园</a></h4>
+    <div class="card-body">
+      <p>教育部部署秋季开学校园安全工作，重申中小学幼儿园<strong>保安员配备、封闭化管理、护学岗设置、一键式紧急报警和视频监控系统"4个100%"</strong>达标要求，推动智慧安防建设；9月1日起严查学生违规携带个人智能终端进校园，寄宿制学校<strong>微信视频话机</strong>等亲情通话设备需求上升。各地开学前后须完成安防隐患排查整改。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681181947502002694/" target="_blank" rel="noopener noreferrer">教育部（今日头条转载）</a> <span class="opp-tag">🎯 一键报警/视频监控达标</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">护校行动</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680476137168978472/" target="_blank" rel="noopener noreferrer">灵山公安开启"护学模式"：检查技防监控运维、一键报警与护学岗</a></h4>
+    <div class="card-body">
+      <p>开学首日，钦州灵山公安组织警力深入辖区中小学幼儿园开展安全检查，重点核查<strong>技防监控设施运维、一键报警装置</strong>运行、安防器械配备及护学岗落实情况，对监控盲区、设备离线、报警链路不通等问题现场督促整改，并在校园周边设立护学岗高峰勤务。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680476137168978472/" target="_blank" rel="noopener noreferrer">灵山公安（今日头条）</a> <span class="opp-tag">🎯 监控运维/一键报警更换</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">安全检查</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://jyj.guilin.gov.cn/jydt/xxdt/t28094162.shtml" target="_blank" rel="noopener noreferrer">桂林市教育局：桂林十八中高中部开学前安全大检查，核查安防八件套</a></h4>
+    <div class="card-body">
+      <p>桂林市教育局消息，开学前桂林市第十八中学高中部开展校园安全大检查，联合属地派出所入校指导，逐项核查<strong>"安防八件套"、门禁监控及一键报警设备</strong>运行状态，对校园周界、宿舍、食堂、实验室等重点部位进行拉网式排查，确保开学季人防物防技防全部到位。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://jyj.guilin.gov.cn/jydt/xxdt/t28094162.shtml" target="_blank" rel="noopener noreferrer">桂林市教育局</a> <span class="opp-tag">🎯 门禁/周界/一键报警</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">护校行动</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://m.163.com/dy/article/L5MQ7G8N0514UA5U.html" target="_blank" rel="noopener noreferrer">钦州钦南公安校园拉网式检查：一键报警、安防器械、视频监控逐项过</a></h4>
+    <div class="card-body">
+      <p>钦州市公安局钦南分局在开学前对辖区校园开展拉网式安全检查，重点测试<strong>一键报警装置</strong>与公安联网响应、清点安防器械、检查<strong>视频监控</strong>全覆盖及存储时长，同步排查校园周边商铺、出租屋治安隐患，对发现问题下达整改清单并跟踪复查。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.163.com/dy/article/L5MQ7G8N0514UA5U.html" target="_blank" rel="noopener noreferrer">网易号·钦南公安</a> <span class="opp-tag">🎯 报警联网/监控存储扩容</span></div>
+  </div>
+</div>
+
+<!-- 二、智慧校园平台与一卡通 -->
+<div class="section">
+  <div class="section-title">🏫 智慧校园平台与一卡通</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">竞争性磋商</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.caigou.com.cn/zfcg/20260901509.shtml" target="_blank" rel="noopener noreferrer">桂林中学智慧校园建设服务采购，预算73.1万元</a></h4>
+    <div class="card-body">
+      <p>桂林中学发布<strong>智慧校园建设服务采购</strong>竞争性磋商公告（GLZC2026-C3-990388-KWZB），预算<strong>73.1万元</strong>，响应截止09-14。项目要求临桂、解西<strong>双校区统一智慧校园平台</strong>，突出AI赋能，需兼容现有校园一卡通并对接<strong>AI智慧体育</strong>等应用，实现师生服务、校园管理、数据看板一体化。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.caigou.com.cn/zfcg/20260901509.shtml" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 智慧校园平台/AI场景</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标结果</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/gjxx/505715/index_6_3.html" target="_blank" rel="noopener noreferrer">右江民族医学院智慧校园一卡通建设项目中标结果公示</a></h4>
+    <div class="card-body">
+      <p>千里马招标网信息显示，百色<strong>右江民族医学院智慧校园一卡通建设项目</strong>本周发布中标结果公示，项目覆盖百东校区消费、门禁、身份认证等一卡通场景；同期<strong>广西民族师范学院智慧校园配送服务</strong>发布成交公告（上海收钱吧成交），高校智慧校园应用从平台建设向运营服务延伸。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/gjxx/505715/index_6_3.html" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 一卡通门禁/人脸消费</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">成交公告</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://jyt.gxzf.gov.cn/zfxxgk/fdzdgknr/ztbxx/" target="_blank" rel="noopener noreferrer">广西教育厅：民办高校资金监管平台日常监管服务成交</a></h4>
+    <div class="card-body">
+      <p>广西教育厅招投标信息栏本周更新，<strong>民办高校资金监管平台日常监管服务</strong>项目发布成交公告，平台用于对全区民办高校办学资金进行常态化在线监管。教育主管部门数字化监管平台持续完善，数据对接、可视化看板与运维服务需求稳定。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/zfxxgk/fdzdgknr/ztbxx/" target="_blank" rel="noopener noreferrer">广西教育厅</a> <span class="opp-tag">🎯 平台运维/数据可视化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">数字化趋势</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681181947502002694/" target="_blank" rel="noopener noreferrer">开学季观察：智慧安防+教育数字化成各地学校"新基建"标配</a></h4>
+    <div class="card-body">
+      <p>开学季报道显示，广西各地学校"新基建"围绕两条线展开：一是<strong>智慧安防</strong>，一键报警联网公安、视频监控AI化、周界入侵检测、访客人脸登记加速普及；二是<strong>教育数字化</strong>，智慧校园平台、AI体育、智慧黑板、录播教室批量建设。寄宿制学校亲情视频话机、明厨亮灶AI巡检成为本学期新增量点。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681181947502002694/" target="_blank" rel="noopener noreferrer">今日头条·教育资讯</a> <span class="opp-tag">🎯 AI安防/明厨亮灶巡检</span></div>
+  </div>
+</div>
+
+<!-- 三、监控·门禁·一键报警招投标 -->
+<div class="section">
+  <div class="section-title">📡 监控门禁与信息化招投标</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">竞谈公告</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://gzc.ymun.edu.cn/info/1040/2659.htm" target="_blank" rel="noopener noreferrer">右江民族医学院百东校区图书馆公共区域监控项目，预算50.24万元</a></h4>
+    <div class="card-body">
+      <p>右江民族医学院发布<strong>百东校区图书馆公共区域监控项目</strong>竞争性谈判公告（GXJD-26114LL051836），预算<strong>50.24万元</strong>，响应截止09-08。建设内容包括<strong>监控平台升级扩容、智能人脸识别摄像机、电梯专用摄像机</strong>及公共区域视频监控补点，新校区安防体系持续完善。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gzc.ymun.edu.cn/info/1040/2659.htm" target="_blank" rel="noopener noreferrer">右江民族医学院国资处</a> <span class="opp-tag">🎯 人脸抓拍/平台扩容</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/newssearchyz-318630759.html" target="_blank" rel="noopener noreferrer">贺州职业技术学院监控二期采购意向：视频监控、智能门禁、警务室设备</a></h4>
+    <div class="card-body">
+      <p>贺州职业技术学院发布采购意向，<strong>监控二期</strong>拟采购网络/WIFI升级、<strong>视频监控服务、智能门禁、门卫室及警务室设备</strong>；同期黄姚校区食堂设备合同金额达<strong>548万元</strong>，新校区食堂明厨亮灶、后厨AI行为分析与消费系统配套空间大。职校新校区安防建设进入高峰期。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchyz-318630759.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 智能门禁/明厨亮灶</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">竞价采购</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">南宁上林县三里镇中心学校AI监控网络接入服务，预算29.76万元</a></h4>
+    <div class="card-body">
+      <p>剑鱼标讯南宁页显示，<strong>上林县三里镇中心学校AI监控网络接入服务</strong>项目以竞价方式采购，预算<strong>29.76万元</strong>，为乡镇学校部署AI监控并接入区域视频专网；同期09-04上林县幼儿园设备采购（重1）竞谈<strong>212万元</strong>、马山县"两类学校"宿舍设施更新中标<strong>281.62万元</strong>，县域教育补短板项目密集落地。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">剑鱼标讯·南宁</a> <span class="opp-tag">🎯 乡村AI监控/联网接入</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购预公示</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">崇左义教薄改信息化设备采购项目预公示，金额1380.82万元</a></h4>
+    <div class="card-body">
+      <p>崇左市发布<strong>2026年义务教育薄弱环节改善与能力提升补助信息化设备采购项目</strong>预公示（CZZC2026-G1-220127-RNZB），预算<strong>1380.82万元</strong>，为本期广西教育领域最大体量信息化打包项目，覆盖县域多校终端、网络与信息化设备，正式招标在即，是Q3教育行业重点跟踪标的。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">剑鱼标讯·崇左</a> <span class="opp-tag">🎯 大额信息化打包/终端</span></div>
+  </div>
+</div>
+
+<!-- 四、教育终端与校园建设 -->
+<div class="section">
+  <div class="section-title">📺 校园建设与教育装备</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标公告</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://www.jianyu360.cn/list/city/GX_WZ_S1" target="_blank" rel="noopener noreferrer">梧州教育基建批量放出：岑溪一小综合楼813万招标、课桌椅1866万中标</a></h4>
+    <div class="card-body">
+      <p>梧州公共资源交易信息：<strong>岑溪市第一小学教学综合楼一期</strong>招标<strong>813.33万元</strong>；全市学生架床课桌椅采购中标<strong>1865.98万元</strong>；苍梧县沙头二中教室宿舍更新合同<strong>66.54万元</strong>。新建综合楼与宿舍更新项目同步带动周界报警、视频监控、门禁等安防设施"三同时"建设需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.jianyu360.cn/list/city/GX_WZ_S1" target="_blank" rel="noopener noreferrer">剑鱼标讯·梧州</a> <span class="opp-tag">🎯 新建楼安防三同时</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">竞谈公告</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">上林县幼儿园设备采购（重1）竞谈，预算212万元</a></h4>
+    <div class="card-body">
+      <p>南宁上林县<strong>幼儿园设备采购项目（重1）</strong>以竞争性谈判方式重启采购，预算<strong>212万元</strong>，涵盖保教装备与园区配套设施。幼儿园场景对周界防护、人脸闸机、活动室监控、明厨亮灶及一键报警要求高，是幼教安防精细化改造的典型场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">剑鱼标讯·南宁</a> <span class="opp-tag">🎯 幼儿园人脸闸机/明厨亮灶</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标公告</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">马山县"两类学校"宿舍设施更新项目中标281.62万元</a></h4>
+    <div class="card-body">
+      <p>南宁马山县<strong>"两类学校"（乡村小规模学校和乡镇寄宿制学校）宿舍设施更新项目</strong>公布中标，金额<strong>281.62万元</strong>。寄宿制学校宿舍改造同步涉及楼道监控、宿舍门禁、晚归AI巡查与消防联动，安防补点与智慧宿舍管理需求随工程同步释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.jianyu360.cn/list/city/GX_NN_S12/" target="_blank" rel="noopener noreferrer">剑鱼标讯·南宁</a> <span class="opp-tag">🎯 智慧宿舍/楼道监控</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西教育行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
