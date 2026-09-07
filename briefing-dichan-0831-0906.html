@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西地产建筑行业简报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏗️ 广西地产建筑行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西地产建筑行业三大主线：<strong>一是住房"十五五"规划定调与城中村改造大盘持续放量</strong>，广西住房发展"十五五"规划征求意见稿提出拟改造危旧房4万套以上、老旧小区2000个、城中村30个，并明确2030年AI赋能住房全生命周期；全区城中村改造已累计筹集安置房6.28万套，19个项目总投资达1004亿元。</p>
+  <p><strong>二是保障性住房与老旧小区改造密集推进</strong>，南宁配售型保障房4个项目在建、可供超3400套，第15批选房启动；玉林、桂林、柳州本周连发多个老旧小区改造EPC/设计/监理招标，桂林象山区两街道改造涉及227栋、4325户。</p>
+  <p><strong>三是智慧工地、园区安防与市政物联项目持续释放</strong>，中国-东盟跨境电商物流集散中心EPC采购智能工地设备，平陆运河航道视频监控、小区安防设备、燃气智能物联感知等项目相继挂网，技防与智能化配套成为工程标配。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>城中村改造1004亿大盘：安置房建设、回迁社区安防与智慧社区配套空间大</li>
+    <li>桂林象山区老旧小区改造设计招标：153栋/3304户、含路灯及充电设施，后续弱电安防标段可期</li>
+    <li>玉林玉州区12个老旧小区EPC打包招标：改造规模大，消防/监控/门禁配套机会</li>
+    <li>来宾河南工业园标准厂房升级改造（756万）：门岗、围墙、太阳能路灯含安防需求</li>
+    <li>桂黔田林经济产业园二期标准厂房（约900万）：9-10月招标，提前对接</li>
+    <li>跨境电商物流集散中心EPC智能工地设备：视频监控/实名制/扬尘监测成套需求</li>
+    <li>平陆运河航道工程视频监控：30日交付、36个月保修，线性工程监控样板</li>
+    <li>北流燃气管道智能物联感知改造（超长期特别国债资金）：市政管网物联监测窗口</li>
+    <li>广西计算中心小区安防设备采购：摄像机/可视对讲/电子围栏，存量小区更新可复制</li>
+  </ul>
+</div>
+
+<!-- 一、城市更新与城中村改造 -->
+<div class="section">
+  <div class="section-title">🏘️ 城市更新与城中村改造</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://m.weibo.cn/detail/5340432011626313" target="_blank" rel="noopener noreferrer">广西住房发展"十五五"规划征求意见：拟改造城中村30个，2030年AI赋能住房全生命周期</a></h4>
+    <div class="card-body">
+      <p>《广西住房发展"十五五"规划（征求意见稿）》公开征求意见，提出"十五五"期间拟改造<strong>危旧房4万套以上、老旧小区2000个、城中村30个</strong>；到2030年推动人工智能在住房全生命周期应用，建设智慧住区，普及智能安防、智能巡检等场景，并完善住房公积金数字化服务。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.weibo.cn/detail/5340432011626313" target="_blank" rel="noopener noreferrer">广西日报 · 南宁融媒</a> <span class="opp-tag">🎯 智慧社区/智能安防顶层规划，五年大盘</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="https://m.zjtcn.cn/jianshi/jskx4674816.html" target="_blank" rel="noopener noreferrer">广西城中村改造累计筹集安置房6.28万套，19个项目总投资1004亿元</a></h4>
+    <div class="card-body">
+      <p>据住房城乡建设部口径，广西城中村改造已累计筹集<strong>安置房6.28万套</strong>，其中南宁、柳州、桂林三市19个项目涉及<strong>5.31万户、总投资1004亿元</strong>，已完成投资177.68亿元，出让土地12宗共376.87亩，改造进入安置房建设与土地整理并行的放量阶段。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.zjtcn.cn/jianshi/jskx4674816.html" target="_blank" rel="noopener noreferrer">中国建设新闻网 · 住建部</a> <span class="opp-tag">🎯 安置房智慧工地+回迁社区安防打包</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://www.nanning.gov.cn/ywzx/xqdt/2026nxqdt/t6717679.html" target="_blank" rel="noopener noreferrer">南宁兴宁区启动城市更新金秋好房惠民季，联动鸡村等城中村改造</a></h4>
+    <div class="card-body">
+      <p>9月5日，南宁兴宁区城市更新金秋好房惠民季启动，联动<strong>鸡村、降桥村、望州路北三里</strong>等城中村改造项目开展房源推介与惠民安居活动，推动城更项目去化与安置衔接。南宁城更基金与专项借款持续支持改造片区滚动开发。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.nanning.gov.cn/ywzx/xqdt/2026nxqdt/t6717679.html" target="_blank" rel="noopener noreferrer">南宁市人民政府 · 南宁日报</a> <span class="opp-tag">🎯 城更片区新建社区周界/门禁/停车一体化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://lztc.yun.liuzhou.gov.cn/jygz/crgg/gyjsydcrgg/202608/t20260831_3789269.shtml" target="_blank" rel="noopener noreferrer">柳州八一路市中心地块挂牌出让，9月23日拍卖带建（构）筑物</a></h4>
+    <div class="card-body">
+      <p>柳州市自然资源和规划局发布柳土交告字〔2026〕23号公告，八一路市中心地块挂牌出让，<strong>9月23日公开拍卖</strong>，地块带2栋建筑物共5958.76㎡，属城市更新存量用地盘活，位置处于柳州传统商业核心区。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://lztc.yun.liuzhou.gov.cn/jygz/crgg/gyjsydcrgg/202608/t20260831_3789269.shtml" target="_blank" rel="noopener noreferrer">柳州市土地交易储备中心</a> <span class="opp-tag">🎯 核心区新建商办楼宇智能化前置介入</span></div>
+  </div>
+</div>
+
+<!-- 二、保障性住房 -->
+<div class="section">
+  <div class="section-title">🏠 保障性住房</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.gxnews.com.cn/staticpages/20260904/newgx6a9aab9c-21990418.shtml" target="_blank" rel="noopener noreferrer">南宁配售型保障房4项目在建可供超3400套，秀安·富春居325套封顶</a></h4>
+    <div class="card-body">
+      <p>南宁配售型保障性住房建设加快，<strong>4个项目在建、建成后可供房源超3400套</strong>；其中广西首个配售型保障房项目秀安·富春居325套住宅已封顶，进入装饰装修与配套施工阶段，配售工作按批次有序推进。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxnews.com.cn/staticpages/20260904/newgx6a9aab9c-21990418.shtml" target="_blank" rel="noopener noreferrer">广西新闻网 · 广西云</a> <span class="opp-tag">🎯 保障房精装阶段：楼宇对讲/电梯监控/道闸</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://zjj.nanning.gov.cn/dtzx/tzgg/zfbz_37648/psxbzxzf/t6716016.html" target="_blank" rel="noopener noreferrer">南宁发布第15批配售型保障房选房通告</a></h4>
+    <div class="card-body">
+      <p>南宁市住建局发布第15批配售型保障性住房选房通告，明确本批次选房时间、房源清单与办理流程。本周南宁还同步发布第31批公租房351套房源177户入围名单，住房保障供给节奏密集，配售型保障房分配进入常态化。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://zjj.nanning.gov.cn/dtzx/tzgg/zfbz_37648/psxbzxzf/t6716016.html" target="_blank" rel="noopener noreferrer">南宁市住房和城乡建设局</a> <span class="opp-tag">🎯 保障房社区人脸门禁/访客系统批量配套</span></div>
+  </div>
+</div>
+
+<!-- 三、老旧小区改造 -->
+<div class="section">
+  <div class="section-title">🧱 老旧小区改造</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/gcjsly/zbgg/" target="_blank" rel="noopener noreferrer">玉林玉州区12个老旧小区改造项目EPC打包招标</a></h4>
+    <div class="card-body">
+      <p>玉林市玉州区先后发布<strong>保险公司宿舍等6个老旧小区改造（一期）EPC</strong>、广西农垦公司宿舍等6个老旧小区改造EPC招标公告，合计12个小区，改造内容含屋面、给排水、道路、照明、安防及公共服务设施提升，由玉州区住建平台统筹实施。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/gcjsly/zbgg/" target="_blank" rel="noopener noreferrer">玉林市人民政府 · 招标公告栏</a> <span class="opp-tag">🎯 EPC总包内监控/门禁/充电桩分包切入</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-31063-450300-1-7.html" target="_blank" rel="noopener noreferrer">桂林象山区平山、南门街道老旧小区改造设计询比，涉及227栋4325户</a></h4>
+    <div class="card-body">
+      <p>桂林象山区平山街道老旧小区改造设计询比：<strong>153栋、3304户、估算投资1725.56万元</strong>；南门街道：74栋、1021户、742.45万元。改造内容含道路、照明路灯、充电设施完善类等，设计阶段已为弱电与安防配套预留接口。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-31063-450300-1-7.html" target="_blank" rel="noopener noreferrer">采招网 · 桂林老旧小区改造专栏</a> <span class="opp-tag">🎯 设计期植入智能门禁/充电桩/视频监控方案</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-1-440264943.html" target="_blank" rel="noopener noreferrer">柳州鱼峰区红锋社区老旧小区改造与公共服务设施提升项目发布招标计划</a></h4>
+    <div class="card-body">
+      <p>柳州市鱼峰区城市更新—红锋社区老旧小区改造项目发布招标计划，对驾鹤小学宿舍、丰华商厦等<strong>16个老旧小区、524户居民</strong>实施改造，内容含屋面修缮、排水排污、消防设施、照明、围墙大门修缮及快递柜等便民配套，工程费用约609万元，计划10月招标。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-1-440264943.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 消防设施改造+小区围合封闭管理机会</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/newssearchyz-27870469.html" target="_blank" rel="noopener noreferrer">柳州柳南区鹅岗片区老旧小区改造更新项目监理成交</a></h4>
+    <div class="card-body">
+      <p>柳南区2026年鹅岗片区老旧小区改造更新项目工程监理发布成交结果公告，由广西恒大项目管理有限公司中标，业主为柳州市元信投资有限公司。该片区施工招标已于8月完成限价公告，改造工程进入施工准备阶段。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchyz-27870469.html" target="_blank" rel="noopener noreferrer">采招网 · 元信投资招标专栏</a> <span class="opp-tag">🎯 施工标段安防弱电配套跟进</span></div>
+  </div>
+</div>
+
+<!-- 四、产业园与标准厂房 -->
+<div class="section">
+  <div class="section-title">🏭 产业园与标准厂房</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/partner/34654f62b4c3477bb6a0c63aa31005d9.html" target="_blank" rel="noopener noreferrer">来宾河南工业园标准厂房集中区一期升级改造施工中标，金额756.36万元</a></h4>
+    <div class="card-body">
+      <p>来宾河南工业园标准厂房集中区一期升级改造项目施工中标公示，<strong>中标价756.36万元，广西桂冠建筑工程有限公司</strong>承建，改造内容含外墙翻新、园区道路、大门门岗、围墙及太阳能路灯等，园区形象与安防硬件同步升级。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/partner/34654f62b4c3477bb6a0c63aa31005d9.html" target="_blank" rel="noopener noreferrer">中国招标投标公共服务平台（chinamae）</a> <span class="opp-tag">🎯 门岗/围墙配套道闸、周界、视频监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-1-439870794.html" target="_blank" rel="noopener noreferrer">桂黔（田林）经济产业园二期3号标准厂房招标计划发布，总投资约900万元</a></h4>
+    <div class="card-body">
+      <p>桂黔（田林）经济产业园二期铝加工车间3号标准厂房发布招标计划，<strong>建筑面积约6000㎡、总投资约900万元</strong>，计划9—10月启动招标，服务园区铝加工产业链招商，厂房将按现代工业厂房标准配套建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-1-439870794.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 新建厂房周界防范/车间监控/能耗管理</span></div>
+  </div>
+</div>
+
+<!-- 五、智慧工地与工程招投标 -->
+<div class="section">
+  <div class="section-title">📹 智慧工地与工程招投标</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-15765-450100-0-7.html" target="_blank" rel="noopener noreferrer">中国-东盟跨境电商物流集散中心EPC项目采购智能工地设备</a></h4>
+    <div class="card-body">
+      <p>中国-东盟跨境电商物流集散中心EPC项目（广西建工一建承建、广西捷物商贸采购）发布<strong>智能工地设备采购</strong>需求，围绕EPC总承包现场管理配置视频监控、人员实名制、环境监测等智慧工地成套系统，项目面向东盟跨境物流枢纽建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-15765-450100-0-7.html" target="_blank" rel="noopener noreferrer">采招网 · 南宁智慧工地专栏</a> <span class="opp-tag">🎯 智慧工地整套（塔机/吊钩/扬尘/实名制）</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-1-439484076.html" target="_blank" rel="noopener noreferrer">中国电信钦州分公司平陆运河航道工程视频监控建设项目询比</a></h4>
+    <div class="card-body">
+      <p>中国电信钦州分公司就<strong>平陆运河航道工程视频监控建设项目</strong>发布询比公告，要求30日内完成交付、提供36个月保修服务。平陆运河9月通航在即，航道沿线视频监控、船闸感知与调度配套进入集中建设期。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-1-439484076.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 长距离线性工程高点监控/热成像/透雾</span></div>
+  </div>
+</div>
+
+<!-- 六、智慧社区与楼宇安防 -->
+<div class="section">
+  <div class="section-title">🔐 智慧社区与楼宇安防</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/gcjsly/zbgg/t28091398.shtml" target="_blank" rel="noopener noreferrer">北流市城区燃气管道智能物联感知设备更新改造工程（一期）公开招标</a></h4>
+    <div class="card-body">
+      <p>北流市城区燃气管道<strong>智能物联感知设备更新改造工程（一期）</strong>公开招标，招标人为广西北流燃气有限公司，资金来源为超长期特别国债，项目对城区燃气管网部署智能感知与监测设备，提升城市生命线安全监管能力。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/gcjsly/zbgg/t28091398.shtml" target="_blank" rel="noopener noreferrer">玉林市人民政府</a> <span class="opp-tag">🎯 城市生命线：燃气泄漏监测+视频联动告警</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/gjxx/1264/index.html" target="_blank" rel="noopener noreferrer">广西计算中心2026年第一批小区安防设备采购成交</a></h4>
+    <div class="card-body">
+      <p>广西计算中心2026年第一批小区安防设备采购发布成交公告，<strong>成交金额13.9万元，鹏耀科技</strong>供货，采购清单含网络摄像机、交换机、可视对讲及电子围栏主机等，为单位老旧住宅小区安防整体更新。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/gjxx/1264/index.html" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 存量小区"摄像机+对讲+电子围栏"替换</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://m.weibo.cn/detail/5340456863925279" target="_blank" rel="noopener noreferrer">广西修订住宅专项维修资金管理细则：七种紧急情况可应急使用</a></h4>
+    <div class="card-body">
+      <p>广西修订印发《住宅专项维修资金管理办法实施细则》，明确<strong>电梯故障、消防设施损坏、房屋安全等七种紧急情况</strong>可走应急使用程序，无需业主表决即可申请资金抢修，老旧小区消防与电梯改造资金通道进一步打通。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.weibo.cn/detail/5340456863925279" target="_blank" rel="noopener noreferrer">广西日报 · 南国早报</a> <span class="opp-tag">🎯 老旧小区消防物联网/电梯监控改造提速</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西地产建筑行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
