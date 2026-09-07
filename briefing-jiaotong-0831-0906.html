@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西交通运输行业简报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🚢 广西交通运输行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西交通行业三大主线清晰：<strong>一是平陆运河通航配套密集落地</strong>，三大枢纽船闸运行方案获交通运输部批复，4条客运航线取得"双证"运营资质，<strong>江河海一体化智慧调度平台、智慧运营系统、数智养护系统同步上线试运行</strong>，"柳州—南宁港—平陆运河—海南洋浦港"铁江海联运首发。</p>
+  <p><strong>二是智慧高速招标迎来超大盘子</strong>，全区联网收费系统信创升级改造设计服务公开招标，设计费预算360万元、<strong>对应建设投资约1.8亿元</strong>，涵盖同城灾备、国产化云、数据中台、运行监测、双活与网络安全；智能交通管控116个点位、高速智能监控35个点位运维意向同周发布。</p>
+  <p><strong>三是城市与口岸智能化并进</strong>，南宁披露<strong>14套无人机智慧机巢、66套手飞无人机、近10万电子围栏点位、110个全息智慧路口</strong>的精细化治理家底；中越东兴—芒街智慧口岸北仑河一桥周界安防、动环监控、双视角X光机智能审图系列采购及友谊关智慧口岸国产数据库项目推进。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>联网收费信创升级：1.8亿建设盘子，运行监测/视频上云/网络安全板块可重点切入，投标截止09-22</li>
+    <li>平陆运河智慧调度与数智养护：船闸视频监控、通航安全感知、客运码头安检智能化配套需求</li>
+    <li>116点位智能交通可视化管控运维 + 35点位高速智能监控运维：9月4日采购意向，维保续期窗口</li>
+    <li>交科集团AI隧道安全管控：卡口抓拍、补光灯、球机及无人机道路巡查AI大模型采购</li>
+    <li>东兴—芒街/友谊关智慧口岸：周界安防、动环监控、X光机智能审图、门禁与密码平台</li>
+    <li>新型标准化收费站省级数据接收系统：收费站智能化改造与省级平台升级测评</li>
+    <li>东博会安保：绕城高速危化品管控+省际检查站第八波次整治，临时监控与安检设备需求</li>
+  </ul>
+</div>
+
+<!-- 一、平陆运河通航与江海联运 -->
+<div class="section">
+  <div class="section-title">🚢 平陆运河通航与江海联运</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策/通航</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="http://gx.news.cn/20260906/b453660b70404538bf2fd4d9bfea7f33/c.html" target="_blank" rel="noopener noreferrer">平陆运河三大枢纽船闸运行方案获交通运输部批复</a></h4>
+    <div class="card-body">
+      <p>新华社南宁9月6日电，平陆运河马道、企石、青年<strong>三大枢纽船闸运行方案</strong>正式获交通运输部批复同意，明确船闸调度运行、通航安全管理、应急处置等机制，标志着运河通航运营进入实质准备阶段。配套的<strong>通航安全保障、船闸运行监测</strong>等智能化设施将同步投入使用。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gx.news.cn/20260906/b453660b70404538bf2fd4d9bfea7f33/c.html" target="_blank" rel="noopener noreferrer">新华网广西</a>、<a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6716721.html" target="_blank" rel="noopener noreferrer">南宁日报</a> <span class="opp-tag">🎯 船闸监控/通航感知</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧航运</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="http://gx.news.cn/20260906/b453660b70404538bf2fd4d9bfea7f33/c.html" target="_blank" rel="noopener noreferrer">平陆运河4条客运航线取得"双证"，智慧运营与数智养护系统试运行</a></h4>
+    <div class="card-body">
+      <p>平陆运河首批<strong>4条客运航线</strong>同时取得国内水路运输经营许可证和船舶营业运输证"双证"运营资质。运河<strong>智慧运营系统、数智养护系统</strong>进入试运行，<strong>江河海一体化智慧调度平台</strong>上线，实现船闸、航道、船舶、客运码头数据汇聚与统一调度，为通航后客船安全监管提供数字底座。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gx.news.cn/20260906/b453660b70404538bf2fd4d9bfea7f33/c.html" target="_blank" rel="noopener noreferrer">新华网广西</a> <span class="opp-tag">🎯 智慧调度/码头安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">联运首发</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/cj/2026/09-06/10691413.shtml" target="_blank" rel="noopener noreferrer">"柳州—南宁港—平陆运河—海南洋浦港"铁江海联运首发</a></h4>
+    <div class="card-body">
+      <p>9月5日，"柳州—南宁港—平陆运河—海南洋浦港"<strong>铁江海联运新通道</strong>首发仪式在南宁港举行，货物经铁路运至南宁港后转海运，经平陆运河出北部湾直达海南。多式联运全程物流信息追踪、<strong>港口与船闸视频联动调度</strong>需求提升，南宁港等枢纽港区智能化配套持续扩容。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/cj/2026/09-06/10691413.shtml" target="_blank" rel="noopener noreferrer">中国新闻网</a> <span class="opp-tag">🎯 港口物联感知</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">低空经济</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://www.gxjttzjt.com/channels/1027.html" target="_blank" rel="noopener noreferrer">首条桂琼跨海低空物流航线成功试飞</a></h4>
+    <div class="card-body">
+      <p>据《中国交通报》，广西首条<strong>连接广西与海南的跨海低空物流航线</strong>完成试飞，大型物流无人机跨北部湾海域飞行，标志着桂琼两地低空物流网络建设取得突破。航线运营涉及<strong>无人机起降点管控、低空飞行监视、地面安防配套</strong>等新基建需求，为交通行业低空安防应用打开场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxjttzjt.com/channels/1027.html" target="_blank" rel="noopener noreferrer">中国交通报·广西交通投资集团</a> <span class="opp-tag">🎯 低空监视/反制</span></div>
+  </div>
+</div>
+
+<!-- 二、高速公路与智慧交通招投标 -->
+<div class="section">
+  <div class="section-title">🛣️ 高速公路与智慧交通招投标</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">公开招标</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://www.ai8.com.cn/n-zb-68327657.html" target="_blank" rel="noopener noreferrer">广西联网收费系统信创升级改造设计服务招标：设计费360万、建设投资约1.8亿元</a></h4>
+    <div class="card-body">
+      <p>全区高速公路联网收费系统信创升级改造设计服务公开招标（GXZC2026-G3-002822-YZLZ），<strong>设计费预算360万元，对应建设投资约1.8亿元</strong>，投标截止9月22日。建设内容含<strong>同城灾备、国产化云平台、数据中台、运行监测系统、双活架构及网络安全</strong>体系，是广西高速信息化近年最大盘子之一。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ai8.com.cn/n-zb-68327657.html" target="_blank" rel="noopener noreferrer">政府采购公告</a> <span class="opp-tag">🎯 1.8亿大盘/运行监测</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-26408-0-2-1.html" target="_blank" rel="noopener noreferrer">智能交通可视化综合管控系统116点位运维 + 高速智能监控35点位维保意向</a></h4>
+    <div class="card-body">
+      <p>9月4日发布两项运维采购意向：一是<strong>智能交通可视化综合管控系统运维</strong>，覆盖<strong>116个点位设备及后台系统维保1年</strong>；二是<strong>高速公路交通安全智能监控设备运维</strong>，覆盖<strong>35个点位维保1年</strong>。均为前端感知设备+平台后台一体化维保，是存量智能交通设备续期维护的确定性机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-26408-0-2-1.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 点位运维续期</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">竞争性磋商</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-17628-0-0-1.html" target="_blank" rel="noopener noreferrer">高速公路CPC复合通行卡采购：预算72万元</a></h4>
+    <div class="card-body">
+      <p>广西高速公路<strong>CPC复合通行卡采购项目</strong>发布竞争性磋商公告（YZLNN2026-C1-569-GXQT），<strong>预算72万元</strong>，用于联网收费路段通行卡补充更新。随信创升级与收费站改造推进，收费车道外设、卡箱读写设备及配套监控的更新需求将持续释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-17628-0-0-1.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标/测评</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-5-440046945.html" target="_blank" rel="noopener noreferrer">新型标准化收费站省级数据接收系统 + 联网收费省级平台升级第三方测评</a></h4>
+    <div class="card-body">
+      <p>本周广西高速收费信息化两标推进：<strong>新型标准化收费站省级数据接收系统</strong>建设与<strong>联网收费省级平台升级第三方测评</strong>（分标1/2）陆续发布。标准化收费站改造涉及车道智能终端、<strong>收费广场视频监控、稽核抓拍</strong>等前端设备省级汇聚，后续地市收费站配套改造空间大。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-5-440046945.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 收费站智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">国企采购</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purcenters/7124/" target="_blank" rel="noopener noreferrer">交科集团采购：AI驱动公路隧道节能与安全管控 + S511无人机智能巡查</a></h4>
+    <div class="card-body">
+      <p>广西交科集团本周发布多项智能交通采购：<strong>AI驱动公路隧道节能与安全管控系统</strong>（含卡口抓拍单元、补光灯、球机等前端，9月1日）；<strong>S511线无人机智能巡查服务</strong>（9月3日）；<strong>无人机多尺度感知道路安全AI大模型</strong>研究。隧道安全管控覆盖事件检测、消防联动与能耗优化，是高速隧道智能化的典型场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purcenters/7124/" target="_blank" rel="noopener noreferrer">中国医招/交科采购平台</a> <span class="opp-tag">🎯 隧道AI管控/无人机</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">城市治理</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680752151194337843/" target="_blank" rel="noopener noreferrer">南宁交通精细化治理家底：14套无人机机巢、近10万电子围栏、110个全息路口、168条绿波</a></h4>
+    <div class="card-body">
+      <p>南宁交通精细化治理经验登上头条头版：全市建成<strong>14套无人机智慧机巢、66套手飞无人机</strong>组成空地巡查网，布设<strong>近10万个电子围栏点位</strong>，建成<strong>110个全息智慧路口</strong>、<strong>168条绿波协调线路</strong>。无人机自动巡飞与路口雷视融合感知成为标配，相关设备扩容、机巢建设与算法升级需求向柳州、桂林等地市外溢。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680752151194337843/" target="_blank" rel="noopener noreferrer">南宁日报·头条号</a> <span class="opp-tag">🎯 机巢/全息路口</span></div>
+  </div>
+</div>
+
+<!-- 三、铁路·港口·口岸通道建设 -->
+<div class="section">
+  <div class="section-title">🚄 铁路·港口·口岸通道建设</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">工程进展</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://jtt.gxzf.gov.cn/ztzl/zsxqsgzls/" target="_blank" rel="noopener noreferrer">合湛高铁全线首座桥梁主体工程完工</a></h4>
+    <div class="card-body">
+      <p>广西交通运输厅"重实效"栏目披露，<strong>合湛高铁（合浦—湛江）全线首座桥梁主体工程完工</strong>，项目建设进入攻坚阶段。合湛高铁是沿海高铁通道重要组成，沿线车站、隧道、桥梁的<strong>视频监控、周界防护、入侵报警</strong>等安防系统将随站房工程同步招标建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/ztzl/zsxqsgzls/" target="_blank" rel="noopener noreferrer">广西交通运输厅</a> <span class="opp-tag">🎯 铁路沿线安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">工程进展</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681055765834072634/" target="_blank" rel="noopener noreferrer">南深高铁玉岑段联调联试冲刺年底通车，南防增建二线推进</a></h4>
+    <div class="card-body">
+      <p>南宁铁路在建项目本周集中梳理：<strong>南深高铁玉林至岑溪段进入联调联试冲刺</strong>，力争年底具备通车条件；合湛高铁、<strong>南防铁路增建二线</strong>等项目加快建设。新线开通前车站安防、客运枢纽智能安检、线路防灾监控系统均需按期部署交付，年底前迎设备安装高峰。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681055765834072634/" target="_blank" rel="noopener noreferrer">铁路建设报道</a> <span class="opp-tag">🎯 枢纽安检/防灾监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">口岸运输</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.gxdlys.cn/channel/25" target="_blank" rel="noopener noreferrer">龙邦、水口口岸颁发首张C种国际道路运输行车许可证</a></h4>
+    <div class="card-body">
+      <p>百色龙邦、崇左水口口岸本周分别颁发<strong>首张C种国际道路运输行车许可证</strong>，允许中外籍货车直达对方境内装卸点，跨境道路运输便利化再升级。口岸货运量增长带动<strong>口岸货场视频监控、车辆查验智能化、卡口管理</strong>系统升级需求，与智慧口岸建设形成配套。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxdlys.cn/channel/25" target="_blank" rel="noopener noreferrer">广西道路运输管理</a> <span class="opp-tag">🎯 口岸卡口智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">智慧口岸</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purcenters/7124/" target="_blank" rel="noopener noreferrer">中越东兴—芒街智慧口岸北仑河一桥系列采购：周界安防、动环监控、X光机智能审图</a></h4>
+    <div class="card-body">
+      <p>中越<strong>东兴—芒街智慧口岸北仑河一桥</strong>项目系列采购本周密集推进（8月28日—9月4日），涵盖<strong>周界安防系统、动环监控、双视角X光机智能审图、门禁系统、密码平台</strong>等；<strong>友谊关智慧口岸国产数据库</strong>项目8月31日同步推进。口岸智能化以"智能查验+围网安防+数据信创"为主线，设备与集成需求明确。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purcenters/7124/" target="_blank" rel="noopener noreferrer">口岸采购公告</a> <span class="opp-tag">🎯 周界/审图/门禁</span></div>
+  </div>
+</div>
+
+<!-- 四、交通运行监测·应急·执法 -->
+<div class="section">
+  <div class="section-title">🚨 交通运行监测·应急·执法</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">执法行动</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://www.gxzf.gov.cn/hdjl/hygq_29682/t28096529.shtml" target="_blank" rel="noopener noreferrer">夏季交通安全整治第八波次行动：省际检查站、执法服务站全线启动</a></h4>
+    <div class="card-body">
+      <p>8月31日至9月6日，广西公安交管部门开展<strong>夏季交通安全整治行动第八波次</strong>，全省际交通安全检查站、高速执法服务站全线启动，重点严查"两客一危"、超限超载与酒驾醉驾。行动依托<strong>卡口缉查布控、视频巡检、无人机巡查</strong>等科技手段，检查站前端设备与移动执法装备使用强度加大。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/hdjl/hygq_29682/t28096529.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区政府</a> <span class="opp-tag">🎯 检查站卡口设备</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">交管通告</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://w.huanqiu.com/article/4T6uniSoGZM" target="_blank" rel="noopener noreferrer">东博会期间南宁绕城高速危险品运输车辆实施管控</a></h4>
+    <div class="card-body">
+      <p>为保障第23届中国—东盟博览会期间交通安全，9月3日发布通告，对<strong>南宁绕城高速及相关路段危险品运输车辆</strong>实施限时绕行管控。重大活动交通安保带动<strong>临时视频监控、移动卡口、应急指挥调度</strong>装备需求，南宁周边高速与客运枢纽安防等级提升。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://w.huanqiu.com/article/4T6uniSoGZM" target="_blank" rel="noopener noreferrer">环球网·交管通告</a> <span class="opp-tag">🎯 活动安保/临时监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">应急演练</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/" target="_blank" rel="noopener noreferrer">全区交通执法与应急动态：高速桥下空间整治、北海桥梁消防演练、防汛排查</a></h4>
+    <div class="card-body">
+      <p>本周广西交通执法应急多线推进：<strong>高速公路桥下空间专项整治</strong>、北海开展<strong>桥梁消防应急演练</strong>、全区交通运输防汛隐患排查、贵港安全预警应急培训、崇左防汛应急值守等。桥梁隧道消防联动、<strong>桥区水域视频监控、应急指挥可视化</strong>是演练与排查中暴露的补强方向。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/" target="_blank" rel="noopener noreferrer">广西交通运输厅·交通新闻</a> <span class="opp-tag">🎯 桥隧消防/应急指挥</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西交通运输行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
