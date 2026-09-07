@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西电子电器行业简报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🔌 广西电子电器行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西电子电器行业三大主线：<strong>一是电子信息制造龙头落子与扩产密集</strong>，中兴通讯100%全资子公司南宁兴能智联科技8月底落户邕宁（注册资本1.05亿元，布局储能/光伏/云计算硬件），南宁日报聚焦宁福新能源20GWh工厂投产爬坡与迈越科技AI眼镜"广西集成+东盟应用"，贺州天微电子芯片产能扩建至35亿只/年。</p>
+  <p><strong>二是新能源电池与储能制造满负荷运转</strong>，柳州国轩8条产线全部建成投产、年电芯产能达30GWh创历史新高；中科电能六景储能制造基地规划年产4GWh；宁福新能源新增报批40GWh产能（四工厂总投资35亿元），电池工厂绿电、消防与智能质检配套需求同步释放。</p>
+  <p><strong>三是光伏/储能电站与机制电价新政齐发力</strong>，广西启动2027年新能源增量项目机制电价竞价，崇左宁明300MW/600MWh储能EPC（约5.7亿元）评标公示，贺州抽水蓄能83.34亿元项目推进，北海硅基新材料集群产值增长20.41%，光储充运维市场开始放量。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>中兴兴能智联落地邕宁产投创新园：新基地厂区周界/门禁/机房动环/能耗管理前期介入</li>
+    <li>宁福新能源20GWh投产+新增40GWh报批：锂电工厂消防（Pack级+舱级）、视觉质检、ESG安防</li>
+    <li>柳州国轩30GWh满产+海外发货：出口型电池厂园区卡口/危包仓储/智慧商检配套</li>
+    <li>中科电能六景4GWh储能制造：新建自动化产线车间监控+储能舱消防联动</li>
+    <li>宁明300MW/600MWh储能EPC（5.7亿）：储能电站视频/消防/温控/周界随EPC分包</li>
+    <li>贺州抽蓄83.34亿、机制电价竞价新政：新能源电站建设期视频监控+运维期智能巡检</li>
+    <li>萨纳斯275MW光储充运维含广西：分布式电站巡检/故障诊断/数据监控服务市场启动</li>
+    <li>灵山十里工业园电子标准厂房三期（3.07亿）：9月底开工，电子厂房无尘车间+安防配套</li>
+  </ul>
+</div>
+
+<!-- 一、电子信息制造与智能终端 -->
+<div class="section">
+  <div class="section-title">📱 电子信息制造与智能终端</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://www.yongning.gov.cn:81/yw/ynyw/2026nynyw/t6715188.html" target="_blank" rel="noopener noreferrer">中兴通讯全资子公司南宁兴能智联落户邕宁，注册资本1.05亿元</a></h4>
+    <div class="card-body">
+      <p>8月29日，中兴通讯100%全资子公司——<strong>南宁兴能智联科技有限公司</strong>在邕宁区完成工商注册，注册资本1.05亿元，落户产投创新产业园，为中兴在广西首个独立法人子公司。经营范围覆盖电池制造、储能技术服务、光伏设备及元器件、云计算设备制造，定位面向东盟的绿色算力与新能源硬件支点。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.yongning.gov.cn:81/yw/ynyw/2026nynyw/t6715188.html" target="_blank" rel="noopener noreferrer">邕宁区人民政府 · 36氪</a> <span class="opp-tag">🎯 新建制造基地：周界/门禁/机房动环/能耗</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="http://news.qq.com/rain/a/20260906A09LLZ00" target="_blank" rel="noopener noreferrer">南宁日报：电池"芯"跳强劲 AI"眼"界大开，宁福20GWh投产爬坡</a></h4>
+    <div class="card-body">
+      <p>南宁日报聚焦电子信息产业：广西宁福新能源三工厂（<strong>总投资25亿元、产能20GWh</strong>）近期投产并产能爬坡；迈越科技智能AR观影眼镜/AI眼镜走"北上广研发+广西集成+东盟应用"路线，南宁智能终端集成制造与穿戴显示生态加速成型。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://news.qq.com/rain/a/20260906A09LLZ00" target="_blank" rel="noopener noreferrer">南宁日报 · 腾讯新闻转载</a> <span class="opp-tag">🎯 电池厂视觉质检+AR终端厂区智能物流</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://www.qcc.com/crun/0e4cd101759d7a9eef0ebf226ac23a38.html" target="_blank" rel="noopener noreferrer">广西天微电子贺州扩产：芯片产能15亿只增至35亿只/年，新建万级无尘车间</a></h4>
+    <div class="card-body">
+      <p>贺州生态产业园广西天微电子推进封测产能扩建：在现有厂房内新建<strong>220㎡万级无尘车间</strong>、全自动化学镍钯金生产线及全自动电镀锡生产线，芯片年产能由15亿只扩至35亿只，产品转向存储、闪存及车用芯片；天微电子产业园新项目尚在前期准备阶段。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/crun/0e4cd101759d7a9eef0ebf226ac23a38.html" target="_blank" rel="noopener noreferrer">企查查 · 行政许可公示</a> <span class="opp-tag">🎯 无尘车间环境监控/门禁洁净管控/安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7682593908878066216/" target="_blank" rel="noopener noreferrer">桂电与马来西亚彭亨大学空间天气监测项目挂牌，东创会9月南宁召开</a></h4>
+    <div class="card-body">
+      <p>桂林电子科技大学与马来西亚彭亨大学共建的<strong>"中国-东盟空间电离层异常建模与监测"项目</strong>挂牌，部署GNSS监测接收机与云平台，实现北斗亚米级定位、闪烁预测正确率超90%、提前60分钟空间天气预警。第18届中国-东盟工程师大会（东创会）将于9月16—21日在南宁召开。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7682593908878066216/" target="_blank" rel="noopener noreferrer">东创会预热报道 · 头条号</a> <span class="opp-tag">🎯 东盟电子信息合作：监测站点物联感知设备</span></div>
+  </div>
+</div>
+
+<!-- 二、新能源电池与电器扩产 -->
+<div class="section">
+  <div class="section-title">🔋 新能源电池与电器扩产</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://www.qcc.com/creport/463b255730f102230b739e078c537bda.html" target="_blank" rel="noopener noreferrer">柳州国轩电池8条产线全部满产，年电芯产能30GWh创历史新高</a></h4>
+    <div class="card-body">
+      <p>柳州国轩电池（国轩高科华南制造中心及东盟出口基地）<strong>8条生产线全部建成投产并满负荷运转，年电芯产能达30GWh</strong>创建厂新高，产品即将发运海外。公司获评国家级绿色工厂、国家高新技术企业，并在全区率先开展锂电池危险包装智慧商检，整体规划968亩。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/creport/463b255730f102230b739e078c537bda.html" target="_blank" rel="noopener noreferrer">企查查 · 柳州市政府门户网站</a> <span class="opp-tag">🎯 电池出口工厂园区卡口/危包仓储/消防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://www.qcc.com/creport/1eb6e64f97fa2205eeeef84d2a21dacc.html" target="_blank" rel="noopener noreferrer">中科电能南宁六景储能制造基地：规划4条模组+4条PACK线，年产4GWh</a></h4>
+    <div class="card-body">
+      <p>中科电能（广西）新能源落户南宁六景交投创新产业园，<strong>计划总投资2亿元，规划自动化储能模组线4条、PACK线4条</strong>及电池预制舱检测中心，全部建成年产4GWh储能系统；一期已建成厂房仓储5000㎡、自动化模组线1条。公司自研储能云监控运维平台与电池包内部消防系统，获评省级先进级智能工厂。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/creport/1eb6e64f97fa2205eeeef84d2a21dacc.html" target="_blank" rel="noopener noreferrer">企查查 · BOSS直聘企业页</a> <span class="opp-tag">🎯 储能制造车间视频+预制舱消防联动配套</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://m.qcc.com/firm/35bec323bcbb2641a98f9a3d60343638.html" target="_blank" rel="noopener noreferrer">宁福新能源新增报批40GWh锂电项目，四工厂总投资35亿元</a></h4>
+    <div class="card-body">
+      <p>南宁青秀伶俐工业园宁福新能源（多氟多控股）近期新增报批<strong>一工厂10GWh、四工厂30GWh锂电池项目，合计新增40GWh产能，四工厂总投资35亿元</strong>并配套核心辅料产线；公司同期发布"微储行能源"品牌战略，聚焦小动力、小储能细分赛道。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxnews.com.cn/staticpages/20260831/newgx6a959a2c-21988695.shtml" target="_blank" rel="noopener noreferrer">广西新闻网 · 企查查环评公示</a> <span class="opp-tag">🎯 新建40GWh厂区规划期植入安消一体化</span></div>
+  </div>
+</div>
+
+<!-- 三、光伏与储能新能源配套 -->
+<div class="section">
+  <div class="section-title">☀️ 光伏与储能新能源配套</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.in-en.com/article/html/energy-2343486.shtml" target="_blank" rel="noopener noreferrer">广西启动2027年新能源增量项目机制电价竞价，风电光伏0.15—0.36元/度</a></h4>
+    <div class="card-body">
+      <p>自治区发改委、能源局8月31日发文，启动2027年新能源增量项目机制电价竞价：<strong>集中式风电、光伏项目机制电价区间0.15—0.36元/千瓦时，执行期12年</strong>，单体项目机制电价规模不超过80%，新能源电站开发与配套储能、并网工程将迎来新一轮建设潮。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.in-en.com/article/html/energy-2343486.shtml" target="_blank" rel="noopener noreferrer">国际能源网 · 广西发改委</a> <span class="opp-tag">🎯 新建电站升压站/场区周界/无人机巡检</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680009950763975218/" target="_blank" rel="noopener noreferrer">崇左宁明300MW/600MWh新型储能电站EPC评标公示，总投资约5.7亿元</a></h4>
+    <div class="card-body">
+      <p>崇左宁明<strong>300MW/600MWh新型储能电站PC总承包</strong>评标公示，总投资约5.7亿元、占地80亩，建设集装箱式磷酸铁锂储能舱及35/220kV升压站，配套智能温控热管理与成套消防系统，第一中标候选人为中国电建四川工程公司。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680009950763975218/" target="_blank" rel="noopener noreferrer">储能与电力市场 · 头条号</a> <span class="opp-tag">🎯 储能电站视频+舱级消防+周界随EPC分包</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://gmt8press.com/flash/detail/1478059" target="_blank" rel="noopener noreferrer">广西能源拟投资83.34亿元建贺州抽水蓄能电站，装机140万千瓦</a></h4>
+    <div class="card-body">
+      <p>广西能源公告拟投资<strong>83.34亿元建设贺州抽水蓄能电站，装机容量140万千瓦</strong>，项目投产后将提升桂东电网调峰调频与新能源消纳能力。大型抽蓄电站上下水库、地下厂房、开关站建设期长，技防与施工信息化需求贯穿全程。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gmt8press.com/flash/detail/1478059" target="_blank" rel="noopener noreferrer">GMT+8 财经快讯</a> <span class="opp-tag">🎯 抽蓄工地智慧工地+库区周界/边坡监测</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://finance.sina.com.cn/stock/relnews/cn/2026-09-03/doc-iniqqfvs6737823.shtml" target="_blank" rel="noopener noreferrer">上能电气为宁福新能源锂电池工厂打造屋顶光伏电站，IP66/C5防腐</a></h4>
+    <div class="card-body">
+      <p>上能电气供货的<strong>广西宁福新能源厂区屋顶光伏电站</strong>投运，针对高温高湿环境与高精度防逆流要求，定制组串式逆变器方案，集成IP66防护、C5防腐与原生智能防逆流功能，实现绿电高效自用与生产零中断，为高能耗锂电工厂绿色降碳提供样板。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://finance.sina.com.cn/stock/relnews/cn/2026-09-03/doc-iniqqfvs6737823.shtml" target="_blank" rel="noopener noreferrer">新浪财经 · 上能电气官微</a> <span class="opp-tag">🎯 厂房屋顶光伏+储能配套消防与并网监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://news.solarbe.com/search?kw=%E8%90%A8%E7%BA%B3%E6%96%AF" target="_blank" rel="noopener noreferrer">萨纳斯智维中标含广西在内275MW分布式光储充一体化运维</a></h4>
+    <div class="card-body">
+      <p>萨纳斯智维成功中标覆盖上海、江苏、安徽、<strong>广西四地的275MW分布式光储充一体化项目运维服务</strong>，内容涵盖设备巡检、故障诊断、数据监控与安全运维，分布式光伏+储能+充电设施的第三方智能运维市场在广西开始规模化启动。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://news.solarbe.com/tag/%E5%85%89%E5%82%A8%E5%85%85" target="_blank" rel="noopener noreferrer">索比光伏网</a> <span class="opp-tag">🎯 分布式电站无人巡检/视频告警运维服务</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680932171736990210/" target="_blank" rel="noopener noreferrer">北海铁山港硅基新材料集群：光伏压延玻璃产能全国前三，园区产值增20.41%</a></h4>
+    <div class="card-body">
+      <p>北海铁山港硅基新材料集群提速：合浦石英砂储量超25亿吨，<strong>光伏压延玻璃产能居全国前三</strong>，新福兴2025年产值超41亿元，信义、南玻、长利相继落户；铁山东港产业园规上产值198.73亿元、增长20.41%。东方希望光伏玻璃"熔窑APC数据集"入选自治区AI+制造名单，智能化投运率超96%。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680932171736990210/" target="_blank" rel="noopener noreferrer">北海日报 · 头条号</a> <span class="opp-tag">🎯 玻璃窑炉高温监控/能耗双控/视觉质检</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="https://www.qcc.com/crun/fc961e26f7d6bec029c945305bcf8421.html" target="_blank" rel="noopener noreferrer">宾阳晶飞能源入选广西数字化车间：光伏组件产线引入AI质检设备</a></h4>
+    <div class="card-body">
+      <p>南宁宾阳黎塘工业园广西晶飞能源获评<strong>2026年广西数字化车间（基础级智能工厂）</strong>，智能化组件车间引入AI质检设备与数字化管控系统；公司一期投资1.5亿元、建成1GW光伏组件生产线（奥特维激光划片机、金辰高速流水线），为广西首家光伏组件高端制造企业。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.qcc.com/crun/fc961e26f7d6bec029c945305bcf8421.html" target="_blank" rel="noopener noreferrer">企查查 · 宾阳县人民政府</a> <span class="opp-tag">🎯 组件产线AI视觉质检+车间安灯/安防</span></div>
+  </div>
+</div>
+
+<!-- 四、产业链与园区项目 -->
+<div class="section">
+  <div class="section-title">🏗️ 产业链与园区项目</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标项目</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://www.gxls.gov.cn/zfxxgk/fdzdgknr/xwdt/lsxw/t28101274.shtml" target="_blank" rel="noopener noreferrer">灵山十里工业园电子信息标准厂房三期加快推进，预算3.07亿元</a></h4>
+    <div class="card-body">
+      <p>灵山县政府主要领导本周调研<strong>十里工业园电子信息产业标准厂房及配套设施项目</strong>，现场督导施工黄金期建设。项目三期预算约3.07亿元，建设标准厂房、原材料仓库及配套用房，计划9月30日开工、2027年12月竣工，园区重点打造2500亩电子信息产业园。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxls.gov.cn/zfxxgk/fdzdgknr/xwdt/lsxw/t28101274.shtml" target="_blank" rel="noopener noreferrer">灵山县人民政府 · 广西招标网</a> <span class="opp-tag">🎯 电子厂房新建：周界/门禁/机房/能耗成套</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技防动态</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680470187509842447/" target="_blank" rel="noopener noreferrer">VPP国标9月1日生效，南宁五象光储超充放综合能源站投运</a></h4>
+    <div class="card-body">
+      <p>虚拟电厂国标GB/T 47241-2026于9月1日生效；<strong>南宁五象建成广西首个光储超充放综合能源站</strong>，配置7台V2G充电桩与液冷超充；广西已有6家充电运营商参与低谷电力交易、累计成交34.2万度，充电设施智能化与车网互动进入新阶段。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680470187509842447/" target="_blank" rel="noopener noreferrer">电力行业报道 · 头条号</a> <span class="opp-tag">🎯 超充站视频/充电区防火/能源管理系统</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西电子电器行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
