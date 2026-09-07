@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西政府行业简报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏛️ 广西政府行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 18 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是面向东盟的算力与数字通道建设提速。</strong>新华社报道广西自贸试验区织密面向东盟"数字丝路"：中国—东盟可信数据专区、12条陆地光缆、五象云谷智算中心（广西区域最大算力基地）、Token工厂，签约AI项目28个；联网收费信创升级改造总投资约1.8亿元，国产化云平台与灾备中心建设启动。</p>
+  <p><strong>二是政务信息化大额招标集中释放。</strong>广西生态环境信息化建设项目1304.36万元公开招标（含"生态云"平台升级、智慧执法），自治区大数据发展局移动办公平台、适配认证中心服务等密集成交，柳州服务器集采落地。</p>
+  <p><strong>三是数据要素改革从制度走向场景。</strong>智桂通获全国首张民生领域高质量数据集评价证书、广西企业获自然资源领域数据产权登记"双证"、全域可信数据空间项目设计服务成交；崇左"数字住建"一网统管45平方公里、智慧社区引入智能安防，城市治理侧项目机会下沉至地市。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西生态环境信息化建设 · 1304.36万元（含智慧执法、生态云平台），投标截止 9-28</li>
+    <li>联网收费系统信创升级 · 总投资约1.8亿元（国产化云平台+灾备中心），设计费360万，截止 9-22</li>
+    <li>全域可信数据空间项目 · 前期咨询设计已成交，后续建设可期</li>
+    <li>崇左"壮美崇左云"+数字城管一网统管 · 智慧社区智能安防/智能停车需求</li>
+    <li>五象云谷智算中心 · 广西区域最大算力基地，安防/智算配套</li>
+    <li>自治区交通运输厅数据共享运维 · 中国-东盟信息港中标，数据备份需求</li>
+  </ul>
+</div>
+
+<!-- 一、算力与数字基础设施 -->
+<div class="section">
+  <div class="section-title">☁️ 算力与数字基础设施</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">数字丝路</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://www.gx.xinhuanet.com/20260901/eb9749352998409f96b0a53c76e78379/c.html" target="_blank" rel="noopener noreferrer">广西自贸试验区织密面向东盟数字丝路：五象云谷智算中心+Token工厂，签约AI项目28个</a></h4>
+    <div class="card-body">
+      <p>新华社报道：广西自贸试验区建成<strong>中国—东盟可信数据专区、12条陆地光缆</strong>，<strong>五象云谷智算中心成为广西区域最大算力基地</strong>，并布局Token工厂；面向东盟签约AI项目28个。面向东盟的算力枢纽和数据通道建设进入兑现期，智算中心、数据中心的安防与园区智能化配套需求同步释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gx.xinhuanet.com/20260901/eb9749352998409f96b0a53c76e78379/c.html" target="_blank" rel="noopener noreferrer">新华网广西</a> <span class="opp-tag">🎯 智算中心配套</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28092061.shtml" target="_blank" rel="noopener noreferrer">联网收费系统信创升级改造设计服务招标：总投资约1.8亿元</a></h4>
+    <div class="card-body">
+      <p>自治区层面发布<strong>联网收费系统信创升级改造设计服务招标</strong>，设计费360万元、项目总投资约<strong>1.8亿元</strong>，建设内容含<strong>同城灾备中心、国产化云平台、核心数据库改造、数据中台、网络安全加固</strong>；编号GXZC2026-G3-002822-YZLZ，投标截止9月22日。信创云+灾备+数据中台的大平台建设将带动大量配套采购。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28092061.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易</a> <span class="opp-tag">🎯 信创云/灾备</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">成交</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-4-439352225.html" target="_blank" rel="noopener noreferrer">全域可信数据空间项目前期咨询设计服务成交：广西通信产业服务中标</a></h4>
+    <div class="card-body">
+      <p>广西<strong>全域可信数据空间项目前期咨询设计服务</strong>成交，中标人为广西通信产业服务有限公司，服务期至2026年11月30日。项目完成顶层设计后将进入大规模建设阶段，可信数据空间涉及数据流通、隐私计算、安全防护等环节，是数据要素基础设施的重点方向。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-4-439352225.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 可信数据空间</span></div>
+  </div>
+</div>
+
+<!-- 二、数字政府与政务信息化 -->
+<div class="section">
+  <div class="section-title">🏛️ 数字政府与政务信息化</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28092149.shtml" target="_blank" rel="noopener noreferrer">广西生态环境信息化建设项目公开招标 · 预算1304.36万元</a></h4>
+    <div class="card-body">
+      <p>广西<strong>生态环境信息化建设项目公开招标，预算1304.36万元</strong>，分5个分标：A核与辐射应急指挥378.45万、B生态环境监管（含<strong>智慧执法应用</strong>）505.45万、C综合业务（含<strong>"生态云"统一支撑平台升级</strong>）185.36万、D质量分析210.03万、E监理25.07万；编号GXZC2026-G3-002867-GCZX，投标截止9月28日。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28092149.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易</a> <span class="opp-tag">🎯 生态云/智慧执法</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">成交</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4>自治区大数据发展局：党政机关综合办公平台移动办公服务采购成交</h4>
+    <div class="card-body">
+      <p>自治区大数据发展局发布<strong>党政机关综合办公平台移动办公服务采购成交公告</strong>（同期还有AI赋能千行百业联赛媒体素材库运维、政务服务中心设施等成交项目）。数字政府办公平台持续迭代升级，移动办公、AI赋能类服务采购趋于常态化。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">自治区大数据发展局</a> <span class="opp-tag">🎯 政务移动办公</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">成交</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4>自治区信息中心：广西适配认证中心适配技术服务项目成交</h4>
+    <div class="card-body">
+      <p>自治区信息中心<strong>广西适配认证中心适配技术服务项目成交</strong>。适配认证中心是信创生态的关键公共服务平台，为政务信息系统国产化迁移提供适配测试与认证服务，其持续运营采购反映政务信创改造工作稳步推进。</p>
+    </div>
+    <div class="card-source">来源：自治区信息中心 <span class="opp-tag">🎯 政务信创</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4>中国-东盟信息港中标自治区交通运输厅数据共享运维及重要数据备份服务</h4>
+    <div class="card-body">
+      <p>中国-东盟信息港股份有限公司中标<strong>自治区交通运输厅数据共享运行维护及重要数据备份服务</strong>（编号GXJD-26133SQ341811）。交通行业数据资源汇聚共享与灾备体系建设需求明确，政务数据运维与备份服务市场持续扩大。</p>
+    </div>
+    <div class="card-source">来源：广西政府采购网 <span class="opp-tag">🎯 数据运维/灾备</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4>柳州市大数据发展局计算机及服务器集中采购中标结果公布</h4>
+    <div class="card-body">
+      <p>柳州市大数据发展局<strong>计算机及服务器集中采购项目</strong>发布中标结果（编号LZZC2026-G1-990507-LZSZ）。地市级政务算力资源以集中采购方式统筹配置，后续配套存储、网络、安全与机房智能化设备存在组合销售机会。</p>
+    </div>
+    <div class="card-source">来源：柳州市政府采购网 <span class="opp-tag">🎯 政务算力集采</span></div>
+  </div>
+</div>
+
+<!-- 三、数据要素与空间数据 -->
+<div class="section">
+  <div class="section-title">📊 数据要素改革</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">数据要素</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="https://www.digitalgx.com.cn/list/6" target="_blank" rel="noopener noreferrer">智桂通平台获全国首张民生领域高质量数据集评价证书</a></h4>
+    <div class="card-body">
+      <p>数字广西集团旗下<strong>智桂通平台获得全国首张民生领域高质量数据集评价证书</strong>，也是广西首张AI高质量数据集证书。高质量数据集是大模型训练与AI政务应用的基础要素，标志广西民生数据治理与AI语料建设走在全国前列。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.digitalgx.com.cn/list/6" target="_blank" rel="noopener noreferrer">数字广西集团</a> <span class="opp-tag">🎯 数据治理/AI</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">空间数据</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://www.gx.xinhuanet.com/20260831/a0a195364756442cb3e467abb6adb591/c.html" target="_blank" rel="noopener noreferrer">广西自然资源"一张图"：汇聚39部门2.8万图层4.3PB，625座北斗基准站+低空无人机AI智算</a></h4>
+    <div class="card-body">
+      <p>新华社报道：广西自然资源<strong>"一张图"汇聚39个部门2.8万个图层、数据量4.3PB</strong>，建成<strong>625座北斗基准站</strong>，推行首席数据官制度；天地图与<strong>低空无人机AI空间智算</strong>结合，支撑国土空间治理。空天地一体化感知数据体系对前端采集设备与AI解译能力需求旺盛。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gx.xinhuanet.com/20260831/a0a195364756442cb3e467abb6adb591/c.html" target="_blank" rel="noopener noreferrer">新华网广西·自然资源厅</a> <span class="opp-tag">🎯 北斗/无人机AI</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">数据产权</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680465193801794091/" target="_blank" rel="noopener noreferrer">广西民企获自然资源领域数据产权登记"双证"：全国首批，落地6个应用场景</a></h4>
+    <div class="card-body">
+      <p>广西民营企业获得<strong>自然资源领域数据产权登记"双证"</strong>（北京国际大数据交易所，全国首批/广西首家），数据资源约6000万个数值点，已落地<strong>企业入园匹配、低效用地识别</strong>等6个场景。数据资产化带动数据汇聚平台、数据安全与可视化应用建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680465193801794091/" target="_blank" rel="noopener noreferrer">金台资讯</a> <span class="opp-tag">🎯 数据资产化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">数据要素</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4><a href="https://school.10jqka.com.cn/20260905/c679627096.shtml" target="_blank" rel="noopener noreferrer">广西数据集团与东软座谈：医保影像云归集突破，27个试点单位数据资产管理</a></h4>
+    <div class="card-body">
+      <p>广西数据集团与东软集团就数据要素合作座谈：<strong>医保影像云数据归集取得突破</strong>，<strong>27个试点单位推进数据资产全过程管理</strong>。医疗影像数据汇聚涉及海量存储、云平台与数据安全建设，是行业数据要素运营的重点落地方向。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://school.10jqka.com.cn/20260905/c679627096.shtml" target="_blank" rel="noopener noreferrer">同花顺财经</a> <span class="opp-tag">🎯 行业云/数据安全</span></div>
+  </div>
+</div>
+
+<!-- 四、智慧城市与城市治理 -->
+<div class="section">
+  <div class="section-title">🏙️ 智慧城市与城市治理</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">数字住建</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://m.zjtcn.cn/jianshi/jskx4675801.html" target="_blank" rel="noopener noreferrer">崇左"数字住建"赋能智慧城市："壮美崇左云"+一网统管45平方公里，智慧社区引入智能安防</a></h4>
+    <div class="card-body">
+      <p>崇左建成<strong>"壮美崇左云"，"爱我崇左"APP用户271.5万、上线89项功能</strong>；<strong>数字城管"一网统管"覆盖45平方公里</strong>，累计处置工单13459件；智慧社区建设引入<strong>智能安防、智能停车</strong>等场景，丽金社区雪亮工程摄像头布设16个。地市层面智慧城市运营已形成云+管+端的完整体系。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.zjtcn.cn/jianshi/jskx4675801.html" target="_blank" rel="noopener noreferrer">中国建设新闻网</a> <span class="opp-tag">🎯 智慧社区安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI会展</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://dsjfzj.nanning.gov.cn/zwdt/hyzx/" target="_blank" rel="noopener noreferrer">东博会"数智聚邕城"：AI会展大模型贯穿商务撮合，首设"AI大卖场"</a></h4>
+    <div class="card-body">
+      <p>南宁市数据局发布：本届东博会<strong>"数智聚邕城"以AI会展大模型贯穿商务撮合全流程</strong>，首次设立"AI大卖场"集中展示60家AI产品。会展场景的智能化（人流分析、安防预警、智能导览）是视频AI能力的高价值落地场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://dsjfzj.nanning.gov.cn/zwdt/hyzx/" target="_blank" rel="noopener noreferrer">南宁市数据局</a> <span class="opp-tag">🎯 会展AI安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">具身智能</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4>韦韬调研南宁AI产业：广西东盟具身智能中试训练场一期3000㎡实景投用</h4>
+    <div class="card-body">
+      <p>自治区领导调研南宁人工智能产业，<strong>广西—东盟具身智能中试训练场一期3000平方米实景场地</strong>已建成投用。具身智能训练场需要高密度视频感知、动作捕捉与园区安防配套，是AI基础设施建设的新兴方向。</p>
+    </div>
+    <div class="card-source">来源：南宁市政府 <span class="opp-tag">🎯 AI园区智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI治城</span>
+      <span class="card-date">09-05</span>
+    </div>
+    <h4>南宁"匠心绣城"精细化治理：邕江12公里岸线多模态大模型视觉识别野泳违规</h4>
+    <div class="card-body">
+      <p>南宁城市精细化治理"匠心绣城"行动中，<strong>邕江12公里岸线部署多模态大模型视觉识别</strong>，自动发现野泳、违规下水等风险行为并联动处置。<strong>视频AI大模型从交通管理向水域、园区、社区等城市治理全场景延伸</strong>，前端相机+算法平台升级需求明确。</p>
+    </div>
+    <div class="card-source">来源：南宁日报 <span class="opp-tag">🎯 多模态视觉AI</span></div>
+  </div>
+</div>
+
+<!-- 五、政策与产业动态 -->
+<div class="section">
+  <div class="section-title">📰 政策与产业动态</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">AI+应急</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680634406343688750/" target="_blank" rel="noopener noreferrer">中国(广西)-东盟"人工智能+应急管理"科创大赛决赛在钦州举行</a></h4>
+    <div class="card-body">
+      <p>中国（广西）—东盟<strong>"人工智能+应急管理"科技创新大赛决赛在钦州举行</strong>；平陆运河作为<strong>国内首条江海直达数字化智慧运河</strong>，提供场景与算力一体化服务。应急管理AI应用（灾害监测、视频预警、指挥调度）与智慧运河建设是安防智能化的新兴增量市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680634406343688750/" target="_blank" rel="noopener noreferrer">金台资讯</a> <span class="opp-tag">🎯 应急AI/智慧运河</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">开放合作</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680866865078108713/" target="_blank" rel="noopener noreferrer">广西作为服贸会主宾省：建面向东盟AI应用合作中心，"北上广研发+广西集成+东盟应用"</a></h4>
+    <div class="card-body">
+      <p>广西作为服贸会主宾省亮相：提出建设<strong>面向东盟国家的AI应用合作中心</strong>，构建"北上广研发+广西集成+东盟应用"模式，已与越南、老挝等达成合作20项。AI应用集成落地将带动本地化算力、数据中心与智能终端配套需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7680866865078108713/" target="_blank" rel="noopener noreferrer">金台资讯</a> <span class="opp-tag">🎯 AI集成落地</span></div>
+  </div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西政府行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
