@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西通信运营商行业简报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- header ---- */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* ---- main ---- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+/* ---- summary ---- */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+/* ---- opportunity ---- */
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- section ---- */
+.section {
+  margin-top: 28px;
+}
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- news card ---- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+/* ---- print ---- */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>📡 广西通信运营商行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 18 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 总结提炼 -->
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西通信运营商市场呈现"<strong>大运维落单、视联采购密集、集成外溢明显</strong>"三大特征：<strong>一是标杆级运维大单敲定</strong>，<strong>北海平安城市二期2026—2028运维合同由中国联通广西分公司中标，金额4928万元</strong>；中国移动广西信令监测系统软件开发询比预算<strong>805万元</strong>；移动广西还以3202.2万元投标价成为东盟数字人民币跨境贸易平台第二中标候选人。</p>
+  <p><strong>二是视频监控与物联感知成为运营商采购主线</strong>，联通广西监控系统运维（36.55万）、南宁智能感知网络运维、柳州监控全覆盖软件服务、来宾客流监控、防城港人员定位三期；电信南宁宾阳政企视频监控集成、防城港安防监控及广播设备采购（含公共广播+视频安防+机房配套）；广电网络连中钦州驾考中心安防、应急广播巡检等项目。</p>
+  <p><strong>三是政务视联项目储备充足</strong>，贵港城市监控联网系统二期供电及网络服务招标预公示、<strong>忻城雪亮工程平台运维意向（1000多路前端、3年期）</strong>、天网工程升级维护3年意向、防城港大气污染应急管控视频监控（无人机+气体检测）等，运营商总集与安防厂商分包合作空间大。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>北海平安城市二期运维4928万（联通中标）：后续设备更换、补点与算法升级可作为分包/合作切入点</li>
+    <li>贵港城市监控联网二期供电及网络服务（GGZC2026-G3-990293）：公开招标预公示，前端+网络配套</li>
+    <li>忻城雪亮工程平台运维意向：1000多路前端+光纤+存储+网安，3年期，政法委体系</li>
+    <li>天网工程升级维护3年意向 + 防城港大气应急视频监控（无人机+气体检测）：平台运维与AI感知</li>
+    <li>电信防城港安防监控及广播设备二次寻源：公共广播+视频安防+机房+联动调试，边境场景</li>
+    <li>电信防城港841台前端摄像机视频监控升级改造运维（1年）+边境管理支队信息化运维</li>
+    <li>移动信令监测805万、流量安全监测系统：网安软件大盘，可联合方案商配套安全感知</li>
+    <li>联通监控运维/感知网络/客流监控系列：地市分公司监控类小额高频采购，适合设备+维保切入</li>
+  </ul>
+</div>
+
+<!-- 一、中国移动广西 -->
+<div class="section">
+  <div class="section-title">📶 中国移动广西</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">询比采购</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://10086.dlzb.com/v4/" target="_blank" rel="noopener noreferrer">中国移动广西信令监测系统软件开发询比：预算805万元</a></h4>
+    <div class="card-body">
+      <p>中国移动广西公司启动<strong>信令监测系统软件开发</strong>询比采购，<strong>预算805万元</strong>，面向全网信令数据采集、分析与安全监测能力升级。同期还推进互联网维护技术支持、网络信息安全管理体系、IP集中认证（9月4日）及<strong>省端移动网流量安全监测处置系统一阶段软件开发</strong>（9月2日），网安类软件投入持续加大。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://10086.dlzb.com/v4/" target="_blank" rel="noopener noreferrer">中国移动采购与招标网</a>、<a href="http://www.ixbang.com/bdrc/1002601-r450000/" target="_blank" rel="noopener noreferrer">爱招标</a> <span class="opp-tag">🎯 网安大盘</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">中标候选</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://www.ixbang.com/bdrc/1002601-r450000/" target="_blank" rel="noopener noreferrer">东盟数字人民币跨境贸易平台暨AI跨境电商基地：移动广西3202.2万位列第二中标候选人</a></h4>
+    <div class="card-body">
+      <p><strong>东盟数字人民币跨境贸易平台暨AI跨境电商基地</strong>项目开标，中国移动广西公司以<strong>投标价3202.2万元</strong>成为第二中标候选人。项目面向东盟跨境贸易数字化，含平台建设、AI电商应用与跨境数据服务，运营商以总集身份切入政企数字化大单，安防、物联感知配套需求随园区建设释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ixbang.com/bdrc/1002601-r450000/" target="_blank" rel="noopener noreferrer">爱招标·移动中标公告</a> <span class="opp-tag">🎯 数字园区配套</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">租赁/DICT</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.yfbzb.com/zbzt/49/427/" target="_blank" rel="noopener noreferrer">移动梧州700MHz六期二批基站租赁 + 梧州DICT支撑服务征求意见</a></h4>
+    <div class="card-body">
+      <p>中国移动梧州分公司本周发布<strong>700MHz六期工程第二批基站租赁</strong>项目（9月3日），并就<strong>梧州DICT支撑服务</strong>公开征求意见（9月2日）。5G网络建设向县乡深度覆盖推进，基站站址配套<strong>视频监控、动环监控、智能用电</strong>及DICT项目集成交付需求增加，是与移动协同的常态化场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.yfbzb.com/zbzt/49/427/" target="_blank" rel="noopener noreferrer">乙方宝·移动招标</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中选候选</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://qy.zhaobiao.cn/enterprise_v_137c9b39d6330fdcd186c45f50e185fa_zhongbiao.html" target="_blank" rel="noopener noreferrer">移动柳州2026—2028物联网车规级MS1贴片卡中选候选公示</a></h4>
+    <div class="card-body">
+      <p>中国移动柳州分公司<strong>2026—2028年物联网车规级MS1贴片卡</strong>采购发布中选候选人公示，面向车联网前装场景规模化供货。物联网卡采购放量对应车载视频、<strong>营运车辆主动安全智能防控（ADAS/DMS）</strong>终端连接数增长，两客一危与货车智能化后装市场空间扩大。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://qy.zhaobiao.cn/enterprise_v_137c9b39d6330fdcd186c45f50e185fa_zhongbiao.html" target="_blank" rel="noopener noreferrer">招标网·移动中选公告</a> <span class="opp-tag">🎯 车联网感知</span></div>
+  </div>
+</div>
+
+<!-- 二、中国电信广西 -->
+<div class="section">
+  <div class="section-title">📡 中国电信广西</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">二次寻源</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1210_450600_0/" target="_blank" rel="noopener noreferrer">电信防城港安防监控及广播设备采购二次寻源：公共广播+视频安防+机房配套+联动调试</a></h4>
+    <div class="card-body">
+      <p>中国电信防城港分公司<strong>安防监控及广播设备采购</strong>二次寻源（GX1ZW120260831001），建设内容含<strong>公共广播系统、视频安防监控、机房配套及联动调试</strong>，面向边境地市政企项目交付。同期推进<strong>政企视频监控升级改造运维</strong>（<strong>841台前端摄像机+存储安全</strong>，服务期1年）及防城港边境管理支队信息化基础运维磋商（9月4日）。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1210_450600_0/" target="_blank" rel="noopener noreferrer">采招网·电信采购</a> <span class="opp-tag">🎯 边境监控/841台前端</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">询比采购</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.ixbang.com/industry-tag/t1808335/r450000/" target="_blank" rel="noopener noreferrer">电信南宁宾阳政企视频监控集成服务第二次询比 + 视频维护外协服务</a></h4>
+    <div class="card-body">
+      <p>中国电信南宁宾阳分公司发布<strong>政企视频监控集成服务第二次询比</strong>及<strong>政企视频维护外协技术服务第二次询比</strong>（9月4日），面向政企客户视频监控项目的设备集成、安装调测与日常维保。县域政企安防项目以电信总集+外协交付模式推进，前端摄像机、NVR、显控与运维服务需求稳定。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ixbang.com/industry-tag/t1808335/r450000/" target="_blank" rel="noopener noreferrer">爱招标·电信询比</a> <span class="opp-tag">🎯 县域视频集成</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">询比采购</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.ixbang.com/industry-tag/t1808335/r450000/" target="_blank" rel="noopener noreferrer">中电信数智广西分公司政企客户综合治理技术服务第三次询比</a></h4>
+    <div class="card-body">
+      <p>中电信数智科技有限公司广西分公司发布<strong>政企客户综合治理技术服务第三次询比</strong>，以系统集成与技术服务方式支撑全区政企客户项目交付。数智公司作为电信政企DICT主力军，承接大量平安城市、智慧园区类项目，安防设备与平台厂商可通过其供应商体系进入电信总集项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ixbang.com/industry-tag/t1808335/r450000/" target="_blank" rel="noopener noreferrer">爱招标·电信数智</a> <span class="opp-tag">🎯 DICT总集合作</span></div>
+  </div>
+</div>
+
+<!-- 三、中国联通广西 -->
+<div class="section">
+  <div class="section-title">🔗 中国联通广西</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">中标公告</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/abb40302-adb5-41ea-96aa-fc1e4146488b" target="_blank" rel="noopener noreferrer">北海平安城市二期2026—2028运维：中国联通广西分公司中标4928万元</a></h4>
+    <div class="card-body">
+      <p><strong>北海市公安局平安城市二期2026—2028年运维服务项目</strong>结果公示，<strong>中国联合网络通信有限公司广西壮族自治区分公司中标，金额4928万元</strong>，服务期三年。项目涵盖平安城市视频监控前端、平台与线路整体运维，是本周运营商在广西中标的最大安防运维合同，后续设备更换、补点建设与算法升级存在分包合作空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/abb40302-adb5-41ea-96aa-fc1e4146488b" target="_blank" rel="noopener noreferrer">企查查·中标公告</a> <span class="opp-tag">🎯 4928万运维大单</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">询比/中选</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://m.yfbzb.com/zbzt/62/425/" target="_blank" rel="noopener noreferrer">联通广西监控系统运维询比36.55万；南宁智能感知网络运维20万、数据平台开发155.66万中选</a></h4>
+    <div class="card-body">
+      <p>联通广西本周监控类采购密集：区公司<strong>监控系统运维服务询比预算36.55万元</strong>，含视频监控软硬件安装升级维护；南宁分公司<strong>智能感知网络运维（第二次）</strong>由三福龙信息以20万元中选，<strong>南宁数据平台开发</strong>由桂物智慧以155.66万元中选。感知设备运维与数据平台建设成为联通政企业务双主线。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.yfbzb.com/zbzt/62/425/" target="_blank" rel="noopener noreferrer">乙方宝·联通采购</a> <span class="opp-tag">🎯 感知运维/数据平台</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中选候选</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/cf9db690-4aad-4724-96f7-607026a11eeb" target="_blank" rel="noopener noreferrer">联通柳州监控全覆盖设施软件服务中选候选；来宾信息化客流监控技术服务</a></h4>
+    <div class="card-body">
+      <p>联通柳州某单位<strong>监控全覆盖设施软件服务（第二次）</strong>发布中选候选公示（GXTFZB-2026-LT-LZ-07029）；来宾联通签约<strong>信息化客流监控系统技术服务</strong>（9月1日）。地市政府/行业客户监控全覆盖与客流分析项目持续落地，视频平台软件与智能分析算法需求明确。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/cf9db690-4aad-4724-96f7-607026a11eeb" target="_blank" rel="noopener noreferrer">企查查·联通采购</a> <span class="opp-tag">🎯 监控软件/客流分析</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">中标公告</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/cf9db690-4aad-4724-96f7-607026a11eeb" target="_blank" rel="noopener noreferrer">忻城县乡村治理数字化建设项目：联通来宾中标98.88万元</a></h4>
+    <div class="card-body">
+      <p><strong>忻城县乡村治理数字化建设项目</strong>（忻城县委政法委）由<strong>中国联通来宾市分公司中标，金额98.88万元</strong>。项目面向乡村治理数字化，含网格管理、视频监控汇聚与基层治理平台，与雪亮工程、数字乡村建设衔接。政法委体系项目由运营商总集，前端感知与平台分包机会值得关注。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/cf9db690-4aad-4724-96f7-607026a11eeb" target="_blank" rel="noopener noreferrer">企查查·中标公告</a> <span class="opp-tag">🎯 数字乡村/政法委</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">集成采购</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://www.ixbang.com/industry-tag/t1808335/r450000/" target="_blank" rel="noopener noreferrer">防城港联通室外人员定位系统三期集成：定位设备+安装+集成</a></h4>
+    <div class="card-body">
+      <p>中国联通防城港分公司<strong>室外人员定位系统三期集成项目</strong>发布采购，<strong>预算4.64万元（不含税）</strong>，含定位设备供货、安装与系统集成。人员定位系统在工业园区、口岸、场站等场景连续三期建设，叠加联通数科某单位<strong>调度中心生产调度指挥系统建设</strong>询比（8月31日）与广西联通专网延伸节点建设采购（9月3日），物联感知网络持续扩容。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ixbang.com/industry-tag/t1808335/r450000/" target="_blank" rel="noopener noreferrer">爱招标·联通采购</a> <span class="opp-tag">🎯 人员定位/指挥调度</span></div>
+  </div>
+</div>
+
+<!-- 四、中国铁塔广西 -->
+<div class="section">
+  <div class="section-title">🗼 中国铁塔广西</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">成交公告</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://ebid.chinatowercom.cn/zgtt/gggs/003004/20260831/7325e828-8ea8-4924-b2d0-6bf9b8b615dc.html" target="_blank" rel="noopener noreferrer">铁塔广西桂林某度假区通信设施综合迁改：山东邮电工程成交139.6万元</a></h4>
+    <div class="card-body">
+      <p>中国铁塔广西分公司<strong>桂林某度假区通信设施综合迁改项目</strong>成交，由山东邮电工程公司中标，<strong>不含税金额139.615万元</strong>。项目涉及基站、机房及线路整体迁改。同期<strong>玉林某县通信设施建设与迁改整治</strong>项目（HXGX-2026-TT-094，9月2日）招标，含新塔新机房、割接与拆旧，工期30天。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://ebid.chinatowercom.cn/zgtt/gggs/003004/20260831/7325e828-8ea8-4924-b2d0-6bf9b8b615dc.html" target="_blank" rel="noopener noreferrer">中国铁塔采购平台</a>、<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-19489-0-4-30.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 站址配套监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">成交公告</span>
+      <span class="card-date">09-06</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_0/" target="_blank" rel="noopener noreferrer">铁塔广西信创系统适配性改造云服务：联通数科推荐成交77.95万元</a></h4>
+    <div class="card-body">
+      <p>中国铁塔广西分公司<strong>信创系统适配性改造云服务采购</strong>成交，联通数字科技有限公司推荐成交，<strong>含税金额77.95万元</strong>。铁塔信创改造涉及业务系统国产化迁移与云资源适配，机房动环、<strong>云边端安全监控与运维可视化</strong>需求随信创进程同步释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_0/" target="_blank" rel="noopener noreferrer">采招网·铁塔采购</a> <span class="opp-tag">🎯 信创/动环监控</span></div>
+  </div>
+</div>
+
+<!-- 五、广电网络与视联监控项目 -->
+<div class="section">
+  <div class="section-title">📺 广西广电网络与视联监控项目</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">多项目中标</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7763-0-4-0.html" target="_blank" rel="noopener noreferrer">广西广电网络连中四元：钦州驾考中心安防监控、应急广播巡检、一张网标准化</a></h4>
+    <div class="card-body">
+      <p>广西广电网络本周密集落单：<strong>钦州机动车驾驶人考试中心一期安防监控系统安装工程</strong>中标（9月4日）、<strong>服务器存储维保单一来源成交</strong>（9月4日）、<strong>广电基础设施一张网公共服务标准化项目</strong>中标（9月4日）、<strong>南宁本级应急广播巡检处置</strong>成交（9月2日）；玉林交警网络光纤电路租赁成交（YLZC2026-C3-990237，9月3日）。广电以专网+运维优势深耕政务安防与应急广播市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7763-0-4-0.html" target="_blank" rel="noopener noreferrer">广西招标网·广电采购</a> <span class="opp-tag">🎯 驾考安防/应急广播</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标预公示</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-9824-0-2-30.html" target="_blank" rel="noopener noreferrer">贵港城市监控联网系统二期供电及网络服务公开招标预公示</a></h4>
+    <div class="card-body">
+      <p><strong>贵港市城市监控联网系统二期供电及网络服务项目</strong>公开招标预公示（GGZC2026-G3-990293-YZLZ），为城市监控前端提供供电与网络传输保障。城市监控联网二期通常伴随<strong>前端摄像机补点、老旧设备更换与平台联网升级</strong>，线路服务标之后往往跟进设备标，是贵港安防市场的重要前置信号。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-9824-0-2-30.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 监控二期前置标</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-9824-0-2-30.html" target="_blank" rel="noopener noreferrer">忻城雪亮工程平台运维意向：1000多路前端+光纤+存储+网安，3年期</a></h4>
+    <div class="card-body">
+      <p><strong>忻城县雪亮工程平台运维服务</strong>发布采购意向：覆盖<strong>1000多路前端摄像机、光纤线路、存储系统与网络安全</strong>，服务期<strong>3年</strong>（9月2日）。同期<strong>天网工程升级维护</strong>3年期意向发布（9月4日），<strong>防城港大气污染应急管控视频监控系统</strong>意向含<strong>无人机+气体检测联动</strong>（9月3日）。县域雪亮/天网进入"运维+升级"双周期。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-9824-0-2-30.html" target="_blank" rel="noopener noreferrer">广西招标网·采购意向</a> <span class="opp-tag">🎯 雪亮3年运维</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">企业采购</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.anfangzb.com/tag/45_3637_shipinlianwang.html" target="_blank" rel="noopener noreferrer">广西北港新材料（北海）视频监控安防管理平台升级服务：预算9.5万元</a></h4>
+    <div class="card-body">
+      <p>广西北港新材料有限公司（北海）发布<strong>视频监控安防管理平台升级服务</strong>采购公告（XCL-ZBB-FW-20260825-01），<strong>预算9.5万元</strong>，含视频联网平台升级与前端接入优化。工业企业安防平台升级带动视频联网（GB/T28181）、存储扩容与AI分析增值需求，是运营商专线+安防平台合作的企业侧场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.anfangzb.com/tag/45_3637_shipinlianwang.html" target="_blank" rel="noopener noreferrer">安防招标网</a> <span class="opp-tag">🎯 企业视频平台</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西通信运营商行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
