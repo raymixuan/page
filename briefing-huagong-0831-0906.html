@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西化工煤炭行业周报 · 2026.08.31—09.06</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>⚗️ 广西化工煤炭行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.08.31 — 09.06</span>
+      <span>📊 本周 18 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p>本周广西化工煤炭行业主线之一是<strong>安全监管持续高压</strong>：全区工贸安全监管工作视频会议部署治本攻坚三年行动收官战，自治区督导组向柳州反馈矿山、危化品、烟花爆竹领域突出问题，"打非治违""一案双罚"典型案例集中曝光；应急管理部令第22号《煤矿企业安全生产许可证实施办法》8月31日公布，明确<strong>安全监控系统、人员位置监测、重大危险源检测监控</strong>为取证硬性条件。</p>
+  <p><strong>二是化工园区封闭化进入招标落地期</strong>：2026年钦州石化产业园封闭化运营管理服务项目公开招标（9月28日开标、服务期1年），封闭化一期南港大道路面恢复工程同步谈判采购；东博会期间南宁暂停六类危险物品运输，广西石化VOCs废气治理与液化气罐区隐患治理密集挂网，园区"二道门"与企业罐区技防改造需求集中释放。</p>
+  <p><strong>三是应急管理智能化与AI密集发力</strong>：中国—东盟"人工智能+应急管理"科创大赛在钦州落幕（517支队伍、144个项目晋级，危化品全链条智能治理平台获奖），"智汇消防"AI大赛在南宁启幕；那坡县<strong>316.89万元</strong>5G应急智慧调度云平台招标（含37辆救护车车载音视频监控），玉林应急系统开展信息化平台与卫星应急通信培训。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>钦州石化产业园封闭化运营管理服务项目（QZZC2026-G3-980012-GXJT，09-28开标）：二道门卡口、周界防范、危化车辆管控，海康园区封闭化整体方案直接对口</li>
+    <li>那坡县5G应急智慧调度云平台（预算316.89万元，09-21开标）：指挥调度大厅+37辆救护车车载定位/音视频监控+智能调度系统</li>
+    <li>广西2026年度尾矿库重金属污染防治技术服务招标（自治区生态环境厅，09-21截止）：尾矿库在线监测、视频监控与坝体位移监测融合</li>
+    <li>中国石油广西石化VOCs治理+液化气罐区脱水系统隐患治理：防爆摄像、热成像测温、气体探测联动改造窗口</li>
+    <li>广西北港新材料视频监控安防管理平台升级（9.5万元）：冶金龙头存量平台替换，热成像/AI作业分析扩容切入点</li>
+    <li>东博会危化品运输管控（9.15—9.21）：危化车辆路线监控、卡口布控、临时检查点视频装备</li>
+    <li>钦州化工园区封闭化一期配套工程：围网、卡口、道路监控补点与运维同步释放</li>
+    <li>应急部令第22号（2027.1.1施行）：煤矿安全监控、人员定位、重大危险源监测达标升级改造</li>
+  </ul>
+</div>
+
+<!-- 一、安全监管与政策部署 -->
+<div class="section">
+  <div class="section-title">🛡️ 安全监管与政策部署</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">监管部署</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.mem.gov.cn/xw/gdyj/202609/t20260903_710305.shtml" target="_blank" rel="noopener noreferrer">广西召开工贸安全监管工作视频会议：部署治本攻坚三年行动收官战</a></h4>
+    <div class="card-body">
+      <p>9月1日，广西工贸安全监管工作视频会议召开，通报今年以来工贸行业安全生产形势，部署安全生产治本攻坚三年行动收官阶段重点任务：深化<strong>"打非治违"</strong>，紧盯金属冶炼、粉尘涉爆、有限空间作业等重点领域，强化重大事故隐患闭环整改和监管执法，压实企业主要负责人责任，为中国—东盟"两会"营造安全稳定环境。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.mem.gov.cn/xw/gdyj/202609/t20260903_710305.shtml" target="_blank" rel="noopener noreferrer">应急管理部/广西应急管理厅</a> <span class="opp-tag">🎯 冶金作业管控/有限空间AI监管</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">督导反馈</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">自治区督导反馈柳州市矿山、危化品和烟花爆竹安全生产突出问题</a></h4>
+    <div class="card-body">
+      <p>自治区安全生产督导工作组向柳州市反馈矿山、危险化学品和烟花爆竹领域督导情况，指出部分企业存在<strong>重大危险源包保责任落实不到位、特殊作业管理不规范、监测预警系统运行不正常</strong>等突出问题，要求建立问题清单、责任清单、整改清单"三张清单"，限期闭环整改并组织"回头看"，严防执法检查"宽松软虚"。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">广西应急管理厅</a> <span class="opp-tag">🎯 重大危险源在线监测/特殊作业电子票证</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">执法曝光</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">广西曝光工贸领域"打非治违""一案双罚"典型执法案例</a></h4>
+    <div class="card-body">
+      <p>广西应急管理部门集中曝光一批工贸行业"打非治违"典型执法案例，对企业违法违规行为及相关责任人同步实施<strong>"一案双罚"</strong>，涉及未落实全员安全生产责任制、特种作业人员无证上岗、安全设备缺失失效等问题。案例显示监管执法持续从严，企业端安全投入与技防改造需求加速释放，特种作业核验、安全设备联网监管成为合规刚需。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">广西应急管理厅</a> <span class="opp-tag">🎯 特种作业人脸核验/安全设备联网</span></div>
+  </div>
+</div>
+
+<!-- 二、化工园区封闭化与危化品治理 -->
+<div class="section">
+  <div class="section-title">🏭 化工园区封闭化与危化品治理</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">公开招标</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purchases/48c12b7229ca00b725bfdf19c85804b8.html" target="_blank" rel="noopener noreferrer">2026年钦州石化产业园封闭化运营管理服务项目公开招标</a></h4>
+    <div class="card-body">
+      <p>中马钦州产业园区应急管理局发布<strong>2026年钦州石化产业园封闭化运营管理服务项目</strong>公开招标（项目编号QZZC2026-G3-980012-GXJT），<strong>9月28日开标</strong>，服务期1年，投标人须具备保安服务许可证。服务内容涵盖园区封闭化卡口值守、人车管控、巡逻防范与应急联动，是广西化工园区<strong>"二道门"封闭化管理体系</strong>落地的标志性项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purchases/48c12b7229ca00b725bfdf19c85804b8.html" target="_blank" rel="noopener noreferrer">中国机电设备招标中心</a> <span class="opp-tag">🎯 二道门卡口/周界/危化车辆管控（核心）</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">配套工程</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/0067/0101/20260902/0067e21abf84d5f14e719b13ab817b737b87.html" target="_blank" rel="noopener noreferrer">钦州化工园区封闭化管理（一期）南港大道路面恢复工程谈判采购</a></h4>
+    <div class="card-body">
+      <p>钦州化工园区封闭化管理（一期）配套<strong>南港大道零星路面恢复专业工程</strong>发布谈判采购，标志园区封闭化物理隔离设施（卡口、道闸、围网、道路）进入施工配套阶段。随着封闭化管理一期持续推进，园区<strong>周界报警、卡口车辆识别、道路视频监控补点</strong>及后续运维需求将同步释放，是安防企业跟进工程包的重要节点。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/0067/0101/20260902/0067e21abf84d5f14e719b13ab817b737b87.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a> <span class="opp-tag">🎯 封闭化施工期周界/卡口/道路监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">管控通告</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://w.huanqiu.com/article/4T6uniSoGZM" target="_blank" rel="noopener noreferrer">南宁：东博会期间（9.15—9.21）停止运输六类危险物品</a></h4>
+    <div class="card-body">
+      <p>南宁市公安局发布通告，第23届中国—东盟博览会、中国—东盟商务与投资峰会期间（<strong>9月15日至21日</strong>），全市行政区域内停止运输枪支弹药、民用爆炸物品、烟花爆竹、剧毒化学品、放射性物品、涉爆危险化学品等<strong>六类危险物品</strong>；确需运输的须严格审批并按指定路线、时间通行，沿线卡口检查与危化车辆动态监控全面升级。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://w.huanqiu.com/article/4T6uniSoGZM" target="_blank" rel="noopener noreferrer">环球网/南宁警方</a> <span class="opp-tag">🎯 危化车辆路线监控/卡口布控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">风险排查</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://sthjj.nanning.gov.cn/zwdt/gzdt/t6713756.html" target="_blank" rel="noopener noreferrer">南宁东盟经开区开展危化品行业环境风险隐患排查</a></h4>
+    <div class="card-body">
+      <p>南宁—东盟经济开发区生态环境局组织开展危险化学品行业环境风险隐患排查专项行动，累计排查危化品企业<strong>5家、出动20人次</strong>，重点检查企业环境应急物资储备、雨污分流、事故应急池、挥发性有机物治理设施运行及风险预警措施落实情况，建立隐患台账并督促限期整改，筑牢园区环境与安全双重防线。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://sthjj.nanning.gov.cn/zwdt/gzdt/t6713756.html" target="_blank" rel="noopener noreferrer">南宁市生态环境局</a> <span class="opp-tag">🎯 园区环境风险预警/废气在线监测联动</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">企业招标</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="https://m.bidizhaobiao.com/tag_6_121_66/" target="_blank" rel="noopener noreferrer">中国石油广西石化VOCs废气治理改造、液化气罐区隐患治理密集招标</a></h4>
+    <div class="card-body">
+      <p>中国石油广西石化公司近期密集发布安全环保治理类招标：<strong>VOCs废气治理改造施工合同</strong>、液化气罐区脱水系统安全隐患治理（四次）等项目相继挂网，涉及炼油装置区与储罐区废气收集治理、罐区安全隐患整改。炼厂罐区与装置区对<strong>防爆视频监控、热成像测温、气体探测联动</strong>需求明确，改造期是安防设备更新切入窗口。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/tag_6_121_66/" target="_blank" rel="noopener noreferrer">必联网招标公告</a> <span class="opp-tag">🎯 罐区防爆摄像/热成像/气体探测联动</span></div>
+  </div>
+</div>
+
+<!-- 三、矿山与尾矿库安全 -->
+<div class="section">
+  <div class="section-title">⛏️ 矿山与尾矿库安全</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">督导反馈</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="https://gx.chinamine-safety.gov.cn/news/9/content_3628.html" target="_blank" rel="noopener noreferrer">河池市矿山安全生产专项督导反馈：地下矿山、尾矿库、露天矿山全覆盖自查</a></h4>
+    <div class="card-body">
+      <p>河池市召开矿山安全生产突出问题专项督导反馈暨三季度专题会商会，通报对<strong>地下矿山、尾矿库、露天矿山</strong>及危化品企业全覆盖自查情况，要求对照督导反馈问题建立"三张清单"闭环整改，强化尾矿库汛期安全、地下矿山通风与提升运输系统、露天矿山边坡稳定性监测，压实矿方<strong>监控系统运维与数据上报</strong>责任。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.chinamine-safety.gov.cn/news/9/content_3628.html" target="_blank" rel="noopener noreferrer">国家矿山安监局广西局</a> <span class="opp-tag">🎯 尾矿库在线监测/边坡雷达/人员定位</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">公开招标</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27881.html" target="_blank" rel="noopener noreferrer">广西2026年度尾矿库重金属污染防治技术服务公开招标</a></h4>
+    <div class="card-body">
+      <p>自治区生态环境厅启动<strong>2026年度尾矿库重金属污染防治技术服务</strong>公开招标，<strong>投标截止9月21日</strong>，服务内容涵盖全区尾矿库（重点为涉重金属尾矿库）污染状况排查、风险评估、治理方案编制与成效评估。项目将推动尾矿库环境风险监测网络完善，<strong>视频监控、水质在线监测与坝体位移监测</strong>融合建设需求可期。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27881.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 尾矿库坝体/水质在线监测+视频融合</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">部门规章</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7682590789460967988/" target="_blank" rel="noopener noreferrer">应急管理部令第22号：煤矿安全生产许可证实施办法公布（2027.1.1施行）</a></h4>
+    <div class="card-body">
+      <p>应急管理部公布第22号令《煤矿企业安全生产许可证实施办法》，自<strong>2027年1月1日起施行</strong>，明确煤矿取得安全生产许可证须具备<strong>安全监控系统、人员位置监测系统、重大危险源检测监控系统</strong>正常运行等条件，并对瓦斯、水害、火灾等灾害监测预警提出硬性要求。广西煤矿企业须在施行前完成监控系统达标升级，带来煤矿安全监控与人员定位改造窗口。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.chinamine-safety.gov.cn/disclosure/24/1.html" target="_blank" rel="noopener noreferrer">国家矿山安监局广西局</a> <span class="opp-tag">🎯 煤矿安全监控/人员定位/危险源监测升级</span></div>
+  </div>
+</div>
+
+<!-- 四、应急管理智能化与AI赋能 -->
+<div class="section">
+  <div class="section-title">🤖 应急管理智能化与AI赋能</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI+应急</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7680826384592028179/" target="_blank" rel="noopener noreferrer">中国—东盟"人工智能+应急管理"科创大赛决赛在钦州落幕</a></h4>
+    <div class="card-body">
+      <p>中国（广西）—东盟<strong>"人工智能+应急管理"</strong>科技创新大赛决赛在钦州落幕，共吸引<strong>517支队伍</strong>参赛、<strong>144个项目</strong>晋级决赛，设置生产安全事故防范、智能应急装备等赛道。柏科数据"<strong>危化品全链条智能治理平台/三级岗位智能体</strong>"等项目获奖，展示AI在危化品监管、风险预警、应急指挥中的落地路径，赛事成果将面向广西应急系统转化推广。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gx.people.com.cn/GB/349603/394524/index.html" target="_blank" rel="noopener noreferrer">人民网广西频道</a> <span class="opp-tag">🎯 危化品智能治理平台/AI风险预警合作</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI+消防</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7682607811980820998/" target="_blank" rel="noopener noreferrer">"智汇消防"AI消防救援创新大赛决赛在南宁启幕</a></h4>
+    <div class="card-body">
+      <p><strong>"智汇消防"</strong>人工智能消防救援创新大赛决赛在南宁启幕，<strong>52支队伍</strong>入围角逐，赛道覆盖石化园区火灾处置、危化品泄漏侦检、智能消防装备等方向，重点比拼AI图像识别、无人机侦察、消防机器人与指挥调度融合能力。<strong>石化园区应急赛道</strong>设置与广西北部湾石化产业集群安全需求高度契合，智能消防装备采购有望加速。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7682607811980820998/" target="_blank" rel="noopener noreferrer">广西消防/今日头条</a> <span class="opp-tag">🎯 石化园区热成像火灾预警/消防联动</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">公开招标</span>
+      <span class="card-date">08-31</span>
+    </div>
+    <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260831/00458cf7065e2710445c8d71b12183365ccc.html" target="_blank" rel="noopener noreferrer">那坡县5G应急智慧调度云平台配置项目公开招标（预算316.89万元）</a></h4>
+    <div class="card-body">
+      <p>百色那坡县<strong>5G应急智慧调度云平台配置项目</strong>公开招标（编号BSZC2026-G1-260138-YJZX），预算<strong>316.89万元</strong>，<strong>9月21日开标</strong>，建设内容含指挥调度大厅、<strong>37辆救护车车载定位与音视频监控终端、智能调度系统</strong>及5G应急通信链路，实现突发事件"一键调度、视频回传、全程可视"，是县域应急指挥智能化的典型新建项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260831/00458cf7065e2710445c8d71b12183365ccc.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台（广西）</a> <span class="opp-tag">🎯 指挥大厅显控/车载视频/智能调度</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">信息化培训</span>
+      <span class="card-date">09-03</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7681264944750330422/" target="_blank" rel="noopener noreferrer">玉林市应急管理局开展信息化平台与直连卫星应急通信专项培训</a></h4>
+    <div class="card-body">
+      <p>玉林市应急管理局组织开展应急管理信息化专项培训，内容覆盖<strong>应急管理综合应用平台、应急"一张图"、灾害风险视频监控汇聚平台</strong>操作应用及<strong>公众直连卫星应急通信</strong>终端使用，提升基层灾情信息报送、视频会商与断网条件下通信保障能力。视频监控汇聚平台的深度应用意味着市县两级视频资源联网共享与前端补点需求持续存在。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681264944750330422/" target="_blank" rel="noopener noreferrer">玉林市应急管理局</a> <span class="opp-tag">🎯 应急视频汇聚平台/前端补点/卫星图传</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">演练比武</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="http://gx.people.com.cn/GB/349603/394524/index.html" target="_blank" rel="noopener noreferrer">八桂应急先锋社区响应队技能比武在贵港举行（14市280人参赛）</a></h4>
+    <div class="card-body">
+      <p>9月1日至3日，八桂应急先锋社区响应队技能比武在<strong>贵港</strong>举行，全区<strong>14个设区市28支队伍280人</strong>参赛，围绕灾情侦察、心肺复苏、绳索救援、初期火灾处置等科目比拼。比武同步明确基层应急装备配备标准，<strong>便携式侦察摄像头、布控球、单兵图传</strong>等轻量化视频装备在社区响应队配置中存在批量采购空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gx.people.com.cn/GB/349603/394524/index.html" target="_blank" rel="noopener noreferrer">人民网广西频道</a> <span class="opp-tag">🎯 布控球/单兵图传/基层应急装备包</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">应急预案</span>
+      <span class="card-date">09-04</span>
+    </div>
+    <h4><a href="http://yjglt.gxzf.gov.cn/gwgg/" target="_blank" rel="noopener noreferrer">广西印发《西部陆海新通道（平陆）运河航运突发事件应急预案》</a></h4>
+    <div class="card-body">
+      <p>自治区印发<strong>《西部陆海新通道（平陆）运河航运突发事件应急预案》</strong>，明确船舶碰撞、搁浅、危化品泄漏、火灾爆炸等突发事件分级响应与部门协同机制，配套应急演练与物资储备要求。平陆运河通航在即、化工品航运占比高，<strong>运河沿线危化品船舶动态监控、桥区/闸口视频感知、泄漏应急指挥</strong>系统建设进入前置布局期。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yjglt.gxzf.gov.cn/gwgg/" target="_blank" rel="noopener noreferrer">广西应急管理厅</a> <span class="opp-tag">🎯 运河危化船舶监控/闸口热成像</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">企业采购</span>
+      <span class="card-date">09-02</span>
+    </div>
+    <h4><a href="https://www.anfangzb.com/tag/45_3637_shipinlianwang.html" target="_blank" rel="noopener noreferrer">广西北港新材料（北海）视频监控安防管理平台升级服务采购</a></h4>
+    <div class="card-body">
+      <p>北海冶金企业<strong>广西北港新材料有限公司</strong>发布视频监控安防管理平台升级服务采购，预算<strong>9.5万元</strong>，对现有视频联网平台进行版本升级与点位梳理。作为不锈钢冶炼龙头企业，其厂区高温冶炼、煤气区域、有限空间作业场景对<strong>热成像测温、防爆监控与AI作业行为分析</strong>需求突出，平台升级是存量设备替换与智能化扩容的切入点。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.anfangzb.com/tag/45_3637_shipinlianwang.html" target="_blank" rel="noopener noreferrer">安防招采网</a> <span class="opp-tag">🎯 冶金厂区热成像/防爆/AI作业分析</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西化工煤炭行业简报</strong> · 2026.08.31—09.06<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
