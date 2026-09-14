@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西教育行业简报 · 2026.09.07—09.13</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🎓 广西教育行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 18 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是AI智慧校园项目从单点示范进入规模化采购阶段。</strong>南宁市现代教育技术中心AI智慧校园项目531.5万元公开招标（A分标301.5万、B分标230万），9月29日开标；南宁职业技术大学AI赋能智慧教室500万、AI智数服务平台项目相继发布采购意向和竞价公告，AI+教育成为秋季学期新基建投入重点方向。</p>
+  <p><strong>二是职业教育提质升级动作密集，本科层次职业学校落地。</strong>广西职业技术大学9月9日正式揭牌（公办本科职校，首批5个本科专业），南宁职业技术大学智慧交通产业学院实训中心475万采购意向发布，职业本科+实训基地建设同步加速，带动实训智能化和校园安防投入。</p>
+  <p><strong>三是中小学智慧校园与智能化专项项目持续释放，人脸识别门禁需求突出。</strong>防城港市第九小学205.4万、第十中学267.5万智能化专项项目签合同，东兴市信息化教学设备一体机331.2万招标，桂林农业学校智慧校园+宿舍人脸识别门禁86.25万中标，中小学智能化改造从城市向县域下沉。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>南宁市AI智慧校园项目 · 预算 531.51 万元，投标截止 9-29</li>
+    <li>南宁职业技术大学AI赋能智慧教室 · 预算 500 万元（采购意向）</li>
+    <li>南职大智慧交通产业学院实训中心 · 预算 475 万元（采购意向）</li>
+    <li>防城港市第十中学智能化专项 · 合同 267.5 万元，9-08签合同</li>
+    <li>防城港市第九小学智能化专项 · 合同 205.4 万元，9-08签合同</li>
+    <li>东兴市信息化教学设备一体机 · 预算 331.2 万元，9-07招标</li>
+    <li>桂林农业学校智慧校园+人脸识别门禁 · 中标 86.25 万元</li>
+  </ul>
+</div>
+
+<!-- 一、AI智慧校园与教育数字化 -->
+<div class="section">
+  <div class="section-title">🤖 AI智慧校园与教育数字化</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260908/0045cf73b4a4dd1741b184e83eaa4282e4e0.html" target="_blank" rel="noopener noreferrer">南宁市AI智慧校园项目公开招标 · 预算531.51万元</a></h4>
+    <div class="card-body">
+      <p>南宁市现代教育技术中心发布<strong>AI智慧校园项目公开招标公告</strong>（NNZC2026-G3-990801-GXKL），<strong>总预算531.51万元</strong>，分A分标301.51万、B分标230万元，9月29日开标。项目含AI智慧校园软硬件两批，A分标30天交货安装、B分标45天交付。AI正从单点应用向校园整体AI化升级迈进，是下半年教育信息化最大单体项目之一。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260908/0045cf73b4a4dd1741b184e83eaa4282e4e0.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a> <span class="opp-tag">🎯 AI智慧校园531万</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>南宁职业技术大学AI赋能智慧教室 · 预算500万元采购意向</h4>
+    <div class="card-body">
+      <p>南宁职业技术大学发布<strong>AI赋能智慧教室政府采购意向</strong>，预算500万元。设备清单含86寸智慧黑板、4K激光投影机、AI课堂分析、无感考勤、智慧信息处理终端、电子班牌及门禁、集控及信息发布管理平台等，<strong>搭建覆盖录播采集、无感考勤、AI课堂分析、线上督导、资源智能创作、教室物联管控的全链路数字化教学体系</strong>。职业本科高校智慧教室进入AI升级阶段。</p>
+    </div>
+    <div class="card-source">来源：启信宝 <span class="opp-tag">🎯 AI智慧教室+无感考勤</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>南宁职业技术大学AI智数服务平台项目竞价公告</h4>
+    <div class="card-body">
+      <p>南宁职业技术大学发布<strong>AI智数服务平台项目竞价公告</strong>，含智能体、服务器扩容配件、知识库建设与一年期服务、集成实施、云计算服务等。该校9月密集发布AI相关采购意向和招标，从智慧教室到智数平台全面布局AI，是广西职业本科院校数字化建设的标杆项目，后续安防智能化升级可期。</p>
+    </div>
+    <div class="card-source">来源：启信宝 <span class="opp-tag">🎯 AI智数平台</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>南职大智慧交通产业学院智能网联汽车+低空智能应用实训中心 · 475万</h4>
+    <div class="card-body">
+      <p>南宁职业技术大学发布<strong>智慧交通产业学院智能网联汽车技术与低空智能应用技术实训中心</strong>采购意向，预算475万元。低空智能应用首次进入高校实训中心建设，无人机、低空智能检测等方向的实训设备与配套安防监控需求明确，是产教融合背景下的新蓝海。</p>
+    </div>
+    <div class="card-source">来源：启信宝 <span class="opp-tag">🎯 低空智能实训+安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-09</span>
+    </div>
+    <h4>南宁市教育资源公共服务平台和教育管理公共服务平台公开招标</h4>
+    <div class="card-body">
+      <p>南宁市现代教育技术中心发布<strong>2026年南宁市教育资源公共服务平台和教育管理公共服务平台</strong>公开招标公告（NNZC2026-G3-990809-FHGJ）。"两个平台"是南宁教育信息化的基础底座升级项目，涉及全市教育资源汇聚与教育管理数字化，平台建设中视频监控集成、AI分析应用等模块具备较大拓展空间。</p>
+    </div>
+    <div class="card-source">来源：企查查 <span class="opp-tag">🎯 教育平台底座升级</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4>南宁市本级为民办实事-班班通教室项目（六期）中标公告</h4>
+    <div class="card-body">
+      <p>南宁市现代教育技术中心发布<strong>2026年南宁市本级为民办实事-班班通教室项目（六期）中标公告</strong>。班班通教室是南宁教育信息化持续投入的民生工程，每期覆盖多所学校多媒体教室升级，含触控一体机、教学录播、互动终端等设备，持续为教育信息化提供稳定增量市场。</p>
+    </div>
+    <div class="card-source">来源：企查查</div>
+  </div>
+</div>
+
+<!-- 二、职业教育与高校建设 -->
+<div class="section">
+  <div class="section-title">🏫 职业教育与高校建设</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">院校动态</span>
+      <span class="card-date">09-09</span>
+    </div>
+    <h4><a href="https://gxzjy.edu.cn/xwdt/202609/t20260909_157159.html" target="_blank" rel="noopener noreferrer">广西职业技术大学正式揭牌 · 广西新添公办本科职业学校</a></h4>
+    <div class="card-body">
+      <p>9月9日，<strong>广西职业技术大学正式揭牌</strong>，自治区副主席蓝晓出席并揭牌。该校2026年经教育部批准，以广西职业技术学院为基础设立公办本科层次职业学校，首批开设茶叶生产与应用技术、食品工程技术、现代物流管理、自动化技术与应用、数据安全技术与管理5个本科专业，由广西国控集团举办。升本后校园智能化建设与安全防护升级需求随之增加。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gxzjy.edu.cn/xwdt/202609/t20260909_157159.html" target="_blank" rel="noopener noreferrer">广西职业技术大学官网</a> <span class="opp-tag">🎯 升本后智能化升级</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">重点实验室</span>
+      <span class="card-date">09-12</span>
+    </div>
+    <h4><a href="https://www.gxu.edu.cn/xwzx/xdyw.htm" target="_blank" rel="noopener noreferrer">关键金属选冶与高纯制程全国重点实验室广西基地在广西大学揭牌</a></h4>
+    <div class="card-body">
+      <p>9月12日，<strong>关键金属选冶与高纯制程全国重点实验室广西基地</strong>在广西大学揭牌成立。该基地聚焦铝、锡、锑、铟等广西优势关键金属选冶与高纯制程技术研发，是支撑广西有色金属产业高质量发展的重要科研平台。重点实验室建设通常配套精密安防、环境监控、智能门禁等系统需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxu.edu.cn/xwzx/xdyw.htm" target="_blank" rel="noopener noreferrer">广西大学官网</a> <span class="opp-tag">🎯 重点实验室安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>右江民族医学院百东校区图书馆公共区域监控项目更正公告（二）</h4>
+    <div class="card-body">
+      <p>右江民族医学院发布<strong>百东校区图书馆公共区域监控项目（GXJD-26114LL051836）更正公告（二）</strong>。百东新校区图书馆公共区域视频监控系统建设持续推进，是高校新校区智能化安防体系的重要组成部分。该校本周还发布了技能中心无人执考项目竞争性谈判公告，AI无人执考系统建设提速。</p>
+    </div>
+    <div class="card-source">来源：右江民族医学院官网 <span class="opp-tag">🎯 图书馆监控+无人执考</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>右江民族医学院2026年第二批自治区级实验教学中心建设项目成交</h4>
+    <div class="card-body">
+      <p>右江民族医学院发布<strong>第二批自治区级实验教学中心（目录外产品）建设项目成交结果公告</strong>（GXZC2026-J1-002951-YZLZ）。自治区级实验教学中心建设是高校教学条件提升的重点投入方向，涉及实验设备、教学软件和配套信息化系统，持续释放采购需求。</p>
+    </div>
+    <div class="card-source">来源：右江民族医学院官网</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>广西农业职业技术大学智慧校园安消应急处突指挥中心成交 · 49.66万元</h4>
+    <div class="card-body">
+      <p>广西农业职业技术大学<strong>智慧校园安消应急处突指挥中心建设项目（基础环境与显示平台建设）</strong>成交结果公告发布，成交金额49.66万元，成交方广西恒瑞通达信息科技。安消应急处突指挥中心是智慧校园安全管理的核心枢纽，后续还将带动前端监控设备升级和AI智能分析应用扩展。</p>
+    </div>
+    <div class="card-source">来源：千里马招标网 <span class="opp-tag">🎯 安消指挥中心</span></div>
+  </div>
+</div>
+
+<!-- 三、中小学智能化与安全 -->
+<div class="section">
+  <div class="section-title">🏢 中小学智能化与校园安全</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">合同</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4>防城港市第十中学智能化专项项目（重）合同签订 · 267.5万元</h4>
+    <div class="card-body">
+      <p>防城港市教育局发布<strong>第十中学智能化专项项目（重）合同公告</strong>（FCZC2026-G1-990119-GXZL），<strong>合同金额267.5万元</strong>，中标方中国电信防城港分公司。该项目涵盖校园视频安防监控、综合布线、网络系统等智能化内容，8月24日中标后9月8日正式签合同，进入实施阶段。</p>
+    </div>
+    <div class="card-source">来源：剑鱼标讯 <span class="opp-tag">🎯 中学智能化267万</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">合同</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4>防城港市第九小学智能化专项项目（重）合同签订 · 205.4万元</h4>
+    <div class="card-body">
+      <p>防城港市教育局发布<strong>第九小学智能化专项项目（重）合同公告</strong>（FCZC2026-G1-990120-GXZL），<strong>合同金额205.4万元</strong>，中标方中国电信防城港分公司。从分项明细可见，视频安防监控系统集成服务、安防设备配电箱为重要组成部分。防城港新建学校智能化专项采购已形成标准化模式。</p>
+    </div>
+    <div class="card-source">来源：比地招标网 <span class="opp-tag">🎯 小学智能化205万</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4>东兴市信息化教学设备采购一体机项目公开招标 · 331.2万元</h4>
+    <div class="card-body">
+      <p>防城港市公共资源交易中心发布<strong>2026年东兴市信息化教学设备采购一体机项目公开招标公告</strong>，<strong>预算331.2万元</strong>。东兴作为边境县级市持续加大教育信息化投入，教学触控一体机是班班通工程的核心设备，后续配套校园广播、安防监控等整合空间大。</p>
+    </div>
+    <div class="card-source">来源：剑鱼标讯 <span class="opp-tag">🎯 教育信息化331万</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-4-441417454.html" target="_blank" rel="noopener noreferrer">广西桂林农业学校智慧校园+宿舍人脸识别门禁 · 中标86.25万元</a></h4>
+    <div class="card-body">
+      <p>广西桂林农业学校<strong>"智慧校园系统——智慧校园年服务+宿舍人脸识别门禁管理设备"项目</strong>发布成交结果公告，<strong>中标金额86.25万元</strong>，中标方成都依能科技（项目编号GLZC2026-C3-990383-GXRY）。项目含智慧校园年服务与宿舍人脸识别门禁管理设备，自验收后提供3年运维。中职学校宿舍人脸识别正在成为标配。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-4-441417454.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 人脸门禁+智慧校园</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>广西交通运输学校校园管理软件项目竞争性磋商公告</h4>
+    <div class="card-body">
+      <p>广西交通运输学校发布<strong>校园管理软件项目竞争性磋商公告</strong>，响应截止9月22日。中等职业学校数字化管理软件需求持续释放，与智慧校园平台、校园门禁、安防监控系统的数据互联是后续增值服务方向。</p>
+    </div>
+    <div class="card-source">来源：广西招标网</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>兴安县高尚镇中心小学校园田径场项目成交</h4>
+    <div class="card-body">
+      <p>兴安县高尚镇中心小学校园田径场项目发布成交公告，建设内容含跑道地面硬化、新建排水暗沟、沉砂井、篮球场、足球场、跳远砂坑、铅球场地等。农村义务教育学校运动场建设持续投入，校园体育设施建设常伴随公共广播系统和视频监控系统的配套需求。</p>
+    </div>
+    <div class="card-source">来源：千里马招标网</div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西教育行业简报</strong> · 2026.09.07—09.13<br>
+  编制：海康威视广西行业经理 · 聚焦智慧校园与安防项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
