@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西公安行业简报 · 2026.09.07—09.13</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🛡️ 广西公安行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是自治区级公安数字化改革重大项目集中发布。</strong>自治区公安厅发布环食药侦综合应用系统采购（预算654.07万元），涵盖案件管理、多跨协同、情报预警、移动警务等8大子系统，标志着广西公安数字化改革从通用平台向专业警种纵深推进。</p>
+<p><strong>二是智慧监管与执法办案提质增效双线并行。</strong>百色市公安局智慧监管项目服务器机柜租赁服务（54万元）启动采购、防城港执法办案管理中心提质增效项目发布竞争性谈判、南宁铁路公安局柳州公安处办案中心维修改造成交，执法办案与智慧监管基础设施升级需求持续释放。</p>
+<p><strong>三是基层警务装备与实战化建设多点开花。</strong>玉林兴业县公安局警用装备采购（62.61万元）、崇左市公安局档案数字化服务、来宾兴宾分局心理健康服务站设施采购、防城港公安局第二次招聘辅警161人等，反映基层警务保障与实战能力建设同步加强。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西公安环食药侦综合应用系统 · 预算 654.07 万元，投标截止 9-30</li>
+<li>防城港市公安局执法办案管理中心提质增效项目 · 竞争性谈判，9月发布</li>
+<li>百色市公安局智慧监管服务器机柜租赁 · 预算 54 万元，响应截止 9-22</li>
+<li>玉林兴业县公安局警用装备采购 · 预算 62.61 万元，谈判截止 9-16</li>
+<li>崇左市公安局办公室档案数字化服务 · 竞争性磋商，9-11发布</li>
+<li>横州市公安局非机动车号牌采购 · 9-11发布中标公告</li>
+<li>南宁铁路公安局柳州公安处办案中心维修改造 · 9-11成交公告</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">🖥️ 公安数字化改革与智慧应用</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/eb7016de-0121-11ea-9a73-00163e08d0d2" target="_blank" rel="noopener noreferrer">广西公安数字化改革之环食药侦综合应用系统采购 · 预算 654.07 万元</a></h4>
+    <div class="card-body">
+      <p>自治区公安厅发布<strong>环食药侦综合应用系统公开招标公告</strong>，预算654.07万元，含案件管理子系统、多跨协同子系统、技术支撑子系统、情报预警子系统、数据生态服务、移动警务应用等8大模块，投标截止9月30日。该项目是广西公安数字化改革在专业警种领域的重点落地项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/eb7016de-0121-11ea-9a73-00163e08d0d2" target="_blank" rel="noopener noreferrer">启信宝/广西公安厅</a> <span class="opp-tag">🎯 654万数字化改革</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4><a href="https://zb.zhaobiao.cn/bidding_v_b68cf992893eb343a5bc19dd523270d5.html" target="_blank" rel="noopener noreferrer">百色市公安局智慧监管项目服务器机柜租赁服务 · 预算 54 万元</a></h4>
+    <div class="card-body">
+      <p>百色市公安局发布<strong>智慧监管项目服务器机柜租赁服务竞争性磋商公告</strong>，预算54万元，租赁期3年，响应截止9月22日。智慧监管系统对机房基础设施需求持续增长，带动机柜租赁、运维服务等配套需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://zb.zhaobiao.cn/bidding_v_b68cf992893eb343a5bc19dd523270d5.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 智慧监管基础设施</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">防城港市公安局执法办案管理中心提质增效项目 · 竞争性谈判</a></h4>
+    <div class="card-body">
+      <p>防城港市公安局发布<strong>执法办案管理中心提质增效项目竞争性谈判公告</strong>，聚焦执法办案场所的智能化升级与流程优化。执法办案管理中心是公安执法规范化建设的核心载体，智能化改造需求在沿边沿海城市持续释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 执法办案智能化</span></div>
+  </div>
+
+</div>
+<div class="section">
+  <div class="section-title">🏛️ 基层警务装备与实战建设</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="http://www.xingye.gov.cn/zfxxgk/xxgkml/zdlyxxgk/zfcgly/cggg/t28114191.shtml" target="_blank" rel="noopener noreferrer">玉林兴业县公安局警用装备采购项目 · 预算 62.61 万元</a></h4>
+    <div class="card-body">
+      <p>兴业县公安局发布<strong>警用装备采购竞争性谈判公告</strong>，预算62.61万元，要求5个工作日内交货，谈判截止9月16日。县级公安机关持续补充更新警用装备，是基层警务保障常态化投入的重要组成部分。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.xingye.gov.cn/zfxxgk/xxgkml/zdlyxxgk/zfcgly/cggg/t28114191.shtml" target="_blank" rel="noopener noreferrer">兴业县人民政府网</a> <span class="opp-tag">🎯 基层警用装备</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">崇左市公安局办公室档案数字化服务项目 · 竞争性磋商</a></h4>
+    <div class="card-body">
+      <p>崇左市公安局发布<strong>办公室档案数字化服务项目竞争性磋商公告</strong>（HSZBD3C2026026）。公安档案数字化是数字警务的基础工程，涉及文书档案、业务档案、声像档案等多类型数字化处理，市场空间稳步增长。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 档案数字化</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">南宁铁路公安局柳州公安处办案中心维修改造工程 · 成交公告</a></h4>
+    <div class="card-body">
+      <p>云之龙咨询集团发布<strong>南宁铁路公安局柳州公安处办案中心维修改造工程成交结果公告</strong>（YZLLZ2026-C2-072-LZQT）。铁路公安办案场所升级改造持续推进，安防监控、门禁系统、执法音视频记录等配套需求同步增长。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 办案中心改造</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">横州市公安局采购非机动车号牌项目 · 中标公告</a></h4>
+    <div class="card-body">
+      <p>广西建设工程机电设备招标中心发布<strong>横州市公安局非机动车号牌采购项目中标公告</strong>（NNZC2026-G1-270132-JGJD）。非机动车号牌管理涉及RFID芯片、识别系统、数据平台等，智慧交管向非机动车领域延伸趋势明显。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 智慧交管延伸</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">来宾市公安局兴宾分局心理健康服务站设施采购 · 询价公告</a></h4>
+    <div class="card-body">
+      <p>来宾市公安局兴宾分局发布<strong>心理健康服务站相关设施采购项目询价公告</strong>。公安队伍心理健康保障建设正在从东部向中西部基层单位推广，配套包含心理测评系统、减压放松设备及环境布置等。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 警营心理建设</span></div>
+  </div>
+
+</div>
+<div class="section">
+  <div class="section-title">🌊 边境防控与队伍建设</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="https://c.m.163.com/news/a/L6B6L2LO0514QR7L.html" target="_blank" rel="noopener noreferrer">防城港市公安局2026年度第二次公开招聘辅警161人</a></h4>
+    <div class="card-body">
+      <p>防城港市公安局发布<strong>第二次辅警招聘简章</strong>，计划招聘161人，报名时间9月7日至22日，交通管理岗位单独与支队签约。沿边沿海城市辅警队伍持续扩容，为边境管控、交通管理、治安巡防等一线岗位补充力量，也带动警用装备与信息化需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://c.m.163.com/news/a/L6B6L2LO0514QR7L.html" target="_blank" rel="noopener noreferrer">网易新闻/防城港交警</a> <span class="opp-tag">🎯 边境队伍扩容</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">武宣县公安局环食药侦查大队快检实验室建设装备 · 成交公告</a></h4>
+    <div class="card-body">
+      <p>广西扬达工程咨询有限公司发布<strong>武宣县公安局环食药侦查大队快速检测实验室建设装备采购项目成交公告</strong>。基层环食药侦能力建设正在广西各县区铺开，快检设备与实验室信息化是重要方向。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 环食药侦装备</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购</span>
+      <span class="card-date">09-12</span>
+    </div>
+    <h4><a href="https://www.yfbzb.com/zbzt/99/422/" target="_blank" rel="noopener noreferrer">贺州市公安局事业人员2026年度服装采购 · 竞价公告</a></h4>
+    <div class="card-body">
+      <p>贺州市公安局发布<strong>事业人员2026年度服装采购竞价公告</strong>。地市级公安局常态化服装及装备采购是稳定市场，智慧警务相关设备采购则更具增长性。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.yfbzb.com/zbzt/99/422/" target="_blank" rel="noopener noreferrer">乙方宝</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">玉林市公安局辅警配套用品采购 · 成交结果公告</a></h4>
+    <div class="card-body">
+      <p>广西建都工程项目管理有限公司发布<strong>玉林市公安局辅警配套用品采购成交结果公告</strong>（GXJD-ZB-2026055）。辅警队伍的装备与后勤保障采购正在走向规范化、集中化，安防防护类装备需求同步增长。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 辅警装备</span></div>
+  </div>
+
+</div>
+<div class="section">
+  <div class="section-title">📹 社会治安与执法动态</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">执法动态</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="https://www.gx.chinanews.com.cn/sh/" target="_blank" rel="noopener noreferrer">广西—东盟经开区深化警校共建 共筑校园安全防线</a></h4>
+    <div class="card-body">
+      <p>广西—东盟经济技术开发区公安分局联合交管中队深入辖区高校、中小学开展<strong>"开学安全教育第一课"活动</strong>。秋季开学季校园安防需求集中释放，警校共建机制持续深化，视频监控、一键报警、人脸门禁等校园安防设施需求稳定。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gx.chinanews.com.cn/sh/" target="_blank" rel="noopener noreferrer">中新网广西</a> <span class="opp-tag">🎯 校园安防</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">执法动态</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://gaj.fcgs.gov.cn/zwdt/index.shtml" target="_blank" rel="noopener noreferrer">防城港公安"护学岗"准时上线 护航秋季开学</a></h4>
+    <div class="card-body">
+      <p>防城港市公安局启动<strong>秋季新学期"护学岗"行动</strong>，多警种联动保障校园周边安全。护学岗常态化运作推动校园周边视频监控、智慧警务站、应急联动机制等基础设施持续完善。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gaj.fcgs.gov.cn/zwdt/index.shtml" target="_blank" rel="noopener noreferrer">防城港市公安局</a> <span class="opp-tag">🎯 护学岗安防</span></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">执法动态</span>
+      <span class="card-date">09-13</span>
+    </div>
+    <h4><a href="https://www.gx.chinanews.com.cn/sh/" target="_blank" rel="noopener noreferrer">首艘外贸船舶靠港南宁港 边检智慧勤务保障快速通关</a></h4>
+    <div class="card-body">
+      <p>首艘外贸船舶顺利靠泊南宁港，<strong>边检智慧勤务系统保障快速通关</strong>。随着平陆运河建设推进和内河港口开放，内河边检智能化需求将持续增长，智慧边检、口岸监控、人员车辆通关系统等市场空间广阔。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gx.chinanews.com.cn/sh/" target="_blank" rel="noopener noreferrer">中新网广西</a> <span class="opp-tag">🎯 智慧边检</span></div>
+  </div>
+
+</div>
+
+
+</main>
+
+<footer class="footer">
+  <strong>广西公安行业简报</strong> · 2026.09.07—09.13<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
