@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西交通运输行业简报 · 2026.09.07—09.13</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🚚 广西交通运输行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是平陆运河通航进入倒计时，智慧水运基础设施全面落地。</strong>9月7日自治区政府宣布平陆运河9月16日通航，中国移动广西公司已全面建成运河感知网、传输专网与5G专网，广西水运江河海一体化智慧调度平台上线，视频监控、船舶AIS、雷达、水文气象等十余种感知手段全域覆盖，后续运维及扩容市场空间巨大。</p>
+  <p><strong>二是高速公路与轨道交通智慧化采购密集释放。</strong>广西智能交通科技发布高速公路低空智能巡检设备采购173万元，南宁轨道交通智能运营中心（IOC）&数据治理项目重新招标，南宁邕城公交红外火焰智能监控系统采购完成，智慧交通感知与运营管理成为投资重点方向。</p>
+  <p><strong>三是数字交通与无人机执法走向常态化。</strong>南宁市交通运输领域无人机执法巡检政务应用试点由广西移动中标，广西计算中心发布定制化无人机集中采购招标，叠加交通厅等级保护测评及密评服务成交，交通行业数字化、智能化、低空化"三化"并进格局已经形成。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>平陆运河智慧调度与感知网 · 三大工程已建成，通航后运维扩容可期</li>
+    <li>南宁轨道交通智能运营中心(IOC)&数据治理项目 · 重招进行中</li>
+    <li>广西高速公路低空智能巡检设备组件 · 预算 173.33 万元</li>
+    <li>南宁航道视频监控系统及设备维护服务 · 9月10日发布采购公告</li>
+    <li>南宁市交通运输无人机执法巡检政务应用试点 · 广西移动中标</li>
+    <li>广西计算中心定制化无人机集中采购 · 9月7日发布招标</li>
+    <li>中越东兴—芒街智慧口岸项目 · 广西交科集团新增招标</li>
+  </ul>
+</div>
+
+<!-- 一、平陆运河与智慧水运 -->
+<div class="section">
+  <div class="section-title">🚢 平陆运河与智慧水运</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">重大节点</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4><a href="https://www.mot.gov.cn/xinwen/jiaotongyaowen/202609/t20260908_4223957.html" target="_blank" rel="noopener noreferrer">平陆运河9月16日建成通航：世纪工程进入运营期，智慧调度平台全面上线</a></h4>
+    <div class="card-body">
+      <p>9月7日自治区政府新闻发布会宣布<strong>平陆运河将于9月16日建成通航</strong>，总投资约727亿元，全长134.2公里，按内河Ⅰ级标准可通航5000吨级船舶。<strong>广西水运江河海一体化智慧调度平台已全面上线</strong>，航道、枢纽、指挥调度、海事执法四大板块全部准备到位，通航后每年可为社会节约运输费用超50亿元。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.mot.gov.cn/xinwen/jiaotongyaowen/202609/t20260908_4223957.html" target="_blank" rel="noopener noreferrer">交通运输部</a> <span class="opp-tag">🎯 智慧调度平台</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智慧感知</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="http://data.people.com.cn/rmrb/20260914/10/e7e69736d38b46bc8bede72e69eb77bf" target="_blank" rel="noopener noreferrer">中国移动全面建成平陆运河感知网：视频监控+AIS+雷达+水文十余种手段全覆盖</a></h4>
+    <div class="card-body">
+      <p>中国移动广西公司为平陆运河量身打造<strong>无线网、传输专网与感知网三大工程</strong>，构建"陆水空天"一体化监测感知体系，融合<strong>视频监控、船舶自动识别系统（AIS）、雷达、水文气象监测</strong>等十余种技术手段。沿运河铺设262公里高速光纤专网，创新引入"5G专网+边缘计算"双引擎架构，船舶识别、视频分析等业务实现毫秒级就近处理。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://data.people.com.cn/rmrb/20260914/10/e7e69736d38b46bc8bede72e69eb77bf" target="_blank" rel="noopener noreferrer">人民日报</a> <span class="opp-tag">🎯 视频监控+AI</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4><a href="https://www.gxghj.cn/h5/c/zc/tzgg?pid=zc_1" target="_blank" rel="noopener noreferrer">南宁航道和船检管理中心2026年航道视频监控系统及设备维护服务采购公告</a></h4>
+    <div class="card-body">
+      <p>广西壮族自治区南宁航道和船检管理中心发布<strong>2026年航道视频监控系统及设备维护服务项目采购公告</strong>，9月10日发布。该项目覆盖辖区内河航道视频监控系统的日常维护、故障抢修、设备巡检及技术支持，是水运航道安全运行的重要保障。南宁作为西江黄金水道核心城市，航道视频监控运维需求持续释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.gxghj.cn/h5/c/zc/tzgg?pid=zc_1" target="_blank" rel="noopener noreferrer">广西水运发展中心</a> <span class="opp-tag">🎯 航道视频运维</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>广西交通运输厅等级保护测评及密评服务成交结果公告</h4>
+    <div class="card-body">
+      <p>广西交通运输厅发布<strong>等级保护测评及密评服务成交结果公告</strong>，9月11日发布。该项目涉及交通行业信息系统的网络安全等级保护测评和商用密码应用安全性评估，是交通数字化转型中的安全基础设施。随着智慧交通系统建设提速，等保测评与密评需求将持续增长。</p>
+    </div>
+    <div class="card-source">来源：采招网 <span class="opp-tag">🎯 等保/密评服务</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">政策动态</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>自治区公路水路交通基础设施数字化转型升级月调度会在邕召开</h4>
+    <div class="card-body">
+      <p>9月10日，自治区<strong>公路水路交通基础设施数字化转型升级推进工作机制月调度会</strong>在南宁召开。会议持续推进广西交通数字化转型，重点围绕智慧高速、智慧港口、智慧航道等领域，加快构建数字交通基础设施体系。广西7月已印发全面推进公路水路交通基础设施数字化转型升级的实施意见，数字化投入进入加速期。</p>
+    </div>
+    <div class="card-source">来源：自治区交通运输厅 <span class="opp-tag">🎯 数字化转型</span></div>
+  </div>
+</div>
+
+<!-- 二、高速公路智慧化 -->
+<div class="section">
+  <div class="section-title">🛣️ 高速公路智慧化</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purchases/332bdac06c74398808e3e8f9bde8d291.html" target="_blank" rel="noopener noreferrer">广西智能交通科技高速公路低空智能巡检设备组件采购 · 预算 173.33 万元</a></h4>
+    <div class="card-body">
+      <p>广西智能交通科技有限公司发布<strong>2026年9月高速公路低空智能巡检设备组件采购项目</strong>，预算上限173.33万元，要求无人机及机巢生产制造商或代理商参与。项目采购低空智能巡检设备组件，含36个月质保，交货期13天。高速公路无人机巡检正从试点向规模化部署推进，机巢+无人机的自动巡检模式成为趋势。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purchases/332bdac06c74398808e3e8f9bde8d291.html" target="_blank" rel="noopener noreferrer">中国e车网</a> <span class="opp-tag">🎯 无人机巡检</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>南宁市交通运输领域无人机执法巡检政务应用试点成交公告 · 广西移动中标</h4>
+    <div class="card-body">
+      <p>南宁市交通运输局发布<strong>交通运输领域无人机执法巡检政务应用试点成交公告</strong>，中国移动广西公司中标。该试点聚焦无人机在交通运输执法巡查、道路巡检、应急指挥等场景的政务应用，是广西交通执法数字化转型的重要探索。无人机+AI识别的执法模式将逐步推广至全区高速公路和普通国省道。</p>
+    </div>
+    <div class="card-source">来源：广西机电设备招标有限公司 <span class="opp-tag">🎯 无人机执法</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4>广西计算中心2026年第一批定制化无人机及相关设备集中采购招标</h4>
+    <div class="card-body">
+      <p>广西计算中心有限责任公司发布<strong>2026年第一批定制化无人机及相关设备集中采购招标公告</strong>，9月7日发布。作为广西交投集团旗下科技企业，广西计算中心的无人机集中采购将服务于高速公路、智慧交通等多个业务板块，体现出交通行业对无人机设备的规模化采购需求正在形成。</p>
+    </div>
+    <div class="card-source">来源：广西交投宏冠招标平台 <span class="opp-tag">🎯 无人机集中采购</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>贵港北港国际集装箱码头网络安全加固升级项目中标 · 预算 11.1 万元</h4>
+    <div class="card-body">
+      <p>广西贵港北港国际集装箱码头有限公司发布<strong>2026年年度网络安全加固升级项目中标结果公告</strong>，含边界防火墙一台、深信服端点安全软件20套等，控制价10.74万元。港口作为重要交通节点，网络安全与安防监控的双重加固需求持续释放，北部湾港务集团下属港口的智慧化改造具有规模复制效应。</p>
+    </div>
+    <div class="card-source">来源：广西招标网 <span class="opp-tag">🎯 港口网络安全</span></div>
+  </div>
+</div>
+
+<!-- 三、轨道交通与城市交通 -->
+<div class="section">
+  <div class="section-title">🚇 轨道交通与城市交通</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4><a href="https://www.nngdjt.com/html/9489/list_1.html" target="_blank" rel="noopener noreferrer">南宁轨道交通智能运营中心(IOC)&数据治理项目（重）招标公告</a></h4>
+    <div class="card-body">
+      <p>南宁轨道交通投资集团发布<strong>智能运营中心（IOC）&数据治理项目重新招标公告</strong>，9月7日置顶发布。该项目是南宁地铁智慧运营的核心中枢，旨在构建统一运营视图、数据治理体系和智能决策能力。项目经历首次招标后重新启动，体现出轨道交通行业对智慧运营平台建设的高标准要求和持续投入决心。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.nngdjt.com/html/9489/list_1.html" target="_blank" rel="noopener noreferrer">南宁轨道交通集团</a> <span class="opp-tag">🎯 智慧运营IOC</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>南宁轨道交通1、2号线工建专业设备设施委外维保项目（2026-2029）公开招标</h4>
+    <div class="card-body">
+      <p>南宁轨道交通运营有限公司发布<strong>1、2号线工建专业设备设施委外维保项目（2026年-2029年）公开招标公告</strong>，9月10日发布。项目覆盖南宁地铁1、2号线工建设施的长期运维服务，服务期长达3年。随着南宁地铁线网规模扩大，机电设备、安防监控、综合监控等系统的运维服务市场持续扩大。</p>
+    </div>
+    <div class="card-source">来源：广西招标网 <span class="opp-tag">🎯 地铁运维服务</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">出海东盟</span>
+      <span class="card-date">09-12</span>
+    </div>
+    <h4><a href="http://www.gxzf.gov.cn/html/gxyw/t28125525.shtml" target="_blank" rel="noopener noreferrer">南宁轨道交通MaaS智慧交通方案出海泰国："一码通城"落地孔敬市</a></h4>
+    <div class="card-body">
+      <p>南宁轨道交通投资集团输出的<strong>MaaS（出行即服务）智慧交通方案</strong>正在泰国孔敬市推进本地化适配改造，已完成部分功能建设。项目整合当地公交、共享双轮车等各类出行运力，依托AI智能调度、大数据搭建综合交通管理平台，东盟MaaS智慧交通系统（试用版）将亮相第23届东博会。这是南宁智慧交通技术首次规模化输出东盟市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/html/gxyw/t28125525.shtml" target="_blank" rel="noopener noreferrer">广西日报</a> <span class="opp-tag">🎯 MaaS智慧交通</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-09</span>
+    </div>
+    <h4>南宁邕城公交可视化红外火焰智能监控消防预警系统采购结果公示</h4>
+    <div class="card-body">
+      <p>南宁邕城公共交通有限公司发布<strong>城市公交场站复杂场景可视化红外火焰智能监控消防预警系统采购项目比选结果公示</strong>，9月9日发布。该系统采用红外热成像+AI智能识别技术，实现公交场站火焰隐患的实时监测与预警，是智慧公交安防的新应用场景。随着广西绿色公交体系建设推进，场站智能化安防需求将持续增长。</p>
+    </div>
+    <div class="card-source">来源：南宁轨道交通集团 <span class="opp-tag">🎯 红外监控+AI</span></div>
+  </div>
+</div>
+
+<!-- 四、铁路与综合交通 -->
+<div class="section">
+  <div class="section-title">🚄 铁路与综合交通</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">铁路动态</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4>南珠高铁玉林北至岑溪东段全线接触网送电成功</h4>
+    <div class="card-body">
+      <p>9月1日，<strong>南珠高铁玉林北至岑溪东段全线接触网送电成功</strong>，标志着该段电气化工程基本完成，为后续联调联试奠定基础。南珠高铁是广西通往粤港澳大湾区的重要通道，高铁沿线安防监控、通信信号、综合调度等系统的建设和运维需求将持续释放。</p>
+    </div>
+    <div class="card-source">来源：自治区交通运输厅 <span class="opp-tag">🎯 高铁安防监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-09</span>
+    </div>
+    <h4>桂林高铁基础设施段衡柳线二塘站轨道形变监测系统外包采购结果公示</h4>
+    <div class="card-body">
+      <p>南宁局集团公司桂林高铁基础设施段发布<strong>2026年衡柳线二塘站继续使用轨道形变监测系统业务外包采购项目结果公示</strong>，9月9日发布。轨道形变监测系统是高铁安全运营的重要技术保障，集成传感器、视频监控、数据采集与智能分析等技术。广西高铁里程持续增长，基础设施监测的智能化需求稳步提升。</p>
+    </div>
+    <div class="card-source">来源：南宁局集团公司 <span class="opp-tag">🎯 轨道监测系统</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-12</span>
+    </div>
+    <h4>中越东兴—芒街智慧口岸项目招标启动 · 广西交科集团参与</h4>
+    <div class="card-body">
+      <p>广西交科集团新增<strong>中越东兴—芒街智慧口岸相关项目招标</strong>，9月12日发布。作为广西边境重要口岸，东兴口岸智慧化升级涵盖智能卡口、视频监控、通关信息化等核心模块。继友谊关智慧口岸3.0上线后，东兴口岸的智能化建设将形成可复制的边境智慧口岸样板，带动广西沿边口岸整体升级。</p>
+    </div>
+    <div class="card-source">来源：企查查 <span class="opp-tag">🎯 智慧口岸</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">物流动态</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>西部陆海新通道班列累计发送货物突破600万标箱</h4>
+    <div class="card-body">
+      <p>9月11日，<strong>西部陆海新通道班列累计发送货物突破600万标箱</strong>，通道物流规模持续扩大。随着平陆运河通航，西部陆海新通道将形成铁公水空多式联运新格局。通道沿线的智慧物流平台、运输监控系统、口岸智能化设施等建设需求将进一步释放，为交通智能化企业带来广阔市场空间。</p>
+    </div>
+    <div class="card-source">来源：自治区交通运输厅 <span class="opp-tag">🎯 智慧物流</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西交通运输行业简报</strong> · 2026.09.07—09.13<br>
+  编制：海康威视广西行业经理 · 聚焦交通智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
