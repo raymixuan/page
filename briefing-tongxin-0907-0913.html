@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西通信运营商行业简报 · 2026.09.07—09.13</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>📡 广西通信运营商行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是运营商政企信息化项目加速释放，安防监控类需求旺盛。</strong>中电信数智科技广西分公司政企客户综合治理技术服务采购（第三次）预算134.4万元，含交通设施优化配置、智能监控技术部署；中国电信梧州分公司道路监控摄像头升级更新项目完成两标包中标；来宾公共安全视频监控运维、防城港监控设备运维等项目持续推进。</p>
+  <p><strong>二是AI与算力成为运营商投资新方向。</strong>中国电信广西智算推理一体机租用采购、中国联通桂林AI工单智能处理系统定制化服务、广西移动位置能力开发与动环监控系统技术支持服务等项目集中发布，三大运营商均在加大AI应用与算力基础设施投入，AI+安防的融合应用场景持续拓展。</p>
+  <p><strong>三是运营商渠道项目多点开花，生态合作空间广阔。</strong>广西移动中标市场监管局信息化项目92.97万元、贵港中院数字化项目52.6万元、玉林防溺水管理平台14.25万元；广西电信中标政法网视频专线365.67万元、兴业县政务外网专线283.18万元。三大运营商均以集成交付模式拓展政企市场，是安防厂商的重要渠道合作伙伴。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西政法网视频专线租赁服务 · 电信中标 365.67 万元（全区政法系统）</li>
+    <li>中电信数智政企综合治理技术服务 · 预算 134.4 万元，含智能监控部署</li>
+    <li>广西市场监管局信息化项目 · 移动中标 92.97 万元</li>
+    <li>自治区政务云运维和安全保障服务 · 预算 3219 万元，投标截止 09-29</li>
+    <li>玉林兴业县政务外网专线服务 · 电信中标 283.18 万元</li>
+    <li>梧州道路监控摄像头升级更新 · 两标包分别由数湖大数据/平南玥莹AI中标</li>
+    <li>中越东兴—芒街智慧口岸项目 · 广西交科新增招标</li>
+  </ul>
+</div>
+
+<!-- 一、运营商政企安防与监控项目 -->
+<div class="section">
+  <div class="section-title">📹 运营商政企安防与监控项目</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/0067/0101/20260907/0067d80f5081dd264c1f96c4496080e77c19.html" target="_blank" rel="noopener noreferrer">中电信数智广西政企客户综合治理技术服务采购（第三次） · 预算 134.4 万元</a></h4>
+    <div class="card-body">
+      <p>中电信数智科技有限公司广西分公司发布<strong>政企客户综合治理技术服务采购项目（第三次）询比公告</strong>，预算134.43万元（不含税），含<strong>交通设施优化配置、智能监控技术部署</strong>等综合治理技术服务，交付期至2026年12月31日，服务期12个月运维。项目要求供应商具有交通类或监控系统集成服务项目业绩，是电信政企渠道安防集成的典型项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/0067/0101/20260907/0067d80f5081dd264c1f96c4496080e77c19.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a> <span class="opp-tag">🎯 智能监控集成</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4>中国电信梧州分公司道路监控摄像头升级更新项目两标包完成中标</h4>
+    <div class="card-body">
+      <p>中国电信梧州分公司发布<strong>道路监控摄像头升级更新项目两标包询比结果公示</strong>，9月7日发布。标包一由<strong>广西数湖大数据科技有限责任公司</strong>中标，标包二由<strong>贵港市平南县玥莹人工智能科技有限公司</strong>中标。道路监控升级更新是运营商安防业务的重要组成部分，反映出存量监控设备迭代更新的市场需求持续释放。</p>
+    </div>
+    <div class="card-source">来源：中国电信阳光采购网 <span class="opp-tag">🎯 监控摄像头升级</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-09</span>
+    </div>
+    <h4>中国电信来宾分公司公共安全视频监控建设联网应用运维服务询比结果</h4>
+    <div class="card-body">
+      <p>中国电信来宾分公司发布<strong>2026年来宾市公共安全视频监控建设联网应用项目（兴宾区分项目）运维服务询比结果公示</strong>，9月9日发布。"雪亮工程"类公共安全视频监控项目的运维服务是运营商安防业务的重要组成部分，项目已从建设期逐步进入运维期，持续的运维服务需求为安防厂商带来稳定的售后与配套市场。</p>
+    </div>
+    <div class="card-source">来源：广西电信招标采购网 <span class="opp-tag">🎯 视频监控运维</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>中国联通广西分公司监控系统运维服务询比采购公告</h4>
+    <div class="card-body">
+      <p>中国联通广西分公司发布<strong>监控系统运维服务询比采购公告</strong>，9月10日发布。联通全区监控系统的运维服务采购，覆盖运营商自有营业厅、机房、办公场所等监控系统的日常维护。通信运营商作为安防产品的重要采购方，其自有监控系统的建设与运维也是稳定的市场需求来源。</p>
+    </div>
+    <div class="card-source">来源：采招网 <span class="opp-tag">🎯 监控系统运维</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4>中国联通防城港分公司智能化与人工智能系统集成服务（第二次）询比</h4>
+    <div class="card-body">
+      <p>中国联通防城港市分公司发布<strong>智能化与人工智能系统集成服务询比采购项目（第二次）公告</strong>，9月8日发布。该项目聚焦智能化系统与人工智能集成服务，是运营商在政企市场拓展安防+AI业务的典型信号。防城港作为边境城市，边防、口岸、城市治理等场景的智能化需求旺盛。</p>
+    </div>
+    <div class="card-source">来源：广西联通招标网 <span class="opp-tag">🎯 智能系统集成</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>广西移动中标市场监管局2026年信息化项目建设 · 金额 92.97 万元</h4>
+    <div class="card-body">
+      <p>广西机电设备招标有限公司发布<strong>广西市场监管局2026年信息化项目建设中标公告</strong>，中国移动广西公司中标，金额92.97万元。该项目是市场监管领域的信息化建设，通常含视频监控、数据采集、智能分析等模块。运营商以总包方身份中标政府信息化项目，安防设备厂商可通过设备供应或技术合作方式参与。</p>
+    </div>
+    <div class="card-source">来源：中国移动招标网 <span class="opp-tag">🎯 政企信息化总包</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>广西移动玉林分公司防溺水综合管理平台服务项目合同 · 14.25 万元</h4>
+    <div class="card-body">
+      <p>中国移动广西玉林分公司与玉林市福绵区教育局签订<strong>防溺水综合管理平台服务项目合同</strong>，金额14.25万元。防溺水综合管理平台集成视频监控、AI溺水识别、预警广播等功能，是教育行业安防的新兴场景。广西移动在教育安防领域的持续拓展，为安防设备与AI算法厂商创造了新的合作机会。</p>
+    </div>
+    <div class="card-source">来源：企查查 <span class="opp-tag">🎯 防溺水AI监控</span></div>
+  </div>
+</div>
+
+<!-- 二、运营商基础设施与网络建设 -->
+<div class="section">
+  <div class="section-title">🏗️ 基础设施与网络建设</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>中国联通广西分公司蓄电池集中采购公开招标项目</h4>
+    <div class="card-body">
+      <p>中国联通广西分公司发布<strong>2026年蓄电池集中采购公开招标项目招标公告</strong>，9月11日发布。蓄电池是通信基站和数据中心的重要基础设施，集中采购反映出运营商持续加大通信基础设施投入。通信基础设施的建设与扩容是安防监控、AI应用等上层业务的物理基础。</p>
+    </div>
+    <div class="card-source">来源：广西联通招标采购中心 <span class="opp-tag">🎯 基站基础设施</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>中国联通广西分公司动力环境监控设备集中采购公开招标</h4>
+    <div class="card-body">
+      <p>中国联通广西分公司发布<strong>2026-2028年动力环境监控设备集中采购公开招标项目</strong>，9月11日发布，采购周期长达3年。动力环境监控系统是通信机房、数据中心的重要安防与运维系统，通过传感器、摄像头等设备实现对机房动力、环境、安防的一体化监控。三年期集中采购体现了运营商对动环监控的长期需求。</p>
+    </div>
+    <div class="card-source">来源：广西联通招标采购中心 <span class="opp-tag">🎯 动环监控设备</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>中国移动南宁数据中心动力配套系统扩容工程施工采购候选人公示</h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026年动力配套系统扩容工程南宁数据中心单项工程施工采购项目中选候选人公示</strong>，9月10日发布。南宁数据中心动力配套扩容是广西移动算力基础设施建设的重要组成部分，随着AI和大数据业务发展，数据中心规模持续扩大，机房安防、动力环境监控等配套需求同步增长。</p>
+    </div>
+    <div class="card-source">来源：中国移动采购与招标网 <span class="opp-tag">🎯 数据中心安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4>中国移动广西公司位置能力开发采购项目询比公告</h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026-2027年位置能力开发采购项目询比公告</strong>，9月8日发布。位置能力是5G+物联网应用的基础能力，可广泛应用于车辆监控、人员定位、资产管理等安防场景。运营商持续投入位置服务能力开发，为智能交通、智慧园区、人员监管等行业应用提供底层支撑。</p>
+    </div>
+    <div class="card-source">来源：中国移动采购与招标网 <span class="opp-tag">🎯 位置能力开发</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4>中国移动广西公司动环监控系统技术支持服务采购项目询比公告</h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026-2027年动环监控系统技术支持服务采购项目询比公告</strong>，9月8日发布。动环监控系统覆盖全区移动机房、基站、数据中心的动力环境与安防监控，技术支持服务保障系统稳定运行。运营商动环监控系统的持续技术支持需求，反映了通信基础设施运维服务市场的稳定增长。</p>
+    </div>
+    <div class="card-source">来源：中国移动采购与招标网 <span class="opp-tag">🎯 动环监控运维</span></div>
+  </div>
+</div>
+
+<!-- 三、AI应用与算力 -->
+<div class="section">
+  <div class="section-title">🧠 AI应用与算力</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">智算</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>中国电信广西分公司智算推理一体机租用采购公告</h4>
+    <div class="card-body">
+      <p>中国电信股份有限公司广西分公司发布<strong>智算推理一体机租用采购公告</strong>，9月11日发布。智算推理一体机是支撑AI应用落地的核心算力基础设施，电信以租用模式快速部署AI算力，体现了运营商对AI业务的快速布局。AI算力与安防视频监控、智能分析的结合将催生更多智慧应用场景。</p>
+    </div>
+    <div class="card-source">来源：企查查 <span class="opp-tag">🎯 智算推理一体机</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI应用</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>中国联通桂林分公司AI工单智能处理系统定制化服务采购公告</h4>
+    <div class="card-body">
+      <p>中国联通桂林市分公司发布<strong>AI工单智能处理系统定制化服务采购公告</strong>，9月11日发布。该系统利用AI技术实现工单的智能分类、自动派单、智能回复等功能，提升运营效率。运营商正从网络建设向AI赋能业务转型，AI应用场景不断扩展，AI+安防的融合创新值得关注。</p>
+    </div>
+    <div class="card-source">来源：广西联通招标采购中心 <span class="opp-tag">🎯 AI智能系统</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">网络安全</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4>中国移动广西公司网络安全全流程支撑服务采购征求意见</h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026年至2027年网络安全全流程支撑服务采购项目技术规范书征求意见公告</strong>，9月10日发布。网络安全服务涵盖安全监测、合规管控、应急响应等全流程，是运营商基础设施的重要组成部分。安防与网络安全的融合需求在政企市场中日益突出。</p>
+    </div>
+    <div class="card-source">来源：中国移动广西公司 <span class="opp-tag">🎯 网络安全服务</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">行业动态</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4>中国移动广西公司入选国家数据局"数据要素×"大赛全国总决赛获奖企业</h4>
+    <div class="card-body">
+      <p>中国移动广西公司入选2026年"数据要素×"大赛全国总决赛获奖项目名单，体现了其在数据要素开发与应用领域的技术实力。运营商凭借海量数据资源和网络优势，正积极参与数据要素市场建设，与安防行业的视频数据结构化、AI智能分析等业务存在广阔的协同空间。</p>
+    </div>
+    <div class="card-source">来源：企查查 <span class="opp-tag">🎯 数据要素应用</span></div>
+  </div>
+</div>
+
+<!-- 四、政务云与大型项目 -->
+<div class="section">
+  <div class="section-title">☁️ 政务云与大型项目</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28114267.shtml" target="_blank" rel="noopener noreferrer">自治区政务云运维和安全保障服务公开招标 · 预算 3219 万元</a></h4>
+    <div class="card-body">
+      <p>广西壮族自治区信息中心发布<strong>自治区政务云运维和安全保障服务公开招标公告</strong>，预算金额<strong>3219.02万元</strong>，由广西通信产业服务有限公司代理招标，投标截止9月29日。政务云是广西数字政府建设的核心基础设施，运维和安全保障服务规模庞大，视频云、安防平台等政务应用均依托政务云运行。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28114267.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 政务云3219万</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>中国电信玉林兴业县政务外网专线服务合同 · 283.18 万元</h4>
+    <div class="card-body">
+      <p>兴业县大数据发展和政务服务局发布<strong>行政村（社区）接入电子政务外网专线服务项目合同公告</strong>，中国电信玉林分公司中标，金额283.18万元，9月11日发布。项目含光纤接入专线、AI智能自动巡查、网络安全服务等内容。行政村一级政务外网的全面覆盖，为基层公共安全视频监控、乡村治理数字化等应用提供了网络基础。</p>
+    </div>
+    <div class="card-source">来源：启信宝 <span class="opp-tag">🎯 政务外网专线</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西通信运营商行业简报</strong> · 2026.09.07—09.13<br>
+  编制：海康威视广西行业经理 · 聚焦运营商渠道项目机会<br>
+  数据基于公开新闻、招标公告、运营商采购网信息整理
+</footer>
+
+</body>
+</html>
