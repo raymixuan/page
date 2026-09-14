@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西文体卫健行业简报 · 2026.09.07—09.13</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏟️ 广西文体卫健行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是大型体育赛事密集筹备，赛事安保与智慧场馆需求旺盛。</strong>环广西世巡赛新闻发布会定档10月13-18日、总里程1068.6公里，6赛段串联5市22支顶级车队；广西第十六届少数民族传统体育运动会官宣10月柳州举办、3000人规模；中国-东盟青少年无人机足球邀请赛在宁明开赛、91支队伍参赛，赛事活动密集释放智慧安防、视频转播、人流管控等建设需求。</p>
+  <p><strong>二是长期护理保险制度实施方案正式印发，智慧医养与健康监测迎来政策窗口期。</strong>广西政府办公厅印发《加快建立长期护理保险制度实施方案》，2028年底前全面建立，覆盖全民、统筹城乡。政策落地将驱动医疗机构、养老机构智能化改造，远程医疗、健康监测、智慧护理等市场空间扩容。</p>
+  <p><strong>三是医疗设备采购招标密集，医院信息化与安全投入持续。</strong>贺州市皮肤病防治院第四批医疗设备490.1万中标、南宁市第四人民医院医用耗材试剂SPD服务发布中标候选人、广西医科大学附属武鸣医院信息中心机房搬迁改造公开招标，医院智能化与信息化建设从单体设备向平台化、智慧化升级。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>环广西世巡赛 10月开赛 · 6赛段1068.6公里，22支顶级车队，赛事安保需求大</li>
+    <li>广西第十六届少数民族传统体育运动会 · 10月柳州举办，3000人规模</li>
+    <li>贺州市皮肤病防治院第四批医疗设备采购 · 中标 490.1 万元</li>
+    <li>广西医科大学附属武鸣医院信息中心机房搬迁改造 · 公开招标中</li>
+    <li>南宁市第四人民医院医用耗材试剂SPD服务 · 中标候选人公示</li>
+    <li>广西"村BA"总决赛落幕 · 16支队伍32场比赛，乡村体育消费激活</li>
+    <li>平果市榜圩镇中心卫生院血透室设备采购 · 预算 220 万元</li>
+  </ul>
+</div>
+
+<!-- 一、政策与卫生健康 -->
+<div class="section">
+  <div class="section-title">🏥 政策与卫生健康</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="https://www.nhsa.gov.cn/art/2026/9/8/art_14_22047.html" target="_blank" rel="noopener noreferrer">广西加快建立长期护理保险制度实施方案印发 · 2028年底前全面建立</a></h4>
+    <div class="card-body">
+      <p>广西政府办公厅印发<strong>《广西加快建立长期护理保险制度实施方案》</strong>，2028年底前建立覆盖全民、统筹城乡的长护险制度。单位职工由单位和个人共同缴费（费率0.3%左右），退休人员个人缴费，实行市地级统筹。长期护理保险将带动失能照护、智慧养老、远程健康监测等相关产业快速发展，医疗机构和养老机构智能化改造需求加速释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.nhsa.gov.cn/art/2026/9/8/art_14_22047.html" target="_blank" rel="noopener noreferrer">国家医保局</a> <span class="opp-tag">🎯 智慧医养+健康监测</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>自治区卫生健康委印发《广西食品安全地方标准管理办法》</h4>
+    <div class="card-body">
+      <p>自治区卫生健康委发布<strong>《广西壮族自治区食品安全地方标准管理办法》</strong>，规范全区食品安全地方标准制定、实施与监督工作。标准管理涉及食品生产企业、餐饮单位的规范化运作，对后厨视频监控、明厨亮灶、AI智能识别等食品安全监管智能化方案提出更高要求。</p>
+    </div>
+    <div class="card-source">来源：自治区卫健委官网 <span class="opp-tag">🎯 明厨亮灶+AI识别</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策解读</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4>《加快提供优质高效眼健康服务工作方案（2026-2030年）》政策解读发布</h4>
+    <div class="card-body">
+      <p>自治区疾控局发布<strong>《加快提供优质高效眼健康服务工作方案（2026-2030年）》政策解读</strong>。方案聚焦全人群全生命周期眼健康服务，涉及儿童青少年近视防控、老年人眼病筛查、糖尿病视网膜病变AI辅助诊断等方向。AI辅助医疗诊断系统、眼科智能筛查设备市场有望持续扩容。</p>
+    </div>
+    <div class="card-source">来源：自治区疾控局官网 <span class="opp-tag">🎯 AI医疗诊断</span></div>
+  </div>
+</div>
+
+<!-- 二、医疗卫生项目招标 -->
+<div class="section">
+  <div class="section-title">💊 医疗卫生项目招标</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>贺州市皮肤病防治院第四批医疗设备采购（重）成交 · 490.1万元</h4>
+    <div class="card-body">
+      <p>贺州市皮肤病防治院（贺州市第五人民医院）<strong>第四批医疗设备采购（重）成交结果公告</strong>发布，<strong>成交金额490.1万元</strong>，成交方深圳市荣之创科技（项目编号HZZC2026-G1-990184-GXXZ）。专科医疗设备采购持续放量，伴随设备投入的科室监控、信息化管理系统需求同步增加。</p>
+    </div>
+    <div class="card-source">来源：医疗招标采购网 <span class="opp-tag">🎯 医疗设备配套智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标候选</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>南宁市第四人民医院医用耗材试剂SPD服务中标候选人公示 · 柳药集团领先</h4>
+    <div class="card-body">
+      <p>南宁市第四人民医院<strong>医用耗材试剂SPD服务</strong>发布中标候选人公示（YZLNN2026-G3-734-GXQT），广西柳药集团股份有限公司为第一候选人。SPD（供应-加工-配送）模式是医院耗材精细化管理方向，涉及智能仓储、物联网感知、数据平台等基础设施，是医院智慧后勤的重要组成。</p>
+    </div>
+    <div class="card-source">来源：医疗招标采购网 <span class="opp-tag">🎯 医院SPD+物联网</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4>广西医科大学附属武鸣医院信息中心机房搬迁改造项目公开招标</h4>
+    <div class="card-body">
+      <p>广西医科大学附属武鸣医院发布<strong>信息中心机房搬迁改造项目公开招标公告</strong>（GXZC2026-G1-002845-YZLZ）。医院信息中心机房搬迁改造是信息化升级重要节点，涉及机房环境监控、安防监控、UPS配电、综合布线等多系统建设，是智慧医院基础设施的核心工程。</p>
+    </div>
+    <div class="card-source">来源：广西医科大学校务公开 <span class="opp-tag">🎯 机房+安防监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>百色市人民医院"无陪护"病房生活照料服务项目竞争性磋商</h4>
+    <div class="card-body">
+      <p>百色市人民医院发布<strong>"无陪护"病房生活照料服务项目竞争性磋商公告</strong>（BSZB2026-C3-00010-HHGC）。"无陪护"病房模式通过专业化护理服务减少家属陪护，相应对病房视频监控、呼叫系统、人员定位等智能化支撑提出更高要求，是智慧病房建设的重要场景。</p>
+    </div>
+    <div class="card-source">来源：医疗招标采购网 <span class="opp-tag">🎯 智慧病房+监护</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-13</span>
+    </div>
+    <h4>平果市榜圩镇中心卫生院血透室医疗设备采购 · 预算220万元</h4>
+    <div class="card-body">
+      <p>平果市榜圩镇中心卫生院发布<strong>血透室医疗设备采购竞争性谈判公告</strong>，<strong>预算220万元</strong>，含血液透析机8台、血液透析滤过机2台。基层卫生院血透能力建设是县域医共体提质的重要内容，基层医疗设备下沉带动科室信息化与安防配套需求向乡镇延伸。</p>
+    </div>
+    <div class="card-source">来源：医疗招标采购网 <span class="opp-tag">🎯 基层医疗智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>南宁市妇幼保健院生殖医学、儿科及手术麻醉相关设备中标 · 114.7万元</h4>
+    <div class="card-body">
+      <p>南宁市妇幼保健院<strong>生殖医学、儿科及手术麻醉相关设备采购</strong>发布中标公告，<strong>中标金额114.7万元</strong>，中标方广西九州通医疗器械（项目编号NNZC2026-G1-990578-GXJL）。妇幼专科医院专科医疗设备更新持续，配套智慧手术室、智能监护等建设需求逐步释放。</p>
+    </div>
+    <div class="card-source">来源：医疗招标采购网</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4>广西科技大学第一附属医院康复设备等采购 · 预算45.74万元</h4>
+    <div class="card-body">
+      <p>广西科技大学第一附属医院发布<strong>康复设备等设备一批采购竞争性谈判公告</strong>（GXTZ-ZB-2026第736号），<strong>预算45.74万元</strong>。康复医学科建设是公立医院高质量发展重要方向，康复设备采购常伴随科室空间改造与视频监控、呼叫系统等配套设施建设。</p>
+    </div>
+    <div class="card-source">来源：医疗招标采购网</div>
+  </div>
+</div>
+
+<!-- 三、体育赛事与文化旅游 -->
+<div class="section">
+  <div class="section-title">🏆 体育赛事与文化旅游</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">大型赛事</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/t28117455.shtml" target="_blank" rel="noopener noreferrer">2026环广西世巡赛10月13-18日举行 · 6赛段1068.6公里、22支顶级车队</a></h4>
+    <div class="card-body">
+      <p>9月8日环广西世巡赛新闻发布会在南宁召开，<strong>2026库迪咖啡-环广西公路自行车世界巡回赛</strong>定于10月13日至18日举行，设6个赛段串联崇左、百色、河池、来宾、南宁5市，<strong>总里程1068.6公里</strong>，22支全球顶级职业车队参赛创历史新高。赛道首次从沿海移师内陆，新增喀斯特地貌特色赛段，赛事期间沿线安防、视频转播、人流疏导等需求全面提升。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/t28117455.shtml" target="_blank" rel="noopener noreferrer">自治区体育局</a> <span class="opp-tag">🎯 赛事安保+智慧转播</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">大型赛事</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4><a href="http://www.gxzf.gov.cn/zzqzyxx/t28110554.shtml" target="_blank" rel="noopener noreferrer">广西第十六届少数民族传统体育运动会10月12-17日柳州举办 · 3000人规模</a></h4>
+    <div class="card-body">
+      <p>自治区政府新闻发布会宣布，<strong>广西第十六届少数民族传统体育运动会</strong>将于10月12-17日在柳州市举办，设17个竞赛项目和3类表演项目，预计总规模约3000人（运动员2148名），全区14个设区市和5所高校参赛。开幕式在柳州市体育中心、民族大联欢在柳州园博园、闭幕式在李宁体育馆，赛事全部利用现有场馆，不新建设施。智慧场馆安防升级、人流管控、应急指挥等需求明确。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/zzqzyxx/t28110554.shtml" target="_blank" rel="noopener noreferrer">广西政府网</a> <span class="opp-tag">🎯 智慧场馆+应急指挥</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">赛事</span>
+      <span class="card-date">09-10</span>
+    </div>
+    <h4><a href="http://www.ningming.gov.cn/xwzx/zwyw/t28119430.shtml" target="_blank" rel="noopener noreferrer">中国（广西）-东盟青少年无人机足球邀请赛宁明开赛 · 91支队伍</a></h4>
+    <div class="card-body">
+      <p>9月10日，以"山海相连，桂韵盟动"为主题的<strong>2026年中国（广西）—东盟青少年无人机足球邀请赛</strong>在崇左市宁明县开赛，来自中国及东盟国家的<strong>91支队伍</strong>参赛，赛事为期4天（9月10-13日）。赛事设小学组、中学组、高职大学组三个组别，采用3V3团体对抗赛制。无人机+体育的科技体育融合模式，展现低空运动产业与AI技术在教育体育领域的广阔应用。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ningming.gov.cn/xwzx/zwyw/t28119430.shtml" target="_blank" rel="noopener noreferrer">宁明县政府网</a> <span class="opp-tag">🎯 无人机+AI体育教育</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">赛事</span>
+      <span class="card-date">09-11</span>
+    </div>
+    <h4><a href="https://m.gxylnews.com/xwk/wt/202609/t20260911_966982.html" target="_blank" rel="noopener noreferrer">广西"村BA"总决赛在兴业落幕 · 宾阳古辣香米队夺冠</a></h4>
+    <div class="card-body">
+      <p>9月7日至10日，<strong>2026年广西和美乡村篮球赛（村BA）总决赛</strong>在玉林市兴业县举行，全区14个设区市16支乡村篮球代表队展开32场角逐，最终<strong>南宁宾阳古辣香米队以119:84战胜北海合浦鲔丰水产队夺冠</strong>。冠亚军将代表广西参加10月在上林县举办的全国乡村篮球赛南部大区赛。赛事办在村里、4个场地同步开赛，乡村体育场馆智能化改造潜力巨大。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.gxylnews.com/xwk/wt/202609/t20260911_966982.html" target="_blank" rel="noopener noreferrer">玉林新闻网</a> <span class="opp-tag">🎯 乡村体育场馆智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">AI+文化</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4>来宾市大力发展AI+文化产业 · 数字赋能文脉传承</h4>
+    <div class="card-body">
+      <p>据中国网广西频道报道，<strong>来宾主动拥抱人工智能，大力发展AI+文化产业</strong>，推动文脉千年与数字新风融合。AI在文化遗产保护、博物馆数字化、文艺创作、文旅智慧服务等领域的应用加速落地，智慧博物馆、数字展厅、AI导览等需求持续释放，与安防监控、智能互动终端深度结合。</p>
+    </div>
+    <div class="card-source">来源：中国网广西 <span class="opp-tag">🎯 智慧博物馆+AI导览</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">赛事预热</span>
+      <span class="card-date">09-09</span>
+    </div>
+    <h4>2026广西·凭祥中越边关旅游节将于9月21-25日举办</h4>
+    <div class="card-body">
+      <p>2026广西·凭祥<strong>中越边关旅游节</strong>将于9月21日至25日举办。作为中越边境重要文旅交流活动，旅游节涵盖经贸洽谈、文化展演、体育赛事等多元内容。大型文旅活动期间，边境口岸安防、人流密集区视频监控、AI人群分析等安全保障需求集中释放。</p>
+    </div>
+    <div class="card-source">来源：中国网广西 <span class="opp-tag">🎯 边境文旅安保</span></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西文体卫健行业简报</strong> · 2026.09.07—09.13<br>
+  编制：海康威视广西行业经理 · 聚焦智慧医疗与文体安防项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
