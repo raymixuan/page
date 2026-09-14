@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西工业企业行业简报 · 2026.09.07—09.13</title>
+<style>
+
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏭 广西工业企业行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="summary">
+    <h2>📌 本周总结</h2>
+      <p><strong>一是平陆运河通航在即，向海经济新引擎即将启动。</strong>平陆运河主体工程通过验收，将于9月16日正式通航，总投资约727亿元，广西水运江河海一体化智慧调度平台全面上线，5G专网+边缘计算+视频感知体系已全面建成，将带动沿线临港产业与智慧物流需求集中释放。</p>
+      <p><strong>二是柳州人形机器人与AI工业设计双引擎引领新质生产力。</strong>优必选万台级工业人形机器人超级智慧工厂9月12日在柳州投产，每10分钟下线1台、年产能超万台；广西未来人工智能工业设计创新中心9月9日在南宁启动，首批20家企业入驻，赋能广西制造业十大支柱产业智能化转型。</p>
+      <p><strong>三是能源与新材料重大项目持续推进。</strong>百色2×660MW清洁高效煤电项目多个辅机设备本周密集招标（10kV开关柜、含煤废水处理装置等），国投钦州电厂三期4号机组通过168小时试运，白云电器特高压输配电设备桂林基地10.7亿元项目主体施工中，能源装备产业链加速布局。</p>
+  </div>
+
+  <div class="opp-bar">
+    <h3>🎯 本周项目机会速览</h3>
+    <ul>
+        <li>平陆运河9月16日通航 · 智慧调度平台+感知网全线建成，后续扩容升级可期</li>
+        <li>优必选柳州万台级人形机器人工厂投产 · 智慧工厂安防与AI视觉需求旺盛</li>
+        <li>百色2×660MW清洁高效煤电项目 · 多设备密集招标，工业视频监控+智能运维</li>
+        <li>广西未来人工智能工业设计创新中心启动 · 首批20家入驻企业智能化服务机会</li>
+        <li>六景化工园工业用水厂土方场平工程 · 预算384.56万，化工厂区安防可跟进</li>
+        <li>玉林新材料生态产业园厂房七区EPC · 装饰装修中标2029万元，园区智能化</li>
+        <li>容县胶合板产业园健康家居智能制造园 · 二区施工图设计中标，智慧工厂建设</li>
+        <li>国投钦州电厂三期4号机组投产 · 广西再添电力引擎，运维安防需求持续</li>
+    </ul>
+  </div>
+
+    <div class="section">
+      <div class="section-title">🚢 平陆运河与向海经济</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">智慧运河</span>
+          <span class="card-date">09-07</span>
+        </div>
+        <h4><a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6718699.html" target="_blank" rel="noopener noreferrer">平陆运河将于9月16日通航，江河海一体化智慧调度平台全面上线</a></h4>
+        <div class="card-body">
+          <p><strong>平陆运河世纪工程即将通航</strong>：9月7日自治区政府新闻发布会宣布，平陆运河主体工程已通过验收，将于9月16日正式通航。运河总投资约727亿元、全长134.2公里，通航5000吨级船舶。广西水运江河海一体化智慧调度平台已全面上线，覆盖运行监测、调度指挥、智能管控等核心功能。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6718699.html" target="_blank" rel="noopener noreferrer">南宁市政府</a> <span class="opp-tag">🎯 智慧调度+视频感知</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">智慧基建</span>
+          <span class="card-date">09-08</span>
+        </div>
+        <h4><a href="http://data.people.com.cn/rmrb/20260914/10/e7e69736d38b46bc8bede72e69eb77bf" target="_blank" rel="noopener noreferrer">中国移动全面建成平陆运河感知网、传输网，"陆水空天"一体化监测体系</a></h4>
+        <div class="card-body">
+          <p><strong>平陆运河数字底座全面建成</strong>：中国移动广西公司宣布已全面建成平陆运河无线网、传输专网与感知网三大工程。感知网融合视频监控、船舶自动识别系统、雷达、水文气象监测等十余种技术；沿运河两岸铺设262公里高速光纤专网；创新引入"5G专网+边缘计算"双引擎架构。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://data.people.com.cn/rmrb/20260914/10/e7e69736d38b46bc8bede72e69eb77bf" target="_blank" rel="noopener noreferrer">人民日报</a> <span class="opp-tag">🎯 视频监控+AI分析</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">港口建设</span>
+          <span class="card-date">09-11</span>
+        </div>
+        <h4><a href="http://zmqzcyyq.gxzf.gov.cn/xwzx/" target="_blank" rel="noopener noreferrer">中马钦州产业园5个5000吨级江海联运泊位启动建设</a></h4>
+        <div class="card-body">
+          <p><strong>平陆运河出海口再添新引擎</strong>：中马钦州产业园区5个5000吨级江海联运泊位启动建设，平陆运河出海口港区能级持续提升。随着9月16日通航临近，运河沿线与北部湾港的联动基础设施建设加速推进，江海联运体系日趋完善。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://zmqzcyyq.gxzf.gov.cn/xwzx/" target="_blank" rel="noopener noreferrer">中马钦州产业园官网</a> <span class="opp-tag">🎯 智慧港口监控</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">项目投产</span>
+          <span class="card-date">09-04</span>
+        </div>
+        <h4><a href="http://zmqzcyyq.gxzf.gov.cn/xwzx/" target="_blank" rel="noopener noreferrer">国投钦州电厂三期4号机组通过168小时试运，广西再添"硬核"电力引擎</a></h4>
+        <div class="card-body">
+          <p><strong>钦州电厂三期全面投产</strong>：国投钦州电厂三期4号机组顺利通过168小时试运，标志着该项目全部建成投产。钦州电厂三期是广西重要能源保障项目，对于提升北部湾经济区电力供应能力、服务平陆运河经济带发展具有重要意义。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://zmqzcyyq.gxzf.gov.cn/xwzx/" target="_blank" rel="noopener noreferrer">中马钦州产业园官网</a> <span class="opp-tag">🎯 电厂智能安防</span></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">🤖 智能制造与AI赋能</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">智能制造</span>
+          <span class="card-date">09-12</span>
+        </div>
+        <h4><a href="http://m.toutiao.com/group/7684865085432529458/" target="_blank" rel="noopener noreferrer">柳州优必选万台级工业人形机器人超级智慧工厂正式投产</a></h4>
+        <div class="card-body">
+          <p><strong>"用机器人造机器人"在柳州量产</strong>：9月12日，优必选万台级工业人形机器人超级智慧工厂在柳州投产，占地1.4万平方米，每10分钟下线1台、年规划产能超万台，主要生产Walker S系列和Cruzr系列具身智能工业人形机器人。柳州市人工智能终端及机器人产业已培育规上企业46家，1—8月产值同比增长98.1%。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://m.toutiao.com/group/7684865085432529458/" target="_blank" rel="noopener noreferrer">柳江发布·今日头条</a> <span class="opp-tag">🎯 智慧工厂+机器人</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">AI设计</span>
+          <span class="card-date">09-09</span>
+        </div>
+        <h4><a href="http://m.toutiao.com/group/7683719744192643593/" target="_blank" rel="noopener noreferrer">广西未来人工智能工业设计创新中心在南宁启动，首批20家企业入驻</a></h4>
+        <div class="card-body">
+          <p><strong>广西工业设计迈入AI时代</strong>：9月9日，广西未来人工智能工业设计创新中心在南宁启动。该中心是自治区级战略性创新平台，聚集国内外AI与工业设计顶级专家，已吸纳首批20家企业和机构入驻，将精准赋能广西制造业十大现代化支柱产业，打造粤桂合作样板。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://m.toutiao.com/group/7683719744192643593/" target="_blank" rel="noopener noreferrer">南宁日报·金台资讯</a> <span class="opp-tag">🎯 AI+工业设计</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">智慧化工</span>
+          <span class="card-date">08-17</span>
+        </div>
+        <h4><a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/" target="_blank" rel="noopener noreferrer">广西华谊能化打造智慧煤化工产业新标杆，从单厂智控到产业链协同</a></h4>
+        <div class="card-body">
+          <p><strong>华谊能化智慧工厂建设持续深化</strong>：广西华谊能化打造智慧煤化工产业新标杆，从"单厂智控"升级到"产业链一体化协同"。华谊新材料入选2025年国家级卓越级智能工厂项目、2026年省级智能制造标杆企业，营业收入达76.58亿元，持续引领广西化工行业数字化转型。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/" target="_blank" rel="noopener noreferrer">广西工信厅</a> <span class="opp-tag">🎯 智慧化工园区</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">产业生态</span>
+          <span class="card-date">09-09</span>
+        </div>
+        <h4><a href="https://news.gxtv.cn/article/detail_339626293494f4915af5708412c88eaf.html" target="_blank" rel="noopener noreferrer">2026中国（广西）—东盟工业设计周将于9月17-21日在南宁举办</a></h4>
+        <div class="card-body">
+          <p><strong>东博会框架下工业设计周将启</strong>：本届设计周以"智联东盟·设计共创"为主题，马来西亚任主宾国，主展区设在广西未来人工智能工业设计创新中心。将举办桂连东盟创意设计供需对接会、中马设计交流会、AI设计未来体验等活动，推动AI、工业设计与产业应用深度融合。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://news.gxtv.cn/article/detail_339626293494f4915af5708412c88eaf.html" target="_blank" rel="noopener noreferrer">广西网络广播电视台</a> <span class="opp-tag">🎯 AI+设计+东盟</span></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">⚡ 能源与新材料项目</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-08</span>
+        </div>
+        <h4><a href="https://www.qcc.com/creport/27cf374ca26b27555f8b4895df4d8556.html" target="_blank" rel="noopener noreferrer">百色2×660MW清洁高效煤电项目10kV开关柜项目（重）公开招标</a></h4>
+        <div class="card-body">
+          <p><strong>百色大型煤电项目设备招标密集推进</strong>：广西百矿超元发电有限公司百色2×660MW清洁高效煤电项目10kV开关柜项目发布重招公告。本周同期推进的还有含煤废水处理装置、取水泵房基坑支护灌注桩等多个子项招标，项目建设进入设备采购高峰期。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.qcc.com/creport/27cf374ca26b27555f8b4895df4d8556.html" target="_blank" rel="noopener noreferrer">企查查·百矿超元</a> <span class="opp-tag">🎯 工业视频监控</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-07</span>
+        </div>
+        <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260907/0045ff5cd85c5dfb4529b3ff6c845728f2c1.html" target="_blank" rel="noopener noreferrer">六景化工园工业用水厂土方场平工程竞争性磋商，预算384.56万元</a></h4>
+        <div class="card-body">
+          <p><strong>南宁六景化工园配套建设启动</strong>：六景化工园工业用水厂土方场平工程发布竞争性磋商公告，预算384.56万元，对约30亩场地进行平整，工期30日历天。六景化工园是南宁重要的化工产业集聚区，水厂建设为园区后续产业项目落地奠定基础。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260907/0045ff5cd85c5dfb4529b3ff6c845728f2c1.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a> <span class="opp-tag">🎯 化工园区安防</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">项目进展</span>
+          <span class="card-date">09-12</span>
+        </div>
+        <h4><a href="https://www.qcc.com/creport/d9d0bce8f52e49b22783fbbd99fd5762.html" target="_blank" rel="noopener noreferrer">广西心连心绿色化工新材料项目一期完成总工程量约40%，年产值预计136亿元</a></h4>
+        <div class="card-body">
+          <p><strong>桂平新材料产业园百亿级项目推进中</strong>：广西心连心化学工业绿色化工新材料项目一期总投资超100亿元、占地2500余亩，目前已完成总工程量约40%，关键装置区设备安装地面硬化全部完成。项目全部投产后预计年产值约136亿元，新增就业约1500人。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.qcc.com/creport/d9d0bce8f52e49b22783fbbd99fd5762.html" target="_blank" rel="noopener noreferrer">企查查·心连心化工</a> <span class="opp-tag">🎯 智慧化工+安防</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">主体施工</span>
+          <span class="card-date">09-10</span>
+        </div>
+        <h4><a href="https://m.cbi360.net/dinggc/project/r4500_t15/" target="_blank" rel="noopener noreferrer">白云电器特高压输配电设备及新能源产业桂林基地项目主体施工中，总投资10.7亿</a></h4>
+        <div class="card-body">
+          <p><strong>桂林特高压装备制造基地建设提速</strong>：白云电器特高压输配电设备及新能源产业（桂林基地）项目正处于主体施工阶段，总投资10.70亿元。项目建成后将进一步完善广西能源装备产业链，服务特高压输电和新能源发展需求。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.cbi360.net/dinggc/project/r4500_t15/" target="_blank" rel="noopener noreferrer">盯工程网</a> <span class="opp-tag">🎯 工业厂区安防</span></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">🏭 产业园区与县域工业</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-07</span>
+        </div>
+        <h4><a href="https://www.bidcenter.com.cn/newssearchyz-166643542.html" target="_blank" rel="noopener noreferrer">玉林市新材料生态产业园厂房七区EPC装饰装修工程中标候选人公示</a></h4>
+        <div class="card-body">
+          <p><strong>玉林新材料产业园建设稳步推进</strong>：玉林市新材料生态产业园厂房及基础设施-厂房七区EPC项目装饰装修工程中标候选人公示，广西佰翔建筑工程有限公司以2029.23万元（不含税）位列中标候选。产业园总建筑面积12.83万平米，涵盖标准厂房、冷链物流、返乡创业基地等。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchyz-166643542.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 园区智能监控</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-08</span>
+        </div>
+        <h4><a href="http://www.rxzf.gov.cn/xxgk/zfxxgkzl/xxgkml_1/zdjsxmpzhsslygk/zbtb/" target="_blank" rel="noopener noreferrer">容县胶合板产业园健康家居智能制造与电商物流园二区施工图设计中标</a></h4>
+        <div class="card-body">
+          <p><strong>容县智能家居产业园设计落地</strong>：容县胶合板产业园健康家居智能制造与电商物流园项目二区施工图设计中标公告发布。项目依托容县胶合板产业基础，向智能家居、电商物流方向延伸，推动传统产业向智能制造升级。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.rxzf.gov.cn/xxgk/zfxxgkzl/xxgkml_1/zdjsxmpzhsslygk/zbtb/" target="_blank" rel="noopener noreferrer">容县人民政府</a> <span class="opp-tag">🎯 智慧工厂安防</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">县域工业</span>
+          <span class="card-date">09-08</span>
+        </div>
+        <h4><a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/" target="_blank" rel="noopener noreferrer">天等县聚力推动工业经济高质量发展，项目为王服务为本</a></h4>
+        <div class="card-body">
+          <p><strong>天等县工业经济攻坚提速</strong>：崇左天等县坚持项目为王，聚力推动工业经济高质量发展。该县依托粤桂产业协作机制，积极承接东部产业转移，推动特色产业集群发展，是广西边境县域工业经济高质量发展的典型。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/" target="_blank" rel="noopener noreferrer">广西工信厅</a> <span class="opp-tag">🎯 县域工业智能化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">智慧园区</span>
+          <span class="card-date">09-12</span>
+        </div>
+        <h4><a href="https://gongshang.mingluji.com/guangxi/%E7%AC%AC%E4%B8%89%E5%B7%A5%E4%B8%9A%E5%BC%80%E5%8F%91%E5%8C%BA" target="_blank" rel="noopener noreferrer">柳江智能家电产业集群生态加速成型，志高—津晶等龙头带动</a></h4>
+        <div class="card-body">
+          <p><strong>柳江智能家电产业集群效应凸显</strong>：柳州柳江区依托志高—津晶集团家电龙头企业，延伸发展智能家电显示板、晶体管、传感器等配套产业，粤桂智能家电产业集聚区一期已投产。柳江经开区计划到2025年实现工业总产值800亿元，智能家电为三大主导产业之一。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gongshang.mingluji.com/guangxi/%E7%AC%AC%E4%B8%89%E5%B7%A5%E4%B8%9A%E5%BC%80%E5%8F%91%E5%8C%BA" target="_blank" rel="noopener noreferrer">名录集·柳江第三工业区</a> <span class="opp-tag">🎯 智能家电+园区</span></div>
+      </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西工业企业行业简报</strong> · 2026.09.07—09.13<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
