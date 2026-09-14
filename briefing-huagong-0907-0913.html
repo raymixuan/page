@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西化工煤炭行业简报 · 2026.09.07—09.13</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>⚗️ 广西化工煤炭行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是钦州华谊化工新材料基地持续扩容，智慧煤化工标杆效应凸显。</strong>广西华谊能化打造智慧煤化工产业新标杆，AI赋能生产效率提升10%以上；华谊钦州三期公辅项目消防材料常规采购、华谊氯碱聚醚多元醇项目招标推进，钦州港化工新材料一体化基地总投资超千亿规模持续释放。</p>
+  <p><strong>二是桂平心连心百亿煤化工项目加速建设，产业链招标密集发布。</strong>广西心连心绿色化工新材料项目（总投资约119亿元）完成总工程量约40%，9月8日通过一头多尾柔性调节硝基产业链项目安全条件审查；柳化氯碱32万吨氯化新材料项目一期多个设备采购中标公告密集发布，化工园区建设进入设备安装高峰期。</p>
+  <p><strong>三是危险化工企业安防环保类招标活跃，视频监控与监测需求突出。</strong>中国石油广西石化公司环保自行监测视频监控系统询价、VOCs废气治理改造项目施工合同招标、中油田东石化危险废物处置服务招标等密集发布，化工企业在安全生产、环保监测、智能视频监控方面的投入持续加大。</p>
+</div>
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西心连心绿色化工新材料项目 · 总投资约119亿元，完成总工程量40%，设备安装高峰期</li>
+    <li>柳化氯碱32万吨氯化新材料产业集群项目 · 一期工程多个设备采购本周密集中标</li>
+    <li>六景化工园工业用水厂土方场平工程 · 预算384.56万元，投标截止9月18日</li>
+    <li>中国石油广西石化VOCs废气治理改造项目 · 施工合同公开招标中</li>
+    <li>北海炼化深冷制氮装置工程施工总承包 · 一标段招标中</li>
+    <li>广西华谊能化智慧煤化工 · AI赋能，生产效率提升10%+，获评国家智能制造标杆企业</li>
+    <li>中油田东石化总厂危险废物处置服务 · 公开招标，9月11日发布</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">🏭 钦州华谊化工基地</div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-tech">智慧化工</span>
+        <span class="card-date">09-10</span>
+      </div>
+      <h4><a href="http://gxj.qinzhou.gov.cn/gzdt/t28058273.shtml" target="_blank" rel="noopener noreferrer">广西华谊能化打造智慧煤化工产业新标杆：AI赋能生产效率提升10%以上</a></h4>
+      <div class="card-body">
+        <p>广西华谊能源化工有限公司依托AI、数字孪生、智能体等技术打造智慧煤化工标杆，<strong>整合上万项实时参数优化配煤</strong>，3分钟生成利润最大化方案（过去3名员工每天花6小时）。依托各类AI模型赋能，企业生产效率提升10%以上，单位产值运营成本降幅超一成，单位产值能耗和碳排放均大幅下降。</p>
+        <p><strong>🔍 海康视角：</strong>智能工厂视频监控、AI行为分析、热成像监测、设备状态感知等需求旺盛，华谊作为钦州千亿级化工基地的核心企业，后续智能化升级空间巨大。</p>
+      </div>
+      <div class="card-source">来源：<a href="http://gxj.qinzhou.gov.cn/gzdt/t28058273.shtml" target="_blank" rel="noopener noreferrer">钦州市工业和信息化局</a> <span class="opp-tag">🎯 智能工厂AI</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">中标公告</span>
+        <span class="card-date">09-07</span>
+      </div>
+      <h4><a href="https://www.qcc.com/cfengxian/1878c48dd7792f4885d16df896bb5708.html" target="_blank" rel="noopener noreferrer">柳化氯碱32万吨氯化新材料项目10kV移开式开关柜采购中标结果公告</a></h4>
+      <div class="card-body">
+        <p>广西柳化氯碱有限公司32万吨／年氯化新材料产业集群项目<strong>301高压配电室10kV移开式开关柜采购发布中标结果公告</strong>。该项目总投资超10亿元，位于鹿寨县，涵盖盐化工、化工新材料、精细化工、氢能利用等领域，一期工程预计2027年建成。</p>
+        <p><strong>🔍 海康视角：</strong>化工园区配电室和生产车间需要高清视频监控、智能分析、消防联动等安防系统，电气设备采购后配套安防设备需求将跟进。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://www.qcc.com/cfengxian/1878c48dd7792f4885d16df896bb5708.html" target="_blank" rel="noopener noreferrer">企查查</a> <span class="opp-tag">🎯 化工厂区安防</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">设备招标</span>
+        <span class="card-date">09-09</span>
+      </div>
+      <h4><a href="https://www.qcc.com/cfengxian/1878c48dd7792f4885d16df896bb5708.html" target="_blank" rel="noopener noreferrer">柳化氯碱32万吨氯化新材料项目一期硫酸浓缩装置采购中标候选人公示</a></h4>
+      <div class="card-body">
+        <p>广西柳化氯碱有限公司32万吨氯化新材料项目一期工程<strong>1万吨/年硫酸浓缩装置采购发布中标候选人公示</strong>。项目一期工程建设正全面推进，近期连续发布CPVC中试项目安装施工、配电工程设备、硫酸浓缩装置等多个采购中标公告，进入设备采购高峰期。</p>
+        <p><strong>🔍 海康视角：</strong>化工生产装置区对防爆监控、周界安防、气体检测联动视频系统需求明确，可对接海康防爆摄像机和安消联动解决方案。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://www.qcc.com/cfengxian/1878c48dd7792f4885d16df896bb5708.html" target="_blank" rel="noopener noreferrer">企查查</a> <span class="opp-tag">🎯 防爆监控/气体检测</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">化工园</span>
+        <span class="card-date">09-07</span>
+      </div>
+      <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260907/0045ff5cd85c5dfb4529b3ff6c845728f2c1.html" target="_blank" rel="noopener noreferrer">六景化工园工业用水厂土方场平工程竞争性磋商，预算384.56万元</a></h4>
+      <div class="card-body">
+        <p>南宁公共资源交易中心发布六景化工园工业用水厂土方场平工程竞争性磋商公告，<strong>预算384.56万元</strong>，对六景化工园约30亩场地进行平整，工期30日历日，投标截止9月18日。该项目是六景化工园区基础设施建设的组成部分。</p>
+        <p><strong>🔍 海康视角：</strong>化工园区建设持续推进，工业水厂等基础设施完工后，园区企业陆续入驻将带动视频监控、周界安防、智慧园区等系统建设需求。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260907/0045ff5cd85c5dfb4529b3ff6c845728f2c1.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a> <span class="opp-tag">🎯 化工园基础设施</span></div>
+    </div>
+</div>
+
+<div class="section">
+  <div class="section-title">⚗️ 煤化工与新材料</div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-case">项目进展</span>
+        <span class="card-date">09-05</span>
+      </div>
+      <h4><a href="http://m.toutiao.com/group/7681995094157525540/" target="_blank" rel="noopener noreferrer">广西心连心百亿煤化工项目冲刺2026年底建设目标：2000多人同时作业</a></h4>
+      <div class="card-body">
+        <p>广西心连心绿色化工新材料项目（总投资约119亿元，占地2000余亩）正全力冲刺2026年底建成目标。截至8月31日，<strong>项目整体进入设备安装期，现场高峰期作业人员超3000人</strong>，厂区道路路基整修完成90%，锅炉主厂房施工完成、空分安装有序推进、气化框架浇筑完成。主要产品包括合成氨、尿素、高效复合肥等。</p>
+        <p><strong>🔍 海康视角：</strong>大型煤化工项目建设后期智能化系统招标将集中启动，包括全厂视频监控、智能安防、人员定位、AI行为分析等，是海康化工行业解决方案的重点突破方向。</p>
+      </div>
+      <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681995094157525540/" target="_blank" rel="noopener noreferrer">贵港宣传</a> <span class="opp-tag">🎯 全厂智能安防</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-policy">安全审查</span>
+        <span class="card-date">09-08</span>
+      </div>
+      <h4><a href="https://www.qcc.com/crun/d9d0bce8f52e49b22783fbbd99fd5762.html" target="_blank" rel="noopener noreferrer">广西心连心一头多尾柔性调节硝基产业链项目通过安全条件审查</a></h4>
+      <div class="card-body">
+        <p>广西心连心化学工业有限公司<strong>一头多尾柔性调节硝基产业链项目安全条件审查通过</strong>（贵应急条件审（危化）【2026】10号），有效期至2028年8月。该项目是桂平新材料产业园核心补链项目的延伸产业链，总投资20亿元级，属于一头多尾柔性调节硝基产业链项目。</p>
+        <p><strong>🔍 海康视角：</strong>危化品生产项目安全审查后，安全设施设计和建设将提上日程，视频监控、安全行为分析、应急指挥等安防系统是必备配置。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://www.qcc.com/crun/d9d0bce8f52e49b22783fbbd99fd5762.html" target="_blank" rel="noopener noreferrer">企查查</a> <span class="opp-tag">🎯 危化品安全监控</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">防城港</span>
+        <span class="card-date">09-11</span>
+      </div>
+      <h4><a href="https://m.ccpc360.com/nzjxm2076078.html" target="_blank" rel="noopener noreferrer">防城港焦化系统及配套设施技术改造项目可研批复，总投资48.65亿元</a></h4>
+      <div class="card-body">
+        <p>防城港市焦化系统及其配套设施技术改造项目完成<strong>可研批复</strong>，总投资48.65亿元，预计2026年四季度开工、2027年四季度完工，目前处于可研批复阶段且面向国外采购设备。该项目为非政府性投资的改扩建项目，将大幅提升防城港钢铁焦化配套能力。</p>
+        <p><strong>🔍 海康视角：</strong>焦化系统属于高温高危生产环境，对热成像监控、AI安全生产行为分析、防爆摄像机等产品需求强烈，项目开工后智能化安防投入可期。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://m.ccpc360.com/nzjxm2076078.html" target="_blank" rel="noopener noreferrer">中项网</a> <span class="opp-tag">🎯 焦化智能安防</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">设备招标</span>
+        <span class="card-date">09-11</span>
+      </div>
+      <h4><a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">中油广西田东石油化工总厂危险废物处置服务公开招标</a></h4>
+      <div class="card-body">
+        <p>中油广西田东石油化工总厂有限公司发布<strong>旧三万吨炼油厂危险废物处置服务公开招标公告</strong>，同时发布钦州油库危险废物处置服务竞争性磋商公告。田东石化是百色革命老区重要的石化企业，炼油厂危废处置需求反映出老旧装置环保改造持续推进。</p>
+        <p><strong>🔍 海康视角：</strong>危废处置场所有视频监控、电子围栏、车辆进出管理、污染物在线监测联动等综合安防需求，是化工环保类项目的典型机会。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 危废处置安防</span></div>
+    </div>
+</div>
+
+<div class="section">
+  <div class="section-title">🛢️ 石化环保与改造</div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">环保治理</span>
+        <span class="card-date">09-08</span>
+      </div>
+      <h4><a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">中国石油广西石化公司环保自行监测视频监控系统询价采购</a></h4>
+      <div class="card-body">
+        <p>中国石油广西石化公司发布<strong>环保自行监测视频监控系统询价采购公告</strong>（9月8日），环保监测系统涉及视频监控设备及相关配套。该项目是石化企业环保合规建设的重要组成部分，反映出大型石化企业在环保监测领域的持续投入。</p>
+        <p><strong>🔍 海康视角：</strong>环保监测视频监控是海康的优势领域，可结合AI视频分析、热成像、无人机巡检等方案切入，服务石化企业的环保合规与安全监控需求。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 环保视频监控</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">废气治理</span>
+        <span class="card-date">09-03</span>
+      </div>
+      <h4><a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">中国石油广西石化VOCs废气治理改造项目施工合同公开招标</a></h4>
+      <div class="card-body">
+        <p>中国石油广西石化公司发布<strong>VOCs废气治理改造项目施工合同公开招标公告</strong>。VOCs治理是石化行业环保改造的重点方向，广西石化作为千万吨级炼化企业，废气治理改造项目涉及多个生产装置的升级。</p>
+        <p><strong>🔍 海康视角：</strong>VOCs治理项目配套的视频监控、气体检测联动、安全行为分析等系统需求可一并挖掘，海康安消联动方案可提供综合解决方案。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 石化环保改造</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">北海炼化</span>
+        <span class="card-date">09-03</span>
+      </div>
+      <h4><a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">北海炼化深冷制氮装置工程施工总承包一标段招标公告</a></h4>
+      <div class="card-body">
+        <p>北海炼化发布<strong>深冷制氮装置工程施工总承包一标段招标公告</strong>。北海炼化作为中国石化在广西的重要炼化基地，持续推进装置升级和扩能改造，深冷制氮装置是炼化生产的重要配套。</p>
+        <p><strong>🔍 海康视角：</strong>制氮装置等生产辅助设施建设完成后，厂区需要完善的视频监控和安防系统，可跟进项目施工进度对接安防需求。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/nav_751_gx.html" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 炼化装置配套</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">消防材料</span>
+        <span class="card-date">09-08</span>
+      </div>
+      <h4><a href="https://dtfc.dlzb.com/" target="_blank" rel="noopener noreferrer">中国核建中核五公司华谊钦州三期公辅项目消防材料常规采购公告</a></h4>
+      <div class="card-body">
+        <p>中国核建中核五公司发布<strong>华谊钦州三期公辅项目消防材料常规采购公告</strong>。华谊钦州化工新材料一体化基地三期项目持续推进，公辅设施是保障化工基地正常运行的重要基础。</p>
+        <p><strong>🔍 海康视角：</strong>消防材料采购意味着消防系统建设进入实质性阶段，海康的消防安消联动解决方案、智能消防摄像头等产品可在项目中推广应用。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://dtfc.dlzb.com/" target="_blank" rel="noopener noreferrer">电建采购平台</a> <span class="opp-tag">🎯 化工消防/安消联动</span></div>
+    </div>
+</div>
+
+<div class="section">
+  <div class="section-title">📊 产业动态与合作</div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-case">产业合作</span>
+        <span class="card-date">09-04</span>
+      </div>
+      <h4><a href="http://m.toutiao.com/group/7681685987415687734/" target="_blank" rel="noopener noreferrer">钦州市领导会见中国石油广西石化新任管理层，谋划"十五五"项目布局</a></h4>
+      <div class="card-body">
+        <p>9月4日钦州市委书记钟畅姿、市长李玉成会见中国石油广西石化公司新任执行董事廉金龙一行，双方就深化地企合作交流。<strong>广西石化将锚定建设世界一流炼化一体化企业目标，做大做强高端精细化工，积极对接下游产业链</strong>，争取更多项目布局钦州。</p>
+        <p><strong>🔍 海康视角：</strong>广西石化"十五五"期间新项目布局将带来新的安防智能化建设机会，持续跟进钦州石化基地的扩张规划，提前对接渠道资源。</p>
+      </div>
+      <div class="card-source">来源：<a href="http://m.toutiao.com/group/7681685987415687734/" target="_blank" rel="noopener noreferrer">钦州发布</a> <span class="opp-tag">🎯 十五五新项目</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-tech">智能工厂</span>
+        <span class="card-date">09-10</span>
+      </div>
+      <h4><a href="https://m.qcc.com/firm/d0cb3576d0486a2f7a23305509a19518.html" target="_blank" rel="noopener noreferrer">广西华谊能化投产以来累计产量超1700万吨，甲醇华南占有率首位</a></h4>
+      <div class="card-body">
+        <p>广西华谊能源化工有限公司主打200万吨/年甲醇、150万吨/年醋酸、20万吨/年乙二醇等核心产品，<strong>2021年投产以来累计产量超1700万吨，产值突破340亿元</strong>，甲醇产品华南市场占有率首位，醋酸产品全国市场占有率第一、全球第二。公司已获评国家智能制造标杆企业、工信部智能制造示范工厂。</p>
+        <p><strong>🔍 海康视角：</strong>华谊能化作为国家级智能工厂，后续持续迭代升级中，AI视频分析、智能巡检机器人、数字孪生等新技术应用有深化合作空间。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://m.qcc.com/firm/d0cb3576d0486a2f7a23305509a19518.html" target="_blank" rel="noopener noreferrer">企查查</a> <span class="opp-tag">🎯 智能工厂升级</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">防腐项目</span>
+        <span class="card-date">09-09</span>
+      </div>
+      <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-713-0-0-3.html" target="_blank" rel="noopener noreferrer">广西广投北海发电有限公司锅炉钢结构及管道防腐项目询比采购</a></h4>
+      <div class="card-body">
+        <p>广西广投北海发电有限公司发布<strong>2026年#1、#2锅炉钢结构及管道防腐项目【重新采购】询比采购公告</strong>。电厂设备防腐是保障安全生产的重要维护项目，反映出沿海高盐雾环境下工业设备防腐需求刚性。</p>
+        <p><strong>🔍 海康视角：</strong>防腐项目施工期间需要临时安全监控，且电厂本身有安防监控系统运维和升级需求，可结合防腐项目对接渠道。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-713-0-0-3.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 电厂安防运维</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <span class="tag tag-project">新材料</span>
+        <span class="card-date">09-03</span>
+      </div>
+      <h4><a href="https://m.cbi360.net/dinggc/project/r4500_t18/" target="_blank" rel="noopener noreferrer">广西心连心一头多尾柔性调节硝基产业链项目立项，总投资约20亿元</a></h4>
+      <div class="card-body">
+        <p>广西心连心化学工业有限公司一头多尾柔性调节硝基产业链项目完成<strong>立项</strong>，总投资约20亿元，位于桂平新材料产业园。项目围绕硝基产业链上下游延伸，是心连心绿色化工新材料基地的重要产业链补链项目。</p>
+        <p><strong>🔍 海康视角：</strong>新化工项目立项后将陆续进入设计、施工、设备安装阶段，智能化安防系统招标通常在中后期，应建立项目跟踪机制提前布局。</p>
+      </div>
+      <div class="card-source">来源：<a href="https://m.cbi360.net/dinggc/project/r4500_t18/" target="_blank" rel="noopener noreferrer">中项网</a> <span class="opp-tag">🎯 新化工项目跟踪</span></div>
+    </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西化工煤炭行业简报</strong> · 2026.09.07—09.13<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
