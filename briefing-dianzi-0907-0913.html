@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西电子电器行业简报 · 2026.09.07—09.13</title>
+<style>
+
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🔌 广西电子电器行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.07 — 09.13</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="summary">
+    <h2>📌 本周总结</h2>
+      <p><strong>一是政务信息化与电子政务持续大额投入。</strong>自治区政务云运维和安全保障服务项目预算3219万元发布招标（9月8日），广西医科大学附属武鸣医院信息中心机房搬迁改造项目预算496.7万元，合浦县电子政务外网网络租赁及机房运维服务等项目本周密集发布，政务信息化进入新一轮升级周期。</p>
+      <p><strong>二是消费电子与显示产业深耕广西。</strong>天山电子发布可转债募集资金6.97亿元投向光电触显一体化模组二期项目，荔浦大顺科技PCB月产能达10万平米并获评省级创新型中小企业，桂林花岭片区1.78亿元办公楼项目启动，广西电子信息制造业从上游材料到终端产品的产业链日趋完整。</p>
+      <p><strong>三是智能家电与工业设计创新融合提速。</strong>广西未来人工智能工业设计创新中心9月9日启动、2026中国（广西）—东盟工业设计周将于9月17日开幕，柳江智能家电产业集群持续扩能，AI设计与智能家电制造深度融合，面向东盟的智能电子产业迎来新机遇。</p>
+  </div>
+
+  <div class="opp-bar">
+    <h3>🎯 本周项目机会速览</h3>
+    <ul>
+        <li>自治区政务云运维和安全保障服务 · 预算3219万元，视频会议+安防+可视化</li>
+        <li>信息中心机房搬迁改造项目 · 预算496.7万元，动环监控+安防系统</li>
+        <li>天山电子可转债6.97亿投建光电触显模组二期 · 智慧工厂建设需求</li>
+        <li>合浦县电子政务外网网络租赁及机房运维服务 · 9月21日响应截止</li>
+        <li>广西未来AI工业设计创新中心启动 · 首批20家入驻企业智能化服务</li>
+        <li>柳江智能家电产业集群扩能 · 显示板/传感器/电子控制器需求增长</li>
+        <li>桂林电子科技大学5G/无线通信测试设备采购 · 科研设备+可视化大屏</li>
+        <li>中国—东盟工业设计周开幕 · AI设计+消费电子新品展示，品牌合作机会</li>
+    </ul>
+  </div>
+
+    <div class="section">
+      <div class="section-title">💻 政务信息化与电子政务</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-08</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28114267.shtml" target="_blank" rel="noopener noreferrer">自治区政务云运维和安全保障服务公开招标，预算3219万元</a></h4>
+        <div class="card-body">
+          <p><strong>广西政务云运维大单发布</strong>：自治区信息中心发布政务云运维和安全保障服务公开招标公告，预算3219.02万元。项目涵盖云资源服务、运维服务、安全保障服务、线路租赁服务等，9月29日开标。该项目是广西数字政府建设的重要基础支撑。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28114267.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 政务云+安防</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">更正公告</span>
+          <span class="card-date">09-13</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gzgg/202609/t20260913_27318486.htm" target="_blank" rel="noopener noreferrer">自治区政务云运维和安全保障服务发布更正公告（一）</a></h4>
+        <div class="card-body">
+          <p><strong>政务云项目招标文件优化调整</strong>：自治区政务云运维和安全保障服务项目发布更正公告，对运维人员背景审查表述、线路租赁等保评测、大内存数据库服务器配置等内容进行修正。项目投标截止时间为9月29日，是广西政务信息化年度重点项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gzgg/202609/t20260913_27318486.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 政务信息安全</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-07</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28110341.shtml" target="_blank" rel="noopener noreferrer">广西医科大学附属武鸣医院信息中心机房搬迁改造项目招标，预算496.7万元</a></h4>
+        <div class="card-body">
+          <p><strong>武鸣医院机房改造大单启动</strong>：广西医科大学附属武鸣医院信息中心机房搬迁改造项目发布公开招标公告，预算496.70万元，要求120日历日完成改造安装调试。项目涉及机房整体搬迁、设备升级，是医院数字化建设的基础工程。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28110341.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 机房动环+安防</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-09</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27937-450500-0-7.html" target="_blank" rel="noopener noreferrer">合浦县电子政务外网网络租赁及机房运维服务竞争性磋商</a></h4>
+        <div class="card-body">
+          <p><strong>合浦县电子政务运维服务采购启动</strong>：合浦县发展和改革局发布电子政务外网网络租赁及机房运维服务竞争性磋商公告，9月21日响应截止。项目覆盖电子政务外网网络租赁与机房运维保障，是县级数字政府基础设施运维的常态化需求。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27937-450500-0-7.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 机房运维+安防</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-11</span>
+        </div>
+        <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1210_450200_0/" target="_blank" rel="noopener noreferrer">柳州市电子政务外网二期及政务云网络运维保障服务采购中标候选人公示</a></h4>
+        <div class="card-body">
+          <p><strong>柳州政务云网络运维项目定标中</strong>：2026年中国电信柳州分公司电子政务外网二期及政务云网络运维保障服务采购项目发布中标候选人公示。项目包含机房环境整改及最终业主验收确认，工期为合同签订后30天内，持续保障柳州电子政务网络稳定运行。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1210_450200_0/" target="_blank" rel="noopener noreferrer">采招网·柳州电信</a> <span class="opp-tag">🎯 政务网络运维</span></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">📱 消费电子与显示产业</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">融资扩产</span>
+          <span class="card-date">09-11</span>
+        </div>
+        <h4><a href="http://m.toutiao.com/group/7685084564749844992/" target="_blank" rel="noopener noreferrer">天山电子发布可转债募集说明书修订稿，募资6.97亿元投向光电触显模组二期</a></h4>
+        <div class="card-body">
+          <p><strong>广西天山电子加速扩产光电触显模组</strong>：广西天山电子股份有限公司（301379）发布可转债审核问询函回复及募集说明书修订稿，发行规模不超过6.97亿元，期限六年，募集资金拟投向<strong>光电触显一体化模组建设项目（二期）</strong>、信息化建设及补充流动资金。天山电子是广西液晶显示模组龙头企业。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://m.toutiao.com/group/7685084564749844992/" target="_blank" rel="noopener noreferrer">证券之星·今日头条</a> <span class="opp-tag">🎯 显示模组+智慧工厂</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">PCB制造</span>
+          <span class="card-date">09-13</span>
+        </div>
+        <h4><a href="https://www.qcc.com/creport/bd553b9b0c2898e247cf76294e6502bf.html" target="_blank" rel="noopener noreferrer">荔浦大顺科技月产能10万平米PCB，获评2026年省级创新型中小企业</a></h4>
+        <div class="card-body">
+          <p><strong>桂林荔浦PCB企业持续成长</strong>：荔浦大顺科技有限公司是集研发、设计、生产、销售于一体的高新技术企业，专业生产PCB双面、多层、LED-mini板，<strong>月产能10万平米</strong>，总投资10亿元。公司入选国家级高新技术企业，2026年获评省级创新型中小企业。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.qcc.com/creport/bd553b9b0c2898e247cf76294e6502bf.html" target="_blank" rel="noopener noreferrer">企查查·大顺科技</a> <span class="opp-tag">🎯 PCB+MiniLED</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">新建项目</span>
+          <span class="card-date">09-08</span>
+        </div>
+        <h4><a href="https://m.ccpc360.com/dianzidianqi/xmxxt0a450000k0p1/" target="_blank" rel="noopener noreferrer">广西年产1万吨钠离子电池硬碳负极材料项目立项</a></h4>
+        <div class="card-body">
+          <p><strong>钠离子电池新材料项目布局广西</strong>：广西年产1万吨钠离子电池硬碳负极材料项目立项，属于电池及电极材料领域的拟在建项目。随着新能源产业向广西集聚，从正极材料到负极材料、从锂电池到钠电池的产业链布局日趋完善。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.ccpc360.com/dianzidianqi/xmxxt0a450000k0p1/" target="_blank" rel="noopener noreferrer">中项网</a> <span class="opp-tag">🎯 新能源电子材料</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">新建项目</span>
+          <span class="card-date">09-07</span>
+        </div>
+        <h4><a href="https://m.ccpc360.com/nzjxm2042803.html" target="_blank" rel="noopener noreferrer">花岭片区B-3-28-3地块办公楼项目获批立项，总投资1.78亿</a></h4>
+        <div class="card-body">
+          <p><strong>柳州花岭片区新增电子产业载体</strong>：柳州市花岭片区B-3-28-3地块项目为非政府性投资新建项目，总投资1.78亿元，目前处于报批立项阶段，预计2026年一季度开工、2027年四季度完工，将为柳州电子信息产业发展提供新的产业空间。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.ccpc360.com/nzjxm2042803.html" target="_blank" rel="noopener noreferrer">中项网</a> <span class="opp-tag">🎯 产业园智能化</span></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">🔌 智能家电与工业设计</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">AI设计</span>
+          <span class="card-date">09-09</span>
+        </div>
+        <h4><a href="http://m.toutiao.com/group/7683719744192643593/" target="_blank" rel="noopener noreferrer">广西未来人工智能工业设计创新中心启动，赋能电子电器产业升级</a></h4>
+        <div class="card-body">
+          <p><strong>AI+工业设计助力电子电器创新</strong>：广西未来人工智能工业设计创新中心9月9日在南宁启动，已吸纳首批20家企业和机构入驻。中心设立AI设计实验室、工业设计实验室、数据标注实验室和东盟智创AI直播实验室，将赋能智能家电、消费电子等广西特色电子电器产业升级。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://m.toutiao.com/group/7683719744192643593/" target="_blank" rel="noopener noreferrer">南宁日报·金台资讯</a> <span class="opp-tag">🎯 AI+消费电子设计</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">产业活动</span>
+          <span class="card-date">09-09</span>
+        </div>
+        <h4><a href="https://news.gxtv.cn/article/detail_339626293494f4915af5708412c88eaf.html" target="_blank" rel="noopener noreferrer">2026中国（广西）—东盟工业设计周9月17日开幕，聚焦智能家电与电子信息</a></h4>
+        <div class="card-body">
+          <p><strong>东博会框架下工业设计周将启</strong>：2026中国（广西）—东盟工业设计周将于9月17-21日在南宁举办，以"智联东盟·设计共创"为主题。活动将展示人工智能、工业设计与消费电子、智能家电相结合的产品和案例，推动电子电器产业面向东盟市场创新发展。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://news.gxtv.cn/article/detail_339626293494f4915af5708412c88eaf.html" target="_blank" rel="noopener noreferrer">广西网络广播电视台</a> <span class="opp-tag">🎯 电子电器+东盟</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">智能家电</span>
+          <span class="card-date">09-12</span>
+        </div>
+        <h4><a href="https://m.zhipin.com/companys/aaf753afd3ea3b681HV_2t2_GFE~.html" target="_blank" rel="noopener noreferrer">柳江智能家电产业集群生态成型，津晶电器年产空调300万台套</a></h4>
+        <div class="card-body">
+          <p><strong>粤桂智能家电产业集聚区产能释放</strong>：柳州津晶电器作为粤桂智能家电产业集聚区建设运营主体，项目占地约1078亩、总投资约25亿元。一期已投产，形成年产空调300万台套能力；二期布局冰箱、洗衣机及压缩机、电子控制器等核心部件，全部建成达产后年产值规模可观。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.zhipin.com/companys/aaf753afd3ea3b681HV_2t2_GFE~.html" target="_blank" rel="noopener noreferrer">BOSS直聘·津晶电器</a> <span class="opp-tag">🎯 智能家电工厂</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">规划公示</span>
+          <span class="card-date">09-08</span>
+        </div>
+        <h4><a href="http://www.liujiang.gov.cn/dwxxgkpt/gbmxxgk/qkjj_73151/qkjjxxgk/lists.shtml" target="_blank" rel="noopener noreferrer">柳江区300MW/600MWH集中共享储能电站项目规划总平批前公示</a></h4>
+        <div class="card-body">
+          <p><strong>柳江新能源储能项目进入规划阶段</strong>：广西磐亿能源科技发展有限公司300MW/600MWH集中共享储能电站项目规划总平批前公示。该项目与柳江智能家电、电子信息等产业形成互补，为园区企业提供可靠的绿色能源保障。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.liujiang.gov.cn/dwxxgkpt/gbmxxgk/qkjj_73151/qkjjxxgk/lists.shtml" target="_blank" rel="noopener noreferrer">柳江区人民政府</a> <span class="opp-tag">🎯 储能+智慧能源</span></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">📡 通信与电子设备采购</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-07</span>
+        </div>
+        <h4><a href="https://www.guet.edu.cn/zhglc/9169/list.psp" target="_blank" rel="noopener noreferrer">广西医科大学无线通信测试系统（RRM+RF测试环境）采购公开招标</a></h4>
+        <div class="card-body">
+          <p><strong>高校科研电子设备采购潮</strong>：广西医科大学、桂林电子科技大学等高校本周密集发布电子信息类科研设备采购公告，涵盖5G无线测试平台、无线通信测试系统、示波器、矢量网络分析仪等高端电子仪器设备，总预算数千万元。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.guet.edu.cn/zhglc/9169/list.psp" target="_blank" rel="noopener noreferrer">桂林电子科技大学</a> <span class="opp-tag">🎯 高校科研设备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-10</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-1083-0-1-1.html" target="_blank" rel="noopener noreferrer">电子信息产教融合实训基地教学设备采购项目竞价公告</a></h4>
+        <div class="card-body">
+          <p><strong>北海电子信息实训基地启动采购</strong>：电子信息产教融合实训基地教学设备采购项目发布竞价公告，9月15日报价截止。项目面向北海职业教育，购置电子信息实训设备，服务广西电子信息产业人才培养需求。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-1083-0-1-1.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 实训基地设备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">采购</span>
+          <span class="card-date">09-10</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-1083-0-1-1.html" target="_blank" rel="noopener noreferrer">广西博联信息通信LED大屏幕等寻源项目公告</a></h4>
+        <div class="card-body">
+          <p><strong>通信运营商LED大屏采购启动</strong>：广西博联信息通信技术有限责任公司对LED大屏幕、音频设备、门禁视频及LCD大屏幕等9个标包进行投标寻源。项目覆盖防城港、桂林、龙胜、北海等多个地市，LED显示与视频门禁系统需求持续释放。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-1083-0-1-1.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 LED大屏+门禁</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-10</span>
+        </div>
+        <h4><a href="https://zb.zhaobiao.cn/fore_v_03408919d7cf6f6cb9b2315f932dfc8d.html" target="_blank" rel="noopener noreferrer">南宁职业技术大学智慧交通学院智能网联实训中心采购意向发布</a></h4>
+        <div class="card-body">
+          <p><strong>智能网联与低空智能实训中心将建</strong>：南宁职业技术大学智慧交通产业学院智能网联汽车技术与低空智能应用技术实训中心项目采购意向公布，涵盖智能灯杆及V2X路测感知设备、无人驾驶云控系统、智能座舱系统等多个电子信息模块。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://zb.zhaobiao.cn/fore_v_03408919d7cf6f6cb9b2315f932dfc8d.html" target="_blank" rel="noopener noreferrer">招标网</a> <span class="opp-tag">🎯 智能灯杆+V2X</span></div>
+      </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西电子电器行业简报</strong> · 2026.09.07—09.13<br>
+  编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>
+  数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
