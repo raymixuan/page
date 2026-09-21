@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西交警/道路交通行业简报 · 2026.09.14—09.20</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🚦 广西交警/道路交通行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.14 — 09.20</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是智慧交管信息化与服务采购持续释放。</strong>南宁交警业务系统网络通信服务128.1万元成交、玉林交警拖车服务约172万元重招磋商、社会考场服务启动采购，城市交管信息化运营服务和外包服务需求保持稳定增长态势。</p>
+  <p><strong>二是高速公路与内河水运智慧化建设加速推进。</strong>广西交投2026年机电改造项目A标2189万元中标候选人公示、G75兰海高速武鸣至南宁段改扩建前期完成、灌阳至平乐高速施工招标，叠加平陆运河通航后的港口航道智慧化需求，广西智慧交通市场持续扩容。</p>
+  <p><strong>三是AI大模型与无人机等新技术加速应用。</strong>广西交科集团"无人机多尺度感知+道路安全主动防控AI大模型"项目进入实施阶段，智慧交通从传统机电系统向AI主动防控升级，视频事件检测、无人机巡查等新技术应用前景广阔。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西交投集团2026年机电改造项目（A标）· 约 2189 万元，中标候选人公示</li>
+    <li>玉林交警交通违法及事故车辆拖车服务（重2）· 约 172 万元，磋商截止 9-29</li>
+    <li>南宁交警支队业务系统网络通信服务 · 128.1 万元，9-15 成交公告</li>
+    <li>G75兰海高速武鸣至南宁段改扩建 · 前期工作完成中标，9-18 公告</li>
+    <li>灌阳至平乐高速公路平乐连接线工程 · 9-18 施工招标公告</li>
+    <li>玉林交警驾驶人社会考场服务 · 竞争性磋商，9-17 发布</li>
+    <li>南宁港六景港区5号泊位工程总承包 · 9-17 中标公告</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">🚦 智慧交管与信息化</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260915_27327223.htm" target="_blank" rel="noopener noreferrer">南宁市交警支队业务系统网络通信服务采购成交 · 128.1万元</a></h4>
+        <div class="card-body">
+          <p>南宁市公安局交通管理支队发布<strong>2026年业务系统网络通信服务采购成交公告</strong>（NNZC2026-C3-990764-GXRZ），总成交128.1万元。分标1（115.2万）由中国电信南宁分公司中标，分标2（12.9万）由中国移动广西公司中标。服务期1年，为交警业务系统提供网络通信基础设施保障。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260915_27327223.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 128万通信服务</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">招标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="https://zb.zhaobiao.cn/bidding_v_ad46f69332a4e2f602dc615ca035cdfc.html" target="_blank" rel="noopener noreferrer">玉林交警支队交通违法及事故车辆拖车服务（重2）磋商 · 预算约172万元</a></h4>
+        <div class="card-body">
+          <p>玉林市公安局交通管理支队发布<strong>交通违法及交通事故肇事车辆拖车服务（重2）竞争性磋商公告</strong>（YLZC2026-C3-990265-YZLZ），分两个标项，服务期限12个月。标项一覆盖玉州一大队、玉东大队、高管一/二大队，标项二覆盖福绵大队、玉州二大队。响应截止9月29日。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://zb.zhaobiao.cn/bidding_v_ad46f69332a4e2f602dc615ca035cdfc.html" target="_blank" rel="noopener noreferrer">招标网/云之龙咨询</a> <span class="opp-tag">🎯 拖车服务采购</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-14</span>
+        </div>
+        <h4><a href="http://www.gxjttzjt.com/contents/19/22196.html" target="_blank" rel="noopener noreferrer">广西交投集团2026年机电改造项目（A标）中标候选人公示 · 2189万元</a></h4>
+        <div class="card-body">
+          <p>广西交通投资集团发布<strong>2026年机电改造项目（A标）中标候选人公示</strong>（HG2026-GL877），预期中标价约2189万元。第一中标候选人为贵州中南交通科技/广西计算中心海蓝电脑联合体。项目涉及高速公路机电系统升级改造，涵盖监控、通信、收费等系统，智慧交通市场空间广阔。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.gxjttzjt.com/contents/19/22196.html" target="_blank" rel="noopener noreferrer">广西交通投资集团</a> <span class="opp-tag">🎯 2189万机电改造</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-17</span>
+        </div>
+        <h4><a href="https://www.qianlima.com/hot4910428/" target="_blank" rel="noopener noreferrer">玉林交警支队购买汽车类机动车驾驶人社会考场服务磋商</a></h4>
+        <div class="card-body">
+          <p>广西建坤工程咨询有限公司发布<strong>2026年玉林市公安局交通管理支队购买汽车类机动车驾驶人社会考场服务竞争性磋商公告</strong>（GXJK2026-C-005）。社会考场服务模式持续推广，配套考试监控系统、人脸识别验证、智能评判系统等信息化需求同步增长。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.qianlima.com/hot4910428/" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 驾考信息化</span></div>
+      </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🛣️ 高速公路与路网建设</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">G75兰海高速武鸣至南宁段改扩建工程前期工作中标结果公告</a></h4>
+        <div class="card-body">
+          <p>广西公共资源交易中心发布<strong>G75兰海高速武鸣至南宁段改扩建工程项目建议书、工可、初步设计及其前期专项研究工作中标结果公告</strong>。兰海高速南宁段是广西南北交通大动脉，改扩建工程将大幅提升通行能力，配套智慧高速、监控通信、ETC门架等机电系统需求将随项目推进逐步释放。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 智慧高速新线</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">S514武鸣锣圩至里建段路面改造工程中标结果公告</a></h4>
+        <div class="card-body">
+          <p>广西公共资源交易中心发布<strong>S514武鸣锣圩至里建段路面改造工程中标结果公告</strong>。国省干道路面改造工程常态化推进，沿线交通标志标线、视频监控、测速设备、交安设施等同步升级改造，智慧公路向普通国省道延伸趋势明显。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 国省道改造</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/jygg/" target="_blank" rel="noopener noreferrer">灌阳至平乐高速公路平乐连接线等工程施工招标公告</a></h4>
+        <div class="card-body">
+          <p>广西公共资源交易中心发布<strong>灌阳至平乐高速公路平乐连接线、平乐收费站、新圩服务区（右侧）工程施工招标公告</strong>。新建高速公路配套机电三大系统（监控、通信、收费）、智慧服务区、隧道机电等智能化设备采购需求稳定增长，智慧交通市场持续扩容。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/jygg/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 新高速机电</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-17</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">南宁港六景港区鹤笋作业区5号泊位工程设计施工总承包中标</a></h4>
+        <div class="card-body">
+          <p>广西公共资源交易中心发布<strong>南宁港六景港区鹤笋作业区5号泊位工程设计施工总承包中标结果公告</strong>。平陆运河通航后，内河港口建设加速，港口智慧化需求随之增长，包括港口视频监控、智能闸口、集装箱定位、智慧口岸等应用场景广阔。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 智慧港口</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-14</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">北海港铁山港20万吨级航道工程管养基地项目施工中标</a></h4>
+        <div class="card-body">
+          <p>广西公共资源交易中心发布<strong>北海港铁山港20万吨级航道工程（啄罗作业区至石头埠作业区段）管养基地项目施工中标结果公告</strong>。北部湾港口基础设施持续升级，配套港区监控系统、智慧航道、VTS船舶交通管理系统等需求同步增长。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 港区安防</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/" target="_blank" rel="noopener noreferrer">桂江航道工程京南船闸上闸首母线廊道改造工程中标结果公告</a></h4>
+        <div class="card-body">
+          <p>广西公共资源交易中心发布<strong>桂江航道工程（马江至莲花大桥段）桂江京南船闸上闸首母线廊道改造工程（第三次）中标结果公告</strong>。西江黄金水道船闸升级改造持续推进，智慧船闸、通航调度系统、航道视频监控等智能化应用需求稳定。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 智慧航道</span></div>
+      </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🚔 综合执法与交通治理</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">执法动态</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="https://k.sina.com.cn/article_6073664274_16a04c31202001mjpq.html" target="_blank" rel="noopener noreferrer">玉林交警公告75辆逾期未处理涉案车辆 将依法收缴报废</a></h4>
+        <div class="card-body">
+          <p>玉林市公安局交通管理支队玉州二大队发布<strong>2026年4—5月逾期未接受处理涉案车辆公告</strong>，涉及75辆因交通事故被依法扣留且当事人逾期未接受处理的车辆，公告期满无人认领将依法收缴、报废。涉案车辆管理智能化、拖吊一体化服务等需求持续增长。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://k.sina.com.cn/article_6073664274_16a04c31202001mjpq.html" target="_blank" rel="noopener noreferrer">新浪新闻/玉林晚报</a> <span class="opp-tag">🎯 涉案车辆管理</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">岑溪市公安局交管大队综合修理框架协议采购成交</a></h4>
+        <div class="card-body">
+          <p>岑溪市公安局交通管理大队<strong>综合修理框架协议采购项目</strong>成交结果公布。县级交警大队车辆维修、装备维护等保障性采购常态化，同时带动执法记录仪、酒精测试仪、移动警务终端等交警执法装备的更新换代需求。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 县级交警保障</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">北流市公安局交管大队多项网上超市及框架协议采购成交</a></h4>
+        <div class="card-body">
+          <p>北流市公安局交通管理大队本周发布<strong>车辆加油框架协议、墨仓式打印机网上超市</strong>等多项采购成交公告。县级交管基层单位是智慧交管下沉的重要载体，乡镇路口电子警察、违停抓拍、测速设备等需求持续向县域延伸。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://wap.qianlima.com/hot1670006/4" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 县域交管设备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">科技</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="https://www.qcc.com/creport/7fbe8ccc9e6e3dbe385e9a38912e2d66.html" target="_blank" rel="noopener noreferrer">广西交科集团道路安全主动防控AI大模型项目进入实施阶段</a></h4>
+        <div class="card-body">
+          <p>广西交科集团<strong>"结合无人机多尺度感知的道路安全主动防控AI大模型关键技术研究与应用示范"</strong>项目网络辅材采购完成评审。该项目将无人机巡查与AI大模型结合，实现道路安全隐患主动识别与预警，是智慧交通与AI深度融合的典型应用方向。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.qcc.com/creport/7fbe8ccc9e6e3dbe385e9a38912e2d66.html" target="_blank" rel="noopener noreferrer">企查查/广西交科</a> <span class="opp-tag">🎯 AI+智慧交通</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/" target="_blank" rel="noopener noreferrer">平果市旧城区下穿铁路段监控量测招标公告</a></h4>
+        <div class="card-body">
+          <p>平果市旧城区给排水提升改造工程发布<strong>下穿南昆铁路及南昆客专PGJC标段监控量测招标公告</strong>。市政工程下穿铁路段安全监控需求日益增长，包括变形监测、视频监控、预警系统等，是城市智慧交通与安全监测的交叉领域。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 安全监测</span></div>
+      </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西交警/道路交通行业简报</strong> · 2026.09.14—09.20<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
