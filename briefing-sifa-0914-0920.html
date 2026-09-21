@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西司法行业简报 · 2026.09.14—09.20</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>⚖️ 广西司法行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.14 — 09.20</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是公共法律服务"十五五"规划重磅发布，AI+法律成为核心方向。</strong>广西正式印发公共法律服务体系建设"十五五"规划，明确部署"人工智能+"公共法律服务建设，构建法律服务行业垂直模型、打造"AI超感中心"中枢智能体，设置24项主要发展指标，智慧司法迎来新一轮发展机遇。</p>
+  <p><strong>二是法院信息化大单密集释放，智慧法院建设持续深化。</strong>百色法院"一张网"系统配套设备项目618.63万元中标、全区法院电子卷宗编目归目服务1492.86万元招标、博白法院综合安防设备71.7万元谈判采购，智慧法院从省级向地市、县区两级延伸，市场空间持续扩大。</p>
+  <p><strong>三是涉外法治与东盟合作亮点突出，AI法律应用加速落地。</strong>中国（广西）—东盟"AI+法律"应用创新大赛159万元服务采购发布、涉外法律AI助手"骆儿"正式发布、东盟法律实务交流会在南宁举办，广西作为面向东盟法治合作前沿阵地的定位进一步强化。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>2026年全区法院电子卷宗编目归目服务 · 预算1492.86万元，投标截止9-22</li>
+    <li>百色法院"一张网"系统配套设备 · 中标价618.63万元，9-17公告</li>
+    <li>广西监狱监管指挥中心业务技术用房信息化 · 装修及窗帘采购9-14发布</li>
+    <li>中国—东盟"AI+法律"应用创新大赛服务 · 预算159万元，响应截止9-29</li>
+    <li>博白县人民法院综合安防设备采购(重) · 预算71.7万元，9-15开标</li>
+    <li>柳州监狱罪犯食堂蔬菜补充采购 · 预算240万元，9-14发布采购意向</li>
+    <li>司法厅2026年度警服采购招标代理 · 9-15比选结果公告</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">🏛️ 法院信息化与智慧法院</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-01</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28092012.shtml" target="_blank" rel="noopener noreferrer">2026年全区法院电子卷宗编目归目服务采购 · 预算1492.86万元</a></h4>
+    <div class="card-body">
+      <p>广西君安工程建设顾问有限公司发布<strong>2026年全区法院电子卷宗编目归目服务采购项目公开招标公告</strong>（GXZC2026-G3-002896-GXJA），预算1492.86万元，投标截止9月22日。项目为全区法院案件电子卷宗提供编目归目加工服务，中标供应商入驻五象中心编目归目中心，单页加工价格不超过0.165元/页。</p>
+      <p><strong>🔍 海康视角：</strong>电子卷宗深度应用是智慧法院建设核心环节，海康在OCR识别、文档智能、图像质量增强等领域有技术积累，可探索与卷宗加工服务商联合提供AI赋能解决方案。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28092012.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 1492万智慧法院</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260917_27343229.htm" target="_blank" rel="noopener noreferrer">百色法院"一张网"系统配套设备(重)中标 · 618.63万元</a></h4>
+    <div class="card-body">
+      <p>百色市政府集中采购中心发布<strong>百色法院"一张网"系统配套设备（重）中标公告</strong>（BSZC2026-G1-990097-BSSZ），中国移动通信集团广西有限公司以618.63万元中标。该项目是百色市中级人民法院智慧法院"一张网"工程的重要配套，涵盖法庭科技化、网络及安防设备等。</p>
+      <p><strong>🔍 海康视角：</strong>法院"一张网"建设涉及科技法庭、安防监控、执行指挥、远程提讯等多类视频设备，海康全系列产品可深度适配，可与移动等集成商建立长期设备供应合作。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260917_27343229.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 618万一张网</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/zfcgly/zbgg_30157/t28109190.shtml" target="_blank" rel="noopener noreferrer">博白县人民法院综合安防设备采购(重) · 预算71.71万元</a></h4>
+    <div class="card-body">
+      <p>广西城建咨询设计有限公司发布<strong>博白县人民法院综合安防设备采购（重）竞争性谈判公告</strong>，预算71.71万元，9月15日开标。采购内容包含管理单元、校时单元、核心汇聚交换机、视频监控设备、综合安防管理平台等，是县级法院安防系统升级的典型项目。</p>
+      <p><strong>🔍 海康视角：</strong>县级法院综合安防设备是标准的海康产品组合场景，视频监控+安防平台+交换机全套产品可直接匹配，应持续关注全区各县区法院安防升级需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/zfcgly/zbgg_30157/t28109190.shtml" target="_blank" rel="noopener noreferrer">玉林市人民政府</a> <span class="opp-tag">🎯 法院安防</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=joDYw9iwbhmbtox5qWyr8A==&parentId=66485" target="_blank" rel="noopener noreferrer">柳州中院9月政府采购意向 鹿寨法院电子卷宗及集约达服务合计229万</a></h4>
+    <div class="card-body">
+      <p>柳州市中级人民法院发布<strong>2026年9月政府采购意向</strong>，含鹿寨县人民法院2027年度电子卷宗加工服务（预算110万元）、集约送达及辅助服务（预算119万元）两个项目，预计11月采购。基层法院信息化服务采购常态化趋势明显。</p>
+      <p><strong>🔍 海康视角：</strong>基层法院电子卷宗与送达服务市场持续扩容，AI辅助卷宗加工、智能送达等技术可提升服务效率，可与当地服务商联合开拓市县两级法院市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=joDYw9iwbhmbtox5qWyr8A==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="https://guangxi.okcis.cn/hangyezb-anfangshebei/" target="_blank" rel="noopener noreferrer">荔浦市人民法院"一张网"及信息化系统软硬件运维服务询价</a></h4>
+    <div class="card-body">
+      <p>荔浦市人民法院发布<strong>"一张网"、无纸化办案网络和信息化系统软硬件运维服务询价函</strong>。项目旨在保障法院信息化系统安全稳定运行，提升智慧法院运维保障和网络安全管理水平。县级法院运维服务需求常态化释放。</p>
+      <p><strong>🔍 海康视角：</strong>法院信息化系统运维涉及安防监控、科技法庭等设备维护，海康售后运维服务体系可支持本地化服务合作，配套设备更新替换需求稳定。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://guangxi.okcis.cn/hangyezb-anfangshebei/" target="_blank" rel="noopener noreferrer">OKCIS广西安防设备网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">竞价</span>
+      <span class="card-date">09-14</span>
+    </div>
+    <h4><a href="https://www.anfangzb.com/tag/45_3637_shipinlianwang.html" target="_blank" rel="noopener noreferrer">港北区人民法院音视频及档案数字化存储和政务外网安全设备竞价</a></h4>
+    <div class="card-body">
+      <p>贵港市港北区人民法院发布<strong>音视频及档案数字化管理存储和政务外网安全管控设备采购竞价公告</strong>，包含视频联网设备，基于GB/T28181标准协议实现与外域平台互联互通。基层法院音视频联网升级需求持续释放。</p>
+      <p><strong>🔍 海康视角：</strong>法院音视频联网平台、存储设备、安全管控设备均为海康核心产品线，可针对性对接地市中级法院及基层法院的信息化部门。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.anfangzb.com/tag/45_3637_shipinlianwang.html" target="_blank" rel="noopener noreferrer">安防招标采购网</a></div>
+  </div>
+
+</div>
+<div class="section">
+  <div class="section-title">🔒 监狱戒毒与监管安防</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购</span>
+      <span class="card-date">09-14</span>
+    </div>
+    <h4><a href="http://jyj.gxzf.gov.cn/xxgk/fdzdgknr/tzgg/" target="_blank" rel="noopener noreferrer">广西监狱监管指挥中心业务技术用房装修及窗帘采购公告</a></h4>
+    <div class="card-body">
+      <p>自治区监狱管理局发布<strong>监管指挥中心业务技术用房项目装修工程造价咨询服务采购公告</strong>及<strong>窗帘采购公告</strong>。该项目是广西监狱系统信息化指挥中枢，此前已完成信息化建设项目档案验收咨询，标志着监管指挥中心建设进入收尾配套阶段。</p>
+      <p><strong>🔍 海康视角：</strong>监狱监管指挥中心是智慧监狱大脑，集成视频监控、应急指挥、智能分析等核心系统，项目后续运维升级及其他监狱信息化改造存在持续机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jyj.gxzf.gov.cn/xxgk/fdzdgknr/tzgg/" target="_blank" rel="noopener noreferrer">广西监狱管理局</a> <span class="opp-tag">🎯 智慧监狱</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购意向</span>
+      <span class="card-date">09-14</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=tPePxcdanP+r4BhnpnDfiA==&parentId=66485" target="_blank" rel="noopener noreferrer">柳州监狱罪犯食堂蔬菜补充采购项目采购意向 · 预算240万元</a></h4>
+    <div class="card-body">
+      <p>广西壮族自治区柳州监狱发布<strong>2026年10月政府采购意向</strong>，含罪犯食堂蔬菜补充采购项目，预算240万元，采购周期为2026年10月至2027年2月。监狱系统后勤物资采购常态化运行，是监狱保障类采购的重要组成。</p>
+      <p><strong>🔍 海康视角：</strong>监狱物资采购虽以生活物资为主，但智慧食堂、食品溯源、智能仓储等配套系统存在智能化升级需求，可作为监狱智慧化延伸场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=tPePxcdanP+r4BhnpnDfiA==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">采购</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/caizhao_1245762/" target="_blank" rel="noopener noreferrer">黎塘监狱污水站运维项目发布采购公告</a></h4>
+    <div class="card-body">
+      <p>云之龙咨询集团发布<strong>黎塘监狱污水站运维项目（GXZC2026-C3-003074-YZ）</strong>采购公告。监狱基础设施运维类采购持续释放，涵盖生活保障、环境治理等多个领域。</p>
+      <p><strong>🔍 海康视角：</strong>监狱各类设施运维是安防监控设备更新替换的重要触点，污水站等场所视频监控、周界防范需求可推动智能化改造。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wap.qianlima.com/caizhao_1245762/" target="_blank" rel="noopener noreferrer">千里马招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">谈判</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-839-0-1-0.html" target="_blank" rel="noopener noreferrer">南宁市第一看守所2026年度在押人员及职工被服采购</a></h4>
+    <div class="card-body">
+      <p>南宁市第一看守所发布<strong>2026年度在押人员及职工被服采购项目竞争性谈判公告</strong>（NNZC2026-J1-990839-ZZGJ），谈判截止9月20日。看守所后勤保障类采购持续释放，监管场所物资供应规范化程度不断提升。</p>
+      <p><strong>🔍 海康视角：</strong>看守所安防升级是监管领域重点市场，除被服等后勤物资外，视频监控、智能交互、电子腕带等智能监管设备需求增长迅速。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-839-0-1-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+
+</div>
+<div class="section">
+  <div class="section-title">🤖 法治科技与涉外法律服务</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="http://www.legaldaily.com.cn/index/content/2026-09/16/content_9459013.html" target="_blank" rel="noopener noreferrer">广西出台公共法律服务体系建设"十五五"规划 部署AI+法律服务</a></h4>
+    <div class="card-body">
+      <p>经自治区政府常务会议审议通过，《<strong>广西公共法律服务体系建设"十五五"规划</strong>》正式印发实施。规划设置24项主要发展指标，专门部署"人工智能+"公共法律服务建设，推进管理信息系统迭代升级，构建法律服务行业垂直模型，打造"AI超感中心"中枢智能体，建设东盟国家非通用语种法律语料库。</p>
+      <p><strong>🔍 海康视角：</strong>"AI超感中心"及公共法律服务智能化是全新市场，海康的AI视觉、视频会议、智能终端等技术可应用于远程法律服务、法律援助视频系统等场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.legaldaily.com.cn/index/content/2026-09/16/content_9459013.html" target="_blank" rel="noopener noreferrer">法治日报</a> <span class="opp-tag">🎯 AI+法律十五五</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260918_27359168.htm" target="_blank" rel="noopener noreferrer">中国—东盟"AI+法律"应用创新大赛服务采购 · 预算159万元</a></h4>
+    <div class="card-body">
+      <p>广西国栋招标有限公司发布<strong>2026年中国（广西）—东盟"AI+法律"应用创新大赛服务采购项目竞争性磋商公告</strong>（GXZC2026-C3-003139-GDZB），预算159万元，响应截止9月29日。这是自治区司法厅推动AI与法律深度融合的重要活动。</p>
+      <p><strong>🔍 海康视角：</strong>AI+法律创新大赛是行业技术风向标，海康可关注大赛成果在司法公证、智能调解、远程庭审等场景的落地转化机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260918_27359168.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 AI+法律大赛</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">行业动态</span>
+      <span class="card-date">09-19</span>
+    </div>
+    <h4><a href="https://gx.chinadaily.com.cn/a/202609/19/WS6aae2585e4b09a165c78b164.html" target="_blank" rel="noopener noreferrer">东盟法律实务交流会南宁举办 涉外法律AI助手"骆儿"发布</a></h4>
+    <div class="card-body">
+      <p>以"法智共融，数创未来"为主题的<strong>2026年东盟法律实务交流会</strong>在南宁举行。会上发布涉外法律AI小助手"骆儿"，已完成越南、泰国、印度尼西亚三国核心法律语料库建设，可检索19万余条生效法律法规、1111万余条真实裁判案例。</p>
+      <p><strong>🔍 海康视角：</strong>涉外法律AI应用的兴起带动远程法律服务、视频会议系统、智能终端等配套需求，可关注广西面向东盟法律服务基础设施升级机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.chinadaily.com.cn/a/202609/19/WS6aae2585e4b09a165c78b164.html" target="_blank" rel="noopener noreferrer">中国日报网广西频道</a> <span class="opp-tag">🎯 涉外法律AI</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://www.gxzf.gov.cn/gxyw/t28130803.shtml" target="_blank" rel="noopener noreferrer">广西出台知识产权纠纷仲裁实施意见 推动在线仲裁与AI应用</a></h4>
+    <div class="card-body">
+      <p>广西多部门联合印发<strong>《关于加强知识产权纠纷仲裁工作的实施意见》</strong>，提出推动具备条件的仲裁机构设立知识产权仲裁院，组建自治区级东盟跨境知识产权仲裁专家库，积极运用在线仲裁平台与人工智能技术，开通中越、中老、中柬等双语服务通道。</p>
+      <p><strong>🔍 海康视角：</strong>在线仲裁平台需要高清视频会议、电子证据存证、智能录制等技术支撑，海康的视讯产品和智慧仲裁解决方案可服务于仲裁机构数字化升级。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/gxyw/t28130803.shtml" target="_blank" rel="noopener noreferrer">广西日报</a> <span class="opp-tag">🎯 智慧仲裁</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://sft.gxzf.gov.cn/zwgk/xxgk/fdzdgknr/czzj/qitazhichu/t28134113.shtml" target="_blank" rel="noopener noreferrer">自治区司法厅2026年度警服采购招标代理比选结果公告</a></h4>
+    <div class="card-body">
+      <p>自治区司法厅发布<strong>2026年度司法行政系统警服采购招标代理机构比选结果公告</strong>，华新项目管理集团、云之龙咨询集团、广西建通工程咨询三家机构中选。警服采购项目即将进入正式招标阶段，司法行政系统装备采购持续推进。</p>
+      <p><strong>🔍 海康视角：</strong>司法行政系统装备采购除警服外，执法记录仪、移动执法终端、社区矫正监控等智能化装备需求增长更快，可重点关注后续装备类招标。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://sft.gxzf.gov.cn/zwgk/xxgk/fdzdgknr/czzj/qitazhichu/t28134113.shtml" target="_blank" rel="noopener noreferrer">广西司法厅</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">培训动态</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="http://sft.gxzf.gov.cn/znts/" target="_blank" rel="noopener noreferrer">2026年涉外律师人才实务专题培训班在南宁落幕 中越边境基地揭牌</a></h4>
+    <div class="card-body">
+      <p>2026年<strong>涉外律师人才实务专题培训班</strong>在南宁圆满落幕，中越边境法律服务工作者培训交流基地同步签约揭牌。广西持续加强涉外法律服务人才培养，服务中国—东盟经贸合作，涉外法治基础设施建设不断完善。</p>
+      <p><strong>🔍 海康视角：</strong>中越边境法律服务基地建设将配套远程视频法律服务系统、多语种智能翻译设备等，是边境智慧司法新场景，可关注沿边地区涉外法律服务智能化需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://sft.gxzf.gov.cn/znts/" target="_blank" rel="noopener noreferrer">广西司法厅</a></div>
+  </div>
+
+</div>
+
+
+</main>
+
+<footer class="footer">
+  <strong>广西司法行业简报</strong> · 2026.09.14—09.20<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
