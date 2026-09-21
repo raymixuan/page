@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西政府行业简报 · 2026.09.14—09.20</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏛️ 广西政府行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.14 — 09.20</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是数字政府运维与AI产业布局双线推进。</strong>广西数字政务一体化平台2026年专项运维（二期）198.31万元采购意向发布、自治区数据局资产清查完成、AI赋能千行百业超级联赛宣传服务成交，叠加面向东盟人工智能伦理研究项目启动，数字政府从建设阶段转向深耕运维+AI赋能新阶段。</p>
+  <p><strong>二是重大活动与民生领域重大项目集中释放。</strong>广西第十六届运动会赛事运营服务3892.96万元招标（16个标项）、广西国际农业博览会500万元招标、山洪灾害监测预警运维全区6片区集中中标（单河池柳州片1506.57万），政府类大型项目采购量显著增长。</p>
+  <p><strong>三是新兴技术与实景三维等新基建项目加速落地。</strong>广西实景三维建设基础测绘工作启动磋商、无人机+机器人空地接驳物流项目完成招标、国家网络安全宣传周活动启动、气象预警平台建设持续下沉，数字政府新场景新应用不断涌现。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西第十六届运动会赛事运营服务 · 预算 3892.96 万元，开标 10-10</li>
+    <li>广西山洪灾害监测预警运维（河池/柳州）· 1506.57 万元，9-18 中标</li>
+    <li>2026年广西国际农业博览会 · 预算 500 万元，投标截止 10-08</li>
+    <li>广西数字政务一体化平台专项运维（二期）· 198.31 万，9月采购意向</li>
+    <li>广西实景三维建设基础测绘工作 · 竞争性磋商，响应截止 9-28</li>
+    <li>第十六届运动会跆拳道竞赛服务 · 123.7 万元，9-16 成交</li>
+    <li>大新县气象预警及信息发布平台设备采购 · 74.81 万元，9-20 成交</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">💻 数字政府与政务信息化</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">采购意向</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=BqJ9ocduIAQpPhQI2Jlf0Q==&parentId=66485" target="_blank" rel="noopener noreferrer">广西数字政务一体化平台2026年专项运维服务（二期）采购意向 · 198.31万</a></h4>
+        <div class="card-body">
+          <p>自治区大数据发展局发布<strong>9月第一批政府采购意向</strong>，广西数字政务一体化平台2026年专项运维服务（二期）预算198.31万元。涵盖128套信息系统运维、硬件资源维护、短信服务、统一身份认证系统"精准拦截"优化等内容，服务期2个月，拟采用单一来源采购方式。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=BqJ9ocduIAQpPhQI2Jlf0Q==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a> <span class="opp-tag">🎯 198万政务运维</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">采购</span>
+          <span class="card-date">09-14</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西大数据发展局面向东盟人工智能伦理研究项目采购公告</a></h4>
+        <div class="card-body">
+          <p>自治区大数据发展局发布<strong>面向东盟人工智能伦理研究项目采购公告</strong>。广西作为中国—东盟信息港建设核心枢纽，人工智能产业布局加速，AI伦理研究、AI安全、AI应用落地等领域的科研与工程项目将持续涌现。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西大数据发展局</a> <span class="opp-tag">🎯 AI产业布局</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-17</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">2026年自治区数据局资产清查服务采购项目（第二次）成交</a></h4>
+        <div class="card-body">
+          <p>自治区大数据发展局发布<strong>数据局资产清查服务采购项目（第二次）成交公告</strong>。数据局作为新组建机构，资产清查、系统迁移、数据资源盘点等工作持续推进，数据资产管理、数据安全、数据要素市场化等领域市场空间广阔。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西大数据发展局</a> <span class="opp-tag">🎯 数据资产化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-16</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">AI赋能千行百业超级联赛专题宣传及网络信息一体化服务成交</a></h4>
+        <div class="card-body">
+          <p>自治区大数据发展局发布<strong>2026年AI赋能千行百业超级联赛暨百业千企AI转型联合大赛专题宣传及网络信息一体化服务采购项目成交公告</strong>。AI大赛持续举办，带动广西AI产业生态建设，AI+安防、AI+政务、AI+交通等垂直应用场景加速落地。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西大数据发展局</a> <span class="opp-tag">🎯 AI生态建设</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">职称评审</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西工程系列人工智能、大数据专业职称评审工作服务采购</a></h4>
+        <div class="card-body">
+          <p>自治区大数据发展局发布<strong>2026年广西工程系列人工智能、大数据专业职称评审工作服务采购公告</strong>。人工智能和大数据专业职称评审体系的建立，标志着广西AI和大数据人才队伍建设进入规范化阶段，也反映出相关产业从业人员规模持续扩大。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西大数据发展局</a> <span class="opp-tag">🎯 人才体系建设</span></div>
+      </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🏛️ 重大活动与民生项目</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-19</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260919_27361563.htm" target="_blank" rel="noopener noreferrer">广西第十六届运动会赛事运营服务采购招标 · 预算3892.96万元</a></h4>
+        <div class="card-body">
+          <p>北海市旅游文体局发布<strong>广西第十六届运动会赛事运营服务采购公开招标公告</strong>（BHZC2026-G3-990313-ZXGB），预算3892.96万元。分16个标项，覆盖体操、足球、篮球、攀岩、举重、田径、游泳等20余项目赛事运营，含全流程竞赛组织、安全保障、技术支撑等。开标时间10月10日。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260919_27361563.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 3893万赛事运营</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-16</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260916_27340428.htm" target="_blank" rel="noopener noreferrer">广西第十六届运动会跆拳道竞赛服务成交 · 123.7万元</a></h4>
+        <div class="card-body">
+          <p>北海市旅游文体局发布<strong>第十六届运动会竞技体育项目（跆拳道）竞赛服务成交结果公告</strong>（BHZC2026-C3-990274-BBWH），广西五环星光体育文化发展有限公司以123.7万元中标。大型综合性运动会赛事安保、视频监控、人脸识别等智能化保障需求旺盛。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260916_27340428.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 赛事智能化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28133100.shtml" target="_blank" rel="noopener noreferrer">2026年广西国际农业博览会公开招标 · 预算500万元</a></h4>
+        <div class="card-body">
+          <p>广西壮族自治区农业农村厅发布<strong>2026年广西国际农业博览会公开招标公告</strong>（GXZC2026-G3-003022-JZZB），预算500万元。展期10月21-25日共5天，包含展馆服务、展台搭建、招展组展、宣传推广、配套活动执行等。大型展会的智慧安防、人流管控、视频监控等需求突出。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28133100.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a> <span class="opp-tag">🎯 500万农博会</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260918_27357195.htm" target="_blank" rel="noopener noreferrer">广西山洪灾害监测预警设施设备运维（河池柳州）中标 · 1506.57万元</a></h4>
+        <div class="card-body">
+          <p>广西水利厅发布<strong>山洪灾害监测预警设施设备运行维护（2026-2028年）（河池市、柳州市）中标公告</strong>（GXZC2026-G3-002624-GXGX），广州远动信息技术有限公司以1506.57万元中标，服务期36个月。全区6个片区山洪预警运维项目本周集中公布中标结果。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260918_27357195.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 1506万监测预警</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">招标</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-31700-450100-0-7.html" target="_blank" rel="noopener noreferrer">广西实景三维建设基础测绘工作竞争性磋商</a></h4>
+        <div class="card-body">
+          <p>广西壮族自治区自然资源厅发布<strong>实景三维建设基础测绘工作竞争性磋商公告</strong>（GXZC2026-C3-003080-GXGN）。实景三维广西建设是数字政府和数字经济的空间基底，后续将带动三维GIS应用、数字孪生城市、智慧园区等多场景落地。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-31700-450100-0-7.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 实景三维建设</span></div>
+      </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🚀 政策动态与新兴技术</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">网安周</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/dtyw/dtywzwyw/W020260920595974295707.png" target="_blank" rel="noopener noreferrer">国家网络安全宣传周广西活动启动 聚焦数字安全防护</a></h4>
+        <div class="card-body">
+          <p>2026年国家网络安全宣传周广西活动正式启动，主题为<strong>"铸牢网络安全之盾，守护指尖数字世界"</strong>。随着数字广西建设深入推进，网络安全等级保护、数据安全、关键信息基础设施保护等领域的合规要求和市场需求持续增长。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/dtyw/dtywzwyw/W020260920595974295707.png" target="_blank" rel="noopener noreferrer">广西大数据发展局</a> <span class="opp-tag">🎯 网安需求增长</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/zygg/cjgg/202609/t20260920_27365334.htm" target="_blank" rel="noopener noreferrer">大新县气象预警及信息发布平台设备采购成交 · 74.81万元</a></h4>
+        <div class="card-body">
+          <p>崇左市气象局发布<strong>大新县气象预警及信息发布平台建设项目—设备采购成交结果公告</strong>（CZ2026-J1-018-GXYL），影科科技以74.81万元中标。基层气象预警平台建设持续推进，与山洪灾害预警、应急指挥系统等联动需求增长。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/zygg/cjgg/202609/t20260920_27365334.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 气象预警平台</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="https://guangxi.okcis.cn/yezhuzb-dianxin/" target="_blank" rel="noopener noreferrer">无人机+机器人空地接驳物流项目中标 · 广西创新应用场景</a></h4>
+        <div class="card-body">
+          <p>广西汇吉采咨询有限公司发布<strong>无人机+机器人空地接驳物流项目中标公告</strong>（GXZC2026-G1-002782-GXHJ）。无人机+机器人的创新应用场景在广西加速落地，未来可扩展到应急救援、安防巡查、物流配送等多个领域。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://guangxi.okcis.cn/yezhuzb-dianxin/" target="_blank" rel="noopener noreferrer">广西电信招标采购中心</a> <span class="opp-tag">🎯 无人机创新应用</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">意见征集</span>
+          <span class="card-date">09-14</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西调整自治区级市场监管领域部分行政许可事项征求意见</a></h4>
+        <div class="card-body">
+          <p>自治区人民政府发布<strong>关于调整自治区级市场监管领域部分行政许可事项的决定（征求意见稿）</strong>，公开征求意见。"放管服"改革持续深化，政务服务事项优化调整将带动数字政务一体化平台的功能升级与系统改造需求。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西大数据发展局</a> <span class="opp-tag">🎯 政务优化升级</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">人才</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://gxxxzx.gxzf.gov.cn/tzgg/index.shtml" target="_blank" rel="noopener noreferrer">广西信息中心发布重点领域急需紧缺高层次人才招聘公告</a></h4>
+        <div class="card-body">
+          <p>广西壮族自治区信息中心发布<strong>2026年重点领域急需紧缺高层次人才招聘公告</strong>，聚焦数字政府、大数据、人工智能等重点领域。数字政府建设人才队伍持续扩充，也从侧面反映广西政务信息化项目规模和技术要求不断提升。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://gxxxzx.gxzf.gov.cn/tzgg/index.shtml" target="_blank" rel="noopener noreferrer">广西信息中心</a> <span class="opp-tag">🎯 数字政府扩容</span></div>
+      </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西政府行业简报</strong> · 2026.09.14—09.20<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
