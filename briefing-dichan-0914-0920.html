@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西地产建筑行业简报 · 2026.09.14—09.20</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏗️ 广西地产建筑行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.14 — 09.20</span>
+      <span>📊 本周 14 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是保障性住房建设持续发力，多市密集释放改造与装修需求。</strong>南宁市发布第17批配售型保障房销售通告（威宁世纪花城189套现房），贺州市平桂区公租房升级改造三项工程合计预算1812万元，贵港荷城丽园保障性租赁住房装修一期成交，贺州昭平县收购存量商品房作保障房项目推进，保障房建设从"建"向"改""装"全链条延伸。</p>
+  <p><strong>二是老旧小区改造进入密集开标期，柳州多项目集中公示中标。</strong>柳州市柳北区老旧小区提升改造工程（一期）中标金额约2007万元、配套基础设施改造工程（三期）约2095万元，柳南区鹅岗片区老旧小区改造更新项目约2119万元，单项目规模均突破2000万元，改造内容已从基础修缮向充电桩、智能门禁、监控系统等智能化设施升级。</p>
+  <p><strong>三是城市更新政策体系进一步完善，重点工程项目加速推进。</strong>广西持续推进城市更新五年行动方案（2026—2030年）正式落地，明确2000个老旧小区改造、250个完整社区建设目标。桂林世界级旅游城市老城区海绵化改造、梧州骑楼城城市更新、防城港企沙渔港经济区码头配套等一批重点项目本周发布招标或施工许可，城市更新与文旅、水利、产业深度融合。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>贺州平桂区公租房升级改造3项工程 · 预算合计 1812 万元，预计10月采购</li>
+    <li>柳州柳南区鹅岗片区老旧小区改造 · 中标金额约 2119 万元，9-16 公示</li>
+    <li>桂林老城区海绵化改造工程总承包 · 9-20 发布招标公告</li>
+    <li>防城港企沙渔港经济区水产品加工厂 · 施工招标控制价公告，9-20</li>
+    <li>贵港市中心城区供水污水修复加固工程 · 9-20 更正公告</li>
+    <li>南宁第17批配售型保障房（威宁世纪花城189套）· 报名 9-21 至 10-8</li>
+    <li>贵港荷城丽园保障性租赁住房装修一期 · 9-20 成交公告</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">🏠 保障性住房与政策动态</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="https://zjj.nanning.gov.cn/dtzx/tzgg/zfbz_37648/psxbzxzf/t6731622.html" target="_blank" rel="noopener noreferrer">南宁市第17批配售型保障房销售启动 · 威宁世纪花城189套现房</a></h4>
+    <div class="card-body">
+      <p>南宁市住建局发布<strong>2026年第十七批配售型保障性住房销售通告</strong>，推出威宁世纪花城项目189套现房毛坯房源，其中两房37套（约59㎡，均价4382元/㎡）、三房152套（约76-80㎡，均价4216元/㎡），报名时间9月21日至10月8日，采用线上报名方式。</p>
+      <p><strong>🔍 海康视角：</strong>配售型保障房规模化供应带动小区智能化安防配套需求，视频监控、门禁系统、停车管理等是新建保障房标配，可重点跟进南宁各保障房建设运营方的智能化招标。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://zjj.nanning.gov.cn/dtzx/tzgg/zfbz_37648/psxbzxzf/t6731622.html" target="_blank" rel="noopener noreferrer">南宁市住建局</a> <span class="opp-tag">🎯 保障房智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标预告</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=+OhuSt84SAT5f142Tz4+ug==&parentId=66485" target="_blank" rel="noopener noreferrer">贺州平桂区公租房升级改造项目 · 三项工程预算合计1812万元</a></h4>
+    <div class="card-body">
+      <p>贺州市平桂区住建局发布<strong>9-10月政府采购意向</strong>，公示城区公租房升级改造三个子项目：电厂路公租房一、二期（491万）、廉租房1-3#（680万）、廉租房4-6#（641万），总预算1812万元，内容涵盖建筑装修、给排水、消防及电气工程，预计10月启动采购。</p>
+      <p><strong>🔍 海康视角：</strong>公租房改造普遍配套智能化升级需求，可视对讲、智能门禁、视频监控、消防报警联动等系统是改造重点内容，可提前对接平桂区住建部门及后续中标总包单位。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=+OhuSt84SAT5f142Tz4+ug==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a> <span class="opp-tag">🎯 公租房改造</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001001/001001004/001001004005/tradeInfo.html" target="_blank" rel="noopener noreferrer">贵港荷城丽园保障性租赁住房装修工程一期成交</a></h4>
+    <div class="card-body">
+      <p>广西三建招标咨询有限公司发布<strong>荷城丽园保障性租赁住房项目装修工程（一期）成交结果公告</strong>（SJZB2026-C2-006）。保障性租赁住房是"十四五"住房保障体系建设重点，室内装修、家电配套、智能化系统采购需求持续释放。</p>
+      <p><strong>🔍 海康视角：</strong>保障性租赁住房通常配套智能门锁、烟感报警、视频监控等安全设施，可跟进贵港市后续保障房批量交付期的智能化设备采购机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001001/001001004/001001004005/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台（广西）</a> <span class="opp-tag">🎯 保租房装修</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">昭平县收购存量商品房用作保障性住房项目（装修）更正公告</a></h4>
+    <div class="card-body">
+      <p>贺州市昭平县发布<strong>收购已建成存量商品房用作保障性住房项目（装修）更正公告</strong>及施工招标上限控制价公告。通过收购存量商品房转化为保障房是加快保障房供给的新模式，后续装修及智能化改造空间广阔。</p>
+      <p><strong>🔍 海康视角：</strong>存量商品房转保障房需对原有配套设施进行标准化升级，门禁对讲、监控系统、停车场管理等是常见改造项，可关注贺州区域保障房存量转化项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台（广西）</a> <span class="opp-tag">🎯 存量房改造</span></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-title">🏙️ 城市更新与老旧小区改造</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-07</span>
+    </div>
+    <h4><a href="https://gdb.gxzf.gov.cn/xxgk_46931/fdzdgknr_73985/zcfg_46950/gfxwj_46954/t28107369.shtml" target="_blank" rel="noopener noreferrer">广西城市更新五年行动方案印发 · 2000个老旧小区改造目标</a></h4>
+    <div class="card-body">
+      <p>广西壮族自治区政府办公厅印发<strong>《广西持续推进城市更新五年行动方案（2026—2030年）》</strong>（桂政办发〔2026〕13号），提出完成4万套以上城市危旧房隐患销号、推进2000个城镇老旧小区改造、建设250个完整社区、打造350个一刻钟便民生活圈等目标，涵盖城中村改造、老旧厂区更新、绿色建筑推广等重点任务。</p>
+      <p><strong>🔍 海康视角：</strong>五年行动方案明确城市更新中智能化、绿色化、安全化方向，智慧社区、智慧消防、AI安防等是完整社区建设标配，未来5年广西城市更新带动的智能化改造市场规模可观。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gdb.gxzf.gov.cn/xxgk_46931/fdzdgknr_73985/zcfg_46950/gfxwj_46954/t28107369.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区政府</a> <span class="opp-tag">🎯 五年行动方案</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/54935667-4b5e-423e-82f4-8f0b3a730293" target="_blank" rel="noopener noreferrer">柳州柳北区老旧小区提升改造工程一期中标 · 约2007万元</a></h4>
+    <div class="card-body">
+      <p>2026年柳北区老旧小区提升改造工程（一期）发布<strong>中标公告</strong>，柳州市建筑工程集团有限责任公司以约2006.89万元中标，涉及冶建宿舍、鹧鸪江园艺场等11个小区、3739户改造，内容包括屋面改造、公共楼梯间改造及其他工程改造。</p>
+      <p><strong>🔍 海康视角：</strong>老旧小区改造已从"硬件修缮"向"智慧升级"延伸，监控摄像头、单元门禁、停车管理、智能充电桩等智能化设备需求增长，可与柳州本地建筑总包建立战略合作。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/54935667-4b5e-423e-82f4-8f0b3a730293" target="_blank" rel="noopener noreferrer">启信宝/柳州市公共资源交易中心</a> <span class="opp-tag">🎯 老旧小区智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="https://m.bidcenter.com.cn/news-4-440679335.html" target="_blank" rel="noopener noreferrer">柳州柳南区鹅岗片区老旧小区改造更新 · 中标约2119万元</a></h4>
+    <div class="card-body">
+      <p>柳南区2026年鹅岗片区老旧小区改造更新项目发布<strong>中标候选人公示</strong>，十一冶建设集团有限责任公司以约2118.58万元位列第一中标候选人。改造内容包含屋面防水、非机动车棚、太阳能路灯、充电桩、电梯更新、围墙加固、监控增设等18项子工程。</p>
+      <p><strong>🔍 海康视角：</strong>项目明确包含监控增设、智能门禁等安防需求，单改造项目安防设备采购额通常在50-200万元，柳州今年多个老旧小区项目密集开标，可集中跟进智能化分包采购。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-4-440679335.html" target="_blank" rel="noopener noreferrer">采招网/柳州公共资源交易中心</a> <span class="opp-tag">🎯 2000万级改造</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/54935667-4b5e-423e-82f4-8f0b3a730293" target="_blank" rel="noopener noreferrer">柳北区老旧小区配套基础设施改造工程三期 · 中标约2095万元</a></h4>
+    <div class="card-body">
+      <p>2026年柳北区老旧小区配套基础设施改造工程（三期）发布<strong>中标候选人公示</strong>，广西建工集团冶金建设有限公司以约2095.27万元位列第一候选人，涉及给排水、电气、道路工程改造等内容。本周柳州多个千万级老旧小区改造项目密集公示中标，城市更新进入施工高峰期。</p>
+      <p><strong>🔍 海康视角：</strong>基础设施改造中的电气工程通常包含路灯监控、安防监控配套，可关注后续设备采购标段。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/54935667-4b5e-423e-82f4-8f0b3a730293" target="_blank" rel="noopener noreferrer">启信宝/柳州市公共资源交易中心</a> <span class="opp-tag">🎯 基础设施改造</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">桂林老城区市政道路海绵化改造工程（三期）总承包招标</a></h4>
+    <div class="card-body">
+      <p>桂林市发布<strong>打造世界级旅游城市—老城区及信义路至七星岩段景区连线街区改造工程（第二阶段）2026年老城区市政道路人行道海绵化改造工程（山水街巷公园三期）工程总承包招标公告</strong>。桂林以世界级旅游城市建设为牵引，城市更新与文旅融合需求持续释放。</p>
+      <p><strong>🔍 海康视角：</strong>景区连线街区改造通常配套智慧旅游、智慧安防系统，如游客人流统计、智能监控、应急广播等，可对接桂林住建及文旅部门了解智能化设计方案。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台（广西）</a> <span class="opp-tag">🎯 文旅城市更新</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目进展</span>
+      <span class="card-date">09-09</span>
+    </div>
+    <h4><a href="http://www.wzwxq.gov.cn/xxgk/jcxx/wxdt/tzgg/t28115897.shtml" target="_blank" rel="noopener noreferrer">梧州骑楼城城市更新项目大南路分流渠改造二期获施工许可证</a></h4>
+    <div class="card-body">
+      <p>梧州市万秀区住建局核发<strong>骑楼城城市更新-旅游基础设施综合提升项目-大南路分流渠改造二期工程建筑工程施工许可证</strong>（450403202609080101），建设单位为梧州市城建城市投资运营集团。骑楼城是梧州城市更新与文旅融合的标杆项目，总投资规模较大。</p>
+      <p><strong>🔍 海康视角：</strong>历史文化街区城市更新配套智慧街区建设需求旺盛，涵盖智慧消防、视频监控、客流分析、应急广播等系统，可跟进梧州城投后续智能化招标。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.wzwxq.gov.cn/xxgk/jcxx/wxdt/tzgg/t28115897.shtml" target="_blank" rel="noopener noreferrer">梧州市万秀区人民政府</a> <span class="opp-tag">🎯 历史街区智慧化</span></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-title">🌉 市政基建与重点工程</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">贵港市中心城区供水污水和相关设施修复加固工程</a></h4>
+    <div class="card-body">
+      <p>贵港市发布<strong>中心城区供水污水和相关设施修复加固工程更正公告</strong>。该项目是城市基础设施补短板的重要内容，市政管网改造与智能化监测系统建设需求同步增长。</p>
+      <p><strong>🔍 海康视角：</strong>供水污水设施改造可配套智慧水务监控系统，如管网监测摄像头、水位传感器、AI巡检等，海康在水务行业解决方案可对接贵港市相关水务平台公司。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台（广西）</a> <span class="opp-tag">🎯 智慧水务</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标控制价</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">防城港企沙渔港经济区水产品加工厂施工招标控制价公告</a></h4>
+    <div class="card-body">
+      <p>防城港市发布<strong>企沙渔港经济区码头及基础配套设施项目德城码头（1号码头）辅助生产建筑工程-2#楼水产品加工厂施工招标控制价公告</strong>。企沙渔港经济区是广西向海经济重点项目，配套厂房、冷库、物流等设施建设规模大。</p>
+      <p><strong>🔍 海康视角：</strong>渔港经济区及水产品加工厂对安防监控、冷链温度监测、周界防范等有明确需求，可关注后续智能化系统独立招标信息。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台（广西）</a> <span class="opp-tag">🎯 渔港经济区</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">河池宜州新华文化中心项目装修工程招标</a></h4>
+    <div class="card-body">
+      <p>河池市宜州区发布<strong>新华文化中心项目装修工程招标信息</strong>。文化场馆建设是城市公共服务配套升级的重要组成部分，近年来广西各地文化中心、博物馆、图书馆等公共文化设施建设加快推进。</p>
+      <p><strong>🔍 海康视角：</strong>文化场馆类项目通常配备智能安防、客流统计、消防报警联动等系统，可关注河池市公共建筑类项目的智能化采购。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台（广西）</a> <span class="opp-tag">🎯 公共建筑智能化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">市场动态</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7687685799474643496/" target="_blank" rel="noopener noreferrer">五象良庆房展嘉年华9.25启幕 · 首份专属楼市地图上线</a></h4>
+    <div class="card-body">
+      <p>2026"活力五象·宜居良庆"房展嘉年华将于9月25日—26日在五象云英路步行街举行，由五象新区管委会、良庆区政府指导。现场将首发<strong>五象良庆首份专属楼市地图</strong>，覆盖五象湖、总部基地等热门板块在售楼盘及交通、教育、医疗配套，叠加年度专属购房券与限时特惠，金九银十楼市促消费活动升温。</p>
+      <p><strong>🔍 海康视角：</strong>五象新区新房交付旺季带动智慧社区、智能家居配套需求，可与五象新区头部房企建立智慧社区解决方案合作。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7687685799474643496/" target="_blank" rel="noopener noreferrer">良庆发布/今日头条</a> <span class="opp-tag">🎯 智慧社区</span></div>
+  </div>
+
+</div>
+
+
+</main>
+
+<footer class="footer">
+  <strong>广西地产建筑行业简报</strong> · 2026.09.14—09.20<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
