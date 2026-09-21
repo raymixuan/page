@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西教育行业简报 · 2026.09.14—09.20</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+
+.hikvision-view {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fef9e7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.83rem;
+  color: #92400e;
+  line-height: 1.65;
+}
+.hikvision-view strong {
+  color: #78350f;
+  font-weight: 600;
+}
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🎓 广西教育行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.14 — 09.20</span>
+      <span>📊 本周 19 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是AI智慧校园建设进入规模化落地新阶段。</strong>南宁市现代教育技术中心AI智慧校园项目（预算531.51万元）投标截止9月29日，桂林师范学院校园信息化平台升级及安全防护建设项目（成交183.41万元）公布结果，叠加玉林市人工智能教育专题培训覆盖200多名教育工作者，AI+教育从政策倡导走向项目落地和师资能力建设同步推进。</p><p><strong>二是义务教育薄弱环节改善与设备更新采购集中释放。</strong>贺州八步区义务教育薄弱环节改善与能力提升项目（最高限价1327.62万元）、崇左龙州县义务教育学校教学设备采购（370万元）、玉林博白县"两类学校"设施设备采购（中标511.95万元）、贺州钟山县乡村寄宿制学校设施改造（中标762.07万元）等项目密集发布，县级义务教育基础设施升级进入施工与设备采购高峰期。</p><p><strong>三是高校智慧化与安全建设需求多点开花。</strong>广西医科大学玉林校区学生宿舍安防监控设施（预算167.66万元含AI多模态融合算法）、广西工商职业技术学院标准化考场建设（131万元）、广西科技大学校园安防监控平台接入（成交3.2万元）、广西国际商务职业技术学院烟感报警系统（150万元）等，高校安防监控、标准化考场、智慧教室等细分领域采购需求持续旺盛。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>南宁市AI智慧校园项目 · 预算 531.51 万元，投标截止 9-29</li><li>贺州八步区义务教育薄改项目 · 最高限价 1327.62 万元，9-20发布</li><li>广西医科大学玉林校区宿舍安防监控 · 预算 167.66 万元含AI算法</li><li>桂林师范学院校园信息化平台升级 · 成交 183.41 万元，9-15公布</li><li>龙州县义务教育学校教学设备采购 · 预算 370 万元，10-26开标</li><li>钟山县乡村学校设施改造 · 中标 762.07 万元，9-18公布</li><li>广西工商职院标准化考场建设 · 预算 131 万元，10月预计采购</li>
+  </ul>
+</div>
+
+
+<div class="section">
+  <div class="section-title">🤖 AI智慧校园与数字化转型</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260915_27327262.htm" target="_blank" rel="noopener noreferrer">桂林师范学院校园信息化平台升级及安全防护建设成交 · 183.41万</a></h4>
+    <div class="card-body">
+      <p>桂林市政府集中采购中心发布<strong>桂林师范学院2026年校园信息化平台升级及安全防护建设项目</strong>成交公告（GXZC2026-J1-002261-GLSZ），总成交183.41万元，分三个分标：数据基座平台+统一身份认证（148万）、OA系统升级（9.8万）、网络安全防护升级（25.61万，含深信服防火墙/EDR/零信任等）。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>高校智慧校园平台升级是安防AI化的切入点，海康可依托<strong>AI摄像机+智慧校园综合管理平台+安全态势感知</strong>方案，从数据基座的视频AI能力维度切入合作。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260915_27327262.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-0-0-100.html" target="_blank" rel="noopener noreferrer">智慧校园数据资产平台建设采购项目竞争性磋商公告</a></h4>
+    <div class="card-body">
+      <p>广西机电设备招标有限公司发布<strong>智慧校园数据资产平台建设采购项目</strong>竞争性磋商公告（GXJD-26133SQF11926），9月15日发布，响应截止9月28日。数据资产平台是教育数字化转型核心基础设施，配套数据可视化、AI分析能力是差异化竞争关键。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>数据资产平台建设催生<strong>视频数据治理、AI分析能力、数据可视化大屏</strong>等需求，海康可提供视觉数据中台+行业智能算法的整体方案，强化数据资产价值。
+    </div>
+<div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-0-0-100.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技术</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7687643012486152727/" target="_blank" rel="noopener noreferrer">玉林市人工智能教育专题培训完成 200多名教育工作者参训</a></h4>
+    <div class="card-body">
+      <p>玉林市教育局主办的<strong>2026年玉林市人工智能教育专题培训</strong>9月17日圆满完成，全市各县市区及市直学校200多名教育工作者参训。培训涵盖AI教育应用前沿理论、中小学AI通识教育区域落地实践、智慧课堂展示等内容。AI教育理念普及加速带动智慧校园软硬件采购需求。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>AI教育理念普及将带动<strong>AI教室、智能交互设备、校园AI应用</strong>采购需求增长，海康可与教育局合作开展智慧教育示范校建设，提前卡位AI校园市场。
+    </div>
+<div class="card-source">来源：<a href="http://m.toutiao.com/group/7687643012486152727/" target="_blank" rel="noopener noreferrer">玉林日报微报</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260908/0045cf73b4a4dd1741b184e83eaa4282e4e0.html" target="_blank" rel="noopener noreferrer">南宁市现代教育技术中心AI智慧校园项目 · 预算531.51万元</a></h4>
+    <div class="card-body">
+      <p>南宁市现代教育技术中心发布<strong>AI智慧校园项目</strong>公开招标公告（NNZC2026-G3-990801-GXKL），总预算531.51万元，分A分标（301.51万）和B分标（230万），9月29日开标。这是广西地市级AI智慧校园标杆项目，AI监控、智能分析等产品深度参与空间大。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>531万元地市级AI智慧校园标杆项目，海康可联合集成商重点布局<strong>AI视觉分析、智能安防、校园一张图</strong>等核心场景，打造南宁样板工程。
+    </div>
+<div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/450000/0201/20260908/0045cf73b4a4dd1741b184e83eaa4282e4e0.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">🏫 义务教育与乡村学校建设</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27104-0-1-30.html" target="_blank" rel="noopener noreferrer">贺州八步区2026年第一批义务教育薄改项目施工招标</a></h4>
+    <div class="card-body">
+      <p>贺州市八步区发布<strong>2026年第一批义务教育薄弱环节改善与能力提升中央资金项目施工招标</strong>，最高投标限价1327.62万元（E4511002871003128001001），9月20日发布招标公告。薄改项目是义务教育阶段基础设施升级核心资金渠道，配套校园安防、广播系统、标准化考场等需求同步释放。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>该项目为行业典型建设场景，海康可依托<strong>视频监控、AI智能分析、物联网感知</strong>等核心能力切入，提供整体智能化解决方案。
+    </div>
+<div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27104-0-1-30.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260916_27335748.htm" target="_blank" rel="noopener noreferrer">龙州县义务教育学校教学等设备采购 · 预算370万元</a></h4>
+    <div class="card-body">
+      <p>崇左市政府集中采购中心发布<strong>龙州县义务教育学校教学等设备采购项目</strong>公开招标公告（CZZC2026-G1-230090-CZSZ），预算370万元，含学生课桌椅7270套、学生床架1519套、智能讲台33套等，10月26日开标。边境县域教育信息化和教学设备更新需求加速释放。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>边境县域教育设备更新加速，<strong>智能讲台、互动教学、校园安防</strong>需求旺盛，海康可沿边境线布局教育信息化渠道，覆盖崇左、百色等边境地市。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260916_27335748.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260917_27346896.htm" target="_blank" rel="noopener noreferrer">博白县"两类学校"设施设备采购中标 · 511.95万元</a></h4>
+    <div class="card-body">
+      <p>广西润腾工程咨询发布<strong>博白县2026年"两类学校"设施设备采购项目</strong>中标公告（YLZC2026-G1-230142-GXRT），博白县中科信息科技有限公司中标511.95万元，含教室门、宿舍门、课桌椅3251套、学生床2812套等。乡村小规模学校和乡镇寄宿制学校设施更新是常态化投入方向。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>该项目为行业典型建设场景，海康可依托<strong>视频监控、AI智能分析、物联网感知</strong>等核心能力切入，提供整体智能化解决方案。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260917_27346896.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260918_27356832.htm" target="_blank" rel="noopener noreferrer">钟山县乡村小规模和寄宿制学校设施改造中标 · 762.07万元</a></h4>
+    <div class="card-body">
+      <p>贺州市政府采购中心发布<strong>2026年钟山县乡村小规模学校和乡镇寄宿制学校教室宿舍设施设备更新改造项目</strong>中标公告（HZZC2026-G1-220109-HZSZ），总成交762.07万元，分标一367.34万元、标项三394.73万元。县域校园基础设施改造是教育安防设备渗透的重要场景。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>乡村寄宿制学校改造带动<strong>宿舍安防、周界监控、智能广播、一键报警</strong>等需求，海康平安校园解决方案可针对性覆盖寄宿制学校安全管理场景。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260918_27356832.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27104-0-1-30.html" target="_blank" rel="noopener noreferrer">忻城县2026年义务教育学校教学一体机采购 · 竞争性谈判</a></h4>
+    <div class="card-body">
+      <p>忻城县教育体育局发布<strong>2026年义务教育学校教学一体机采购项目</strong>竞争性谈判公告，9月18日发布，9月23日响应截止。教学一体机是中小学智慧教室建设核心设备，配套电子班牌、智慧课堂管理系统等整体方案需求增长。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>教学一体机是智慧教室核心设备，海康可联动<strong>智慧教室管理平台、电子班牌、AI课堂行为分析</strong>产品拓展智慧教育整体方案，从单点设备向系统级解决方案升级。
+    </div>
+<div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27104-0-1-30.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=ge%2FXfaqmJzE6KDjh7a22Wg==&parentId=66485" target="_blank" rel="noopener noreferrer">梧州市万秀区教育局中小学设备购置更新采购意向 · 330万元</a></h4>
+    <div class="card-body">
+      <p>梧州市万秀区教育局发布<strong>2026年9月至10月政府采购意向</strong>，中小学设备购置更新采购项目预算330万元，预计10月采购。县区级教育设备集中采购是智慧校园设备下沉的重要渠道，智能交互、安防监控等产品可提前布局。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>县区级教育设备集中采购是智慧校园下沉重要渠道，海康可提前对接万秀区教育局，布局<strong>智慧教室、校园安防、AI应用</strong>等产品的年度采购计划。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=ge%2FXfaqmJzE6KDjh7a22Wg==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">🎓 高校智慧化与安全建设</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="https://www.gxust.edu.cn/info/1240/36068.htm" target="_blank" rel="noopener noreferrer">广西科技大学文昌校区监控设备接入校园安防平台成交</a></h4>
+    <div class="card-body">
+      <p>广西科技大学发布<strong>文昌校区大学生演艺实训基地监控设备接入校园安防监控中心平台项目</strong>成交公告，广西昊视科技有限公司中标3.20万元。高校安防监控平台统一接入是智慧校园安防建设常见模式，平台扩容、AI算法升级等增量需求持续释放。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>该项目为行业典型建设场景，海康可依托<strong>视频监控、AI智能分析、物联网感知</strong>等核心能力切入，提供整体智能化解决方案。
+    </div>
+<div class="card-source">来源：<a href="https://www.gxust.edu.cn/info/1240/36068.htm" target="_blank" rel="noopener noreferrer">广西科技大学官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-08</span>
+    </div>
+    <h4><a href="https://www.gxmu.edu.cn/xwgk/zbxx/t239066.html" target="_blank" rel="noopener noreferrer">广西医科大学玉林校区宿舍安防监控采购意向 · 含AI多模态算法</a></h4>
+    <div class="card-body">
+      <p>广西医科大学发布2026年9-10月第一批次政府采购意向，其中<strong>玉林校区学生宿舍安防监控设施采购</strong>预算167.66万元，含AI枪形摄像机266台、AI智能多模态融合算法服务器1套、重点人员识别对接公安系统4路等，预计10月采购。高校宿舍安防AI化趋势明显。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>高校宿舍安防AI化趋势明显，167万预算含AI多模态融合算法，海康<strong>AI多模态巡检系统+智能枪机+算法平台</strong>可精准匹配医科类高校安防需求。
+    </div>
+<div class="card-source">来源：<a href="https://www.gxmu.edu.cn/xwgk/zbxx/t239066.html" target="_blank" rel="noopener noreferrer">广西医科大学校务公开</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=f9AIfiue6h6tTOfbcdPKCg==&parentId=66485" target="_blank" rel="noopener noreferrer">广西工商职业技术学院标准化考场建设采购意向 · 131万元</a></h4>
+    <div class="card-body">
+      <p>广西工商职业技术学院发布2026年10月第二批采购意向，其中<strong>标准化考场建设项目</strong>预算131万元，含标考巡查系统（校级巡查平台、智能行为分析）、智能保密室建设、两个校区标考广播系统等。标准化考场建设是教育考试公平保障刚需，视频监控+AI行为分析是核心技术。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>标准化考场建设是教育考试刚需，海康<strong>考场巡查系统+智能行为分析+保密室智能监控</strong>方案成熟，可依托工商职院项目拓展广西职教系统标考市场。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=f9AIfiue6h6tTOfbcdPKCg==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-14</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=zBzYPHPSl22mMx4RBbZGHA==&parentId=66485" target="_blank" rel="noopener noreferrer">广西国际商务职院宿舍烟感报警系统采购意向 · 150万元</a></h4>
+    <div class="card-body">
+      <p>广西国际商务职业技术学院发布9-10月采购意向，其中<strong>东盟校区学生宿舍烟感报警系统增设项目</strong>预算150万元，预计10月采购。校园消防安全是高校后勤保障重点投入领域，智慧消防、烟感联网监测等系统需求稳定增长。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>该项目为行业典型建设场景，海康可依托<strong>视频监控、AI智能分析、物联网感知</strong>等核心能力切入，提供整体智能化解决方案。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=zBzYPHPSl22mMx4RBbZGHA==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="http://zfcg.czj.guilin.gov.cn/site/detail?articleId=SDdKzHSbpES%2F9ryCjo0iCA==&parentId=139019" target="_blank" rel="noopener noreferrer">桂林技师学院多媒体教学设备采购 · 预算130万元</a></h4>
+    <div class="card-body">
+      <p>桂林市政府集中采购中心发布<strong>多媒体教学设备采购</strong>公开招标公告（GLZC2026-G1-990370-GLSZ），预算130万元，采购单位为桂林技师学院，10月8日开标。职业院校实训教学与多媒体设备更新需求旺盛，智慧实训、仿真教学等新兴场景增长快。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>职业院校实训教学设备更新需求旺盛，海康<strong>智慧实训、仿真教学、实训基地安防</strong>等场景可对接技师类院校智能化升级需求。
+    </div>
+<div class="card-source">来源：<a href="http://zfcg.czj.guilin.gov.cn/site/detail?articleId=SDdKzHSbpES%2F9ryCjo0iCA==&parentId=139019" target="_blank" rel="noopener noreferrer">桂林市政府采购网</a></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">📚 职业教育与教育政策</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="http://jyt.gxzf.gov.cn/zfxxgk/zc/qtwj/" target="_blank" rel="noopener noreferrer">自治区教育厅开展职业学校"技能成才 强国有我"系列育人活动</a></h4>
+    <div class="card-body">
+      <p>自治区教育厅发布<strong>关于在全区职业学校开展2026年"技能成才 强国有我"系列育人活动的通知</strong>，9月18日发布。职业教育是广西教育"十五五"规划重点方向，职业院校实训基地、智慧教室、信息化建设投入将持续加大。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>职业教育是广西"十五五"教育重点方向，职校实训基地、智慧教室建设投入将加大，海康可提前布局<strong>智慧职校、实训基地智能化</strong>产品线。
+    </div>
+<div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/zfxxgk/zc/qtwj/" target="_blank" rel="noopener noreferrer">广西教育厅官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="https://www.gxgsxx.edu.cn/xwzx/tzgg" target="_blank" rel="noopener noreferrer">广西工商学校"双优"建设项目在线课程成交结果公告发布</a></h4>
+    <div class="card-body">
+      <p>广西工商学校发布<strong>2026年中等职业学校"双优"建设项目-在线课程成交结果公告</strong>（GXJD-2613322181467），9月15日发布；创新创业大赛项目9月17日成交。中职"双优"建设推动职业教育数字化升级，在线课程、虚拟仿真实训等需求增长。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>行业标杆案例涌现，海康可对标案例场景深化<strong>行业解决方案</strong>，以样板工程带动同类客户复制推广。
+    </div>
+<div class="card-source">来源：<a href="https://www.gxgsxx.edu.cn/xwzx/tzgg" target="_blank" rel="noopener noreferrer">广西工商学校官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://jyt.gxzf.gov.cn/zzzq/?eqid=9cff2a5500073e3800000006645b968a" target="_blank" rel="noopener noreferrer">广西2026年下半年中小学教师资格认定公告发布</a></h4>
+    <div class="card-body">
+      <p>自治区教育厅发布<strong>广西壮族自治区2026年下半年中小学教师资格认定公告</strong>，9月15日发布。教师队伍建设与教育数字化转型同步推进，智慧教学能力培训、AI教育工具普及将成为教育信息化新增长极。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>教师队伍建设与教育数字化同步推进，AI教育工具需求增长，海康可布局<strong>智慧教学、AI教研、教师发展中心智能化</strong>等新兴场景。
+    </div>
+<div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/zzzq/?eqid=9cff2a5500073e3800000006645b968a" target="_blank" rel="noopener noreferrer">广西教育厅官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-14</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260914_27322924.htm" target="_blank" rel="noopener noreferrer">贵港市高级中学校园安全监控、广播、校园网修复迁建等设备中标</a></h4>
+    <div class="card-body">
+      <p>广西建展建设工程管理集团发布<strong>贵港市高级中学校园安全监控、广播、校园网修复迁建等设备采购项目</strong>中标结果公告（GGZC2026-G1-990249-JZJT），9月14日发布。示范性高中安防监控系统升级改造是教育安防重点市场。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>示范性高中安防升级是教育安防重点市场，海康<strong>平安校园+AI行为分析+周界防护</strong>方案可重点覆盖广西各县区示范高中。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260914_27322924.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西教育行业简报</strong> · 2026.09.14—09.20<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
