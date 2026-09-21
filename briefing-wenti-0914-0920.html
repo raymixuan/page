@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西文体卫健行业简报 · 2026.09.14—09.20</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+
+.hikvision-view {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fef9e7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.83rem;
+  color: #92400e;
+  line-height: 1.65;
+}
+.hikvision-view strong {
+  color: #78350f;
+  font-weight: 600;
+}
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🎭 广西文体卫健行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.14 — 09.20</span>
+      <span>📊 本周 20 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是自治区第十六届运动会赛事运营与配套建设进入冲刺期。</strong>第十六届区运会赛事运营服务采购（总预算3892.96万元，覆盖20余个项目）9月19日正式发布招标，跆拳道、武术散打等多个项目竞赛服务陆续成交，拳击、摔跤等比赛圆满落幕，同期区运会群众展演、象棋等赛事在北海密集举办，智慧场馆、赛事安保、计时计分系统等需求集中释放。</p><p><strong>二是县域医共体与医院信息化建设加速推进。</strong>岑溪市卫生健康系统信息化能力提升项目（预算1288.06万元）9月20日发布招标，覆盖医共体基础平台、区域数据资源中心、远程协同服务中心等8大模块；自治区县域医共体设备更新项目（1.404亿元超声诊断仪）9月15日发布招标；贺州市中医医院电子病案无纸化归档系统（80万元）启动采购，医疗信息化从单体医院向区域医共体纵深发展。</p><p><strong>三是群众体育与健康广西建设活动丰富多彩。</strong>广西和美乡村篮球赛总决赛、气排球锦标赛、太极拳比赛、残疾人康复健身体育推广活动等群众体育赛事密集举办，"健康广西"建设持续深化。宜州新华文化中心装修工程、藤县新庆镇全民健身中心等文化体育基础设施项目稳步推进，文体场馆智能化升级空间广阔。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西第十六届运动会赛事运营服务采购 · 总预算 3892.96 万元，10-10开标</li><li>岑溪市卫生健康系统信息化能力提升项目 · 预算 1288.06 万元，10-14开标</li><li>自治区县域医共体设备更新全身彩超 · 预算 1.404 亿元，10-14开标</li><li>自治区卫健委县域医共体检验设备市场调研 · 9-16发布征集</li><li>贺州市中医医院电子病案无纸化归档系统 · 预算 80 万元，9-29磋商</li><li>百色市人民医院全院新一代WiFi建设 · 预算 200 万元，意向采购</li><li>宜州新华文化中心项目装修工程 · 9-20发布招标公告</li>
+  </ul>
+</div>
+
+
+<div class="section">
+  <div class="section-title">🏆 区运会与赛事经济</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-19</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260919_27361563.htm" target="_blank" rel="noopener noreferrer">广西第十六届运动会赛事运营服务采购 · 总预算3892.96万元</a></h4>
+    <div class="card-body">
+      <p>北海市旅游文体局发布<strong>广西壮族自治区第十六届运动会赛事运营服务采购</strong>公开招标公告（BHZC2026-G3-990313-ZXGB），总预算3892.96万元，分16个标项覆盖体操、足球、篮球、攀岩、举重、田径、游泳、轮滑、龙舟等20余个项目，10月10日开标。赛事运营包含安全保障、技术支撑等一体化服务，智慧场馆和赛事安防是重要组成部分。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>3893万区运会赛事运营包含安全保障和技术支撑，海康可提供<strong>赛事安保、人脸识别入场、智能视频监控、赛事直播</strong>等方案，对接北海市旅文体局拓展体育场馆智能化市场。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260919_27361563.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260916_27340428.htm" target="_blank" rel="noopener noreferrer">第十六届区运会跆拳道竞赛服务成交 · 123.7万元</a></h4>
+    <div class="card-body">
+      <p>广西北部湾宏亚建设管理发布<strong>第十六届运动会竞技体育项目（跆拳道）竞赛服务</strong>成交公告（BHZC2026-C3-990274-BBWH），广西五环星光体育文化发展有限公司中标123.7万元。区运会各单项竞赛服务采购陆续落地，赛事计时计分、视频回放、智能仲裁等技术服务需求增长。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>区运会单项赛事陆续落地，赛事计时计分、视频回放、智能仲裁等技术服务需求增长，海康<strong>高速摄像机+AI视频分析</strong>可切入体育赛事技术支撑场景。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260916_27340428.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="https://wap.qianlima.com/gjxx/506999/index_6_3.html" target="_blank" rel="noopener noreferrer">第十六届区运会武术散打竞赛服务成交 · 81.78万元</a></h4>
+    <div class="card-body">
+      <p>广西北部湾宏亚建设管理发布<strong>第十六届运动会竞技体育项目（武术散打）竞赛服务采购</strong>成交结果公告，总成交81.78万元，9月16日发布。区运会武术、拳击、摔跤等对抗性项目对视频回放、智能裁判等技术需求突出，智慧赛事应用场景丰富。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>武术散打等对抗性项目对视频回放、智能裁判需求突出，海康<strong>高速高清摄像+AI动作识别+慢动作回放</strong>产品可服务体育赛事智能化升级。
+    </div>
+<div class="card-source">来源：<a href="https://wap.qianlima.com/gjxx/506999/index_6_3.html" target="_blank" rel="noopener noreferrer">千里马招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="http://tyj.gxzf.gov.cn/xwzx/" target="_blank" rel="noopener noreferrer">广西第十六届运动会拳击比赛在北海圆满落幕</a></h4>
+    <div class="card-body">
+      <p>为期5天的<strong>广西第十六届运动会拳击比赛</strong>9月17日在北海收官，广西13个设区市代表队173名运动员参赛，决出20枚金牌。区运会各项赛事陆续举办，场馆智能化改造、赛事安保系统、人脸识别入场等需求集中释放。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>区运会赛事密集举办推动场馆智能化改造，<strong>智慧场馆、赛事安保、人脸识别、智能导览</strong>需求集中释放，海康可借势拓展北海体育场馆智能化项目。
+    </div>
+<div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/" target="_blank" rel="noopener noreferrer">广西体育局官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">广西第十六届运动会群众比赛象棋项目收官</a></h4>
+    <div class="card-body">
+      <p>广西第十六届运动会群众比赛象棋项目9月14日在北海落幕，崇左市棋手秦荣夺得成年男子个人赛冠军，南宁市棋手梁秀乔获成年女子个人赛冠军，玉林队获成年男子团体赛冠军。区运会群众赛事广泛开展，推动基层体育场馆智慧化升级需求。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>群众赛事广泛开展带动基层体育场馆智慧化升级，海康<strong>场馆监控、智慧门禁、人流统计</strong>等产品可下沉覆盖县区级体育场馆。
+    </div>
+<div class="card-source">来源：<a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">中新网广西</a></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">🏥 医疗信息化与医共体建设</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260920_27362664.htm" target="_blank" rel="noopener noreferrer">岑溪市卫生健康系统信息化能力提升项目 · 预算1288.06万元</a></h4>
+    <div class="card-body">
+      <p>云之龙咨询集团发布<strong>岑溪市卫生健康系统信息化能力提升项目</strong>公开招标公告（WZZC2026-G3-810108-YZLZ），预算1288.06万元，含医共体基础平台、区域数据资源中心、医共体监管分析中心、医疗质量控制中心、远程协同服务中心等模块，建设期18个月。区域医共体信息化是县域医疗数字化升级核心抓手。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>1288万医共体信息化是县域医疗数字化标杆项目，海康可切入<strong>远程会诊视频系统、医院智慧安防、医共体视频共享</strong>等场景，联合信息化集成商共同拓展。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260920_27362664.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260915_27332404.htm" target="_blank" rel="noopener noreferrer">自治区县域医共体设备更新项目全身高端彩超采购 · 1.404亿元</a></h4>
+    <div class="card-body">
+      <p>广西机电设备招标有限公司发布<strong>2024年度县域医共体设备更新项目（全身高端彩色多普勒超声诊断仪）</strong>公开招标公告（GXZC2026-G1-000992-JDZB），预算1.404亿元，采购108台高端彩超，统一配发至全区县域医共体使用单位，最高限制单价130万元/台。县域医共体设备更新是基层医疗能力提升重大工程。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>1.4亿彩超集中采购是基层医疗能力提升重大工程，配套<strong>超声远程会诊、医学影像AI、医疗影像存储</strong>需求同步释放，海康医疗影像+AI方案可关注后续设备配套。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260915_27332404.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="https://wsjkw.gxzf.gov.cn/xxgk_49493/fdzdgk/czxx/ztbxx/" target="_blank" rel="noopener noreferrer">自治区卫健委县域医共体设备更新项目检验设备市场调研征集</a></h4>
+    <div class="card-body">
+      <p>自治区卫生健康委发布<strong>县域医共体设备更新项目检验设备初步市场调研征集公告</strong>，9月16日发布。继超声诊断仪之后，检验设备成为县域医共体设备更新第二批重点品类，后续还将有更多品类设备集中采购，配套医疗信息化、AI辅助诊断需求同步释放。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>1.4亿彩超集中采购是基层医疗能力提升重大工程，配套<strong>超声远程会诊、医学影像AI、医疗影像存储</strong>需求同步释放，海康医疗影像+AI方案可关注后续设备配套。
+    </div>
+<div class="card-source">来源：<a href="https://wsjkw.gxzf.gov.cn/xxgk_49493/fdzdgk/czxx/ztbxx/" target="_blank" rel="noopener noreferrer">自治区卫健委官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260916_27341488.htm" target="_blank" rel="noopener noreferrer">贺州市中医医院电子病案无纸化归档系统 · 预算80万元</a></h4>
+    <div class="card-body">
+      <p>广西建采项目管理发布<strong>贺州市中医医院电子病案无纸化归档系统</strong>竞争性磋商公告（HZZC2026-C3-990217-JCXM），预算80万元，交付期180天。医院信息化从业务系统向数据治理、无纸化办公延伸，电子病历、影像归档等细分市场空间广阔。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>医院电子病案无纸化推动数据治理升级，配套<strong>智能病案室、档案数字化、机房安全监控</strong>等需求，海康可从机房安防、智慧档案管理维度切入。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260916_27341488.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=OJiP+Y1QJwhTzeJBv9Kuzg==&parentId=66485" target="_blank" rel="noopener noreferrer">百色市人民医院全院新一代WiFi建设采购意向 · 200万元</a></h4>
+    <div class="card-body">
+      <p>百色市人民医院发布2026年9-12月采购意向，<strong>全院新一代无线网络（WiFi三网合一）建设项目</strong>预算200万元，预计12月采购，支撑移动护理、移动查房、智慧病房、物联网医疗设备等业务，实现内网、外网、物联网三网融合部署。医院网络基础设施升级是智慧医院建设的底座工程。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>该项目为行业典型建设场景，海康可依托<strong>视频监控、AI智能分析、物联网感知</strong>等核心能力切入，提供整体智能化解决方案。
+    </div>
+<div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=OJiP+Y1QJwhTzeJBv9Kuzg==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">🎨 群众体育与文化设施</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001004/tradeInfo.html" target="_blank" rel="noopener noreferrer">宜州新华文化中心项目装修工程招标公告发布</a></h4>
+    <div class="card-body">
+      <p>河池市发布<strong>宜州新华文化中心项目装修工程</strong>招标公告，9月20日发布。文化综合体建设是完善公共文化服务体系的重要载体，智慧文化馆、数字阅读、智能展陈、安防监控等系统是文化中心标配。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>该项目为行业典型建设场景，海康可依托<strong>视频监控、AI智能分析、物联网感知</strong>等核心能力切入，提供整体智能化解决方案。
+    </div>
+<div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001004/tradeInfo.html" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/wzggzy/jyxx/001001/001001003/001001003001/tradeInfo.html" target="_blank" rel="noopener noreferrer">藤县新庆镇全民健身中心项目（重）成交公告</a></h4>
+    <div class="card-body">
+      <p>梧州启航项目管理发布<strong>藤县新庆镇全民健身中心项目（重）成交公告</strong>，9月18日发布。乡镇全民健身中心建设持续推进，智慧健身、运动监测、场馆预约管理等智能化需求正从城市向县域下沉。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>乡镇全民健身中心建设持续推进，智慧健身、场馆预约管理等智能化需求从城市向县域下沉，海康<strong>智慧场馆、人流监控、智能门禁</strong>产品可提前布局下沉市场。
+    </div>
+<div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/wzggzy/jyxx/001001/001001003/001001003001/tradeInfo.html" target="_blank" rel="noopener noreferrer">梧州公共资源交易中心</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">2026年广西和美乡村篮球赛总决赛在兴业县闭幕 宾阳队夺冠</a></h4>
+    <div class="card-body">
+      <p><strong>2026年广西和美乡村篮球赛总决赛</strong>9月17日在玉林兴业县闭幕，南宁市宾阳县古辣香米队以119:84战胜北海合浦鲔丰水产队夺冠，两支队伍将代表广西参加全国乡村篮球赛（村BA）南部大区赛。群众体育赛事的广泛举办推动基层体育场馆改造与智慧化升级。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>乡村"村BA"火爆推动基层体育场馆改造升级，海康<strong>体育场馆智能化、赛事直播、智慧门禁</strong>方案可下沉县域市场，对接群众体育基础设施建设。
+    </div>
+<div class="card-source">来源：<a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">中新网广西</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-19</span>
+    </div>
+    <h4><a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">广西残疾人康复健身体育系列推广活动在玉林举行</a></h4>
+    <div class="card-body">
+      <p><strong>广西残疾人康复健身体育系列推广活动</strong>9月在玉林举行，来自广西14个市残联工作人员、特教学校教师、教练员、残疾人运动员代表等共170余人参加。残疾人体育与康复健身设施建设是健康广西建设的重要组成部分，无障碍智能设施需求逐渐显现。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>行业标杆案例涌现，海康可对标案例场景深化<strong>行业解决方案</strong>，以样板工程带动同类客户复制推广。
+    </div>
+<div class="card-source">来源：<a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">中新网广西</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">广西气排球锦标赛举行 近2000名运动员参赛</a></h4>
+    <div class="card-body">
+      <p>"中国体育彩票"2026年"恒佳杯"<strong>广西气排球锦标赛</strong>9月12-13日在柳州市李宁体育馆举行，来自全区144支代表队近2000名运动员参赛。群众体育赛事经济持续升温，推动体育场馆智慧化运营、赛事直播、智能计时等配套需求增长。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>群众体育赛事经济升温，体育场馆智慧化运营、赛事直播、智能计时等配套需求增长，海康可对接广西体育局拓展<strong>智慧体育场馆</strong>整体方案。
+    </div>
+<div class="card-source">来源：<a href="https://www.gx.chinanews.com.cn/kjwt/ty/" target="_blank" rel="noopener noreferrer">中新网广西</a></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">💊 健康广西与医疗动态</div>
+  
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-19</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7687783241033548328/" target="_blank" rel="noopener noreferrer">2026年广西家庭健康暨药膳进万家活动在南宁举行</a></h4>
+    <div class="card-body">
+      <p>9月19日，2026年<strong>广西家庭健康、生育支持主题推进暨新型婚育文化和药膳进万家活动</strong>在广西妇幼保健院举行，全区14个设区市2000多人参与，设生殖健康一站式服务、婚恋养育综合服务、食养药膳体验三大市集，AI互动体验专区排起长队。"健康广西"建设持续深化，智慧医疗、AI健康管理等应用加速普及。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>"健康广西"建设深化，AI健康管理应用加速普及，海康<strong>健康监测摄像机、AI互动终端、智慧妇幼</strong>等产品可切入家庭健康与医疗服务场景。
+    </div>
+<div class="card-source">来源：<a href="http://m.toutiao.com/group/7687783241033548328/" target="_blank" rel="noopener noreferrer">工人日报/中工网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-15</span>
+    </div>
+    <h4><a href="https://wsjkw.gxzf.gov.cn/ggfw_49562/zxsbspxxfb/t28133227.shtml" target="_blank" rel="noopener noreferrer">自治区卫健委批准6家医院放射设备机房建设项目</a></h4>
+    <div class="card-body">
+      <p>自治区卫健委发布<strong>2026年9月7日-11日批准的放射性职业病危害建设项目名单</strong>，包括河池市人民医院小C等4台设备、广西妇幼保健院移动式C形臂X光机、北海市人民医院CT等3台、钦州市第二人民医院CT等3台等共6家医院项目。大型医疗设备机房建设持续推进，配套辐射监测、智能安防等需求增长。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>6家医院放射设备机房新建，配套<strong>辐射监测、机房安防、智能门禁、环境监测</strong>等需求增长，海康可提供医院特殊科室智能化解决方案。
+    </div>
+<div class="card-source">来源：<a href="https://wsjkw.gxzf.gov.cn/ggfw_49562/zxsbspxxfb/t28133227.shtml" target="_blank" rel="noopener noreferrer">自治区卫健委官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-16</span>
+    </div>
+    <h4><a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/xwdtzs/" target="_blank" rel="noopener noreferrer">广西科技大学一附院基层网络医院泛血管疾病管理中心亮相融水</a></h4>
+    <div class="card-body">
+      <p>广西科技大学第一附属医院<strong>区内首家基层网络医院泛血管疾病管理中心</strong>9月16日在柳州市融水苗族自治县正式亮相。基层网络医院是分级诊疗和县域医共体建设的重要模式，远程会诊、远程影像、AI辅助诊断等技术支撑需求旺盛。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>基层网络医院是分级诊疗重要模式，远程会诊、远程影像、AI辅助诊断等技术需求旺盛，海康<strong>远程医疗视频系统、医疗影像AI</strong>产品可深度参与。
+    </div>
+<div class="card-source">来源：<a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/xwdtzs/" target="_blank" rel="noopener noreferrer">自治区卫健委官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/xwdtzs/" target="_blank" rel="noopener noreferrer">自治区皮肤病医院建院70周年高质量发展学术交流活动举办</a></h4>
+    <div class="card-body">
+      <p>自治区皮肤病医院9月18日举办<strong>建院70周年高质量发展学术交流活动</strong>。区直医疗机构学科建设与学术交流频繁，智慧皮肤科、AI辅助诊断、远程会诊等专科智能化应用场景不断拓展。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>区直医院学科建设推动专科智能化发展，智慧皮肤科、AI辅助诊断、远程会诊等专科应用场景不断拓展，海康可深耕<strong>专科医疗AI</strong>细分赛道。
+    </div>
+<div class="card-source">来源：<a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/xwdtzs/" target="_blank" rel="noopener noreferrer">自治区卫健委官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-14</span>
+    </div>
+    <h4><a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/xwdtzs/" target="_blank" rel="noopener noreferrer">越南宣光省卫生代表团到访南溪山医院交流</a></h4>
+    <div class="card-body">
+      <p>越南宣光省卫生代表团9月14日到访<strong>自治区南溪山医院</strong>交流。广西作为中国—东盟卫生合作前沿，跨境医疗、国际远程会诊、公共卫生数据共享等合作场景不断拓展，智慧医疗面向东盟市场空间广阔。</p>
+    </div>
+        <div class="hikvision-view">
+      <strong>🔍 海康视角：</strong>中国—东盟卫生合作不断深化，跨境医疗、远程会诊、智慧医院等面向东盟市场空间广阔，海康可借广西区位优势布局<strong>东盟医疗智能化</strong>输出。
+    </div>
+<div class="card-source">来源：<a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/xwdtzs/" target="_blank" rel="noopener noreferrer">自治区卫健委官网</a></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西文体卫健行业简报</strong> · 2026.09.14—09.20<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
