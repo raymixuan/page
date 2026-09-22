@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海康威视8款设备中标价格调研报告 · 2026</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-gx: #c2410c;
+  --tag-gx-bg: #fff7ed;
+  --tag-hardware: #1e6b4a;
+  --tag-hardware-bg: #e6f5ee;
+  --tag-software: #6d28d9;
+  --tag-software-bg: #ede9fe;
+  --tag-warn: #b45309;
+  --tag-warn-bg: #fef3e2;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 1080px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+
+/* Layout */
+.main { max-width: 1080px; margin: 0 auto; padding: 0 16px 48px; }
+
+/* Summary bar */
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: -12px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.summary h2 { font-size: 1rem; color: var(--accent); margin-bottom: 8px; }
+.summary p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.7; }
+.summary .gx-note {
+  display: inline-block;
+  background: var(--tag-gx-bg);
+  color: var(--tag-gx);
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.stat-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.stat-card .num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.stat-card .label {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  margin-top: 4px;
+}
+
+/* Section */
+.section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.section h2 {
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section h2::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.section h3 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin: 20px 0 12px;
+}
+.section p { font-size: 0.92rem; color: var(--ink-2); margin-bottom: 10px; }
+.section ul { padding-left: 20px; color: var(--ink-2); font-size: 0.92rem; }
+.section ul li { margin-bottom: 6px; }
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.tag-gx { background: var(--tag-gx-bg); color: var(--tag-gx); }
+.tag-hardware { background: var(--tag-hardware-bg); color: var(--tag-hardware); }
+.tag-software { background: var(--tag-software-bg); color: var(--tag-software); }
+.tag-warn { background: var(--tag-warn-bg); color: var(--tag-warn); }
+
+/* Table wrapper for responsive */
+.table-wrap {
+  overflow-x: auto;
+  margin: 12px 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 600px;
+}
+th {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 12px;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+td {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  color: var(--ink-2);
+  vertical-align: top;
+}
+tr:hover td { background: #f8fafc; }
+.price {
+  font-weight: 700;
+  color: var(--tag-gx);
+  font-size: 0.9rem;
+}
+.price-range {
+  background: var(--tag-warn-bg);
+  color: var(--tag-warn);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+/* Card model header */
+.model-header {
+  background: var(--accent-light);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.model-name {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+.model-desc {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+/* GX section */
+.gx-section {
+  border: 1px solid #fed7aa;
+  background: #fffbeb;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-top: 20px;
+}
+.gx-section h2 {
+  color: var(--tag-gx);
+  border-bottom-color: #fed7aa;
+}
+.gx-section h2::before { background: var(--tag-gx); }
+
+/* Warn card */
+.warn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.warn-card {
+  background: var(--tag-warn-bg);
+  border-left: 3px solid var(--tag-warn);
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+}
+.warn-card h4 {
+  font-size: 0.9rem;
+  color: var(--tag-warn);
+  margin-bottom: 6px;
+}
+.warn-card p {
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+/* Source section */
+.source-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+.source-item {
+  background: var(--accent-light);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--ink-3);
+  font-size: 0.78rem;
+  line-height: 1.8;
+}
+.footer a { color: var(--ink-3); }
+
+/* Print */
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section { box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; }
+  .stats-grid { break-inside: avoid; }
+  a { text-decoration: none; color: inherit; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 16px 14px; }
+  .section h2 { font-size: 1.05rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <h1>海康威视8款设备政府采购中标价格调研报告</h1>
+    <div class="meta">
+      <span>📅 调研时间：2026年9月</span>
+      <span>📊 数据范围：2021.09 - 2026.09</span>
+      <span>🌐 来源：全国政府采购平台</span>
+      <span>🇬🇽 含广西专项分析</span>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 摘要 -->
+  <div class="summary">
+    <h2>📌 调研结论</h2>
+    <p><span class="gx-note">★ 广西标注</span>近5年政府采购公开数据显示，海康威视这8款设备均有公开成交记录。由于广西地区政府采购公告的分项报价明细公开程度不及广东、浙江、四川等省份，广西本地直接命中的项目较少。目前已从全国范围找到 <strong>16个</strong> 有明确分项报价的成交项目，完整覆盖全部8款型号，可作为定价参考基准。</p>
+  </div>
+
+  <!-- 数据概览 -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="num">8款</div>
+      <div class="label">目标设备型号</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">16个</div>
+      <div class="label">中标项目样本</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">2个</div>
+      <div class="label">广西本地项目</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">5年</div>
+      <div class="label">数据时间跨度</div>
+    </div>
+  </div>
+
+  <!-- 硬件设备 -->
+  <div class="section">
+    <h2>🔧 硬件设备中标价</h2>
+
+    <!-- DS-A70316R -->
+    <div class="model-header">
+      <div>
+        <span class="model-name">DS-A70316R(标配)(B)</span>
+        <span class="tag tag-hardware">硬件</span>
+      </div>
+      <span class="model-desc">16盘位视频存储服务器</span>
+    </div>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>配置说明</th><th>单价</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>罗山县纪委监委谈话室</td><td>河南信阳</td><td>DS-A70316R/WM（含盘）</td><td class="price">30,200元</td><td>2025-03</td></tr>
+        <tr><td>本溪市猎隼栖息地保护</td><td>辽宁本溪</td><td>DS-A70316R(标配)/6T</td><td class="price">23,400元</td><td>2024-12</td></tr>
+        <tr><td>洪雅县大气污染防治</td><td>四川眉山</td><td>DS-A70316R（裸机）</td><td class="price">49,500元</td><td>2024-12</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <span class="price-range">价格区间：23,400 - 49,500 元/台（裸机约2.3万，含盘/高配约4.95万）</span>
+
+    <!-- HK7210AH -->
+    <h3>HK7210AH — 10TB 企业级 SATA 硬盘 <span class="tag tag-hardware">硬件</span></h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>数量</th><th>单价</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>福州十六中校园监控扩容</td><td>福建福州</td><td>144块</td><td class="price">1,742元</td><td>2024-10</td></tr>
+        <tr><td>东莞东城外国语小学弱电</td><td>广东东莞</td><td>288块</td><td class="price">2,266元</td><td>2024-08</td></tr>
+        <tr><td>缙云县公安局音视频平台</td><td>浙江丽水</td><td>144块</td><td class="price">2,390元</td><td>2024-05</td></tr>
+        <tr><td>甘孜县民族中学设备</td><td>四川甘孜</td><td>16块</td><td class="price">3,680元</td><td>2024-06</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <span class="price-range">价格区间：1,742 - 3,680 元/块（100+块批量约1,700-2,400元，小批量可达3,680元）</span>
+
+    <!-- DS-VM22R-CL/R2 -->
+    <h3>DS-VM22R-CL/R2 — 机架式服务器 <span class="tag tag-hardware">硬件</span></h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>配置</th><th>单价</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>竹山县智能监护</td><td>湖北十堰</td><td>CL基础版</td><td class="price">57,600元</td><td>2026-07</td></tr>
+        <tr><td>克什克腾旗公安局</td><td>内蒙古赤峰</td><td>CL/R2 海光/16G/480G SSD+2×4TB</td><td class="price">46,600元</td><td>2026-07</td></tr>
+        <tr><td>内蒙古农大智慧安防</td><td>内蒙古</td><td>CL/R2 Edge Lite版</td><td class="price">30,500元</td><td>2025-11</td></tr>
+        <tr><td>四川农大实验室</td><td>四川雅安</td><td>CL（计算模块）</td><td class="price">25,000元</td><td>2026-03</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <span class="price-range">价格区间：25,000 - 57,600 元/台（标准配置4.66-5.76万，边缘/精简版2.5-3.05万）</span>
+
+    <!-- iDS-6716NX-I/HWF -->
+    <h3>iDS-6716NX-I/HWF — 人像特征分析智能管理一体机 <span class="tag tag-hardware">硬件</span></h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>数量</th><th>单价</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>盐都区中小学安防</td><td>江苏盐城</td><td>3套</td><td class="price">16,200元</td><td>2024-09</td></tr>
+        <tr><td>庄河市公安局</td><td>辽宁大连</td><td>4台</td><td class="price">13,505元</td><td>2026-06</td></tr>
+        <tr><td>泸州高级中学校</td><td>四川泸州</td><td>2台</td><td class="price">8,370元</td><td>2026-08</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <span class="price-range">价格区间：8,370 - 16,200 元/台</span>
+  </div>
+
+  <!-- 软件平台 -->
+  <div class="section">
+    <h2>💻 软件平台与服务价格</h2>
+
+    <!-- iSecure Center-SM -->
+    <h3>iSecure Center-SM — 综合安防管理平台 <span class="tag tag-software">软件</span></h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>内容说明</th><th>金额</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>鄂托克前旗公安局</td><td>内蒙古</td><td>iSecure Center综合平台（含联网授权）</td><td class="price">335,000元</td><td>2025-12</td></tr>
+        <tr><td>吉林戒毒管理局</td><td>吉林</td><td>基础+3000路授权</td><td class="price">93,000元</td><td>2025-08</td></tr>
+        <tr><td>河南经贸职业学院</td><td>河南</td><td>基础套件</td><td class="price">46,500元</td><td>2023-09</td></tr>
+        <tr><td><span class="tag tag-gx">★广西</span>广西师范大学安防续建</td><td>广西桂林</td><td>Education版扩容</td><td class="price">26,000元</td><td>2026-06</td></tr>
+        <tr><td>平沙镇公共安全监控</td><td>广东珠海</td><td>接入转发模块</td><td class="price">3,246元</td><td>2026-02</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><strong>计价方式：</strong>按"基础模块 + 路数/功能授权"组合计价</p>
+    <span class="price-range">价格区间：基础模块 3,246-46,500 元 | 完整方案 93,000-524,000 元</span>
+
+    <!-- iSecure Center-VMS -->
+    <h3>iSecure Center-VMS — 视频监控平台 <span class="tag tag-software">软件</span></h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>计价方式</th><th>单价</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>平沙镇公共安全监控</td><td>广东珠海</td><td>基础模块</td><td class="price">2,855元/套</td><td>2026-02</td></tr>
+        <tr><td>平沙镇公共安全监控</td><td>广东珠海</td><td>通道接入授权</td><td class="price">57元/路</td><td>2026-02</td></tr>
+        <tr><td>嘉应学院标准化考场</td><td>广东梅州</td><td>视频监控授权</td><td class="price">35元/项</td><td>2026-09</td></tr>
+        <tr><td>木兰县公安局</td><td>黑龙江</td><td>VMS联网模块</td><td class="price">3,000元/组</td><td>2022-11</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <span class="price-range">价格区间：基础模块 2,855-3,000 元 | 通道授权 35-57 元/路</span>
+
+    <!-- iSecure Center-NMS -->
+    <h3>iSecure Center-NMS — 网络管理平台 <span class="tag tag-software">软件</span></h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>计价方式</th><th>单价</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>平沙镇公共安全监控</td><td>广东珠海</td><td>在线巡检授权（1000路）</td><td class="price">58元/路</td><td>2026-02</td></tr>
+        <tr><td>嘉应学院标准化考场</td><td>广东梅州</td><td>设备网络管理</td><td class="price">7元/项</td><td>2026-09</td></tr>
+        <tr><td>昌宁县职业技术学校</td><td>云南保山</td><td>NMS设备管理授权</td><td class="price">4元/项</td><td>2025-11</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <span class="price-range">价格区间：4 - 58 元/项（规模越大单价越高，功能越丰富）</span>
+
+    <!-- 软件质保服务 -->
+    <h3>软件质保服务 <span class="tag tag-software">服务</span></h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>项目名称</th><th>地区</th><th>服务内容</th><th>金额</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>四川省公安厅系统维保</td><td>四川成都</td><td>视频系统年度维保（全省级）</td><td class="price">980,000元/年</td><td>2026-01</td></tr>
+        <tr><td><span class="tag tag-gx">★广西</span>桂平市公安局太阳能监控</td><td>广西贵港</td><td>集成质保+运维（500点位）</td><td class="price">680,000元</td><td>2025-07</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <span class="price-range">价格区间：中型项目（500点位）约 68 万 | 省级平台约 98 万/年</span>
+  </div>
+
+  <!-- 广西专项 -->
+  <div class="gx-section">
+    <h2>🇬🇽 广西地区专项分析</h2>
+    <p>广西8款目标型号中有明确分项价格的公开项目较少，已找到的广西项目情况如下：</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>项目名称</th><th>涉及型号/类型</th><th>单价/金额</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>广西师范大学安防续建</td><td>iSecure Center-SM (Education版)</td><td class="price">26,000元/套</td><td>2026-06</td></tr>
+        <tr><td>2</td><td>桂平市公安局太阳能监控</td><td>软件质保服务（集成质保+运维）</td><td class="price">680,000元</td><td>2025-07</td></tr>
+        <tr><td>3</td><td>南宁市江南区法院</td><td>HK726TAH（10TB硬盘同系列）</td><td class="price">1,600元/块</td><td>2025-11</td></tr>
+        <tr><td>4</td><td>广西物流职业技术学院安防</td><td>DS-A71048R（存储系列）</td><td class="price">128,000元/台</td><td>2024-11</td></tr>
+        <tr><td>5</td><td>广西应急管理厅视频监控</td><td>多个平台设备分项</td><td>详见公告</td><td>2024-06</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="margin-top:10px;color: var(--tag-gx);font-size: 0.85rem;">⚠️ 说明：广西政府采购公告的分项报价明细公开程度相对较低，部分项目只公布总价而不逐项列出单价，导致8款目标型号在广西的直接匹配有限。建议结合全国数据作为价格参考基准，实际投标报价需考虑广西本地渠道价和集成商加成。</p>
+  </div>
+
+  <!-- 16项目速查表 -->
+  <div class="section">
+    <h2>📋 16个项目价格速查表</h2>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>项目名称</th><th>地区</th><th>目标型号</th><th>单价(元)</th><th>总价(万元)</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>罗山县纪委监委谈话室</td><td>河南</td><td>DS-A70316R</td><td class="price">30,200</td><td>67.8</td><td>2025-03</td></tr>
+        <tr><td>2</td><td>本溪市猎隼栖息地保护</td><td>辽宁</td><td>DS-A70316R</td><td class="price">23,400</td><td>323.0</td><td>2024-12</td></tr>
+        <tr><td>3</td><td>洪雅县大气污染防治</td><td>四川</td><td>DS-A70316R</td><td class="price">49,500</td><td>166.0</td><td>2024-12</td></tr>
+        <tr><td>4</td><td>福州十六中校园监控</td><td>福建</td><td>HK7210AH</td><td class="price">1,742</td><td>79.4</td><td>2024-10</td></tr>
+        <tr><td>5</td><td>东莞东城外国语小学</td><td>广东</td><td>HK7210AH</td><td class="price">2,266</td><td>339.7</td><td>2024-08</td></tr>
+        <tr><td>6</td><td>缙云县公安局</td><td>浙江</td><td>HK7210AH</td><td class="price">2,390</td><td>76.6</td><td>2024-05</td></tr>
+        <tr><td>7</td><td>河南经贸职业学院</td><td>河南</td><td>iSC-SM</td><td class="price">46,500</td><td>244.7</td><td>2023-09</td></tr>
+        <tr><td>8</td><td>平沙镇公共安全监控</td><td>广东</td><td>VMS+NMS+SM</td><td class="price">模块3,246起</td><td>808.3</td><td>2026-02</td></tr>
+        <tr><td>9</td><td>克什克腾旗公安局</td><td>内蒙古</td><td>DS-VM22R-CL/R2</td><td class="price">46,600</td><td>14.0</td><td>2026-07</td></tr>
+        <tr><td>10</td><td>庄河市公安局</td><td>辽宁</td><td>iDS-6716NX-I/HWF</td><td class="price">13,505</td><td>63.9</td><td>2026-06</td></tr>
+        <tr><td>11</td><td>泸州高级中学</td><td>四川</td><td>iDS-6716NX-I/HWF</td><td class="price">8,370</td><td>38.2</td><td>2026-08</td></tr>
+        <tr><td>12</td><td><span class="tag tag-gx">★</span>桂平市公安局</td><td>广西</td><td>软件质保服务</td><td class="price">680,000</td><td>207.1</td><td>2025-07</td></tr>
+        <tr><td>13</td><td><span class="tag tag-gx">★</span>广西师范大学</td><td>广西</td><td>iSC-SM</td><td class="price">26,000</td><td>-</td><td>2026-06</td></tr>
+        <tr><td>14</td><td>吉林戒毒管理局</td><td>吉林</td><td>iSC-SM</td><td class="price">93,000</td><td>58.0</td><td>2025-08</td></tr>
+        <tr><td>15</td><td>内蒙古农大</td><td>内蒙古</td><td>DS-VM22R-CL/R2</td><td class="price">30,500</td><td>220.1</td><td>2025-11</td></tr>
+        <tr><td>16</td><td>四川公安厅维保</td><td>四川</td><td>软件质保服务</td><td class="price">980,000/年</td><td>98.0</td><td>2026-01</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- 关键发现 -->
+  <div class="section">
+    <h2>⚠️ 关键发现与风险提示</h2>
+    <div class="warn-grid">
+      <div class="warn-card">
+        <h4>配置差异影响大</h4>
+        <p>同型号因硬盘配置、授权路数不同，价格差异可达2倍以上。如DS-A70316R裸机23,400元 vs 含盘高配49,500元。</p>
+      </div>
+      <div class="warn-card">
+        <h4>采购规模效应明显</h4>
+        <p>HK7210AH硬盘在100+块批量时单价1,742-2,390元，小批量16块时达3,680元，差幅超1倍。</p>
+      </div>
+      <div class="warn-card">
+        <h4>软件授权计价模式</h4>
+        <p>iSecure Center系列按"基础模块+路数授权"计价，路数越多总价越高，授权单价随规模下降。</p>
+      </div>
+      <div class="warn-card">
+        <h4>广西公开度偏低</h4>
+        <p>广西政府采购公告分项报价透明度不如粤浙川等省，多以总价中标形式公布，缺设备级分项明细。</p>
+      </div>
+      <div class="warn-card">
+        <h4>时效性提醒</h4>
+        <p>电子类产品价格通常呈下降趋势，2024-2025年数据更具参考价值，建议以最近1-2年成交数据为主要定价依据。</p>
+      </div>
+      <div class="warn-card">
+        <h4>本地渠道价调整</h4>
+        <p>全国数据作为基准，实际广西投标报价需考虑本地渠道价、集成商加成及项目特殊要求等因素综合调整。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 数据来源 -->
+  <div class="section">
+    <h2>📚 数据来源汇总</h2>
+    <div class="source-list">
+      <div class="source-item">1. 中国政府采购网 (ccgp.gov.cn)</div>
+      <div class="source-item">2. 河南省政府采购网</div>
+      <div class="source-item">3. 四川政府采购网</div>
+      <div class="source-item">4. 广东省政府采购网</div>
+      <div class="source-item">5. 吉林省公共资源交易中心</div>
+      <div class="source-item">6. 内蒙古政府采购电子卖场</div>
+      <div class="source-item">7. 本溪市公共资源交易中心</div>
+      <div class="source-item">8. 江苏省政府采购网</div>
+      <div class="source-item">9. 湖北省政府采购网</div>
+      <div class="source-item">10. 广西公共资源交易中心</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>海康威视8款设备中标价格调研报告 · 2026年9月</p>
+  <p>数据来源：全国各级政府采购及公共资源交易平台公开公告</p>
+  <p>本报告仅供内部价格参考，实际成交价格以具体项目合同为准</p>
+</div>
+
+</body>
+</html>
