@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西商贸物流行业简报 · 2026.09.21 — 09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🚚 广西商贸物流行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是平陆运河通航效应持续释放，江海联运网络快速拓展。</strong>9月21日首趟江海联运往返散货船在北部湾港钦州港区完成双向装卸作业，「南宁港—越南芹苴港」外贸航线首船于9月24日抵港，贵州经平陆运河「公铁江海」联运测试箱成功发往辽宁营口，运河通航后物流通道价值加速兑现，沿线港口、园区、集疏运体系建设需求集中释放。</p>
+  <p><strong>二是东博会溢出效应带动商贸合作与物流需求双增长。</strong>第23届东博会期间，广西商务厅发布「人工智能+消费」20条措施、自贸试验区国际合作推介会签约一批项目、广西追加4.2亿元购车补贴，跨境电商、汽车出海、服务贸易等领域合作成果丰硕，带动仓储、分拨、冷链等商贸物流配套需求同步增长。</p>
+  <p><strong>三是港口与物流基础设施项目稳步推进，智慧化建设需求旺盛。</strong>南宁港六景港区鹤笋作业区5号泊位工程监理与疏浚施工开标、北部湾港防城港渔澫港区江海联运码头一期工艺设备采购中标、物流业务运力池1.8亿元招标启动，港口建设、物流仓储、运力调度等智能化配套空间广阔。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>2026年物流业务运力池供应商入围采购 · 预算约 1.8 亿元，智慧物流调度</li>
+    <li>南宁港六景港区鹤笋作业区5号泊位工程 · 9-28/29开标，港口安防与智能化</li>
+    <li>北部湾港防城港渔澫港区江海联运码头一期工艺设备中标 · 智慧港口</li>
+    <li>平陆运河首趟江海联运往返作业完成 · 沿线枢纽安防配套需求爆发</li>
+    <li>贵州—平陆运河「公铁江海」联运测试箱发运 · 多式联运数字化</li>
+    <li>广西追加4.2亿元购车补贴 · 汽车流通与物流配套需求增长</li>
+    <li>广西「人工智能+消费」20条措施发布 · 智慧零售与供应链协同</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">🚢 平陆运河与港口物流</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://www.bbwport.cn/a/xinwenzixun/gongsixinwen/list_13_1.html" target="_blank" rel="noopener noreferrer">平陆运河首趟江海联运往返散货船圆满完成双向作业</a></h4>
+    <div class="card-body">
+      <p><strong>9月21日，平陆运河通航后首艘江海联运往返散货船「贵港鸿兴8998」轮，在北部湾港钦州港区顺利完成双向装卸作业后驶离，标志着平陆运河江海双向互通模式正式进入常态化运行阶段，为沿线货物运输提供高效便捷的新通道。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>运河通航常态化带动沿线港口、船闸、枢纽的视频监控、AI船舶识别、智能卡口等设备需求持续增长，港区安防与智慧航道建设空间广阔。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bbwport.cn/a/xinwenzixun/gongsixinwen/list_13_1.html" target="_blank" rel="noopener noreferrer">北部湾港股份有限公司</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-26</span>
+    </div>
+    <h4><a href="http://www.chinaview.cn/20260925/58f9e1833e33455eb6c8c8ff4ddef02e/c.html" target="_blank" rel="noopener noreferrer">平陆运河首条外贸航线首艘货船抵达越南芹苴港</a></h4>
+    <div class="card-body">
+      <p><strong>9月24日，平陆运河首条外贸航线「中国南宁港至越南芹苴港」首艘货船「北港南宁博润」轮抵达越南芹苴港，运载252个标准集装箱，货物包括胶合板、元明粉及汽车配件等，主要来自中国西部地区，标志着平陆运河外贸航线正式落地。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>外贸航线开通后，口岸海关监管、集装箱智能识别、跨境物流追踪、边检安防等智能化需求同步增长，海康智慧口岸解决方案可重点布局。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinaview.cn/20260925/58f9e1833e33455eb6c8c8ff4ddef02e/c.html" target="_blank" rel="noopener noreferrer">新华社</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-27</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7690429469244277248/" target="_blank" rel="noopener noreferrer">贵阳国际陆港平陆运河「公铁江海」联运测试箱成功发运</a></h4>
+    <div class="card-body">
+      <p><strong>9月23日，满载化肥的集装箱从贵阳国际陆港启运，经平陆运河实现「公铁江海」多式联运发往辽宁营口。测试箱先经公路至贵阳陆港，再通过铁路发往南宁港装船，经平陆运河抵达钦州港后换装海运北上，全程采用「一箱到底」模式。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>多式联运「一箱到底」模式对货物全程可视化追踪、智能卡口、场站安防、仓储调度等提出更高要求，智慧物流平台与设备配套需求旺盛。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7690429469244277248/" target="_blank" rel="noopener noreferrer">贵州日报</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw_kbxx/mzkb/t28167136.shtml" target="_blank" rel="noopener noreferrer">南宁港六景港区鹤笋作业区5号泊位工程监理与疏浚施工开标</a></h4>
+    <div class="card-body">
+      <p><strong>南宁港六景港区鹤笋作业区5号泊位工程施工监理服务和疏浚工程施工项目分别于9月28日、29日在自治区公共资源交易中心开标，招标人为广西北港西江港口有限公司，项目是平陆运河经济带港口基础设施建设的重要组成部分。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>港口泊位工程建设阶段的施工安全监控，以及建成后的泊位智能安防、港机可视化、人员车辆管理等均有配套需求，海康港口安防解决方案可提前介入。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw_kbxx/mzkb/t28167136.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-28</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001004/tradeInfo.html" target="_blank" rel="noopener noreferrer">北部湾港防城港渔澫港区江海联运码头一期工艺设备采购安装中标</a></h4>
+    <div class="card-body">
+      <p><strong>北部湾港防城港港域渔澫港区第四作业区江海联运码头一期工程工艺配套设备采购安装及土建施工总承包项目发布中标结果公告，标志着防城港江海联运码头建设进入设备安装阶段，将进一步提升北部湾港江海联运能力。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>江海联运码头工艺设备配套中，视频监控、智能卡口、港口作业可视化、人员定位等安防智能化系统是必备配套，存在较大市场空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001004/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://www.bbwport.cn/a/xinwenzixun/gongsixinwen/list_13_1.html" target="_blank" rel="noopener noreferrer">北部湾港斩获首届平陆运河航运技能大赛佳绩</a></h4>
+    <div class="card-body">
+      <p><strong>首届平陆运河航运技能大赛在南宁、钦州两大赛区开赛，作为广西首个跨地市联动、聚焦内河航运领域的高标准技能赛事，汇聚两市近两百名选手参赛。北部湾港股份公司组织队伍参赛并取得优异成绩，展现了港口航运人才队伍建设成果。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>航运技能提升带动港口运营专业化发展，智慧港口、数字孪生港口等技术应用需求随之提升，AI赋能港口运营管理是长期趋势。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bbwport.cn/a/xinwenzixun/gongsixinwen/list_13_1.html" target="_blank" rel="noopener noreferrer">北部湾港股份有限公司</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🌐 商贸政策与跨境电商</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="http://gx.people.com.cn/n2/2026/0922/c402630-41704810.html" target="_blank" rel="noopener noreferrer">广西出台「人工智能+消费」20条措施 推动消费提质升级</a></h4>
+    <div class="card-body">
+      <p><strong>自治区商务厅等8部门联合印发《广西培育壮大「人工智能+消费」若干政策措施》，围绕丰富终端产品供给、拓展服务场景、发展新业态新模式、加强示范推广、优化发展环境5大方面推出20条政策措施，推动AI与消费深度融合。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>AI+消费政策推动智能零售、无人配送、智慧商超等场景落地，海康智慧零售、客流分析、AI导购等产品与方案可对接商贸流通企业需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gx.people.com.cn/n2/2026/0922/c402630-41704810.html" target="_blank" rel="noopener noreferrer">人民网广西频道</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-28</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7690440550201180672/" target="_blank" rel="noopener noreferrer">广西追加4.2亿元购车补贴 接续开展新车购车补贴活动</a></h4>
+    <div class="card-body">
+      <p><strong>自治区商务厅宣布，在前期3亿元补贴基础上追加4.2亿元资金，接续开展2026广西新车购车补贴活动，补贴标准和申领规则保持不变，先到先得、资金用完即止，每名消费者限领1次补贴、仅限1辆乘用车。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>购车补贴带动汽车消费和汽车流通，汽车经销门店、二手车市场的智慧安防、客流统计、远程看车等智能化改造需求有望增长。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7690440550201180672/" target="_blank" rel="noopener noreferrer">广西商务厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">第23届东博会广西商务交出「硬核成绩单」</a></h4>
+    <div class="card-body">
+      <p><strong>第23届中国—东盟博览会期间，广西商务系统举办自贸试验区国际合作推介会、东盟国家参赞与企业家交流会、汽车出海合作交流、出口中国泰国专场等系列活动，签约一批投资与贸易项目，跨境电商、服务贸易、外资引进等领域成果丰硕。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>东博会带动展会安保、人流统计、智慧会展等需求，同时签约项目后续落地将带来园区安防、智慧物流、跨境监管等增量市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西商务厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">2026年中国（广西）自由贸易试验区国际合作推介会在南宁举行</a></h4>
+    <div class="card-body">
+      <p><strong>「投资广西 桂有自贸」——2026年中国（广西）自由贸易试验区国际合作推介会在南宁举办，面向东盟及全球投资者推介广西自贸试验区投资机遇，一批外资项目现场签约，涉及智能制造、跨境物流、数字经济等领域。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>自贸试验区扩容和外资项目落地带动产业园区、物流园区、跨境电商产业园建设，智慧园区安防、智能门禁、视频监控等设备需求稳定释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西商务厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西1—8月外贸、消费指标运行情况发布</a></h4>
+    <div class="card-body">
+      <p><strong>自治区商务厅发布2026年1—8月广西外贸、消费有关指标运行情况，外贸进出口保持稳定增长，社会消费品零售总额持续恢复，东盟贸易、跨境电商、汽车消费等领域表现亮眼，为商贸物流发展提供有力支撑。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>外贸与消费双增长带动物流仓储、冷链配送、末端网点等基础设施扩容，智慧仓储、智能分拣、供应链可视化等AI应用场景持续拓展。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西商务厅</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">📦 物流基建与供应链</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="http://56bid.com/zhaobiao_detail.aspx?id=99488" target="_blank" rel="noopener noreferrer">2026年物流业务运力池供应商入围采购启动 预算约1.8亿元</a></h4>
+    <div class="card-body">
+      <p><strong>广西南宁发布2026年物流业务运力池供应商入围采购项目招标公告，采购预算约1.8亿元，包含普通货物运输、冷链运输等多个包件，其中冷链包件要求温控管理系统可与客户管理系统对接或实时数据交换。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>大规模运力池采购对车辆追踪、温湿度监控、运输可视化等智能化系统提出明确要求，海康车载监控、冷链温控、物流可视化平台可重点切入。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://56bid.com/zhaobiao_detail.aspx?id=99488" target="_blank" rel="noopener noreferrer">必德物流招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-21</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27962-0-0-0.html" target="_blank" rel="noopener noreferrer">广西石化化工产品公路运输项目招标 预计配送费21.8亿元</a></h4>
+    <div class="card-body">
+      <p><strong>中国石油广西石化发布化工产品公路运输项目招标公告，涉及广东石化、广西石化固体和液体化工产品及扩销贸易产品的公路配送服务，配送范围覆盖全国，预计2027—2028年配送费约21.8亿元。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>危化品运输对车辆实时监控、驾驶员行为分析、路线管控、应急联动等安全监控系统需求刚性，海康危化品运输监控解决方案市场空间大。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27962-0-0-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-20699-450200-4-0.html" target="_blank" rel="noopener noreferrer">广西高速物流柳州、防城港库至玉岑铁路钢材物流服务评标结果公示</a></h4>
+    <div class="card-body">
+      <p><strong>广西高速物流股份有限公司柳州、防城港库至玉岑铁路钢材物流服务公开采购项目发布评标结果公示，柳州市九运物流有限公司为A包件第一推荐成交候选人，项目服务于重大铁路工程建设物资保障。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>钢材物流及铁路工程物资配送对仓储安防、货物盘点、车辆调度等智能化有配套需求，智慧物流园解决方案可关注工程物流场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-20699-450200-4-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/bzjtzfcx/" target="_blank" rel="noopener noreferrer">广西水运江河海一体化调度平台项目保证金退款</a></h4>
+    <div class="card-body">
+      <p><strong>广西水运江河海一体化调度平台项目发布保证金退款通知，标志着该平台建设项目前期工作推进至新阶段。项目旨在构建广西内河、沿海一体化的水运调度体系，提升水运行业数字化管理水平。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>水运调度平台建设涉及视频监控接入、船舶AI识别、航道监测等数据资源，海康AI视觉产品可参与平台智能化能力建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/bzjtzfcx/" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-27</span>
+    </div>
+    <h4><a href="https://www.yfbzb.com/zbzt/41/6/" target="_blank" rel="noopener noreferrer">防城港中港建设南宁港水运口岸项目工程管理服务采购</a></h4>
+    <div class="card-body">
+      <p><strong>防城港中港建设工程有限责任公司发布南宁港水运口岸项目工程管理服务（二）采购公告，项目位于南宁港，是水运口岸基础设施建设的重要组成部分，将进一步完善南宁港口岸功能。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>水运口岸项目涉及海关监管、边检安防、口岸监控、智能卡口等多类安防智能化需求，海康智慧口岸整体解决方案可提供配套支持。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.yfbzb.com/zbzt/41/6/" target="_blank" rel="noopener noreferrer">乙方宝招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-30</span>
+    </div>
+    <h4><a href="http://gxggzy.gxzf.gov.cn/jyfw_kbxx/mzkb/t28167136.shtml" target="_blank" rel="noopener noreferrer">引航艇委托管理服务（防城港引航站）重1招标</a></h4>
+    <div class="card-body">
+      <p><strong>广西北部湾港防城港引航站引航艇委托管理服务项目（重1）于9月30日开标，项目服务于防城港引航站引航艇运营管理，是港口引航服务体系的重要组成部分。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>港口引航管理涉及船舶调度、引航员监控、引航作业可视化等场景，AI船舶识别、引航作业视频回溯等技术有应用空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxggzy.gxzf.gov.cn/jyfw_kbxx/mzkb/t28167136.shtml" target="_blank" rel="noopener noreferrer">广西公共资源交易中心</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
+</body>
+</html>
