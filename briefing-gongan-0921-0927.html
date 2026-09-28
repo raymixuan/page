@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西公安行业简报 · 2026.09.21—09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🛡️ 广西公安行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是智慧监管与智慧磐石项目密集落地，县级看守所智能化升级提速。</strong>德保县看守所智慧监管系统建设项目以896.96万元中标（中国移动广西公司），标志着广西县级看守所智能化改造进入集中释放期；同期防城港市港口区天网视频监控系统升级改造启动招标（103.91万元），天网与智慧监管形成"监所+路面"双轮驱动态势。</p>
+  <p><strong>二是移动警务与前端感知设备采购需求旺盛。</strong>上思县公安局发布219台警务移动终端采购意向（预算240.72万元），防城港市公安局发布公网视频对讲机采购意向（63万元/180台），河池市公安局交通管理智能感知前端设备项目成交（229.77万元），基层移动警务与前端感知设备进入升级换代周期。</p>
+  <p><strong>三是辅警装备与基层警务保障持续加大投入。</strong>钦州、百色、南宁高新区三地辅警服装采购项目集中发布招标公告，合计预算超287万元，其中钦州市公安局辅警服装采购达138.09万元为全区最大单；南宁青秀分局办公设备维护维修服务（80万元）启动磋商，基层警务运行保障投入常态化。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>德保县看守所智慧监管系统建设项目 · 中标 896.96 万元（中国移动广西）</li>
+    <li>防城港市港口区天网视频监控升级改造 · 预算 103.91 万元，10-12 开标</li>
+    <li>平南县公安局平容高速视频监控项目 · 采购意向 750 万元，10月启动</li>
+    <li>上思县公安局警务移动终端采购 · 采购意向 240.72 万元（219台）</li>
+    <li>防城港市公安局公网视频对讲机 · 采购意向 63 万元（180台）</li>
+    <li>钦州市公安局辅警服装采购 · 预算 138.09 万元，9-30 开标</li>
+    <li>河池市公安局交通管理智能感知前端设备 · 成交 229.77 万元</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">🛡️ 智慧监管与智慧警务</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-23</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260923_27392092.htm" target="_blank" rel="noopener noreferrer">德保县看守所智慧监管系统建设项目中标 · 总金额896.96万元</a></h4>
+        <div class="card-body">
+          <p>德保县公安局发布<strong>看守所智慧监管系统建设项目中标公告</strong>（BSZC2026-G1-240113-Gxgh），中国移动通信集团广西有限公司以896.96万元中标。项目是百色市县级看守所智能化改造标杆，涵盖监所智能管控、视频监控、周界防范、在押人员管理等多系统集成，建设周期约90天。</p>
+          <p>🔍 <strong>海康视角：</strong>县级看守所智慧监管是公安监所智能化的下沉市场，海康威视在监所智能监控、AB门门禁、周界防范、监室智能分析等产品线齐全，可联合集成商深度参与广西各县区看守所智慧监管改造。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260923_27392092.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/德保县公安局</a> <span class="opp-tag">🎯 897万智慧监管</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">招标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260921_27369393.htm" target="_blank" rel="noopener noreferrer">防城港市港口区天网视频监控系统升级改造招标 · 预算103.91万元</a></h4>
+        <div class="card-body">
+          <p>防城港市公安局港口分局发布<strong>天网视频监控系统升级改造建设运维项目竞争性磋商公告</strong>（FCZC2026-C3-990147-RSXM），预算103.91万元。项目涉及天网前端摄像头升级、平台对接、系统运维等内容，是港口区社会治安防控体系建设的重要组成部分。响应截止10月12日。</p>
+          <p>🔍 <strong>海康视角：</strong>天网系统升级改造是广西各区县公安的持续需求，海康威视高清摄像机、智能球机、视频结构化等产品在天网领域应用广泛，可配合本地集成商参与防城港港口区及后续各区县天网升级项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260921_27369393.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 天网升级改造</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">采购意向</span>
+          <span class="card-date">09-23</span>
+        </div>
+        <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=Gh70+hiCgWC8O5lroLzG8g==&parentId=66485" target="_blank" rel="noopener noreferrer">平南县公安局平容高速视频监控项目采购意向 · 预算750万元</a></h4>
+        <div class="card-body">
+          <p>平南县公安局发布<strong>平容高速视频监控项目建设采购意向</strong>，总预算750万元。项目包括高速路安防系统建设、交通信号灯及电警设施建设、高速路通信技术服务（永久）、监控设备运维管理服务（3年）四大部分，预计10月启动正式招标。平容高速是广西东部重要通道，视频监控需求旺盛。</p>
+          <p>🔍 <strong>海康视角：</strong>750万元高速视频监控+电警项目规模可观，海康威视高速卡口、电警设备、智能信号灯、视频存储及平台等产品全系列覆盖，可提前对接平南县公安局做好项目跟进。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=Gh70+hiCgWC8O5lroLzG8g==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网/平南县公安局</a> <span class="opp-tag">🎯 750万高速监控</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📱 移动警务与前端感知</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">采购意向</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=YfC20D2lywZOMbo8UwuFCA==&parentId=66485" target="_blank" rel="noopener noreferrer">上思县公安局警务移动终端采购意向 · 219台预算240.72万元</a></h4>
+        <div class="card-body">
+          <p>上思县公安局发布<strong>2026年9月至11月政府采购意向</strong>，警务移动终端采购项目预算240.72万元，计划采购219台Mate 80 Pro警务移动终端，预计11月启动正式采购。移动警务终端是基层民警必备装备，与移动警务平台、公安APP应用深度绑定。</p>
+          <p>🔍 <strong>海康视角：</strong>移动警务终端采购常配套执法记录仪、移动警务应用等生态产品，海康威视执法记录仪、移动车载设备等可与警务终端形成联动方案，在终端采购项目中拓展配套商机。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=YfC20D2lywZOMbo8UwuFCA==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网/上思县公安局</a> <span class="opp-tag">🎯 移动警务终端</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">采购意向</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=ygf+8ctVf9PlSGsE29muTQ==&parentId=66485" target="_blank" rel="noopener noreferrer">防城港市公安局公网视频对讲机采购 · 180台预算63万元</a></h4>
+        <div class="card-body">
+          <p>防城港市公安局发布<strong>2026年9月至10月政府采购意向</strong>，公网视频对讲机设备采购项目预算63万元，计划采购180台公网视频对讲机，预计10月启动招标。公网视频对讲机集成语音通话、视频回传、定位调度等功能，是一线民警现场执法的重要装备。</p>
+          <p>🔍 <strong>海康视角：</strong>公网视频对讲机是海康威视移动警务产品线的重要组成，结合海康的视频管理平台可实现执法视频实时回传、指挥调度等功能，在广西各地市公安对讲设备更新换代中市场空间广阔。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=ygf+8ctVf9PlSGsE29muTQ==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网/防城港市公安局</a> <span class="opp-tag">🎯 视频对讲装备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1211_451200_4/" target="_blank" rel="noopener noreferrer">河池市公安局交通管理智能感知前端设备项目成交 · 229.77万元</a></h4>
+        <div class="card-body">
+          <p>河池市公安局交通管理支队<strong>2025年交通管理智能感知前端设备项目</strong>发布成交公告（HCZC2026-J1-990164-GXGW），中国移动通信集团广西有限公司以229.77万元中标。项目涵盖路口智能感知前端设备的建设与接入，是河池市智慧交通感知网络的重要组成。</p>
+          <p>🔍 <strong>海康视角：</strong>智能交通前端感知设备是海康威视核心优势产品，电警、卡口、违停球机、流量监测等产品在河池及广西各地市智能交通建设中可重点拓展，联合运营商参与集成项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1211_451200_4/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 前端感知设备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260920_27364424.htm" target="_blank" rel="noopener noreferrer">上思县公安局高速出口车辆抓拍探头设备采购成交 · 86.39万元</a></h4>
+        <div class="card-body">
+          <p>上思县公安局发布<strong>高速公路出口路段车辆抓拍探头设备采购（情指中心）成交公告</strong>（FCZC2026-J1-210070-GXGC），广西莱航信息科技有限公司以86.39万元中标。项目为情指中心配套高速公路出口车辆抓拍系统，实现对出入境重点车辆的精准管控。</p>
+          <p>🔍 <strong>海康视角：</strong>高速出入口车辆抓拍摄像机、车辆结构化分析是海康威视强项产品，情指中心与高速卡口联动是公安情指行一体化的典型应用场景，可在广西各县市情指中心建设中推广整体解决方案。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/cjgg/202609/t20260920_27364424.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 高速卡口抓拍</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1211_451200_4/" target="_blank" rel="noopener noreferrer">河池市公安局移动警务系统通信服务中标 · 499.12万元</a></h4>
+        <div class="card-body">
+          <p>河池市公安局<strong>移动警务系统通信服务项目</strong>（HCZC2026-G3-990098-GXGW）发布中标公告，中国移动通信集团广西有限公司以499.12万元中标。移动警务系统通信服务为全市公安民警提供移动警务终端的无线通信保障，是移动警务应用的基础设施。</p>
+          <p>🔍 <strong>海康视角：</strong>移动警务通信服务与移动警务终端、执法记录仪、移动视频会议等设备联动需求密切，海康威视可联合运营商为河池及广西各地市公安提供"终端+平台+服务"的一体化移动警务解决方案。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1211_451200_4/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 移动警务通信</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">👮 基层警务与装备保障</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-23</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202609/t20260923_27392541.htm" target="_blank" rel="noopener noreferrer">钦州市公安局辅警服装采购招标 · 预算138.09万元</a></h4>
+        <div class="card-body">
+          <p>钦州市公安局发布<strong>2026年辅警服装采购项目竞争性谈判公告</strong>（QZZC2026-J1-990311-BBWH），预算138.09万元。采购品类包括短袖夏执勤服、春秋执勤服、冬执勤服、执勤帽、肩章胸徽等20余种辅警制式服装及标识，响应截止9月30日。</p>
+          <p>🔍 <strong>海康视角：</strong>辅警队伍装备采购正从服装向执法记录仪、勤务装备、防护装备等多元化拓展，海康威视执法记录仪、移动警务终端等产品可作为辅警装备配套，切入各地公安辅警装备升级市场。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202609/t20260923_27392541.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 辅警装备市场</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202609/t20260924_27400949.htm" target="_blank" rel="noopener noreferrer">百色市公安局辅警制式服装采购（重）招标 · 预算82.56万元</a></h4>
+        <div class="card-body">
+          <p>百色市公安局发布<strong>2026年度辅警制式服装（重）竞争性谈判公告</strong>（BSZC2026-J1-990190-gxxy），预算82.56万元。项目为首次废标后重新招标，专门面向中小企业采购，交货期为签订合同后30日内，响应截止10月19日。</p>
+          <p>🔍 <strong>海康视角：</strong>百色市公安局辅警服装废标重招反映出县级辅警装备采购需求刚性，海康可关注百色公安后续信息化与装备类项目，如智慧磐石、执法记录仪、智能安防等领域的合作机会。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202609/t20260924_27400949.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 废标重招机会</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27092.html" target="_blank" rel="noopener noreferrer">南宁市公安局高新分局辅警服装采购招标 · 预算66.62万元</a></h4>
+        <div class="card-body">
+          <p>南宁市公安局高新技术产业开发区分局发布<strong>2026年辅警服装采购竞争性谈判公告</strong>，预算66.62万元。本周广西已有钦州、百色、南宁高新三地辅警服装项目集中发布，合计预算超287万元，辅警装备采购呈现"多点开花、集中释放"的特点。</p>
+          <p>🔍 <strong>海康视角：</strong>南宁高新分局作为国家级高新区公安分局，后续在智慧园区安防、人脸门禁、天网升级等领域信息化需求潜力大，可借辅警装备采购契机加强客户关系，拓展智能化项目机会。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27092.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 高新公安信息化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260924_27394632.htm" target="_blank" rel="noopener noreferrer">南宁青秀分局办公设备维护维修服务招标 · 预算80万元</a></h4>
+        <div class="card-body">
+          <p>南宁市公安局青秀分局发布<strong>2026年度办公设备维护维修服务采购竞争性磋商公告</strong>（NNZC2026-C3-030142-GXDJ），预算80万元。服务范围涵盖分局办公、通信、会议及公共信息化设备、办公家具等各类设备设施的日常维护与故障维修，服务期1年。</p>
+          <p>🔍 <strong>海康视角：</strong>青秀分局是南宁市公安信息化投入重点区域，运维服务项目常伴随设备更新升级需求，海康威视在安防监控、视频会议、智慧办案等领域的产品可在维护服务中挖掘以旧换新和新增商机。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260924_27394632.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 运维服务商机</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">⚡ 执法动态与专项行动</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">专项行动</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://www.gxzf.gov.cn/html/gxyw/t28165118.shtml" target="_blank" rel="noopener noreferrer">广西深化扫黑除恶专项斗争成效显著 · 已打掉涉黑恶团伙95个</a></h4>
+        <div class="card-body">
+          <p>9月22日广西深化扫黑除恶专项斗争视频调度会透露，全区公安机关累计打掉涉黑恶犯罪团伙95个（新型37个、传统58个），抓获犯罪嫌疑人595名、破获案件477起。广西坚持"打伞破网"与案件查办同步，今年以来立案124件、留置11人、移送司法机关9人，并推动重点行业领域专项整治。</p>
+          <p>🔍 <strong>海康视角：</strong>扫黑除恶专项行动推动公安智慧侦查、大数据研判等技术需求增长，海康威视视频结构化、人像比对、智能研判平台等产品可服务于公安侦查办案，助力提升打击新型涉网黑恶犯罪的技术能力。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/html/gxyw/t28165118.shtml" target="_blank" rel="noopener noreferrer">广西日报/自治区政府网</a> <span class="opp-tag">🎯 智慧侦查需求</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">合同公告</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="https://wap.qianlima.com/hot4240006/" target="_blank" rel="noopener noreferrer">自治区公安厅森林公安良凤江派出所机动车保险等框架协议采购密集成交</a></h4>
+        <div class="card-body">
+          <p>本周自治区公安厅直属森林公安一分局良凤江派出所机动车保险服务框架协议、森林公安一分局彩色激光多功能一体机网上超市采购等多个项目密集成交。森林公安作为自治区公安厅直属警种，点多线长面广，基层所队信息化建设需求持续释放。</p>
+          <p>🔍 <strong>海康视角：</strong>森林公安林区视频监控、森林防火预警、无人机巡查、自然保护区智能监测等场景与海康威视产品线高度契合，可重点拓展广西各森林公安分局的智能化建设与运维服务。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://wap.qianlima.com/hot4240006/" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 森林公安信息化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">网安执法</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="https://gaj.huhhot.gov.cn/gaj_zzms/gaj_ywdt_slh/" target="_blank" rel="noopener noreferrer">南宁公安网安部门查处网暴运动员案件 · 净网行动持续深入</a></h4>
+        <div class="card-body">
+          <p>公安部公布"净网—2026"专项行动10起典型案例，其中广西南宁公安网安部门查处一起网暴运动员案件。网民韦某多次发布侮辱、贬损运动员视频并组织粉丝群体共同实施网暴活动，已被依法处以行政处罚。今年以来全国公安机关累计侦办网络违法犯罪案件3.6万余起。</p>
+          <p>🔍 <strong>海康视角：</strong>净网行动推动公安网安技术装备投入增长，网络安全态势感知、网络舆情监测、电子数据取证等设备需求旺盛，海康威视在网络安全与视频内容安全领域可拓展合作空间。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gaj.huhhot.gov.cn/gaj_zzms/gaj_ywdt_slh/" target="_blank" rel="noopener noreferrer">公安部网安局</a> <span class="opp-tag">🎯 网安装备市场</span></div>
+      </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西公安行业简报</strong> · 2026.09.21—09.27<br>编制：海康威视广西行业经理 · 聚焦安防智能化项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
