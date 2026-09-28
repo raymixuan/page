@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西电力行业简报 · 2026.09.21 — 09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>⚡ 广西电力行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 17 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是电网基建项目密集发布，主网架与配电网建设同步提速。</strong>广西电网公司2026年第五批220kV、110kV、35kV电网基建施工专项招标发布，涵盖南宁拓东送变电（8037万元）、柳州君武送变电（7360万元）、贵港川山送变电（4371万元）等多个重点项目；南宁第五批10千伏及以下配电网项目获核准，总投资4266.5万元，电网建设投资持续加码。</p>
+  <p><strong>二是新能源项目加速推进，风电光伏产业链需求旺盛。</strong>平桂水口风电场风机采购中标（上海电气2.2亿元）、昭平九龙200MW风电项目风机采购定标（金风科技）、广西华电象州马坪25万千瓦风电项目二次安防系统采购、广西交投光伏项目逆变器及并网柜采购公示，风电光伏项目从设备采购到施工建设全面推进。</p>
+  <p><strong>三是电力机制与技术创新持续深化，智能电网与东盟合作亮点频出。</strong>广西启动2027年增量新能源项目机制电价竞价登记，风电光伏竞价上限均为0.36元/千瓦时；南方电网在东博会发布老挝语能源大模型V2.0、柔性灰度智能监测平台等成果；500千伏桂东南网架完善工程龙圩区段塔基征地圆满收官，为工程全面施工奠定基础。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西电网第五批220kV/110kV/35kV基建施工专项招标 · 多项目合计超2.6亿</li>
+    <li>南宁第五批10kV及以下配电网项目核准 · 总投资 4266.5 万元</li>
+    <li>平桂水口风电场风机设备采购中标 · 上海电气中标 2.2 亿元</li>
+    <li>500千伏桂东南网架完善工程龙圩区段征地收官 · 总投资 6.3 亿</li>
+    <li>广西2027年机制电价竞价登记启动 · 新能源电站智能监控需求增长</li>
+    <li>华电象州马坪25万千瓦风电项目通信及二次安防系统采购</li>
+    <li>南方电网发布老挝语能源大模型V2.0 · 东盟电力技术合作深化</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">⚡ 电网基建与输变电</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://www.bidding.csg.cn/zbgg/1200443777.jhtml" target="_blank" rel="noopener noreferrer">广西电网第五批220kV/110kV/35kV基建施工专项招标发布</a></h4>
+    <div class="card-body">
+      <p><strong>广西电网公司发布2026年第五批220kV、110kV、35kV电网基建施工公开专项招标，包括南宁220kV拓东送变电（8037万元）、柳州220kV君武送变电（7360万元）、贵港110kV川山送变电（4371万元）、钦州110kV桂枝送变电（4136万元）、梧州35kV人和送变电（2873万元）等多个重点项目。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>大批输变电工程建设带动变电站智能安防、视频监控、无人机巡检、电力设备状态监测等需求，海康电力行业安防与智慧巡检解决方案可重点对接。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidding.csg.cn/zbgg/1200443777.jhtml" target="_blank" rel="noopener noreferrer">南方电网供应链平台</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://fgw.nanning.gov.cn/fggz/nyfz/t6734882.html" target="_blank" rel="noopener noreferrer">南宁供电局第五批10千伏及以下配电网项目核准 总投资4266.5万</a></h4>
+    <div class="card-body">
+      <p><strong>南宁市政务服务局批复南宁供电局2026年第五批10千伏及以下配电网项目，新建10千伏架空线44.47千米、电缆6.47千米，新增配电变压器20台共7425千伏安，项目总投资4266.50万元，将进一步完善南宁市配电网结构。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>配电网建设改造带动配电站房监控、智能巡检、台区可视化、故障定位等智能化需求，海康配电房环境监控、智能巡检机器人等产品有应用空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://fgw.nanning.gov.cn/fggz/nyfz/t6734882.html" target="_blank" rel="noopener noreferrer">南宁市发改委</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7689047325750215210/" target="_blank" rel="noopener noreferrer">500千伏桂东南网架完善工程龙圩区段68基塔基征地全部完成</a></h4>
+    <div class="card-body">
+      <p><strong>500千伏桂东南网架完善工程梧州市龙圩区段68基铁塔塔基征地任务全面完成，该工程总投资6.3亿元，新建500千伏线路约170公里，全线架设铁塔358基，横跨玉林、梧州两市多个县区，龙圩区段对应投资约1.4亿元。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>500千伏骨干网架工程建设涉及施工安全监控、输电线路无人机巡检、杆塔在线监测等需求，建成后变电站智能安防、设备状态监测等配套空间广阔。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7689047325750215210/" target="_blank" rel="noopener noreferrer">金台资讯</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">广西电网建设分公司调度数据网设备零星采购公告</a></h4>
+    <div class="card-body">
+      <p><strong>广西电网建设分公司发布2026年9月第一批调度数据网设备零星采购项目公告，调度数据网是电网调度自动化系统的重要支撑网络，为电网运行监控和指挥调度提供数据通信保障。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>调度数据网建设涉及视频监控接入、安全防护、机房环境监控等配套需求，电力安防与运维监控系统可寻找合作切入点。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">南方电网电子采购平台</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-21</span>
+    </div>
+    <h4><a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">百色供电局第一批规划专业电网基建项目前期专题等5个询比项目</a></h4>
+    <div class="card-body">
+      <p><strong>广西电网公司百色供电局发布2026年第一批规划专业电网基建项目前期专题（其它专题）等5个询比项目采购公告，涉及电网基建项目前期规划研究、专题论证等服务采购，为后续电网建设项目储备奠定基础。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>电网基建项目前期工作密集开展意味着后续建设规模可观，可提前布局电力安防、智能巡检等产品的项目跟踪与市场推广。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">南方电网电子采购平台</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🌞 新能源与储能</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-23</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-5170-451100-4-7.html" target="_blank" rel="noopener noreferrer">平桂水口风电场风机设备采购中标 上海电气中标约2.2亿元</a></h4>
+    <div class="card-body">
+      <p><strong>平桂水口风电场项目风力发电机组（含塔筒）及附属设备采购项目发布中标结果公告，上海电气风电集团股份有限公司中标1标段，中标价格约2.198亿元，标志着贺州风电项目进入设备供货阶段。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>风电场建设带动升压站安防、风机塔筒监控、风电场智能巡检、无人机巡检等需求，海康新能源行业解决方案可覆盖风电全场景安防与监控需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-5170-451100-4-7.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-5170-451100-4-7.html" target="_blank" rel="noopener noreferrer">中广核昭平九龙200MW风电项目风机采购定标 金风科技中标</a></h4>
+    <div class="card-body">
+      <p><strong>中广核新能源广西贺州市昭平九龙200MW陆上风电项目风力发电机组采购项目发布中标结果，金风科技股份有限公司中标，项目总装机规模200MW，是贺州市重点新能源建设项目。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>200MW大型风电场建设涉及数十台风机的运维监控、升压站安防、集电线路监测等，海康智能巡检、视频监控、周界防范产品有较大应用体量。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-5170-451100-4-7.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-23</span>
+    </div>
+    <h4><a href="https://chzb.dlzb.com/v17/" target="_blank" rel="noopener noreferrer">广西华电象州马坪25万千瓦风电项目通信及二次安防系统采购</a></h4>
+    <div class="card-body">
+      <p><strong>广西国电南自智慧能源有限公司发布华电象州马坪25万千瓦风电项目通信及二次安防系统询比采购公告，项目涉及风电场通信系统和二次安防系统建设，是风电项目电气二次系统的重要组成部分。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>风电项目二次安防系统采购明确包含安防相关需求，海康视频监控、入侵报警、门禁系统、电子围栏等产品可直接参与此类项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://chzb.dlzb.com/v17/" target="_blank" rel="noopener noreferrer">华电电子商务平台</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-26</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-5170-451100-4-7.html" target="_blank" rel="noopener noreferrer">广西交投光伏工程项目逆变器、并网柜直接采购公示</a></h4>
+    <div class="card-body">
+      <p><strong>中交一公局第四工程有限公司发布2026年9月广西交投光伏工程项目逆变器和并网柜直接采购公示，项目为广西交通投资集团旗下光伏电站建设项目，标志着项目进入关键设备采购阶段。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>光伏电站建设带动厂区安防、视频监控、箱变监测、智能巡检等需求，海康光伏电站智能监控解决方案可对接相关项目方。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-5170-451100-4-7.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-26513-0-6-0.html" target="_blank" rel="noopener noreferrer">中广核多个风电场储能容量指标租赁采购项目推进</a></h4>
+    <div class="card-body">
+      <p><strong>中广核新能源发布广西善能风电场、钦南岭江风电场二期储能容量指标租赁采购项目变更公告，多个风电场储能配套项目持续推进，反映广西新能源配储需求持续释放。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>储能电站建设涉及电池舱监控、热成像测温、消防系统联动、园区安防等智能化需求，海康储能电站安全监控解决方案有广泛市场空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-26513-0-6-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://news.sohu.com/a/1079574786_121124362" target="_blank" rel="noopener noreferrer">广西启动2027年增量新能源项目机制电价竞价登记</a></h4>
+    <div class="card-body">
+      <p><strong>广西电力交易中心发布2027年度增量新能源项目机制电价竞价登记通知，风电、光伏竞价申报上限均为0.36元/千瓦时、下限0.15元/千瓦时，机制电价执行期限12年，正式登记时间为9月15日至30日，竞价计划10月下旬开展。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>新能源电价机制推动电站提升运营效率和智能化水平，智能运维、发电预测、状态监测等AI赋能需求增长，海康电力AI系列产品有推广机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://news.sohu.com/a/1079574786_121124362" target="_blank" rel="noopener noreferrer">国际能源网</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🔬 电力科技与安全生产</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技术</span>
+      <span class="card-date">09-23</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7688594201855951369/" target="_blank" rel="noopener noreferrer">南方电网在东博会发布老挝语能源大模型V2.0等技术成果</a></h4>
+    <div class="card-body">
+      <p><strong>第23届东博会期间，南方电网广西电网公司发布多项能源电力技术成果，包括「大瓦特—老挝语能源行业大模型」V2.0、柔性灰度智能监测研判平台等，推动中国—东盟能源技术合作从「硬联通」向「软联通」纵深推进。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>能源行业大模型和智能监测技术体现了电力智能化发展方向，海康可结合自身AI视觉和行业大模型能力，与电网企业深化智能巡检、智能监测等领域合作。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7688594201855951369/" target="_blank" rel="noopener noreferrer">金台资讯</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7688594201855951369/" target="_blank" rel="noopener noreferrer">中国—东盟能源学院搭建区域能源合作「智力枢纽」</a></h4>
+    <div class="card-body">
+      <p><strong>由南方电网广西电网公司与广西大学联合筹建的中国—东盟能源学院揭牌成立一年多来，构建「校企共育、实践导向」培养模式，与柬埔寨皇家科学院共建能源AI及安全装备联合实验室，与老挝国家电力公司开展结对交流。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>能源领域AI及安全装备联合实验室建设，为海康电力安防、智能巡检、AI监测等产品进入东盟市场创造了产学研合作渠道。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7688594201855951369/" target="_blank" rel="noopener noreferrer">金台资讯</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-28</span>
+    </div>
+    <h4><a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">贵港供电局第六批生产设备现场维护修理试验等8个询比项目</a></h4>
+    <div class="card-body">
+      <p><strong>广西电网公司贵港供电局发布2026年第六批生产技术专业各类生产设备（含实训设备）现场维护修理试验等8个询比项目采购公告，涉及生产设备运维检修、试验调试等技术服务。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>生产设备维护修理外包趋势下，智能巡检设备、远程运维系统、AR辅助检修等智能化工具有替代传统人工的潜力，海康相关产品可切入电力运维市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">南方电网电子采购平台</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">广西电网电科院消防系统维保服务零星采购</a></h4>
+    <div class="card-body">
+      <p><strong>广西电网公司电力科学研究院发布2026年第一批行政办公专业消防系统维保服务零星采购项目公告，消防系统维保是电力设施安全运行的重要保障，需求持续稳定。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>电力系统消防维保需求稳定，海康消防报警、视频监控与消防联动系统可提供更智能的一体化解决方案，拓展电力消防市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://cgsdz.dlzb.com/v3/" target="_blank" rel="noopener noreferrer">南方电网电子采购平台</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://zb.zhaobiao.cn/listed_v_23fc1384978f036fe2290429aae9b504.html" target="_blank" rel="noopener noreferrer">南宁发电贫瘦煤4万吨煤炭询价采购成交公示</a></h4>
+    <div class="card-body">
+      <p><strong>国能南宁发电有限公司贫瘦煤煤炭询价采购项目发布成交公示，厦门航空开发股份有限公司中选4万吨，交割地为广西钦州港或防城港，反映火电企业节前储煤需求旺盛。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>火电厂煤炭储运涉及煤场监控、煤堆测温、皮带机巡检、人员车辆管理等场景，海康热成像、智能视频分析、周界安防等产品有成熟应用方案。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://zb.zhaobiao.cn/listed_v_23fc1384978f036fe2290429aae9b504.html" target="_blank" rel="noopener noreferrer">招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://industry.qianlima.com/industry/560-6" target="_blank" rel="noopener noreferrer">永福发电烟煤、无烟煤多个批次煤炭询价采购</a></h4>
+    <div class="card-body">
+      <p><strong>国能永福发电有限公司本周密集发布多批次煤炭询价采购公告，包括烟煤和无烟煤品种，采购交割地涉及广西钦州港或防城港，保障火电企业秋冬季发电用煤供应。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>火电厂持续的煤炭采购和储运需求带动煤场智能监控需求，海康煤场安全监控、斗轮机定位、智能盘煤等解决方案可重点推广。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://industry.qianlima.com/industry/560-6" target="_blank" rel="noopener noreferrer">千里马招标网</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
+</body>
+</html>
