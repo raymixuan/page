@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西通信运营商行业简报 · 2026.09.21—09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>📡 广西通信运营商行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 18 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是信息通信"十五五"规划发布，2030年发展目标明确。</strong>广西信息通信行业发展"十五五"规划高质量发展篇发布，到2030年将建成全域覆盖、陆海贯通、辐射东盟的信息通信基础设施，实现每万人5G基站50个、50G-PON端口6万个、国际互联网出入口带宽1000Gbps，5G-A、万兆光网、6G试验网、算力网络、低空智联网成为重点建设方向。</p>
+  <p><strong>二是东博会成运营商AI+数智化成果展示主场，东盟出海加速。</strong>广西移动以"智联东盟·算赋未来"亮相东博会，展示南宁国际通信业务出入口局、平陆运河智慧水运大模型、会展智能体、九天大模型等重磅成果；南宁至河内数据传输提速近5倍，AI+会展智能体支持11个语种，运营商"AI+算力+应用"三位一体的东盟输出模式加速成型。</p>
+  <p><strong>三是运营商政企DICT项目密集释放，视频监控与安防集成需求旺盛。</strong>广西铁塔北海铁路沿线视频监控、防城港道路监控运维、钦州智能化监控综合服务、靖西交通设施升级改造等一批安防监控类项目发布中标或招标；联通防城港门禁系统集成、柳州会议系统改造、梧州智能无线信息化等项目同步推进；广西移动政企无人机框架服务、900M滤波器等技术采购密集发布。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西铁塔北海铁路沿线视频监控施工 · 9-23成交，中移建设18.32万</li>
+    <li>铁塔钦州智能化监控综合服务项目 · 预算29.98万，9-18比选公告</li>
+    <li>铁塔能源靖西市交通设施升级改造综合集成 · 预算53.39万，9-21招标</li>
+    <li>联通防城港白龙门禁系统集成服务 · 9-24询比采购公告</li>
+    <li>广西移动政企事业部无人机框架服务 · 9-23中选候选人公示</li>
+    <li>广西移动900M频段滤波器采购项目 · 9-22询比公告</li>
+    <li>广西铁塔智联业务合作伙伴招募（10月轮次）· 9-23公告</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">📡 运营商动态与政策规划</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_96bf8ec5e2da4fee852143a32ff1cbfc.html" target="_blank" rel="noopener noreferrer">广西信息通信"十五五"规划发布 2030年建强面向东盟数字底座</a></h4>
+    <div class="card-body">
+      <p>广西通信管理局发布信息通信行业发展"十五五"规划之高质量发展篇，明确到2030年发展目标：每万人拥有<strong>5G（含5G-A）基站50个</strong>、50G-PON端口6万个、省际互联网出口带宽70Tbps、<strong>国际互联网出入口带宽1000Gbps</strong>、自然村5G通达率超99.9%。重点任务包括5G-A规模部署、万兆光网、6G试验网、"一核多点"算力布局、城域1-3-5毫秒级算力网络、低空智联网等。</p>
+      <p><strong>🔍 海康视角：</strong>5G-A、算力网络、低空智联网建设全面铺开，带动安防视频监控从高清向超高清、智能感知升级，海康5G+AI摄像头、边缘计算等产品将迎来更广阔的市场空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_96bf8ec5e2da4fee852143a32ff1cbfc.html" target="_blank" rel="noopener noreferrer">广西通信管理局</a> <span class="opp-tag">🎯 十五五规划</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://www.cnii.com.cn/rmydb/202609/t20260922_761820.html" target="_blank" rel="noopener noreferrer">广西移动"AI+"亮相东博会 国际出入口局+智慧水运大模型成亮点</a></h4>
+    <div class="card-body">
+      <p>广西移动以"智联东盟·算赋未来"主题亮相第23届东博会，三大板块亮点纷呈：<strong>通信服务板块</strong>展示南宁国际通信业务出入口局，南宁至越南河内数据传输提速近5倍；<strong>算力服务板块</strong>展示全区14市43栋数据中心、超3.2万机架、九天安全可信大模型；<strong>智能服务板块</strong>展示平陆运河智慧水运大模型、国内首个会展智能体（支持11语种24个场景）、4+N智能网等成果。</p>
+      <p><strong>🔍 海康视角：</strong>广西移动AI+数智化战略全面提速，平陆运河智慧水运、会展智能体等标杆项目对视频感知、AI视觉、智能终端需求旺盛，可作为移动DICT合作伙伴深度参与。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.cnii.com.cn/rmydb/202609/t20260922_761820.html" target="_blank" rel="noopener noreferrer">人民邮电报</a> <span class="opp-tag">🎯 AI+数智化</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://10086.dlzb.com/v4/" target="_blank" rel="noopener noreferrer">广西移动900M频段滤波器采购项目询比公告发布</a></h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026年900M频段滤波器采购项目</strong>询比公告。900M低频段是5G广覆盖的核心资源，滤波器采购用于优化900M频段网络质量，提升农村及边远地区5G覆盖效果，是落实"宽带边疆"、"信号升格"专项行动的具体举措。</p>
+      <p><strong>🔍 海康视角：</strong>900M低频5G网络加速覆盖，将为偏远地区视频监控、物联网设备提供更好的网络支撑，海康4G/5G摄像机产品可更好适配边远地区安防市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://10086.dlzb.com/v4/" target="_blank" rel="noopener noreferrer">中国移动采购与招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-23</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/newssearchzb-308936452.html" target="_blank" rel="noopener noreferrer">广西移动政企事业部无人机框架服务采购项目中选候选人公示</a></h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026年政企事业部无人机框架服务采购项目</strong>中选候选人公示。无人机服务广泛应用于应急通信、安防巡检、森林防火、国土监测等政企场景，是广西移动DICT业务的重要技术支撑能力，框架采购将为政企客户提供便捷的无人机服务调用渠道。</p>
+      <p><strong>🔍 海康视角：</strong>海康无人机产品系列齐全，可与广西移动政企事业部探索无人机+安防解决方案联合推广，服务应急、安防、环保等政企客户。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchzb-308936452.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 无人机合作</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-21</span>
+    </div>
+    <h4><a href="https://10086.dlzb.com/v4/" target="_blank" rel="noopener noreferrer">广西移动2026年基建支撑服务采购项目询比公告</a></h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026年基建支撑服务采购项目</strong>询比公告。基建支撑服务涵盖机房建设、铁塔维护、配套设施改造等通信基础设施建设的技术支撑服务，是保障广西移动网络持续扩容升级的重要基础服务采购。</p>
+      <p><strong>🔍 海康视角：</strong>通信基建持续投入，机房建设、数据中心配套安防监控、门禁、动环监控等设备需求稳定，可跟进移动基建服务商对接设备供应。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://10086.dlzb.com/v4/" target="_blank" rel="noopener noreferrer">中国移动采购与招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/newssearchzb-308936452.html" target="_blank" rel="noopener noreferrer">广西移动数据安全运营稽核管理平台软件开发项目中选结果公示</a></h4>
+    <div class="card-body">
+      <p>中国移动广西公司发布<strong>2026年数据安全运营稽核管理平台软件开发采购项目</strong>中选结果公示。项目构建数据安全运营与稽核管理平台，实现数据安全态势感知、合规审计、风险管控等功能，是广西移动落实数据安全法、加强政企客户数据安全保障能力的重要举措。</p>
+      <p><strong>🔍 海康视角：</strong>数据安全与视频监控安全融合趋势明显，海康在视频数据安全、智能合规审计方面有成熟产品，可对接运营商数据安全体系建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchzb-308936452.html" target="_blank" rel="noopener noreferrer">采招网</a></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-title">🗼 铁塔与安防集成项目</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-23</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-19388-0-4-0.html" target="_blank" rel="noopener noreferrer">铁塔北海分公司铁路沿线视频监控施工采购项目成交 中移建设18.32万</a></h4>
+    <div class="card-body">
+      <p>中国铁塔北海市分公司发布<strong>2026年铁路沿线视频监控施工采购项目</strong>成交候选结果，中移建设有限公司以18.32万元成交。项目依托铁塔站址资源，在铁路沿线建设视频监控系统，为铁路运营安全提供可视化保障，是铁塔"通信塔+监控塔"双塔战略的典型应用。</p>
+      <p><strong>🔍 海康视角：</strong>铁路沿线视频监控是典型的长距离线性安防场景，海康高清摄像机、智能分析产品可通过铁塔集成渠道广泛覆盖此类项目，可与铁塔地市分公司深化合作。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-19388-0-4-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 铁路监控</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-18</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-19388-0-4-0.html" target="_blank" rel="noopener noreferrer">铁塔钦州分公司智能化监控综合服务项目比选 预算29.98万元</a></h4>
+    <div class="card-body">
+      <p>中国铁塔钦州市分公司发布<strong>2026年钦州市智能化监控综合服务项目比选公告</strong>，预算29.98万元。项目为钦州本地政企客户提供智能化监控综合服务，包括前端设备安装、平台接入、运维保障等一体化服务，是铁塔智联业务在政务及行业客户领域的进一步拓展。</p>
+      <p><strong>🔍 海康视角：</strong>铁塔智联业务快速向地市下沉，监控综合服务对前端摄像机、存储、平台等设备需求持续增长，海康可作为核心设备供应商对接铁塔智联渠道。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-19388-0-4-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-21</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-33800-450000-1.html" target="_blank" rel="noopener noreferrer">铁塔能源靖西市交通设施升级改造综合集成设备采购 预算53.39万</a></h4>
+    <div class="card-body">
+      <p>铁塔能源广西分公司发布<strong>靖西市交通设施升级改造综合集成设备采购项目</strong>公告，预算53.39万元。靖西市位于中越边境，交通设施升级改造涉及卡口监控、违停抓拍、交通信号等智能交通设备的集成采购，是铁塔能源拓展智慧交通业务的重要地市项目。</p>
+      <p><strong>🔍 海康视角：</strong>边境城市交通设施升级对视频监控、智能卡口、违停检测等产品需求明确，海康智慧交通产品体系可全面覆盖，可与铁塔能源建立设备供应合作。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-33800-450000-1.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 智慧交通</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://ebid.chinatowercom.cn/zgtt/gggs/003004/20260922/d86ef267-933d-4b1d-9a2e-8e64fb9c7333.html" target="_blank" rel="noopener noreferrer">铁塔河池森林防火智能卡口前端设备项目成交 新三科技中标</a></h4>
+    <div class="card-body">
+      <p>中国铁塔广西分公司发布<strong>河池市两河流域森林火灾高风险区综合治理项目（森林防火智能卡口前端设备）</strong>成交结果公示，新三科技有限公司中标。项目在河池林区重点卡口部署智能监控设备，实现火情监测、人员车辆出入管控等功能，是"智慧林业+铁塔监控"融合应用的典型项目。</p>
+      <p><strong>🔍 海康视角：</strong>森林防火智能卡口是热成像+可见光双目摄像机的典型应用场景，海康热成像产品技术领先，可与铁塔合作拓展广西森林防火监控市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://ebid.chinatowercom.cn/zgtt/gggs/003004/20260922/d86ef267-933d-4b1d-9a2e-8e64fb9c7333.html" target="_blank" rel="noopener noreferrer">中国铁塔电子采购平台</a> <span class="opp-tag">🎯 森林防火</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://ebid.chinatowercom.cn/zgtt/gggs/003003/20260924/0338f449-c3b0-4f3c-837a-782a0c4eb612.html" target="_blank" rel="noopener noreferrer">铁塔百色电信改造站电源接入改造项目 广西通服为成交候选</a></h4>
+    <div class="card-body">
+      <p>中国铁塔广西分公司发布<strong>2026年百色市电信改造站电源接入改造项目</strong>成交候选人公示，广西壮族自治区通信产业服务有限公司以折扣99%排名第一。项目对百色地区电信改造基站进行电源接入升级，保障5G网络扩容供电需求，服务期1年。</p>
+      <p><strong>🔍 海康视角：</strong>5G基站改造带动配套动环监控、安防门禁、智能配电等设备需求，可关注铁塔配套改造项目中的安防设备供应机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://ebid.chinatowercom.cn/zgtt/gggs/003003/20260924/0338f449-c3b0-4f3c-837a-782a0c4eb612.html" target="_blank" rel="noopener noreferrer">中国铁塔电子采购平台</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-23</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-33800-450000-1.html" target="_blank" rel="noopener noreferrer">广西铁塔智联业务合作伙伴招募（10月轮次）公开招募</a></h4>
+    <div class="card-body">
+      <p>中国铁塔广西分公司发布<strong>2026年智联业务合作伙伴招募项目（10月轮次）</strong>招募公告。智联业务是铁塔转型数字经济的核心方向，通过广泛招募合作伙伴，共同拓展视频监控、智慧灯杆、物联网应用等数字业务市场，每月一轮的常态化招募机制持续扩容生态。</p>
+      <p><strong>🔍 海康视角：</strong>铁塔智联业务快速扩张，合作伙伴机制开放，海康可加入其合作伙伴库，通过铁塔渠道覆盖更多政企行业客户，实现设备销售与渠道共赢。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-33800-450000-1.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 生态合作</span></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-title">🏢 联通电信与数智应用</div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_1/" target="_blank" rel="noopener noreferrer">联通防城港白龙门禁系统集成服务询比采购公告发布</a></h4>
+    <div class="card-body">
+      <p>中国联通防城港市分公司发布<strong>白龙门禁系统集成服务询比采购项目</strong>公告。项目为某政企客户提供门禁系统集成服务，包括设备安装调试、系统对接、运维保障等，是联通在防城港拓展政企DICT业务的具体项目之一，反映出联通在安防系统集成领域的持续布局。</p>
+      <p><strong>🔍 海康视角：</strong>门禁系统集成是安防基础需求，海康门禁产品与视频监控系统天然联动，可作为设备供应商对接联通集成项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_1/" target="_blank" rel="noopener noreferrer">中标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_1/" target="_blank" rel="noopener noreferrer">联通防城港道路监控设施运维服务询比采购公告</a></h4>
+    <div class="card-body">
+      <p>中国联通防城港市分公司发布<strong>道路监控设施运维服务询比采购项目</strong>公告。项目为防城港市政道路监控设施提供运维服务，保障城市道路监控系统稳定运行。联通持续通过运维服务切入城市安防市场，为后续更大规模智慧城市项目奠定基础。</p>
+      <p><strong>🔍 海康视角：</strong>道路监控运维服务市场规模持续增长，海康可提供原厂级运维支持和备件供应，与联通运维团队建立长期合作关系。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_1/" target="_blank" rel="noopener noreferrer">中标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_1/" target="_blank" rel="noopener noreferrer">联通广西分公司软终端综合接入业务服务项目采购公告</a></h4>
+    <div class="card-body">
+      <p>中国联通广西分公司发布<strong>软终端综合接入业务服务项目</strong>采购公告。项目提供IPTV等软终端综合接入服务，面向家庭及政企客户提供一体化通信与视频服务。联通加速推进"云+网+应用"融合业务，软终端是连接家庭与企业客户的重要入口。</p>
+      <p><strong>🔍 海康视角：</strong>软终端与家庭安防、智能屏等产品融合空间大，海康智能屏、家用摄像头等产品可与联通软终端业务探索联合推广。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1209_450000_1/" target="_blank" rel="noopener noreferrer">中标网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">招标</span>
+      <span class="card-date">09-17</span>
+    </div>
+    <h4><a href="https://www.ggzy.gov.cn/information/deal/html/a/0067/0101/20260907/0067d80f5081dd264c1f96c4496080e77c19.html" target="_blank" rel="noopener noreferrer">中电信数智广西政企综合治理技术服务项目（第三次）询比 预算134万</a></h4>
+    <div class="card-body">
+      <p>中电信数智科技有限公司广西分公司发布<strong>政企客户综合治理技术服务采购项目（第三次）</strong>询比公告，预算134.43万元（不含税），交付至2026年12月31日。采购内容包括交通设施优化配置、智能监控技术部署等综合治理技术服务，是中国电信深耕广西政企综治市场的持续投入。</p>
+      <p><strong>🔍 海康视角：</strong>综合治理服务涉及大量智能监控设备，海康在政法综治、智慧社区等领域产品方案成熟，可与中电信数智广西建立深度合作。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.ggzy.gov.cn/information/deal/html/a/0067/0101/20260907/0067d80f5081dd264c1f96c4496080e77c19.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a> <span class="opp-tag">🎯 政法综治</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">中标</span>
+      <span class="card-date">09-23</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-33800-450000-1.html" target="_blank" rel="noopener noreferrer">铁塔北海无人机飞巡服务采购项目成交 广西航遥测绘中标</a></h4>
+    <div class="card-body">
+      <p>中国铁塔北海市分公司发布<strong>2026年某项目无人机飞巡服务采购项目（第二次）</strong>成交结果，广西航遥测绘有限公司中标。无人机飞巡服务广泛应用于海洋、林业、环保、交通等行业巡检场景，铁塔通过飞巡服务持续拓展政企行业应用市场。</p>
+      <p><strong>🔍 海康视角：</strong>无人机飞巡是新兴蓝海市场，海康无人机+AI巡检解决方案可与铁塔飞巡业务深度结合，共同拓展行业客户。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-33800-450000-1.html" target="_blank" rel="noopener noreferrer">采招网</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技术</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-21739-0-2-1.html" target="_blank" rel="noopener noreferrer">广西AI超智算与数字经济合作升温 开元云等企业加速布局</a></h4>
+    <div class="card-body">
+      <p>第23届东博会期间，开元云科技等AI企业深度参与，发布面向广西和东盟的1000名FDE青年工程师培养计划，与桂林签约引入国际人工智能产业联盟智库。目前广西已形成"南A中心"+36条扶持政策+50亿产业基金的AI产业生态，2025年工业领域AI核心产业产值突破890亿元，新签约AI产业项目208个。</p>
+      <p><strong>🔍 海康视角：</strong>广西AI产业生态快速成熟，算力供给持续增强，为海康AI视觉产品在广西的深度应用提供了更好的产业环境，可把握"北上广研发+广西集成+东盟应用"战略机遇。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-21739-0-2-1.html" target="_blank" rel="noopener noreferrer">希鸥网</a> <span class="opp-tag">🎯 AI产业生态</span></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p><strong>广西通信运营商行业周报</strong> · 2026年第39期</p>
+  <p>数据来源：广西通信管理局 · 中国移动/联通/电信广西公司 · 广西铁塔 · 中国政府采购网</p>
+  <p>本简报仅供内部行业研究参考，具体项目信息以官方公告为准</p>
+</div>
+
+</main>
+</body>
+</html>
