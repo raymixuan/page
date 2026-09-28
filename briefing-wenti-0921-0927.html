@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西文体卫健行业简报 · 2026.09.21—09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏥 广西文体卫健行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是广西县域医共体设备更新项目大规模推进，1.4亿超声诊断仪集采启动。</strong>广西卫健委统一组织的2024年度县域医共体设备更新项目（全身高端彩色多普勒超声诊断仪）发布招标公告，预算高达1.404亿元，采购108台高端彩超设备配发至全区各县域医共体使用单位。南溪山医院全自动免疫生化仪（含轨道）项目（预算350万元）、桂林手术器械采购（中标67.25万元）、柳州市卫健委电子设备采购等多个医疗设备项目密集发布，县域医共体设备升级进入集中释放期。</p>
+  <p><strong>二是第十六届区运会赛事密集举办，体育场馆智能化需求旺盛。</strong>广西第十六届运动会在北海各场馆全面推进，跆拳道、武术散打、摔跤等项目赛事本周密集进行。自治区体育局赴北海检查竞赛组织筹办工作，启动反兴奋剂教育拓展活动。"桂BA"城市篮球联赛书写文体商旅融合新篇章，赛事经济带动体育场馆安防、计时计分、视频直播等智能化需求增长。</p>
+  <p><strong>三是文旅融合与东博会数智赋能双轮驱动。</strong>第23届东博会"数智赋能运动健康"体育元素亮相，2026年环广西公路自行车世界巡回赛确认10月13-18日举行，柳州市中秋文旅活动近20项获央视报道。自治区体育局与广西数据集团座谈共商"AI+体育"融合发展，文旅体育领域数字化转型加速推进。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西县域医共体设备更新（高端彩超108台） · 预算 1.404 亿元，10-14 开标</li>
+    <li>南溪山医院全自动免疫生化仪（含轨道） · 预算 350 万元，10-12 开标</li>
+    <li>广西民族医院2026年第一批医疗设备采购（重） · 中标 806 万元</li>
+    <li>桂林市人民医院手术器械采购 · 中标 67.25 万元</li>
+    <li>广西医用耗材9月挂网采购 · 859家企业31643个耗材+3559个试剂</li>
+    <li>环广西公路自行车世界巡回赛 · 10-13至18日举行</li>
+    <li>自治区体育局×广西数据集团 · 共商"AI+体育"融合发展</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">🏥 医疗设备更新与医共体建设</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260915_27332404.htm" target="_blank" rel="noopener noreferrer">广西县域医共体设备更新（高端彩超108台） · 预算1.404亿元</a></h4>
+        <div class="card-body">
+          <p>广西卫健委统一组织<strong>2024年度县域医共体设备更新项目（全身高端彩色多普勒超声诊断仪）</strong>公开招标（GXZC2026-G1-000992-JDZB），预算1.404亿元，采购108台高端彩超设备。设备将统一配发至广西各地市县域医共体使用单位，单台最高限价130万元。10月14日开标，60日历日内交货安装调试。</p>
+          <p>🔍 <strong>海康视角：</strong>虽然彩超设备非海康核心产品，但108台设备配发至全区县域医共体，配套的PACS影像系统升级、医疗设备联网管理、机房视频监控等需求将同步产生。海康威视医疗行业视频监控、智慧院区解决方案可借设备更新契机切入县域医共体信息化建设。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260915_27332404.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/广西卫健委</a> <span class="opp-tag">🎯 1.4亿医共体设备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-17</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260917_27348755.htm" target="_blank" rel="noopener noreferrer">广西县域医共体设备更新（移动式DR） · 预算200万元</a></h4>
+        <div class="card-body">
+          <p>广西卫健委发布<strong>2024年县域医共体设备更新项目（数字化X射线摄影系统-移动式DR）（重4）</strong>招标公告（GXZC2026-G1-003114-KWZB），预算200万元，采购2台移动式DR设备。项目已第四次招标，用于床旁X线摄影，60日历日内交货。反复招标反映基层医疗设备更新需求迫切但预算紧张。</p>
+          <p>🔍 <strong>海康视角：</strong>移动式DR设备采购常配套医疗影像PACS系统升级，海康威视医疗影像存储方案、DICOM标准接口、远程会诊视频系统等可与医疗设备更新联动，在县域医共体信息化建设中拓展商机。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260917_27348755.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/广西卫健委</a> <span class="opp-tag">🎯 移动DR设备更新</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260921_27371408.htm" target="_blank" rel="noopener noreferrer">南溪山医院全自动免疫生化仪（含轨道） · 预算350万元</a></h4>
+        <div class="card-body">
+          <p>广西壮族自治区南溪山医院（自治区第二人民医院）发布<strong>全自动免疫生化仪（含轨道）项目</strong>招标公告（GXZC2026-G1-003087-JDZB），预算350万元，最高限价159万元/台。10月12日开标，45天内交货安装调试。南溪山医院是桂北地区三甲医院，检验科自动化升级需求迫切。</p>
+          <p>🔍 <strong>海康视角：</strong>医院检验科自动化升级往往同步带动实验室环境监控（温湿度、洁净度）、标本流转视频监控、实验室门禁管理等配套需求。海康威视医疗行业智能管控方案可配合医院检验科改造项目切入。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260921_27371408.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/南溪山医院</a> <span class="opp-tag">🎯 350万检验设备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">中标</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260915_27333233.htm" target="_blank" rel="noopener noreferrer">广西民族医院2026年第一批医疗设备采购（重） · 中标806万元</a></h4>
+        <div class="card-body">
+          <p>广西壮族自治区民族医院<strong>2026年第一批医疗设备采购（重）</strong>中标公告发布（CZZC2026-G1-990144-GLZB），总中标金额806万元。标项1由南宁时跃贸易以297万元中标（飞利浦高端心脏彩超仪1套），标项2由广西南宁今世堂商贸以509万元中标（佳能彩超仪3套）。项目为首次废标后重新招标。</p>
+          <p>🔍 <strong>海康视角：</strong>广西民族医院位于南宁，后续在智慧院区建设、手术室视频示教系统、病房呼叫系统等领域仍有信息化升级空间。海康威视数字化手术室、远程会诊系统等产品可配合医院整体信息化升级推广。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260915_27333233.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/广西民族医院</a> <span class="opp-tag">🎯 806万医疗设备</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">💊 医疗耗材与医保管理</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">政策</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://ybj.gxzf.gov.cn/ztzl/ywzt/gxyyjghzbcgfwzxzl/tzgg/hccg/t28142943.shtml" target="_blank" rel="noopener noreferrer">广西9月医用耗材挂网采购 · 859家企业31643个产品通过审核</a></h4>
+        <div class="card-body">
+          <p>广西医疗保障局医药价格和招标采购服务中心发布<strong>2026年9月医用耗材和体外诊断试剂挂网采购申报信息公示</strong>，审核通过859家企业31643个医用耗材及3559个体外诊断试剂产品。同期发布集采中选产品挂网状态和价格调整公告（第十二批），覆盖缝合线、输液器、超声刀头等品类。</p>
+          <p>🔍 <strong>海康视角：</strong>医保局医用耗材集采平台的管理运营涉及信息化系统支撑，海康威视在政务服务中心安防监控、数据机房环境监测等方面可提供配套。同时医疗耗材供应链管理智能化趋势也为海康物联网标签、智能仓储方案提供应用场景。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://ybj.gxzf.gov.cn/ztzl/ywzt/gxyyjghzbcgfwzxzl/tzgg/hccg/t28142943.shtml" target="_blank" rel="noopener noreferrer">广西医疗保障局</a> <span class="opp-tag">🎯 医保耗材管理</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">中标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260921_27373241.htm" target="_blank" rel="noopener noreferrer">桂林市人民医院手术器械采购中标 · 67.25万元</a></h4>
+        <div class="card-body">
+          <p>桂林市人民医院<strong>手术器械采购</strong>中标公告发布（GLZC2026-G1-990379-KWZB），广西敦善医疗技术服务公司以67.25万元中标。采购胸腔心血管外科用持针钳、打结器、手术刀柄、组织钳等15类精密手术器械。桂林作为桂北医疗中心，手术器械更新需求持续。</p>
+          <p>🔍 <strong>海康视角：</strong>手术器械采购虽非海康直接产品，但桂林市人民医院在数字化手术室建设、手术视频示教系统、手术室智能管控等方面有潜在需求。海康威视数字化手术室整体解决方案可在桂林地区重点推广。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260921_27373241.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/桂林市人民医院</a> <span class="opp-tag">🎯 手术器械采购</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">技术</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://www.gxhospital.com/gwzz_xxgg_xjzb" target="_blank" rel="noopener noreferrer">广西人民医院密集发布信息化采购项目 · 虚拟化+办公软件正版化</a></h4>
+        <div class="card-body">
+          <p>广西壮族自治区人民医院本周密集发布多个信息化项目：虚拟化软件正版化项目院内论证报名、信息网络管理中心办公软件正版化集体建设项目议价（重）、眼科分布式存储系统项目采购议价等。同期还有工作服智能物联柜管理系统采购等创新项目。人民医院作为广西最大三甲医院，信息化建设投入持续。</p>
+          <p>🔍 <strong>海康视角：</strong>人民医院的虚拟化、分布式存储等IT基础设施建设与视频存储平台需求紧密关联，海康威视医疗影像存储、视频管理平台、智能物联柜等产品可配合医院信息化建设拓展商机。智能物联柜管理系统是海康物联网方案的典型应用场景。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.gxhospital.com/gwzz_xxgg_xjzb" target="_blank" rel="noopener noreferrer">广西人民医院官网</a> <span class="opp-tag">🎯 医院信息化建设</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://wjw.liuzhou.gov.cn/xwzx/tzgg/202609/t20260924_3798983.shtml" target="_blank" rel="noopener noreferrer">柳州市卫健委电子设备采购招标 · 预算4.9万元</a></h4>
+        <div class="card-body">
+          <p>柳州市卫生健康委员会发布<strong>电子设备采购</strong>招标公告，预算4.9万元。投标材料须密封加盖公章，于9月30日前递交。项目金额虽小但反映出柳州市卫健委日常办公设备更新需求。柳州市卫健委在公共卫生信息化建设、基层医疗机构管理等方面投入持续。</p>
+          <p>🔍 <strong>海康视角：</strong>柳州市卫健委后续在基层医疗卫生机构标准化建设、公共卫生应急指挥中心、远程医疗系统等领域的信息化需求值得持续关注，海康威视视频会议系统、应急指挥平台等产品可作为切入点。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://wjw.liuzhou.gov.cn/xwzx/tzgg/202609/t20260924_3798983.shtml" target="_blank" rel="noopener noreferrer">柳州市卫健委</a> <span class="opp-tag">🎯 卫健委设备采购</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🏆 体育赛事与场馆智能化</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">案例</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">"桂BA"书写八桂文体商旅融合新篇章 · 赛事经济带动场馆升级</a></h4>
+        <div class="card-body">
+          <p>自治区体育局官方报道<strong>"桂BA"（中国移动·2026年广西城市篮球联赛）</strong>书写八桂文体商旅融合新篇章。总决赛已于9月7日、12日分别在各队主场激情开赛，赛事联动文旅消费、全民健身，成为广西最具影响力的群众体育品牌。赛事对场馆计时计分系统、视频直播设备、安防监控、LED显示屏等智能化设备提出高标准要求。</p>
+          <p>🔍 <strong>海康视角：</strong>大型群众性体育赛事对场馆安防监控、人流管控、视频直播等需求极高。海康威视体育场馆解决方案（智能安防+计时计分+LED显示+直播系统）可在"桂BA"及各市级体育场馆升级改造中推广。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">广西体育局</a> <span class="opp-tag">🎯 赛事场馆智能化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">政策</span>
+          <span class="card-date">09-09</span>
+        </div>
+        <h4><a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">2026环广西公路自行车世界巡回赛 · 10月13-18日举行</a></h4>
+        <div class="card-body">
+          <p>自治区体育局发布<strong>2026库迪咖啡—环广西公路自行车世界巡回赛</strong>将于10月13日至18日举行。环广西世巡赛是广西最高规格的国际体育赛事，赛道沿途安防保障、赛事直播、交通管控、起终点智能化设施等需求规模可观。赛事筹备进入最后冲刺阶段。</p>
+          <p>🔍 <strong>海康视角：</strong>环广西世巡赛赛道跨越多个城市，沿途视频监控、移动布控、交通管控、赛事直播等场景需求巨大。海康威视可配合赛事安保指挥部提供沿线视频调度、移动监控、人流分析等整体解决方案。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">广西体育局</a> <span class="opp-tag">🎯 国际赛事安保</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">技术</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="http://tyj.gxzf.gov.cn/xwzx/sxdt/" target="_blank" rel="noopener noreferrer">数智赋能运动健康 · 体育元素点亮第23届东博会</a></h4>
+        <div class="card-body">
+          <p>第23届中国—东盟博览会期间，<strong>"数智赋能运动健康"体育主题展区</strong>亮相，展示AI运动健康、智能健身设备、体育大数据等前沿技术。同期举办中国—东盟青少年无人机足球邀请赛（宁明）等科技体育活动。东博会成为广西体育产业数智化发展的重要展示平台。</p>
+          <p>🔍 <strong>海康视角：</strong>东博会"数智赋能运动健康"主题与海康威视AI视觉技术高度契合，智能运动分析、AI体测系统、场馆智能管控等场景可借体育数智化趋势拓展。建议关注广西体育局后续"AI+体育"相关项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/sxdt/" target="_blank" rel="noopener noreferrer">广西体育局</a> <span class="opp-tag">🎯 AI+体育融合</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">案例</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">第十六届区运会赛事全面推进 · 北海多场馆安保智能化</a></h4>
+        <div class="card-body">
+          <p>广西第十六届运动会竞技体育比赛本周在北海各场馆密集进行，跆拳道（355名运动员）、武术散打、摔跤等项目赛事圆满收官。自治区体育局启动反兴奋剂教育拓展活动，运动会群众比赛匹克球、冲浪等项目也在北海等地举办。区运会作为广西最大规模综合性运动会，场馆安防与赛事管理智能化需求持续释放。</p>
+          <p>🔍 <strong>海康视角：</strong>区运会场馆安防系统建设是赛会期间刚性需求，赛后场馆转为全民健身使用，安防系统需长期运行维护。海康威视可提供"赛事模式+日常模式"双模切换的场馆安防方案，服务赛时保障与赛后运营。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">广西体育局</a> <span class="opp-tag">🎯 区运会场馆安防</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎭 文旅融合与文化惠民</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">案例</span>
+          <span class="card-date">09-27</span>
+        </div>
+        <h4><a href="http://m.toutiao.com/group/7690204687072526875/" target="_blank" rel="noopener noreferrer">柳州市中秋文旅活动近20项 · 获央视报道 线上线下双火爆</a></h4>
+        <div class="card-body">
+          <p>2026年中秋期间，柳州市统筹策划中秋主题文旅活动近20项、惠民优惠措施超30项，推出2条中秋主题旅游线路。龙潭公园中秋实景演出获《央视新闻》、广西新闻频道等央媒区媒报道。各文博场馆开展沉浸式传统文化活动，"光影龙城·电影促消费"联动80多家商家。文旅市场平稳有序。</p>
+          <p>🔍 <strong>海康视角：</strong>大型文旅活动期间景区安防监控、人流预警、应急指挥等需求突出。海康威视智慧景区解决方案（客流统计+视频AI+应急广播+停车管理）可服务于广西各景区节庆活动安保管理。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://m.toutiao.com/group/7690204687072526875/" target="_blank" rel="noopener noreferrer">柳州1号</a> <span class="opp-tag">🎯 智慧景区安保</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">政策</span>
+          <span class="card-date">09-19</span>
+        </div>
+        <h4><a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">自治区体育局与广西数据集团座谈 · 共商"AI+体育"融合发展</a></h4>
+        <div class="card-body">
+          <p>自治区体育局与广西数据集团举行座谈，双方围绕<strong>"AI+体育"融合发展</strong>深入交流。合作方向包括体育大数据平台建设、智能健身设施推广、体育场馆数字化管理等。广西数据集团作为自治区数据要素市场化配置的核心平台，与体育局合作将推动广西体育产业数字化转型。</p>
+          <p>🔍 <strong>海康视角：</strong>"AI+体育"融合方向与海康威视AI视觉分析技术高度契合，运动姿态分析、智能场馆管理、体育大数据可视化等场景均为海康AI技术落地方向。建议主动对接自治区体育局与数据集团，争取"AI+体育"项目合作机会。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">广西体育局</a> <span class="opp-tag">🎯 AI+体育合作</span></div>
+      </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p><strong>广西文体卫健行业简报</strong> · 2026.09.21 — 09.27</p>
+  <p>数据来源：中国政府采购网广西分网、广西卫健委、广西体育局、广西文旅厅、广西医保局等公开渠道</p>
+  <p>📌 仅供海康威视广西区域内部参考，不作为对外发布材料</p>
+</footer>
+
+</body>
+</html>
