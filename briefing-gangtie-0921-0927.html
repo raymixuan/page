@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西钢铁有色矿山行业简报 · 2026.09.21—09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>⛏️ 广西钢铁有色矿山行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是华锡有色控制权变更落地，中国五矿入主广西关键金属集团。</strong>9月21日华锡有色复牌，中国五矿通过增资取得广西关键金属集团51%股权，拟以47.40元/股发出全面要约收购，最高资金约130.51亿元。本次整合将广西锡、锑、铟等关键金属资源纳入央企平台，标志着广西有色金属产业"央地融合"进入实质阶段，后续智能化、数字化升级改造需求巨大。</p>
+  <p><strong>二是铜坑矿业空压机无人值守自动化等矿山智能化项目密集推进。</strong>华锡矿业铜坑分公司空压机更新及无人值守自动化控制项目已完成中标候选人公示，铜坑矿区锡锌矿一期工程环评二次公示同步推进。柳钢中金不锈钢炼钢厂密集发布十余项合金及原料采购招标，广西钢铁热轧总厂启动公辅设施系统技改项目。矿山与冶炼企业智能化改造提速，安全管控与自动化需求持续释放。</p>
+  <p><strong>三是矿山生态修复与安全监管平台建设同步发力。</strong>贺州市矿山智慧监督管控平台（一期）开发项目发布澄清公告，来宾市兴宾区、柳州市等多地历史遗留矿山生态修复工程密集招标。广西佛子矿业古益尾矿库安全论证项目同步启动，矿山安全生产与生态修复领域信息化投入加大，视频监控、环境监测、智能管控平台需求旺盛。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>华锡有色控制权变更 · 中国五矿增资广西关键金属集团，要约收购约130亿元</li>
+    <li>铜坑矿业空压机无人值守自动化控制项目 · 中标候选人已公示</li>
+    <li>广西钢铁热轧总厂公辅设施系统技改（二期） · 电缆等设备招标</li>
+    <li>贺州矿山智慧监督管控平台（一期）开发 · 招标文件澄清中</li>
+    <li>来宾华锡冶炼锌分厂2#硫酸系统电除雾大修 · 招标中</li>
+    <li>柳钢中金炼钢厂多批次合金原料采购 · 密集发布十余项招标</li>
+    <li>广西佛子矿业古益尾矿库安全论证项目（设计） · 启动中</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">⚙️ 央地融合与产业升级</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">政策</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="https://m.toutiao.com/group/7687406987243438598/" target="_blank" rel="noopener noreferrer">华锡有色复牌 · 中国五矿拟增资广西关键金属集团取得51%股权</a></h4>
+        <div class="card-body">
+          <p>9月21日华锡有色（600301）复牌，此前公司间接控股股东广西关键金属集团与北部湾港集团、关键金属股权基金与中国五矿签署《合作框架协议》。中国五矿拟以47.40元/股向全体股东发出全面要约，最高资金约130.51亿元，拟打造世界一流国家级关键金属产业平台。</p>
+          <p>🔍 <strong>海康视角：</strong>中国五矿入主后，广西关键金属集团下辖华锡有色、华锡矿业等多个矿山与冶炼企业的智能化升级将加速推进。海康威视在智慧矿山（AI视频分析、人员定位、设备巡检）、智能工厂（工业视觉检测、能源管理）等领域具备完整产品线，可重点对接五矿体系在广西的智能化改造项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.toutiao.com/group/7687406987243438598/" target="_blank" rel="noopener noreferrer">证券时报</a> <span class="opp-tag">🎯 央企入桂整合</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">案例</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://www.qcc.com/cfengxian/7226ab6647a6c9c2c9e7ac5cda76ad08.html" target="_blank" rel="noopener noreferrer">盛隆冶金与宝信软件签署战略合作 · 聚焦数智化与智能工厂</a></h4>
+        <div class="card-body">
+          <p>广西盛隆冶金有限公司（中国企业500强、全球50大钢铁企业）与宝信软件签署战略合作协议，合作聚焦数智化规划与智能工厂建设。盛隆冶金2025年营收1105亿元，粗钢产量居世界钢企35名，是广西钢铁行业龙头企业。同期公司发布烧结厂超低排放综合改造回转窑新建脱硫项目烟气换热器竞价。</p>
+          <p>🔍 <strong>海康视角：</strong>盛隆冶金作为广西最大民营钢企，智能工厂建设涉及工业视频AI分析、厂区周界防范、高温区域人员管控、环保监测视频联动等场景。海康威视工业摄像机、热成像产品、智能分析平台可切入钢铁企业智能工厂建设。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.qcc.com/cfengxian/7226ab6647a6c9c2c9e7ac5cda76ad08.html" target="_blank" rel="noopener noreferrer">企查查/盛隆冶金</a> <span class="opp-tag">🎯 智能工厂合作</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🏭 矿山智能化与安全生产</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">招标</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://www.bidcenter.com.cn/newssearchyz-243190577.html" target="_blank" rel="noopener noreferrer">铜坑矿业空压机更新及无人值守自动化控制项目 · 中标候选人公示</a></h4>
+        <div class="card-body">
+          <p>华锡矿业铜坑矿业分公司空压机更新及无人值守自动化控制项目（HXZC铜坑CG202602001）已完成中标候选人公示。项目由国家矿山安全监察局要求推动，实现空压机系统无人值守自动化运行，是广西金属矿山智能化改造的标杆项目。铜坑矿区锡锌矿一期工程环评二次公示同步推进。</p>
+          <p>🔍 <strong>海康视角：</strong>矿山无人值守自动化是智慧矿山建设的核心场景，海康威视可提供机房环境监测（温湿度、烟感、水浸）、设备视频巡检、人员入侵检测等配套方案，与自动化系统深度联动，打造"视觉+感知+控制"一体化矿山安全管控体系。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchyz-243190577.html" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 无人值守自动化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西佛子矿业古益尾矿库安全论证项目（设计部分） · 启动招标</a></h4>
+        <div class="card-body">
+          <p>广西佛子矿业有限公司发布古益尾矿库安全论证项目（设计部分）采购信息。尾矿库安全论证涵盖坝体稳定性评估、排洪系统校核、在线监测系统设计等内容，是矿山安全生产监管的重要环节。佛子矿业同期还发布2026年10-12月4500吨硫铁矿销售竞价。</p>
+          <p>🔍 <strong>海康视角：</strong>尾矿库在线监测系统是智慧矿山的刚需场景，海康威视可提供尾矿库坝体位移监测、水位监测、视频监控、雨量预警等一体化解决方案，已在多个矿业集团落地应用，可重点拓展广西有色金属矿山尾矿库安全监测市场。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西招标采购网</a> <span class="opp-tag">🎯 尾矿库安全监测</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-16</span>
+        </div>
+        <h4><a href="https://industry.qianlima.com/industry/30-6" target="_blank" rel="noopener noreferrer">贺州矿山智慧监督管控平台（一期）开发项目 · 招标文件澄清</a></h4>
+        <div class="card-body">
+          <p>广西茂鑫信息咨询有限公司发布矿山智慧监督管控平台（一期）开发项目澄清公告，对资格审查列表排版问题进行修正。项目为贺州市矿山监管数字化平台建设一期，旨在实现对全市矿山企业的远程视频监控、生产数据对接、安全预警等功能，是广西矿山安全监管信息化的重要项目。</p>
+          <p>🔍 <strong>海康视角：</strong>矿山智慧监管平台是政府侧的核心需求，海康威视矿山监管解决方案已在多省落地，涵盖矿山视频AI分析（未戴安全帽、违规作业识别）、电子围栏、车辆管控等功能，可与政府监管平台深度对接。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://industry.qianlima.com/industry/30-6" target="_blank" rel="noopener noreferrer">千里马招标网</a> <span class="opp-tag">🎯 政府监管平台</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">案例</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://www.bidcenter.com.cn/newssearchyz-243190577.html" target="_blank" rel="noopener noreferrer">华锡矿业铜坑分公司购置两台生产指挥车项目 · 比价公告</a></h4>
+        <div class="card-body">
+          <p>广西华锡矿业有限公司铜坑矿业分公司发布购置两台生产指挥车项目比质比价公告。生产指挥车用于矿山现场调度指挥，是矿山安全生产的移动端管控装备。铜坑矿业作为华锡有色核心矿山，持续加大安全生产投入。</p>
+          <p>🔍 <strong>海康视角：</strong>矿山移动指挥车可搭载海康威视移动布控球、车载云台、融合通信终端等设备，实现现场视频实时回传与远程指挥调度。海康威视矿山移动指挥方案可与生产指挥车深度集成，拓展智慧矿山移动管控场景。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.bidcenter.com.cn/newssearchyz-243190577.html" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 移动指挥装备</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🔧 钢铁冶炼与设备技改</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西钢铁热轧总厂公辅设施系统技改（二期） · 电缆等设备招标</a></h4>
+        <div class="card-body">
+          <p>广西钢铁集团热轧总厂发布2026年公辅设施系统技改项目——新增热轧露天仓库（二期）项目电缆等设备招标公告。项目为热轧产线扩容配套的公辅设施建设，涉及电力电缆、控制电缆、桥架等大宗物资采购，是广西钢铁产能优化升级的重要组成部分。</p>
+          <p>🔍 <strong>海康视角：</strong>钢铁企业产线技改过程中，视频监控、周界防范、门禁系统等安防设施需同步更新建设。海康威视工业级防爆摄像机、热成像测温产品、高温区域专用监控设备可配套热轧产线技改项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西招标采购网</a> <span class="opp-tag">🎯 产线技改配套</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">来宾华锡冶炼锌分厂2#硫酸系统电除雾大修项目 · 公开询比价</a></h4>
+        <div class="card-body">
+          <p>来宾华锡冶炼有限公司发布锌分厂2#硫酸系统电除雾大修项目公开询比价公告。同期公司还发布2026年10月3000吨93%硫酸销售竞价、粗铟委托加工成精铟项目（重）竞价等多个项目。来宾华锡冶炼作为华锡有色核心冶炼基地，生产运营持续活跃。</p>
+          <p>🔍 <strong>海康视角：</strong>冶炼企业危险工艺区域（硫酸系统、电解车间等）的安全监控需求严格，海康威视防爆型摄像机、有毒气体检测联动视频、人员定位系统等产品可服务于冶炼企业安全生产管控。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西招标采购网</a> <span class="opp-tag">🎯 冶炼安全监控</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">招标</span>
+          <span class="card-date">09-26</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-17103-0-0-30.html" target="_blank" rel="noopener noreferrer">柳钢中金不锈钢炼钢厂密集发布十余项合金原料采购招标</a></h4>
+        <div class="card-body">
+          <p>9月21日-26日期间，广西柳钢中金不锈钢有限公司密集发布中金炼钢厂硅碳球、高硅硅锰、萤石球、镍铁、高碳铬铁、低碳铬铁等十余项合金及原料采购招标。交货地点均为柳钢中金厂内指定仓库，要求国六排放标准车辆运输，付款方式为现款支付。密集采购反映出柳钢中金不锈钢产线保持高负荷运行。</p>
+          <p>🔍 <strong>海康视角：</strong>柳钢中金作为广西不锈钢产业龙头，厂区物流车辆管理、原料堆场视频监控、成品仓库智能盘点等场景与海康威视产品线高度契合，可在不锈钢生产企业日常运营中持续挖掘智能化商机。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-17103-0-0-30.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 不锈钢厂区智能化</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🌿 矿山生态修复与资源循环</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-23</span>
+        </div>
+        <h4><a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">崇左市再生资源循环利用项目 · 水土保持验收报告编制招标</a></h4>
+        <div class="card-body">
+          <p>广西机电设备招标有限公司发布崇左市再生资源循环利用项目水土保持设施竣工验收报告编制竞争性磋商公告（GXJD-26133SQF12010）。项目为崇左市矿山资源循环利用与生态修复配套工程，体现广西矿山绿色发展理念的深入推进。</p>
+          <p>🔍 <strong>海康视角：</strong>矿山生态修复项目的施工过程监管、复绿效果长期监测等场景需要视频监控支撑。海康威视太阳能供电监控球机、4G/5G无线传输设备适合偏远矿区部署，可服务于广西矿山生态修复全过程监管。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西招标采购网</a> <span class="opp-tag">🎯 生态修复监管</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">超低品位锑矿石预选回收工艺研究 · 比质比价公告</a></h4>
+        <div class="card-body">
+          <p>广西发布超低品位锑矿石预选回收工艺研究项目比质比价公告。锑是国家战略性关键金属，广西锑资源储量居全国前列。本次研究旨在提升低品位锑矿石的回收利用率，推动关键金属资源高效利用。该项目与华锡有色控制权变更后中国五矿对广西关键金属产业的高端化发展规划方向一致。</p>
+          <p>🔍 <strong>海康视角：</strong>矿业科研实验室与选矿车间的安全生产监控、工艺流程视频监控、环保达标排放监控等场景均有海康威视产品应用空间，可结合关键金属产业高端化发展契机拓展科研级监控市场。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西招标采购网</a> <span class="opp-tag">🎯 关键金属研究</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">案例</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西华锡矿业再生资源分公司巴里山、瓦窑山区域废石拉运项目 · 启动</a></h4>
+        <div class="card-body">
+          <p>广西华锡矿业有限公司再生资源分公司发布巴里山、瓦窑山区域废石拉运项目公开比质比价采购公告。废石资源化处理是矿山绿色发展的关键环节，通过废石综合利用减少尾矿排放、提高资源利用率。华锡矿业在河池南丹县多个矿区同步推进资源综合利用。</p>
+          <p>🔍 <strong>海康视角：</strong>废石运输过程中的车辆管控、称重计量、装卸区域安全监控是智慧矿山的典型场景。海康威视矿山车辆管理系统（车牌识别+GPS定位+载重监测）可与废石拉运业务深度结合。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西招标采购网</a> <span class="opp-tag">🎯 矿山车辆管理</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">政策</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">国营长虹机械厂修理中心建设项目可行性研究服务 · 询价</a></h4>
+        <div class="card-body">
+          <p>国营长虹机械厂发布修理中心建设项目可行性研究服务询价函。军工企业基础设施升级改造持续推进，项目建设涉及厂房修建、设备维修场地建设等内容。军工企业的安防标准严格，视频监控、门禁管理、周界防范等安全系统建设需求刚性。</p>
+          <p>🔍 <strong>海康视角：</strong>军工企业安防系统建设标准高、保密要求严，海康威视国密系列摄像机、保密级门禁系统、涉密场所视频监控方案可满足军工单位安全需求，可重点跟进广西区内军工企业的基建配套安防项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxbidding.cn/AnnouncementList" target="_blank" rel="noopener noreferrer">广西招标采购网</a> <span class="opp-tag">🎯 军工安防建设</span></div>
+      </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p><strong>广西钢铁有色矿山行业简报</strong> · 2026.09.21 — 09.27</p>
+  <p>数据来源：广西招标采购网、中国政府采购网广西分网、比地招标网、千里马招标网、企查查等公开渠道</p>
+  <p>📌 仅供海康威视广西区域内部参考，不作为对外发布材料</p>
+</footer>
+
+</body>
+</html>
