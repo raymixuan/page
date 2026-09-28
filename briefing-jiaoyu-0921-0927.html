@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西教育行业简报 · 2026.09.21—09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🎓 广西教育行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是义务教育信息化设备集中采购密集释放，县域教育数字化加速。</strong>宁明县教育局发布2026年义务教育薄弱环节改善与能力提升补助信息化设备采购项目（预算526.81万元），采购学生机主机698台、交互智能平板（含AI功能）30台等大批信息化设备。扶绥县义务教育学校数字化终端采购项目以151.82万元中标（科大讯飞、希沃交互平板为主），龙州县义务教育学校教学设备采购项目（预算370万元）同步启动，崇左市三县教育信息化采购集中释放。</p>
+  <p><strong>二是高校智慧校园与教育城域网建设持续推进。</strong>荔浦市114所学校教育城域网建设项目网络服务租用（预算300万元）第三次公开招标，桂林师范学院校园信息化平台升级及安全防护建设项目以148万元成交，梧州医学高等专科学校智慧校园云终端采购项目完成中标，广西桂林农业学校智慧校园系统（人脸识别门禁+年服务）以86.25万元成交。教育网络基础设施与安全需求持续旺盛。</p>
+  <p><strong>三是职业教育宣传与数字化教学创新并重。</strong>广西教育厅发布2026年全区职业教育宣传项目（预算200万元）竞争性磋商，桂林电子科技大学网络中心发布2027年拟建信息化项目征集通知，广西大学新校区二期工程建设推进中。广西智慧教育正从基础设施覆盖向深度应用、安全防护、AI赋能方向升级。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>宁明县义务教育信息化设备采购 · 预算 526.81 万元，10-13 开标</li>
+    <li>荔浦市114所学校教育城域网网络服务租用（重2） · 预算 300 万元，10-16 开标</li>
+    <li>龙州县义务教育学校教学设备采购 · 预算 370 万元，10-26 开标</li>
+    <li>扶绥县义务教育数字化终端采购 · 中标 151.82 万元（科大讯飞/希沃）</li>
+    <li>桂林师范学院信息化平台升级及安全防护 · 成交 148 万元</li>
+    <li>梧州医学高等专科学校智慧校园云终端 · 已中标</li>
+    <li>广西教育厅2026年全区职业教育宣传项目 · 预算 200 万元，10-09 磋商</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">💻 义务教育信息化设备采购</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260921_27372942.htm" target="_blank" rel="noopener noreferrer">宁明县义务教育信息化设备采购 · 预算526.81万元</a></h4>
+        <div class="card-body">
+          <p>宁明县教育局发布<strong>2026年义务教育薄弱环节改善与能力提升补助信息化设备采购项目</strong>招标公告（CZZC2026-G1-220127-RNZB），预算526.81万元。分标1采购学生机主机698台、教师机主机17台等（预算380.83万元）；分标2采购交互智能平板（含AI功能）30台、视频展台30台等（预算145.98万元）。10月13日开标。</p>
+          <p>🔍 <strong>海康视角：</strong>526万元县级教育信息化大单，涵盖学生机房建设、AI交互智慧黑板等场景。海康威视智慧教室解决方案（含AI教学行为分析、智能班牌、校园广播）可与教学终端形成互补，重点对接宁明县教育局及崇左市后续信息化项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260921_27372942.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/宁明县教育局</a> <span class="opp-tag">🎯 527万信息化设备</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">中标</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260922_27383619.htm" target="_blank" rel="noopener noreferrer">扶绥县义务教育数字化终端采购中标 · 151.82万元</a></h4>
+        <div class="card-body">
+          <p>扶绥县教育局<strong>2026年义务教育学校数字化终端采购项目</strong>中标公告发布（CZZC2026-G1-210060-ZLGC），分标1由移动崇左分公司以148.92万元中标（科大讯飞交互智能平板51套、光能黑板51套等），分标2由广西亿维网络以98.60万元中标（希沃交互智能平板34套等）。中标品牌以科大讯飞和希沃为主。</p>
+          <p>🔍 <strong>海康视角：</strong>扶绥县教育终端采购以科大讯飞和希沃为主，海康威视在交互平板领域竞争力有待提升，但校园安防监控、人脸识别门禁、校园广播等配套需求仍可在后续项目中切入。建议重点关注崇左市后续教育安防类项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260922_27383619.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/扶绥县教育局</a> <span class="opp-tag">🎯 数字化终端中标</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-16</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260916_27335748.htm" target="_blank" rel="noopener noreferrer">龙州县义务教育学校教学设备采购 · 预算370万元</a></h4>
+        <div class="card-body">
+          <p>龙州县教育局发布<strong>义务教育学校教学等设备采购项目</strong>招标公告（CZZC2026-G1-230090-CZSZ），预算370万元，面向中小企业采购。主要采购学生课桌椅7270套、学生床架1519套、智能讲台33套等。10月26日开标。项目专门面向中小企业，体现县域教育装备标准化配置需求。</p>
+          <p>🔍 <strong>海康视角：</strong>智能讲台33套采购需求表明龙州县正在推进教室多媒体化改造，智能讲台常配套智慧黑板、教学终端、校园安防等设备。海康威视可配合教室改造项目推广校园安防+广播+门禁整体方案。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260916_27335748.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/龙州县教育局</a> <span class="opp-tag">🎯 370万教学设备</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🏫 高校智慧校园与网络建设</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260924_27399446.htm" target="_blank" rel="noopener noreferrer">荔浦市114所学校教育城域网网络服务租用（重2） · 预算300万元</a></h4>
+        <div class="card-body">
+          <p>荔浦市荔浦中学（代荔浦市教育局）发布<strong>114所学校教育城域网建设项目网络服务租用项目（重2）</strong>招标公告（GLZC2026-G3-310037-GLSZ），预算300万元。要求供应商具备基础电信业务经营许可证或增值电信业务许可证。10月16日开标。项目已两次招标，体现教育城域网建设的迫切需求。</p>
+          <p>🔍 <strong>海康视角：</strong>教育城域网建设是校园信息化的基础网络设施，海康威视教育行业交换机、无线AP、视频专网传输设备可配套城域网建设项目，特别是校园安防视频专网与教育城域网的融合组网需求。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260924_27399446.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/荔浦市教育局</a> <span class="opp-tag">🎯 300万教育城域网</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">中标</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-450100-4-90.html" target="_blank" rel="noopener noreferrer">桂林师范学院信息化平台升级及安全防护 · 成交148万元</a></h4>
+        <div class="card-body">
+          <p>桂林师范学院<strong>2026年校园信息化平台升级及安全防护建设项目</strong>成交公告发布（GXZC2026-J1-002261-GLSZ），成交金额148万元。项目涵盖校园信息化平台升级改造与网络安全防护体系建设，是高校网络安全等级保护2.0合规建设的典型项目。</p>
+          <p>🔍 <strong>海康视角：</strong>高校网络安全等级保护建设是刚性需求，海康威视网络安全产品（防火墙、态势感知、日志审计）与校园视频监控平台可形成"网络安全+物理安全"双防线方案，在广西高校信息化升级中持续推广。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-450100-4-90.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 148万信息化升级</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">中标</span>
+          <span class="card-date">09-11</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-450100-4-90.html" target="_blank" rel="noopener noreferrer">梧州医专智慧校园云终端采购中标 · 交通银行梧州分行采购</a></h4>
+        <div class="card-body">
+          <p>交通银行梧州分行<strong>与梧州医学高等专科学校智慧校园云终端采购项目</strong>中标结果公示（CGXM45199926080002）。项目采购云终端设备用于支撑校园一卡通智慧校园系统，覆盖全校师生线上缴费、自助支付、门禁管理等场景。银校合作模式成为高校智慧校园建设的重要资金来源。</p>
+          <p>🔍 <strong>海康视角：</strong>银行+学校合作模式是智慧校园建设的重要商业模式，海康威视人脸门禁、校园一卡通终端、智能访客系统等可作为银校合作项目的核心硬件配套，重点推广"银行出资+海康设备+学校使用"模式。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-450100-4-90.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 银校合作模式</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">中标</span>
+          <span class="card-date">09-10</span>
+        </div>
+        <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-450100-4-90.html" target="_blank" rel="noopener noreferrer">桂林农业学校智慧校园（人脸门禁+年服务） · 成交86.25万元</a></h4>
+        <div class="card-body">
+          <p>广西桂林农业学校<strong>智慧校园系统——智慧校园年服务+宿舍人脸识别门禁管理设备</strong>项目成交公告发布（GLZC2026-C3-990383-GXRY），成都依能科技以86.25万元中标。项目涵盖智慧校园年度运营服务与宿舍人脸识别门禁管理系统建设，体现中职学校智慧校园建设需求。</p>
+          <p>🔍 <strong>海康视角：</strong>中职学校宿舍人脸门禁是校园安防的刚需场景，海康威视人脸识别门禁终端、宿舍管理联动平台在广西教育系统已有广泛部署，可与职教系统深度合作推广标准化方案。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-450100-4-90.html" target="_blank" rel="noopener noreferrer">广西招标网</a> <span class="opp-tag">🎯 人脸门禁中标</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📋 教育政策与数字化创新</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260920_27366770.htm" target="_blank" rel="noopener noreferrer">广西教育厅2026年全区职业教育宣传项目 · 预算200万元</a></h4>
+        <div class="card-body">
+          <p>广西壮族自治区教育厅发布<strong>2026年全区职业教育宣传项目（重）</strong>竞争性磋商公告（GXZC2026-C3-003015-GXZL），预算200万元。项目要求全程使用高清摄像设备拍摄（分辨率不小于1080P），配备运动摄像机、大三元镜头组等。10月9日磋商。项目为首次废标后重新招标。</p>
+          <p>🔍 <strong>海康视角：</strong>教育宣传类项目对高清摄像、录播系统等设备有直接需求，海康威视教育录播系统、4K高清摄像机、视频会议终端等产品可服务于教育厅及各地市教育局的精品课程录制、远程教学等场景。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260920_27366770.htm" target="_blank" rel="noopener noreferrer">中国政府采购网/广西教育厅</a> <span class="opp-tag">🎯 200万教育宣传</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">政策</span>
+          <span class="card-date">09-16</span>
+        </div>
+        <h4><a href="https://www.guet.edu.cn/xjzx/" target="_blank" rel="noopener noreferrer">桂林电子科技大学发布2027年拟建信息化项目征集通知</a></h4>
+        <div class="card-body">
+          <p>桂林电子科技大学网络与信息技术中心发布<strong>关于报送2027年拟建信息化项目的通知</strong>，面向全校各学院和部门征集2027年信息化建设项目需求。学校数据中心已具备30G出口带宽、141+服务、50+应用系统、400+虚拟主机的规模，智慧校园建设走在广西高校前列。</p>
+          <p>🔍 <strong>海康视角：</strong>桂林电子科技大学作为广西IT强校，信息化建设项目体量大且技术前沿。海康威视可在AI视频分析、智慧实验室安全管理、校园大数据可视化等方向提前对接校方需求，争取2027年信息化项目份额。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.guet.edu.cn/xjzx/" target="_blank" rel="noopener noreferrer">桂林电子科技大学网络中心</a> <span class="opp-tag">🎯 高校信息化规划</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">技术</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="https://www.gxust.edu.cn/wlzx/index.htm" target="_blank" rel="noopener noreferrer">广西科技大学智慧校园建设暑期加速推进 · 网络安全宣传周活动</a></h4>
+        <div class="card-body">
+          <p>广西科技大学网络中心发布暑期智慧校园建设进展，同步举办2026年国家网络安全宣传周及正版软件使用专题培训。学校网络中心在暑期全力加快智慧校园建设进度，完成教学设备排查检修、标准化考场计时设备更新等工作，并上线WPS 365教育版服务。</p>
+          <p>🔍 <strong>海康视角：</strong>广西科技大学智慧校园建设需求多元，标准化考场升级（海康智能巡查系统）、校园网络安全、机房环境监测等场景均有海康产品应用空间。建议持续跟进该校后续智慧校园建设项目。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxust.edu.cn/wlzx/index.htm" target="_blank" rel="noopener noreferrer">广西科技大学网络中心</a> <span class="opp-tag">🎯 智慧校园升级</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="https://www.gxu.edu.cn/ssjgy.jsp" target="_blank" rel="noopener noreferrer">广西大学新校区二期工程学生宿舍及生活服务中心建设推进</a></h4>
+        <div class="card-body">
+          <p>广西大学发布<strong>新校区建设项目二期工程——学生宿舍及生活服务中心组团配套临时水电租赁服务</strong>招标控制价询价公告。广西大学北片区新校区34万㎡建设持续加速推进，二期学生宿舍及生活服务中心配套工程进入施工阶段，为广西"双一流"高校扩容的标志性工程。</p>
+          <p>🔍 <strong>海康视角：</strong>广西大学新校区建设是大型智慧校园整体建设项目，宿舍区人脸门禁、校园安防监控、智能楼宇管理、停车场系统等均为海康威视核心产品线。建议紧盯新校区二期弱电智能化工程进度。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.gxu.edu.cn/ssjgy.jsp" target="_blank" rel="noopener noreferrer">广西大学官网</a> <span class="opp-tag">🎯 新校区弱电智能化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">案例</span>
+          <span class="card-date">09-15</span>
+        </div>
+        <h4><a href="https://www.caigou.com.cn/zfcg/2026091515.shtml" target="_blank" rel="noopener noreferrer">梧州智慧教室升级改造项目中标 · 49.8万元</a></h4>
+        <div class="card-body">
+          <p>梧州市某学校<strong>2026年办学条件改善-智慧教室升级改造项目</strong>中标公告发布，中标金额49.8万元。项目涵盖信息化校园智慧校园工程、网络设备、LED显示屏、视频摄像机、无线网覆盖、人工智能AI平台等多个品目。智慧教室从设备采购向AI赋能方向升级。</p>
+          <p>🔍 <strong>海康视角：</strong>智慧教室升级改造涉及LED显示屏、摄像机录播、无线覆盖等场景，海康威视智慧教室一体机、AI教学分析平台、校园无线AP等产品可配套改造项目。梧州地区教育信息化投入持续增长。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://www.caigou.com.cn/zfcg/2026091515.shtml" target="_blank" rel="noopener noreferrer">教育装备采购网</a> <span class="opp-tag">🎯 智慧教室改造</span></div>
+      </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p><strong>广西教育行业简报</strong> · 2026.09.21 — 09.27</p>
+  <p>数据来源：中国政府采购网广西分网、广西教育厅、广西招标网、教育装备采购网等公开渠道</p>
+  <p>📌 仅供海康威视广西区域内部参考，不作为对外发布材料</p>
+</footer>
+
+</body>
+</html>
