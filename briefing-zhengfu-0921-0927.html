@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西政府行业简报 · 2026.09.21—09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.card:active { box-shadow: 0 0 0 2px rgba(30,58,95,0.15); }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.opp-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: #fef9e7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media print {
+  body { background: #fff; }
+  .header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .footer { border-top: 1px solid #ccc; }
+}
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏛️ 广西政府行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是数字政府与政务信息化项目持续推进，AI赋能数字治理成为新亮点。</strong>自治区大数据发展局信息化项目技术审查服务框架协议确定4家入围单位，"人工智能+电竞创新应用大赛"决赛圆满收官（127支队伍参赛），自治区数据局面向东盟人工智能伦理研究项目启动采购，广西数字政府建设从基础设施向AI应用深化。</p>
+  <p><strong>二是政务视频会议与电子政务外网需求旺盛，信创改造不断深入。</strong>上林县政府云视讯视频会议平台服务启动磋商（69万元/2年）、贺州市党员教育培训云会议系统采购启动、环江县电子政务外网链路租赁及运维项目招标（98万元/年）、联网收费系统信创升级改造设计服务中标（357.65万元），政务视频与网络基础设施投入持续。</p>
+  <p><strong>三是政府安防监控与天网系统升级需求集中释放。</strong>防城港港口区天网视频监控系统升级改造招标（103.91万元）、平南县平容高速视频监控项目采购意向（750万元）、宁明县义务教育信息化设备采购招标（526.81万元），政府行业安防与信息化项目呈现"区县级集中释放、AI功能标配化"的发展趋势。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>平南县平容高速视频监控项目 · 采购意向 750 万元</li>
+    <li>宁明县义务教育薄弱环节信息化设备 · 招标 526.81 万元</li>
+    <li>联网收费系统信创升级改造设计服务 · 中标 357.65 万元</li>
+    <li>防城港港口区天网视频监控升级改造 · 招标 103.91 万元</li>
+    <li>上林县政府云视讯视频会议平台服务 · 磋商 69 万元/2年</li>
+    <li>环江县电子政务外网链路租赁运维 · 招标 98 万元/年</li>
+    <li>信息化项目技术审查服务框架协议 · 自治区大数据发展局</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">💻 数字政府与信息化</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260924_27401086.htm" target="_blank" rel="noopener noreferrer">自治区大数据发展局信息化项目技术审查服务框架协议确定4家入围</a></h4>
+        <div class="card-body">
+          <p>自治区大数据发展局发布<strong>2026年信息化项目技术审查服务框架协议采购入围结果公告</strong>（GXZC2026-K3-002720-GLZB），广西恒传数字信息设计院、中国移动设计院、广西通信规划设计咨询、上海邮电设计咨询4家单位入围。服务覆盖信息化项目全生命周期技术审查，强化公共组件复用、集约建设、数据共享、AI合规审查等要求。</p>
+          <p>🔍 <strong>海康视角：</strong>自治区大数据发展局作为数字广西建设牵头单位，其技术审查框架将规范全区信息化项目建设，AI合规审查被明确纳入审查范围。海康威视需关注广西政务信息化项目的AI合规要求，确保产品满足合规审查标准。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260924_27401086.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 AI合规新要求</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-case">大赛</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/zzzq/" target="_blank" rel="noopener noreferrer">2026"人工智能+电竞创新应用大赛"决赛收官 · 127支队伍参赛</a></h4>
+        <div class="card-body">
+          <p>由自治区大数据发展局主办的2026年<strong>"人工智能+电竞创新应用大赛"</strong>决赛在中国—东盟数字经济产业园圆满收官。大赛共收到127支团队报名，64支队伍晋级线下决赛，首次设立澳门科技大学分赛场，吸引港澳高校、东盟企业参赛。项目涵盖AI智能赛事运营、数字内容创作、虚拟交互、本土化文创等创新成果，46支队伍获奖。</p>
+          <p>🔍 <strong>海康视角：</strong>广西AI产业生态加速构建，AI+电竞、AI+文创等场景不断涌现。海康威视在AI视觉、智能交互、虚拟数字人等领域技术积累深厚，可探索与广西AI产业生态对接，拓展新应用场景。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zzzq/" target="_blank" rel="noopener noreferrer">自治区大数据发展局</a> <span class="opp-tag">🎯 AI产业生态</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">政策</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">广西优化涉企行政检查"扫码入企"工作流程 · 政务服务再升级</a></h4>
+        <div class="card-body">
+          <p>自治区政务服务监督管理办公室、自治区行政执法协调监督局联合发布<strong>关于优化全区涉企行政检查"扫码入企"工作流程的公告</strong>。通过"桂商码"统一归集企业诉求，加强12345热线与行政机关、政法机关其他平台的联动，依托"智桂通"、"桂警通办"等平台提升政务服务效能。</p>
+          <p>🔍 <strong>海康视角：</strong>政务服务数字化升级持续深化，"智桂通"平台是广西数字政府统一入口。海康威视的视频会议、智能安检、政务大厅智能客服等产品可围绕"智桂通"线下场景拓展，构建线上线下一体化政务服务体系。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/" target="_blank" rel="noopener noreferrer">自治区大数据发展局</a> <span class="opp-tag">🎯 智桂通生态</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">2026年信息化基础网络运维及网络安全服务项目成交 · 云上广西科技中标</a></h4>
+        <div class="card-body">
+          <p>广西扬佳工程咨询发布<strong>2026年信息化基础网络运维及网络安全服务项目成交公告</strong>，云上广西网络科技有限公司中标。项目为广西政务信息化基础网络提供运维保障及网络安全服务，是数字政府安全可靠运行的重要支撑。</p>
+          <p>🔍 <strong>海康视角：</strong>政务网络安全与运维服务市场稳定增长，海康威视的网络安全产品、视频安全网关、安全运维服务可与云上广西等本地龙头企业合作，共同服务广西数字政府安全建设。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 网络安全服务</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📹 视频会议与政务通信</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="https://m.bidcenter.com.cn/news-1-444355669.html" target="_blank" rel="noopener noreferrer">上林县政府云视讯视频会议平台服务招标 · 预算69万元/2年</a></h4>
+        <div class="card-body">
+          <p>上林县机关后勤服务中心发布<strong>2026年县政府云视讯视频会议平台服务竞争性磋商公告</strong>，预算约69万元，服务期2年。项目为县政府提供云视讯视频会议平台服务，覆盖县乡各级政府部门的视频会议需求，响应截止10月10日。</p>
+          <p>🔍 <strong>海康视角：</strong>县级政府视频会议系统升级改造需求旺盛，海康威视视频会议终端、智慧会议室解决方案、云视讯平台等产品可深度参与广西各县市政务视频会议系统建设，打造"云+端"一体化方案。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/news-1-444355669.html" target="_blank" rel="noopener noreferrer">采招网</a> <span class="opp-tag">🎯 云视讯平台</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-27</span>
+        </div>
+        <h4><a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">贺州市党员教育培训云会议系统采购启动询价</a></h4>
+        <div class="card-body">
+          <p>贺州市委组织部发布<strong>党员教育培训云会议系统采购项目询价公告</strong>。项目为党员教育培训提供云会议系统支持，覆盖市、县、乡三级党组织的远程教育培训需求。党员教育云平台是党建信息化的重要组成部分，视频会议与智能交互需求突出。</p>
+          <p>🔍 <strong>海康视角：</strong>党建信息化是政府行业重要细分市场，海康威视视频会议终端、智慧党建屏、党建宣传屏等产品可服务于广西各级党组织的党员教育与会议需求，拓展党建信息化商机。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 党建信息化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">柳州联通某单位会议系统改造集成租赁服务采购启动</a></h4>
+        <div class="card-body">
+          <p>中国联通柳州分公司发布<strong>某单位会议系统改造集成租赁服务采购公告</strong>，包括LED电子显示屏采购及会议系统开发服务。政府单位会议系统改造升级是常态化需求，从传统会议室向智能化、数字化、云化转型趋势明显。</p>
+          <p>🔍 <strong>海康视角：</strong>会议系统智能化升级是海康威视重要增长点，智能会议平板、LED显示屏、AI语音转写、智能会议录播等产品组合可提供完整的智慧会议室解决方案，联合运营商拓展柳州及广西政企客户。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 智慧会议室</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-22</span>
+        </div>
+        <h4><a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">非密融合会议系统改造项目成交 · 广西眺云信息中标</a></h4>
+        <div class="card-body">
+          <p>广西汇吉采咨询发布<strong>非密融合会议系统改造项目成交公告</strong>（HJC-GXZTJ7-2026008），广西眺云信息技术有限公司中标。非密融合会议系统是政府单位会议信息化的重要方向，实现多系统融合、多终端接入、内外网安全互通。</p>
+          <p>🔍 <strong>海康视角：</strong>政府融合会议系统改造带来视频会议终端、录播设备、智能交互平板等产品需求，海康威视可与本地集成商合作，提供高质量视频会议硬件产品，切入政府融合会议市场。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 融合会议系统</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">中标</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">传染病监测预警视频会商系统设施采购成交 · 北海扬盛科技中标</a></h4>
+        <div class="card-body">
+          <p>北海市<strong>2026年传染病监测预警与应急指挥能力提升项目--视频会商系统设施采购</strong>发布竞价成交公告，北海扬盛计算机科技有限公司中标。视频会商系统是政府应急指挥体系的关键基础设施，在疫情防控、应急处置、防汛抗旱等场景发挥重要作用。</p>
+          <p>🔍 <strong>海康视角：</strong>政府应急指挥视频会商系统是海康威视的传统优势领域，应急指挥大屏、视频会商终端、移动指挥设备、应急指挥平台等产品可全面服务于广西各级政府应急管理部门。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 应急指挥系统</span></div>
+      </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🌐 政务网络与安防监控</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-18</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260918_27358663.htm" target="_blank" rel="noopener noreferrer">环江县电子政务外网链路租赁及运维招标 · 98万元/年</a></h4>
+        <div class="card-body">
+          <p>环江毛南族自治县大数据发展局发布<strong>2026年至2028年电子政务外网链路租赁及运维项目竞争性磋商公告</strong>（HCZC2026-C3-260099-GXGW），预算98万元/年，三年合计294万元。项目分为两个分标，包括链路租赁、核心机房设备运维、续保等配套服务，采用1+1+1弹性续签模式。</p>
+          <p>🔍 <strong>海康视角：</strong>县级电子政务外网建设带动机房监控、门禁安防、动环监控等配套设备需求，海康威视机房动力环境监控系统、智能门禁、视频监控等产品可切入县级政务外网配套建设市场。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260918_27358663.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 机房动环监控</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260921_27369393.htm" target="_blank" rel="noopener noreferrer">防城港港口区天网视频监控升级改造招标 · 预算103.91万元</a></h4>
+        <div class="card-body">
+          <p>防城港市公安局港口分局发布<strong>天网视频监控系统升级改造建设运维项目竞争性磋商公告</strong>（FCZC2026-C3-990147-RSXM），预算103.91万元。项目包括天网前端设备升级、平台扩容对接、系统运维等，是城市社会治安防控体系的基础工程。</p>
+          <p>🔍 <strong>海康视角：</strong>天网系统升级改造是政府安防核心市场，海康威视高清智能摄像机、视频结构化服务器、视频综合平台等产品在广西天网项目中广泛应用，可联合本地集成商持续深耕防城港及广西各区县天网升级市场。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260921_27369393.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 天网升级改造</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-policy">采购意向</span>
+          <span class="card-date">09-23</span>
+        </div>
+        <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=Gh70+hiCgWC8O5lroLzG8g==&parentId=66485" target="_blank" rel="noopener noreferrer">平南县平容高速视频监控项目采购意向 · 预算750万元</a></h4>
+        <div class="card-body">
+          <p>平南县公安局发布<strong>平容高速视频监控项目建设采购意向</strong>，总预算750万元，预计10月启动招标。项目包括高速路安防系统、交通信号灯及电警设施、通信技术服务、监控运维管理四部分，是贵港东部重要通道的智能安防工程。</p>
+          <p>🔍 <strong>海康视角：</strong>750万元政府安防大单体项目难得，海康威视高速卡口、电警、视频监控平台全系列产品可深度参与，建议联合集成商提前介入平南县项目，巩固贵港市场并辐射玉林、梧州周边。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=Gh70+hiCgWC8O5lroLzG8g==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a> <span class="opp-tag">🎯 750万安防大单</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">招标</span>
+          <span class="card-date">09-21</span>
+        </div>
+        <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260921_27372942.htm" target="_blank" rel="noopener noreferrer">宁明县义务教育薄弱环节信息化设备采购招标 · 预算526.81万元</a></h4>
+        <div class="card-body">
+          <p>宁明县教育局发布<strong>2026年义务教育薄弱环节改善与能力提升补助信息化设备采购项目公开招标公告</strong>（CZZC2026-G1-220127-RNZB），预算526.81万元。项目分两个分标：分标1为学生机698台+教师机17台（380.83万元），分标2为交互智能平板（含AI功能）30台+视频展台30台（145.98万元）。</p>
+          <p>🔍 <strong>海康视角：</strong>教育信息化设备采购是政府行业重要组成部分，交互智能平板明确标注"含AI功能"反映出智慧教育AI化趋势。海康威视智慧校园解决方案、AI安防监控、智慧班牌等产品可深度参与广西教育信息化建设。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260921_27372942.htm" target="_blank" rel="noopener noreferrer">中国政府采购网</a> <span class="opp-tag">🎯 智慧教育市场</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-project">中标</span>
+          <span class="card-date">09-24</span>
+        </div>
+        <h4><a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">容县人民检察院听证室配套设备采购成交 · 广西泽洲信息中标</a></h4>
+        <div class="card-body">
+          <p>广西安邦招标代理发布<strong>容县人民检察院听证室配套设备采购成交公告</strong>，广西泽洲信息技术有限公司中标。检察院听证室配套设备包括视频会议系统、录音录像设备、智能显示设备等，是政法机关智能化建设的重要组成部分。</p>
+          <p>🔍 <strong>海康视角：</strong>检察院听证室、审讯室、指挥中心等是政法行业视频应用的重要场景，海康威视审讯主机、同步录音录像、听证室音视频整体解决方案可拓展广西检察系统市场。</p>
+        </div>
+        <div class="card-source">来源：<a href="https://m.bidizhaobiao.com/bidprice/6_10700/" target="_blank" rel="noopener noreferrer">比地招标网</a> <span class="opp-tag">🎯 政法智能化</span></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="tag tag-tech">招标</span>
+          <span class="card-date">09-20</span>
+        </div>
+        <h4><a href="http://www.liuzhou.gov.cn/lzsdsjj/zwgk/fdzdgknr/zfcg/" target="_blank" rel="noopener noreferrer">柳州市政府网站安全检查和监测服务采购启动</a></h4>
+        <div class="card-body">
+          <p>柳州市信息化建设管理中心发布<strong>2026年柳州市政府网站安全检查和监测服务采购公告</strong>及<strong>政务信息系统网络安全等级保护测评及商用密码应用安全性评估服务采购公告</strong>。网络安全和等级保护测评是政府信息系统安全运行的刚性要求，各地市相关投入持续增加。</p>
+          <p>🔍 <strong>海康视角：</strong>政府网络安全投入持续增长，海康威视的视频安全网关、视频内容安全、等保合规解决方案可服务于广西各级政府的视频系统网络安全建设需求，打造安全可靠的视频基础设施。</p>
+        </div>
+        <div class="card-source">来源：<a href="http://www.liuzhou.gov.cn/lzsdsjj/zwgk/fdzdgknr/zfcg/" target="_blank" rel="noopener noreferrer">柳州市大数据发展局</a> <span class="opp-tag">🎯 视频安全合规</span></div>
+      </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <strong>广西政府行业简报</strong> · 2026.09.21—09.27<br>编制：海康威视广西行业经理 · 聚焦政府信息化与安防项目机会<br>数据基于公开新闻、招标公告、政府官网信息整理
+</footer>
+
+</body>
+</html>
