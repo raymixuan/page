@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西化工煤炭行业简报 · 2026.09.21 — 09.27</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>⚗️ 广西化工煤炭行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.09.21 — 09.27</span>
+      <span>📊 本周 16 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是化工园区安全监管持续加码，节前检查与专项督导密集开展。</strong>自治区应急管理厅督导钦州矿山、危化品和烟花爆竹安全生产突出问题，周长青厅长调研广西北部湾危险化学品应急救援基地，应急管理部工作组来桂开展粉尘涉爆企业专家指导服务，平果市部署双节期间防范重特大安全事故工作，化工园区与危化品企业安全监管力度持续加大。</p>
+  <p><strong>二是化工企业采购与技改项目集中释放，设备更新与智能化升级需求旺盛。</strong>中国石油广西石化发布化工区机泵状态监测系统、工业用丙二醇框架、环戊烷框架等多项采购公告，北海炼化密集发布管道配件、色谱柱、消防蓄电池等采购需求，广西化工研究院扶绥产业化基地药肥生产劳务外包二次磋商，反映化工行业设备更新改造与生产服务外包需求旺盛。</p>
+  <p><strong>三是新能源材料与绿色化工项目推进，产业升级带动配套需求。</strong>贵港云图智领绿色化工新能源材料项目试产、田东工业园区加快融入平陆运河经济带、南宁六景化工园区建设发展报告编制推进，绿色化工、新能源材料成为广西化工产业转型重要方向，智慧园区、安全生产监控等配套需求同步释放。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>中国石油广西石化化工区机泵状态监测系统采购 · 9-22发布，智能运维</li>
+    <li>广西石化化工产品公路运输项目 · 预计 21.8 亿元，危化品运输监控</li>
+    <li>广西化工研究院扶绥产业化基地药肥劳务外包二次 · 9-25磋商，园区安防</li>
+    <li>应急管理部粉尘涉爆企业专家指导服务来桂 · 智慧安监需求升级</li>
+    <li>广西北部湾危化品应急救援基地调研 · 应急救援智能化</li>
+    <li>贵港云图智领绿色化工新能源材料项目试产 · 智慧化工园区</li>
+    <li>田东工业园区加快融入平陆运河经济带 · 园区升级改造配套</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">🏭 化工园区与安全生产</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">自治区督导钦州矿山、危险化学品和烟花爆竹安全生产突出问题</a></h4>
+    <div class="card-body">
+      <p><strong>自治区应急管理厅召开钦州市矿山、危险化学品和烟花爆竹安全生产突出问题督导反馈会，对钦州市重点行业领域安全生产工作督导情况进行反馈，提出整改要求，推动地方政府和企业落实安全生产主体责任。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>危化品安全生产督导推动企业加大安全投入，视频监控升级、AI隐患识别、智能巡检、人员定位等智慧安监系统需求将持续释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">广西应急管理厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">周长青到广西北部湾危险化学品应急救援基地调研</a></h4>
+    <div class="card-body">
+      <p><strong>自治区应急管理厅厅长周长青到广西北部湾危险化学品应急救援基地调研，了解基地建设运行、应急装备配备、队伍训练等情况，要求提升危化品应急救援能力，保障北部湾化工产业安全发展。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>危化品应急救援基地建设带动应急指挥系统、视频会议、无人机侦察、智能单兵装备等智能化设备需求，海康应急指挥解决方案可重点关注。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">广西应急管理厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">应急管理部工作组来桂开展粉尘涉爆企业专家指导服务</a></h4>
+    <div class="card-body">
+      <p><strong>应急管理部工作组到广西开展粉尘涉爆企业专家指导服务，深入企业排查粉尘防爆安全隐患，指导企业完善安全管理制度和技术防范措施，提升粉尘涉爆企业本质安全水平。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>粉尘涉爆企业安全监管升级带动粉尘浓度监测、视频监控、智能预警、人员定位等安全设备需求，海康安全生产监控产品可对接相关场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">广西应急管理厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://www.pingguo.gov.cn/xxgk/fdzdgknr/zfhy/qthy/t28168162.shtml" target="_blank" rel="noopener noreferrer">平果市部署中秋国庆期间防范重特大安全事故工作</a></h4>
+    <div class="card-body">
+      <p><strong>平果市召开中秋及国庆期间防范重特大安全事故工作会议，要求聚焦危险化学品、矿山、工贸等重点领域开展专项排查整治，严格落实24小时值班值守制度，确保双节期间安全生产形势稳定。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>节前安全大检查推动铝化工企业加大安全设备投入，智能视频监控、热成像测温、周界防范等设备更新需求集中释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.pingguo.gov.cn/xxgk/fdzdgknr/zfhy/qthy/t28168162.shtml" target="_blank" rel="noopener noreferrer">平果市人民政府</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">全区应急管理系统安全生产执法业务培训班在柳州举办</a></h4>
+    <div class="card-body">
+      <p><strong>2026年全区应急管理系统安全生产执法业务培训班在柳州举办，培训内容包括安全生产执法实务、危险化学品安全监管、工贸行业安全执法等，提升基层执法人员专业能力和执法水平。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>执法能力提升推动监管手段智能化升级，移动执法终端、智能视频巡检、大数据分析平台等智慧监管系统市场空间广阔。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" target="_blank" rel="noopener noreferrer">广西应急管理厅</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">⚗️ 化工企业项目动态</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技术</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7221-0-1-100.html" target="_blank" rel="noopener noreferrer">中国石油广西石化化工区机泵状态监测系统采购招标</a></h4>
+    <div class="card-body">
+      <p><strong>中国石油广西石化公司发布化工区机泵状态监测系统买卖合同公开招标公告，通过在线监测技术实现机泵设备状态实时感知和预测性维护，提升化工装置运行可靠性和智能化管理水平。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>机泵状态监测系统涉及传感器、视频联动、数据平台等，海康工业视觉、热成像监测、设备状态AI分析等技术可拓展应用于化工设备智能运维场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7221-0-1-100.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7221-0-1-100.html" target="_blank" rel="noopener noreferrer">中国石油广西石化化工二部工业用丙二醇框架合同招标</a></h4>
+    <div class="card-body">
+      <p><strong>中国石油广西石化公司化工二部工业用丙二醇框架买卖合同发布招标公告，项目为化工生产原料长期框架采购，反映广西石化化工产品生产规模持续扩大，产业链上下游需求稳定增长。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>化工生产规模扩大带动厂区安防扩容、生产过程监控升级、智能巡检等需求，海康智慧化工园区解决方案可面向石化企业推广。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7221-0-1-100.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-22</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7221-0-1-100.html" target="_blank" rel="noopener noreferrer">中国石油广西石化化工三部橡胶装置工业用环戊烷框架招标</a></h4>
+    <div class="card-body">
+      <p><strong>中国石油广西石化公司化工三部橡胶装置工业用环戊烷框架买卖合同招标，为橡胶装置生产提供关键原料保障，项目框架合同周期覆盖较长生产周期，体现广西石化橡胶产业链持续稳定运行。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>橡胶装置生产涉及易燃易爆物料，车间视频监控、气体检测联动、智能巡检机器人等安全监控设备需求刚性，海康化工防爆监控系列产品可重点切入。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-7221-0-1-100.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-21</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27962-0-0-0.html" target="_blank" rel="noopener noreferrer">广西石化化工产品公路运输项目招标 预计21.8亿元</a></h4>
+    <div class="card-body">
+      <p><strong>中国石油广西石化发布化工产品公路运输项目招标公告，涉及广东石化、广西石化固体和液体化工产品及扩销贸易产品公路配送服务，配送范围覆盖全国，预计2027—2028年配送费约21.8亿元。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>巨额危化品运输对车辆实时监控、驾驶员行为分析、温度压力监测、应急响应等智能安全系统需求迫切，海康危化品运输监控解决方案市场机遇显著。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27962-0-0-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="https://qy.zhaobiao.cn/enterprise_v_a64ca9adcbe883079dffa9e5f2d201df_gonggao_1.html" target="_blank" rel="noopener noreferrer">北海炼化密集发布设备配件与仪表采购公告</a></h4>
+    <div class="card-body">
+      <p><strong>中国石化北海炼化本周密集发布多项采购公告，包括2026年色谱柱采购、循环水变电所小电流选线装置、管道配件、齿轮泵配件、消防铅酸蓄电池、内燃机润滑油等，反映炼化企业设备维护更新需求持续释放。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>炼化企业持续的设备采购与维保需求中，智能仪表、视频监控、消防系统、周界安防等设备更新换代空间大，海康石化行业安防解决方案可持续跟进。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://qy.zhaobiao.cn/enterprise_v_a64ca9adcbe883079dffa9e5f2d201df_gonggao_1.html" target="_blank" rel="noopener noreferrer">招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-25</span>
+    </div>
+    <h4><a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001004/tradeInfo.html" target="_blank" rel="noopener noreferrer">广西化工研究院扶绥产业化基地药肥生产劳务外包二次磋商</a></h4>
+    <div class="card-body">
+      <p><strong>广西化工研究院有限公司扶绥产业化基地药肥生产劳务外包服务采购项目（二次）发布竞争性磋商公告，项目位于扶绥产业化基地，为药肥生产线提供劳务外包服务，反映基地生产运营持续推进。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>药肥生产基地涉及厂区安防、生产车间监控、危化品仓储管理等需求，海康智慧化工园区、智能仓储监控等方案可提供配套服务。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/jyxx/001004/tradeInfo.html" target="_blank" rel="noopener noreferrer">全国公共资源交易平台</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🌿 绿色化工与新能源材料</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/" target="_blank" rel="noopener noreferrer">贵港云图智领绿色化工新能源材料项目试产</a></h4>
+    <div class="card-body">
+      <p><strong>贵港市云图智领绿色化工新能源材料项目进入试产阶段，项目属于绿色化工新能源材料领域，是贵港市产业转型升级重点项目，将为当地新能源材料产业发展提供支撑，助力工业高质量发展。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>绿色化工新能源材料项目新建厂区，对智慧园区安防、智能视频监控、电子周界、人员车辆管理、安全生产监控等有全套需求，市场空间可观。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/" target="_blank" rel="noopener noreferrer">自治区园区办</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-24</span>
+    </div>
+    <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/" target="_blank" rel="noopener noreferrer">百色田东工业园区加快融入平陆运河经济带</a></h4>
+    <div class="card-body">
+      <p><strong>百色市田东工业园区积极对接平陆运河经济带建设，发挥园区化工、新材料产业优势，完善园区基础设施和公共服务配套，承接东部产业转移，打造面向东盟的绿色化工产业基地。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>园区融入运河经济带带来基础设施升级和企业入驻增长，智慧园区平台、安防监控、环保监测等智能化配套需求同步增长。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/" target="_blank" rel="noopener noreferrer">自治区园区办</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">09-20</span>
+    </div>
+    <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/" target="_blank" rel="noopener noreferrer">中国—东盟产业合作区与东盟国家园区对话会举办</a></h4>
+    <div class="card-body">
+      <p><strong>2026中国—东盟产业合作区与东盟国家园区对话会成功举办，来自东盟国家的园区管理者与广西园区代表开展对话交流，探讨产业合作、园区共建、投资促进等议题，推动中国—东盟产业合作走深走实。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>中国—东盟产业合作区建设持续推进，园区数量和规模不断扩大，智慧园区管理平台、跨境园区安防联动、AI监管等需求将持续释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/" target="_blank" rel="noopener noreferrer">自治区园区办</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-21</span>
+    </div>
+    <h4><a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27962-0-0-0.html" target="_blank" rel="noopener noreferrer">来宾华锡冶炼3000吨93%硫酸销售项目竞价</a></h4>
+    <div class="card-body">
+      <p><strong>来宾华锡冶炼有限公司发布2026年10月3000吨93%硫酸销售项目竞价公告，采用竞价方式销售自产冶炼烟气制工业93%级硫酸，反映有色冶炼副产化工品销售常态化运作。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>冶炼和化工企业的硫酸等危化品仓储、运输环节安全监控需求刚性，仓储视频监控、液位监测联动、运输车辆监控等有应用空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27962-0-0-0.html" target="_blank" rel="noopener noreferrer">广西招标网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">09-27</span>
+    </div>
+    <h4><a href="https://www.yfbzb.com/zbzt/41/6/" target="_blank" rel="noopener noreferrer">枫叶粮油精炼车间提高脂肪酸VE得率技改项目采购</a></h4>
+    <div class="card-body">
+      <p><strong>防城港枫叶粮油工业有限公司发布精炼车间提高脂肪酸VE得率技改项目采购公告，企业为广西北港油脂有限公司下属，通过技术改造提升产品附加值和生产效率，推动粮油加工产业升级。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>粮油加工企业技改涉及车间监控系统升级、生产过程可视化、安全生产智能化等配套，海康工业视频、AI质量检测等技术可应用于食品加工场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.yfbzb.com/zbzt/41/6/" target="_blank" rel="noopener noreferrer">乙方宝招标网</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
+</body>
+</html>
