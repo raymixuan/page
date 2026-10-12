@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>司法行业 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>司法行业行业要闻</h1>
+    <div class="date">2026年9月28日 — 10月12日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期司法领域三大动态：一是检察系统AI应用创新大赛举办，广西检察院采购智能化OCR引擎，智慧检务持续向AI赋能升级；二是海关智慧口岸建设提速，AI+跨境贸易便利化创新应用大赛决赛在南宁举行，单一窗口AI通关智能体平台1200万项目待建；三是监狱监管指挥中心装修造价咨询完成采购，监狱信息化和监管安防仍在持续投入。整体来看，AI+司法、智慧口岸、政法智能化仍是核心赛道。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">8条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西检察机关AI辅助应用创新大赛举办</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 广西检察院</span>
+        </div>
+        <div class="news-abstract">全区检察机关AI辅助应用创新大赛成功举办，推动人工智能与检察业务深度融合。智慧检务、智能办案系统等建设将持续升温。</div>
+        <a href="http://www.gx.jcy.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西检察院OCR应用引擎采购意向108.96万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">拟采购1套含3个引擎节点的智能化OCR识别引擎，适配国产环境，支持手写/模糊文本识别，对接检察业务应用系统2.0。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=dZPqe9oFcl+2xIMsh%2F9JMw==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国东盟AI+跨境贸易便利化大赛决赛在邕举行</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 南宁海关</span>
+        </div>
+        <div class="news-abstract">大赛聚焦跨境贸易便利化AI创新，涉及AI通关、智能审图、智慧监管等方向。智慧口岸建设进入AI驱动新阶段。</div>
+        <a href="http://nanning.customs.gov.cn/nanning_customs/2026-09/30/article_2026093014543038764.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">国际贸易单一窗口功能拓展采购意向1200万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西商务厅</span>
+        </div>
+        <div class="news-abstract">预算1200万元，含智慧湾系统升级、AI通关智能体平台、边境小额贸易功能优化等。AI海运舱单智能申报、24小时智能关务咨询是建设重点。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=dA6WSC2RBEwUCsp6tB34pg==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西监狱监管指挥中心装修造价咨询成交</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西监狱管理局</span>
+        </div>
+        <div class="news-abstract">监管指挥中心业务技术用房装修工程持续推进，下一步将进入信息化系统建设阶段。视频监控、大屏显示、指挥调度等系统是重点建设内容。</div>
+        <a href="http://jyj.gxzf.gov.cn/xxgk/fdzdgknr/tzgg/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">全区监狱系统刑罚执行业务培训班举办</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 广西监狱管理局</span>
+        </div>
+        <div class="news-abstract">全区监狱系统刑罚执行业务培训举办，涉及规范化执法、信息化管理等内容。监狱系统规范化建设持续推进，智能监管、智慧执法需求稳步增长。</div>
+        <a href="http://jyj.gxzf.gov.cn/gzdt/jyj11111/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海海事法院钦州法庭揭牌</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-17</span>
+          <span class="source-tag">📍 广西高院</span>
+        </div>
+        <div class="news-abstract">北海海事法院钦州法庭正式揭牌，为平陆运河航运提供海事司法保障。新法庭建设将配套科技法庭、数字庭审、远程视频接访等智能化系统。</div>
+        <a href="https://gxfy.gxcourt.gov.cn/article/index/id/M0g3NTAAIkMDIgAA.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国广西东盟AI+法律创新大赛启动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-01</span>
+          <span class="source-tag">📍 广西监狱管理局</span>
+        </div>
+        <div class="news-abstract">面向中国及东盟的AI+法律创新大赛启动，聚焦跨境法治服务痛点，推动AI与法律服务深度融合。AI+司法应用场景不断拓展。</div>
+        <a href="http://jyj.gxzf.gov.cn/xxgk/fdzdgknr/tzgg/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
