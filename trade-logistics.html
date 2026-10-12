@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>商贸物流 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>商贸物流行业要闻</h1>
+    <div class="date">2026年9月28日 — 10月12日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期商贸物流领域核心动态——中国邮政东盟水果冷链专线在凭祥首发，标志广西跨境生鲜冷链骨干通道正式投用，配套产地预冷、全程温控、溯源锁鲜系统，冷链仓储与口岸安防智能化需求集中释放；广西自贸试验区推进平陆运河江海联运及陆海通铁海联运监管创新，物流园区、港口码头的智慧化改造升级加速；国庆假期广西消费市场焕新，夜间经济、跨境电商带动商贸场所安防与客流管理需求增长。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">7条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">中国邮政东盟水果冷链专线首发</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 广西交通厅</span>
+        </div>
+        <div class="news-abstract">东盟水果冷链专线在崇左凭祥首发，满载20吨越南榴莲的冷链车24小时可达浙江嘉兴。专线配套产地预冷、全程温控、溯源锁鲜、冷链直达全流程服务，10月底智慧物流模块全面上线。</div>
+        <a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t28176651.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平陆运河江海联运通道能级跃升</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 广西商务厅</span>
+        </div>
+        <div class="news-abstract">广西自贸试验区依托平陆运河通航机遇，创新江海联运监管模式，推动内河港+海港一体化运营，港口物流园区、多式联运枢纽的智慧化建设与安防系统升级需求同步增长。</div>
+        <a href="http://swt.gxzf.gov.cn/zzzq/t18146468.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂渝陆海通铁海联运监管创新</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 广西商务厅</span>
+        </div>
+        <div class="news-abstract">广西与重庆联动创新陆海通铁海联运监管模式，实现西部陆海新通道通关效率跃升。涉及铁路口岸、港口监管区的智能化通关设备升级与安全监控体系建设。</div>
+        <a href="http://swt.gxzf.gov.cn/zzzq/t18146467.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">智慧物流实训基地设备采购招标308万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">广西建设职业技术学院智慧物流实训基地设备采购项目公开招标，预算308.38万元，90天内完成交付安装调试。智慧物流实训建设带动相关院校与企业物流场景的智能化设备需求。</div>
+        <a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28188126.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">国庆假期广西消费场景焕新</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 广西商务厅</span>
+        </div>
+        <div class="news-abstract">国庆假期广西消费市场持续升温，夜间经济、商圈消费、入境旅游多点开花，全区商贸场所人流密集，带动商超、步行街、文旅景区等场所的安防监控、客流统计、消防安全等智能化需求。</div>
+        <a href="http://swt.gxzf.gov.cn/zwdt/gxsw/t18180243.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西国际农业博览会10月23日南宁举行</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-11</span>
+          <span class="source-tag">📍 南宁日报</span>
+        </div>
+        <div class="news-abstract">本届农博会以融合发展、循环便利、新质赋能为主题，重点组织产地溯源考察，冷链物流、溯源系统、智慧农业为核心板块。</div>
+        <a href="http://m.toutiao.com/group/7695239813716378147/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西现代物流集团智慧督考系统一期成交</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-29</span>
+          <span class="source-tag">📍 广西物产投资集团</span>
+        </div>
+        <div class="news-abstract">广西现代物流集团智慧督考系统一期项目完成评审并成交，标志着区内大型物流企业在数字化管理、智慧园区建设方面持续投入。</div>
+        <a href="https://www.gxwuzi.com/zxzx/xxgkgsgg/A001002005index_2.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
