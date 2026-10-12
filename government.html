@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>政府行业 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>政府行业行业要闻</h1>
+    <div class="date">2026年9月28日 — 10月12日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期政府领域三大重点方向：一是水利投资攻坚四季度，水利厅强调强化数智技术提升防洪能力、加快老旧水库改造，视频监控、数字孪生、水文监测等智慧水利需求持续释放；二是生态环境智慧化改造密集招标，贵港、梧州、北海、百色等多个地市控水站智慧化改造项目集中成交，智慧水务市场进入批量落地期；三是应急管理智能化提速，370MHz应急通信装备测试演练、人工智能+应急管理创新大赛等动作频出，应急指挥、智能监测项目机会增多。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">10条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">自治区水利厅部署水利投资与安全度汛工作</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西水利厅</span>
+        </div>
+        <div class="news-abstract">会议强调强化数智技术提升防洪能力，实现雨情水情工情险情协同分析；打好重大项目和城乡供水攻坚战，加快病险水库除险加固、河流治理等建设。</div>
+        <a href="http://slt.gxzf.gov.cn/ldrl/lddt/t28184677.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西生态环境信息化建设项目中标912.9万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西生态环境厅</span>
+        </div>
+        <div class="news-abstract">中国电信广西公司以912.9万元中标，涵盖生态环境数据平台升级、智慧监测系统建设等，标志广西生态环境信息化进入新一轮建设周期。</div>
+        <a href="http://sthjt.gxzf.gov.cn/zfxxgk/zfxxgkgl/fdzdgknr/zbcg/jggg/t28186941.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港市区控水站智慧化升级改造项目成交</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-29</span>
+          <span class="source-tag">📍 广西生态环境厅</span>
+        </div>
+        <div class="news-abstract">贵港市控水站智慧化升级完成采购，涉及水质自动监测仪器、数据传输系统等。各市控水站智慧化改造呈批量落地趋势，前端感知设备市场空间大。</div>
+        <a href="http://sthjt.gxzf.gov.cn/zfxxgk/zfxxgkgl/fdzdgknr/zbcg/jggg/t28180604.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色市区控水站智慧化改造招标50万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西生态环境厅</span>
+        </div>
+        <div class="news-abstract">采购水质自动分析仪器一套，预算50万元，12月20日前交付。继贵港、梧州、北海之后，百色也启动水站智慧化改造。</div>
+        <a href="http://sthjt.gxzf.gov.cn/zfxxgk/zfxxgkgl/fdzdgknr/zbcg/cggg/t28182256.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">绿城水务污水处理视频监控联网改造50.79万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 绿城水务</span>
+        </div>
+        <div class="news-abstract">中国移动南宁分公司中标污水处理单位视频监控数据联网改造项目，金额50.79万元。水务行业安防监控联网改造需求旺盛。</div>
+        <a href="http://m.toutiao.com/group/7694462825233646134/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港二次供水设施改造启动 含安防监控</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 北投环保水务集团</span>
+        </div>
+        <div class="news-abstract">涉及8个小区5500户居民，含二次供水泵房安防智能监控远传系统、管网改造、智能水表换装等。智慧水务+安防监控融合建设模式可复制推广。</div>
+        <a href="http://m.gxbbwsw.com/index.php?c=show&id=2989" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西开展370MHz应急通信装备测试演练</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西应急管理厅</span>
+        </div>
+        <div class="news-abstract">检验三断极端场景下通信保障能力，应急通信设备、视频指挥系统建设将迎来新需求。应急指挥平台、可视化调度系统等存在项目机会。</div>
+        <a href="http://yjglt.gxzf.gov.cn//xxfw/xwdt/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">忻城养老机构维修改造工程招标398.28万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">忻城县民政局招标养老机构维修改造，分两个标段共398.28万元，工期60天。养老院改造涉及安防监控、消防系统、智能化呼叫等需求。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202609/t20260928_27410639.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州养老机构智慧消防改造项目启动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 柳州市民政局</span>
+        </div>
+        <div class="news-abstract">柳州市启动养老机构智慧消防改造项目采购。养老机构消防+安防一体化改造是政策推动的刚性需求，智慧消防市场值得重点关注。</div>
+        <a href="https://www.bidcenter.com.cn/zhaobiao/agencies_1144_450200_1/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">六万林场构建视频监控+无人机巡检立体监管</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西林业局</span>
+        </div>
+        <div class="news-abstract">六万林场14台无人机接入广西森林防火无人机智能调度平台，林缘、坟山、进山路口布设视频监控，实现立体监管。智慧林业+森林防火监控是广西林业重点建设方向。</div>
+        <a href="http://lyj.gxzf.gov.cn/xwzx/xxkb/t28188066.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
