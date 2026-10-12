@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>交警交通 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>交警交通行业要闻</h1>
+    <div class="date">2026年9月28日 — 10月12日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期交通领域重磅项目密集释放：崇左智能交通第三期1335万大单招标，涵盖电子警察、信号控制、绿波优化、高空监控等全品类设备，为本期金额最大的交通智能化项目。智慧高速建设亮点突出，钦州F15无人直升机投运构建空地一体巡检体系，岑溪12.2公里广西最长潮汐车道实战效果显著。城市层面，南宁昆仑大道13个路口绿波带启用，桂林象山景区智慧出行平台上线，交通精细化管理持续深化。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">8条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">崇左智能交通第三期项目招标1335.85万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-09</span>
+          <span class="source-tag">📍 云之龙咨询集团</span>
+        </div>
+        <div class="news-abstract">预算1335.85万元，含电子警察抓拍、违停抓拍、卡口抓拍、信号控制机、绿波优化控制系统、高空视频监控、公安交通集成指挥平台、前端智能感知系统等全栈建设。10月30日开标。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-4487-0-0-90.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁交管道路安全隐患治理采购意向401万</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 南宁市公安局交管支队</span>
+        </div>
+        <div class="news-abstract">预算401万元，对普通国省道风险点段开展提升改造，含新增交通信号灯、监控卡口、支路哨兵预警设备、太阳能路灯，以及现有前端智能感知设备升级改造。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=ZLNqS9rAu4ldb1KLIf+LQQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁昆仑大道13个路口启用绿波协调控制</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-06</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">昆仑大道四塘高速口至邕宾立交段13个路口设4条常态化绿波带，分时段分方向精准放行。绿波带建设是信号控制机与智能交通平台升级的直接驱动因素。</div>
+        <a href="https://www.nanning.gov.cn/ywzx/bmdt/2026nbmdt/t6739049.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钦州高速F15无人直升机投入常态化运营</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 金台资讯</span>
+        </div>
+        <div class="news-abstract">钦州高速运营分公司完成F15无人直升机联调联试并投入运营，作业半径30公里，续航100分钟，抗8级大风。联动高速交警构建高低搭配、空地协同立体化智能巡检体系。</div>
+        <a href="http://m.toutiao.com/group/7694144320949076516/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西首次12.2公里长距离潮汐车道在岑溪启用</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 九派快讯</span>
+        </div>
+        <div class="news-abstract">G2518深岑高速岑罗段国庆返程高峰启用12.2公里潮汐车道，为广西首次。单向通行能力提升28.4%，高峰缓行时长下降80%。</div>
+        <a href="http://m.toutiao.com/group/7694231560178876928/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林象山景区智慧出行服务平台上线</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-05</span>
+          <span class="source-tag">📍 桂林交警</span>
+        </div>
+        <div class="news-abstract">桂林交警联合多部门搭建象山景区出行服务智慧信息共享平台，整合路况、停车、景区预约等多源数据，布设可变车道、前端交通感知与电子监控设备。</div>
+        <a href="http://m.toutiao.com/group/7693045306815971859/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">浦北县新增固定式交通技术监控设备</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 浦北县公安局交管大队</span>
+        </div>
+        <div class="news-abstract">浦北拟在国道G359线与浦北大道交汇路段新增1处固定式交通技术监控设备，县域交通违法抓拍设备持续补点扩容。</div>
+        <a href="https://i.ifeng.com/c/8wrmk9Td58j" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">国庆假期广西交通运输行业平稳有序</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 广西交通运输厅</span>
+        </div>
+        <div class="news-abstract">国庆假期全区道路客运量504.35万人次，定制客运同比增长95.28%。高速公路手机+无卡便捷通行完成实车测试，智能感知与视频监控设备需求旺盛。</div>
+        <a href="http://jtt.gxzf.gov.cn/znts/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
