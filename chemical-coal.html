@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>化工煤炭 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>化工煤炭行业要闻</h1>
+    <div class="date">2026年9月28日 — 10月12日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期化工煤炭领域三大重点——贵港百亿元级云图智领绿色化工新能源材料项目一期投料试产，总投资159亿元，自动化产线+智能控制系统对工业安防、视频监控、周界防范提出高标准需求；北海铁山港工业区广西锦东化工新材料竞得118亩工业用地，新增化工园区建设带来建设期与运营期双重安防机会；自治区工信厅启动下半年民爆行业全覆盖安全生产检查，化工园区安全监管、智能预警系统建设需求紧迫。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">7条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">云图智领159亿绿色化工项目一期试产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 广西工信厅</span>
+        </div>
+        <div class="news-abstract">贵港市覃塘产业园区云图智领绿色化工新能源材料项目一期复合肥生产线投料试产。生产线全部采用自动化、智能化控制系统，全部建成达产后预计年产值190亿元。</div>
+        <a href="https://news.sohu.com/a/1082828178_121106875" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海锦东化工竞得118亩工业用地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-10</span>
+          <span class="source-tag">📍 北海市自然资源局</span>
+        </div>
+        <div class="news-abstract">北海铁山港工业区118.77亩工业用地由广西锦东化工新材料有限公司以2970万元竞得，将新建化工新材料生产设施。</div>
+        <a href="http://www.beihai.gov.cn/xxgkbm/bhszrzyj/ztzl_26/tdsc/tdcrjg/t28202495.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">下半年全区民爆行业全覆盖安全生产检查</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-29</span>
+          <span class="source-tag">📍 广西工信厅</span>
+        </div>
+        <div class="news-abstract">自治区工信厅组织开展2026年下半年全区民爆行业全覆盖安全生产检查，强化民爆物品生产、销售、储存等环节安全监管，对化工园区智能安防、视频监控、周界报警系统提出更高要求。</div>
+        <a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28180315.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">梧州荒川化学工业升级改造项目环评公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-29</span>
+          <span class="source-tag">📍 粤桂合作特别试验区</span>
+        </div>
+        <div class="news-abstract">广西梧州荒川化学工业有限公司升级改造项目环评受理公示，涉及化工生产设施升级改造，配套建设环保与安全设施。</div>
+        <a href="http://yghz.wuzhou.gov.cn/zwgk/zfxxgk/fdzdgknr/xzsp/spxxgs/halgs/t28182168.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">华谊钦州30万吨年丁醇装置技改项目公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 采招网</span>
+        </div>
+        <div class="news-abstract">中国（广西）自由贸易试验区钦州石化产业园内，广西华谊新材料30万吨/年丁醇装置技改项目进行第二次环评公示，属于大型化工装置技术改造项目。</div>
+        <a href="https://m.bidcenter.com.cn/news-17-445896912.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林裕鑫新材料纳米材料生产项目公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-30</span>
+          <span class="source-tag">📍 桂林市生态环境局</span>
+        </div>
+        <div class="news-abstract">桂林经开区苏桥工业园广西裕鑫新材料有限责任公司纳米材料生产项目进入拟审批阶段，将在标准厂房内建设纳米材料生产线。</div>
+        <a href="http://sthjj.guilin.gov.cn/zfxxgk/fdzdgknr/gszx/jsxmspgs/nzcspyjgs/t28182375.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南方锰业120万吨锰渣资源化项目签约广西</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 广西园区投资促进中心</span>
+        </div>
+        <div class="news-abstract">南方锰业120万吨/年锰渣资源化项目签约落地广西，项目聚焦锰渣综合利用与绿色循环，将建设资源化处理生产线与配套设施。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/gzdt/t28172607.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
