@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>电力能源 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>电力能源行业要闻</h1>
+    <div class="date">2026年9月28日 — 10月12日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期电力行业三大看点：一是总投资83亿元的贺州抽水蓄能电站正式开工，作为广西十五五首批核准抽蓄项目、贺州市建市以来单体投资最大能源工程，建设期将催生大量厂区安防、视频监控、智能巡检等智能化需求；二是广西电网南宁柳州河池三大片区35kV及以下基建可研勘察设计框架招标启动，总预算超1.1亿元，配网建设加速带动配电安防与数字化运维市场；三是桂冠电力前三季度新能源发电量高速增长（光伏+27%、风电+17%），新能源装机持续扩容利好智慧电站、无人机巡检等智能化产品渗透。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">6条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">贺州抽水蓄能电站开工 总投资83亿</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-29</span>
+          <span class="source-tag">📍 广西新闻网</span>
+        </div>
+        <div class="news-abstract">总投资约83亿元、总装机140万千瓦的贺州抽水蓄能电站开工。项目为广西首个区属国企投资的抽蓄电站、贺州市建市以来单体投资最大能源项目，建设期约3000个就业岗位，建成后可支撑超1000万千瓦新能源开发。</div>
+        <a href="http://hz.gxnews.com.cn/staticpages/20260929/newgx6abbcdeb-21999498.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂冠电力前三季度发电量增16.08%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-09</span>
+          <span class="source-tag">📍 新浪财经</span>
+        </div>
+        <div class="news-abstract">桂冠电力前三季度累计发电量369.70亿千瓦时，同比增长16.08%。其中水电+17.10%、风电+16.88%、光伏+27.11%。新能源装机规模持续增加是增长主因。</div>
+        <a href="https://finance.sina.com.cn/jjxw/2026-10-09/doc-iniuqiyt7224304.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西电网35kV基建可研框架招标超1.1亿</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-29</span>
+          <span class="source-tag">📍 南方电网供应链</span>
+        </div>
+        <div class="news-abstract">广西电网发布南宁、柳州、河池网区35kV及以下电网基建项目可行性研究和勘察设计框架招标，涉及5个标段，预计采购金额合计超1.1亿元，配网建设规模持续扩大。</div>
+        <a href="https://www.bidding.csg.cn/zbgg/1200444505.jhtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">兴宾岜王山风电场220kV送出EPC中标公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-08</span>
+          <span class="source-tag">📍 标信网</span>
+        </div>
+        <div class="news-abstract">兴宾岜王山风电场配套220kV送出线路工程EPC总承包中标候选人公示，属于来宾网区新能源配套电网基建重点项目。</div>
+        <a href="https://www.bidcenter.com.cn/newssearchzb-66366443.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">龙滩水库扩建及电厂智能化招标密集发布</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-28</span>
+          <span class="source-tag">📍 电力招标网</span>
+        </div>
+        <div class="news-abstract">龙滩水电开发有限公司发布水库扩建工程项目建议书编制招标。同期龙滩电厂密集发布多项技改与智能化招标，包括调度指挥控制系统、水情网络安全加固、工业电视系统前端设备升级改造等。</div>
+        <a href="https://www.dlzb.com/c-390583/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">龙滩水电站8、9号机组环评受理公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-09-23</span>
+          <span class="source-tag">📍 生态环境部</span>
+        </div>
+        <div class="news-abstract">生态环境部受理红水河龙滩水电站8、9号机组建设工程环评文件，标志着广西最大水电基地扩容进入实质推进阶段。</div>
+        <a href="https://www.mee.gov.cn/ywdt/gsgg/gongshi/gsq/202609/t20260923_1174737.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
