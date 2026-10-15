@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西行业简报7-9月推送汇总</title>
+<style>
+:root {
+  --primary: #1e40af;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e3a8a;
+  --accent: #f59e0b;
+  --red: #dc2626;
+  --green: #059669;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --bg: #ffffff;
+  --bg-gray: #f9fafb;
+  --border: #e5e7eb;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: #f3f4f6;
+  line-height: 1.6;
+}
+
+/* 幻灯片容器 */
+.slide-container {
+  max-width: 960px;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.slide {
+  width: 100%;
+  min-height: 540px;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.slide:last-child { border-bottom: none; }
+
+/* 封面 */
+.cover {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 540px;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 240px;
+  height: 240px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.cover h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.cover .subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+.cover .meta {
+  font-size: 15px;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* 内容页通用 */
+.slide-header {
+  margin-bottom: 28px;
+}
+.slide-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--primary);
+}
+.slide-body {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #374151;
+}
+.slide-body p { margin-bottom: 12px; }
+.slide-body ul { list-style: none; padding: 0; }
+.slide-body li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+}
+.slide-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  background: var(--primary-light);
+  border-radius: 50%;
+}
+.slide-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+/* 目录 */
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-top: 10px;
+}
+.toc-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-gray);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+.toc-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  width: 36px;
+}
+.toc-text { font-size: 17px; font-weight: 500; }
+
+/* 数据卡片 */
+.data-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+.data-card {
+  background: var(--bg-gray);
+  border-radius: 10px;
+  padding: 20px 12px;
+  text-align: center;
+  border-top: 3px solid var(--primary);
+}
+.data-card .num {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.data-card.red .num { color: var(--red); }
+.data-card.green .num { color: var(--green); }
+.data-card.gold .num { color: var(--accent); }
+.data-card .label {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 6px;
+}
+
+/* 排行榜 */
+.rank-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 15px;
+}
+.rank-table th {
+  background: var(--primary);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+.rank-table th:first-child { border-radius: 6px 0 0 0; width: 50px; text-align: center; }
+.rank-table th:last-child { border-radius: 0 6px 0 0; width: 80px; text-align: center; }
+.rank-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.rank-table td:first-child { text-align: center; font-weight: 600; color: var(--primary); }
+.rank-table td:last-child { text-align: center; font-weight: 600; color: var(--red); }
+.rank-table tr:nth-child(even) { background: var(--bg-gray); }
+.rank-table tr:hover { background: #eff6ff; }
+.rank-num {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 13px;
+  display: inline-block;
+  text-align: center;
+}
+tr:nth-child(2) .rank-num { background: #fef3c7; color: #d97706; }
+tr:nth-child(3) .rank-num { background: #f3f4f6; color: #6b7280; }
+tr:nth-child(4) .rank-num { background: #fef3c7; color: #d97706; }
+
+/* 重点商机卡片 */
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+.opp-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-gray);
+  border-radius: 8px;
+  border-left: 3px solid var(--red);
+}
+.opp-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.opp-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--red);
+  white-space: nowrap;
+  margin-left: 12px;
+}
+.opp-industry {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 3px;
+}
+
+/* 双栏布局 */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.col-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+/* 结尾页 */
+.ending {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.ending h2 { font-size: 40px; font-weight: 700; margin-bottom: 12px; }
+.ending p { font-size: 18px; opacity: 0.9; }
+
+/* 打印样式 */
+@media print {
+  body { background: white; }
+  .slide-container { box-shadow: none; max-width: 100%; margin: 0; }
+  .slide { page-break-after: always; border-bottom: none; }
+}
+
+/* 移动端 */
+@media (max-width: 768px) {
+  .slide { padding: 30px 24px; min-height: auto; }
+  .slide-title { font-size: 20px; }
+  .slide-body { font-size: 14px; }
+  .cover h1 { font-size: 28px; }
+  .cover .subtitle { font-size: 16px; }
+  .data-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .data-card .num { font-size: 24px; }
+  .data-card .label { font-size: 12px; }
+  .toc-grid { grid-template-columns: 1fr; gap: 10px; }
+  .opportunity-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; gap: 20px; }
+  .rank-table { font-size: 13px; }
+  .rank-table th, .rank-table td { padding: 8px 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+
+<!-- 第1页 封面 -->
+<div class="slide cover">
+  <h1>广西行业简报7-9月推送汇总</h1>
+  <div class="subtitle">海康威视广西区域安防智能化商机洞察</div>
+  <div class="meta">2026年7月 — 9月 · 15大行业 · 9期推送</div>
+</div>
+
+<!-- 第2页 目录 -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-title">目录</div>
+  </div>
+  <div class="slide-body">
+    <div class="toc-grid">
+      <div class="toc-item"><div class="toc-num">01</div><div class="toc-text">整体推送概况</div></div>
+      <div class="toc-item"><div class="toc-num">02</div><div class="toc-text">行业推送量排行</div></div>
+      <div class="toc-item"><div class="toc-num">03</div><div class="toc-text">重点商机TOP榜</div></div>
+      <div class="toc-item"><div class="toc-num">04</div><div class="toc-text">政府行业深度洞察</div></div>
+      <div class="toc-item"><div class="toc-num">05</div><div class="toc-text">教育行业深度洞察</div></div>
+      <div class="toc-item"><div class="toc-num">06</div><div class="toc-text">医疗行业深度洞察</div></div>
+      <div class="toc-item"><div class="toc-num">07</div><div class="toc-text">各期推送明细</div></div>
+      <div class="toc-item"><div class="toc-num">08</div><div class="toc-text">总结与展望</div></div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>广西行业简报7-9月推送汇总</span><span>02 / 09</span></div>
+</div>
+
+<!-- 第3页 整体推送概况 -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-title">整体推送概况</div>
+  </div>
+  <div class="slide-body">
+    <div class="data-row">
+      <div class="data-card">
+        <div class="num">9</div>
+        <div class="label">推送期数</div>
+      </div>
+      <div class="data-card red">
+        <div class="num">15</div>
+        <div class="label">覆盖行业</div>
+      </div>
+      <div class="data-card green">
+        <div class="num">~1800</div>
+        <div class="label">机会点线索</div>
+      </div>
+      <div class="data-card gold">
+        <div class="num">100+</div>
+        <div class="label">百万级商机</div>
+      </div>
+    </div>
+    <p>7-9月累计推送9期简报，从7月20日首期10个行业起步，8月10日起稳定为15行业全量覆盖，共收集约1800条广西本地行业动态。</p>
+    <p>每条新闻均从海康威视行业经理视角提炼安防与智能化项目机会点，筛选出百万级以上重点商机100余个，涵盖<strong>天网工程、智慧医院、智慧校园、智能交通、数字政务</strong>等核心赛道。</p>
+    <p>单期最高推送247条新闻（8.31-9.6），整体呈逐期扩容态势，显示广西市场基建与智能化投资热度持续攀升。</p>
+  </div>
+  <div class="slide-footer"><span>广西行业简报7-9月推送汇总</span><span>03 / 09</span></div>
+</div>
+
+<!-- 第4页 行业推送量排行 -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-title">行业推送量排行</div>
+  </div>
+  <div class="slide-body">
+    <table class="rank-table">
+      <tr><th>排名</th><th>行业</th><th>期数</th><th>总条数</th><th>重点商机</th></tr>
+      <tr><td><span class="rank-num">1</span></td><td>政府行业</td><td>9</td><td>~134</td><td>15+</td></tr>
+      <tr><td><span class="rank-num">2</span></td><td>工业企业</td><td>9</td><td>~126</td><td>12+</td></tr>
+      <tr><td><span class="rank-num">3</span></td><td>交通运输</td><td>9</td><td>~126</td><td>10+</td></tr>
+      <tr><td>4</td><td>化工煤炭</td><td>9</td><td>~123</td><td>8+</td></tr>
+      <tr><td>5</td><td>通信运营商</td><td>9</td><td>~122</td><td>10+</td></tr>
+      <tr><td>6</td><td>电力能源</td><td>9</td><td>~121</td><td>12+</td></tr>
+      <tr><td>7</td><td>公安行业</td><td>9</td><td>~119</td><td>15+</td></tr>
+      <tr><td>8</td><td>地产建筑</td><td>9</td><td>~118</td><td>8+</td></tr>
+      <tr><td>9</td><td>钢铁有色矿山</td><td>9</td><td>~118</td><td>9+</td></tr>
+      <tr><td>10</td><td>文体卫健</td><td>9</td><td>~118</td><td>12+</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--text-light);margin-top:8px;">* 政府、工业、交通三大行业合计占推送总量近1/3，构成广西安防智能化市场基本盘</p>
+  </div>
+  <div class="slide-footer"><span>广西行业简报7-9月推送汇总</span><span>04 / 09</span></div>
+</div>
+
+<!-- 第5页 重点商机TOP10 -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-title">重点商机TOP10</div>
+  </div>
+  <div class="slide-body">
+    <div class="opportunity-grid">
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">崇左大新储能电站EPC</div>
+          <div class="opp-industry">电力能源</div>
+        </div>
+        <div class="opp-amount">10.59亿</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">全区高速联网收费信创</div>
+          <div class="opp-industry">交通运输</div>
+        </div>
+        <div class="opp-amount">~1.8亿</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">生态环境厅水质自动站</div>
+          <div class="opp-industry">政府·环保</div>
+        </div>
+        <div class="opp-amount">~1.7亿</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">崇左智慧边境防控三年</div>
+          <div class="opp-industry">公安</div>
+        </div>
+        <div class="opp-amount">1800万</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">北海平安城市二期运维</div>
+          <div class="opp-industry">公安</div>
+        </div>
+        <div class="opp-amount">4928万</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">政务云运维安全</div>
+          <div class="opp-industry">政府</div>
+        </div>
+        <div class="opp-amount">3219万</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">区运会赛事运营</div>
+          <div class="opp-industry">文体卫健</div>
+        </div>
+        <div class="opp-amount">3893万</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">全区法院电子卷宗</div>
+          <div class="opp-industry">司法</div>
+        </div>
+        <div class="opp-amount">1493万</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">崇左薄改教育信息化</div>
+          <div class="opp-industry">教育</div>
+        </div>
+        <div class="opp-amount">1381万</div>
+      </div>
+      <div class="opp-card">
+        <div>
+          <div class="opp-name">交投机改项目</div>
+          <div class="opp-industry">交通运输</div>
+        </div>
+        <div class="opp-amount">2189万</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--text-light);margin-top:4px;">* 大单集中在政府、交通、公安、司法四大领域，占百万级商机总量超60%</p>
+  </div>
+  <div class="slide-footer"><span>广西行业简报7-9月推送汇总</span><span>05 / 09</span></div>
+</div>
+
+<!-- 第6页 政府行业洞察 -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-title">政府行业深度洞察</div>
+  </div>
+  <div class="slide-body">
+    <div class="data-row">
+      <div class="data-card">
+        <div class="num">~134</div>
+        <div class="label">推送条数</div>
+      </div>
+      <div class="data-card red">
+        <div class="num">15+</div>
+        <div class="label">重点商机</div>
+      </div>
+      <div class="data-card green">
+        <div class="num">5</div>
+        <div class="label">核心子领域</div>
+      </div>
+      <div class="data-card gold">
+        <div class="num">#1</div>
+        <div class="label">行业排名</div>
+      </div>
+    </div>
+    <p>政府行业是三季度推送量最大的领域，覆盖<strong>水利水务、生态环境、城管市政、应急管理、自然资源</strong>五大子领域。</p>
+    <p><strong>核心机会集中在：</strong></p>
+    <ul>
+      <li>生态环境信息化建设（912万-1.3亿级项目密集释放）</li>
+      <li>智慧水利与数字孪生防洪（平陆运河沿线需求突出）</li>
+      <li>老旧管网改造（供水/排水/燃气，特别国债资金驱动）</li>
+      <li>森林防火与林草监控（铁塔+监控视频模式推广）</li>
+      <li>养老机构智慧消防改造（政策推动的刚性需求）</li>
+    </ul>
+    <p style="color:var(--red);font-weight:500;">特别国债资金驱动效应明显，水利、环保、应急领域项目落地节奏加快，是四季度持续重点跟进的赛道。</p>
+  </div>
+  <div class="slide-footer"><span>广西行业简报7-9月推送汇总</span><span>06 / 09</span></div>
+</div>
+
+<!-- 第7页 教育+医疗双栏 -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-title">教育 & 医疗行业洞察</div>
+  </div>
+  <div class="slide-body">
+    <div class="two-col">
+      <div>
+        <div class="col-title">教育行业</div>
+        <p><strong>110条推送 · 15+重点商机</strong>，商机密度居全行业前列。</p>
+        <ul>
+          <li>开学季是核心驱动因素</li>
+          <li>薄改设备采购持续放量</li>
+          <li>智慧教室建设需求旺盛</li>
+          <li>班班通更新换代高峰</li>
+          <li>县域薄改+中职高职智慧校园是增量市场</li>
+        </ul>
+        <p style="margin-top:8px;"><strong>代表项目：</strong>江南区100套智慧黑板2300万、崇左薄改1380.82万、贺州八步区薄改1327万、广西工商职院88间智慧教室174万</p>
+      </div>
+      <div>
+        <div class="col-title">医疗行业</div>
+        <p><strong>118条推送 · 12+重点商机</strong>，智慧医院建设全面提速。</p>
+        <ul>
+          <li>市级三甲医院信创升级</li>
+          <li>县级医共体信息化爆发</li>
+          <li>电子病历评级推动升级</li>
+          <li>专项安防采购常态化</li>
+          <li>县域医共体是增长最快赛道</li>
+        </ul>
+        <p style="margin-top:8px;"><strong>代表项目：</strong>南宁妇幼智慧医院1400万、钟山县医共体923.43万、岑溪医共体1288万、都安县医院新院区信息化990万</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>广西行业简报7-9月推送汇总</span><span>07 / 09</span></div>
+</div>
+
+<!-- 第8页 各期推送明细 -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-title">各期推送明细</div>
+  </div>
+  <div class="slide-body">
+    <table class="rank-table">
+      <tr><th>期数</th><th>时间范围</th><th>行业数</th><th>新闻条数</th><th>阶段</th></tr>
+      <tr><td>第1期</td><td>7.20 - 7.26</td><td>10</td><td>~50</td><td>启动期</td></tr>
+      <tr><td>第2期</td><td>7.26 - 8.2</td><td>9</td><td>~60</td><td>启动期</td></tr>
+      <tr><td>第3期</td><td>8.3 - 8.9</td><td>10</td><td>~150</td><td>扩容期</td></tr>
+      <tr><td>第4期</td><td>8.10 - 8.16</td><td>15</td><td>~210</td><td>全行业覆盖</td></tr>
+      <tr><td>第5期</td><td>8.17 - 8.23</td><td>15</td><td>195</td><td>稳定期</td></tr>
+      <tr><td>第6期</td><td>8.24 - 8.30</td><td>15</td><td>220</td><td>稳定期</td></tr>
+      <tr><td>第7期</td><td>8.31 - 9.6</td><td>15</td><td>247</td><td style="color:var(--red);font-weight:600;">峰值期</td></tr>
+      <tr><td>第8期</td><td>9.14 - 9.20</td><td>15</td><td>242</td><td>高位稳定</td></tr>
+      <tr><td>第9期</td><td>9.21 - 9.27</td><td>15</td><td>243</td><td>高位稳定</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--text-light);margin-top:10px;">趋势：8月中旬完成15行业全覆盖后进入稳定期，单期维持200-250条规模，反映广西市场项目招投标活跃度持续走高</p>
+  </div>
+  <div class="slide-footer"><span>广西行业简报7-9月推送汇总</span><span>08 / 09</span></div>
+</div>
+
+<!-- 第9页 总结与展望 -->
+<div class="slide ending">
+  <h2>总结与展望</h2>
+  <p style="max-width:700px;margin:0 auto 20px;">三季度1800+机会点，三大趋势引领四季度方向</p>
+  <p style="font-size:16px;opacity:0.85;max-width:680px;margin:0 auto;line-height:2;">
+    ① 政府投资驱动显著 · 特别国债资金加速落地<br>
+    ② 平陆运河通航效应显现 · 沿线智慧运营需求释放<br>
+    ③ AI+行业融合加速 · 从概念走向规模化落地
+  </p>
+  <p style="margin-top:32px;font-size:15px;opacity:0.7;">四季度重点跟进：平陆运河沿线 / 十五五规划政策红利 / 年底集中采购</p>
+</div>
+
+</div>
+
+</body>
+</html>
