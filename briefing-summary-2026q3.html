@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>广西行业简报 7-9月推送汇总</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-bottom: 40px;
+}
+.header {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  color: white;
+  padding: 24px 16px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+.header h1 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+.header .subtitle { font-size: 13px; opacity: 0.9; }
+.header .period { 
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 16px;
+  margin-top: -10px;
+  position: relative;
+  z-index: 1;
+}
+.sum-card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.sum-card .num {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e40af;
+  line-height: 1.2;
+}
+.sum-card .num.red { color: #dc2626; }
+.sum-card .num.green { color: #059669; }
+.sum-card .label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.section {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.section-title::before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.industry-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.table-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 55px 60px 60px;
+  background: #f1f5f9;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
+}
+.table-header .col-name { text-align: left; padding-left: 4px; }
+.table-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 55px 60px 60px;
+  padding: 12px;
+  font-size: 13px;
+  border-bottom: 1px solid #f1f5f9;
+  align-items: center;
+  text-align: center;
+}
+.table-row:last-child { border-bottom: none; }
+.table-row .rank {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 auto;
+}
+.table-row:nth-child(2) .rank { background: #fef3c7; color: #d97706; }
+.table-row:nth-child(3) .rank { background: #f1f5f9; color: #64748b; }
+.table-row:nth-child(4) .rank { background: #fef3c7; color: #d97706; }
+.table-row .name {
+  text-align: left;
+  font-weight: 500;
+  color: #1f2937;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.table-row .name .icon { font-size: 16px; }
+.table-row .val { font-weight: 600; color: #1e40af; }
+.table-row .val.green { color: #059669; }
+.table-row .val.red { color: #dc2626; }
+
+.highlight-box {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+}
+.highlight-box h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.highlight-box ul {
+  list-style: none;
+  padding: 0;
+}
+.highlight-box li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 13px;
+  color: #374151;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.highlight-box li:last-child { border-bottom: none; }
+.highlight-box li::before {
+  content: '💰';
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.highlight-box li .amount {
+  color: #dc2626;
+  font-weight: 600;
+}
+.highlight-box li .industry {
+  color: #6b7280;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.note {
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+.note p { margin-bottom: 4px; }
+
+/* 周期列表 */
+.period-list {
+  background: white;
+  border-radius: 12px;
+  padding: 4px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.period-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+}
+.period-item:last-child { border-bottom: none; }
+.period-item .date { font-weight: 500; color: #1f2937; }
+.period-item .count { color: #6b7280; font-size: 12px; }
+.period-item .count strong { color: #1e40af; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>广西行业简报 · 7-9月推送汇总</h1>
+  <div class="subtitle">按行业维度 · 商机与机会点归类</div>
+  <div class="period">统计周期：2026.7.1 - 2026.9.30</div>
+</div>
+
+<div class="summary-cards">
+  <div class="sum-card">
+    <div class="num">9</div>
+    <div class="label">推送期数</div>
+  </div>
+  <div class="sum-card">
+    <div class="num red">100+</div>
+    <div class="label">重点商机</div>
+  </div>
+  <div class="sum-card">
+    <div class="num green">~1800</div>
+    <div class="label">机会点线索</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">行业推送总览</div>
+  <div class="industry-table">
+    <div class="table-header">
+      <div>排名</div>
+      <div class="col-name">行业</div>
+      <div>期数</div>
+      <div>总条数</div>
+      <div>商机数</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">1</div>
+      <div class="name"><span class="icon">🏛️</span>政府行业</div>
+      <div class="val">9</div>
+      <div class="val">~134</div>
+      <div class="val red">15+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">2</div>
+      <div class="name"><span class="icon">🏭</span>工业企业</div>
+      <div class="val">9</div>
+      <div class="val">~126</div>
+      <div class="val red">12+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">3</div>
+      <div class="name"><span class="icon">🚢</span>交通运输</div>
+      <div class="val">9</div>
+      <div class="val">~126</div>
+      <div class="val red">10+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">4</div>
+      <div class="name"><span class="icon">⚗️</span>化工煤炭</div>
+      <div class="val">9</div>
+      <div class="val">~123</div>
+      <div class="val red">8+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">5</div>
+      <div class="name"><span class="icon">📡</span>通信运营商</div>
+      <div class="val">9</div>
+      <div class="val">~122</div>
+      <div class="val red">10+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">6</div>
+      <div class="name"><span class="icon">⚡</span>电力能源</div>
+      <div class="val">9</div>
+      <div class="val">~121</div>
+      <div class="val red">12+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">7</div>
+      <div class="name"><span class="icon">👮</span>公安行业</div>
+      <div class="val">9</div>
+      <div class="val">~119</div>
+      <div class="val red">15+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">8</div>
+      <div class="name"><span class="icon">🏠</span>地产建筑</div>
+      <div class="val">9</div>
+      <div class="val">~118</div>
+      <div class="val red">8+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">9</div>
+      <div class="name"><span class="icon">🔩</span>钢铁有色矿山</div>
+      <div class="val">9</div>
+      <div class="val">~118</div>
+      <div class="val red">9+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">10</div>
+      <div class="name"><span class="icon">🏥</span>文体卫健</div>
+      <div class="val">9</div>
+      <div class="val">~118</div>
+      <div class="val red">12+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">11</div>
+      <div class="name"><span class="icon">🚚</span>商贸物流</div>
+      <div class="val">9</div>
+      <div class="val">~115</div>
+      <div class="val red">7+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">12</div>
+      <div class="name"><span class="icon">⚖️</span>司法行业</div>
+      <div class="val">9</div>
+      <div class="val">~111</div>
+      <div class="val red">10+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">13</div>
+      <div class="name"><span class="icon">📚</span>教育行业</div>
+      <div class="val">9</div>
+      <div class="val">~110</div>
+      <div class="val red">15+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">14</div>
+      <div class="name"><span class="icon">🔌</span>电子电器</div>
+      <div class="val">9</div>
+      <div class="val">~109</div>
+      <div class="val red">6+</div>
+    </div>
+    <div class="table-row">
+      <div class="rank">15</div>
+      <div class="name"><span class="icon">🚦</span>交警交通</div>
+      <div class="val">9</div>
+      <div class="val">~107</div>
+      <div class="val red">8+</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">TOP 10 重点商机（百万级以上）</div>
+  <div class="highlight-box">
+    <ul>
+      <li>
+        <div>
+          全区高速联网收费信创升级 <span class="amount">~1.8亿</span>
+          <div class="industry">交通运输 · 8.31-9.6期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          崇左大新储能电站EPC <span class="amount">10.59亿</span>
+          <div class="industry">电力 · 8.24-8.30期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          北海平安城市二期运维 <span class="amount">4928万</span>
+          <div class="industry">公安 · 8.31-9.6期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          区运会赛事运营 <span class="amount">3892.96万</span>
+          <div class="industry">文体卫健 · 9.14-9.20期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          交投机改 <span class="amount">2189万</span>
+          <div class="industry">交通运输 · 9.14-9.20期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          自治区政务云运维安全 <span class="amount">3219万</span>
+          <div class="industry">政府 · 9.14-9.20期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          南宁热线运营 <span class="amount">2010万</span>
+          <div class="industry">政府 · 9.14-9.20期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          生态环境信息化 <span class="amount">1304.36万</span>
+          <div class="industry">政府 · 8.31-9.6期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          全区法院电子卷宗 <span class="amount">1492.86万</span>
+          <div class="industry">司法 · 8.31-9.6期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          崇左薄改教育信息化 <span class="amount">1380.82万</span>
+          <div class="industry">教育 · 8.31-9.6期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          崇左智慧边境防控三年 <span class="amount">1800万</span>
+          <div class="industry">公安 · 8.24-8.30期</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          生态环境厅水质自动站 <span class="amount">1.7亿</span>
+          <div class="industry">政府 · 8.24-8.30期</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">各期推送明细</div>
+  <div class="period-list">
+    <div class="period-item">
+      <div class="date">第1期 · 7.20-7.26</div>
+      <div class="count">10行业 <strong>~50条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第2期 · 7.26-8.2</div>
+      <div class="count">9行业 <strong>~60条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第3期 · 8.3-8.9</div>
+      <div class="count">10行业 <strong>~150条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第4期 · 8.10-8.16</div>
+      <div class="count">15行业 <strong>~210条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第5期 · 8.17-8.23</div>
+      <div class="count">15行业 <strong>195条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第6期 · 8.24-8.30</div>
+      <div class="count">15行业 <strong>220条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第7期 · 8.31-9.6</div>
+      <div class="count">15行业 <strong>247条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第8期 · 9.14-9.20</div>
+      <div class="count">15行业 <strong>242条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第9期 · 9.21-9.27</div>
+      <div class="count">15行业 <strong>243条</strong></div>
+    </div>
+    <div class="period-item">
+      <div class="date">第10期 · 9.28-10.12 <span style="color:#9ca3af;font-size:11px;">（仅9.28-9.30计入）</span></div>
+      <div class="count">15行业 <strong>~25条</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <p>📊 <strong>数据说明：</strong></p>
+  <p>1. 推送从7月20日起开始，7.1-7.19无简报；8月10日起稳定为15个行业全覆盖。</p>
+  <p>2. 机会点线索数 = 各期新闻条数累计（每条新闻均附海康威视安防/智能化机会点分析）。</p>
+  <p>3. 重点商机指有明确金额的招标/中标公告项目，含百万级以上大单。</p>
+  <p>4. 7月前2期行业不全（10个行业左右），8月起增至15个行业全量推送。</p>
+</div>
+
+</body>
+</html>
