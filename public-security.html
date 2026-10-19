@@ -1,80 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>广西公安行业简报（2026-10-12~18）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西公安行业简报 · 2026.10.12 — 10.18</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;-webkit-text-size-adjust:100%}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f3f5f8;color:#222;line-height:1.65;padding:14px 12px 32px}
-.wrap{max-width:720px;margin:0 auto}
-header.hero{background:linear-gradient(135deg,#20305a,#3a4f8c);color:#fff;border-radius:14px;padding:22px 20px}
-header.hero h1{font-size:21px;line-height:1.35;font-weight:700}
-header.hero .sub{font-size:13px;margin-top:8px;opacity:.92}
-.card{background:#fff;border-radius:14px;padding:18px 16px;margin-top:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.card h2{font-size:15px;color:#20305a;border-left:4px solid #3a4f8c;padding-left:10px;margin-bottom:10px}
-ul.tl{font-size:13px;color:#444;padding-left:18px}
-ul.tl li{margin-top:8px}
-.news{background:#fff;border-radius:12px;padding:15px 14px;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.news h3{font-size:15px;line-height:1.4;margin-bottom:8px}
-.meta{font-size:12px;color:#8a8f98;background:#f6f8fa;border-radius:8px;padding:7px 9px;margin-bottom:8px;line-height:1.5}
-.summary{font-size:13px;color:#444;margin-bottom:8px}
-.opp{background:#eef1fb;border-left:3px solid #3a4f8c;border-radius:6px;padding:8px 10px;font-size:12.5px;color:#20305a;line-height:1.55}
-.opp b{display:block;margin-bottom:2px}
-.link{display:inline-block;margin-top:10px;font-size:12.5px;color:#1769b5;text-decoration:none;word-break:break-all}
-.link:hover{text-decoration:underline}
-.note{background:#fff8ec;border-left:3px solid #e0a73a;border-radius:8px;padding:12px 12px;margin-top:14px;font-size:12.5px;color:#6b5a2c;line-height:1.6}
-.footer{font-size:12px;color:#8a8f98;text-align:center;margin-top:22px;line-height:1.6}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="hero">
-  <h1>广西公安行业简报</h1>
-  <div class="sub">数据周期 2026-10-12 ~ 10-18 ｜ 海康威视·公共安全安防智能化机会视角</div>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🛡️ 广西公安行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 6 条动态（含3条背景采购线索）</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
 </header>
 
-<div class="card">
-  <h2>总结与提炼</h2>
-  <p style="font-size:13px;color:#444">本周（10-12~10-18）广西公安/政法条线的政策信号与项目动态，对安防/智能化业务有以下几个值得关注的抓手：</p>
-  <ul class="tl">
-    <li><b>平安广西建设进入"收获+再部署"双节点。</b>广西 3 市 6 县（区）入选 2021—2025 年度平安中国建设示范市、县；2023—2025 连续三年获评全国平安建设考核优秀等次，群众安全感常年保持 98% 以上（10-14 发布）。明确"完善立体化、信息化社会治安防控体系"，聚焦偷渡、走私、枪爆、海上违法犯罪等七大领域专项整治，公安、教育、应急等多部门联动。<b>机会点</b>：示范市、县名单（贺州、南宁、贵港、北海铁山港、百色右江、桂林秀峰、河池东兰、柳州三江、南宁隆安等）往往是后续雪亮工程/天网/智能感知项目密集投放的先行区，建议重点跟踪这些区域的视频监控、卡口、综治中心建设项目。</li>
-    <li><b>公安数字化改革持续放量，软件平台/数据治理类项目增多。</b>公安厅"环食药侦综合应用系统"654 万元中标（中国移动广西公司），含情报预警、多跨协同、案件管理、移动警务、数据治理等模块（10-14 发布）。<b>机会点</b>：公安侧从"前端硬件"向"平台+数据+AI 研判"转型趋势明显，可围绕情报预警、移动警务、视频图像应用、数据智能分析等方向做软件交付与集成能力储备。</li>
-    <li><b>基层天网/智能感知"运维+升级"需求成为常态现金流。</b>多个县域公安 T 网/雪亮工程进入"改造扩容 + 长周期运维"阶段（详见附录采购意向线索，虽发布早于本周窗口，但指向 10-11 月采购）。<b>机会点</b>：海康在"前端补盲/老旧改造、平台升级扩容、云存储、AI 视频图像分析、3 年运维"等标段具备可投标组合，建议提前锁定县域公安采购人。</li>
-    <li><b>中国安防协会行业面（非广西、作趋势参考）。</b>2026 安博会定于 11 月 3-6 日·北京顺义举办，主题"智能引擎 重塑安全"，重点方向含智慧警务（一体化警务平台、智能执法、应急指挥、具身智能、低空安全）。虽地点在北京，但其提出的智慧警务技术方向与广西公安项目需求同源，可作为产品/方案布局参考。</li>
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是平安广西建设进入"收获+再部署"双节点。</strong>广西3市6县（区）入选2021—2025年度平安中国建设示范市、县，连续三年获评全国平安建设考核优秀等次，群众安全感常年保持98%以上（10-14发布）；明确"完善立体化、信息化社会治安防控体系"，聚焦偷渡、走私、枪爆、海上违法犯罪等七大领域专项整治。示范市、县名单（贺州、南宁、贵港、北海铁山港、百色右江、桂林秀峰、河池东兰、柳州三江、南宁隆安等）往往是后续雪亮工程/天网/智能感知项目密集投放的先行区，建议重点跟踪这些区域的视频监控、卡口、综治中心建设项目。</p>
+  <p><strong>二是公安数字化改革持续放量，软件平台/数据治理类项目增多。</strong>公安厅"环食药侦综合应用系统"654万元中标（中国移动广西公司），含情报预警、多跨协同、案件管理、移动警务、数据治理等模块（10-14发布）。公安侧从"前端硬件"向"平台+数据+AI研判"转型趋势明显，可围绕情报预警、移动警务、视频图像应用、数据智能分析等方向做软件交付与集成能力储备。</p>
+  <p><strong>三是基层天网/智能感知"运维+升级"需求成为常态现金流。</strong>多个县域公安T网/雪亮工程进入"改造扩容+长周期运维"阶段（详见背景参考：北流、武宣、平南等采购意向，指向10-11月采购）。海康在"前端补盲/老旧改造、平台升级扩容、云存储、AI视频图像分析、3年运维"等标段具备可投标组合，建议提前锁定县域公安采购人。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>北流市天网一期运维及网络（预算630万，475路前端/12套卡口，预计11月）</li>
+    <li>武宣县社会治安立体防控网运维升级419万 + 道路交通安全提质170万</li>
+    <li>平南县公安局平容高速视频监控（预算955.26万，含高速电警监控，预计10月）</li>
+    <li>广西公安厅环食药侦综合应用系统中标654万 · 情报预警/移动警务/数据治理</li>
+    <li>平安建设示范市/县（贺州/南宁/贵港/右江等）· 雪亮工程/天网/综治中心放量</li>
   </ul>
 </div>
 
-<div class="news">
-  <h3>广西平安建设工作取得阶段性明显成效——连续三年获评考核优秀等次，群众安全感常年保持在98%以上</h3>
-  <div class="meta">发布时间：2026-10-14｜ 来源：广西日报（广西壮族自治区人民政府门户网站转载）<br>地点：广西壮族自治区</div>
-  <div class="summary">广西 3 个市和 6 个县（区）入选 2021—2025 年度平安中国建设示范市、县；2023—2025 连续三年获评全国平安建设考核优秀等次，群众安全感常年保持 98% 以上。广西聚焦平安建设"十个一"目标任务，统筹强边固防、织牢社会治理网络，围绕偷渡、走私、枪爆、海上违法犯罪等七大领域开展专项整治，公安、教育、应急、消防、交通等多部门联动"完善立体化、信息化社会治安防控体系"。</div>
-  <div class="opp"><b>海康视角机会点</b>示范市/县区域后续治安防控、雪亮工程与综治中心项目大概率放量；立体化信息化防控体系直接对应视频感知、卡口、AI 分析、指挥调度等品类。</div>
-  <a class="link" href="http://www.gxzf.gov.cn/gxyw/t28221865.shtml" target="_blank">原文链接 →</a>
+  <div class="section">
+    <div class="section-title">🛡️ 平安广西与治安防控</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://www.gxzf.gov.cn/gxyw/t28221865.shtml" target="_blank" rel="noopener noreferrer">广西平安建设工作取得阶段性明显成效 连续三年考核优秀</a></h4>
+    <div class="card-body">
+      <p><strong>广西3个市和6个县（区）入选2021—2025年度平安中国建设示范市、县；2023—2025连续三年获评全国平安建设考核优秀等次，群众安全感常年保持98%以上。广西聚焦平安建设"十个一"目标任务，统筹强边固防、织牢社会治理网络，围绕偷渡、走私、枪爆、海上违法犯罪等七大领域专项整治，公安、教育、应急、消防、交通等多部门联动"完善立体化、信息化社会治安防控体系"。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>示范市/县区域后续治安防控、雪亮工程与综治中心项目大概率放量；立体化信息化防控体系直接对应视频感知、卡口、AI分析、指挥调度等品类。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/gxyw/t28221865.shtml" target="_blank" rel="noopener noreferrer">广西日报</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">💻 公安数字化改革项目</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261014_27485273.htm" target="_blank" rel="noopener noreferrer">广西公安数字化改革·环食药侦综合应用系统采购中标，654万元</a></h4>
+    <div class="card-body">
+      <p><strong>项目预算654.07万元，中标金额654万元，中标人中国移动通信集团广西有限公司。标的覆盖环食药侦系统门户、情报预警子系统、多跨协同子系统、案件管理子系统、技术支撑子系统、移动警务应用、数据治理服务及政务网部署、测评，合同签订后120日内交付。这是广西公安数字化改革背景下区厅级"平台+数据"采购的又一落地单。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>公安数字化改革的软件/数据/移动警务滚单趋势，可介入信息研判、案件管理、视频图像应用等子系统及集成运维。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261014_27485273.htm" target="_blank" rel="noopener noreferrer">中国政府采购网（广西分网）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">👮 打击违法犯罪动态</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://gat.gxzf.gov.cn/jwzx/gayw/" target="_blank" rel="noopener noreferrer">罚没走私烟草集中销毁暨"强治理、护民安、促发展"普法宣传活动举行</a></h4>
+    <div class="card-body">
+      <p><strong>自治区公安厅组织罚没走私烟草集中销毁，并同步开展"强治理、护民安、促发展"普法宣传活动，体现对走私等涉边违法犯罪打击力度，呼应全区"强边固防""七大领域专项整治"部署。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>走私/边海防治理对应海岸线/边境线视频感知、无人巡防、智慧海防等建设需求（广西钦州、防城港、崇左等边海沿线为高发建设带）。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gat.gxzf.gov.cn/jwzx/gayw/" target="_blank" rel="noopener noreferrer">广西壮族自治区公安厅官网</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">📋 背景参考：县域天网/雪亮工程采购线索（发布时间早于窗口，指向10-11月采购）</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">预计11月</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=oMZaiGGs4Jlb%2F6xHyFE5iw==&parentId=66485" target="_blank" rel="noopener noreferrer">北流市公安局2026年10月采购意向：北流市城乡治安防控系统（天网一期）后续运维及网络服务</a></h4>
+    <div class="card-body">
+      <p><strong>预算630万元，含475路监控前端、12套卡口、19个派出所二级监控中心及配套平台/存储运维、454条光纤电路，维护期三年（发布2026-10-02，预计2026年11月采购）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>天网运维+网络延续机会，前端/平台/存储长周期运维标段可重点关注。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=oMZaiGGs4Jlb%2F6xHyFE5iw==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">预计11月</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=IhBCXbejU4lTspl9DdlA8A==&parentId=66485" target="_blank" rel="noopener noreferrer">武宣县公安局2026年10-11月采购意向：社会治安立体防控网运维升级服务</a></h4>
+    <div class="card-body">
+      <p><strong>①社会治安立体防控网运维升级服务419万元，搭建"一体化智能视频信息分析平台"，含云存储、视频/图片存储、数据共享、图片索引、公安视频图像应用、集成运维等；②道路交通安全提质服务170万元，含弯道非现场智能抓拍系统布设、交管平台升级（发布2026-10-10，预计2026年11月采购）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>智能感知+AIVID+云存储+交管电警机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=IhBCXbejU4lTspl9DdlA8A==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">预计10月</span>
+    </div>
+    <h4><a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=ir0OrPYkauKCrUqBTmFCtw==&parentId=66485" target="_blank" rel="noopener noreferrer">平南县公安局平容高速视频监控项目建设</a></h4>
+    <div class="card-body">
+      <p><strong>预算955.259万元，含高速路安防系统、交通信号灯及电警、通信、监控运维（发布2026-09-18，预计2026年10月采购）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>高速+电警监控机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=ir0OrPYkauKCrUqBTmFCtw==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：广西公安厅 / 广西财政厅 / 中国政府采购网广西分网 / 平安广西网<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
 </div>
 
-<div class="news">
-  <h3>广西国力招标有限公司关于广西公安数字化改革之环食药侦综合应用系统采购（GXZC2026-G3-002973-GLZB）的中标结果公告</h3>
-  <div class="meta">发布时间：2026-10-14｜ 来源：中国政府采购网（广西分网）<br>地点：广西壮族自治区（采购人：广西壮族自治区公安厅，南宁市青秀区佛子岭路1号）</div>
-  <div class="summary">项目预算 654.07 万元，中标金额 654 万元，中标人中国移动通信集团广西有限公司。标的覆盖环食药侦系统门户、情报预警子系统、多跨协同子系统、案件管理子系统、技术支撑子系统、移动警务应用、数据治理服务及政务网部署、测评，合同签订后 120 日内交付。这是广西公安数字化改革背景下区厅级"平台+数据"采购的又一落地单。</div>
-  <div class="opp"><b>海康视角机会点</b>公安数字化改革的软件/数据/移动警务滚单趋势，可介入信息研判、案件管理、视频图像应用等子系统及集成运维。</div>
-  <a class="link" href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261014_27485273.htm" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>罚没走私烟草集中销毁暨"强治理、护民安、促发展"普法宣传活动举行</h3>
-  <div class="meta">发布时间：2026-10-13｜ 来源：广西壮族自治区公安厅官网（公安要闻/警情通报）<br>地点：广西壮族自治区</div>
-  <div class="summary">自治区公安厅组织罚没走私烟草集中销毁，并同步开展"强治理、护民安、促发展"普法宣传活动，体现对走私等涉边违法犯罪打击力度，呼应全区"强边固防""七大领域专项整治"部署。</div>
-  <div class="opp"><b>海康视角机会点</b>走私/边海防治理对应海岸线/边境线视频感知、无人巡防、智慧海防等建设需求（广西钦州、防城港、崇左等边海沿线为高发建设带）。</div>
-  <a class="link" href="http://gat.gxzf.gov.cn/jwzx/gayw/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="note"><b>附录 · 市场机会线索（发布时间早于本周窗口，仅作参考，未列入正式条目）</b><br>
-①<b>北流市公安局 2026年10月采购意向</b>（发布10-02）：北流市城乡治安防控系统（天网一期）后续运维及网络服务，预算630万元，含475路监控前端、12套卡口、19个派出所二级监控中心及平台/存储运维、454条光纤电路，维护期三年。<br>
-②<b>武宣县公安局 2026年10-11月采购意向</b>（发布10-10）：社会治安立体防控网运维升级419万元（一体化智能视频信息分析平台+云存储+视频图像应用）、道路交通安全提质170万元（弯道非现场智能抓拍+交管平台升级）。<br>
-③<b>平南县公安局平容高速视频监控项目建设</b>（发布09-18）：预算955.259万元，含高速路安防系统、交通信号灯及电警、通信、监控运维。</div>
-
-<div class="footer">内容由公开网络信息整理，供行业内部分享参考<br>海康威视广西区域解决方案工程师 · 简报出品</div>
-</div>
 </body>
 </html>
