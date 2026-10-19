@@ -1,178 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>广西教育行业简报（2026-10-12~18）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西教育行业简报 · 2026.10.12 — 10.18</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:#f2f4f7;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#1f2937;line-height:1.65;padding:14px 12px 40px;}
-  .wrap{max-width:720px;margin:0 auto;}
-  header{background:linear-gradient(135deg,#0369a1,#7c3aed);color:#fff;border-radius:14px;padding:18px 16px;margin-bottom:14px;}
-  header h1{font-size:19px;margin-bottom:4px;}
-  header .sub{font-size:13px;opacity:.92;}
-  .summary{background:#fff;border-left:4px solid #7c3aed;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
-  .summary h2{font-size:15px;color:#7c3aed;margin-bottom:8px;}
-  .summary ul{margin-left:16px;}
-  .summary li{font-size:13.5px;margin-bottom:6px;}
-  .opp{background:#f5f3ff;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;}
-  .opp b{color:#6d28d9;}
-  .card{background:#fff;border-radius:12px;padding:15px 16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
-  .card .t{font-size:16px;font-weight:600;margin-bottom:8px;}
-  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
-  .tag{font-size:11px;background:#eef2ff;color:#4338ca;padding:2px 8px;border-radius:20px;}
-  .tag.loc{background:#ecfdf5;color:#047857;}
-  .tag.src{background:#f3e8ff;color:#7e22ce;}
-  .abs{font-size:13.5px;color:#374151;margin-bottom:10px;text-align:justify;}
-  .link{font-size:13px;display:inline-block;margin-bottom:8px;}
-  .link a{color:#2563eb;text-decoration:none;word-break:break-all;}
-  .link a:active{opacity:.7;}
-  .hik{background:#eff6ff;border-radius:8px;padding:9px 11px;font-size:12.5px;}
-  .hik b{color:#1d4ed8;}
-  footer{text-align:center;font-size:12px;color:#6b7280;margin-top:16px;line-height:1.6;}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>教育行业简报 · 广西</h1>
-    <div class="sub">信息窗口：2026-10-12 ~ 10-18</div>
-  </header>
 
-  <div class="summary">
-    <h2>总结与提炼</h2>
-    <ul>
-      <li><b>政策/风向标 —— 人工智能赋能教育应用场景评审结果公示（10-14）：</b>区教育厅评出 <b>43 个人工智能赋能教育应用场景</b>（高教14+职教18+基教11），涵盖 AI 课堂分析、AI 听评课（循证教研）、<b>AI 体育素养智能评价/智慧锻炼（智慧体育）</b>、智慧教学空间、AI 助教等。这批"省级示范场景"将直接转化为各地智慧教室、录播、AI分析、体测设备等采购需求，是切入教育智能化的最佳抓手。</li>
-      <li><b>校园安防/联网督导刚需明显：</b>本周密集出现教育局/学校视频监控公安联网、平案校园中心机房运维、校园监控与广播系统升级、幼儿园视频监控服务、标准化考场监控后设备等一批采购/询价项目，且集中在南宁、贵港、上林等地，与"联网督导""校园安全"关键词高度吻合，议价点在"公安联网、平安校园、考场标准化"。</li>
-      <li><b>智慧教室/班班通硬件集中招标：</b>桂林市机电职业技术学校智慧教室（含 AI 课堂分析、互动录播主机，54.85 万）签约、桂林中学智慧校园建设成交（65.7 万）、广西金融职业技术学院智慧黑板（196.84 万）采购意向——智慧黑板、录播、AI 分析为高频采购点。</li>
-      <li><b>校园安全制度配套：</b>广西《中小学教育惩戒规则实施细则(试行)》开始施行，校园欺凌/行为规范治理制度化，将带动学校在"防欺凌预警、行为识别、安防联动"上的投入预期。</li>
-    </ul>
-    <div class="opp">
-      <b>商机切入点：</b>① 主打"AI课堂循证教研+录播+互动课堂"打包方案（呼应区厅示范场景）；② 主攻"视频监控公安联网+平安校园机房运维+考场标准化监控"一体化（教育局级项目，预算数十万级）；③ 智慧体育（AI体测/锻炼评价）是新增突破口，政策已点题。
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="t">自治区教育厅关于2026年人工智能赋能教育应用场景评审结果的公示</div>
+<header class="header">
+  <div class="header-inner">
+    <h1>🎓 广西教育行业简报</h1>
     <div class="meta">
-      <span class="tag">2026-10-14 16:20（公示期 10-14 至 10-21）</span>
-      <span class="tag src">广西壮族自治区教育厅网站（八桂教育）</span>
-      <span class="tag loc">广西全区（公示单位南宁竹溪大道69号）</span>
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 10 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
     </div>
-    <div class="abs">根据桂教网信〔2026〕14号通知，自治区教育厅组织专家评审出拟入选的 <b>43 个"人工智能赋能教育应用场景"</b>（高教14、职教18、基教11）并公示。名单含多个直接相关场景：<b>广西科技大学"AI赋能的体育素养智能评价与课内外智慧锻炼应用场景"（智慧体育）</b>、广西中医药大学"高校人机协同集体听评课"、南宁市教科所"AI+循证教研驱动县域高中教研范式转型"、南宁市滨湖路小学"数智双元·悦动五环——AI赋能小学体育与健康精准育人"、钦州一中"小乐秒阅AI教室无感知AI数智融合学习体"、桂林市卓然学校"AI助批作业"、柳州市第三中学"AI循证教研体系"等。这些省级示范场景将牵引全区智慧教室、课堂分析、体测、录播等配套建设。</div>
-    <div class="link"><a href="http://jyt.gxzf.gov.cn/zfxxgk/fdzdgknr/tzgg_58179/t28224314.shtml">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★★</b> 直接圈定一线客户与场景需求，AI课堂分析/智慧体育/录播/循证教研为方案主攻方向。</div>
   </div>
+</header>
 
-  <div class="card">
-    <div class="t">广西中小学教育惩戒规则实施细则（试行）施行</div>
-    <div class="meta">
-      <span class="tag">2026-10-14（广西日报报道；文号桂教规范〔2026〕8号，成文 2026-10-09，自发布之日施行）</span>
-      <span class="tag src">广西教育厅 / 广西云·广西日报（广西新闻网）</span>
-      <span class="tag loc">广西全区（公办/民办中小学、中职）</span>
-    </div>
-    <div class="abs">区教育厅印发《广西壮族自治区中小学教育惩戒规则实施细则(试行)》并施行，明确三层惩戒措施、教师八类禁止行为、学生申诉救济途径等。细则将校园欺凌/打架斗殴等列为应受惩戒情形（第九、十条），并要求涉违法危险物品及时报告公安机关，学校须制定校规校纪并公开。制度层面对校园行为识别、防欺凌预警、安防联动提出更高要求。</div>
-    <div class="link"><a href="http://news.gxnews.com.cn/staticpages/20261014/newgx6acee99e-22003867.shtml">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★</b> 校园安全管理制度化，利好"防欺凌、行为识别、安防+管理平台"方案渗透。</div>
-  </div>
+<main class="main">
 
-  <div class="card">
-    <div class="t">2026年南宁市教育局直属学校视频监控公安联网服务采购（竞争性磋商公告）</div>
-    <div class="meta">
-      <span class="tag">2026-10-15（首次公告，10-16 更正；响应截止 10-27 09:30）</span>
-      <span class="tag src">中国政府采购网（南宁市教育局，代理：广西科联招标中心）</span>
-      <span class="tag loc">广西南宁市（市直属学校）</span>
-    </div>
-    <div class="abs">南宁市教育局就直属学校视频监控公安联网服务进行竞争性磋商采购，预算 <b>64 万元</b>，服务期1年，内容包括教育局视频监控集成运维、监控汇聚线路资源服务、平安校园中心机房硬件/软件系统维护等（项目编号 NNZC2026-C3-990965-GXKL）。</div>
-    <div class="link"><a href="https://www.chinamae.com/purchases/2a15ef638a20655155904a55934eae09.html">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★★</b> 典型的"联网督导/平安校园"教育局级项目，视频监控公安联网+中心机房运维为明确需求，可直接对标同类地市复制。</div>
-  </div>
-
-  <div class="card">
-    <div class="t">南宁市第十三中学西校区校园监控系统、广播系统升级服务邀标公告</div>
-    <div class="meta">
-      <span class="tag">2026-10-13</span>
-      <span class="tag src">南宁市第十三中学（招投标信息，启信宝汇总）</span>
-      <span class="tag loc">广西南宁市青秀区</span>
-    </div>
-    <div class="abs">南宁市第十三中学就西校区校园监控系统、广播系统升级服务发布邀标公告，涉及广播系统和监控系统的升级改造。</div>
-    <div class="link"><a href="https://m.qixin.com/bidding/ad9c0c91-8d27-4ecd-b2aa-fc423963abc3">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★</b> 单校校园监控/广播升级改造项目，聚焦存量设备国产化/换代机会。</div>
-  </div>
-
-  <div class="card">
-    <div class="t">上林县民办幼儿园视频监控系统购买服务项目竞价公告</div>
-    <div class="meta">
-      <span class="tag">2026-10-16</span>
-      <span class="tag src">广西政府采购（竞价平台）</span>
-      <span class="tag loc">广西南宁市上林县</span>
-    </div>
-    <div class="abs">上林县就民办幼儿园视频监控系统购买服务项目发布竞价公告，采用"以购买服务"模式为县域民办幼儿园部署视频监控，属校园隐患排查与安防下沉场景。</div>
-    <div class="link"><a href="https://m.yfbzb.com/zbzt/117/6/">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★</b> 县域幼儿园安防"服务+设备"模式，反映县级校安工程向学前段与民办园延伸。</div>
-  </div>
-
-  <div class="card">
-    <div class="t">贵港市高级中学国家教育考试标准化考场广播系统与监控系统后端设备采购（竞价）</div>
-    <div class="meta">
-      <span class="tag">2026-10-16</span>
-      <span class="tag src">广西政府采购（竞价平台）</span>
-      <span class="tag loc">广西贵港市</span>
-    </div>
-    <div class="abs">贵港市高级中学针对洪灾后国家教育考试标准化考场广播系统和监控系统后端设备发布采购项目竞价公告，涉及考场标准化监控与广播后端设备采购。</div>
-    <div class="link"><a href="https://m.yfbzb.com/zbzt/117/6/">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★</b> 标准化考场监控/广播后设备采购，属"考试监控/教育考试标准化"细分市场。</div>
-  </div>
-
-  <div class="card">
-    <div class="t">桂林市机电职业技术学校"智慧教室建设（重）"合同公告</div>
-    <div class="meta">
-      <span class="tag">2026-10-12（中标结果 09-24，合同公告 10-12）</span>
-      <span class="tag src">中国政府采购网广西分网（桂林公共资源交易）/ 启信宝</span>
-      <span class="tag loc">广西桂林市</span>
-    </div>
-    <div class="abs">桂林市机电职业技术学校智慧教室建设项目（重）签订合同，中标单位桂林慧联科技有限公司，金额 <b>54.8568 万元</b>。采购范围包含智慧黑板、互动录播主机、AI课堂分析系统、4K学生定位摄像机、高清云台摄像机、Ai学生平板、小组研讨互动系统、电磁锁/门禁、安全管控系统等智慧教室全栈设备（项目编号 GLZC2026-G1-990387-WHZX）。</div>
-    <div class="link"><a href="https://m.qixin.com/bidding/70f79546-6c7e-4f98-8e62-894fd4508f2a">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★★</b> 中职智慧教室样板单，内含 AI 课堂分析+录播+门禁电磁锁，正是海康"教学+安防"融合方案的对标场景。</div>
-  </div>
-
-  <div class="card">
-    <div class="t">桂林中学智慧校园建设服务采购成交结果公告</div>
-    <div class="meta">
-      <span class="tag">2026-10-13 17:16</span>
-      <span class="tag src">中国政府采购网广西分网（代理：广西科文招标，GLZC2026-C3-990449-KWZB）</span>
-      <span class="tag loc">广西桂林市</span>
-    </div>
-    <div class="abs">桂林市桂林中学智慧校园建设服务采购成交，成交金额 <b>65.7 万元</b>，为校级智慧校园平台/服务类采购。</div>
-    <div class="link"><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261013_27482490.htm">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★</b> 中学智慧校园服务类项目，可关注平台与安防融合集成入口。</div>
-  </div>
-
-  <div class="card">
-    <div class="t">广西金融职业技术学院2026年10月政府采购意向——西校区多媒体教室智慧黑板建设项目</div>
-    <div class="meta">
-      <span class="tag">2026-10-13</span>
-      <span class="tag src">广西政府采购网（ccgp-guangxi，采购人：广西金融职业技术学院）</span>
-      <span class="tag loc">广西南宁市</span>
-    </div>
-    <div class="abs">广西金融职业技术学院发布2026年10月采购意向，拟采购西校区多媒体教室智慧黑板一批（含智能交互一体机、光能教学板等），预算 <b>196.84 万元</b>，预计 2026 年 12 月采购。</div>
-    <div class="link"><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=22XSulWcP5c3UpsM0YXfag==&parentId=66485">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★★</b> 高职智慧黑板（班班通升级）大额采购意向，年底落地，可提前锁定渠道。</div>
-  </div>
-
-  <div class="card">
-    <div class="t">2026年南宁市中小学花样跳绳比赛开赛（体育，可作智慧体育/活动背书）</div>
-    <div class="meta">
-      <span class="tag">2026-10-17 19:15（广西云·广西日报微博）</span>
-      <span class="tag src">广西云·广西日报</span>
-      <span class="tag loc">广西南宁市（南宁市第十九中学）</span>
-    </div>
-    <div class="abs">2026年南宁市中小学花样跳绳比赛在南宁市第十九中学开赛，58支代表队、1598名运动员参赛，设小学组、中学组共17个项目。属校园体育赛事，可结合"阳光大课间、智慧体育"背景关注体教融合活动对智慧体测设备的带动。</div>
-    <div class="link"><a href="https://m.weibo.cn/detail/5355087019903116">原文链接 →</a></div>
-    <div class="hik"><b>海康视角：★</b> 校园体育赛事密集，可佐证"阳光体育/学生体质健康"场景，为智慧体育（AI跳绳体测、运动健康测评）方案做活动背书。</div>
-  </div>
-
-  <footer>内容由公开网络信息整理，供行业内部分享参考</footer>
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是政策/风向标密集——人工智能赋能教育应用场景公示。</strong>区教育厅评出43个人工智能赋能教育应用场景（高教14+职教18+基教11），涵盖AI课堂分析、AI听评课（循证教研）、AI体育素养智能评价/智慧锻炼（智慧体育）、智慧教学空间、AI助教等。这批"省级示范场景"将直接转化为各地智慧教室、录播、AI分析、体测设备等采购需求，是切入教育智能化的最佳抓手。</p>
+  <p><strong>二是校园安防/联网督导刚需明显。</strong>本周密集出现教育局/学校视频监控公安联网、平安校园中心机房运维、校园监控与广播系统升级、幼儿园视频监控服务、标准化考场监控后端设备等一批采购/询价项目，集中在南宁、贵港、上林等地，议价点在"公安联网、平安校园、考场标准化"。</p>
+  <p><strong>三是智慧教室/班班通硬件集中招标，智慧体育成为新增突破口。</strong>桂林机电职校智慧教室（含AI课堂分析、互动录播，54.85万）签约、桂林中学智慧校园成交（65.7万）、广西金融职院智慧黑板（196.84万）采购意向；广西《中小学教育惩戒规则实施细则(试行)》施行，将带动"防欺凌预警、行为识别、安防联动"投入预期。商机切入点：主打"AI课堂循证教研+录播+互动课堂"打包方案、主攻"视频监控公安联网+平安校园机房运维+考场标准化监控"一体化、智慧体育（AI体测/锻炼评价）为政策已点题的新突破口。</p>
 </div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>南宁市教育局直属学校视频监控公安联网服务 · 预算64万元，中心机房运维</li>
+    <li>广西金融职院西校区智慧黑板 · 预算196.84万元，预计12月采购</li>
+    <li>桂林机电职校智慧教室（54.85万签约）· AI课堂分析+录播+门禁电磁锁</li>
+    <li>桂林中学智慧校园建设成交65.7万 · 校级智慧校园平台集成</li>
+    <li>南宁十三中监控/广播升级、上林民办园监控服务、贵港考场后端设备 · 单校/县域安防下沉</li>
+    <li>教育厅43个AI赋能教育应用场景公示 · 智慧体育/循证教研/录播打包方案</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">📚 AI赋能教育政策与示范场景</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://jyt.gxzf.gov.cn/zfxxgk/fdzdgknr/tzgg_58179/t28224314.shtml" target="_blank" rel="noopener noreferrer">自治区教育厅关于2026年人工智能赋能教育应用场景评审结果的公示</a></h4>
+    <div class="card-body">
+      <p><strong>根据桂教网信〔2026〕14号通知，自治区教育厅组织专家评审出拟入选的43个"人工智能赋能教育应用场景"（高教14、职教18、基教11）并公示（公示期10-14至10-21）。名单含广西科技大学"AI赋能的体育素养智能评价与课内外智慧锻炼应用场景"（智慧体育）、广西中医药大学"高校人机协同集体听评课"、南宁市教科所"AI+循证教研"、南宁滨湖路小学"AI赋能小学体育与健康精准育人"、钦州一中"AI教室无感知AI数智融合学习体"、柳州市第三中学"AI循证教研体系"等，将牵引全区智慧教室、课堂分析、体测、录播等配套建设。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★★ 直接圈定一线客户与场景需求，AI课堂分析/智慧体育/录播/循证教研为方案主攻方向。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/zfxxgk/fdzdgknr/tzgg_58179/t28224314.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区教育厅网站（八桂教育）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://news.gxnews.com.cn/staticpages/20261014/newgx6acee99e-22003867.shtml" target="_blank" rel="noopener noreferrer">广西中小学教育惩戒规则实施细则（试行）施行</a></h4>
+    <div class="card-body">
+      <p><strong>区教育厅印发《广西壮族自治区中小学教育惩戒规则实施细则(试行)》并施行（文号桂教规范〔2026〕8号，成文10-09），明确三层惩戒措施、教师八类禁止行为、学生申诉救济途径等。细则将校园欺凌/打架斗殴等列为应受惩戒情形（第九、十条），并要求涉违法危险物品及时报告公安机关，学校须制定校规校纪并公开。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★ 校园安全管理制度化，利好"防欺凌、行为识别、安防+管理平台"方案渗透。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://news.gxnews.com.cn/staticpages/20261014/newgx6acee99e-22003867.shtml" target="_blank" rel="noopener noreferrer">广西教育厅 / 广西云·广西日报</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🏫 校园安防与联网督导项目</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="https://www.chinamae.com/purchases/2a15ef638a20655155904a55934eae09.html" target="_blank" rel="noopener noreferrer">2026年南宁市教育局直属学校视频监控公安联网服务采购（竞争性磋商公告）</a></h4>
+    <div class="card-body">
+      <p><strong>南宁市教育局就直属学校视频监控公安联网服务进行竞争性磋商采购，预算64万元，服务期1年，内容包括教育局视频监控集成运维、监控汇聚线路资源服务、平安校园中心机房硬件/软件系统维护等（项目编号NNZC2026-C3-990965-GXKL，响应截止10-27）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★★ 典型的"联网督导/平安校园"教育局级项目，视频监控公安联网+中心机房运维为明确需求，可直接对标同类地市复制。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.chinamae.com/purchases/2a15ef638a20655155904a55934eae09.html" target="_blank" rel="noopener noreferrer">中国政府采购网（南宁市教育局）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/ad9c0c91-8d27-4ecd-b2aa-fc423963abc3" target="_blank" rel="noopener noreferrer">南宁市第十三中学西校区校园监控系统、广播系统升级服务邀标公告</a></h4>
+    <div class="card-body">
+      <p><strong>南宁市第十三中学就西校区校园监控系统、广播系统升级服务发布邀标公告，涉及广播系统和监控系统的升级改造。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★ 单校校园监控/广播升级改造项目，聚焦存量设备国产化/换代机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/ad9c0c91-8d27-4ecd-b2aa-fc423963abc3" target="_blank" rel="noopener noreferrer">南宁市第十三中学（启信宝汇总）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="https://m.yfbzb.com/zbzt/117/6/" target="_blank" rel="noopener noreferrer">上林县民办幼儿园视频监控系统购买服务项目竞价公告</a></h4>
+    <div class="card-body">
+      <p><strong>上林县就民办幼儿园视频监控系统购买服务项目发布竞价公告，采用"以购买服务"模式为县域民办幼儿园部署视频监控，属校园隐患排查与安防下沉场景。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★ 县域幼儿园安防"服务+设备"模式，反映县级校安工程向学前段与民办园延伸。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.yfbzb.com/zbzt/117/6/" target="_blank" rel="noopener noreferrer">广西政府采购（竞价平台）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="https://m.yfbzb.com/zbzt/117/6/" target="_blank" rel="noopener noreferrer">贵港市高级中学国家教育考试标准化考场广播系统与监控系统后端设备采购（竞价）</a></h4>
+    <div class="card-body">
+      <p><strong>贵港市高级中学针对洪灾后国家教育考试标准化考场广播系统和监控系统后端设备发布采购项目竞价公告，涉及考场标准化监控与广播后端设备采购。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★ 标准化考场监控/广播后端设备采购，属"考试监控/教育考试标准化"细分市场。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.yfbzb.com/zbzt/117/6/" target="_blank" rel="noopener noreferrer">广西政府采购（竞价平台）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">💻 智慧教室与硬件采购</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="https://m.qixin.com/bidding/70f79546-6c7e-4f98-8e62-894fd4508f2a" target="_blank" rel="noopener noreferrer">桂林市机电职业技术学校"智慧教室建设（重）"合同公告</a></h4>
+    <div class="card-body">
+      <p><strong>桂林市机电职业技术学校智慧教室建设项目（重）签订合同，中标单位桂林慧联科技有限公司，金额54.8568万元。采购范围含智慧黑板、互动录播主机、AI课堂分析系统、4K学生定位摄像机、高清云台摄像机、AI学生平板、小组研讨互动系统、电磁锁/门禁、安全管控系统等智慧教室全栈设备（项目编号GLZC2026-G1-990387-WHZX）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★★ 中职智慧教室样板单，内含AI课堂分析+录播+门禁电磁锁，正是海康"教学+安防"融合方案的对标场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.qixin.com/bidding/70f79546-6c7e-4f98-8e62-894fd4508f2a" target="_blank" rel="noopener noreferrer">中国政府采购网广西分网（启信宝）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261013_27482490.htm" target="_blank" rel="noopener noreferrer">桂林中学智慧校园建设服务采购成交结果公告</a></h4>
+    <div class="card-body">
+      <p><strong>桂林市桂林中学智慧校园建设服务采购成交，成交金额65.7万元，为校级智慧校园平台/服务类采购（项目编号GLZC2026-C3-990449-KWZB）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★ 中学智慧校园服务类项目，可关注平台与安防融合集成入口。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261013_27482490.htm" target="_blank" rel="noopener noreferrer">中国政府采购网广西分网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=22XSulWcP5c3UpsM0YXfag==&parentId=66485" target="_blank" rel="noopener noreferrer">广西金融职业技术学院2026年10月政府采购意向——西校区多媒体教室智慧黑板建设项目</a></h4>
+    <div class="card-body">
+      <p><strong>广西金融职业技术学院发布2026年10月采购意向，拟采购西校区多媒体教室智慧黑板一批（含智能交互一体机、光能教学板等），预算196.84万元，预计2026年12月采购。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★★ 高职智慧黑板（班班通升级）大额采购意向，年底落地，可提前锁定渠道。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=22XSulWcP5c3UpsM0YXfag==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网（广西金融职业技术学院）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🏃 校园体育与智慧体育</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="https://m.weibo.cn/detail/5355087019903116" target="_blank" rel="noopener noreferrer">2026年南宁市中小学花样跳绳比赛开赛（体育，可作智慧体育/活动背书）</a></h4>
+    <div class="card-body">
+      <p><strong>2026年南宁市中小学花样跳绳比赛在南宁市第十九中学开赛，58支代表队、1598名运动员参赛，设小学组、中学组共17个项目。属校园体育赛事，可结合"阳光大课间、智慧体育"背景关注体教融合活动对智慧体测设备的带动。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>★ 校园体育赛事密集，可佐证"阳光体育/学生体质健康"场景，为智慧体育（AI跳绳体测、运动健康测评）方案做活动背书。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.weibo.cn/detail/5355087019903116" target="_blank" rel="noopener noreferrer">广西云·广西日报</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：广西教育厅/八桂教育 / 中国政府采购网广西分网 / 广西云·广西日报<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
