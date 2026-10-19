@@ -1,177 +1,449 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>广西交通运输行业简报（2026-10-12~18）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西交通运输行业简报 · 2026.10.12 — 10.18</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;-webkit-text-size-adjust:100%}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f3f5f8;color:#222;line-height:1.65;padding:14px 12px 32px}
-.wrap{max-width:720px;margin:0 auto}
-header.hero{background:linear-gradient(135deg,#4a401c,#8c7a2a);color:#fff;border-radius:14px;padding:22px 20px}
-header.hero h1{font-size:21px;line-height:1.35;font-weight:700}
-header.hero .sub{font-size:13px;margin-top:8px;opacity:.92}
-.card{background:#fff;border-radius:14px;padding:18px 16px;margin-top:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.card h2{font-size:15px;color:#4a401c;border-left:4px solid #8c7a2a;padding-left:10px;margin-bottom:10px}
-ul.tl{font-size:13px;color:#444;padding-left:18px}
-ul.tl li{margin-top:8px}
-.section-tag{font-size:13px;color:#8c7a2a;font-weight:600;margin:20px 0 4px}
-.news{background:#fff;border-radius:12px;padding:15px 14px;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.news h3{font-size:15px;line-height:1.4;margin-bottom:8px}
-.meta{font-size:12px;color:#8a8f98;background:#f6f8fa;border-radius:8px;padding:7px 9px;margin-bottom:8px;line-height:1.5}
-.summary{font-size:13px;color:#444;margin-bottom:8px}
-.opp{background:#f8f4e9;border-left:3px solid #8c7a2a;border-radius:6px;padding:8px 10px;font-size:12.5px;color:#4a401c;line-height:1.55}
-.opp b{display:block;margin-bottom:2px}
-.link{display:inline-block;margin-top:10px;font-size:12.5px;color:#1769b5;text-decoration:none;word-break:break-all}
-.link:hover{text-decoration:underline}
-.note{background:#fff8ec;border-left:3px solid #e0a73a;border-radius:8px;padding:12px 12px;margin-top:14px;font-size:12.5px;color:#6b5a2c;line-height:1.6}
-.footer{font-size:12px;color:#8a8f98;text-align:center;margin-top:22px;line-height:1.6}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="hero">
-  <h1>广西交通运输行业简报</h1>
-  <div class="sub">数据周期 2026-10-12 ~ 10-18 ｜ 海康威视·智慧交通安防智能化机会视角</div>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🛣️ 广西交通运输行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 15 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
 </header>
 
-<div class="card">
-  <h2>总结与提炼</h2>
-  <p style="font-size:13px;color:#444">本期广西交通运输运行主线仍围绕<b>平陆运河通航"后半篇文章"</b>与<b>西部陆海新通道/北部湾国际门户港建设</b>展开，重大项目施工（高速、铁路、港航）进入"秋日攻坚·旱季抢工"节奏，智能化（无感收费、AI+交通、多式联运数字化）信号明显。</p>
-  <ul class="tl">
-    <li><b>智慧港口 / 江海联运枢纽</b>：北部湾港集团加速泊位改造、新建泊位（北海铁山港、钦州港大榄坪、南宁鹤笋），运河累计过货量破100万吨，滚装汽车出口创新高。港口闸口、堆场、岸桥作业区、皮带机转运线的视频监控/周界防范/车辆识别（车牌/集装箱箱号OCR）/智能卡口需求旺盛；多式联运"一票到底"对物流园区、保税仓安防提出配套需求。</li>
-    <li><b>高速公路收费与隧道监控</b>：广西高速公路"手机+"无卡便捷通行已完成实车测试（智能收费/ETC+视频车牌），新建高速（龙融高速、南珠高铁隧道、乐望红水河特大桥、荔玉扩容、南百改扩建、桂林至钟山、梧州环城）集中开工/贯通，收费站、隧道（桥隧比高）、服务区配套 CCTV、隧道事件检测、雷视一体是直接机会。</li>
-    <li><b>治超（不停车检测）</b>：广西持续依托"公路不停车超限检测点"开展非现场执法治超（平果等地处罚案例），治超/非现场称重检测+抓拍取证、货车超限AI识别具落地基础。</li>
-    <li><b>铁路与冷链/保税监管</b>：南防铁路钦防段马皇站扩能、南宁国际铁路港中越班列破11万标箱，铁路货场、中越班列口岸、综合保税区作业区安防与海关智能监管联动可关注。</li>
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是平陆运河通航"后半篇文章"提速，智慧港口/江海联运枢纽机会集中。</strong>运河累计过货量 10-17 突破 100 万吨，北部湾港集团完成海侧 13 个泊位适应性改造、新增江海联运吞吐能力约 3200 万吨，北海铁山港北暮南 7-10 号泊位竣工投产、钦州大榄坪泊位力争年内投产、南宁鹤笋 5 号泊位已开工；2026 平陆运河产品推介会推出"一票到底"多式联运体系。港口闸口、堆场、岸桥、皮带机线视频监控/周界防范/车牌箱号 OCR/智能卡口需求旺盛。</p>
+  <p><strong>二是高速公路与铁路项目进入"秋日攻坚·旱季抢工"，收费与隧道监控配套机会明确。</strong>龙融高速、南珠高铁隧道、乐望红水河特大桥、荔玉扩容、南百改扩建、桂钟高速、梧州环城等多项目集中贯通/开工，广西高速"手机+"无卡便捷通行已完成实车测试——收费站、高桥隧比隧道、服务区配套 CCTV、隧道事件检测、雷视一体是直接机会。</p>
+  <p><strong>三是非现场治超与铁路/保税监管联动，AI 感知落地基础扎实。</strong>广西持续依托公路不停车超限检测点开展治超非现场执法；南防铁路马皇站扩能改造完成、南宁国际铁路港中越班列破 11 万标箱——治超/超限 AI 识别+称重检测+车牌抓拍、铁路货场及综合保税区安防与海关智能监管联动可重点跟进。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>智慧港口/江海联运枢纽 · 泊位改造+新建，闸口/堆场/岸桥/皮带机视频监控、周界防范、车牌/箱号OCR、智能卡口</li>
+    <li>高速公路"手机+"无卡便捷通行实车测试完成 · 智能收费/ETC+视频车牌</li>
+    <li>新高速集中贯通（龙融/南珠隧道/乐望/荔玉/南百/桂钟/梧州环城）· 收费站/隧道/服务区 CCTV、隧道事件检测、雷视一体</li>
+    <li>治超非现场执法常态化 · 不停车称重检测+抓拍取证、货车超限 AI 识别</li>
+    <li>铁路货场/中越班列口岸/综合保税区 · 安防与海关智能监管联动</li>
   </ul>
 </div>
 
-<div class="section-tag">一、港口 / 平陆运河 / 西部陆海新通道</div>
-<div class="news">
-  <h3>平陆运河累计过货量突破100万吨（"船上有货、货通八方"）</h3>
-  <div class="meta">发布时间：事件 2026-10-17（通稿发布 10-19）｜ 来源：北部湾港集团<br>地点：贵港 / 南宁 / 钦州等平陆运河沿线及江海联运港区</div>
-  <div class="summary">9月16日平陆运河正式通航，截至10月16日累计过货超97万吨，10月17日随"贵港海通6688"轮驶出马道枢纽累计破100万吨。北部湾港集团已完成海侧13个泊位适应性改造、新增江海联运吞吐能力约3200万吨；北海铁山港北暮南7-10号泊位竣工投产，钦州港大榄坪4、5号泊位力争年内投产，南宁鹤笋作业区5号泊位已开工（2027底建成）。南宁港9月单月吞吐66.8万吨创历史新高；北港物流开通平陆运河首条越南外贸集装箱航线，落地广西首笔多式联运"一单制"出口动产质押融资。</div>
-  <div class="opp"><b>海康威视机会点</b>智慧港口/江海联运枢纽：港口闸口、堆场、岸桥作业区、皮带机转运线的视频监控/周界防范/车辆识别（车牌/集装箱箱号OCR）/智能卡口需求旺盛。</div>
-  <a class="link" href="http://m.toutiao.com/group/7698185790794367503/" target="_blank">原文链接 →</a>
+  <div class="section">
+    <div class="section-title">🚢 平陆运河与港口物流</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7698185790794367503/" target="_blank" rel="noopener noreferrer">平陆运河累计过货量突破100万吨</a></h4>
+    <div class="card-body">
+      <p><strong>9月16日平陆运河正式通航，截至10月16日累计过货超97万吨，10月17日随"贵港海通6688"轮驶出马道枢纽累计破100万吨。北部湾港集团已完成海侧13个泊位适应性改造、新增江海联运吞吐能力约3200万吨；北海铁山港北暮南7-10号泊位竣工投产，钦州港大榄坪4、5号泊位力争年内投产，南宁鹤笋作业区5号泊位已开工。南宁港9月单月吞吐66.8万吨创新高；北港物流开通平陆运河首条越南外贸集装箱航线。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>运河过货量攀升带动沿线港区闸口、堆场、岸桥作业区、皮带机转运线视频监控/周界防范/车辆识别（车牌、集装箱箱号OCR）/智能卡口需求旺盛；多式联运"一票到底"对物流园区、保税仓安防提出配套需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7698185790794367503/" target="_blank" rel="noopener noreferrer">北部湾港集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7698187452602647080/" target="_blank" rel="noopener noreferrer">2026平陆运河产品推介会在北部湾航运中心举办</a></h4>
+    <div class="card-body">
+      <p><strong>20余家船公司、30余家物流代理企业80多位代表参会。北部湾港股份发布散货、集装箱全套江海联运产品体系，推出"一票到底"全链条服务、"港到港""港到门"标准化服务及"一企一策"惠企举措，构建江海、江海铁、江海公多式联运体系。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>多式联运产品体系落地对港口闸口、场站安防、货物识别与可视化追踪提出配套，智慧港口与跨境物流监管存在切入空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7698187452602647080/" target="_blank" rel="noopener noreferrer">北部湾港集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">平陆运河荣获两项国际大奖</a></h4>
+    <div class="card-body">
+      <p><strong>世纪工程平陆运河在国际层面获奖，彰显工程技术与可持续建设成果，与通航满月、累计过货量快速攀升同期呼应。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>运河高关注度带动沿线航道、船闸、枢纽智能化升级投入，视频监控、AI船舶识别、智能卡口等配套需求持续释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">广西壮族自治区交通运输厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">2026年世界运河大会开幕式在桂林举办</a></h4>
+    <div class="card-body">
+      <p><strong>世界运河大会在桂林召开，自治区交通运输厅厅长刘可作主旨演讲，分享平陆运河可持续交通建设实践，向国际推广广西运河与内河航运经验。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>运河与国际航运经验推广强化广西内河航运战略地位，沿线航道监测、船舶识别、智能闸口等智能化配套关注度提升。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">广西壮族自治区交通运输厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">南宁国际铁路港中越班列累计发送货物超11万标箱</a></h4>
+    <div class="card-body">
+      <p><strong>南宁国际铁路港中越班列累计发送货物突破11万标箱，中越跨境快速通关班列"天天班"稳定开行，南宁—河内"站到站"最快14小时可达，中越跨境物流快速通道效应持续放大（关联西部陆海新通道与东盟互联）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>中越班列口岸、铁路货场、综合保税区作业区安防与海关智能监管联动可关注，通关卡口与集装箱智能识别有切入空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">广西壮族自治区交通运输厅</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🚄 铁路与通道</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">南防铁路钦防段增建二线工程马皇站扩能改造完成</a></h4>
+    <div class="card-body">
+      <p><strong>南防铁路钦防段增建二线马皇站扩能改造完成，提升北部湾沿海铁路运能，服务港口集疏运与西部陆海新通道铁海联运。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>铁路货场扩能与集疏运体系升级对场站安防、货物识别、运能调度可视化提出配套需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">广西壮族自治区交通运输厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">南珠高铁又一座隧道顺利贯通</a></h4>
+    <div class="card-body">
+      <p><strong>南珠高铁新建隧道贯通，标志该高铁线路关键节点取得突破（全长2466.76米），助推区域高铁成网。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>高铁隧道贯通后，隧道内视频监控、事件检测、防灾报警等机电配套需求进入释放窗口。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">广西交通投资集团</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🛣️ 高速公路与公路建设</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">"钢管巨拱"初现！乐望红水河特大桥完成主弦管管内混凝土灌注</a></h4>
+    <div class="card-body">
+      <p><strong>乐望红水河特大桥超大跨径钢管拱桥关键工序完成，主弦管管内混凝土灌注取得进展，桥隧重难点工程稳步推进。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>特大桥梁建设完成后配套桥视频监控、车辆检测、远程运维等智能化系统有跟进空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">广西交通投资集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">冲刺通车！荔玉路共线段扩容工程路面建设取得新突破</a></h4>
+    <div class="card-body">
+      <p><strong>荔玉路共线段扩容工程路面建设取得突破，冲刺通车目标。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>扩容通车带动收费站、服务区及路段级视频监控与收费系统改造需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">广西交通投资集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">龙融高速成功架设全线首片T梁</a></h4>
+    <div class="card-body">
+      <p><strong>龙融高速公路全线首片T梁架设成功，桥梁建设进入上部结构施工阶段。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>新建高速沿线收费站、隧道、服务区配套 CCTV 与事件检测可提前布局。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank" rel="noopener noreferrer">广西壮族自治区交通运输厅／广西交通投资集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">秋日攻坚｜南百改扩建项目百峰右江特大桥（双主塔）关键进展</a></h4>
+    <div class="card-body">
+      <p><strong>南百改扩建项目百峰右江特大桥双主塔施工推进（此前已实现双主塔下横梁顺利浇筑），右江特大桥为全线控制性工程。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>改扩建控制性特大桥对结构监控、施工期安全监测及建成后监控系统均有配套需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">广西交通投资集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">秋日攻坚｜梧州环城高速南段项目沥青上面层首件工程顺利完成</a></h4>
+    <div class="card-body">
+      <p><strong>梧州环城高速南段沥青上面层首件工程完成，路面施工进入关键阶段。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>环城高速建设推进带动收费监控、智慧服务区等机电配套机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">广西交通投资集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">秋日攻坚｜桂林至钟山高速公路掀起金秋旱季施工热潮</a></h4>
+    <div class="card-body">
+      <p><strong>桂林至钟山高速进入旱季抢工，广西2026年全区高速公路旱季施工动员会部署下提速建设。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>全区高速旱季抢工提速，沿线 C​​CTV、隧道事件检测、收费系统集成需求同步前移。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxjttzjt.com/channels/14.html" target="_blank" rel="noopener noreferrer">广西交通投资集团</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://www.highway.gx.cn/" target="_blank" rel="noopener noreferrer">2026年全区公路抢险保通工作座谈会在邕召开</a></h4>
+    <div class="card-body">
+      <p><strong>召开全区公路抢险保通工作座谈会，部署汛后公路抢险与保通、养护及安全防护工作，强调提升公路应急处置与通行保障能力。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>公路抢险保通与应急处置体系对路况监测、应急调度、视频巡检等智慧公路能力有强化需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.highway.gx.cn/" target="_blank" rel="noopener noreferrer">广西壮族自治区交通运输厅／广西公路发展中心</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://www.highway.gx.cn/" target="_blank" rel="noopener noreferrer">贵港、马山、金秀多个公路工程完工</a></h4>
+    <div class="card-body">
+      <p><strong>贵港、马山、金秀等地多项普通公路工程完工，提升区域出行与城乡路网通行能力（涉农村公路/养护配套）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>普通公路及农村公路完工后交叉口、重点路段监控与养护巡检设备有配套机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.highway.gx.cn/" target="_blank" rel="noopener noreferrer">广西公路发展中心</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🧭 治超与交通执法（背景参考）</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-09</span>
+    </div>
+    <h4><a href="http://www.pingguo.gov.cn/xxgk/fdzdgknr/xzcf/t28217817.shtml" target="_blank" rel="noopener noreferrer">广西以公路不停车超限检测点开展治超非现场执法（平果市处罚案例）</a></h4>
+    <div class="card-body">
+      <p><strong>广西持续依据《广西壮族自治区公路不停车超限检测点管理办法（第二次修订）》开展治超非现场执法，货车经不停车检测点被违法超限自动截获并处罚。提示广西非现场治超+抓拍取证应用持续落地，为"治超/超限 AI 识别+称重检测+车牌抓拍"设备需求提供现实依据。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>标注"事件略早于本周期，作线索参考，不计入正式条目"——可作为治超/超限 AI 识别+称重检测+车牌抓拍设备持续跟进的现实依据。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.pingguo.gov.cn/xxgk/fdzdgknr/xzcf/t28217817.shtml" target="_blank" rel="noopener noreferrer">平果市交通运输局</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
 </div>
 
-<div class="news">
-  <h3>2026平陆运河产品推介会在北部湾航运中心举办</h3>
-  <div class="meta">发布时间：事件 2026-10-16（通稿发布 10-19）｜ 来源：北部湾港集团<br>地点：南宁（北部湾航运中心）</div>
-  <div class="summary">20余家船公司、30余家物流代理企业80多位代表参会。北部湾港股份发布散货、集装箱全套江海联运产品体系，推出"一票到底"全链条服务、"港到港""港到门"标准化服务及"一企一策"惠企举措，构建江海、江海铁、江海公多式联运体系。</div>
-  <div class="opp"><b>海康威视机会点</b>多式联运"一票到底"对物流园区、保税仓安防提出配套需求。</div>
-  <a class="link" href="http://m.toutiao.com/group/7698187452602647080/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>平陆运河荣获两项国际大奖</h3>
-  <div class="meta">发布时间：2026-10-14｜ 来源：广西壮族自治区交通运输厅（政务新媒体信息）<br>地点：平陆运河（广西）</div>
-  <div class="summary">世纪工程平陆运河在国际层面获奖，彰显工程技术与可持续建设成果（与通航满月、累计过货量快速攀升同期呼应）。</div>
-  <div class="opp"><b>海康威视机会点</b>运河沿线重大工程持续建设期，配套视频监控、安防与信息化建设机会。</div>
-  <a class="link" href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>2026年世界运河大会开幕式在桂林举办（刘可在会上作主旨演讲）</h3>
-  <div class="meta">发布时间：2026-10-14｜ 来源：广西壮族自治区交通运输厅<br>地点：桂林</div>
-  <div class="summary">世界运河大会在桂林召开，自治区交通运输厅厅长刘可作主旨演讲，分享平陆运河可持续交通建设实践，向国际推广广西运河与内河航运经验。</div>
-  <div class="opp"><b>海康威视机会点</b>国际大会场景配套的安防、客流管理与智慧会务综合保障。</div>
-  <a class="link" href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>南宁国际铁路港中越班列累计发送货物超11万标箱</h3>
-  <div class="meta">发布时间：2026-10-14｜ 来源：广西壮族自治区交通运输厅<br>地点：南宁</div>
-  <div class="summary">南宁国际铁路港中越班列累计发送货物突破11万标箱，中越跨境快速通关班列"天天班"稳定开行，南宁—河内"站到站"最快14小时可达，中越跨境物流快速通道效应持续放大（关联西部陆海新通道与东盟互联）。</div>
-  <div class="opp"><b>海康威视机会点</b>铁路货场、中越班列口岸、综合保税区作业区安防与海关智能监管联动可关注；集装箱箱号OCR/智能卡口需求。</div>
-  <a class="link" href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="section-tag">二、铁路</div>
-<div class="news">
-  <h3>南防铁路钦防段增建二线工程马皇站扩能改造完成</h3>
-  <div class="meta">发布时间：2026-10-15｜ 来源：广西壮族自治区交通运输厅<br>地点：钦州（马皇站）／南防铁路</div>
-  <div class="summary">南防铁路钦防段增建二线马皇站扩能改造完成，提升北部湾沿海铁路运能，服务港口集疏运与西部陆海新通道铁海联运。</div>
-  <div class="opp"><b>海康威视机会点</b>铁路站场扩能带来货场视频监控、周界防范、智能卡口等配套建设机会。</div>
-  <a class="link" href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>南珠高铁又一座隧道顺利贯通（全长2466.76米）</h3>
-  <div class="meta">发布时间：2026-10-17｜ 来源：广西交通投资集团<br>地点：南珠高铁（广西段）</div>
-  <div class="summary">南珠高铁新建隧道贯通，标志该高铁线路关键节点取得突破，助推区域高铁成网。</div>
-  <div class="opp"><b>海康威视机会点</b>高铁新建线路配套隧道监控、事件检测、沿线视频感知与通信安防。</div>
-  <a class="link" href="http://www.gxjttzjt.com/channels/14.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="section-tag">三、高速公路 / 公路建设</div>
-<div class="news">
-  <h3>"钢管巨拱"初现！乐望红水河特大桥完成主弦管管内混凝土灌注</h3>
-  <div class="meta">发布时间：2026-10-16｜ 来源：广西交通投资集团<br>地点：乐业—望谟（乐望高速，红水河特大桥）</div>
-  <div class="summary">乐望红水河特大桥超大跨径钢管拱桥关键工序完成，主弦管管内混凝土灌注取得进展，桥隧重难点工程稳步推进。</div>
-  <div class="opp"><b>海康威视机会点</b>桥隧比高路段配套 CCTV、隧道事件检测、雷视一体等监控机会。</div>
-  <a class="link" href="http://www.gxjttzjt.com/channels/14.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>冲刺通车！荔玉路共线段扩容工程路面建设取得新突破</h3>
-  <div class="meta">发布时间：2026-10-16｜ 来源：广西交通投资集团<br>地点：荔浦—玉林高速（共线段扩容）</div>
-  <div class="summary">荔玉路共线段扩容工程路面建设取得突破，冲刺通车目标。</div>
-  <div class="opp"><b>海康威视机会点</b>扩容路段完工后收费、监控、电子警察等配套设备需求。</div>
-  <a class="link" href="http://www.gxjttzjt.com/channels/14.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>龙融高速成功架设全线首片T梁</h3>
-  <div class="meta">发布时间：2026-10-13｜ 来源：广西壮族自治区交通运输厅；广西交通投资集团<br>地点：龙胜—融水（龙融高速）</div>
-  <div class="summary">龙融高速公路全线首片T梁架设成功，桥梁建设进入上部结构施工阶段。</div>
-  <div class="opp"><b>海康威视机会点</b>在建高速配套智能收费、视频车牌识别、隧道监控等智慧交通产品。</div>
-  <a class="link" href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>秋日攻坚｜南百改扩建项目百峰右江特大桥（双主塔）关键进展</h3>
-  <div class="meta">发布时间：2026-10-13｜ 来源：广西交通投资集团<br>地点：南宁—百色改扩建（百峰右江特大桥）</div>
-  <div class="summary">南百改扩建项目百峰右江特大桥双主塔施工推进（此前已实现双主塔下横梁顺利浇筑），右江特大桥为全线控制性工程。</div>
-  <div class="opp"><b>海康威视机会点</b>改扩建工程完工后的收费、监控、电警、服务区安防配套机会。</div>
-  <a class="link" href="http://www.gxjttzjt.com/channels/14.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>秋日攻坚｜梧州环城高速南段项目沥青上面层首件工程顺利完成</h3>
-  <div class="meta">发布时间：2026-10-12｜ 来源：广西交通投资集团<br>地点：梧州（环城高速南段）</div>
-  <div class="summary">梧州环城高速南段沥青上面层首件工程完成，路面施工进入关键阶段。</div>
-  <div class="opp"><b>海康威视机会点</b>环城高速配套收费、监控、电子警察与智能交通设备机会。</div>
-  <a class="link" href="http://www.gxjttzjt.com/channels/14.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>秋日攻坚｜桂林至钟山高速公路掀起金秋旱季施工热潮</h3>
-  <div class="meta">发布时间：2026-10-12｜ 来源：广西交通投资集团<br>地点：桂林—钟山（桂钟高速）</div>
-  <div class="summary">桂林至钟山高速进入旱季抢工，广西2026年全区高速公路旱季施工动员会部署下提速建设。</div>
-  <div class="opp"><b>海康威视机会点</b>新建高速配套监控、收费、隧道事件检测与智慧交通建设机会。</div>
-  <a class="link" href="http://www.gxjttzjt.com/channels/14.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>2026年全区公路抢险保通工作座谈会在邕召开</h3>
-  <div class="meta">发布时间：2026-10-13（公路发展中心发布于10-12）｜ 来源：广西壮族自治区交通运输厅／广西公路发展中心<br>地点：南宁</div>
-  <div class="summary">召开全区公路抢险保通工作座谈会，部署汛后公路抢险与保通、养护及安全防护工作，强调提升公路应急处置与通行保障能力。</div>
-  <div class="opp"><b>海康威视机会点</b>公路应急处置与保通能力建设对应应急指挥、移动视频、路网监测设备需求。</div>
-  <a class="link" href="http://www.highway.gx.cn/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>贵港、马山、金秀多个公路工程完工</h3>
-  <div class="meta">发布时间：事件 2026-10 距此前（栏目更新 2026-10-12）｜ 来源：广西公路发展中心<br>地点：贵港、马山（南宁）、金秀（来宾）</div>
-  <div class="summary">贵港、马山、金秀等地多项普通公路工程完工，提升区域出行与城乡路网通行能力（涉农村公路/养护配套）。</div>
-  <div class="opp"><b>海康威视机会点</b>普通公路/农村公路修建完工带来沿线监控、治超点位与养护安防配套机会。</div>
-  <a class="link" href="http://www.highway.gx.cn/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="note"><b>市场机会线索（时间略早于本周期，供参考，未列入正式条目）</b>：北部湾港滚装汽车出口单航次2727台创新高（10-10）；广西高速公路"手机+"无卡便捷通行完成实车测试（10-09，智能化收费机会点）；2026年西部陆海新通道铁海联运班列集装箱运输量突破100万标箱（10-08）；2026年国庆假期广西交通运输行业运行平稳有序（10-08）。另：平果市治超非现场执法处罚案例（行政处罚文书10-09发布，事件略早于本周期，仅作治超产品机会线索提示）。</div>
-
-<div class="footer">内容由公开网络信息整理，供行业内部分享参考<br>海康威视广西区域解决方案工程师 · 简报出品</div>
-</div>
 </body>
 </html>
