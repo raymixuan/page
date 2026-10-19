@@ -1,116 +1,314 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>广西电力行业简报（2026-10-12~18）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西电力行业简报 · 2026.10.12 — 10.18</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:#f2f4f7;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#1f2937;line-height:1.65;padding:14px 12px 40px;}
-  .wrap{max-width:720px;margin:0 auto;}
-  header{background:linear-gradient(135deg,#d97706,#1d4ed8);color:#fff;border-radius:14px;padding:18px 16px;margin-bottom:14px;}
-  header h1{font-size:19px;margin-bottom:4px;}
-  header .sub{font-size:13px;opacity:.92;}
-  .summary{background:#fff;border-left:4px solid #1d4ed8;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
-  .summary h2{font-size:15px;color:#1d4ed8;margin-bottom:8px;}
-  .summary ul{margin-left:16px;}
-  .summary li{font-size:13.5px;margin-bottom:6px;}
-  .opp{background:#eff6ff;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;}
-  .opp b{color:#1d4ed8;}
-  .card{background:#fff;border-radius:12px;padding:15px 16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
-  .card .t{font-size:16px;font-weight:600;margin-bottom:8px;}
-  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
-  .tag{font-size:11px;background:#eef2ff;color:#4338ca;padding:2px 8px;border-radius:20px;}
-  .tag.loc{background:#ecfdf5;color:#047857;}
-  .tag.src{background:#f3e8ff;color:#7e22ce;}
-  .abs{font-size:13.5px;color:#374151;margin-bottom:10px;text-align:justify;}
-  .link{font-size:13px;display:inline-block;}
-  .link a{color:#2563eb;text-decoration:none;word-break:break-all;}
-  .link a:active{opacity:.7;}
-  footer{text-align:center;font-size:12px;color:#6b7280;margin-top:16px;line-height:1.6;}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>电力行业简报 · 广西</h1>
-    <div class="sub">信息窗口：2026-10-12 ~ 10-18</div>
-  </header>
 
-  <div class="summary">
-    <h2>总结与提炼</h2>
-    <ul>
-      <li><b>抽水蓄能"超级充电宝"集群加速成型</b>——全区已有9座抽蓄电站落子、总投资超700亿元、装机1140万千瓦（另有1260万千瓦纳入建设时序），钦州、玉林、贵港、桂林灌阳、贺州多线开工；建设普遍强调"机械化+数智化"融合，地下厂房、上下水库、输水系统多工作面并行施工。</li>
-      <li><b>储能侧</b>——梧州蒙山300MW/600MWh新型储能电站"签约即开工"，总投资约9亿元，配套220kV升压站。</li>
-      <li><b>特高压/数字电网</b>——藏粤±800kV特高压直流工程广西段线路（约678公里，途经百色、南宁、梧州等7市）首基塔在南宁开始浇筑，无人机航测、索道智能运料、BIM、铁塔组立机器代人、导线爬行机器人、工程数字孪生平台等大量数字化智能化装备投入施工。</li>
-      <li><b>虚拟电厂</b>——广西电力交易中心公示6家虚拟电厂运营商注册，虚拟电厂市场化进程加速。</li>
-    </ul>
-    <div class="opp">
-      <b>对海康威视行业经理的机会提示（安防/智能化）：</b>
-      · <b>抽水蓄能电站：</b>地下厂房、上下水库、斜/竖井等作业面的视频监控、无网络化/防爆防潮前端、边坡地灾监测、施工安全AI分析需求大；建成后厂房、坝区、闸门等关键部位需入侵报警、周界、智能巡检。
-      · <b>集中式/独立储能电站</b>（蒙山、崇左等）：电池舱内温度/烟雾热成像与视频联动预警、消防联动、厂区周界与出入口管控、运维巡检机器人是标配场景。
-      · <b>特高压/输变电工程</b>（藏粤直流广西段、电网基建/光缆完善等）：线路/杆塔智能巡检、无人机+AI缺陷识别、施工现场行为规范分析、数字孪生与视频一张图对接机会明显。
-      · <b>虚拟电厂与新型负荷管理：</b>聚合平台、负荷终端、充换电站网络、用户侧储能站点的感知与联网监控将带动新一代边缘视频与物联设备需求。
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="t">签约即开工 蒙山新型储能电站项目跑出加速度</div>
+<header class="header">
+  <div class="header-inner">
+    <h1>⚡ 广西电力行业简报</h1>
     <div class="meta">
-      <span class="tag">2026-10-13 11:57</span>
-      <span class="tag src">梧州市投资促进局（via 搜狐）</span>
-      <span class="tag loc">广西梧州市蒙山县西河镇大塘村（西河镇卫生院西南面）</span>
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 5 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
     </div>
-    <div class="abs">蒙山县300MW/600MWh新型储能电站于9月29日正式进入施工建设阶段，9月17日在中国—东盟博览会绿色低碳展签订协议，从签约、审批到土地交付、开工全程不到1个月，实现"签约即开工"。项目总投资约9亿元、占地约42.2亩，采用磷酸铁锂电池技术，配套建设综合楼、配电楼及220千伏升压站，电能升压后接入220千伏鳌峰变电站，预计2027年7月建成并网，建成后年均调峰电量约18万MWh，是梧州市"十五五"首个落地的百兆瓦级新型储能标杆项目，投资方为安徽阳光新能源开发股份有限公司。</div>
-    <div class="link"><a href="http://news.sohu.com/a/1087115457_121106875">原文链接 →</a></div>
   </div>
+</header>
 
-  <div class="card">
-    <div class="t">藏粤直流工程线路建设全面加速推进！</div>
-    <div class="meta">
-      <span class="tag">2026-10-17 12:03</span>
-      <span class="tag src">南网50Hz</span>
-      <span class="tag loc">广西（线路广西段总长约678公里，途经百色、南宁、梧州等7市；首基塔在南宁开浇）</span>
-    </div>
-    <div class="abs">10月16日，世界输电能效与技术领先的藏东南至粤港澳大湾区±800千伏特高压柔性直流输电工程（"藏粤直流工程"）广西段线路首基塔在南宁开始浇筑，线路建设全面加速。工程核准动态投资约530亿元、线路全长2600余公里，横贯西藏、云南、广西、广东四省区；采用我国自主研发的四端柔性直流组网技术（双电源端、双负荷端智能灵活调度），为全球柔性直流输电最高水平。广西段沿线喀斯特地貌、地下河系与溶洞分布广泛，项目团队将无人机航测选线、无人机山地物料转运、索道智能运料系统、BIM数字建模、钢筋笼材料站预制、铁塔组立机器代人、导线爬行机器人、牵张设备智能张力控制、工程数字孪生平台等数字化智能化装备融入施工。预计今年底部分标段转入组塔施工，全线计划2029年建成投运，投运后每年可向粤港澳大湾区输送超430亿千瓦时绿色电力。</div>
-    <div class="link"><a href="http://m.toutiao.com/group/7697482571244110374/">原文链接 →</a></div>
-  </div>
+<main class="main">
 
-  <div class="card">
-    <div class="t">【奋进"十五五" 实干谱新篇】广西：提速重大抽水蓄能工程建设 夯实新型电力系统底座</div>
-    <div class="meta">
-      <span class="tag">2026-10-12 10:30</span>
-      <span class="tag src">广西发改委网站（《广西新闻》）</span>
-      <span class="tag loc">广西钦州市灵山县（钦州抽蓄）、玉林市（玉林抽蓄）</span>
-    </div>
-    <div class="abs">广西以"机械化+数智化"融合赋能推动抽蓄电站建设提质增速。钦州抽蓄电站总投资78亿元、设计年发电量14.5亿千瓦时，安装4台单机30万千瓦单级混流可逆式水泵水轮机组，目前地下厂房开挖进度过半，正进行岩锚梁浇筑关键工序。玉林抽蓄电站总投资83.6亿元、装机120万千瓦，长52米重220吨的硬岩隧道掘进机正冲刺总长5745米自流排水洞年内贯通，预计2029年建成。目前广西同步推进8个抽蓄电站建设，已有1260万千瓦纳入建设时序，可带动产业链上下游投资约1600亿元。</div>
-    <div class="link"><a href="http://fgw.gxzf.gov.cn/xwzx/mtgz/t28216243.shtml">原文链接 →</a></div>
-  </div>
-
-  <div class="card">
-    <div class="t">【奋进"十五五" 实干谱新篇】水往高处存 电从山中来 广西"超级充电宝"集群加速成型</div>
-    <div class="meta">
-      <span class="tag">2026-10-18 18:46</span>
-      <span class="tag src">广西网络广播电视台（广西新闻）</span>
-      <span class="tag loc">广西贵港市、桂林市灌阳县、贺州市</span>
-    </div>
-    <div class="abs">广西抽水蓄能"超级充电宝"集群加速成型。贵港抽蓄电站全面开工，利用420米天然落差，是我国西部地区首个建在城市中心的抽蓄电站，3.4亿元环保专项投资推动绿色施工。桂林灌阳抽蓄工程水库截流顺利完成，进入主体大规模施工阶段，地下厂房已基本成型，冲刺年内转入机电安装。贺州抽蓄电站正式开工，总投资约83亿元、总装机140万千瓦，为全区首个由地方国企投资建设的抽蓄电站，采用单机35万千瓦单级混流可逆式机组。目前全区已有9座抽蓄电站相继落子、总投资超700亿元、总装机规模1140万千瓦，形成全域覆盖、梯次推进的"雁阵"格局，预计2029—2035年陆续投产。</div>
-    <div class="link"><a href="https://news.gxtv.cn/article/detail_4274ef0b2ff019cdb86798f4a465d3de.html">原文链接 →</a></div>
-  </div>
-
-  <div class="card">
-    <div class="t">2026年10月广西电力市场6家虚拟电厂运营商注册公示</div>
-    <div class="meta">
-      <span class="tag">2026-10-15 11:11（广西电力交易中心10月9日公示）</span>
-      <span class="tag src">北极星电力网（转载自广西电力交易中心）</span>
-      <span class="tag loc">广西（公示名单含广西中铁南横高速公路、广西电网能源科技、中燃宏明电力销售等6家，公示期2026-10-09至2026-11-08）</span>
-    </div>
-    <div class="abs">依据《电力市场注册基本规则》《广西电力市场注册管理实施细则》《广西虚拟电厂建设运营管理办法（试行）》等，广西电力交易中心对虚拟电厂运营商提交的市场注册申请材料进行完整性核验，将广西中铁南横高速公路有限公司等6家通过核验的虚拟电厂运营商信息予以公示。公示期满无异议后，运营商可与聚合资源签订零售/电能量服务合同，完成交易单元划分、系统接入、能力测试或调控测试后纳入广西虚拟电厂运营商目录。虚拟电厂聚合平台需具备"可观、可测、可调、可控"四可能力，并接入新型电力负荷管理系统与调度自动化系统。</div>
-    <div class="link"><a href="https://m.bjx.com.cn/mnews/20261015/1516387.shtml">原文链接 →</a><br>
-    <a href="https://xygx.fgw.gxzf.gov.cn/detail.do?contentId=e9ce9c71876a4d029400327da00343e1">公示原文 →</a></div>
-  </div>
-
-  <footer>内容由公开网络信息整理，供行业内部分享参考</footer>
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是抽水蓄能"超级充电宝"集群加速成型。</strong>全区已有9座抽蓄电站落子、总投资超700亿元、装机1140万千瓦（另有1260万千瓦纳入建设时序），钦州、玉林、贵港、桂林灌阳、贺州多线开工，建设普遍强调"机械化+数智化"融合。对海康而言，地下厂房、上下水库、斜/竖井等作业面的视频监控、无网化/防爆防潮前端、边坡地灾监测、施工安全AI分析需求大，建成后厂房、坝区、闸门等关键部位需入侵报警、周界、智能巡检。</p>
+  <p><strong>二是储能与特高压多点开工，数智装备密集投入。</strong>梧州蒙山300MW/600MWh新型储能电站"签约即开工"，总投资约9亿元；藏粤±800kV特高压直流工程广西段线路首基塔在南宁开浇，途经百色、南宁、梧州等7市，无人机航测选线、索道智能运料、BIM、铁塔组立机器代人、导线爬行机器人、工程数字孪生平台等大量数智化装备投入施工。对海康而言，储能电站电池舱内温度/烟雾热成像与视频联动预警、消防联动、厂区周界与出入口管控是标配场景，特高压线路/杆塔智能巡检、无人机+AI缺陷识别、施工现场行为规范分析对接机会明显。</p>
+  <p><strong>三是虚拟电厂市场化加速。</strong>广西电力交易中心公示6家虚拟电厂运营商注册，聚合平台需具备"可观、可测、可调、可控"四可能力并接入新型电力负荷管理系统与调度自动化系统。对海康而言，虚拟电厂与新型负荷管理中聚合平台、负荷终端、充换电站网络、用户侧储能站点的感知与联网监控，将带动新一代边缘视频与物联设备需求。</p>
 </div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>梧州蒙山300MW/600MWh储能电站 · 总投资约9亿元，电池舱热成像/烟雾预警与厂区周界</li>
+    <li>藏粤±800kV特高压广西段（678公里，经百色/南宁/梧州等7市）· 线路杆塔智能巡检与施工AI</li>
+    <li>钦州抽蓄（总投资78亿）、玉林抽蓄（83.6亿）· 地下厂房视频监控与边坡地灾监测</li>
+    <li>贵港/灌阳/贺州抽蓄在建（其中贺州83亿元/140万千瓦）· 坝区入侵报警与智能巡检</li>
+    <li>广西6家虚拟电厂运营商注册公示 · 负荷终端/充换电站/用户侧储能感知联网监控</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">🔋 储能与抽水蓄能</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://news.sohu.com/a/1087115457_121106875" target="_blank" rel="noopener noreferrer">签约即开工 蒙山新型储能电站项目跑出加速度</a></h4>
+    <div class="card-body">
+      <p><strong>蒙山县300MW/600MWh新型储能电站于9月29日进入施工建设阶段，是梧州市"十五五"首个落地的百兆瓦级新型储能标杆项目。项目总投资约9亿元、占地约42.2亩，采用磷酸铁锂电池技术，配套建设综合楼、配电楼及220千伏升压站，升压后接入220千伏鳌峰变电站，预计2027年7月建成并网，建成后年均调峰电量约18万MWh，投资方为安徽阳光新能源。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>集中式/独立储能电站电池舱内温度/烟雾热成像与视频联动预警、消防联动、厂区周界与出入口管控、运维巡检机器人是标配场景，可重点切入。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://news.sohu.com/a/1087115457_121106875" target="_blank" rel="noopener noreferrer">梧州市投资促进局（via 搜狐）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://fgw.gxzf.gov.cn/xwzx/mtgz/t28216243.shtml" target="_blank" rel="noopener noreferrer">【奋进"十五五" 实干谱新篇】广西：提速重大抽水蓄能工程建设 夯实新型电力系统底座</a></h4>
+    <div class="card-body">
+      <p><strong>广西以"机械化+数智化"融合赋能推动抽蓄电站建设提质增速。钦州抽蓄电站总投资78亿元、设计年发电量14.5亿千瓦时，安装4台单机30万千瓦机组，目前地下厂房开挖进度过半；玉林抽蓄电站总投资83.6亿元、装机120万千瓦，硬岩隧道掘进机正冲刺自流排水洞年内贯通，预计2029年建成。目前广西同步推进8个抽蓄电站建设，已有1260万千瓦纳入建设时序，可带动产业链上下游投资约1600亿元。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>抽水蓄能电站地下厂房、上下水库、斜/竖井等作业面的视频监控、防爆防潮前端、边坡地灾监测、施工安全AI分析需求大，建成后关键部位需入侵报警与智能巡检。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://fgw.gxzf.gov.cn/xwzx/mtgz/t28216243.shtml" target="_blank" rel="noopener noreferrer">广西发改委网站（《广西新闻》）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-18</span>
+    </div>
+    <h4><a href="https://news.gxtv.cn/article/detail_4274ef0b2ff019cdb86798f4a465d3de.html" target="_blank" rel="noopener noreferrer">【奋进"十五五" 实干谱新篇】水往高处存 电从山中来 广西"超级充电宝"集群加速成型</a></h4>
+    <div class="card-body">
+      <p><strong>广西抽水蓄能"超级充电宝"集群加速成型。贵港抽蓄电站全面开工，利用420米天然落差，是我国西部地区首个建在城市中心的抽蓄电站；桂林灌阳抽蓄水库截流完成进入主体大规模施工阶段；贺州抽蓄电站正式开工，总投资约83亿元、装机140万千瓦，为全区首个由地方国企投资建设的抽蓄电站。目前全区已有9座抽蓄电站落子、总投资超700亿元、总装机1140万千瓦，预计2029—2035年陆续投产。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>多座抽蓄电站集群建设背后，坝区周界、厂房入侵报警、智能巡检、施工安全AI分析等安防智能化配套需求集中释放。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://news.gxtv.cn/article/detail_4274ef0b2ff019cdb86798f4a465d3de.html" target="_blank" rel="noopener noreferrer">广西网络广播电视台（广西新闻）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">⚡ 特高压与电网基建</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7697482571244110374/" target="_blank" rel="noopener noreferrer">藏粤直流工程线路建设全面加速推进！</a></h4>
+    <div class="card-body">
+      <p><strong>10月16日，藏东南至粤港澳大湾区±800千伏特高压柔性直流输电工程（"藏粤直流工程"）广西段线路首基塔在南宁开始浇筑，线路建设全面加速。工程核准动态投资约530亿元、线路全长2600余公里，采用我国自主研发的四端柔性直流组网技术。广西段沿线喀斯特地貌、地下河系与溶洞分布广泛，项目团队将无人机航测选线、索道智能运料、BIM数字建模、铁塔组立机器代人、导线爬行机器人、工程数字孪生平台等数智化装备融入施工，全线计划2029年建成投运。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>特高压/输变电工程沿线线路/杆塔智能巡检、无人机+AI缺陷识别、施工现场行为规范分析、数字孪生与视频一张图对接机会明显。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7697482571244110374/" target="_blank" rel="noopener noreferrer">南网50Hz</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🧠 虚拟电厂与电力市场</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="https://m.bjx.com.cn/mnews/20261015/1516387.shtml" target="_blank" rel="noopener noreferrer">2026年10月广西电力市场6家虚拟电厂运营商注册公示</a></h4>
+    <div class="card-body">
+      <p><strong>依据《电力市场注册基本规则》《广西虚拟电厂建设运营管理办法（试行）》等，广西电力交易中心对虚拟电厂运营商注册申请进行核验，将广西中铁南横高速公路有限公司等6家通过核验的运营商信息予以公示（公示期2026-10-09至11-08）。虚拟电厂聚合平台需具备"可观、可测、可调、可控"四可能力，并接入新型电力负荷管理系统与调度自动化系统。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>虚拟电厂与新型负荷管理中聚合平台、负荷终端、充换电站网络、用户侧储能站点的感知与联网监控，将带动新一代边缘视频与物联设备需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://m.bjx.com.cn/mnews/20261015/1516387.shtml" target="_blank" rel="noopener noreferrer">北极星电力网（转载自广西电力交易中心）</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：广西发改委/能源局 / 北极星电力网 / 南网50Hz / 广西网络广播电视台<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
