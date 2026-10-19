@@ -1,102 +1,339 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>建筑地产行业简报 2026-10-12~18</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西建筑地产行业简报 · 2026.10.12 — 10.18</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f6fa;color:#2d2f33;line-height:1.65;-webkit-text-size-adjust:100%}
-.header{background:linear-gradient(135deg,#1a3a5c,#2c5f8a);color:#fff;padding:24px 18px 20px}
-.header .tag{font-size:12px;opacity:.85;letter-spacing:1px;margin-bottom:8px}
-.header h1{font-size:22px;line-height:1.4;font-weight:700}
-.header .range{font-size:13px;opacity:.9;margin-top:6px}
-.summary{background:#fff;margin:14px 12px;border-radius:12px;padding:16px;border-left:4px solid #2c5f8a;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.summary h2{font-size:15px;color:#1a3a5c;margin-bottom:8px}
-.summary p{font-size:13px;color:#444}
-.list{padding:0 12px 20px}
-.card{background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.card .title{font-size:15px;font-weight:600;color:#1a3a5c;line-height:1.45;margin-bottom:8px}
-.meta{font-size:12px;color:#8a8f99;margin-bottom:8px;line-height:1.7}
-.meta span{display:block}
-.sum{font-size:13px;color:#444;margin-bottom:8px}
-.link{display:inline-block;font-size:12px;color:#2c5f8a;text-decoration:none;word-break:break-all}
-.link:active,.link:hover{opacity:.75}
-.opp{margin-top:10px;background:#eef6ee;border-radius:8px;padding:10px 12px;font-size:12.5px;color:#2f5d3a}
-.opp b{color:#1f7a33}
-.footer{text-align:center;font-size:12px;color:#9aa0aa;padding:14px 16px 30px}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="tag">广西 · 行业简报 · 海康威视技术视角</div>
-  <h1>建筑地产行业简报</h1>
-  <div class="range">2026-10-12 ~ 10-18</div>
-</div>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏗️ 广西建筑地产行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 7 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
 
 <div class="summary">
-  <h2>总结与提炼</h2>
-  <p>本周期广西建筑地产行业延续"金九银十"促消费主基调，全区多地在"惠享八桂·宜居广西"住房消费季框架下密集开展购房补贴与好房子促消费活动，购房补贴（单户最高3万元）与房企降价让利叠加，带动刚改需求释放；同时自治区层面加快房屋质量与消防安全重点实验室等绿色零碳智慧园区建设，并推进第四代住宅等改善型产品入市。在南宁、北海、玉林等地的产业园区持续保持大项目落地与开工态势。对海康威视而言，值得关注的项目机会点集中在：①建筑消防验收、高层建筑消防与房屋安全（消防/安防技防）；②"好房子"及第四代高端住宅的交付智能化配置（门禁、可视对讲、智能家居、视频监控）；③新建大型产业园区及保障房/安置房的园区安防与人脸门禁；④钦州等智慧港口/园区的视频AI与无人值守方案。</p>
+  <h2>📌 本周总结</h2>
+  <p><strong>一是"金九银十"住房消费季持续发力，购房补贴与"好房子"交付品质并重。</strong>自治区本级财政2.72亿元购房补贴全面落地，南宁、梧州、北海、百花等全区多地联动开展线上线下促消费，南宁依托"邕有家"平台并发起住房品质保障行业倡议，"好房子"交付品质与物业提质要求，成为地产项目交付智能化（门禁、监控、智能物业）的重要抓手。</p>
+  <p><strong>二是房屋质量与消防安全监管平台建设提速，高层建筑消防成为落地窗口。</strong>自治区住建厅厅长调研广西城乡建设房屋质量与消防安全重点实验室建设，聚焦高层建筑消防验收等五大板块；同期启动建设工程类评标专家考试规范招投标监管，为消防/安防技防类产品与工程服务提供落地空间。</p>
+  <p><strong>三是大型产业园区与改善型住宅密集落地，园区安防需求持续放量。</strong>北海五年投产百亿级项目17个、玉林龙潭产业园冲刺"千亿园区"、梧州蒙山新型储能电站"签约即开工"，叠加南宁"轨道四代墅"改善型产品入市，园区安防、门禁考勤、视频AI及高端住宅智能化配置需求旺盛。</p>
 </div>
 
-<div class="list">
-  <div class="card">
-    <div class="title">全区多地联动开展住房消费季活动（组图）</div>
-    <div class="meta"><span>发布时间：2026-10-13 · 来源：广西住房和城乡建设厅官网</span><span>地点：南宁、梧州、北海、防城港、钦州、贵港、百色等全区多地</span></div>
-    <div class="sum">自治区本级财政2.72亿元购房补贴全面落地，南宁、梧州、北海、百色等探索线上线下联动促安居；南宁依托"邕有家"平台打通线上线下置业服务，并发起住房品质保障行业倡议、承诺严守质量底线。透露出"好房子"交付品质与物业提质要求，是地产项目交付智能化（门禁、监控、智能物业）的重要抓手。</div>
-    <a class="link" href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28219382.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>地产项目交付智能化（门禁、监控、智能物业）重要抓手</div>
-  </div>
-
-  <div class="card">
-    <div class="title">自治区住房城乡建设厅厅长龙杏华调研广西城乡建设房屋质量与消防安全重点实验室建设工作</div>
-    <div class="meta"><span>发布时间：2026-10-12 · 来源：广西住房和城乡建设厅官网</span><span>地点：南宁（广西建科院玉洞检测基地）</span></div>
-    <div class="sum">依托建科院建设西南领先、面向东盟的省级重点实验室，打造集检测、新型建材生产于一体的绿色零碳智慧新技术示范园区，聚焦建设工程消防技术服务、高层建筑消防验收等五大板块。高层建筑消防与房屋安全检测是关键场景，为消防/安防技防类产品与工程服务提供落地窗口。</div>
-    <a class="link" href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28215749.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>高层建筑消防与房屋安全检测，消防/安防技防类产品与工程服务落地窗口</div>
-  </div>
-
-  <div class="card">
-    <div class="title">2026年度广西公共资源（建设工程类）评标专家考试开考</div>
-    <div class="meta"><span>发布时间：2026-10-13 · 来源：广西住房和城乡建设厅官网</span><span>地点：广西全区</span></div>
-    <div class="sum">自治区启动建设工程类公共资源交易评标专家考试，意在充实评标力量、规范招投标与评价监管。对安防投标业务而言，反映广西建设工程招投标监管持续规范化，公开透明程度提高。</div>
-    <a class="link" href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28219350.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>广西建设工程招投标监管规范化，公开透明度提高</div>
-  </div>
-
-  <div class="card">
-    <div class="title">"四代墅"登场！轨道地产把真改善叠墅玩明白了</div>
-    <div class="meta"><span>发布时间：2026-10-12 · 来源：搜狐（南宁轨道地产集团）</span><span>地点：南宁（轨道御水江岸·安缇，邕江岸）</span></div>
-    <div class="sum">南宁轨道地产推出"轨道四代墅"，以第四代住宅基因重塑叠墅产品，主打垂直分层+大平层尺度、三重花园体系与私家车位入户。第四代住宅强调庭院与景观融合，通常配套智能家居、门禁对讲与园区安防，是高端住宅智能化项目机会点。</div>
-    <a class="link" href="https://news.sohu.com/a/1086783946_121117448">原文链接</a>
-    <div class="opp"><b>海康机会：</b>第四代高端住宅智能家居、门禁对讲与园区安防</div>
-  </div>
-
-  <div class="card">
-    <div class="title">项目为王，北海5年间投产或部分投产百亿级项目17个</div>
-    <div class="meta"><span>发布时间：2026-10-15 · 来源：广西产业园区改革发展办公室（地市资讯）</span><span>地点：北海</span></div>
-    <div class="sum">北海坚持"项目为王"，五年间投产或部分投产百亿级项目17个，园区实力显著增强。大型产业园区持续落地，配套园区安防（视频监控、周界、门禁考勤）与智能化管理需求随之增长。</div>
-    <a class="link" href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28229133.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>大型产业园区安防（视频监控、周界、门禁考勤）与智能化管理</div>
-  </div>
-
-  <div class="card">
-    <div class="title">签约即开工，梧州市蒙山县新型储能电站项目跑出加速度</div>
-    <div class="meta"><span>发布时间：2026-10-13 · 来源：广西产业园区改革发展办公室（地市资讯）</span><span>地点：梧州市蒙山县</span></div>
-    <div class="sum">梧州蒙山新型储能电站项目实现"签约即开工"，园区产业项目加速落地。储能电站等基础设施投建，涉及站区安防监控、周界报警与运检智能化配套。</div>
-    <a class="link" href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28219817.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>储能电站站区安防监控、周界报警与运检智能化配套</div>
-  </div>
-
-  <div class="card">
-    <div class="title">玉林：龙潭当先闯深蓝 千亿园区启新程</div>
-    <div class="meta"><span>发布时间：2026-10-12 · 来源：广西产业园区改革发展办公室（地市资讯）</span><span>地点：玉林（龙潭产业园区）</span></div>
-    <div class="sum">玉林龙潭产业园区以"千亿园区"为目标，依托临港（深蓝向海）加快产业布局。园区规模化扩张利好园区级安防与智能化、视频AI监管等成套方案推广。</div>
-    <a class="link" href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28215945.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>园区级安防与智能化、视频AI监管成套方案推广</div>
-  </div>
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>广西2.72亿元购房补贴全面落地 · 地产交付智能化（门禁/监控/智能物业）</li>
+    <li>高层建筑消防与房屋质量安全重点实验室 · 消防/安防技防工程</li>
+    <li>"轨道四代墅"改善型叠墅入市 · 智能家居/门禁对讲/园区安防</li>
+    <li>北海五年投产百亿级项目17个 · 大型产业园区安防与智能化</li>
+    <li>梧州蒙山新型储能电站"签约即开工" · 站区安防与运检智能化</li>
+    <li>玉林龙潭"千亿园区"冲刺 · 园区视频AI与成套方案</li>
+  </ul>
 </div>
 
-<div class="footer">内容由公开网络信息整理，供行业内部分享参考</div>
+  <div class="section">
+    <div class="section-title">🏠 住房消费与"好房子"</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28219382.shtml" target="_blank" rel="noopener noreferrer">全区多地联动开展住房消费季活动</a></h4>
+    <div class="card-body">
+      <p><strong>自治区本级财政2.72亿元购房补贴全面落地，南宁、梧州、北海、百色等探索线上线下联动促安居；南宁依托"邕有家"平台打通线上线下置业服务，并发起住房品质保障行业倡议、承诺严守质量底线，透露出"好房子"交付品质与物业提质要求。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>地产项目交付智能化（门禁、可视对讲、监控、智能物业）是重要抓手，房企对智能安防配套需求提升。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28219382.shtml" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="https://news.sohu.com/a/1086783946_121117448" target="_blank" rel="noopener noreferrer">"四代墅"登场！轨道地产把真改善叠墅玩明白了</a></h4>
+    <div class="card-body">
+      <p><strong>南宁轨道地产推出"轨道四代墅"，以第四代住宅基因重塑叠墅产品，主打垂直分层+大平层尺度、三重花园体系与私家车位入户。第四代住宅强调庭院与景观融合。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>高端住宅项目通常配套智能家居、门禁对讲与园区安防，是高端住宅智能化项目机会点。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://news.sohu.com/a/1086783946_121117448" target="_blank" rel="noopener noreferrer">搜狐（南宁轨道地产集团）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🏢 消防安防与招投标规范</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28215749.shtml" target="_blank" rel="noopener noreferrer">自治区住建厅厅长调研城乡建设房屋质量与消防安全重点实验室建设</a></h4>
+    <div class="card-body">
+      <p><strong>依托广西建科院打造西南领先、面向东盟的省级重点实验室，建设绿色零碳智慧新技术示范园区，聚焦建设工程消防技术服务、高层建筑消防验收等五大板块。高层建筑消防与房屋安全检测是关键场景。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>为消防/安防技防类产品与工程服务提供落地窗口。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28215749.shtml" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅官网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28219350.shtml" target="_blank" rel="noopener noreferrer">2026年度广西公共资源（建设工程类）评标专家考试开考</a></h4>
+    <div class="card-body">
+      <p><strong>自治区启动建设工程类公共资源交易评标专家考试，意在充实评标力量、规范招投标与评价监管，反映广西建设工程招投标监管持续规范化、公开透明程度提高。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>对安防投标业务而言，招投标监管规范化利于公平竞争环境。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28219350.shtml" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅官网</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🏭 产业园区与项目落地</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28229133.shtml" target="_blank" rel="noopener noreferrer">项目为王，北海5年间投产或部分投产百亿级项目17个</a></h4>
+    <div class="card-body">
+      <p><strong>北海坚持"项目为王"，五年间投产或部分投产百亿级项目17个，园区实力显著增强。大型产业园区持续落地。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>配套园区安防（视频监控、周界、门禁考勤）与智能化管理需求随之增长。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28229133.shtml" target="_blank" rel="noopener noreferrer">广西产业园区改革发展办公室（地市资讯）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28219817.shtml" target="_blank" rel="noopener noreferrer">签约即开工，梧州市蒙山县新型储能电站项目跑出加速度</a></h4>
+    <div class="card-body">
+      <p><strong>梧州蒙山新型储能电站项目实现"签约即开工"，园区产业项目加速落地。储能电站等基础设施投建。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>涉及站区安防监控、周界报警与运检智能化配套。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28219817.shtml" target="_blank" rel="noopener noreferrer">广西产业园区改革发展办公室（地市资讯）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28215945.shtml" target="_blank" rel="noopener noreferrer">玉林：龙潭当先闯深蓝 千亿园区启新程</a></h4>
+    <div class="card-body">
+      <p><strong>玉林龙潭产业园区以"千亿园区"为目标，依托临港（深蓝向海）加快产业布局。园区规模化扩张。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>利好园区级安防与智能化、视频AI监管等成套方案推广。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28215945.shtml" target="_blank" rel="noopener noreferrer">广西产业园区改革发展办公室（地市资讯）</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
