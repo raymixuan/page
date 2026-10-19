@@ -1,106 +1,339 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>电子电器行业简报 2026-10-12~18</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西电子电器行业简报 · 2026.10.12 — 10.18</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f6fa;color:#2d2f33;line-height:1.65;-webkit-text-size-adjust:100%}
-.header{background:linear-gradient(135deg,#1a4a3c,#2f7a5c);color:#fff;padding:24px 18px 20px}
-.header .tag{font-size:12px;opacity:.85;letter-spacing:1px;margin-bottom:8px}
-.header h1{font-size:22px;line-height:1.4;font-weight:700}
-.header .range{font-size:13px;opacity:.9;margin-top:6px}
-.summary{background:#fff;margin:14px 12px;border-radius:12px;padding:16px;border-left:4px solid #2f7a5c;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.summary h2{font-size:15px;color:#1a4a3c;margin-bottom:8px}
-.summary p{font-size:13px;color:#444;margin-bottom:8px}
-.list{padding:0 12px 20px}
-.card{background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.card .title{font-size:15px;font-weight:600;color:#1a4a3c;line-height:1.45;margin-bottom:8px}
-.meta{font-size:12px;color:#8a8f99;margin-bottom:8px;line-height:1.7}
-.meta span{display:block}
-.sum{font-size:13px;color:#444;margin-bottom:8px}
-.link{display:inline-block;font-size:12px;color:#2f7a5c;text-decoration:none;word-break:break-all}
-.link:active,.link:hover{opacity:.75}
-.opp{margin-top:10px;background:#eef6f2;border-radius:8px;padding:10px 12px;font-size:12.5px;color:#2f5d4a}
-.opp b{color:#1f7a55}
-.footer{text-align:center;font-size:12px;color:#9aa0aa;padding:14px 16px 30px}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="tag">广西 · 行业简报 · 海康威视技术视角</div>
-  <h1>电子电器行业简报</h1>
-  <div class="range">2026-10-12 ~ 10-18</div>
-</div>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>💻 广西电子电器行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 7 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
 
 <div class="summary">
-  <h2>总结与提炼</h2>
-  <p>本周（10-12~10-18）广西电子电器产业释放出强烈"向海、向智、向芯"信号，围绕「人工智能+制造」与「电子信息产业集群」两条主线密集发力，对海康威视广西业务有直接相关价值：</p>
-  <p>- <b>电子信息/半导体制造加速集群</b>：南宁以华芯振邦（显示驱动芯片封测，填补广西半导体制造空白）、泰克半导体（企业级内存模组零突破）等代表，明确面向东盟输出芯片封测代工；贵港港北区PCB产业集群快速壮大，2030年目标电子信息年产值破100亿元。这些智能制造产线、净化车间、危化/消防监管场景均为安防+智能化方案的可切入环节。</p>
-  <p>- <b>储能/新能源电池大力落地</b>：梧州蒙山300MW/600MWh磷酸铁锂储能电站开工（投资9亿），园区招商新增北海经开区锂电池制造等项目——对电池厂区的周界安防、热成像温度监测、机房/配电监管有直接机会。</p>
-  <p>- <b>智能制造全面铺开</b>：工信厅袁煌厅长发文明确"人工智能及新一代信息技术、新能源汽车及电池"为新建十大支柱产业；柳州智能工厂167家、机器人产量激增。AI视觉缺陷检测、工业机器人、无人化产线成热点，与视觉AI、智能调度方案高度耦合。</p>
-  <p>- <b>关键词覆盖</b>：消费电子、通信、计算机、智能制造、晶圆/芯片封测（华芯振邦）、新能源电池（磷酸铁锂储能）均有体现；UI设计、半导体材料未见本周独立自治区级新闻。</p>
+  <h2>📌 本周总结</h2>
+  <p><strong>一是半导体/电子信息制造加速集群，智能产线安防需求可观。</strong>南宁以华芯振邦（显示驱动芯片封测、填补广西半导体制造空白）、泰克半导体（企业级内存模组零突破）为代表，明确面向东盟输出芯片封测代工；贵港港北区PCB产业集群快速壮大，2030年目标电子信息年产值破100亿元。这些智能制造产线、净化车间、危化/消防监管场景均是安防+智能化方案的可切入环节。</p>
+  <p><strong>二是储能/新能源电池大力落地，电池厂区安防机会突出。</strong>梧州蒙山300MW/600MWh磷酸铁锂储能电站开工（投资9亿），园区招商新增北海经开区锂电池制造等项目——对电池厂区的周界安防、热成像温度监测、机房/配电监管有直接机会。</p>
+  <p><strong>三是智能制造全面铺开，视觉AI与无人化产线成热点。</strong>自治区工信厅厅长明确"人工智能及新一代信息技术、新能源汽车及电池"为新建十大支柱产业；柳州智能工厂167家、机器人产量激增。AI视觉缺陷检测、工业机器人、无人化产线成热点，与视觉AI、智能调度方案高度耦合。</p>
 </div>
 
-<div class="list">
-  <div class="card">
-    <div class="title">邕有AI——算力筑基强底座 芯链聚势通东盟</div>
-    <div class="meta"><span>发布时间：2026-10-13 · 来源：自治区园区发展和投资促进服务中心官网 / 南宁日报</span><span>地点：南宁</span></div>
-    <div class="sum">南宁以"北上广研发+广西集成+东盟应用"模式打造人工智能产业集群。本土AI领军企业润建股份建成广西等级最高、规模最大的智算中心（五象云谷Token工厂）；广西华芯振邦半导体公司先进封测工艺可应用于各类显示驱动芯片，项目投产填补广西半导体制造空白，并依托南宁面向东盟输出显示驱动芯片封测代工服务；泰克半导体实现企业级内存模组产线零的突破，引入南京初芯、拓米等IC设计企业。南宁电子信息产业集群加速成形（含芯片加工、半导体封装）。</div>
-    <a class="link" href="http://tzcjj.gxzf.gov.cn/gzdt/t28219988.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>封测/IC制造产线对无尘室环境监测、高洁净区安防、设备运行状态视觉巡检、园区视频联动有需求，可切入智慧工厂整体方案。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">【广西大区招商·市县篇】贵港市港北区：PCB产业集群提质增效 积蓄发展新动能</div>
-    <div class="meta"><span>发布时间：2026-10-14 · 来源：自治区园区发展和投资促进服务中心官网 / 贵港日报</span><span>地点：贵港市港北区</span></div>
-    <div class="sum">港北区PCB产业生产旺季，广西奔腾电路、马克电路产销两旺（马克新增生产线月产能+2万㎡，9月产量破3.5万㎡，今年产值将达1.2亿元）。港北区加快建设贵港电子电路产业园牛河园、鲤江园，建成投用后预计年产值72亿元、新增就业1820个；已引进PCB及上下游企业29家，电子信息特色产业集聚区入选广西特色产业集聚区培育计划，目标2030年电子信息产业年产值破100亿元。</div>
-    <a class="link" href="http://tzcjj.gxzf.gov.cn/gzdt/t28222244.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>PCB产线对精密制造车间视频监控、防静电/洁净区门禁、污水固废处理厂区安防、园区周界与消防预警有明显需求。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">【广西大区招商·项目篇】签约即开工，蒙山新型储能电站项目跑出加速度</div>
-    <div class="meta"><span>发布时间：2026-10-14 · 来源：自治区园区发展和投资促进服务中心官网 / 广西云-广西日报、蒙山县投促中心</span><span>地点：梧州市蒙山县西河镇大塘村</span></div>
-    <div class="sum">蒙山县300MW/600MWh新型储能电站项目（9月29日开工，为梧州"十五五"首个百兆瓦级新型储能标杆项目）。总投资约9亿元、占地约42.2亩，采用磷酸铁锂电池技术，含独立储能系统、综合楼、配电楼，同步建设220kV升压站接入鳌峰变电站，建成后年均调峰电量约18万MWh，预计2027年7月并网。投资方为安徽阳光新能源开发股份有限公司。</div>
-    <a class="link" href="http://tzcjj.gxzf.gov.cn/gzdt/t28222245.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>储能电站对热成像测温、电池仓火灾早期预警（烟雾/温度）、周界防护、配电楼与220kV升压站视频监控、运维可视化平台是典型匹配场景。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">中马钦州产业园区："一企一策"精准服务 装备制造"乘风而起"</div>
-    <div class="meta"><span>发布时间：2026-10-13 · 来源：自治区园区发展和投资促进服务中心官网</span><span>地点：钦州（中马钦州产业园区）</span></div>
-    <div class="sum">中马钦州产业园区以"一企一策"精准服务推动装备制造产业落地发展，园区装备制造相关企业在服务保障下"乘风而起"，集群化发展态势显现（原文围绕园区招商与服务机制，涉及装备制造、电子信息等产业承接）。</div>
-    <a class="link" href="http://tzcjj.gxzf.gov.cn/gzdt/t28219934.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>装备制造园区对园区级视频联网、物流车辆出入管控、车间安防与周界、智慧园区管理平台建设有需求。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">广西工信厅党组书记、厅长袁煌署名文章：聚力打造制造业十大现代化支柱产业，加快构建体现广西特色和优势、以先进制造业为骨干的现代化产业体系</div>
-    <div class="meta"><span>发布时间：2026-10-16 · 来源：自治区工业和信息化厅官网（转载自中国制造）</span><span>地点：广西壮族自治区</span></div>
-    <div class="sum">袁煌明确广西打造十大现代化支柱产业，其中「人工智能及新一代信息技术」「新能源汽车及电池」列入重点。强调"北上广研发+广西集成+东盟应用"，实施"人工智能+制造"行动，建设中国—东盟人工智能应用合作中心/产业创新中心；2026年1—8月全区工业机器人产量同比增长2.5倍，柳州优必选万台级工业人形机器人超级智慧工厂投产，上汽通用五菱入选工信部首批领航级智能工厂培育名单（全国整车唯一）。</div>
-    <a class="link" href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28233438.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>政策层面向信息技术+智能制造倾斜，为后续智慧园区、智能工厂、行业数字化转型项目提供政策与资金保障。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">AI技术深入生产环境，广西产业换挡提速（活力中国调研行）</div>
-    <div class="meta"><span>发布时间：2026-10-18 · 来源：第一财经（新浪财经转载）/ 自治区投促中心工作动态</span><span>地点：柳州、北海、防城港等广西多地</span></div>
-    <div class="sum">广西多家企业以AI赋能智能制造：柳州柳工挖掘机智慧工厂自动化率超70%、月产破1500台（"AI柳工"智能诊断系统维修时长缩短60%）；柳州已建成智能工厂/数字化车间167家（全区第一）；柳钢防城港基地落地广西首个5G智慧钢铁、全国首例5G+无人化自动铁水罐加盖系统与"AI炼钢"看火；北海永星电子投资25亿元建银河芯片产业园，年产15亿只高精密薄膜芯片电阻器产线投产，自研国内首颗高性能宇航级抗辐照芯片（28nm）4月流片成功；柳州1—8月机器人产量增长750.3%，优必选、洛必德等45家机器人企业落地。</div>
-    <a class="link" href="https://www.yicai.com/news/103398019.html">原文链接</a>
-    <div class="opp"><b>海康机会：</b>智能制造标杆成果密集，视觉AI（曲面缺陷检测、看火）与工业自动化监控、智慧工厂一体化方案成为客户关注焦点，可重点跟进临港钢铁、汽车、电子元器件厂区项目。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">（园区招商项目，当日发布）南宁·中关村电子信息产业园二期项目、北海经济技术开发区锂电池生产制造项目</div>
-    <div class="meta"><span>发布时间：2026-10-16 · 来源：自治区园区发展和投资促进服务中心官网（第二批重点产业园区签约供地即开工招商项目一览表）</span><span>地点：南宁、北海</span></div>
-    <div class="sum">自治区招商项目清单当批次最新发布电子信息产业园二期（南宁·中关村）及锂电池生产（北海经开区）等电子/新能源电池方向招商项目，显示广西正围绕电子信息与新能源电池两条产业链加大项目招引与土地供应力度。</div>
-    <a class="link" href="http://tzcjj.gxzf.gov.cn/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>新落地产线、产业园区建设期为安防基建与智能化管理系统提供窗口期机会。</div>
-  </div>
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>南宁华芯振邦封测/泰克半导体 · 无尘室监测、高洁净区安防、设备视觉巡检</li>
+    <li>贵港港北PCB产业集群 · 精密制造监控、防静电门禁、园区周界与消防预警</li>
+    <li>梧州蒙山储能电站（投资9亿） · 热成像测温、电池仓火灾预警、升压站监控</li>
+    <li>中马钦州装备制造园区 · 园区级视频联网、物流车辆管控、智慧园区平台</li>
+    <li>南宁·中关村电子产业园二期 · 新落地产线安防基建与智能化窗口期</li>
+    <li>北海经开区锂电池项目 · 电池厂区周界安防与温度监测</li>
+  </ul>
 </div>
 
-<div class="footer">内容由公开网络信息整理，供行业内部分享参考</div>
+  <div class="section">
+    <div class="section-title">🔬 半导体与电子信息制造集群</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://tzcjj.gxzf.gov.cn/gzdt/t28219988.shtml" target="_blank" rel="noopener noreferrer">邕有AI——算力筑基强底座 芯链聚势通东盟</a></h4>
+    <div class="card-body">
+      <p><strong>南宁以"北上广研发+广西集成+东盟应用"模式打造人工智能产业集群。本土AI领军企业润建股份建成广西等级最高、规模最大的智算中心（五象云谷Token工厂）；广西华芯振邦先进封测工艺可应用于各类显示驱动芯片，项目投产填补广西半导体制造空白，并依托南宁面向东盟输出显示驱动芯片封测代工服务；泰克半导体实现企业级内存模组产线零的突破；南宁电子信息产业集群加速成形。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>封测/IC制造产线对无尘室环境监测、高洁净区安防、设备运行状态视觉巡检、园区视频联动有需求，可切入智慧工厂整体方案。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tzcjj.gxzf.gov.cn/gzdt/t28219988.shtml" target="_blank" rel="noopener noreferrer">自治区园区发展和投资促进服务中心官网 / 南宁日报</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://tzcjj.gxzf.gov.cn/gzdt/t28222244.shtml" target="_blank" rel="noopener noreferrer">贵港市港北区：PCB产业集群提质增效 积蓄发展新动能</a></h4>
+    <div class="card-body">
+      <p><strong>港北区PCB产业生产旺季，广西奔腾电路、马克电路产销两旺（马克新增生产线月产能+2万㎡，9月产量破3.5万㎡，今年产值将达1.2亿元）。港北区加快建设贵港电子电路产业园，建成投用后预计年产值72亿元、新增就业1820个；已引进PCB及上下游企业29家，目标2030年电子信息产业年产值破100亿元。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>PCB产线对精密制造车间视频监控、防静电/洁净区门禁、污水固废处理厂区安防、园区周界与消防预警有明显需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tzcjj.gxzf.gov.cn/gzdt/t28222244.shtml" target="_blank" rel="noopener noreferrer">自治区园区发展和投资促进服务中心官网 / 贵港日报</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://tzcjj.gxzf.gov.cn/gzdt/t28219934.shtml" target="_blank" rel="noopener noreferrer">中马钦州产业园区："一企一策"精准服务 装备制造"乘风而起"</a></h4>
+    <div class="card-body">
+      <p><strong>中马钦州产业园区以"一企一策"精准服务推动装备制造产业落地发展，园区装备制造相关企业集群化发展态势显现（涉及装备制造、电子信息等产业承接）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>装备制造园区对园区级视频联网、物流车辆出入管控、车间安防与周界、智慧园区管理平台建设有需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tzcjj.gxzf.gov.cn/gzdt/t28219934.shtml" target="_blank" rel="noopener noreferrer">自治区园区发展和投资促进服务中心官网</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🔋 储能与新能源电池</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://tzcjj.gxzf.gov.cn/gzdt/t28222245.shtml" target="_blank" rel="noopener noreferrer">签约即开工，蒙山新型储能电站项目跑出加速度</a></h4>
+    <div class="card-body">
+      <p><strong>蒙山县300MW/600MWh新型储能电站项目（9月29日开工，为梧州"十五五"首个百兆瓦级新型储能标杆项目）。总投资约9亿元、占地约42.2亩，采用磷酸铁锂电池技术，含独立储能系统、综合楼、配电楼，同步建设220kV升压站接入鳌峰变电站，建成后年均调峰电量约18万MWh，预计2027年7月并网。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>对热成像测温、电池仓火灾早期预警（烟雾/温度）、周界防护、配电楼与220kV升压站视频监控、运维可视化平台是典型匹配场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tzcjj.gxzf.gov.cn/gzdt/t28222245.shtml" target="_blank" rel="noopener noreferrer">自治区园区发展和投资促进服务中心官网 / 广西云-广西日报、蒙山县投促中心</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🤖 智能制造与产业政策</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28233438.shtml" target="_blank" rel="noopener noreferrer">广西工信厅厅长署名文章：聚力打造制造业十大现代化支柱产业</a></h4>
+    <div class="card-body">
+      <p><strong>明确广西打造十大现代化支柱产业，其中「人工智能及新一代信息技术」「新能源汽车及电池」列入重点。强调"北上广研发+广西集成+东盟应用"，实施"人工智能+制造"行动；2026年1—8月全区工业机器人产量同比增长2.5倍，柳州优必选万台级工业人形机器人超级智慧工厂投产，上汽通用五菱入选工信部首批领航级智能工厂培育名单（全国整车唯一）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>政策层面向信息技术+智能制造倾斜，为后续智慧园区、智能工厂、行业数字化转型项目提供政策与资金保障。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28233438.shtml" target="_blank" rel="noopener noreferrer">自治区工业和信息化厅官网（转载自中国制造）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-18</span>
+    </div>
+    <h4><a href="https://www.yicai.com/news/103398019.html" target="_blank" rel="noopener noreferrer">AI技术深入生产环境，广西产业换挡提速（活力中国调研行）</a></h4>
+    <div class="card-body">
+      <p><strong>广西多家企业以AI赋能智能制造：柳工挖掘机智慧工厂自动化率超70%、月产破1500台（"AI柳工"智能诊断系统维修时长缩短60%）；柳钢防城港基地落地广西首个5G智慧钢铁、全国首例5G+无人化自动铁水罐加盖系统与"AI炼钢"看火；北海永星电子投资25亿元建银河芯片产业园，年产15亿只高精密薄膜芯片电阻器产线投产；柳州1—8月机器人产量增长750.3%。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>智能制造标杆成果密集，视觉AI（曲面缺陷检测、看火）与工业自动化监控、智慧工厂一体化方案成为关注焦点，可重点跟进临港钢铁、汽车、电子元器件厂区项目。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.yicai.com/news/103398019.html" target="_blank" rel="noopener noreferrer">第一财经（新浪财经转载）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://tzcjj.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer">南宁·中关村电子信息产业园二期、北海经开区锂电池项目（园区招商）</a></h4>
+    <div class="card-body">
+      <p><strong>自治区招商项目清单当批次最新发布电子信息产业园二期（南宁·中关村）及锂电池生产（北海经开区）等电子/新能源电池方向招商项目，显示广西正围绕电子信息与新能源电池两条产业链加大项目招引与土地供应力度。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>新落地产线、产业园区建设期为安防基建与智能化管理系统提供窗口期机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tzcjj.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer">自治区园区发展和投资促进服务中心官网</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
