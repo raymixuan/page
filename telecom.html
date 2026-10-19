@@ -1,282 +1,368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>广西通信运营商行业简报（2026-10-12 ~ 10-18）</title>
-  <meta name="format-detection" content="telephone=no">
-  <style>
-    :root{
-      --bg:#f4f6f9;
-      --card:#ffffff;
-      --primary:#0b57a0;
-      --primary-soft:#e6f0fa;
-      --accent:#6648c9;
-      --text:#1f2937;
-      --muted:#68707c;
-      --border:#e3e8ef;
-      --tag-bg:#f0edff;
-      --tag-text:#5b3fb5;
-      --link:#0b57a0;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html{-webkit-text-size-adjust:100%;}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-      font-size:15px;
-      padding:0 0 40px;
-    }
-    .container{max-width:680px;margin:0 auto;padding:0 16px;}
-    header{
-      background:linear-gradient(135deg,#0b57a0 0%,#153a6b 55%,#2563eb 100%);
-      color:#fff;
-      padding:26px 20px 22px;
-      text-align:center;
-    }
-    header .tag{
-      display:inline-block;
-      font-size:12px;
-      letter-spacing:2px;
-      background:rgba(255,255,255,.18);
-      border:1px solid rgba(255,255,255,.35);
-      padding:3px 12px;
-      border-radius:999px;
-      margin-bottom:10px;
-    }
-    header h1{font-size:21px;font-weight:700;line-height:1.4;}
-    header .range{font-size:13px;opacity:.9;margin-top:8px;}
-    .sec-title{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-size:16px;
-      font-weight:700;
-      color:var(--primary);
-      margin:24px 0 12px;
-    }
-    .sec-title .bar{
-      width:4px;height:18px;background:var(--primary);border-radius:2px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:14px;
-      border:1px solid var(--border);
-      padding:16px;
-      margin-bottom:14px;
-      box-shadow:0 1px 3px rgba(15,35,60,.05);
-    }
-    .summary-card{
-      background:linear-gradient(180deg,#ffffff,#eef4fc);
-      border:1px solid #cfe0f4;
-    }
-    .summary-card ol{padding-left:20px;}
-    .summary-card li{margin:10px 0;font-size:14.5px;}
-    .summary-card .li-title{font-weight:600;color:#0b3e7a;}
-    .bg-card{border-left:4px solid var(--accent);background:#f9f8ff;}
-    .bg-card .bg-item{margin:6px 0;font-size:14px;}
-    .opportunity{
-      margin-top:12px;
-      background:var(--primary-soft);
-      border-radius:10px;
-      padding:10px 12px;
-      font-size:13.5px;
-      color:#0b3e7a;
-      border:1px solid #cadda9;
-    }
-    .opportunity strong{color:var(--primary);}
-    .entry-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px 10px;
-      font-size:12px;
-      color:var(--muted);
-      margin:4px 0 8px;
-    }
-    .entry-meta span{color:var(--muted);}
-    .pill{
-      background:var(--accent);
-      color:#fff;
-      font-size:11px;
-      padding:1px 8px;
-      border-radius:999px;
-      font-weight:600;
-      margin-left:8px;
-      vertical-align:middle;
-    }
-    .news-title{font-size:16px;font-weight:700;color:var(--text);line-height:1.45;}
-    .summary{font-size:14px;margin-top:8px;}
-    .link-row{margin-top:10px;font-size:13px;word-break:break-all;}
-    .link-row a{
-      color:var(--link);
-      text-decoration:none;
-      font-weight:500;
-    }
-    .link-row a:hover{text-decoration:underline;}
-    .tag-row{margin-bottom:10px;}
-    .tag{
-      display:inline-block;
-      background:var(--tag-bg);
-      color:var(--tag-text);
-      font-size:12px;
-      padding:2px 10px;
-      border-radius:999px;
-      margin-right:6px;
-    }
-    footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:12.5px;
-      margin-top:30px;
-      line-height:1.8;
-      padding:0 20px;
-    }
-    .count-line{font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西通信运营商行业简报 · 2026.10.12 — 10.18</title>
+<style>
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="tag">行业简报 · 内部参考</div>
-    <h1>广西通信运营商行业简报</h1>
-    <div class="range">2026-10-12 ~ 10-18</div>
-  </header>
 
-  <div class="container">
-
-    <!-- 总结与提炼 -->
-    <div class="sec-title"><span class="bar"></span>总结与提炼</div>
-    <div class="card summary-card">
-      <p style="font-size:14px;"><strong>行业动态总览</strong></p>
-      <p style="font-size:13.5px;color:var(--muted);margin-top:4px;">本周（10.12-10.18）广西通信运营商行业的公开报道相对集中在"网络质量建设成果""行业治理监管""基础设施运维升级"三块，未出现重量级签约或重大项目开工新闻。结合同期行业进程，以下几点信号突出：</p>
-      <ol style="margin-top:8px;">
-        <li><span class="li-title">网络质量建设进入"成果盘点"期</span>：广西8个重点单项上榜2026年度全国百城移动网络质量领先榜单，覆盖政务中心、商圈、医院等12类重点场景11638个场所"信号升格"，实现全区高铁、平陆运河沿线5G覆盖。网络从"建起来"转向"用得好、覆盖深"，是运营商下一阶段重心。</li>
-        <li><span class="li-title">监管趋严、治理下沉</span>：广西通管局本周密集动作——清理备案信息不完整网站、联合网信办点名38款APP、发布码号资源审批信息，行业监管向数据安全与规范经营聚焦。</li>
-        <li><span class="li-title">基础设施升级维护持续推进</span>：广西移动多市网络割接升级（覆盖南宁、玉林、钦州、桂林），智慧家庭/政企业务整合调整（智能小秘书等7项业务下线）。</li>
-        <li><span class="li-title">相关延伸·数字乡村/农业数字化</span>：2026广西智慧农业（数字乡村）创新大赛两大赛道决赛举办，AI遥感、物联网、智能装备在丘陵山区农业落地，与运营商物联网、数字乡村能力高度协同。</li>
-      </ol>
+<header class="header">
+  <div class="header-inner">
+    <h1>📡 广西通信运营商行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 7 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
     </div>
-
-    <!-- 新闻条目 -->
-    <div class="sec-title"><span class="bar"></span>本周新闻条目</div>
-
-    <!-- 条目1 -->
-    <div class="card">
-      <div class="news-title">1. 广西8个重点单项登上2026年度全国百城移动网络质量领先榜单</div>
-      <div class="entry-meta">
-        <span>发布时间：2026-10-13</span><span>·</span>
-        <span>来源：广西壮族自治区通信管理局 / 南宁日报</span><span>·</span>
-        <span>地点：广西（南宁、柳州、玉林）</span>
-      </div>
-      <p class="summary">据广西通信管理局，中国信通院公布的2026年度全国百城重点区域移动网络质量评测中，广西共有8个重点单项上榜。其中广西电信5个重点场景上榜（南宁市民中心、南宁万象城、柳州阳光100城市广场、柳州市柳铁中心医院、玉林市第一人民医院）；广西移动2家网络评价领先运营商（玉林综合评价领先、柳州道路网络质量领先）及1个场景（南宁市第一人民医院）上榜。广西已累计完成交通枢纽、政务中心、商务楼宇、高等院校、医疗机构、工业园区等12类重点场景共11638个场所的"信号升格"，并实现全区高铁、平陆运河沿线5G覆盖。</p>
-      <div class="link-row">原文：<a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6742769.html" target="_blank" rel="noopener">南宁市人民政府网</a>　|　<a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_9a7aeff9d2b145119e2dddb85fd9409d.html" target="_blank" rel="noopener">广西通信管理局</a></div>
-      <div class="opportunity"><strong>海康威视机会：</strong>政务中心、医院、园区等场景"信号升格"完成，为智慧政务、智慧医院、园区物联与视频回传提供网络底座，可与海康智慧园区/医院安防方案协同。</div>
-    </div>
-
-    <!-- 条目2 -->
-    <div class="card">
-      <div class="news-title">2. 广西通信管理局发布清理备案信息不完整网站的通告<span class="pill">治理</span></div>
-      <div class="entry-meta">
-        <span>发布时间：2026-10-13</span><span>·</span>
-        <span>来源：广西壮族自治区通信管理局</span><span>·</span>
-        <span>地点：广西</span>
-      </div>
-      <p class="summary">广西通管局按要求清理备案/核准信息不完整的网站，推动网站备案信息规范完整，属通信与互联网行业常态化监管动作。</p>
-      <div class="link-row">原文：<a href="https://gxca.miit.gov.cn/zwgk/dxhhlwgl/art/2026/art_7851c9642ce8448db8350301702a48e1.html" target="_blank" rel="noopener">广西通信管理局通告</a></div>
-      <div class="tag-row" style="margin-top:8px;"><span class="tag">行业治理</span><span class="tag">供整体掌握监管动态</span></div>
-    </div>
-
-    <!-- 条目3 -->
-    <div class="card">
-      <div class="news-title">3. 广西通信管理局联合网信办通报38款APP<span class="pill">治理</span></div>
-      <div class="entry-meta">
-        <span>发布时间：2026-10-16</span><span>·</span>
-        <span>来源：广西壮族自治区通信管理局 / 广西网信办</span><span>·</span>
-        <span>地点：广西</span>
-      </div>
-      <p class="summary">广西通信管理局与网信办联合就38款APP相关问题发布通报/通知，涉及APP个人信息保护、数据安全治理，强化移动互联网应用合规监管。</p>
-      <div class="link-row">原文：<a href="https://gxca.miit.gov.cn/zwgk/dxhhlwgl/art/2026/art_e26b1ee271dc4628addc3554cca20456.html" target="_blank" rel="noopener">广西通信管理局通知</a></div>
-      <div class="tag-row" style="margin-top:8px;"><span class="tag">数据安全</span><span class="tag">合规监管重点</span></div>
-    </div>
-
-    <!-- 条目4 -->
-    <div class="card">
-      <div class="news-title">4. 广西移动开展多市网络割接升级（2026年第42周）</div>
-      <div class="entry-meta">
-        <span>发布时间：2026-10-10</span><span>·</span>
-        <span>割接生效：2026-10-12至10-16（本周窗口内）</span><span>·</span>
-        <span>来源：中国移动广西有限公司</span><span>·</span>
-        <span>地点：南宁、玉林、钦州、桂林</span>
-      </div>
-      <p class="summary">广西移动定于10月12日-16日凌晨分时段进行网络升级割接，影响南宁、玉林、钦州、桂林部分家宽和专线业务，属于通信基础设施的例行升级维护，指向持续优化宽带/专线网络能力。</p>
-      <div class="link-row">原文：<a href="https://www.10086.cn/aboutus/news/pannounce/gx/index_771_770_detail_55957.html" target="_blank" rel="noopener">广西移动割接公告</a></div>
-    </div>
-
-    <!-- 条目5 -->
-    <div class="card">
-      <div class="news-title">5. 广西移动智能小秘书尊享包等7项业务下线</div>
-      <div class="entry-meta">
-        <span>发布时间：2026-10-14</span><span>·</span>
-        <span>来源：中国移动广西有限公司</span><span>·</span>
-        <span>地点：广西</span>
-      </div>
-      <p class="summary">广西移动对智能小秘书尊享包等7项业务做下线调整，属智慧家庭/增值业务的产品整合优化，反映出运营商在智能语音助手等"智慧家庭"细分产品上的迭代取舍。</p>
-      <div class="link-row">原文：<a href="https://www1.10086.cn/aboutus/news/pannounce/gx/index_771_778.html" target="_blank" rel="noopener">广西移动公告</a></div>
-    </div>
-
-    <!-- 条目6 -->
-    <div class="card">
-      <div class="news-title">6. 中国移动广西公司2026年和教育内容产品应用提供商招募</div>
-      <div class="entry-meta">
-        <span>发布时间：2026-10-15</span><span>·</span>
-        <span>来源：中国移动广西有限公司</span><span>·</span>
-        <span>地点：广西</span>
-      </div>
-      <p class="summary">广西移动启动"和教育"内容产品应用提供商招募，围绕教育信息化场景引入第三方内容/应用合作方，体现运营商在教育行业数字化的生态合作意愿。</p>
-      <div class="link-row">原文：<a href="https://www1.10086.cn/aboutus/news/pannounce/gx/index_771_778.html" target="_blank" rel="noopener">广西移动招募公告</a></div>
-      <div class="opportunity"><strong>海康威视机会：</strong>教育信息化（智慧校园）合作可延伸至校园安防、视频监控类集成机会。</div>
-    </div>
-
-    <!-- 条目7 -->
-    <div class="card">
-      <div class="news-title">7. 2026年广西智慧农业（数字乡村）创新大赛决赛举办<span class="pill">延伸</span></div>
-      <div class="entry-meta">
-        <span>发布时间：2026-10-16 / 2026-10-17</span><span>·</span>
-        <span>来源：金台资讯/人民网广西频道</span><span>·</span>
-        <span>主办：农业农村厅、党委网信办、钦州市政府</span><span>·</span>
-        <span>地点：南宁及丘陵山地农业场景</span>
-      </div>
-      <p class="summary">大赛两大赛道决赛落地，57支智能装备队伍与55个项目围绕智能农机精准作业、农业遥感与AI识别、养殖场智能巡检与调控、果园采摘/病虫害AI筛查等场景同台竞技，聚焦糖料蔗、柑橘、芒果、水产畜牧等广西特色产业，助力"桂字号"出山及中国—东盟水果贸易数字化。AI遥感、物联网感知与视频视觉识别是核心手段。</p>
-      <div class="link-row">原文：<a href="http://m.toutiao.com/group/7697192651821236736/" target="_blank" rel="noopener">智能装备赛道</a>　|　<a href="http://m.toutiao.com/group/7697553417585148470/" target="_blank" rel="noopener">"桂字号"品牌/东盟水果贸易IP赛道</a></div>
-      <div class="opportunity"><strong>海康威视机会：</strong>农业遥感与AI识别、养殖场智能巡检、果园视觉筛查与海康农业AI/视觉感知能力高度契合，可作为数字乡村/智慧农业感知层的厂家侧切入点，并可与运营商物联网方案打包。</div>
-    </div>
-
-    <!-- 背景提示 -->
-    <div class="sec-title"><span class="bar"></span>背景提示（发布时间不在本周窗口）</div>
-    <div class="card bg-card">
-      <div class="bg-item"><strong>《广西信息通信行业发展"十五五"规划》</strong>（2026-10-03印发）：提出到2030年每万人5G基站达50个、50G-PON端口6万个、自然村5G通达率超99.9%、城域"1-3-5"毫秒级算力网络、建成南宁国际通信业务出入口局等目标，是未来五年全区通信基础设施投资与建设的总纲，建议作为长期跟踪基线。</div>
-      <div class="bg-item" style="margin-top:10px;"><strong>2026东盟算力交流会</strong>（南宁举行，人民网10-10报道）：东盟AI研究中心揭牌成立，中国电信广西公司/天翼云面向东盟推介万卡算力池——涉及面向东盟的数据中心与算力出海，值得关注。</div>
-    </div>
-
-    <!-- 海康机会综合 -->
-    <div class="sec-title"><span class="bar"></span>面向海康威视的通信类机会</div>
-    <div class="card" style="border-left:4px solid var(--link);">
-      <ul style="padding-left:20px;font-size:14px;">
-        <li><strong>数据中心与算力网络</strong>：广西加速"一核多点"算力布局、打造南宁核心算力枢纽和城域毫秒级算力网，电信东盟国际信息园、移动（广西）数据中心等算力设施持续建设/扩容，带来数据中心机房安防（视频监控、门禁、动环联动、消防）批量需求。</li>
-        <li><strong>5G+行业应用/智慧园区</strong>：规划明确推动5G全连接工厂、数字化车间、智慧口岸、智慧港口、平陆运河沿线智能化。海康在智慧园区、智慧口岸、工业视觉、河道/港口监控上有明确切入空间。</li>
-        <li><strong>千兆光网/智慧家庭</strong>：万兆光网与FTTR全光组网推进带动"智慧家庭"装机，可叠加家庭安防（可视门铃、老人看护、智能摄像头）产品。</li>
-        <li><strong>数字乡村/物联网</strong>：智慧农业大赛聚焦AI遥感、养殖场智能巡检、果园管护，运营商物联网+海康农业感知（虫情、气象、视频/视觉识别）存在协同落地机会。</li>
-        <li><strong>光缆/铁塔基础设施</strong>：纤缆、基站、机房新建与改造，衍生通信设施防盗、野外站点智能防护（太阳能+视频监控+智能检测）需求。</li>
-      </ul>
-    </div>
-
-    <p class="count-line">本期收录新闻条目：7 条（另有背景提示 2 条）</p>
-
-    <footer>
-      内容由公开网络信息整理，供行业内部分享参考。<br>
-      资料来源：广西通信管理局、中国移动广西公司、南宁市政府网、人民网广西频道等公开渠道。
-    </footer>
   </div>
+</header>
+
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是网络质量建设进入"成果盘点"期，从"建起来"转向"用得好"。</strong>广西 8 个重点单项上榜 2026 年度全国百城移动网络质量领先榜单，覆盖政务中心、商圈、医院等 12 类重点场景共 11638 个场所"信号升格"，实现全区高铁、平陆运河沿线 5G 覆盖——为智慧政务、智慧医院、园区物联与视频回传提供网络底座。</p>
+  <p><strong>二是行业监管趋严、治理下沉。</strong>广西通管局本周密集动作——清理备案信息不完整网站、联合网信办点名通报 38 款 APP，监管向数据安全与规范经营聚焦，提示个人隐私与数据安全合规是当前监管重点。</p>
+  <p><strong>三是基础设施升级维护持续推进，智慧家庭/数字乡村生态协同活跃。</strong>广西移动多市网络割接升级（覆盖南宁、玉林、钦州、桂林），智慧家庭/政企业务整合调整（智能小秘书等 7 项业务下线）；2026 广西智慧农业（数字乡村）创新大赛两赛道决赛举办，AI 遥感、物联网、智能装备在丘陵山区农业落地，与运营商物联网、数字乡村能力高度协同。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>数据中心与算力网络 · 广西"一核多点"算力布局、南宁核心算力枢纽、城域毫秒级算力网，电信东盟国际信息园/移动数据中心建设扩容 → 机房安防（视频监控、门禁、动环联动、消防）</li>
+    <li>5G+行业应用/智慧园区 · 5G全连接工厂、数字化车间、智慧口岸、智慧港口、平陆运河沿线智能化</li>
+    <li>千兆光网/智慧家庭 · FTTR 全光组网带动智慧家庭装机，可叠加家庭安防（可视门铃、老人看护、智能摄像头）</li>
+    <li>数字乡村/物联网 · 智慧农业 AI 遥感、养殖场智能巡检、果园管护，运营商物联网 + 海康农业感知协同落地</li>
+    <li>光缆/铁塔基础设施 · 通信设施防盗、野外站点智能防护（太阳能+视频监控+智能检测）</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">📶 网络质量建设与成果</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6742769.html" target="_blank" rel="noopener noreferrer">2026年度全国百城重点区域移动网络质量专项评测结果发布 广西8个重点单项登上网络质量领先榜单</a></h4>
+    <div class="card-body">
+      <p><strong>据广西通信管理局，中国信通院公布的2026年度全国百城重点区域移动网络质量评测中，广西共有8个重点单项上榜。其中广西电信5个重点场景上榜（南宁市民中心、南宁万象城、柳州阳光100城市广场、柳州市柳铁中心医院、玉林市第一人民医院）；广西移动2家网络评价领先运营商（玉林综合评价领先、柳州道路网络质量领先）及1个场景（南宁市第一人民医院）上榜。广西已累计完成交通枢纽、政务中心、商务楼宇、高等院校、医疗机构、工业园区等12类重点场景共11638个场所的"信号升格"，并实现全区高铁、平陆运河沿线5G覆盖。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>政务中心、医院、园区等场景"信号升格"完成，为智慧政务、智慧医院、园区物联与视频回传提供网络底座，可与海康智慧园区/医院安防方案协同。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6742769.html" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局／南宁日报</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="https://www.10086.cn/aboutus/news/pannounce/gx/index_771_770_detail_55957.html" target="_blank" rel="noopener noreferrer">广西移动开展多市网络割接升级（2026年第42周）</a></h4>
+    <div class="card-body">
+      <p><strong>广西移动定于10月12日-16日凌晨分时段进行网络升级割接，影响南宁、玉林、钦州、桂林部分家宽和专线业务（南宁市邕宁区/青秀区/良庆区、玉林市玉州区、钦州市钦南/钦北区、桂林市平乐县），属于通信基础设施的例行升级维护，指向持续优化宽带/专线网络能力。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>网络割接升级支撑宽带/专线能力优化，为智慧家庭、园区物联、视频回传等上层业务提供更稳的网络底座。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.10086.cn/aboutus/news/pannounce/gx/index_771_770_detail_55957.html" target="_blank" rel="noopener noreferrer">中国移动通信集团广西有限公司</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">⚙️ 行业治理与监管</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="https://gxca.miit.gov.cn/zwgk/dxhhlwgl/art/2026/art_7851c9642ce8448db8350301702a48e1.html" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局关于清理备案/核准信息不完整网站的通告</a></h4>
+    <div class="card-body">
+      <p><strong>广西通管局按要求清理备案/核准信息不完整的网站，推动网站备案信息规范完整，属通信与互联网行业常态化监管动作。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>偏行业治理类，供整体掌握监管动态，规范经营背景下合规产品与服务需求趋于稳定。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gxca.miit.gov.cn/zwgk/dxhhlwgl/art/2026/art_7851c9642ce8448db8350301702a48e1.html" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="https://gxca.miit.gov.cn/zwgk/dxhhlwgl/art/2026/art_e26b1ee271dc4628addc3554cca20456.html" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局 广西壮族自治区互联网信息办公室关于38款APP的通知</a></h4>
+    <div class="card-body">
+      <p><strong>广西通信管理局与网信办联合就38款APP相关问题发布通报/通知，涉及APP个人信息保护、数据安全治理，强化移动互联网应用合规监管。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>数据安全与行业治理提示隐私、数据安全合规是当前监管重点，安防数据合规与隐私保护方案存在配套空间。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gxca.miit.gov.cn/zwgk/dxhhlwgl/art/2026/art_e26b1ee271dc4628addc3554cca20456.html" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局／广西网信办</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">📱 业务运营与生态合作</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="https://www1.10086.cn/aboutus/news/pannounce/gx/index_771_778.html" target="_blank" rel="noopener noreferrer">关于广西移动公司智能小秘书尊享包等7项业务下线的公告</a></h4>
+    <div class="card-body">
+      <p><strong>广西移动对智能小秘书尊享包等7项业务做下线调整，属智慧家庭/增值业务的产品整合优化，反映出运营商在智能语音助手等"智慧家庭"细分产品上的迭代取舍。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>智慧家庭产品迭代取舍提示家庭安防（可视门铃、智能摄像头、老人看护）等硬件化/场景化产品更受青睐，可协同FTTR全光组网布局。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www1.10086.cn/aboutus/news/pannounce/gx/index_771_778.html" target="_blank" rel="noopener noreferrer">中国移动通信集团广西有限公司</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="https://www1.10086.cn/aboutus/news/pannounce/gx/index_771_778.html" target="_blank" rel="noopener noreferrer">中国移动广西公司2026年和教育内容产品应用提供商招募公告</a></h4>
+    <div class="card-body">
+      <p><strong>广西移动启动"和教育"内容产品应用提供商招募，围绕教育信息化场景引入第三方内容/应用合作方，体现运营商在教育行业数字化的生态合作意愿。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>教育信息化（智慧校园）合作可延伸至校园安防、视频监控类集成机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www1.10086.cn/aboutus/news/pannounce/gx/index_771_778.html" target="_blank" rel="noopener noreferrer">中国移动通信集团广西有限公司</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🌾 数字乡村与智慧农业延伸</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7697192651821236736/" target="_blank" rel="noopener noreferrer">2026年广西智慧农业（数字乡村）创新大赛决赛举办（相关延伸）</a></h4>
+    <div class="card-body">
+      <p><strong>大赛两大赛道决赛落地，57支智能装备队伍与55个项目围绕智能农机精准作业、农业遥感与AI识别、养殖场智能巡检与调控、果园采摘/病虫害AI筛查等场景同台竞技，聚焦糖料蔗、柑橘、芒果、水产畜牧等广西特色产业，助力"桂字号"出山及中国—东盟水果贸易数字化。AI遥感、物联网感知与视频视觉识别是核心手段。（自治区农业农村厅、网信办、钦州市政府主办）</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>农业遥感与AI识别、养殖场智能巡检、果园视觉筛查与海康农业AI/视觉感知能力高度契合，可作为数字乡村/智慧农业感知层的厂家侧切入点，并与运营商物联网方案打包。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7697192651821236736/" target="_blank" rel="noopener noreferrer">金台资讯／人民网广西频道</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">📚 背景参考（趋势跟踪）</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-03</span>
+    </div>
+    <h4><a href="https://gxca.miit.gov.cn" target="_blank" rel="noopener noreferrer">《广西信息通信行业发展"十五五"规划》印发</a></h4>
+    <div class="card-body">
+      <p><strong>规划提出到2030年每万人5G基站达50个、50G-PON端口6万个、自然村5G通达率超99.9%、城域"1-3-5"毫秒级算力网络、建成南宁国际通信业务出入口局等目标。这是未来五年全区通信基础设施投资与建设的总纲，直接决定后续数据中心、算力、5G-A、万兆光网项目的放量节奏。（发布时间不在本周窗口，作为长期跟踪基线）</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>规划直接决定后续数据中心、算力、5G-A、万兆光网项目放量，数据中心机房安防、智慧园区/智慧口岸/平陆运河沿线智能化等长期机会明确。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://gxca.miit.gov.cn" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-10</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7697553417585148470/" target="_blank" rel="noopener noreferrer">2026东盟算力交流会在南宁举行 东盟AI研究中心揭牌成立</a></h4>
+    <div class="card-body">
+      <p><strong>2026东盟算力交流会在南宁举行（人民网10-10报道），东盟AI研究中心揭牌成立，中国电信广西公司/天翼云面向东盟推介万卡算力池——涉及面向东盟的数据中心与算力出海。（发布时间不在本周窗口，作为趋势跟踪）</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>面向东盟的数据中心与算力出海带动算力枢纽机房安防、动环联动、智慧口岸等配套机会，值得关注。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7697553417585148470/" target="_blank" rel="noopener noreferrer">人民网广西频道</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
