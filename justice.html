@@ -1,117 +1,314 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>广西司法行业简报 · 2026-10-12~18</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西司法行业简报 · 2026.10.12 — 10.18</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: #f2f4f7; color: #1f2733; line-height: 1.6;
-    padding: 14px 12px 40px;
-  }
-  .container { max-width: 720px; margin: 0 auto; }
-  header { background: linear-gradient(135deg,#2c3e50,#566573); color:#fff;
-    border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
-  header .tag { display:inline-block; font-size:12px; background:rgba(255,255,255,.2);
-    padding:2px 10px; border-radius:20px; margin-bottom:8px; }
-  header h1 { font-size:20px; margin-bottom:4px; }
-  header .range { font-size:13px; opacity:.9; }
-  .card { background:#fff; border-radius:12px; padding:14px; margin-bottom:12px;
-    box-shadow:0 1px 3px rgba(0,0,0,.07); }
-  h2.section { font-size:14px; color:#1f618d; margin:16px 0 8px; padding-left:8px;
-    border-left:4px solid #1f618d; }
-  .summary { background:#eef6ff; border:1px solid #cfe4ff; }
-  .summary h3 { color:#1f3a5f; font-size:15px; margin-bottom:8px; }
-  .summary p { font-size:13.5px; margin-bottom:8px; }
-  .opp-tip { background:#fdf3f1; border-left:3px solid #c0392b; padding:8px 10px;
-    font-size:13px; border-radius:4px; }
-  .opp-tip b { color:#c0392b; }
-  .opp-tip li { margin-left:16px; margin-top:4px; }
-  .news h3 { font-size:15.5px; color:#1f3a5f; margin-bottom:6px; }
-  .meta { font-size:12px; color:#6b7785; margin-bottom:6px; }
-  .meta span { background:#f0f2f5; padding:1px 7px; border-radius:10px; margin-right:6px; display:inline-block; }
-  .news p { font-size:13.5px; margin-bottom:8px; }
-  .opp-box { background:#fdf3f1; border-left:3px solid #c0392b; padding:8px 10px;
-    font-size:13px; border-radius:4px; margin-top:8px; }
-  .opp-box b { color:#c0392b; }
-  a { color:#1f618d; text-decoration:none; word-break:break-all; }
-  a.linkbtn { display:inline-block; margin-top:6px; font-size:12.5px; }
-  footer { text-align:center; font-size:12px; color:#9aa5b1; margin-top:18px; }
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <span class="tag">广西·司法行业</span>
-    <h1>行业简报</h1>
-    <div class="range">2026-10-12 ~ 10-18</div>
-  </header>
 
-  <div class="card summary">
-    <h3>总结与提炼</h3>
-    <p>本期广西司法行业动态的<strong>最大热点集中在智慧口岸/智慧通关领域</strong>：中越友谊关智慧口岸、崇左浦寨—新清无人通关平台持续放量，成为全国沿边口岸智能化样板，蕴含大量<strong>智能安检、AI图像识别、车辆识别、无人集卡调度、海关/边检视频监控与联动监管</strong>等安防与智能化机会。司法系统方面，广西监狱开放日展示VR等数字化教育改造手段、广西法院重拳整治新型网络黑恶犯罪、广西检察系统推进数字检察与大数据监督模型，均体现<strong>监管场所信息化、科技法庭、办案中心数字化</strong>的持续投入趋势。本期智慧监狱/智慧戒毒/智慧法庭未见大规模新建项目新闻，多为既有建设成果的展示与推进。</p>
-    <div class="opp-tip">
-      <b>给海康威视行业经理的机会提示（供投标/商机研判）：</b>
-      <ul>
-        <li><b>智慧口岸/海关/边检</b>：友谊关、崇左无人通关平台落地，AI图像识别验货、智能闸口、口岸视频监控与应急联动是明确切入方向；叠加广西沿边口岸扩容（越方2027年建成），后续配套安防、监控、智能查验设备需求可期。</li>
-        <li><b>智慧监狱/监管场所</b>：开放日集中展示VR培训、非遗教育等改造手段，监管场所的教育改造数字化、会见系统、监区视频监控升级仍有可关注空间。</li>
-        <li><b>科技法庭/法院信息化</b>：本期未检索到窗口内的广西科技法庭政府采购公告，但法院系统持续强调"数字化办案""智慧诉讼服务"，可作为后续跟踪方向。</li>
-        <li><b>检察智能化</b>：广西已落地人工智能辅助办案/监督大赛，数字检察、大数据法律监督模型成常态化，办案中心、智慧检务存在机会。</li>
-      </ul>
+<header class="header">
+  <div class="header-inner">
+    <h1>⚖️ 广西司法行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 5 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
     </div>
   </div>
+</header>
 
-  <h2 class="section">智慧口岸 / 智慧海关 / 智慧边检</h2>
+<main class="main">
 
-  <div class="news card">
-    <h3>广西友谊关口岸"智"变升级 面向东盟跨境货运样板渐成</h3>
-    <div class="meta"><span>2026-10-18</span><span>中国新闻网</span><span>凭祥市友谊关口岸</span></div>
-    <p>中越智慧口岸中方段已完成实单、实车、实货试运行并具备通行条件，越方配套工程预计2027年10月建成投运，全线投用后南宁至河内货物24小时直达、日通关能力超4000辆次。项目聚焦减单证、减环节、减人工，通过无人通行通道、智能调度平台、AI快检系统实现无人车集装箱自主转运。今年前8月友谊关口岸进出口总值5136亿元，同比增长31.2%。友谊关海关依托先进查验设备与AI图像识别技术，通关效率提升40%；边检快捷通关系统将越南籍司机、无人车纳入，单车核验时间由1分钟压缩至15秒。</p>
-    <div class="opp-box"><b>海康视角：</b>口岸AI图像识别查验、智能闸口、通关车辆监控与报警、海关/边检视频联动监控为明确机会点；越方2027年建成投运带来后续配套硬件放量。</div>
-    <a class="linkbtn" href="http://www.chinanews.com.cn/aseaninfo/2026/10-18/10716657.shtml" target="_blank">查看原文 →</a>
-  </div>
-
-  <div class="news card">
-    <h3>2395米智慧通道赋能口岸升级——崇左以全国首个无人通关平台释放沿边开放新活力</h3>
-    <div class="meta"><span>2026-10-13</span><span>崇左市政府门户/崇左融媒</span><span>凭祥市浦寨—新清智慧口岸中方段</span></div>
-    <p>国内首个以无人集卡为核心、AI智能调度为支撑的一体化智慧口岸通关平台于2025年12月投运，通道长2395米，搭载5G专网、激光雷达、多传感器融合感知与北斗厘米级高精定位。截至2026年9月底已平稳安全运营满300天，投入30辆无人集卡、累计载货出境超1300辆次、货值超28亿元。AI调度系统结合车流货量自动分配运力，打通企业、海关、边检数据接口；"AI+通关物流"全链条智慧服务下，单票审单由6分钟压缩至2分钟，单人日审单量从不足80票提升至224票；AI视觉比对实现查验效能提升20%以上、生鲜检测效率提升35%。2026年1月友谊关口岸在全国率先将越南籍司机纳入快捷通关范围，最快15秒"秒级通关"。</p>
-    <div class="opp-box"><b>海康视角：</b>无人集卡+车路云一体化底座的"智慧的路"全域感知网络、智能闸口、口岸查验区/卡口视频监控与安全员应急联动，均属安防与智能物联可介入领域。</div>
-    <a class="linkbtn" href="http://www.chongzuo.gov.cn/dtxx/zwdt/t28217567.shtml" target="_blank">查看原文 →</a>
-  </div>
-
-  <h2 class="section">智慧监狱 / 监管与教育改造</h2>
-
-  <div class="news card">
-    <h3>广西监狱系统举办开放日活动</h3>
-    <div class="meta"><span>2026-10-17（活动10-15举行）</span><span>广西云-广西日报</span><span>主会场广西女子监狱，另设18所分会场</span></div>
-    <p>广西监狱系统2026年监狱开放日主会场设在广西女子监狱，共19所监狱参与集中展示规范执法与教育改造工作。现场开展健康义诊、法律咨询、亲情会见等帮教活动，集中呈现坭兴陶制作、蛋壳雕刻等非遗技能教育成果。特别值得注意的是，桂林监狱、柳城监狱利用<strong>VR技术开展罪犯出监适应性训练</strong>，以数字化、智能化手段赋能教育改造工作，助力临释罪犯提前适应社会环境。</p>
-    <div class="opp-box"><b>海康视角：</b>监狱开放日虽以宣传为主，但"VR出监适应训练+数字化教育改造"反映监管场所数字化应用深化，监区视频监控、会见系统、教育改造信息化可作为持续跟踪方向。</div>
-    <a class="linkbtn" href="http://news.gxnews.com.cn/staticpages/20261017/newgx6ad36177-22005360.shtml" target="_blank">查看原文 →</a>
-  </div>
-
-  <h2 class="section">法院 / 科技法庭 / 审判</h2>
-
-  <div class="news card">
-    <h3>广西法院更新审判理念 重拳整治新型黑恶犯罪</h3>
-    <div class="meta"><span>2026-10-12</span><span>中国新闻网/中国长安网（广西日报）</span><span>广西（南宁等）</span></div>
-    <p>广西高院介绍，广西法院立足刑事审判职能，在严打传统黑恶犯罪同时，重拳整治利用网络平台和"软暴力"手段有组织实施的裸聊敲诈、恶意索赔、色情敲诈等新型黑恶犯罪，深化扫黑除恶以来已审结新型黑恶犯罪案件5件26人。2026年以来一审受理黑恶案件42件284人，审结31件264人。南宁市西乡塘区、青秀区、良庆区法院近日对4起涉黑涉恶案件集中宣判，29名被告人获刑。法院系统强调通过以案释法、庭审公开、集中宣判等方式开展治理。</p>
-    <div class="opp-box"><b>海康视角：</b>涉黑涉恶案件集中宣判、庭审公开需求增大，法院科技法庭、庭审直播、办案中心音视频记录与证据固定技术为间接相关机会。</div>
-    <a class="linkbtn" href="http://www.chinanews.com.cn/sh/2026/10-12/10711985.shtml" target="_blank">查看原文 →</a>
-  </div>
-
-  <h2 class="section">检察 / 法律监督 / 数字检察</h2>
-
-  <div class="news card">
-    <h3>河池市人民检察院五年工作报告：推进数字检察 强化法律监督</h3>
-    <div class="meta"><span>2026-10-12</span><span>河池市人民检察院</span><span>河池市</span></div>
-    <p>河池市检察院2026年10月12日向市人代会作报告。五年来全市检察机关办理各类案件35554件；推进数字检察建设，运用大数据法律监督模型250个，发现线索3002条，监督成案1003件；研发的水土保持补偿费、环境污染税监督模型被最高检推广应用；涉税费征收法律监督模型获广西数字政府应用场景建设竞赛优胜奖。市检察院12309检察服务中心获评全国检察机关"文明接待室"；依法惩治利用人工智能实施的新型犯罪，对程某等12人利用AI换脸技术骗取1.3亿元投资案件提起公诉。</p>
-    <div class="opp-box"><b>海康视角：</b>数字检察、大数据法律监督模型、12309服务中心建设体现检务数字化投入，办案中心信息化与检察智能辅助系统为可关注机会。</div>
-    <a class="linkbtn" href="http://m.toutiao.com/group/7695738302141399602/" target="_blank">查看原文 →</a>
-  </div>
-
-  <footer>内容由公开网络信息整理，供行业内部分享参考</footer>
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是智慧口岸/智慧通关成为最热热点，全国沿边口岸智能化样板持续放量。</strong>中越友谊关智慧口岸中方段已完成实单、实车、实货试运行并具备通行条件，越方配套工程预计 2027 年建成投运；崇左浦寨—新清无人通关平台投运满 300 天，投入 30 辆无人集卡、累计载货出境超 1300 辆次——蕴含大量智能安检、AI 图像识别、车辆/箱号识别、无人集卡调度、海关/边检视频监控与联动监管机会。</p>
+  <p><strong>二是监管场所数字化教育改造与法院、检察智能建设持续投入。</strong>广西监狱开放日集中展示 VR 出监适应性训练等数字化改造手段；广西法院重拳整治新型网络黑恶犯罪、强化庭审公开与集中宣判；广西检察系统推进数字检察与大数据监督模型——体现监管场所信息化、科技法庭、办案中心数字化的持续推进方向。</p>
+  <p><strong>三是本期未见智慧监狱/科技法庭大规模新建项目公告，多为既有建设成果展示。</strong>可在友谊关、崇左等口岸扩容及越方 2027 年建成节点预判后续配套安防、监控、智能查验设备放量节奏，并持续跟踪监管场所与检法信息化升级机会。</p>
 </div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>智慧口岸/海关/边检 · 友谊关、崇左无人通关平台，AI 图像识别验货、智能闸口、口岸视频监控与应急联动</li>
+    <li>广西沿边口岸扩容（越方2027年建成）· 后续配套安防/监控/智能查验设备需求可期</li>
+    <li>智慧监狱/监管场所 · 监区视频监控、会见系统、教育改造信息化升级（持续跟踪）</li>
+    <li>科技法庭/法院信息化 · 庭审直播、办案中心音视频记录与证据固定</li>
+    <li>检察智能化 · 数字检察、办案中心信息化、智慧检务建设</li>
+  </ul>
+</div>
+
+  <div class="section">
+    <div class="section-title">🛃 智慧口岸与智慧海关</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-18</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/aseaninfo/2026/10-18/10716657.shtml" target="_blank" rel="noopener noreferrer">广西友谊关口岸"智"变升级 面向东盟跨境货运样板渐成</a></h4>
+    <div class="card-body">
+      <p><strong>中越智慧口岸中方段已完成实单、实车、实货试运行并具备通行条件，越方配套工程预计2027年10月建成投运，全线投用后南宁至河内货物24小时直达、日通关能力超4000辆次。项目聚焦减单证、减环节、减人工，通过无人通行通道、智能调度平台、AI快检系统实现无人车集装箱自主转运。今年前8月友谊关口岸进出口总值5136亿元，同比增长31.2%；友谊关海关依托先进查验设备与AI图像识别技术，通关效率提升40%；边检快捷通关系统将越南籍司机、无人车纳入，单车核验时间由1分钟压缩至15秒。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>口岸AI图像识别查验、智能闸口、通关车辆监控与报警、海关/边检视频联动监控为明确机会点；越方2027年建成投运带来后续配套硬件放量。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/aseaninfo/2026/10-18/10716657.shtml" target="_blank" rel="noopener noreferrer">中国新闻网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技术</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://www.chongzuo.gov.cn/dtxx/zwdt/t28217567.shtml" target="_blank" rel="noopener noreferrer">2395米智慧通道赋能口岸升级——广西崇左以全国首个无人通关平台释放沿边开放新活力</a></h4>
+    <div class="card-body">
+      <p><strong>国内首个以无人集卡为核心、AI智能调度为支撑的一体化智慧口岸通关平台于2025年12月投运，通道长2395米，搭载5G专网、激光雷达、多传感器融合感知与北斗厘米级高精定位。截至2026年9月底已平稳安全运营满300天，投入30辆无人集卡、累计载货出境超1300辆次、货值超28亿元。AI调度系统结合车流货量自动分配运力，打通企业、海关、边检数据接口；"AI+通关物流"全链条智慧服务下，单票审单由6分钟压缩至2分钟，单人日审单量从不足80票提升至224票；AI视觉比对实现查验效能提升20%以上、生鲜检测效率提升35%。友谊关口岸在全国率先将越南籍司机纳入快捷通关范围，最快15秒"秒级通关"。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>无人集卡+车路云一体化底座的"智慧的路"全域感知网络、智能闸口、口岸查验区/卡口视频监控与安全员应急联动，均属安防与智能物联可介入领域。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chongzuo.gov.cn/dtxx/zwdt/t28217567.shtml" target="_blank" rel="noopener noreferrer">崇左市人民政府门户网站／崇左融媒</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🔐 智慧监狱与监管改造</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="http://news.gxnews.com.cn/staticpages/20261017/newgx6ad36177-22005360.shtml" target="_blank" rel="noopener noreferrer">广西监狱系统举办开放日活动</a></h4>
+    <div class="card-body">
+      <p><strong>广西监狱系统2026年监狱开放日主会场设在广西女子监狱，共19所监狱参与集中展示规范执法与教育改造工作。现场开展健康义诊、法律咨询、亲情会见等帮教活动，集中呈现坭兴陶制作、蛋壳雕刻等非遗技能教育成果。桂林监狱、柳城监狱利用 VR 技术开展罪犯出监适应性训练，以数字化、智能化手段赋能教育改造工作，助力临释罪犯提前适应社会环境、走好回归之路。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>"VR出监适应训练+数字化教育改造"反映监管场所数字化应用深化，监区视频监控、会见系统、教育改造信息化可作为持续跟踪方向。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://news.gxnews.com.cn/staticpages/20261017/newgx6ad36177-22005360.shtml" target="_blank" rel="noopener noreferrer">广西云-广西日报</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">⚖️ 法院与检察法律监督</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/sh/2026/10-12/10711985.shtml" target="_blank" rel="noopener noreferrer">广西法院更新审判理念 重拳整治新型黑恶犯罪</a></h4>
+    <div class="card-body">
+      <p><strong>广西高院介绍，广西法院立足刑事审判职能，在严打传统黑恶犯罪同时，重拳整治利用网络平台和"软暴力"手段有组织实施的裸聊敲诈、恶意索赔、色情敲诈等新型黑恶犯罪，深化扫黑除恶以来已审结新型黑恶犯罪案件5件26人。2026年以来一审受理黑恶案件42件284人，审结31件264人。南宁市西乡塘区、青秀区、良庆区法院近日对4起涉黑涉恶案件集中宣判，29名被告人获刑。法院系统强调通过以案释法、庭审公开、集中宣判等方式开展治理。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>涉黑涉恶案件集中宣判、庭审公开需求增大，法院科技法庭、庭审直播、办案中心音视频记录与证据固定技术为间接相关机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/sh/2026/10-12/10711985.shtml" target="_blank" rel="noopener noreferrer">中国新闻网／中国长安网</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7695738302141399602/" target="_blank" rel="noopener noreferrer">河池市人民检察院五年工作报告：推进数字检察 强化法律监督</a></h4>
+    <div class="card-body">
+      <p><strong>河池市检察院2026年10月12日向市人代会作报告。五年来全市检察机关办理各类案件35554件；推进数字检察建设，运用大数据法律监督模型250个，发现线索3002条，监督成案1003件；研发的水土保持补偿费、环境污染税监督模型被最高检推广应用；涉税费征收法律监督模型获广西数字政府应用场景建设竞赛优胜奖。市检察院12309检察服务中心获评全国检察机关"文明接待室"；依法惩治利用人工智能实施的新型犯罪，对程某等12人利用AI换脸技术骗取1.3亿元投资案件提起公诉。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>数字检察、大数据法律监督模型、12309服务中心建设体现检务数字化投入，办案中心信息化与检察智能辅助系统为可关注机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7695738302141399602/" target="_blank" rel="noopener noreferrer">河池市人民检察院</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
