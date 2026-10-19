@@ -1,157 +1,411 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>广西文化·体育·卫生健康行业简报（2026-10-12~18）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西文化体育卫生健康行业简报 · 2026.10.12 — 10.18</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;-webkit-text-size-adjust:100%}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f3f5f8;color:#222;line-height:1.65;padding:14px 12px 32px}
-.wrap{max-width:720px;margin:0 auto}
-header.hero{background:linear-gradient(135deg,#1d5c4a,#2a8a6e);color:#fff;border-radius:14px;padding:22px 20px}
-header.hero h1{font-size:21px;line-height:1.35;font-weight:700}
-header.hero .sub{font-size:13px;margin-top:8px;opacity:.92}
-.card{background:#fff;border-radius:14px;padding:18px 16px;margin-top:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.card h2{font-size:15px;color:#1d5c4a;border-left:4px solid #2a8a6e;padding-left:10px;margin-bottom:10px}
-.section-tag{font-size:13px;color:#2a8a6e;font-weight:600;margin:20px 0 4px}
-.news{background:#fff;border-radius:12px;padding:15px 14px;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.news h3{font-size:15px;line-height:1.4;margin-bottom:8px}
-.meta{font-size:12px;color:#8a8f98;background:#f6f8fa;border-radius:8px;padding:7px 9px;margin-bottom:8px;line-height:1.5}
-.summary{font-size:13px;color:#444;margin-bottom:8px}
-.opp{background:#eef8f3;border-left:3px solid #2a8a6e;border-radius:6px;padding:8px 10px;font-size:12.5px;color:#1d5c4a;line-height:1.55}
-.opp b{display:block;margin-bottom:2px}
-.link{display:inline-block;margin-top:10px;font-size:12.5px;color:#1769b5;text-decoration:none;word-break:break-all}
-.link:hover{text-decoration:underline}
-.footer{font-size:12px;color:#8a8f98;text-align:center;margin-top:22px;line-height:1.6}
-ul.tl{font-size:13px;color:#444;padding-left:18px}
-ul.tl li{margin-top:8px}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="hero">
-  <h1>广西文化 · 体育 · 卫生健康<br>行业简报</h1>
-  <div class="sub">数据周期 2026-10-12 ~ 10-18 ｜ 海康威视·安防与智能化机会视角</div>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏥 广西文体卫行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 13 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
 </header>
 
-<div class="card">
-  <h2>总结与提炼</h2>
-  <p style="font-size:13px;color:#444">本周（10.12-10.18）广西文体卫行业呈现鲜明的 <b>「数智化+面向东盟+大型赛事」</b> 三重主线，智能化建设进入实质采购/落地阶段，对安防、AI、视频物联、智慧医院/景区/场馆解决方案是明确的窗口期：</p>
-  <ul class="tl">
-    <li><b>医疗智能化加速落地</b>：全国医保影像AI识图大赛（广西主场）进入决赛前关键期，优秀AI模型将优先下沉基层医院辅助影像诊断；自治区卫健委高层明确"人工智能+医疗卫生"改革方向，建设全域协同数据整合与智能应用体系。地市智慧医院采购集中放量（崇左自助机升级、玉林妇幼智慧医院中标落地、钦州一院智慧医院I期、桂林妇保院电子病历五级/互联互通四甲目标）。→ 对智慧医院安防链路（视频监控、行为分析、智慧导诊、数据安全/等保的数字证书、隐私防护）机会明确。</li>
-    <li><b>大型赛事安保是高价值场景</b>：2026环广西世巡赛（10.13-18）贯穿南宁、崇左、百色、河池、柳州等地，交警专项安保方案与全程临时管控；广西第十六届少数民族传统体育运动会（柳州）、第十六届区运会各项目比赛密集。→ 赛事安保的客流/车流可视化管理、视频监控、应急指挥、重点区域智能分析是安防集成直接切入点。</li>
-    <li><b>文博文旅数字化加速</b>：广西博物馆采用AIGC可视化、超高清微距参与《国宝时刻》获全国星光奖；广西民族博物馆全息、数字展览、AI导览（"小壮娃"）持续走热；桂林银子岩AR、崇左花山岩画"一键游"智慧景区。→ 智慧博物馆/智慧景区的客流分析、安防监控、文物数字化、环境监测需求旺盛。</li>
+<main class="main">
+
+<div class="summary">
+  <h2>📌 本周总结</h2>
+  <p><strong>一是医疗智能化加速落地。</strong>全国医保影像AI识图大赛（广西主场）进入决赛前关键期，优秀AI模型将优先下沉基层医院辅助影像诊断；自治区卫健委高层明确"人工智能+医疗卫生"改革方向，建设全域协同数据整合与智能应用体系。地市智慧医院采购集中放量（崇左自助机升级、玉林妇幼智慧医院中标落地、钦州一院智慧医院I期、桂林妇保院电子病历五级/互联互通四甲目标），对智慧医院安防链路（视频监控、行为分析、智慧导诊、数据安全/等保数字证书、隐私防护）机会明确。</p>
+  <p><strong>二是大型赛事安保是高价值场景。</strong>2026环广西世巡赛（10.13-18）贯穿南宁、崇左、百色、河池、柳州等地，交警专项安保方案与全程临时管控；广西第十六届少数民族传统体育运动会（柳州）、第十六届区运会各项目比赛密集。赛事安保的客流/车流可视化管理、视频监控、应急指挥、重点区域智能分析是安防集成直接切入点。</p>
+  <p><strong>三是文博文旅数字化加速。</strong>广西博物馆采用AIGC可视化、超高清微距参与《国宝时刻》获全国星光奖；广西民族博物馆全息、数字展览、AI导览持续走热；桂林银子岩AR、崇左花山岩画"一键游"智慧景区。智慧博物馆/智慧景区的客流分析、安防监控、文物数字化、环境监测需求旺盛。</p>
+</div>
+
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>崇左市人民医院自助机升级改造 · 预算50.7万元，预计11月采购</li>
+    <li>玉林妇幼智慧医院中标落地 · 智慧医院整体信息化（安防/网络可协同）</li>
+    <li>广西医疗机构信息系统数字证书建设调研 · 等保/数据安全/电子签名</li>
+    <li>环广西世巡赛等大型赛事 · 客流车流可视化管理、交通视频监控、应急指挥</li>
+    <li>2026"人工智能+体育"场景大赛（10.15起报名）· 智慧场馆、无人机巡防、体育安防集成</li>
+    <li>广西优秀运动队信息系统采购询价 · 训练基地视频监控/门禁/智能安防集成</li>
   </ul>
 </div>
 
-<div class="section-tag">一、卫生健康 / 医疗信息化</div>
-<div class="news">
-  <h3>广西医保影像AI识图大赛（全国医保影像AI识图大赛）进入决赛前关键期，优秀AI模型将下沉基层医院</h3>
-  <div class="meta">发布时间：2026-10-15（发布会10月13日举行；初赛评审结果10月16日公示）｜ 来源：人民网广西频道 / 广西壮族自治区医疗保障局<br>地点：广西（南宁，广西新闻发布厅发布）</div>
-  <div class="summary">国家医保局与广西共同主办的国家级赛事8月1日开赛，1332支队伍（含港澳、东盟）参赛，线上初赛结束，10月下旬进入线下决赛。广西正建设覆盖全区的"医保影像云"，优秀AI模型将优先应用于基层医院辅助影像诊断，并在广西做验证、转化，推动AI医疗产业落地及面向东盟出海。</div>
-  <div class="opp"><b>海康机会点</b>医保影像云、基层AI辅助诊断带来视频/影像数据中台、安全防护（等保、数字证书、隐私保护）、AI算力配套需求。</div>
-  <a class="link" href="http://asean.gxnews.com.cn/staticpages/20261015/newgx6ad0893f-22004350.shtml" target="_blank">原文链接 →</a>
+  <div class="section">
+    <div class="section-title">🏥 医疗信息化与智慧医院</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="http://asean.gxnews.com.cn/staticpages/20261015/newgx6ad0893f-22004350.shtml" target="_blank" rel="noopener noreferrer">广西医保影像AI识图大赛进入决赛前关键期 优秀AI模型将下沉基层医院</a></h4>
+    <div class="card-body">
+      <p><strong>国家医保局与广西共同主办的国家级赛事8月1日开赛，1332支队伍（含港澳、东盟）参赛，线上初赛结束，10月下旬进入线下决赛。广西正建设覆盖全区的"医保影像云"，优秀AI模型将优先应用于基层医院辅助影像诊断，并在广西做验证、转化，推动AI医疗产业落地及面向东盟出海。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>医保影像云、基层AI辅助诊断带来视频/影像数据中台、安全防护（等保、数字证书、隐私保护）、AI算力配套需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://asean.gxnews.com.cn/staticpages/20261015/newgx6ad0893f-22004350.shtml" target="_blank" rel="noopener noreferrer">人民网广西频道 / 广西壮族自治区医疗保障局</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7698173039866806825/" target="_blank" rel="noopener noreferrer">自治区卫健委党组传达贯彻全国卫生与健康大会精神 部署"人工智能+医疗卫生"改革</a></h4>
+    <div class="card-body">
+      <p><strong>会议强调持续强化人工智能赋能发展，深入实施"人工智能+医疗卫生"改革，研发推广示范应用场景，构建全域协同的数据整合与智能应用体系，并依托中国—东盟医疗保健合作中心（广西）深化面向东盟交流合作。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>政策顶层定调"AI+医疗""全域数据整合"，指向智慧医院、数据中台、医共体一体化安防与信息化采购。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7698173039866806825/" target="_blank" rel="noopener noreferrer">自治区卫生健康委（健康八桂）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="https://wsjkw.gxzf.gov.cn/zntj/" target="_blank" rel="noopener noreferrer">自治区卫生健康统计信息中心开展广西医疗卫生机构信息系统数字证书建设项目市场调研</a></h4>
+    <div class="card-body">
+      <p><strong>面向广西医疗卫生机构信息系统开展数字证书建设项目市场调研，涉及电子认证、数据安全与信息系统安全体系完善。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>医疗行业数字证书/数据安全建设，强化等保、电子签名、安全防护的合规配置，与视频/数据安全联动的系统集成机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://wsjkw.gxzf.gov.cn/zntj/" target="_blank" rel="noopener noreferrer">广西壮族自治区卫生健康委员会</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=EEb9AasUrdHV07T9HTWovg==&parentId=66485" target="_blank" rel="noopener noreferrer">崇左市人民医院自助机升级改造采购项目政府采购意向（预算50.7万元）</a></h4>
+    <div class="card-body">
+      <p><strong>公开采购大屏自助机6台（32寸4台、39寸2台）、医保电子凭证应用服务、实施及配套服务，预计2026年11月采购。属医院智慧服务/便民终端建设。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>医院信息化终端改造，可联动安防视频、智慧导诊、自助服务安防集成。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=EEb9AasUrdHV07T9HTWovg==&parentId=66485" target="_blank" rel="noopener noreferrer">广西政府采购网（崇左市人民医院）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="https://www.120bid.com/tag/45_2445_zhihuiyiyuan.html" target="_blank" rel="noopener noreferrer">玉林市妇幼保健院"智慧医院"项目中标候选人公示（中标候选：中国移动广西）</a></h4>
+    <div class="card-body">
+      <p><strong>玉林市妇幼保健院智慧医院项目公开招标公布中标候选人，运营商中标，涉及智慧医院整体信息化建设。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>智慧医院整体集成项目落地信号，安防（视频监控、门禁）、网络智能化可协同切入。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.120bid.com/tag/45_2445_zhihuiyiyuan.html" target="_blank" rel="noopener noreferrer">中国银行广西分行项目公告</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://www.gxzf.gov.cn/gxydm/gqch_230734/dmss/gbzn/gbzn/t28217243.shtml" target="_blank" rel="noopener noreferrer">"活力中国调研行"广西主题采访团走进中国—东盟国家人工智能应用合作中心（含AI口腔医疗）</a></h4>
+    <div class="card-body">
+      <p><strong>探访广西"北上广研发+广西集成+东盟应用"路径。广西医科大学附属口腔医院研发的AI口腔种植机器人已投入临床，服务50余名东盟患者，智能诊疗设备与技术标准落地越南、新加坡等东盟医疗机构。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>AI医疗设备/诊疗智能化，跨境医疗服务与安防、影像系统出海配套。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/gxydm/gqch_230734/dmss/gbzn/gbzn/t28217243.shtml" target="_blank" rel="noopener noreferrer">广西日报（自治区政府门户）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🏛️ 文博文旅数字化</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7696358617880871458/" target="_blank" rel="noopener noreferrer">广西博物馆参与摄制《国宝时刻·翔鹭纹铜鼓》获第29届全国电视文艺"星光奖"优秀电视纪录片奖</a></h4>
+    <div class="card-body">
+      <p><strong>广西博物馆与广西广播电视台联合摄制，采用超高清微距拍摄与AIGC可视化技术还原西汉翔鹭纹铜鼓纹饰，陕西/湖南等多省文博机构联合摄制，展现文博数字化与AI内容生成在文物保护活化中的应用。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>文物数字化、超高清影像采集/AIGC应用，带动文博数据资产、数字展览与安防监控联动解决方案。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7696358617880871458/" target="_blank" rel="noopener noreferrer">广西壮族自治区文化和旅游厅 / 广西博物馆</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-14</span>
+    </div>
+    <h4><a href="http://www.guilin.gov.cn/ywdt/zwdt/t28222813.shtml" target="_blank" rel="noopener noreferrer">2026年世界运河大会在桂林举行（首次落地广西）</a></h4>
+    <div class="card-body">
+      <p><strong>内河航道国际组织（IWI）主办，20余国与会，主题"创新与坚持：关键选择"，配套灵渠、平陆运河、漓江三条实地考察线，突出运河水运与文旅融合、数字化议题。该国际盛会第三次来中国、首次入桂。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>运河/漓江文旅带开发带来景区数字化、客流管理、生态监测安防需求；桂林文旅智能化市场加温。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.guilin.gov.cn/ywdt/zwdt/t28222813.shtml" target="_blank" rel="noopener noreferrer">桂林市人民政府 / 广西日报</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://wlt.gxzf.gov.cn/zwdt/" target="_blank" rel="noopener noreferrer">2026年广西广场舞集中展演在贺州举行（文化群众活动）</a></h4>
+    <div class="card-body">
+      <p><strong>全区性群众文化广场舞集中展演活动举办（群众文化条线活动，涉及文化场馆与户外活动运行保障）。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>群众文体活动集中场所的保障与安防布点、人流安全管理。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://wlt.gxzf.gov.cn/zwdt/" target="_blank" rel="noopener noreferrer">广西壮族自治区文化和旅游厅</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🏅 体育与大型赛事安保</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://tyj.gxzf.gov.cn/gkxxgl/gggs_83521/t28234062.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区体育局举办2026面向东盟"人工智能+体育"应用场景大赛</a></h4>
+    <div class="card-body">
+      <p><strong>紧扣广西"人工智能+"三年行动方案，下设竞技体育、航空体育、全民健身、体医融合、体育新场景（机器人、无人机、AI眼镜、体育大模型等）及东盟组等赛道；报名10月15日—11月5日，初赛11月7-8日，全程免费。聚焦"北上广研发+广西集成+东盟应用"。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>体育科技/AI+体育生态，指向智慧场馆、智能运动监测、赛事数据可视化、无人机巡防、体育安防集成等场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/gkxxgl/gggs_83521/t28234062.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区体育局</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="https://www.nanning.gov.cn/ggfw/bmfw/jtcx/t6742897.html" target="_blank" rel="noopener noreferrer">2026环广西公路自行车世界巡回赛（10.13-18）贯穿南宁等地 交警专项安保方案与全程交通管控</a></h4>
+    <div class="card-body">
+      <p><strong>世界级赛事多赛段进行，南宁站（宜州—忻城—上林—马山弄拉赛段）10月18日举行，交警制定专项交通安保方案、全程分时段管制，推荐9个安全观赛点；中国车手王瑞东在靖西-巴马赛段创造历史，斩获中国首件世巡赛圆点衫。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>大型赛事全程安保可视化、道路交通监控、应急指挥、观众人流/车流智能管控，是安防集成典型场景。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.nanning.gov.cn/ggfw/bmfw/jtcx/t6742897.html" target="_blank" rel="noopener noreferrer">南宁市公安局交通管理支队 / 南宁市政府</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-13</span>
+    </div>
+    <h4><a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区第十六届少数民族传统体育运动会在柳州举行</a></h4>
+    <div class="card-body">
+      <p><strong>全区少数民族传统体育运动会举办，系广西大型民族体育盛会，涉及多项目竞赛与场馆保障。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>大中型赛事/民族运动会场馆安防、安保应急、人群管理。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区体育局</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-project">项目</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="http://tyj.gxzf.gov.cn/gkxxgl/gggs_83521/index.shtml" target="_blank" rel="noopener noreferrer">广西优秀运动队信息管理系统改造升级功能服务采购项目（询价/废标后重启）</a></h4>
+    <div class="card-body">
+      <p><strong>针对优秀运动队信息管理系统改造升级功能服务进行采购询价（此前的采购曾废标重招），属体育条线数字化管理信息系统建设。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>体育管理系统信息化，可配套训练基地的视频监控、门禁、智能安防与管理平台集成。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://tyj.gxzf.gov.cn/gkxxgl/gggs_83521/index.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区体育局</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：广西卫健委 / 广西文旅厅 / 广西体育局 / 广西日报 / 人民网广西频道<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
 </div>
 
-<div class="news">
-  <h3>自治区卫健委党组传达贯彻全国卫生与健康大会精神，部署"人工智能+医疗卫生"改革</h3>
-  <div class="meta">发布时间：2026-10-16（会议）｜ 来源：自治区卫生健康委（健康八桂）<br>地点：广西</div>
-  <div class="summary">会议强调持续强化人工智能赋能发展，深入实施"人工智能+医疗卫生"改革，研发推广示范应用场景，构建全域协同的数据整合与智能应用体系，并依托中国—东盟医疗保健合作中心（广西）深化面向东盟交流合作。</div>
-  <div class="opp"><b>海康机会点</b>政策顶层定调"AI+医疗""全域数据整合"，指向智慧医院、数据中台、医共体一体化安防与信息化采购。</div>
-  <a class="link" href="http://m.toutiao.com/group/7698173039866806825/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>崇左市人民医院自助机升级改造采购项目政府采购意向（预算50.7万元）</h3>
-  <div class="meta">发布时间：2026-10-13｜ 来源：广西政府采购网（崇左市人民医院）<br>地点：崇左市</div>
-  <div class="summary">公开采购大屏自助机6台（32寸4台、39寸2台）、医保电子凭证应用服务、实施及配套服务，预计2026年11月采购。属医院智慧服务/便民终端建设。</div>
-  <div class="opp"><b>海康机会点</b>医院信息化终端改造，可联动安防视频、智慧导诊、自助服务安防集成。</div>
-  <a class="link" href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=EEb9AasUrdHV07T9HTWovg==&parentId=66485" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>玉林市妇幼保健院"智慧医院"项目中标候选人公示（中标候选：中国移动通信集团广西有限公司）</h3>
-  <div class="meta">发布时间：2026-10-14｜ 来源：中国银行广西分行项目（KWAD5G2026725）<br>地点：玉林市</div>
-  <div class="summary">玉林市妇幼保健院智慧医院项目公开招标公布中标候选人，运营商中标，涉及智慧医院整体信息化建设。</div>
-  <div class="opp"><b>海康机会点</b>智慧医院整体集成项目落地信号，安防（视频监控、门禁）、网络智能化可协同切入。</div>
-  <a class="link" href="https://www.120bid.com/tag/45_2445_zhihuiyiyuan.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>"活力中国调研行"广西主题采访团走进中国—东盟国家人工智能应用合作中心（含AI口腔医疗）</h3>
-  <div class="meta">发布时间：2026-10-13（广西日报）｜ 来源：广西日报（自治区政府门户）<br>地点：南宁</div>
-  <div class="summary">探访广西"北上广研发+广西集成+东盟应用"路径。广西医科大学附属口腔医院研发的AI口腔种植机器人已投入临床，服务50余名东盟患者，智能诊疗设备与技术标准落地越南、新加坡等东盟医疗机构。</div>
-  <div class="opp"><b>海康机会点</b>AI医疗设备/诊疗智能化，跨境医疗服务与安防、影像系统出海配套。</div>
-  <a class="link" href="http://www.gxzf.gov.cn/gxydm/gqch_230734/dmss/gbzn/gbzn/t28217243.shtml" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>自治区卫生健康统计信息中心开展广西医疗卫生机构信息系统数字证书建设项目市场调研</h3>
-  <div class="meta">发布时间：2026-10-12｜ 来源：广西壮族自治区卫生健康委员会<br>地点：广西</div>
-  <div class="summary">面向广西医疗卫生机构信息系统开展数字证书建设项目市场调研，涉及电子认证、数据安全与信息系统安全体系完善。</div>
-  <div class="opp"><b>海康机会点</b>医疗行业数字证书/数据安全建设，强化等保、电子签名、安全防护的合规配置，与视频/数据安全联动的系统集成机会。</div>
-  <a class="link" href="https://wsjkw.gxzf.gov.cn/zntj/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="section-tag">二、文化旅游 / 文博数字化</div>
-<div class="news">
-  <h3>广西博物馆参与摄制《国宝时刻·翔鹭纹铜鼓》获第29届全国电视文艺"星光奖"优秀电视纪录片奖</h3>
-  <div class="meta">发布时间：2026-10-13（文旅厅政务动态）｜ 来源：广西壮族自治区文化和旅游厅 / 广西博物馆<br>地点：广西（南宁，广西博物馆）</div>
-  <div class="summary">广西博物馆与广西广播电视台联合摄制，采用超高清微距拍摄与AIGC可视化技术还原西汉翔鹭纹铜鼓纹饰，陕西/湖南等多省文博机构联合摄制，展现文博数字化与AI内容生成在文物保护活化中的应用。</div>
-  <div class="opp"><b>海康机会点</b>文物数字化、超高清影像采集/AIGC应用，带动文博数据资产、数字展览与安防监控联动解决方案。</div>
-  <a class="link" href="http://m.toutiao.com/group/7696358617880871458/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>2026年世界运河大会在桂林举行（首次落地广西）</h3>
-  <div class="meta">发布时间：2026-10-14（桂林日报；活动10月13日开幕）｜ 来源：桂林市人民政府 / 广西日报<br>地点：桂林</div>
-  <div class="summary">内河航道国际组织（IWI）主办，20余国与会，主题"创新与坚持：关键选择"，配套灵渠、平陆运河、漓江三条实地考察线，突出运河水运与文旅融合、数字化议题。该国际盛会第三次来中国、首次入桂。</div>
-  <div class="opp"><b>海康机会点</b>运河/漓江文旅带开发带来景区数字化、客流管理、生态监测安防需求；桂林文旅智能化市场加温。</div>
-  <a class="link" href="http://www.guilin.gov.cn/ywdt/zwdt/t28222813.shtml" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>2026年广西广场舞集中展演在贺州举行（文化群众活动）</h3>
-  <div class="meta">发布时间：2026-10-13｜ 来源：广西壮族自治区文化和旅游厅<br>地点：贺州</div>
-  <div class="summary">全区性群众文化广场舞集中展演活动举办（群众文化条线活动，涉及文化场馆与户外活动运行保障）。</div>
-  <div class="opp"><b>海康机会点</b>群众文体活动集中场所的保障与安防布点、人流安全管理。</div>
-  <a class="link" href="http://wlt.gxzf.gov.cn/zwdt/" target="_blank">原文链接 →</a>
-</div>
-
-<div class="section-tag">三、体育 / 大型赛事安保</div>
-<div class="news">
-  <h3>广西壮族自治区体育局举办2026面向东盟"人工智能+体育"应用场景大赛</h3>
-  <div class="meta">发布时间：2026-10-16｜ 来源：广西壮族自治区体育局<br>地点：广西（南宁，体育局主办，联合大数据局及南宁市政府）</div>
-  <div class="summary">紧扣广西"人工智能+"三年行动方案，下设竞技体育、航空体育、全民健身、体医融合、体育新场景（机器人、无人机、AI眼镜、体育大模型等）及东盟组等赛道；报名10月15日—11月5日，初赛11月7-8日，全程免费。聚焦"北上广研发+广西集成+东盟应用"。</div>
-  <div class="opp"><b>海康机会点</b>体育科技/AI+体育生态，指向智慧场馆、智能运动监测、赛事数据可视化、无人机巡防、体育安防集成等场景。</div>
-  <a class="link" href="http://tyj.gxzf.gov.cn/gkxxgl/gggs_83521/t28234062.shtml" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>2026环广西公路自行车世界巡回赛（10.13-18）贯穿南宁等地，交警专项安保方案与全程交通管控</h3>
-  <div class="meta">发布时间：2026-10-12（临时交通限制通告）、10-15/10-17（南宁交警出行提示）｜ 来源：南宁市公安局交通管理支队 / 南宁市政府 / 广西体育局<br>地点：南宁（上林、马山）、崇左、百色（靖西、巴马）、河池、柳州（宜州、金城江）等</div>
-  <div class="summary">世界级赛事多赛段进行，南宁站（宜州—忻城—上林—马山弄拉赛段）10月18日举行，交警制定专项交通安保方案、全程分时段管制，推荐9个安全观赛点；中国车手王瑞东在靖西-巴马赛段创造历史，斩获中国首件世巡赛圆点衫。</div>
-  <div class="opp"><b>海康机会点</b>大型赛事全程安保可视化、道路交通监控、应急指挥、观众人流/车流智能管控，是安防集成典型场景。</div>
-  <a class="link" href="https://www.nanning.gov.cn/ggfw/bmfw/jtcx/t6742897.html" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>广西壮族自治区第十六届少数民族传统体育运动会在柳州举行</h3>
-  <div class="meta">发布时间：2026-10-13｜ 来源：广西壮族自治区体育局<br>地点：柳州</div>
-  <div class="summary">全区少数民族传统体育运动会举办，系广西大型民族体育盛会，涉及多项目竞赛与场馆保障。</div>
-  <div class="opp"><b>海康机会点</b>大中型赛事/民族运动会场馆安防、安保应急、人群管理。</div>
-  <a class="link" href="http://tyj.gxzf.gov.cn/xwzx/qjdt/index.shtml" target="_blank">原文链接 →</a>
-</div>
-
-<div class="news">
-  <h3>广西优秀运动队信息管理系统改造升级功能服务采购项目（询价/废标后重启）</h3>
-  <div class="meta">发布时间：2026-10-15（废标公告）、10-16（询价公告）｜ 来源：广西壮族自治区体育局<br>地点：广西</div>
-  <div class="summary">针对优秀运动队信息管理系统改造升级功能服务进行采购询价（此前的采购曾废标重招），属体育条线数字化管理信息系统建设。</div>
-  <div class="opp"><b>海康机会点</b>体育管理系统信息化，可配套训练基地的视频监控、门禁、智能安防与管理平台集成。</div>
-  <a class="link" href="http://tyj.gxzf.gov.cn/gkxxgl/gggs_83521/index.shtml" target="_blank">原文链接 →</a>
-</div>
-
-<div class="footer">内容由公开网络信息整理，供行业内部分享参考<br>海康威视广西区域解决方案工程师 · 简报出品</div>
-</div>
 </body>
 </html>
