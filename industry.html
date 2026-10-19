@@ -1,76 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>工业行业简报 2026-10-12~18</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西工业行业简报 · 2026.10.12 — 10.18</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f6fa;color:#2d2f33;line-height:1.65;-webkit-text-size-adjust:100%}
-.header{background:linear-gradient(135deg,#3a3a4c,#5c5c7a);color:#fff;padding:24px 18px 20px}
-.header .tag{font-size:12px;opacity:.85;letter-spacing:1px;margin-bottom:8px}
-.header h1{font-size:22px;line-height:1.4;font-weight:700}
-.header .range{font-size:13px;opacity:.9;margin-top:6px}
-.summary{background:#fff;margin:14px 12px;border-radius:12px;padding:16px;border-left:4px solid #5c5c7a;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.summary h2{font-size:15px;color:#3a3a4c;margin-bottom:8px}
-.summary p{font-size:13px;color:#444;margin-bottom:8px}
-.summary .note{font-size:12px;color:#8a8f99;border-top:1px dashed #ddd;padding-top:8px}
-.list{padding:0 12px 20px}
-.card{background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.card .title{font-size:15px;font-weight:600;color:#3a3a4c;line-height:1.45;margin-bottom:8px}
-.meta{font-size:12px;color:#8a8f99;margin-bottom:8px;line-height:1.7}
-.meta span{display:block}
-.sum{font-size:13px;color:#444;margin-bottom:8px}
-.link{display:inline-block;font-size:12px;color:#5c5c7a;text-decoration:none;word-break:break-all;margin-right:8px}
-.link:active,.link:hover{opacity:.75}
-.opp{margin-top:10px;background:#efeff6;border-radius:8px;padding:10px 12px;font-size:12.5px;color:#3d3d55}
-.opp b{color:#4a4a8a}
-.footer{text-align:center;font-size:12px;color:#9aa0aa;padding:14px 16px 30px}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="tag">广西 · 行业简报 · 海康威视技术视角</div>
-  <h1>工业行业简报</h1>
-  <div class="range">2026-10-12 ~ 10-18</div>
-</div>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🏭 广西工业行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 3 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
 
 <div class="summary">
-  <h2>总结与提炼</h2>
-  <p><b>本周广西工业新闻主线：制造业"智改数转+人工智能"加速落地，从"传统制造"向"智能制造"跃升。</b></p>
-  <p>1. <b>全区智造整体提速（10-18 第一财经"活力中国调研行"）</b>：本周分量最重。柳工挖掘机智慧工厂自动化率超70%、每12分半下线一台；柳钢防城港基地冷轧厂"无人天车"+柳钢"玄铁"钢铁大模型全流程打通；柳州已建成智能制造标杆/智能工厂/数字化车间167家（全区第一）；上汽通用五菱入选国家首批"领航级智能工厂"培育名单。从海康视角：柳钢"5G智慧钢铁、AI炼钢看火、无人天车调度、多业务场景升级"正是工业视觉、智能巡检、AI安检、无人化安保系统的成熟切入点；柳州铁路港L4无人车、凭祥友谊关智慧口岸（投资10.6亿、5G+无人驾驶运输车+智能检查系统）更是智能卡口/智慧交通/车辆识别等安防场景的直接商机。</p>
-  <p>2. <b>造纸产业创新平台落地（10-12 广西大学现代造纸产业技术研究院揭牌）</b>：聚焦绿色制浆、智能制造等关键领域，理文、玖龙、金桂浆、太阳纸业、仙鹤新材料等龙头企业共建。海康机会：纸企产线设备在线监测、能源管控、智能质检、安全监控在产研院"科技成果转化"导向下是重点落地场景。</p>
-  <p>3. <b>贵港纸业集群满产（10-17）</b>：平陆运河贵港经开区粤桂循环产业园27家纸企、1-8月产值20.3亿（+12.5%），全链条协同、电商销售。海康机会：园区智慧物流、安防监控、仓储智能化、消防与周界防护随集群扩张而放量。</p>
-  <p class="note">背景提示（不在本周时间范围内，仅供参考）：3月印发的《广西制造业智改数转网联行动计划（2026—2028年）》提出到2028年培育1000家+智能工厂和数字化车间，为上述智能化项目落地提供了持续政策与资金底座。</p>
+  <h2>📌 本周总结</h2>
+  <p><strong>一是全区智能制造整体提速，工业视觉与无人化安全是核心机遇。</strong>第一财经"活力中国调研行"显示，柳工挖掘机智慧工厂自动化率超70%、每12分半下线一台，柳钢防城港基地"无人天车"+钢铁大模型全流程打通，柳州已建成智能制造标杆/智能工厂/数字化车间167家（全区第一），上汽通用五菱入选国家首批"领航级智能工厂"培育名单。柳钢"5G智慧钢铁、AI炼钢看火、无人天车调度"正是工业视觉、智能巡检、AI安检、无人化安保系统的成熟切入点。</p>
+  <p><strong>二是造纸产业创新平台落地，绿色制浆与智能化改造并进。</strong>广西大学现代造纸产业技术研究院揭牌，理文、玖龙、金桂浆、太阳纸业、仙鹤新材料等龙头共建，聚焦绿色制浆、智能制造等关键领域。纸企产线设备在线监测、能源管控、智能质检、安全生产监控是重点落地场景。</p>
+  <p><strong>三是贵港纸业集群满产，园区智慧物流与安防随扩张放量。</strong>平陆运河贵港经开区粤桂循环产业园27家纸企、1-8月产值20.3亿（+12.5%），全链条协同、电商销售。园区智慧物流、安防监控、仓储智能化、消防与周界防护随集群扩张而放量。</p>
 </div>
 
-<div class="list">
-  <div class="card">
-    <div class="title">AI技术深入生产环境，广西产业换挡提速｜活力中国调研行</div>
-    <div class="meta"><span>发布时间：2026-10-18（第一财经，22:38） · 来源：第一财经（新浪财经转载）</span><span>地点：广西全区（柳州、防城港、北海、凭祥等）</span></div>
-    <div class="sum">第一财经"活力中国调研行"广西主题报道，系统呈现AI深入广西产业生产环节的最新面貌：柳工挖掘机智慧工厂自动化率超70%、每12分半钟下线一台、月产突破1500台，"AI柳工"智能诊断系统设备维修时长缩短60%并已出海东盟；柳钢防城港基地冷轧厂无人天车+柳钢"玄铁"钢铁大模型全流程打通，完成广西首个5G智慧钢铁项目，研发全国首例"5G+无人化自动铁水罐加盖系统"、"AI炼钢"人工智能看火，升级改造30多个业务场景；柳州已建成智能制造标杆企业/智能工厂/数字化车间167家（全区第一），上汽通用五菱入选首批国家"领航级智能工厂"培育名单，1—8月柳州工业机器人产量增长750.3%；北海永星电子银河芯片产业园一期投产；防城港国际医学开放试验区建设人形机器人数据采集研发与测试中心；柳州铁路港L4级自动驾驶新能源重卡、新石器无人车投用；凭祥"中越友谊关—友谊货运通道"智慧口岸（投资概算10.6亿元）建设自动化专用通道、无人驾驶运输车、智能检查系统。</div>
-    <a class="link" href="https://www.yicai.com/news/103398019.html">原文链接</a>
-    <a class="link" href="https://cj.sina.com.cn/articles/view/1733360754/6750fc7202001kacm">新浪转载</a>
-    <div class="opp"><b>海康机会：</b>① 柳钢类钢铁/冶金厂区智能巡检、AI看火、无人天车调度、作业区安防与行为识别；② 智慧口岸/智慧卡口（5G+车辆识别+无人运输+智能检查，凭祥友谊关10.6亿项目为典范）；③ 工业机器人/人形机器人生产厂区安防与洁净车间监控；④ 柳州铁路港智慧物流园区安防、车辆、仓储管理；⑤ 政策驱动下全区规上企业智改数转带来的安防、工业视觉、网络安全等配套需求。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">广西大学现代造纸产业技术研究院揭牌成立</div>
-    <div class="meta"><span>发布时间：2026-10-12（中国造纸杂志社发布；揭牌仪式于10月10日举行） · 来源：中国造纸杂志社（新浪财经/今日头条转载）</span><span>地点：广西南宁市·广西大学</span></div>
-    <div class="sum">10月10日上午，广西大学现代造纸产业技术研究院揭牌仪式暨发展论坛在轻化大楼举行。院长由中国工程院院士王双飞担任。产研院作为广西大学牵头、行业领军企业联合共建的实体化产业技术创新平台，聚焦绿色制浆、清洁生产、纸基功能材料、生物质精炼、智能制造等关键领域，着眼助力广西林产加工及纸业转型升级（林浆纸产业规模居全国前列）。维美德（中国）、广西博世科、理文造纸、中国制浆造纸研究院、玖龙纸业、山东华泰纸业、广西建晖纸业、广西仙鹤新材料、广西金桂浆纸、南宁太阳纸业、广西植护元创纸业等理事单位参与共建。</div>
-    <a class="link" href="http://m.toutiao.com/group/7695653630666244650/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>① 纸企智能工厂建设中的产线设备在线监测、能源管控、智能质检；② 制浆造纸车间安全生产监控、高危区域（碱炉、化学品车间）安防与周界防护；③ 产研院"企业出题、产研院答题、行业评价"机制下智能化改造项目对接；④ 金桂浆、太阳纸业等龙头纸厂新建/技改项目的安防与智慧工厂配套。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">贵港粤桂循环产业园27家纸企赶订单，今年前8月产值超20亿</div>
-    <div class="meta"><span>发布时间：2026-10-17（贵港宣传/平陆运河贵港经开区粤桂循环产业园） · 来源：贵港宣传（贵港经开区粤桂循环产业园）</span><span>地点：广西贵港市·平陆运河贵港经开区粤桂循环产业园</span></div>
-    <div class="sum">平陆运河贵港经开区粤桂循环产业园现有纸业企业37家、投产27家，今年1-8月纸业产业产值约20.3亿元、同比增长12.5%，累计带动就近就业约1600人，正打造"制浆—制纸—后加工—电商销售—配套物流"全链条协同产业集群（加快打造中国—东盟生活用纸产业园）。企业依托电商平台拓宽销售渠道，广西洁姿纸业11条生产线日均产生活用纸40吨、月产1200余吨；广西清云纸业6台新月型高速纸机年产能10万吨，2024年投资5亿元建成年产15万吨生活用纸项目。</div>
-    <a class="link" href="http://m.toutiao.com/group/7697666581727396387/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>① 集群扩张带动园区智慧物流、仓储智能化（AGV、分拣）、车辆管理；② 多企业毗邻厂区统一园区安防监控、周界与消防联动、出入口管理；③ 电商+后加工模式下生产车间监控、产品质检视觉系统需求上升；④ 平陆运河经济带沿线园区智慧化建设潜在增量。</div>
-  </div>
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>柳钢类钢铁/冶金厂区 · 智能巡检、AI看火、无人天车调度、行为识别</li>
+    <li>凭祥友谊关智慧口岸（投资10.6亿） · 智能卡口/智慧交通/车辆识别</li>
+    <li>柳州铁路港 L4 无人车 · 智慧物流园区安防、车辆与仓储管理</li>
+    <li>广西大学纸业产研院 · 纸企产线监测、能源管控、智能质检、安全监控</li>
+    <li>贵港粤桂循环产业园纸企集群 · 园区智慧物流、仓储智能化、周界防护</li>
+    <li>全区智改数转政策驱动 · 安防、工业视觉、网络安全配套</li>
+  </ul>
 </div>
 
-<div class="footer">内容由公开网络信息整理，供行业内部分享参考</div>
+  <div class="section">
+    <div class="section-title">🤖 智能制造与"AI+工业"</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-18</span>
+    </div>
+    <h4><a href="https://www.yicai.com/news/103398019.html" target="_blank" rel="noopener noreferrer">AI技术深入生产环境，广西产业换挡提速｜活力中国调研行</a></h4>
+    <div class="card-body">
+      <p><strong>系统呈现AI深入广西产业生产环节：柳工挖掘机智慧工厂自动化率超70%、每12分半钟下线一台、月产突破1500台；柳钢防城港基地无人天车+钢铁大模型全流程打通，研发全国首例"5G+无人化自动铁水罐加盖系统"、"AI炼钢"看火，升级改造30多个业务场景；柳州已建成智能制造标杆企业/智能工厂/数字化车间167家（全区第一）；柳州铁路港L4级自动驾驶新能源重卡、新石器无人车投用；凭祥友谊关智慧口岸（投资概算10.6亿元）建设自动化专用通道、无人驾驶运输车、智能检查系统。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>①钢铁/冶金厂区智能巡检、AI看火、无人天车调度、作业区安防；②智慧口岸/智慧卡口（5G+车辆识别+无人运输，凭祥10.6亿项目为典范）；③工业/人形机器人生产厂区安防与洁净车间监控；④柳州铁路港智慧物流园区安防。政策驱动全区规上企业智改数转带来安防、工业视觉、网络安全配套需求。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.yicai.com/news/103398019.html" target="_blank" rel="noopener noreferrer">第一财经（新浪财经转载）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">📄 造纸产业与集群创新</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-tech">技术</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7695653630666244650/" target="_blank" rel="noopener noreferrer">广西大学现代造纸产业技术研究院揭牌成立</a></h4>
+    <div class="card-body">
+      <p><strong>10月10日广西大学现代造纸产业技术研究院揭牌，院长由中国工程院院士王双飞担任。产研院作为广西大学牵头、行业领军企业（维美德、理文、玖龙、金桂浆、太阳纸业、仙鹤新材料、博世科等）联合共建的实体化产业技术创新平台，聚焦绿色制浆、清洁生产、纸基功能材料、智能制造等关键领域，助力广西林产加工及纸业转型升级。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>①纸企智能工厂产线设备在线监测、能源管控、智能质检；②制浆造纸车间安全生产监控、高危区域（碱炉、化学品车间）安防与周界防护；③"企业出题、产研院答题"机制下智能化改造项目可对接；④金桂浆、太阳纸业等龙头纸厂新建/技改项目的安防与智慧工厂配套。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7695653630666244650/" target="_blank" rel="noopener noreferrer">中国造纸杂志社（新浪财经/今日头条转载）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7697666581727396387/" target="_blank" rel="noopener noreferrer">贵港粤桂循环产业园27家纸企赶订单，今年前8月产值超20亿</a></h4>
+    <div class="card-body">
+      <p><strong>平陆运河贵港经开区粤桂循环产业园现有纸业企业37家、投产27家，今年1-8月纸业产业产值约20.3亿元、同比增长12.5%，累计带动就近就业约1600人，正打造"制浆—制纸—后加工—电商销售—配套物流"全链条协同产业集群（加快打造中国—东盟生活用纸产业园）。广西洁姿纸业、清云纸业等持续扩产。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>①集群扩张带动园区智慧物流、仓储智能化（AGV、分拣）、车辆管理；②多企业毗邻厂区需要统一园区安防监控、周界与消防联动、出入口管理；③电商+后加工模式下对生产车间监控、产品质检视觉系统需求上升；④平陆运河经济带沿线园区智慧化建设潜在增量。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7697666581727396387/" target="_blank" rel="noopener noreferrer">贵港宣传（贵港经开区粤桂循环产业园）</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
