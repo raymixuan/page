@@ -1,147 +1,403 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>商贸物流行业简报 2026-10-12~18</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西商贸物流行业简报 · 2026.10.12 — 10.18</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f6fa;color:#2d2f33;line-height:1.65;-webkit-text-size-adjust:100%}
-.header{background:linear-gradient(135deg,#5a3a1a,#8a5c2f);color:#fff;padding:24px 18px 20px}
-.header .tag{font-size:12px;opacity:.85;letter-spacing:1px;margin-bottom:8px}
-.header h1{font-size:22px;line-height:1.4;font-weight:700}
-.header .range{font-size:13px;opacity:.9;margin-top:6px}
-.summary{background:#fff;margin:14px 12px;border-radius:12px;padding:16px;border-left:4px solid #8a5c2f;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.summary h2{font-size:15px;color:#5a3a1a;margin-bottom:8px}
-.summary p{font-size:13px;color:#444;margin-bottom:8px}
-.list{padding:0 12px 20px}
-.card{background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.card .title{font-size:15px;font-weight:600;color:#5a3a1a;line-height:1.45;margin-bottom:8px}
-.meta{font-size:12px;color:#8a8f99;margin-bottom:8px;line-height:1.7}
-.meta span{display:block}
-.sum{font-size:13px;color:#444;margin-bottom:8px}
-.link{display:inline-block;font-size:12px;color:#8a5c2f;text-decoration:none;word-break:break-all}
-.link:active,.link:hover{opacity:.75}
-.opp{margin-top:10px;background:#f6efe6;border-radius:8px;padding:10px 12px;font-size:12.5px;color:#5d4a2f}
-.opp b{color:#8a5c2f}
-.footer{text-align:center;font-size:12px;color:#9aa0aa;padding:14px 16px 30px}
+:root {
+  --canvas: #f0f2f5;
+  --surface: #ffffff;
+  --ink: #1a2233;
+  --ink-2: #4a5568;
+  --ink-3: #718096;
+  --accent: #1e3a5f;
+  --accent-light: #e8eef6;
+  --accent-ink: #ffffff;
+  --border: #d8dce5;
+  --tag-policy: #1e6b4a;
+  --tag-policy-bg: #e6f5ee;
+  --tag-project: #b45309;
+  --tag-project-bg: #fef3e2;
+  --tag-tech: #6d28d9;
+  --tag-tech-bg: #ede9fe;
+  --tag-case: #be123c;
+  --tag-case-bg: #ffe4e6;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header {
+  background: linear-gradient(135deg, #0f2b4a 0%, #1e3a5f 60%, #2a5080 100%);
+  color: var(--accent-ink);
+  padding: 32px 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.header-inner { max-width: 720px; margin: 0 auto; }
+.header h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.header .meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header .meta span { white-space: nowrap; }
+.main { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  margin-top: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.summary h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.summary p {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.summary p:last-child { margin-bottom: 0; }
+.opp-bar {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid #c3d4e8;
+}
+.opp-bar h3 {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.opp-bar ul { list-style: none; padding: 0; }
+.opp-bar li {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+.opp-bar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.section { margin-top: 28px; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tag-policy { background: var(--tag-policy-bg); color: var(--tag-policy); }
+.tag-project { background: var(--tag-project-bg); color: var(--tag-project); }
+.tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech); }
+.tag-case { background: var(--tag-case-bg); color: var(--tag-case); }
+.card-date {
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.card h4 {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.card h4 a { color: var(--ink); }
+.card h4 a:hover { color: var(--accent); }
+.card-body { font-size: 0.85rem; color: var(--ink-2); line-height: 1.7; }
+.card-body p { margin-bottom: 6px; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-source { margin-top: 8px; font-size: 0.78rem; color: var(--ink-3); }
+.card-source a { color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+.footer strong { color: var(--ink-2); }
+@media (max-width: 480px) {
+  .header { padding: 24px 14px 18px; }
+  .main { padding: 0 12px 36px; }
+  .card { padding: 14px 14px 12px; }
+  .summary { padding: 16px 14px 14px; }
+}
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="tag">广西 · 行业简报 · 海康威视技术视角</div>
-  <h1>商贸物流行业简报</h1>
-  <div class="range">2026-10-12 ~ 10-18</div>
-</div>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>🚚 广西商贸物流行业简报</h1>
+    <div class="meta">
+      <span>📅 2026.10.12 — 10.18</span>
+      <span>📊 本周 12 条动态</span>
+      <span>🔍 面向海康威视行业机会</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
 
 <div class="summary">
-  <h2>总结与提炼</h2>
-  <p>本周广西商贸物流行业核心脉络围绕<b>平陆运河通航红利释放</b>与<b>智慧物流建设提速</b>展开，典型信号包括：</p>
-  <p>1. <b>冷链物流枢纽化、加工化升级</b>：防城港北部湾国际生鲜冷链园区完成吞吐量、集聚企业均大幅增长，东盟进口水果/水产经此加工后分销全国。机会点：冷链园区温控可视化、冷链车全程定位、冷库周界安防、仓储安防联动。</p>
-  <p>2. <b>智慧联运港落地</b>：南宁交投集团智慧联运港开园，电商直播仓、冷链仓、跨境电商仓配一体化。机会点：直播仓/冷库室内监控、仓储安防、自动化分拣场景的智能设备接入。</p>
-  <p>3. <b>无人化智慧物流落地柳州</b>：柳州铁路港L4无人重卡短驳、无人配送车跑末端。机会点：无人设备安全监管、园区道路/仓储安防、人员安全识别。</p>
-  <p>4. <b>内贸/县域消费政策加码</b>：自治区商务厅多措并举激发下沉市场活力，征集消费券/有奖发票服务商。机会点：县域连锁门店、农贸市场安防监控与智慧化改造。</p>
-  <p>5. <b>口岸货运创新高</b>：友谊关口岸出入境货运车辆突破80万辆次，跨境物流持续升温。机会点：跨境口岸/园区查验监控、智慧通关配套安防。</p>
+  <h2>📌 本周总结</h2>
+  <p><strong>一是冷链物流枢纽化、加工化升级，冷链安防与温控需求突出。</strong>防城港北部湾国际生鲜冷链园区（平陆运河出海口唯一国家级骨干冷链物流基地）库容超10万吨，吞吐量、集聚企业均大幅增长，东盟进口水果/水产经此加工后分销全国，冷链园区温控可视化、冷链车全程定位、冷库周界安防、仓储安防联动机会显著。</p>
+  <p><strong>二是智慧联运与无人化物流落地提速。</strong>南宁交投·智慧联运港正式开园（电商直播仓、冷链仓、跨境电商仓配一体化），柳州铁路港开行L4无人重卡短驳、无人配送车跑末端，智慧联运港区安防、无人设备安全监管、仓储安防与人车分流需求释放。</p>
+  <p><strong>三是平陆运河江海联运红利释放，外贸与县域消费双线升温。</strong>前三季度广西外贸进出口总值6473.8亿元创历史同期新高（+10.1%），友谊关口岸货运车辆突破80万辆次；自治区商务厅多措并举激发下沉市场活力并征集消费券服务商，跨境口岸/园区查验监控与县域连锁门店智慧化改造机会增长。</p>
 </div>
 
-<div class="list">
-  <div class="card">
-    <div class="title">南宁交投·智慧联运港正式开园，多家知名企业集中签署入驻协议</div>
-    <div class="meta"><span>发布时间：2026-10-15 · 来源：南宁日报（南宁市人民政府门户网站转发）</span><span>地点：广西南宁市青秀区（南宁高铁物流基地二期）</span></div>
-    <div class="sum">10月14日南宁交投·智慧联运港正式揭牌开园，中国邮政、盒马鲜生、京东、广西甄品、广西采无忧等集中签约入驻，业务覆盖邮政服务、生鲜冷链配送、电商仓配、跨境供应链、多式联运。园区建有6栋高标准双层坡道仓库及大型冷链仓储设施（含电商直播聚合仓，进口榴莲冷库等）。项目系南宁高铁物流基地（二期）子项目，规划约709亩、总投资18.6亿元，是国家综合货运枢纽补链强链重点支撑项目。</div>
-    <a class="link" href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6744837.html">原文链接</a>
-    <div class="opp"><b>海康机会：</b>冷链仓与直播仓的室内外视频监控、冷库温控门禁联动、仓储消防安防一体化、电商直播区域行为识别；后续智慧物流运营可配套园区周界与出入口管控。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">活力中国调研行丨广西防城港：冷链"锁鲜"联通东盟与全国市场</div>
-    <div class="meta"><span>发布时间：2026-10-17 · 来源：科技日报</span><span>地点：广西防城港市（广西北部湾国际生鲜冷链园区）</span></div>
-    <div class="sum">北部湾国际生鲜冷链园区（平陆运河出海口唯一国家级骨干冷链物流基地）库容超10万吨、多温层设计，已打通"海运进口—冷库仓储—就地加工—班列外运—供应链金融"完整链条。本地南美白对虾、东盟榴莲果肉等原料在此储存、加工后分销全国。入园企业依托便捷高速/港口交通实现"时间即鲜度"。</div>
-    <a class="link" href="http://www.stdaily.com/web/gdxw/2026-10/17/content_597970.html">原文链接</a>
-    <div class="opp"><b>海康机会：</b>冷链园多温层冷库的温控监测与异常报警、冻品仓库安防监控、冷链运输车辆（冷链班列）在途定位与温度追踪、加工洁净车间的人员安全与卫生行为监管。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">冷链枢纽迎来开放红利：东盟好物进国内、广西优品向海走</div>
-    <div class="meta"><span>发布时间：2026-10-17 · 来源：澎湃新闻（今日头条号）</span><span>地点：广西防城港市（北部湾国际生鲜冷链园区）</span></div>
-    <div class="sum">园区2026年前9个月吞吐量超10万吨、同比增长53.65%，集聚生鲜贸易、跨境电商、食品加工、冷链配送企业100余家。金榜耀海食品等企业依托本地冷链物流体系推进榴莲果肉等进口原料就地精深加工，面向国内高端烘焙渠道。部分大型连锁商超门店数量增长，拉动原料订单。</div>
-    <a class="link" href="http://m.toutiao.com/group/7697522272810189366/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>冷链运维数字化监控、园区车辆进出管理、进口冷链食品溯源与可追溯平台对接、连锁商超供应链端到端冷链监控。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">江海贯通，八桂开放再升级丨活力中国调研行</div>
-    <div class="meta"><span>发布时间：2026-10-18 · 来源：经济日报（新浪/中安在线等转载）</span><span>地点：广西（南宁港、防城港、钦州、北海等）</span></div>
-    <div class="sum">平陆运河通航后南宁港货源结构从"本地为主"转向"西南腹地+本地"，运河一天过闸三四十艘。北部湾国际生鲜冷链物流园承接东盟鲜果水产检疫分拣。今年1-8月广西对"一带一路"国家进出口4677.4亿元(+9.7%)、对东盟2846.9亿元(+3.5%)。广西正从"通道"向"枢纽"进化。</div>
-    <a class="link" href="http://news.anhuinews.com/xwgn/202610/t20261018_9669962.html">原文链接</a>
-    <div class="opp"><b>海康机会：</b>平陆运河沿线港口/码头监管监控、冷链物流园安防布局、江海联运智慧化调度平台配套的视频与物联监控。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">活力中国调研行丨一座内陆铁路港，如何做到通联四海？</div>
-    <div class="meta"><span>发布时间：2026-10-16 · 来源：人民日报客户端广西频道（环球网转载）</span><span>地点：广西柳州市柳南区（柳州铁路港）</span></div>
-    <div class="sum">1-9月柳州铁路港发送货物194.56万吨、为去年全年的1.88倍；集装箱发运量增长超20倍；出口汽车零部件采用"前店后仓"前置仓模式（上汽通用五菱KD车间一周完成爬坡、单班最大产能105箱）。港区一辆绿色L4级无人重卡承担汽车零部件短驳、无人配送车负责园区与城市网点末端配送；海关监管作业场所"随到随检""抵港直装"，单票节省通关时间约48小时。</div>
-    <a class="link" href="http://m.toutiao.com/group/7697059919979233811/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>无人重卡/无人配送车运行安全监管与园区人车分流、铁路港仓储安防、整车/零部件出口装卸区视频监控、人员安全作业识别（面向多式联运物流枢纽）。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">前三季度广西外贸进出口规模创历史同期新高，总值6473.8亿元</div>
-    <div class="meta"><span>发布时间：2026-10-16 · 来源：广西壮族自治区商务厅</span><span>地点：广西全区</span></div>
-    <div class="sum">前三季度广西外贸进出口总值6473.8亿元、同比增长10.1%，创历史同期新高，依托西部陆海新通道及平陆运河通航带动跨境贸易持续升温。</div>
-    <a class="link" href="http://swt.gxzf.gov.cn/rsgjc/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>跨境物流园区、保税仓、口岸卡口的安防监控与通关查验系统升级；物流贸易企业数字化可追溯体系建设。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">激发下沉市场消费活力丨凭祥市发挥口岸开放优势，激活县域消费</div>
-    <div class="meta"><span>发布时间：2026-10-16 · 来源：广西壮族自治区商务厅</span><span>地点：广西凭祥市</span></div>
-    <div class="sum">凭祥市发挥沿边口岸开放优势，促进边贸与县域零售消费联动，激发下沉市场消费活力。</div>
-    <a class="link" href="http://swt.gxzf.gov.cn/rsgjc/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>边境口岸消费集聚区、边民互市点/旅游消费场景的安防监控与客流管理。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">激发下沉市场消费活力丨北流市紧扣渠道下沉、农产品上行两条主线</div>
-    <div class="meta"><span>发布时间：2026-10-15 · 来源：广西壮族自治区商务厅</span><span>地点：广西北流市</span></div>
-    <div class="sum">北流市围绕渠道下沉、农产品上行两条主线释放县域消费潜力，推动域内商贸流通提质。</div>
-    <a class="link" href="http://swt.gxzf.gov.cn/rsgjc/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>县域连锁网点、农贸市场智慧化与安防改造；农产品集配中心的质量追溯与冷链监控。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">自治区商务厅公开征集2026年四季度零售和服务消费券活动执行服务商</div>
-    <div class="meta"><span>发布时间：2026-10-12 · 来源：广西壮族自治区商务厅（通知公告）</span><span>地点：广西全区</span></div>
-    <div class="sum">自治区商务厅公开征集四季度零售和服务消费券活动执行服务商，以政策手段刺激零售与服务消费、放大内需。</div>
-    <a class="link" href="http://swt.gxzf.gov.cn/rsgjc/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>消费促销带动线下商超、连锁门店客流上升，配套门店安防与客流统计、智能零售数字化方案需求增加。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">全区激发下沉市场消费活力工作会议在北流召开</div>
-    <div class="meta"><span>发布时间：2026-10-12 · 来源：广西壮族自治区商务厅</span><span>地点：广西北流市</span></div>
-    <div class="sum">全区工作会议在北流召开，部署贯彻落实《关于进一步激发下沉市场活力 活跃县域消费的意见》，推动县域商贸流通网络建设与消费升级。</div>
-    <a class="link" href="http://swt.gxzf.gov.cn/rsgjc/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>县域商贸流通网络、县乡村三级网点建设带来的连锁/仓储安防与智慧化升级机会。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">（活力中国调研行）江海联通重塑中国西南货运格局 广西拓新道链东盟</div>
-    <div class="meta"><span>发布时间：2026-10-12 · 来源：中国新闻网</span><span>地点：广西南宁（覆盖西部陆海新通道沿线）</span></div>
-    <div class="sum">2026"活力中国调研行"广西主题采访活动12日在南宁启动。广西上半年海洋生产总值1377亿元(+6.8%)；平陆运河经济带重点区域8市33县GDP达7126.29亿元；累计建成出省出海出边通道65条；北部湾港1-8月货物吞吐量3.12亿吨、集装箱618.9万标箱。东盟连续26年为广西第一大贸易伙伴，国内逾三分之一进口东盟水果经广西口岸入境。</div>
-    <a class="link" href="http://www.chinanews.com.cn/aseaninfo/2026/10-12/10712155.shtml">原文链接</a>
-    <div class="opp"><b>海康机会：</b>面向东盟跨境物流枢纽、口岸智慧化与监管安防整体解决方案的机会窗口。</div>
-  </div>
-
-  <div class="card">
-    <div class="title">2026平陆运河产品推介会举办，共启江海联运新征程（事件日10-16）</div>
-    <div class="meta"><span>发布时间：事件2026-10-16 · 来源：北部湾港集团（今日头条号）</span><span>地点：广西南宁（北部湾航运中心）</span></div>
-    <div class="sum">10月16日2026平陆运河产品推介会在北部湾航运中心举办，20余家船公司、30余家物流代理企业80多位代表参会。北部湾港股份发布散货"一票到底"总包/作业包干、集装箱"港到港""港到门"等江海联运产品体系及惠企政策，推动江海联运设施配套与多式联运模式完善。</div>
-    <a class="link" href="http://m.toutiao.com/group/7698187452602647080/">原文链接</a>
-    <div class="opp"><b>海康机会：</b>江海联运枢纽、港口码头吊装作业区与仓储区安防监控；多式联运"一单制"数字化平台配套视频监控与可视化调度。</div>
-  </div>
+<div class="opp-bar">
+  <h3>🎯 本周项目机会速览</h3>
+  <ul>
+    <li>南宁交投·智慧联运港开园（投资18.6亿） · 冷链/直播仓监控、仓储消防安防</li>
+    <li>北部湾国际生鲜冷链园区 · 温控监测、冻品仓安防、冷链车在途追踪</li>
+    <li>柳州铁路港 L4 无人重卡 · 无人设备安全监管、园区人车分流</li>
+    <li>友谊关口岸货运破80万辆次 · 跨境口岸/园区查验监控、智慧通关安防</li>
+    <li>广西前三季度外贸6473.8亿创历史新高 · 跨境物流园区、保税仓安防</li>
+    <li>县域消费下沉 · 连锁门店、农贸市场安防监控与智慧化改造</li>
+    <li>区商务厅征集消费券服务商 · 商超门店客流统计与智能零售</li>
+  </ul>
 </div>
 
-<div class="footer">内容由公开网络信息整理，供行业内部分享参考</div>
+  <div class="section">
+    <div class="section-title">🚢 平陆运河与江海联运通道</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-18</span>
+    </div>
+    <h4><a href="http://news.anhuinews.com/xwgn/202610/t20261018_9669962.html" target="_blank" rel="noopener noreferrer">江海贯通，八桂开放再升级｜活力中国调研行</a></h4>
+    <div class="card-body">
+      <p><strong>平陆运河通航后南宁港货源结构从"本地为主"转向"西南腹地+本地"，运河一天过闸三四十艘。北部湾国际生鲜冷链物流园承接东盟鲜果水产检疫分拣。今年1-8月广西对"一带一路"国家进出口4677.4亿元(+9.7%)、对东盟2846.9亿元(+3.5%)。广西正从"通道"向"枢纽"进化。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>平陆运河沿线港口/码头监管监控、冷链物流园安防布局、江海联运智慧化调度平台配套的视频与物联监控。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://news.anhuinews.com/xwgn/202610/t20261018_9669962.html" target="_blank" rel="noopener noreferrer">经济日报（新浪/中安在线等转载）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7698187452602647080/" target="_blank" rel="noopener noreferrer">2026平陆运河产品推介会举办，共启江海联运新征程（事件10-16）</a></h4>
+    <div class="card-body">
+      <p><strong>10月16日2026平陆运河产品推介会在北部湾航运中心举办，20余家船公司、30余家物流代理企业80多位代表参会。北部湾港股份发布散货"一票到底"总包/作业包干、集装箱"港到港""港到门"等江海联运产品体系及惠企政策，推动江海联运设施配套与多式联运模式完善。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>江海联运枢纽、港口码头吊装作业区与仓储区安防监控；多式联运"一单制"数字化平台配套视频监控与可视化调度。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7698187452602647080/" target="_blank" rel="noopener noreferrer">北部湾港集团（今日头条号）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://www.chinanews.com.cn/aseaninfo/2026/10-12/10712155.shtml" target="_blank" rel="noopener noreferrer">江海联通重塑中国西南货运格局 广西拓新道链东盟</a></h4>
+    <div class="card-body">
+      <p><strong>2026"活力中国调研行"广西主题采访活动12日在南宁启动。广西上半年海洋生产总值1377亿元(+6.8%)；平陆运河经济带重点区域8市33县GDP达7126.29亿元；北部湾港1-8月货物吞吐量3.12亿吨、集装箱618.9万标箱。东盟连续26年为广西第一大贸易伙伴。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>面向东盟跨境物流枢纽、口岸智慧化与监管安防整体解决方案的机会窗口。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.chinanews.com.cn/aseaninfo/2026/10-12/10712155.shtml" target="_blank" rel="noopener noreferrer">中国新闻网</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">❄️ 冷链物流枢纽</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="http://www.stdaily.com/web/gdxw/2026-10/17/content_597970.html" target="_blank" rel="noopener noreferrer">活力中国调研行丨广西防城港：冷链"锁鲜"联通东盟与全国市场</a></h4>
+    <div class="card-body">
+      <p><strong>北部湾国际生鲜冷链园区（平陆运河出海口唯一国家级骨干冷链物流基地）库容超10万吨、多温层设计，已打通"海运进口—冷库仓储—就地加工—班列外运—供应链金融"完整链条。本地南美白对虾、东盟榴莲果肉等原料在此储存、加工后分销全国。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>冷链园多温层冷库的温控监测与异常报警、冻品仓库安防监控、冷链运输车辆（冷链班列）在途定位与温度追踪、加工洁净车间的人员安全与卫生行为监管。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://www.stdaily.com/web/gdxw/2026-10/17/content_597970.html" target="_blank" rel="noopener noreferrer">科技日报</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-17</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7697522272810189366/" target="_blank" rel="noopener noreferrer">冷链枢纽迎来开放红利：东盟好物进国内、广西优品向海走</a></h4>
+    <div class="card-body">
+      <p><strong>园区2026年前9个月吞吐量超10万吨、同比增长53.65%，集聚生鲜贸易、跨境电商、食品加工、冷链配送企业100余家。金榜耀海食品等企业依托本地冷链物流体系推进榴莲果肉等进口原料就地精深加工，面向国内高端烘焙渠道。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>冷链运维数字化监控、园区车辆进出管理、进口冷链食品溯源与可追溯平台对接、连锁商超供应链端到端冷链监控。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7697522272810189366/" target="_blank" rel="noopener noreferrer">澎湃新闻（今日头条号）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">📦 智慧联运与物流港</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6744837.html" target="_blank" rel="noopener noreferrer">南宁交投·智慧联运港正式开园，多家知名企业集中签署入驻协议</a></h4>
+    <div class="card-body">
+      <p><strong>10月14日南宁交投·智慧联运港正式揭牌开园，中国邮政、盒马鲜生、京东、广西甄品等集中签约入驻，业务覆盖邮政服务、生鲜冷链配送、电商仓配、跨境供应链。园区建有6栋高标准双层坡道仓库及大型冷链仓储设施，系南宁高铁物流基地（二期）子项目，规划约709亩、总投资18.6亿元。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>冷链仓与直播仓的室内外视频监控、冷库温控门禁联动、仓储消防安防一体化、电商直播区域行为识别；后续智慧物流运营可配套园区周界与出入口管控。</p>
+    </div>
+    <div class="card-source">来源：<a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6744837.html" target="_blank" rel="noopener noreferrer">南宁日报（南宁市人民政府门户网站转发）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://m.toutiao.com/group/7697059919979233811/" target="_blank" rel="noopener noreferrer">一座内陆铁路港，如何做到通联四海？</a></h4>
+    <div class="card-body">
+      <p><strong>1-9月柳州铁路港发送货物194.56万吨、为去年全年的1.88倍；港区一辆绿色L4级无人重卡承担汽车零部件短驳、无人配送车负责园区与城市网点末端配送；海关监管作业场所"随到随检""抵港直装"，单票节省通关时间约48小时。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>无人重卡/无人配送车运行安全监管与园区人车分流、铁路港仓储安防、整车/零部件出口装卸区视频监控、人员安全作业识别。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://m.toutiao.com/group/7697059919979233811/" target="_blank" rel="noopener noreferrer">人民日报客户端广西频道（环球网转载）</a></div>
+  </div>
+  </div>
+  <div class="section">
+    <div class="section-title">🛒 外贸与县域消费</div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">前三季度广西外贸进出口规模创历史同期新高，总值6473.8亿元</a></h4>
+    <div class="card-body">
+      <p><strong>前三季度广西外贸进出口总值6473.8亿元、同比增长10.1%，创历史同期新高，依托西部陆海新通道及平陆运河通航带动跨境贸易持续升温。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>跨境物流园区、保税仓、口岸卡口的安防监控与通关查验系统升级；物流贸易企业数字化可追溯体系建设。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西壮族自治区商务厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-16</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">激发下沉市场消费活力丨凭祥市发挥口岸开放优势，激活县域消费</a></h4>
+    <div class="card-body">
+      <p><strong>凭祥市发挥沿边口岸开放优势，促进边贸与县域零售消费联动，激发下沉市场消费活力。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>边境口岸消费集聚区、边民互市点/旅游消费场景的安防监控与客流管理。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西壮族自治区商务厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-case">案例</span>
+      <span class="card-date">10-15</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">激发下沉市场消费活力丨北流市紧扣渠道下沉、农产品上行两条主线</a></h4>
+    <div class="card-body">
+      <p><strong>北流市围绕渠道下沉、农产品上行两条主线释放县域消费潜力，推动域内商贸流通提质。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>县域连锁网点、农贸市场智慧化与安防改造；农产品集配中心的质量追溯与冷链监控。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西壮族自治区商务厅</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">自治区商务厅公开征集2026年四季度零售和服务消费券活动执行服务商</a></h4>
+    <div class="card-body">
+      <p><strong>自治区商务厅公开征集四季度零售和服务消费券活动执行服务商，以政策手段刺激零售与服务消费、放大内需。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>消费促销带动线下商超、连锁门店客流上升，配套门店安防与客流统计、智能零售数字化方案需求增加。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西壮族自治区商务厅（通知公告）</a></div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+      <span class="tag tag-policy">政策</span>
+      <span class="card-date">10-12</span>
+    </div>
+    <h4><a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">全区激发下沉市场消费活力工作会议在北流召开</a></h4>
+    <div class="card-body">
+      <p><strong>全区工作会议在北流召开，部署贯彻落实《关于进一步激发下沉市场活力 活跃县域消费的意见》，推动县域商贸流通网络建设与消费升级。</strong></p>
+      <p style="color: #6b7280; margin-top: 4px;">🔍 <strong>海康视角：</strong>县域商贸流通网络、县乡村三级网点建设带来的连锁/仓储安防与智慧化升级机会。</p>
+    </div>
+    <div class="card-source">来源：<a href="http://swt.gxzf.gov.cn/rsgjc/" target="_blank" rel="noopener noreferrer">广西壮族自治区商务厅</a></div>
+  </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <strong>广西行业简报</strong> · 数据来源：政府采购网 / 公共资源交易中心 / 各市人民政府 / 行业主管部门<br>
+  仅供内部参考，不构成投资建议 · AI 生成，请注意核对原始信息
+</div>
+
 </body>
 </html>
