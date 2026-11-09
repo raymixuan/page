@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>司法行业 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>司法行业行业要闻</h1>
+    <div class="date">2026年11月2日 — 11月8日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是智慧监狱向算力与信创升级、法院一张网向基层下沉、检察数智化规模应用。自治区监狱管理局以343.19万元AI算力租赁叠加网络安全与统建系统升级，贵港监狱启动存储扩容及信创监控平台替换，标志监狱进入算力加信创加安全综合投入期；百色法院615.68万元一张网设备中标、柳州中院科技法庭改造、灵山法院诉服一体机采购，显示法院项目正向基层扩散。判断：监狱信创监控与法院基层终端是最清晰现金流。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">14条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">自治区监狱管理局招标代理服务遴选公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 广西壮族自治区监狱管理局</span>
+        </div>
+        <div class="news-abstract">自治区监狱管理局公开遴选3家招标代理机构，服务三个项目：人工智能算力租赁项目（预算343.19万元）、广西监狱系统网络安全服务项目、广西监狱统建信息系统升级改造设计服务项目。这是广西监狱系统首次以算力租赁方式引入AI能力，叠加网络安全与统建系统升级，预示智慧监狱从硬件建设转向算力加安全加平台的综合投入，是司法行政侧最具规模的新方向。</div>
+        <a href="http://jyj.gxzf.gov.cn/xxgk/fdzdgknr/tzgg/t28293747.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港监狱监控系统存储扩容及信创监控平台采购项目公开招标文件预公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西）</span>
+        </div>
+        <div class="news-abstract">贵港监狱发布监控系统存储扩容及信创监控平台采购项目（GXZC2026-G1-003631-YZLZ）公开招标文件预公示，11月9日前征求意见。项目同时包含存储扩容与信创监控平台两部分，反映监狱视频监控正按信创要求整体替换平台软件，存储容量与国产化适配是核心指标，是智慧监狱信创改造的典型先行标。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001002005001&infoid=1d539704-0d79-41df-a1be-e7ce8e6e129f" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">灵山县人民法院2026年12月政府采购意向（智能诉服一体机）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">灵山县人民法院公开2026年12月采购意向，拟采购5台智能诉服一体机，预算60万元，部署于诉讼服务中心与派出法庭。设备须具备身份证识别、人脸识别、高清触控、扫描打印功能，支持在线立案、诉状智能生成、先行调解、网上阅卷，并与全国法院统一办案办公平台对接，支持OTA升级。基层法院诉服终端进入批量替换期，是标准化程度高、可复制的法院侧标的。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=EQj5UPbxhjfGcfuVUahddg==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色法院“一张网”系统配套设备（重1）中标公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">百色市中级人民法院“一张网”系统配套设备（重1）（BSZC2026-G1-990206-BSSZ）完成招标，中标金额615.68万元，广西水发集团数字智慧水务科技有限公司中标。清单含科达高清庭审主机SVR2931、全景枪机、文件备份一体机、机房精密空调、16TB硬盘24块及WPS办公软件，是典型的法院一张网庭审与机房一体化交付项目，显示法院信息化总包正向跨界集成商集中。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202611/t20261103_27610485.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州市中级人民法院科技法庭改造信息化设备采购合同公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">柳州市中级人民法院科技法庭改造信息化设备采购（LZZC2026-G1-990648-GXZX）合同公告发布。科技法庭改造涵盖庭审主机、庭审录播、音视频采集、证据展示、远程提讯与庭审公开直播，是法院系统年度常态化改造内容；中院层面合同落地后，基层法院与派出法庭通常跟进改造，形成阶梯式采购波次。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-30412-450100-4-30.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">一江一花一园区的“解纷答卷”</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 广西壮族自治区高级人民法院</span>
+        </div>
+        <div class="news-abstract">广西高院发布报道，全区3家法庭入选最高人民法院首批100个枫桥式人民法庭；梧州市龙圩区工业园区法庭搭建云调解平台，实现网上立案、在线调解，简易程序适用率88%以上。基层法庭数字化调解与在线诉讼正在铺开，配套的远程调解终端、庭审录播与自助诉讼服务设备在派出法庭层面存在广泛缺口。</div>
+        <a href="https://gxfy.gxcourt.gov.cn/article/detail/2026/11/id/9560540.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广东高院院长张海波率队到广西高院调研数字法院建设</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 广西壮族自治区高级人民法院</span>
+        </div>
+        <div class="news-abstract">广东省高级人民法院院长张海波率队到广西高院调研数字法院建设与涉外民商事审判，实地察看诉讼服务中心、科技法庭、数字和信息中心，了解广西法院一张网落地应用成效。广西作为全国法院信息化建设先行地和示范区，一张网经验正被跨省借鉴，后续在数据中台、智能辅助办案与网络安全方面的投入具备示范效应和持续预算保障。</div>
+        <a href="http://m.toutiao.com/group/7703466049680753171/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西检警协同实现“1+1＞2”治理效能</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 法治日报</span>
+        </div>
+        <div class="news-abstract">报道披露广西依托177个实体化运行的侦查监督与协作配合办公室推进检警协同；贺州市率先搭建公检法刑事案件协作平台，实现电子卷宗、法律文书、侦查进度、补侦反馈、线索移送五同步实时共享；自治区检察院印发构建数字赋能刑事检察监督机制创新项目实施方案。跨部门数据共享平台与电子卷宗系统是核心载体，具备全区推广的采购空间。</div>
+        <a href="http://m.toutiao.com/group/7703524510439358976/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">横州市人民检察院五年工作报告：应用大数据法律监督模型67个、成案100件</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 横州检察</span>
+        </div>
+        <div class="news-abstract">横州市检察院五年工作报告显示，推动数字检察向数智检察升级，重点围绕危险驾驶、掩饰隐瞒犯罪所得、偷越国（边）境三类案件开展智能化办理，个案办理时间平均缩短11.94%；应用大数据法律监督模型67个、成案100件，获评全区检察机关大数据法律监督模型应用优秀基层检察院。基层院模型建设与智能办案辅助需求正在规模释放。</div>
+        <a href="http://m.toutiao.com/group/7704294687154979368/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">以法治宣传教育法为引领 广西扎实推进边疆民族精准普法</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 广西壮族自治区司法厅</span>
+        </div>
+        <div class="news-abstract">广西司法厅推进人工智能加普法新模式，举办中国（广西）—东盟“AI+法律”应用创新大赛，研发东盟法律咨询服务AI体，打造普法AI数字人“壮壮”，并依托智能法律服务终端、VR沉浸式体验开展边疆民族精准普法。公共法律服务智能化在广西已进入产品化阶段，智能终端、数字人与VR普法设备在县乡两级存在批量部署需求。</div>
+        <a href="http://sft.gxzf.gov.cn/xwzx/btgzyw/t28291235.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">司法赋能善治安民——南宁法院护航平陆运河建设</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 法治日报</span>
+        </div>
+        <div class="news-abstract">报道介绍南宁法院平陆运河巡回法庭自2023年6月挂牌以来，围绕横州段19.72公里运河建设累计化解涉运河纠纷54件、标的402.7万元；全市人民法庭诉前化解纠纷3977件，进驻综治中心联动调解1749件。运河经济带司法服务前移，带动巡回法庭庭审设备、移动诉讼服务终端与在线调解平台在沿运河县区落地。</div>
+        <a href="http://m.legaldaily.com.cn/index_article/content/2026-11/06/content_9486369.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市政法系统构建高效能治理体系夯实平安根基</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 南宁政法</span>
+        </div>
+        <div class="news-abstract">报道披露南宁市政法系统建成212个大数据法律监督模型，依托人工智能研判风险隐患演化规律，构建社会治安、矛盾纠纷、行业风险等多领域预警模型；布局1989个公共法律服务站点打造15分钟公共法律服务圈；在人员密集区域推行徒步巡、汽车巡、摩托巡、视频巡、无人机巡五巡加勤务模式。视频巡与无人机巡的常态化直接对应前端感知与巡防平台需求。</div>
+        <a href="http://m.toutiao.com/group/7703517333054079497/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年全区法院职业技能竞赛之庭审与裁判文书技能竞赛决赛举行</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区高级人民法院</span>
+        </div>
+        <div class="news-abstract">2026年全区法院职业技能竞赛庭审与裁判文书技能竞赛决赛举行，同期组织代表委员、特约监督员视察贵港市法院工作。庭审技能竞赛以科技法庭为载体开展，反映出庭审录音录像、智能语音转写、电子质证已成为法官日常办案工具，配套的庭审主机升级、语音识别授权与庭审公开平台运维构成持续性采购内容。</div>
+        <a href="https://gxfy.gxcourt.gov.cn/article/index/id/M0g3NTAwNiAOAAA.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">有矛盾纠纷，去法院还是去综治中心？</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区高级人民法院</span>
+        </div>
+        <div class="news-abstract">广西高院发布解读，明确综治中心与法院在矛盾纠纷化解中的分工与衔接，推动诉调对接与多元解纷。综治中心规范化建设要求配套视频会议、远程调解、在线司法确认与统一受理平台，县乡两级综治中心数量庞大，是司法行政与法院交叉地带的安防信息化增量市场。</div>
+        <a href="https://gxfy.gxcourt.gov.cn/article/index/id/M0g3NTAwNiAOAAA.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1102-1108.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1102-1108.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1102-1108.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1102-1108.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
