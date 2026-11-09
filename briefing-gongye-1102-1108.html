@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>工业企业 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>工业企业行业要闻</h1>
+    <div class="date">2026年11月2日 — 11月8日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是“十大支柱产业+智改数转”加速落地。11月3日全区招商引资暨抓项目促投资工作推进会定调大抓项目，梧州再生金属、黎塘园区电子信息、南宁经开区江南区一体化、东兴与崇左边境园区多点开花；梧州新增12家自治区智能工厂、6个“人工智能+制造”典型应用场景，标杆效应显现。同时广西规划9座抽水蓄能电站、总规模1140万千瓦、总投资超700亿元，贵港与灌阳项目进入主体施工高峰。机会集中在钢铁有色高温高危场景视觉AI、园区级智慧管理与安全环保监测、抽蓄工程长周期监测，建议“标杆企业+园区打包”两条线并行。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">13条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">韦韬在全区招商引资暨抓项目促投资工作推进会上强调 大抓招商大抓投资大抓产业</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 广西壮族自治区园区发展和投资促进服务中心</span>
+        </div>
+        <div class="news-abstract">11月3日全区招商引资暨抓项目促投资工作推进会召开，自治区主席韦韬强调大抓招商、大抓投资、大抓产业，聚焦制造业十大现代化支柱产业和向海经济“叶脉式”产业布局，为高质量发展注入强劲动能。全区性项目攻坚将加快园区标准厂房与重点工业项目开工节奏，园区出入口管控、周界防范、安全生产视频AI分析、环保用电监测等基础设施类安防需求随之集中释放，是四季度冲量与明年项目储备的政策窗口。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">深耕东盟市场 筑就百亿食品产业（广西—东盟经济技术开发区）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 广西日报（自治区人民政府门户网站转载）</span>
+        </div>
+        <div class="news-abstract">广西—东盟经济技术开发区已汇聚国内外知名食品加工及配套企业150余家，食品加工及其配套产业总产值突破100亿元；1至10月召开招商专题会5次、项目联审会6次，审议项目37个，组织外出招商30次，新签约产业项目25个、计划总投资73.31亿元，落地项目完成投资22.3亿元，制造业投资占比超八成。食品加工项目对车间洁净度监控、异物与人员卫生行为AI识别、冷链温度监测、消防与可燃气体报警要求高，新签约项目集中落地是安防配套的密集窗口。</div>
+        <a href="http://www.gxzf.gov.cn/zzqzyxx/t28291893.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">向“新”行 向“高”攀——广西黎塘工业园区见闻</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-07</span>
+          <span class="source-tag">📍 新华社</span>
+        </div>
+        <div class="news-abstract">黎塘工业园区累计入园企业200余家，其中规上工业企业98家，集聚广西知名企业15家、上市公司基地8家、高新技术企业19家，2025年完成规上工业总产值102.91亿元；已建成4家智能工厂示范企业、7个数字化车间、22家开展数字化转型企业，5G智慧工厂与自动拧紧机器人进入建材、食品等传统行业；1至9月电子信息产业产值19.67亿元、同比增长41.34%，南宁立德机器人基地达产后年产值10亿元。园区正持续推进“智改数转”，是县域园区安防与工业互联网平台打包输出的典型样本。</div>
+        <a href="http://m.toutiao.com/group/7705399304281768448/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西贵港抽蓄工程厂房主通道贯通</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 新华社《经济参考报》</span>
+        </div>
+        <div class="news-abstract">10月26日贵港抽水蓄能电站厂房交通洞与通风洞两条地下主通道全面建成，总长2700米，为地下洞室群全面开挖打通“大动脉”；电站地下洞室群由43个洞室构成、总长近19公里，总投资约81亿元，预计2029年全面建成投产。抽蓄工程属典型重大基础设施，对地下厂房人员定位、洞室视频监控、边坡与坝体北斗变形监测、施工期AI安全监管需求刚性且周期长，81亿元投资对应的安防与安全监测分包规模可观。</div>
+        <a href="https://finance.sina.com.cn/jjxw/2026-11-02/doc-inixicic0553912.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">1140万千瓦！广西“超级充电宝”集群加速崛起</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 央广网</span>
+        </div>
+        <div class="news-abstract">广西规划布局9座抽水蓄能电站，总规模达1140万千瓦、总投资超700亿元；南宁抽蓄已全面建成投产（投资约80亿元、装机120万千瓦），桂林灌阳抽蓄完成水库截流并转入地下厂房机电安装，玉林抽蓄总投资83.6亿元、调节能力240万千瓦。电站群建设周期跨越“十五五”，配套的大坝安全监测、库区周界防范、边坡与水下视频监控、反无人机系统需求贯穿设计、施工、运维全周期，是典型的长周期大额订单来源。</div>
+        <a href="http://www.cnr.cn/gd/guangdonglueying/20261105/t20261105_527863385.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">“超级充电宝”建设迎来关键节点 桂林灌阳抽蓄地下厂房开挖完成</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 人民网（金台资讯）</span>
+        </div>
+        <div class="news-abstract">桂林灌阳抽水蓄能工程经过750天连续施工，地下厂房完成开挖，厂房位于地下90米深处，长180米、宽27.5米、高57.6米，相当于150个标准游泳池，开挖工程量超20万土石方；工程总投资约81亿元，将拉动产业链上下游投资超170亿元，目前1200多名建设者同时推进50多个施工面。厂房转入机电安装阶段后，对洞室环境监测、人员与车辆定位、消防与应急广播、设备状态在线监测的需求将集中释放。</div>
+        <a href="http://m.toutiao.com/group/7704456810983326259/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">锚定“两湾”联动第一城 梧州向海经济跑出“加速度”</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">11月4日广西“开局起步‘十五五’”系列新闻发布会介绍，梧州前三季度再生金属材料产业产值661亿元、增长19.7%，翅冀钢铁、金升铜业等16家企业入选2026广西强优民营企业100家；新增12家自治区智能工厂、6个广西“人工智能+制造”典型应用场景，弘毅新材等企业生产效率提高18%—60%、能耗下降10%—30%；谋划“十五五”重大项目795个、总投资6573.6亿元，新签约项目99个、总投资280.2亿元。再生金属与钢铁场景对高温、粉尘环境监控与安全行为识别需求集中。</div>
+        <a href="http://m.toutiao.com/group/7704596245989311017/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁“两区”实施一体化融合 以协同之力做实招商育产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">11月5日南宁市产业园区高质量发展情况通报新闻发布会介绍，南宁经开区与江南区实施一体化融合后累计签约项目68个（10亿元以上3个、20亿元以上2个），15个项目开工、5个项目投产；对216家规上工业企业统一监测、联动帮扶，累计走访企业项目近400家次，协助争取专项资金1900余万元，培育西桂微、一芯显示等新兴企业，19家企业获评2026年自治区创新型中小企业。园区整合带来统一的智慧园区管理平台、安全环保监测与视频联网需求。</div>
+        <a href="http://m.toutiao.com/group/7704879740284371491/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">我区举办民营企业政金企融资对接会 现场对接项目120个、涉及融资需求约497亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 广西壮族自治区园区发展和投资促进服务中心</span>
+        </div>
+        <div class="news-abstract">广西举办民营企业政金企融资对接会，现场对接项目120个，涉及融资需求约497亿元。融资落地将直接推动民营企业技改扩产项目开工，技改项目普遍配套智能工厂、数字化车间建设，其中视频监控联网、安全生产风险监测预警、能耗在线监测是技改投资的常见组成。建议将该批项目作为工业安防线索池批量梳理，重点跟进有明确技改备案与设备更新需求的企业。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">崇左：边城向海开新局</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区园区发展和投资促进服务中心</span>
+        </div>
+        <div class="news-abstract">崇左依托沿边区位推动向海经济，做强五大生产性服务业，推进中国—东盟产业合作区崇左片区与沿边临港产业园区建设，跨境加工、木材与铝产业协同发展。沿边产业园区承接跨境产业链项目，对园区封闭管理、跨境车辆与人员核验、货物视频追溯、边检协同平台需求突出，是“园区安防+口岸智能化”复合型项目的集中区域，可结合凭祥、宁明、扶绥三地园区同步布局。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">玉林加快构建“6+8+3”现代化产业体系</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区园区发展和投资促进服务中心</span>
+        </div>
+        <div class="news-abstract">玉林加快构建“6+8+3”现代化产业体系，聚焦香料、机械制造、新材料、大健康等主导产业推进集群化发展，同步推进玉林国际陆港与临港产业配套建设。产业体系重构带动专业园区与标准厂房集中建设，园区级视频监控联网、消防物联网、危化与涉爆粉尘监测构成基础配置，可结合玉林香料、内燃机、中医药等特色产业做场景化方案打包输出。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">东兴边境经济合作区（东兴产业园区）以制度创新激活沿边发展新动能</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 东兴市人民政府</span>
+        </div>
+        <div class="news-abstract">东兴边境经济合作区（东兴产业园区）以改革破题、开放聚势，通过制度创新推动跨境加工、落地加工与互市贸易融合发展，激活沿边发展新动能。沿边园区与口岸一体化管理需要人车物全要素智能核验，涉及卡口、周界防范、视频结构化与指挥调度平台；与东兴口岸货运量值持续攀升形成配套需求，是边境安防与口岸智能化的重点区域。</div>
+        <a href="http://www.dxzf.gov.cn/dxdt/zwyw/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">让合作从“加法”变成“乘法”（第二十二届桂台经贸文化合作论坛）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 人民网</span>
+        </div>
+        <div class="news-abstract">第二十二届桂台经贸文化合作论坛在南宁举行，广西以平陆运河经济带为主脉构建“叶脉式”向海产业布局，北部湾港航线超100条、1至9月货物吞吐量3.61亿吨，并在港航物流、先进制造与人工智能协同创新、跨境贸易等六方面深化合作。台湾企业在半导体、精密制造、电子元器件和服务器领域基础雄厚，双方拟在广西布局面向东盟的区域总部、创新中心与成果转化基地，将带来高标准洁净厂房与精密产线的安防与智能化配套需求。</div>
+        <a href="http://m.toutiao.com/group/7704827851953963539/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1102-1108.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1102-1108.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1102-1108.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1102-1108.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
