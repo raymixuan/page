@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>电子电器 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>电子电器行业要闻</h1>
+    <div class="date">2026年11月2日 — 11月8日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是“政策筑基+储能放量”。11月2日“十五五”制造业十大支柱产业新闻发布会明确2030年培育1个万亿元、2个五千亿、3个四千亿、4个超千亿产业；数字经济白皮书显示工业领域AI核心产业产值突破890亿元，已认定先进级智能工厂39家、数字化车间60家；华芯振邦4条12英寸晶圆封测产线全面投产，填补广西晶圆级封测空白。储能端凭祥200MW/800MWh与桂林300MW/600MWh两个独立储能EPC同日招标，合计投资15.1亿元。机会集中在半导体洁净厂房监控与门禁分级、储能电站热失控预警与消防联动、电子产线视觉检测，建议优先锁定两个储能EPC总包单位。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">11条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">《广西数字经济发展白皮书（2026年）》正式发布</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">白皮书显示2025年广西工业领域人工智能核心产业产值突破890亿元，工业机器人产量增长86.3%，认定智能制造标杆企业12家、先进级智能工厂39家、基础级数字化车间60家；农村网络零售额超230亿元、增长15.6%，跨境人民币结算规模达8524亿元、增长44%，稳居边境和西部省区市第一。智能工厂梯度培育体系成型，意味着近百家已认定企业普遍存在监控联网、AI质检、设备预测性维护的二次升级需求，是电子与制造业安防的直接客户池。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/szjj/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">华芯振邦4条产线全面投产 月产能达2.5万片12英寸晶圆封测</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">位于广西自贸试验区南宁片区的华芯振邦4条产线全面投产，月产能达2.5万片12英寸晶圆封测，填补了广西晶圆级先进封测领域的空白，封测代工产品出口越南、泰国、马来西亚；企业为南宁产投集团控股，注册资本4.41亿元，获评国家级绿色工厂、2026年自治区数字化车间。半导体洁净厂房对微污染监测、人员更衣流程管控、防静电与门禁分级、无尘室视频追溯要求极高，是高端安防集成的高毛利场景。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/szjj/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">凭祥产业园200MW/800MWh独立储能电站项目EPC招标 投资8.5亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西招标投标公共服务平台（广东电池转载）</span>
+        </div>
+        <div class="news-abstract">11月2日凭祥产业园200MW/800MWh独立储能电站项目启动EPC招标，资金来源为自筹8.5亿元、折合单价1.06元/Wh，建设地点位于凭祥市夏石镇东南侧约1.6公里，新建一座220kV升压站及约0.4公里送出线路，投标截止11月23日9时30分，接受联合体投标。储能电站对电池舱热失控早期探测、消防联动、周界防范与无人机巡检需求强，EPC总包是安防分包的核心入口，建议在投标截止前锁定总包单位。</div>
+        <a href="http://m.toutiao.com/group/7705003086430929442/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林300MW/600MWh独立共享储能电站项目EPC总承包招标 投资6.6亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 招标与采购网</span>
+        </div>
+        <div class="news-abstract">11月2日桂林300MW/600MWh独立共享储能电站项目EPC总承包招标公告发布，资金来源6.6亿元、折合单价约1.1元/Wh，配套建设220kV升压站一座、设2台150MVA主变，储能电池舱经PCS逆变升压后接入35kV母线，再升压至220kV经1回线路接入朝阳变电站，线路长度约8公里。项目要求投标人具备200MW/400MWh以上电化学储能EPC业绩并允许联合体投标，安防与消防系统通常随总包采购，可通过联合体或专业分包切入。</div>
+        <a href="http://www.gc-zb.com/read-793213383.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国移动广西公司筑牢立足广西、面向东盟的数智底座</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-07</span>
+          <span class="source-tag">📍 中国移动广西公司（金台资讯转载）</span>
+        </div>
+        <div class="news-abstract">截至2026年10月，中国移动广西公司在乡镇农村建成基站超12万个，行政村4G/5G覆盖率均达100%，全区完成187个万兆光网试点、建成50G-PON端口近1000个；贵港实现5G-A乡镇以上连续覆盖，贺州、桂林、南宁、贵港依托5G低空专网搭建警用无人机调度平台，形成“空中发现、平台研判、地面处置”闭环；崇左江州“边江智州”建成广西首个区县5G+AI底座，预警信息5秒推送指挥端、10秒触达网格员。底座完善使视频无线回传、无人机巡查、移动执法落地门槛大幅降低。</div>
+        <a href="http://m.toutiao.com/group/7705281751093969446/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">黎塘工业园区：电子信息产业1至9月产值19.67亿元、同比增长41.34%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-07</span>
+          <span class="source-tag">📍 新华社</span>
+        </div>
+        <div class="news-abstract">南宁市宾阳县黎塘工业园区集聚高新技术企业19家、上市公司基地8家，园区已建成4家智能工厂示范企业、7个数字化车间、22家开展数字化转型企业；南宁市欧韦电子年产机顶盒1200万个、电源适配器2000万个，1至9月产值近2亿元；广西岑科电子自研设备将精密电感器绕线成型时间从2秒压缩至0.8秒、月产约9亿枚，成长为国家级专精特新重点“小巨人”；园区电子信息产业1至9月产值19.67亿元、同比增长41.34%。电子元器件与机器人产线对高速视觉检测、静电防护监控、洁净环境监测需求集中。</div>
+        <a href="http://m.toutiao.com/group/7705399304281768448/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海5年间投产或部分投产百亿级项目17个 工业总量稳居全区第三</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 北海市人民政府</span>
+        </div>
+        <div class="news-abstract">北海市披露5年间投产或部分投产的百亿级项目达17个，工业总量稳居全区第三。惠科电子北海产业新城作为广西工业高质量发展一号工程，其核心子项目北海惠科光电液晶面板邦定项目总投资30亿元、占地170亩、厂房建筑面积14万平方米，引进18条智能化液晶屏邦定生产线及全自动配套设施，年产能3000万片。此类重资产电子项目对无尘车间环境监控、AGV与产线视觉、消防与特种气体报警系统需求持续，是北海电子信息赛道的主入口。</div>
+        <a href="http://www.beihai.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海市工业和信息化局关于北海市2026年第二批创新型中小企业评价通过名单的公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 北海市工业和信息化局</span>
+        </div>
+        <div class="news-abstract">北海市工信局公示2026年第二批创新型中小企业评价通过名单，涉及电子信息、新材料、装备制造等领域中小制造企业。创新型中小企业是“智改数转”与专精特新梯度培育政策的首批覆盖对象，普遍存在视频监控数字化、生产数据采集、能耗在线监测的轻量化改造需求，预算规模适中、决策链条短，可作为中小项目批量获客的精准名单。</div>
+        <a href="http://www.beihai.gov.cn/xxgkbm/bhsgyhxxhj/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁高新区一平台入选全国应用推广典型案例</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 南宁高新技术产业开发区管理委员会</span>
+        </div>
+        <div class="news-abstract">南宁高新区一平台入选全国应用推广典型案例，园区在数字经济与平台化服务方面形成可复制经验；同期发布2026年1—9月高新区规模工业四大重点产业比重及固定资产投资、规模工业产值与增加值月度增速数据。高新区作为电子信息与生物医药主阵地，园区级安防联网、企业服务平台与数据可视化大屏存在持续升级需求，可结合园区数据发布节奏切入智慧园区整体方案。</div>
+        <a href="https://gxq.nanning.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁“两区”一体化融合培育西桂微、一芯显示等新兴电子企业</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">南宁经开区与江南区实施一体化融合后，累计签约项目68个，其中10亿元以上3个、20亿元以上2个，15个项目开工、5个项目投产；两区立足资源互补优势培育西桂微、一芯显示等新兴企业，建立临规企业培育库并实施“一对一”帮扶，构建创新型中小企业—专精特新中小企业—专精特新“小巨人”全梯度培育体系，19家企业获评2026年自治区创新型中小企业、占全市近两成。显示与集成电路企业集聚将带来洁净车间、防静电与产线视觉检测的配套需求。</div>
+        <a href="http://m.toutiao.com/group/7704879740284371491/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">第二十二届桂台经贸文化合作论坛：台企可在桂布局半导体、电子元器件与服务器产业</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 人民网</span>
+        </div>
+        <div class="news-abstract">第二十二届桂台经贸文化合作论坛在南宁举行，工业和信息化部国际经济技术合作中心介绍大陆人工智能核心产业规模已突破1.2万亿元、人工智能企业超6600家，台湾企业在半导体、精密制造、电子元器件和服务器领域基础雄厚，两岸企业可把研发制造所长与广西平台载体、集成能力结合，在广西布局面向东盟的区域总部、创新中心和成果转化基地。若相关项目落地，将带来高等级洁净厂房、精密产线与数据中心机房的安防与智能化整体需求。</div>
+        <a href="http://m.toutiao.com/group/7704827851953963539/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1102-1108.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1102-1108.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1102-1108.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1102-1108.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
