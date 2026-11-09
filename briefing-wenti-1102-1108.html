@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>文体卫健康 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>文体卫健康行业要闻</h1>
+    <div class="date">2026年11月2日 — 11月8日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线为医疗基建放量、医共体信息化落地与赛事文旅收尾。自治区人民医院北院院区扩建后总建筑面积由6.88万平方米增至31.66万平方米、车位增至3279个；灵山县医共体获批8713.14万元含智能化系统，南宁市出台医共体方案明确影像、心电、检验、智慧急救等数据中心；广西第十六届运动会12月1日北海开幕，3.68万座席体育场通过验收。机会在于医院安防集成、远程诊断数据中心、赛事场馆人流分析与智慧博物馆。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">16条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">自治区人民医院北院院区扩建工程一期（国家重大传染病防治基地）调整城乡规划批前公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 南宁市自然资源局</span>
+        </div>
+        <div class="news-abstract">公示显示项目总用地面积由30144.17平方米调整为139608.57平方米，总建筑面积由68799.96平方米调整为316640.35平方米（地上262485.91、地下54154.44），机动车停车位由646个增至3279个、非机动车位由434个增至3215个。超31万平方米医疗建筑群将形成大规模视频监控、门禁一卡通、安防集成平台、停车引导与反向寻车、传染病区负压与人员管控需求。</div>
+        <a href="https://zrzyj.nanning.gov.cn/zwgk_57/xxgk/ghgl/ghgs/pqgs/t6759658.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">灵山县紧密型县域医共体建设项目建议书获钦州市发改委批复</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 钦州市发展和改革委员会</span>
+        </div>
+        <div class="news-abstract">项目总投资8713.14万元，建设紧密型医共体医疗影像诊断中心及陆屋镇中心卫生院住院大楼（17126.79平方米），建设内容明确包含智能化系统工程。这是县域医共体少见的含土建与智能化的整体批复项目，影像诊断中心需配套远程阅片、影像存储、会诊视频与基层网络联通，是医疗信息化的高确定性标的。</div>
+        <a href="http://fgw.qinzhou.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市印发建设紧密型县域医疗卫生共同体实施方案</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">方案明确统筹建立影像诊断、心电诊断、临床检验、智慧急救、远程会诊、区域审方、健康随访等数据中心。这意味着南宁各县区将分批建设医共体信息平台与远程诊断系统，涉及区域影像云、心电网络、急救车载视频与指挥调度、基层远程会诊终端，是医疗行业信息化的大额持续性预算方向。</div>
+        <a href="https://www.nanning.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">隆安县医共体远程平台完成放射影像诊断1680例、心电图507例</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 南宁市卫生健康委员会</span>
+        </div>
+        <div class="news-abstract">隆安县医共体远程平台累计完成放射影像诊断1680例、心电图507例，88项检验、238项影像实现互通共享，惠及群众4046人次。运行数据印证了县域远程诊断系统的实际使用强度，为同类县区扩容影像云存储、增加基层采集终端与远程会诊点位提供了可复制的成效依据。</div>
+        <a href="https://wjw.nanning.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西医科大学第一附属医院2026年11月至12月基建第一批次政府采购意向</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">采购意向含老干部医疗保健中心改造190万元、医务所改造135万元。三甲医院既有院区改造往往同步更新视频监控、门禁、呼叫对讲与消防联动系统，且需在不中断诊疗的前提下分区分期实施，对施工组织与系统割接能力要求高，是存量医院智能化改造的典型场景。</div>
+        <a href="https://www.gcy.zfcg.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西医科大学附属武鸣医院6号楼装修改造工程</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">项目投资277.07万元，工期120天，对6号楼实施整体装修改造。医院楼栋装修通常包含弱电与智能化系统的重新布设，含护士站呼叫、病区视频监控、门禁与无线网络，是医疗智能化分包的可承接标包。</div>
+        <a href="https://www.gcy.zfcg.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">河池市第一人民医院重症监护临床信息系统采购项目竞争性谈判</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·河池）</span>
+        </div>
+        <div class="news-abstract">项目预算75万元，采购重症监护系统1套（含自然语言处理与智能索引的ICU全维度临床数据检索）及ICU移动护理工作站6套，需与HIS系统对接同步患者信息、医嘱与字典数据。ICU信息系统建设往往与床旁视频探视、远程会诊、行为识别联动，是医疗信息化与视频能力的结合点。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/hcggzy/projectDetails.html?categorynum=001002007001&infoid=a5cd167e-0333-45d6-b1ed-cae462295cbe" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西壮族自治区第十六届运动会冲刺攻坚阶段新闻发布会</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 广西日报（自治区人民政府门户网站）</span>
+        </div>
+        <div class="news-abstract">广西第十六届运动会将于12月1日在北海开幕、12月13日闭幕，中国—东盟（北海）体育实训基地已建成交付，总建筑面积3.73万平方米、固定座席3.68万个，为广西第二大体育场；开幕式将使用2200名演员与裸眼3D、无人机编队，并已上线官网及微信小程序预约观赛。大型赛事对场馆安防指挥、人流热力分析、无人机反制与票证实名核验需求集中释放。</div>
+        <a href="http://www.gxzf.gov.cn/html/sydt/t28292094.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国—东盟（北海）体育实训基地体育场通过专项联合验收</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 北海新闻网</span>
+        </div>
+        <div class="news-abstract">体育场总用地500亩，核心体育场建筑面积约4.5万平方米，固定座席3.68万个（扩容可容纳4.5至5万人），停车位399个含新能源充电桩301个，总投资由15亿元优化至6亿元，11月4日专家组现场核验。场馆安防含出入口人脸核验、看台人群密度分析、周界防护、指挥中心与应急广播，赛后运营期的智慧场馆改造同样是持续机会。</div>
+        <a href="http://www.bhxww.com/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市印发文化广电和旅游业发展“十五五”规划</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">规划提出将南宁孔庙博物馆、顶蛳山遗址博物馆打造智慧博物馆，引导南宁戏曲博物馆、建制博物馆、骑楼文化陈列馆、老南宁记忆陈列馆等丰富展陈体验，并实施非遗活态传承工程。智慧博物馆建设涉及数字孪生展陈、客流监测、文物环境监测、AR导览与安防一体化，是文旅数字化的明确抓手。</div>
+        <a href="https://www.nanning.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西规划馆：十五载深耕坚守 聚力打造多元文化阵地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-08</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">广西规划馆开馆十五年累计接待游客750万人次，已建成近6000平方米恐龙奥秘科学馆、3000平方米青芒露营创意空间、1200平方米全息交互“灵境”AI展演中心与600平方米文创展示中心，并推进研学体系与公教品牌。文化场馆业态扩张同步带来客流统计、展陈安防、消防与应急疏散、AI互动体验等系统需求。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1108/c347802-41744964.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">田间流量变富民增量 广西深耕农文旅融合新路径</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 广西日报（自治区人民政府门户网站）</span>
+        </div>
+        <div class="news-abstract">2025年广西休闲农业接待游客1.77亿人次、营收246亿元，已建成全国休闲农业示范县14个、中国美丽休闲乡村81个、星级乡村旅游区近1500家，但项目多停留在采摘、农家饭等初级业态，沉浸式项目稀缺。下一步将提升精品民宿与休闲农庄运营水平、开发深度研学产品，乡村景区客流监测、智慧票务、视频监控与应急广播需求随之增长。</div>
+        <a href="http://www.gxzf.gov.cn/gxyw/t28296738.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贯彻全国卫生与健康大会精神 局长抓落地（一）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 广西壮族自治区卫生健康委员会</span>
+        </div>
+        <div class="news-abstract">防城港、来宾、崇左、南宁江南区等地卫生健康部门负责人谈落地举措，涉及远程医疗与AI赋能专科医联体建设、医疗卫生强基工程、跨境传染病联防联控、基层卫生院迁建等。基层医疗能力建设是本轮卫生健康投入重点，配套的远程会诊、影像心电网络、基层医疗机构安防与信息机房建设将集中释放。</div>
+        <a href="https://wjw.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贯彻全国卫生与健康大会精神 主任明方向（五）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区卫生健康委员会</span>
+        </div>
+        <div class="news-abstract">系列报道披露柳州柳江区、桂林阳朔等地推进县域卫生健康信息平台建设，明确电子病历、远程会诊、影像诊断互联互通，以及市中医壮医医院、市精神卫生中心等项目建设安排。县域卫生信息平台与专科医院新建是医疗信息化的两条主线，涉及数据中心、专网、视频会诊与安防系统集成。</div>
+        <a href="https://wjw.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州4个案例获评广西文旅改革创新典型案例（含智慧博物馆与VR展陈）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 柳州市文化广电和旅游局</span>
+        </div>
+        <div class="news-abstract">柳州市博物馆《创新临时展览常设化转化机制》案例入选，展陈升级中新增AI问答、VR民族节庆体验、VR线上云观展与11部民族影像民族志，2025年馆内观众达171万人次；柳州图书馆以大家讲堂项目入选公共文化服务案例。博物馆与图书馆的数字化改造明确指向沉浸式展陈、客流分析与线上直播系统。</div>
+        <a href="http://m.toutiao.com/group/7704145714188485135/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市推进文旅深度融合发展 加快文化强市建设新闻发布会</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">发布会提出推动老友粉制作技艺、宾阳炮龙等本土项目进景区进社区，以壮锦纹样研发文创产品，并依托广西三月三八桂嘉年华、中国（南宁）—东盟非物质文化遗产周等品牌塑造城市形象。文旅品牌活动常态化将带来景区客流监测、活动安保指挥、智慧导览与视频监控的持续性建设需求。</div>
+        <a href="https://www.nanning.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1102-1108.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1102-1108.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1102-1108.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1102-1108.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
