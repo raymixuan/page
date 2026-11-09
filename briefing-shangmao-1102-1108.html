@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>商贸物流 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>商贸物流行业要闻</h1>
+    <div class="date">2026年11月2日 — 11月8日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是“通道扩容+口岸智慧化”。平陆运河“湾港通”多式联运首票集装箱业务启运，综合物流成本降10%；友谊关口岸年出入境车辆突破100万辆次创历史新高，智慧口岸日通关能力将由约2000辆次提升至超4000辆次，车辆快检设备使用工程已进入环评审批公示。商务端3000万元零售消费券11月7日起发放、电子商务高质量发展13条措施出台，贺州1至9月网络零售额增长48.4%。机会集中在口岸无人集卡与跨境调度平台、港区智能卡口与集装箱识别、冷链温控与消防联动、物流园区安防集成，建议优先跟进凭祥智慧口岸与农村客货邮融合批量站点。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">12条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">平陆运河“湾港通”多式联运通关监管模式首票集装箱业务正式启运</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-04</span>
+          <span class="source-tag">📍 广西壮族自治区交通运输厅</span>
+        </div>
+        <div class="news-abstract">平陆运河“湾港通”多式联运通关监管模式首票集装箱业务启运，6个40尺集装箱胶合板经贵港报关、经平陆运河运至钦州港中转出口越南胡志明，综合物流成本降低10%；贵港码头1至9月外贸吞吐量21.46万吨、同比增长56%，外贸集装箱0.73万标箱、同比增长87%。多式联运新通道对港区智能卡口、集装箱号自动识别、在途GPS与视频全程可视、多式联运“一单制”平台需求迫切，是港口与物流安防的重点增量。</div>
+        <a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中越边境友谊关口岸出入境车辆突破100万辆次</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 法治日报·法治网</span>
+        </div>
+        <div class="news-abstract">截至10月31日，友谊关口岸及其附属通道出入境车辆突破100万辆次、同比增长超18.5%，其中友谊关口岸超58.7万辆次、浦寨与弄尧附属通道超41.5万辆次，日均通关3300余辆次，较上年提前46天破百万、创历史新高；边检快捷通关模式已迭代至3.0版，越南籍司乘人员15秒左右即可完成查验，与中国籍司乘人员同享“秒级通关”。口岸流量持续高位将推动货运通道扩容、智能卡口升级、车底检查与司机人脸核验设备增补。</div>
+        <a href="http://m.legaldaily.com.cn/index_article/content/2026-11/03/content_9483434.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西：开放潮涌百业兴（智慧通关在友谊关口岸从蓝图变为现实）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 光明日报</span>
+        </div>
+        <div class="news-abstract">凭祥智慧口岸项目依托专用通道和跨境指挥调度平台，可在集装箱接驳区完成社会集卡与无人运输车的集装箱接驳，由无人运输车过卡口进入口岸监管区，货物从南宁到河内24小时内运达，日通关能力将由目前约2000辆次提升至超4000辆次；南宁国际铁路港一次查验后凭祥口岸不再重复报关查验，班列时效由20多小时缩短至14小时。无人集卡、跨境调度平台、场站高精度定位与全景视频拼接构成口岸智能化核心系统，本地集成与运维机会明确。</div>
+        <a href="http://m.toutiao.com/group/7703698138581844530/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区生态环境厅关于中越友谊关—友谊货运通道智慧口岸项目车辆快检设备使用工程环评报告表审批公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区生态环境厅</span>
+        </div>
+        <div class="news-abstract">自治区生态环境厅公示中越友谊关—友谊货运通道智慧口岸项目车辆快检设备使用工程环评报告表审批，标志智慧口岸车辆快检（含辐射探测与成像查验）设备进入落地环节。车辆快检系统是口岸反走私与安全监管的核心装备，涉及辐射监测、图像识别与数据联网。项目已完成环评公示意味着设备采购与安装即将启动，是口岸安防装备的直接商机，建议同步跟进友谊关与浦寨、弄尧附属通道的同类设备配置。</div>
+        <a href="http://sthjt.gxzf.gov.cn/zfxxgk/zfxxgkgl/fdzdgknr/hjjccf/xzxk/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西首开至南亚西部陆海新通道铁海联运专列</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区交通运输厅</span>
+        </div>
+        <div class="news-abstract">广西首开至南亚的西部陆海新通道铁海联运专列，12个40英尺集装箱汽车零配件从柳州铁路港出发，经钦州港出海运往南亚，全程运输时间节省3天。新线路开通扩大铁路港与港口衔接作业量，铁路港集装箱智能卡口、龙门吊远程操控视频、场站周界防范与人员定位系统需同步扩容；柳州铁路港已实现L4级无人重卡智能短驳，是西部陆海新通道智慧物流的标杆节点，具备持续改造与运维需求。</div>
+        <a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西防城港开行至重庆万州进口铝土矿常态化班列</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 广西壮族自治区交通运输厅</span>
+        </div>
+        <div class="news-abstract">防城港开行至重庆万州进口铝土矿常态化班列，西部陆海新通道大宗散货“散改集”运输进一步常态化。大宗货物班列常态化对港区堆场智能理货、铁路专用线视频监控、粉尘与超载检测、货运安全监管平台提出更高要求，防城港港域与铁路港联动场景具备集成机会，可结合北部湾港“智慧湾”平台的数据打通需求切入。</div>
+        <a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西多部门联合印发方案 深入推进农村客货邮融合发展提质增效</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-05</span>
+          <span class="source-tag">📍 广西壮族自治区交通运输厅</span>
+        </div>
+        <div class="news-abstract">广西多部门联合印发方案推进农村客货邮融合发展提质增效，推动客运、货运、邮政快递资源共享与网点共建。农村客货邮融合将新增大量乡镇综合服务站与村级寄递物流点，配套的站点视频监控联网、寄递安全“三项制度”验视设备、车辆定位与线路监管平台需求明确；项目点多面广、单点投资小但总量大，是县域物流信息化与末端安防的批量机会。</div>
+        <a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">十四城联动 覆盖三大场景 3000万元零售消费券11月7日起发放</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 南宁日报（南宁市人民政府门户网站）</span>
+        </div>
+        <div class="news-abstract">自治区商务厅自11月7日起启动2026年广西品质电商促消费百日嘉年华——广西精品消费月零售消费券活动，3000万元总额、超150万张消费券于每周六、周日上午10时在云闪付发放，覆盖全区14个设区市商超、百货、成品油三大场景，活动持续至12月31日。促消费活动带动商超客流回升，商超客流分析、收银防损、停车场道闸与车位引导等安防与智慧商业系统需求随之提升，是商贸零售场景的切入契机。</div>
+        <a href="https://www.nanning.gov.cn/ywzx/bmdt/2026nbmdt/t6759984.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">一图了解 | 广西电子商务高质量发展13条措施</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-02</span>
+          <span class="source-tag">📍 广西壮族自治区商务厅</span>
+        </div>
+        <div class="news-abstract">自治区商务厅发布广西电子商务高质量发展13条措施图解，从主体培育、平台建设、物流配套、人才支撑等方面提出系统性支持政策。电商高质量发展将加快县域电商物流体系与仓配中心建设，配套的分拣线视觉识别、仓库视频监控、快递驿站智能柜与末端配送监管平台需求同步增长；可结合“桂品出乡”“东盟水果·汇聚广西”等品牌工程做场景化方案输出。</div>
+        <a href="http://swt.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西：向海图强“进”新程 聚力开放“博”共赢</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-06</span>
+          <span class="source-tag">📍 广西壮族自治区商务厅</span>
+        </div>
+        <div class="news-abstract">自治区商务厅发布广西向海图强、聚力开放专题报道，平陆运河通航后江海联运与跨境贸易规模快速扩张，北部湾港通达全球航线超100条，外贸保持较快增长。通道与贸易双扩容带动口岸、综合保税区、保税仓与物流园区的监管设施升级，涉及智能卡口、视频联网、货物追溯与反走私预警系统，是商贸物流安防的主线机会，建议按口岸—综保区—物流园三级场景梳理项目清单。</div>
+        <a href="http://swt.gxzf.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">24名中国游客越南遇大巴起火 东兴口岸深夜延时通关助平安回国</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-03</span>
+          <span class="source-tag">📍 东兴市人民政府</span>
+        </div>
+        <div class="news-abstract">24名中国游客在越南遭遇大巴起火后，经东兴口岸深夜延时通关安全回国，口岸启动应急通关保障机制。事件反映口岸应急处突与旅客服务能力需求，涉及口岸应急指挥调度、旅客流量监测与预警、跨境协同信息平台；东兴口岸北仑河二桥前三季度货运量值双创新高，通关设施与应急系统升级需求持续，可作为边境口岸智能化项目的现实依据。</div>
+        <a href="http://www.dxzf.gov.cn/dxdt/zwyw/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">电商赋能特色产业 消费激活发展动能（2026年广西品质电商促消费百日嘉年华在贺州启动）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-07</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">11月7日“品质电商冬春乐购”——2026年广西品质电商促消费百日嘉年华暨餐饮文化周发布活动在贺州学院举办。贺州1至9月网络零售额达22.6亿元、同比增长48.4%，高于全区增速25.5个百分点、增速位列广西第3；全市行政村快递物流服务通达率100%，农村电商服务网络全域贯通，并依托昭平茶、富川脐橙、黄金珠宝等产业培育直播电商。农村电商网络全域贯通意味着村级站点监控、快递分拣与仓储安防存在标准化、批量化的配套需求。</div>
+        <a href="http://m.toutiao.com/group/7705382218981458468/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1102-1108.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1102-1108.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1102-1108.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1102-1108.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
