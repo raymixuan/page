@@ -1,178 +1,449 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广西电力行业简报 · 2026.10.26 — 11.01</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>电力央企 · 广西行业双周简报 | 2026.10.26-11.01</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>⚡ 广西电力行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.26 — 11.01</span>
-      <span>📊 本周 7 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>电力央企行业要闻</h1>
+    <div class="date">2026年10月26日 — 11月1日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是抽蓄集群加速、新能源装机过半、新型储能集中并网、电网数字化深化四条线同时推进。10月26日贵港抽蓄地下厂房交通洞贯通，总投资约81亿元、洞室群总长近19公里；10月20日桂林灌阳抽蓄厂房开挖完成转入机电安装，广西已有9座抽蓄、总装机1140万千瓦。1—9月新能源发电602.3亿千瓦时、增17.4%，截至9月底累计装机6416.4万千瓦、占电力总装机50.8%；广西电网今年计划投资217.55亿元、推进472个重点主网项目。储能侧梧州龙圩300MW/600MWh电站10月30日并网，百色旭储同规模液冷项目进入初步设计。电网数字化侧玉林500千伏站用3台无人机机巢巡查，全站巡视从3—4小时压到30分钟，AI识别准确率约80%。安防机会集中在变电站智能巡视与机巢、抽蓄洞室与大坝监测、储能热失控预警与舱级消防、场站少人值守、线路防外破，建议以抽蓄9站打标准包、以储能项目打消防加安防组合。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">20条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">2026年广西国防动员东片区通信保障暨电力应急处突演练在梧州开展</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-31</span>
+          <span class="source-tag">📍 广西壮族自治区国防动员办公室（北海市人民政府转载）</span>
+        </div>
+        <div class="news-abstract">10月19日至22日自治区国动办在梧州开展演练，检验极端情况下国防动员与重点行业协同机制，依托卫星通信、4G图传等技术手段，配合电力专业队伍完成伪装防护、物资调运、设施抢修等行动；梧州、北海、玉林、贵港、贺州5市国动办与南方电网广西梧州供电局共80余人参与。</div>
+        <a href="http://www.beihai.gov.cn/xxgkbm/bhsrmfkhhfgzbgs/gzxx_7/t28267687.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西贺州八步仁义风电场100MW项目进入竣工运营，首批机组已并网</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 项目信息网</span>
+        </div>
+        <div class="news-abstract">项目位于贺州市八步区仁义镇，属山地风电场，总投资52720.4万元、装机100MW，新建220kV升压站并配置总装机20%、储能时长2小时的储能装置，风机采用适应广西中低风速山地环境的4.XMW及以上机型，年等效满负荷小时数预计2100小时以上，预计2026年第四季度实现全容量商业运行。</div>
+        <a href="https://m2.ccpc360.com/xmzx2358023.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西梧州龙圩300MW/600MWh新型储能电站一次性并网成功</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 易储数智（新能源网）</span>
+        </div>
+        <div class="news-abstract">10月30日深圳易储数智能源集团有限公司投资建设的广西梧州龙圩300MW/600MWh新型储能电站项目（龙腾储能站）一次性并网成功。这是区内已落地的大型储能样板项目，可作为标杆案例向百色、钦州、来宾等后续储能项目复制，也是验证储能消防方案实战效果的最佳载体。</div>
+        <a href="https://m.weibo.cn/detail/5359756443124122" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">十万大山起绿电：广西国华投资公司山地新能源装机突破百万千瓦</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 中国电力报</span>
+        </div>
+        <div class="news-abstract">10月20日钦北五宁风电场二期WN13号机组吊装就位，广西国华投资公司装机容量达100.141万千瓦。多项目集群并行对远程集中监控、区域维检中心和智能运维平台需求集中，该公司对结构监测加视频融合接受度高，是优质技术型客户。</div>
+        <a href="https://epaper.ceic.com/pad/content/202610/30/content_24998.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西白龙核电厂1、2号机组核安全公开季度报告（2026年第3季度）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 国电投广西核电有限公司</span>
+        </div>
+        <div class="news-abstract">10月30日发布季度报告，1、2号机组目前处于建造阶段，严格遵守核安全法规与建造阶段质量保证大纲开展相关工作，核设施处于安全状态。核电建造期对实体防护、周界入侵探测、人员车辆出入控制、关键区域视频留存有极高标准，且须通过核安全监管审查，建造期安防投入持续多年，属高门槛高价值客户，建议从1、2号机组建造期配套开始建立供应关系。</div>
+        <a href="https://www.spicgxnp.com/dzr/xxgs" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西电网第十批基建专业桂薪宝农民工工资监管平台直接采购公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 中国南方电网供应链统一服务平台</span>
+        </div>
+        <div class="news-abstract">采购金额75万元，唯一供应商为中国—东盟信息港股份有限公司，理由为桂薪宝是自治区人民政府带领下规划建设的农民工工资支付省级监控预警平台唯一建设运营方，实现对全区工程建设领域项目保障农民工工资支付制度落实和欠薪投诉预警的信息化管理。这说明电网基建已把人员实名与用工监管纳入平台化，对应工地实名制通道、人脸考勤与视频留痕需求。可作为电网基建项目的标准配套跟进，与基建施工标段同步报价。</div>
+        <a href="https://www.bidding.csg.cn/zbhxrgs/1200447886.jhtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西前三季度新能源发电量突破600亿千瓦时，装机占比达50.8%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 新华网广西频道（转广西日报）</span>
+        </div>
+        <div class="news-abstract">1—9月广西新能源发电量602.3亿千瓦时、同比增17.4%，相当于节约标准煤1809万吨；截至9月底全区新能源累计装机6416.4万千瓦、占电力总装机50.8%，非化石能源电量占比67.4%。新能源成为第一大电源，海量场站并网对远程监控、集中运维中心、少人值守提出刚性需求，可推含周界、热成像火点检测、箱变监测与集中监控平台的标准包。</div>
+        <a href="http://www.gx.news.cn/20261029/7f63b93f434945b594caee51a7725127/c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西启动2027年新能源增量项目机制电价竞价，电量规模104.2亿千瓦时</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 新浪财经（转每日风电）</span>
+        </div>
+        <div class="news-abstract">10月27日广西电力交易中心发布2027年广西新能源增量项目机制电价竞价公告，申报主体为2025年6月1日至2027年12月31日投产且未纳入机制电价执行范围的风电、光伏项目；竞价电量104.2亿千瓦时（风电90.2亿、光伏14亿），申报价上限0.36元/千瓦时、下限0.15元/千瓦时，单体申报不超全部上网电量80%，执行期限12年，10月30日完成风电与光伏申报。</div>
+        <a href="https://finance.sina.com.cn/roll/2026-10-29/doc-iniwvwrf8966834.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贺州供电局为2026年广西文化旅游发展大会开展保供电专项检查</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 金台资讯</span>
+        </div>
+        <div class="news-abstract">针对富川瑶族自治县秀水状元村这一大会重要观摩点，贺州供电局以人巡加机巡方式对10千伏配电线路开展巡视，用红外测温和负荷监测对供电线路、台区变压器、观摩点配电箱、夜景亮化及舞台用电开展精细化巡检，重点排查线路老化、过载、接线不规范等风险，并按谁产权谁负责原则梳理隐患清单。古村木结构建筑火灾风险高，独立式烟感、电气火灾监控、红外热成像与应急广播是明确需求，可打包重大活动保电加古村消防方案。</div>
+        <a href="http://m.toutiao.com/group/7702006432845087242/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广投坎德拉首批飞轮储能产品在柳州下线，广西首个磁悬浮飞轮储能制造基地投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 广西能源集团</span>
+        </div>
+        <div class="news-abstract">10月28日广西能源集团旗下广投坎德拉新能源公司首批飞轮储能产品在广投柳州数智产业园下线，该工厂是广西首个具备磁悬浮飞轮储能系统集成制造能力的生产基地，以兆瓦级飞轮储能装备制造为重点，将拓展飞轮与锂电池混合储能系统集成、能量管理系统及智能电力交易系统；今年计划完成21台套飞轮储能产品生产和出厂，2027年产值预计突破1亿元。</div>
+        <a href="http://m.toutiao.com/group/7701747468949520957/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西百色旭储300MW/600MWh浸没式液冷独立储能电站项目进入初步设计</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 项目信息网</span>
+        </div>
+        <div class="news-abstract">项目总投资12亿元，规划总装机300兆瓦、储能时长2小时、规模600兆瓦时，采用浸没式液冷技术路线，已完成立项备案与可行性研究，处于初步设计深化阶段，同步启动设备选型与技术方案比选；计划2027年四季度实现全容量并网投产，采购重点涵盖液冷储能系统集成、热管理模块、智能能量管理系统EMS、高压直流变换装置PCS及数字化监控平台。</div>
+        <a href="https://m2.ccpc360.com/xmzx2354770.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西白龙核电1、2号机组运行前辐射环境本底调查专题采购结果公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 招标网</span>
+        </div>
+        <div class="news-abstract">10月28日发布广西白龙核电项目1、2号机组工程运行前辐射环境本底调查专题项目采购结果公告。运行前辐射环境本底调查是机组装料与商运前的必经环节，意味着1、2号机组正朝运行阶段推进，配套的环境辐射监测站、厂区气象与视频联动监测将陆续招标。核电环保监测与安防监测存在交叉场景（厂区周界、监测站无人值守视频），可作为切入点深化与国电投广西核电的供应关系，为后续3、4号机组前期工作铺路。</div>
+        <a href="https://zb.zhaobiao.cn/succeed_v_945fc9ebe456e11e2e0aea687be74a30.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西电网第七批基建专业中标：500千伏龙潭、桂北变电站及无人机管控技术服务</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 中国南方电网供应链统一服务平台</span>
+        </div>
+        <div class="news-abstract">10月28日广西电网公司电网建设分公司公布2026年第七批基建专业基建项目其他工程咨询服务机构等2个公开招标项目中标结果，含500千伏龙潭变电站工程等3个工程创优质量咨询、9个工程ESG评价技术服务、500千伏桂北变电站绿色建筑国际认证（LEED BD+C铂金级）咨询服务，以及输变电工程建设全过程无人机管控技术服务（中标方为南方电网电力科技股份有限公司）。</div>
+        <a href="https://www.bidding.csg.cn/zbhxrgs/1200447548.jhtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西电网2026—2027年220千伏新能源配套送出线路紧急工程可研勘察设计中标公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 中国南方电网供应链统一服务平台</span>
+        </div>
+        <div class="news-abstract">10月28日起公示，分三个标段推进：贵港、来宾、百色、贺州标段；柳州、桂林、河池标段；南宁、玉林、梧州、钦州、北海、防城港、崇左标段。新能源配套送出紧急工程意味着并网压力大、建设节奏快，变电站与线路的智能巡视、防外破视频、导线覆冰与山火监测会随工程同步上马。建议按三个标段属地供电局分别对接，提前做设备选型入库，把防外破视频与山火监测作为送出工程的标配附件报价。</div>
+        <a href="http://cxwt.sc.csg.cn/zbhxrgs/1200447556.jhtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港抽水蓄能电站地下厂房主通道贯通，进入全面开挖阶段</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 广西日报（广西壮族自治区人民政府门户网站）</span>
+        </div>
+        <div class="news-abstract">10月26日贵港抽蓄电站1620米厂房交通洞全线贯通，加上通风洞，总长2700米的两条地下工程主通道全面建成；地下洞室群由43个洞室构成、总长近19公里，贵港号TBM开挖直径3.53米、掘进效率为传统钻爆4倍。洞室群全面开挖阶段需要洞内人员定位与安全监测、爆破警戒视频、施工机械视频回传、上下库大坝边坡监测与入侵防范，建议从现在起跟进南网储能的洞室安全与视频标段。</div>
+        <a href="http://www.gxzf.gov.cn/gxyw/t28265322.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">半小时巡完一座变电站：玉林500千伏站无人机加AI巡检，准确率约80%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 广西云-广西日报</span>
+        </div>
+        <div class="news-abstract">500千伏玉林变电站是西电东送关键枢纽，承担玉林41%电力供应、年均西电东送量近百亿千瓦时；站内已布设3台无人机机巢定时巡查，每台预设航线到点自动起飞返航，过去两人徒步巡查加测温需3至4小时，现在半小时完成。这是广西电网智能巡视的现成样板，准确率仍有20%提升空间，高清视频加边缘算力加算法迭代是可切入的增量。</div>
+        <a href="https://tv.gxnews.com.cn/staticpages/20261027/newgx6ae00e09-22008636.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西能源、交通重点项目捷报频传：贵港抽蓄贯通，柳梧铁路6座新建站房完成静态验收</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 广西网络广播电视台</span>
+        </div>
+        <div class="news-abstract">报道汇总两项进展：10月26日贵港抽蓄电站1620米地下厂房交通洞贯通、进入全面开挖；柳梧铁路6座新建站房全部完成静态验收，该线由广西交通投资集团投资建设、正线全长238.167公里、途经柳州来宾贵港梧州四市、共设10个车站，接触网工程也进入静态验收，计划今年底建成通车。</div>
+        <a href="https://news.gxtv.cn/article/detail_bfd3a354baa431007dadac7d369f0105.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市生态环境局受理7个输变电工程环评，涉110千伏天龙站等</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 南宁市生态环境局</span>
+        </div>
+        <div class="news-abstract">10月27日受理7个建设项目环评，公示期至11月9日，建设单位均为广西电网有限责任公司南宁供电局，含110千伏天龙送变电工程，以及220千伏利华站220千伏与110千伏间隔扩建、500千伏民歌站220千伏间隔扩建、220千伏横县站110千伏间隔扩建、220千伏智城站220千伏间隔扩建、110千伏昌平变电站110千伏间隔扩建。项目处环评受理阶段，可据此预判明年一季度施工与设备招标节奏。</div>
+        <a href="https://sthjj.nanning.gov.cn/xxgk/zfxxgkml/xzsp/t6752930.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西抽水蓄能电站群十五五首个厂房开挖完成，桂林灌阳转入机电安装</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 中国能源报</span>
+        </div>
+        <div class="news-abstract">10月20日桂林灌阳抽蓄电站地下厂房（地下90米、长180米宽27.5米高57.6米）经750天施工全面开挖完成，进入机电安装阶段，将安装4台30万千瓦机组，与落差460米的上下水库相连。9座电站集群开发意味着标准化安防需求可复制，机电安装期是视频、门禁、消防、环境监测标段的集中释放期，建议一次性做抽蓄电站安防标准包打向9个项目。</div>
+        <a href="http://paper.people.com.cn/zgnyb/pc/content/202610/26/content_30188251.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南网超高压南宁局特高压多模态数据集项目获数据要素大赛国赛奖</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 金台资讯</span>
+        </div>
+        <div class="news-abstract">10月23日2026年数据要素大赛全国总决赛颁奖，南方电网超高压输电公司南宁局牵头申报的特高压现场作业多模态数据集项目获数据基础设施赛道国赛奖，是广西该赛道首个国家级奖项。说明电网侧AI安监已进入产品化阶段，可考虑与之做算法加前端硬件互补合作。</div>
+        <a href="http://m.toutiao.com/group/7700818253744833058/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是政策端机制电价把2027年收益钉死。</strong>广西电力交易中心启动2027年增量新能源机制电价竞价，104.2亿千瓦时电量、0.15—0.36元/千瓦时区间、12年执行期，10月30日完成申报出清，风电光伏投资确定性提升，配套监测与并网设备预算随之松动。</p>
-    <p><strong>二是项目端海陆风电同时放量。</strong>钦州900兆瓦海上风电示范项目98.5亿元环评获批，中广核500兆瓦陆风四标段公示中标候选人，嘉泽新能5.43亿元投建融安100兆瓦，国华投资广西装机突破100.141万千瓦，从核准到吊装全链条都在本周推进。</p>
-    <p><strong>三是运行端电网加速AI化。</strong>前三季度广西新能源发电量602.3亿千瓦时、装机占比50.8%，广西电网投产70余项主网与6200余项配网工程，无人机智能巡检+红外测温、数字员工与调控智能体已进入日常调度，运维侧技术门槛明显抬高。</p>
-  </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>钦州900MW海上风电获批 · 海上升压站无人值守监控、海缆防外破与塔基视频雷达</li>
-      <li>中广核500MW陆风89个机位 · 分散机位远程视频与林区防火监测组网</li>
-      <li>嘉泽融安100MW共用升压站 · 一站两场门禁、周界与消防联动统一扩容</li>
-      <li>国华广西装机破百万千瓦 · 多场站集控中心替代单场值守，集控平台需求释放</li>
-      <li>广西电网无人机+红外巡检常态化 · 自动机巢与AI缺陷识别配套采购</li>
-      <li>新能源装机占比过半 · 功率预测、AGC/AVC联调与并网监测装置刚性增长</li>
-    </ul>
-  </div>
-  <div class="section">
-    <div class="section-title">电价机制</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-27</span>
-          </div>
-          <h4><a href="https://finance.sina.com.cn/roll/2026-10-29/doc-iniwvwrf8966834.shtml" target="_blank" rel="noopener noreferrer">广西启动2027年新能源增量项目机制电价竞价</a></h4>
-          <div class="card-body">
-            <p>广西电力交易中心10月27日发布公告：<strong>竞价电量规模104.2亿千瓦时，其中风电90.2亿、光伏14亿</strong>；申报价上限0.36元、下限0.15元/千瓦时，单体申报不超过上网电量80%，执行期12年。10月30日9时风电、光伏分别申报，出清后公示3个工作日。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>12年机制电价锁定收益，业主更敢投，升压站与光伏区监控预算随之落地。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://finance.sina.com.cn/roll/2026-10-29/doc-iniwvwrf8966834.shtml" target="_blank" rel="noopener noreferrer">每日风电（新浪财经）</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">海风与陆风提速</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="https://finance.sina.com.cn/roll/2026-10-29/doc-iniwwpnw2869994.shtml" target="_blank" rel="noopener noreferrer">广西钦州900MW海上风电示范项目环评获批</a></h4>
-          <div class="card-body">
-            <p>10月28日自治区生态环境厅批复该项目环评：场址位于钦州三娘湾南部海域，<strong>总装机900兆瓦，含38台10.5兆瓦、18台10.0兆瓦、37台8.7兆瓦风机</strong>，配1座220千伏海上升压站，海缆合计257公里，总投资98.5亿元，施工期15个月。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>海上风电要升压站无人值守监控、海缆路由防外破、风机塔基视频与雷达预警，单体体量大。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://finance.sina.com.cn/roll/2026-10-29/doc-iniwwpnw2869994.shtml" target="_blank" rel="noopener noreferrer">龙船风电网（新浪财经）</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-28</span>
-          </div>
-          <h4><a href="http://m.toutiao.com/group/7701387139816210971/" target="_blank" rel="noopener noreferrer">中广核广西500MW风电四标段公示中标候选人</a></h4>
-          <div class="card-body">
-            <p>10月27日，中广核新能源广西公司容县松山、灵山平田、大化江南羌圩、凌云尖峰岭500兆瓦风电机组（含混塔、吊装）中标候选人公示，<strong>远景能源与上海睿景联合体预中标</strong>。四标段分落玉林容县、河池大化、百色凌云，机位合计89台。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>89个机位分散四县山地，塔筒、机位、集电线路的远程视频与林区防火监测是配套刚需。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://m.toutiao.com/group/7701387139816210971/" target="_blank" rel="noopener noreferrer">每日风电</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-31</span>
-          </div>
-          <h4><a href="http://m.toutiao.com/group/7702613822061756991/" target="_blank" rel="noopener noreferrer">嘉泽新能5.43亿元投建融安仙人堂100MW风电</a></h4>
-          <div class="card-body">
-            <p>10月30日晚嘉泽新能公告，投建广西融安仙人堂100兆瓦风电项目，<strong>估算总投资5.43亿元</strong>，装10台6.25兆瓦、5台7.5兆瓦机组，与融安板榄风电合建220千伏板榄升压站，经35千伏集电线路汇集后整合送出。建设期约12个月，预计投资收益率4.33%。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>共用升压站意味着站端安防要统一扩容，门禁、周界、消防联动按一个站两场配置。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://m.toutiao.com/group/7702613822061756991/" target="_blank" rel="noopener noreferrer">风芒能源</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="https://mwind.in-en.com/html/wind-2471446.shtml" target="_blank" rel="noopener noreferrer">国华投资广西新能源装机突破100万千瓦</a></h4>
-          <div class="card-body">
-            <p>10月29日，随钦北五宁风电场二期WN13号机组最后一吊就位，<strong>广西国华投资新能源装机达100.141万千瓦</strong>。钦北大贵光伏首批4万千瓦已并网，爱国18万千瓦、五宁二期14万千瓦风电在建，钦南那东一期10万千瓦进入攻坚，形成滚动开发格局。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>多项目并行运维，集中监控中心+区域运维站模式替代单场值守，带来集控平台需求。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://mwind.in-en.com/html/wind-2471446.shtml" target="_blank" rel="noopener noreferrer">国家能源集团广西公司</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">电网与运行</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-tech">技术</span>
-            <span class="card-date">10-27</span>
-          </div>
-          <h4><a href="http://gxgl.wenming.cn/wmyw/202610/t20261027_9393342.html" target="_blank" rel="noopener noreferrer">广西电网：无人机智能巡检与调控智能体上岗</a></h4>
-          <div class="card-body">
-            <p>截至9月底，南方电网在广西建成<strong>3580座充电场站、超2万个充电桩，覆盖1118个乡镇</strong>；前三季度投产70余项主网、6200余项配网工程。百色田东供电局以“无人机智能巡检+红外测温”完成全域设备数据采集，广西电网上线数字员工、调控智能体辅助“风光水荷”预测调度。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>无人机+红外已跑通，下一步是自动机巢与AI缺陷识别，配网在线监测装置同步放量。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://gxgl.wenming.cn/wmyw/202610/t20261027_9393342.html" target="_blank" rel="noopener noreferrer">新华网</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="http://m.toutiao.com/group/7700894236266512936/" target="_blank" rel="noopener noreferrer">前三季度广西新能源发电量超600亿千瓦时</a></h4>
-          <div class="card-body">
-            <p>南方电网广西电网公司10月26日介绍：1—9月<strong>广西新能源发电量602.3亿千瓦时，同比增长17.4%</strong>，相当于节约标准煤1809万吨。截至9月底新能源装机6416.4万千瓦，占总装机50.8%。今年计划完成固定资产投资217.55亿元，推进472个重点主网项目。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>新能源占比过半后，场站功率预测、AGC/AVC联调与并网监测装置需求刚性增长。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://m.toutiao.com/group/7700894236266512936/" target="_blank" rel="noopener noreferrer">中国新闻网</a></div>
-        </div>
-  </div>
+
   <div class="footer">
-    <p><strong>广西电力行业简报</strong> · 数据来源：政府官网及行业公开渠道</p>
-    <p style="margin-top:6px;">仅供内部行业研究参考 · 生成于 11.01</p>
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-</main>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1026-1101.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1026-1101.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1026-1101.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1026-1101.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
