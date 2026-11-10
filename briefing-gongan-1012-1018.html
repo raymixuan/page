@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>公安行业 · 广西行业双周简报 | 2026.10.12-10.18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>公安行业行业要闻</h1>
+    <div class="date">2026年10月12日 — 10月18日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期公安主线有三条。一是强边固防与沿海治理科技化提速，凭祥智控云中心、友谊关跨境智慧口岸、东兴L4智能安防巡逻车、大新县高空瞭望+无人机云控+AI指挥中心（警情响应缩短40%）、百色化峒边检站智慧查验（日均1900辆车次）、钦州云上警哨与3.4万艘船舶定位，已构成边境沿海立体防控清晰的采购面。二是大型活动安保进入低空管控标配阶段，环广西世巡赛与全区少数民族传统体育运动会期间，柳州、崇左、凤山、南宁多市启用无人机反制、机器狗、铁骑编队，体育中心周边5公里低慢小航空器临时管控成为刚性需求。三是公安数字化改革采购密集释放，环食药侦综合应用系统654万元已由中国移动广西中标，刑侦综合应用系统升级1550.5万元10个分标正在招标、11月11日9:30截标。建议优先跟进刑侦升级的音视频与国产化适配分包，同时以大新、凭祥、东兴三个边境样板为切口，打包推送高空瞭望+无人机云控+AI研判方案。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">16条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">梧州市公安局2026-2027年度移动警务系统终端流量租赁服务采购文件预公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 采购与招标网</span>
+        </div>
+        <div class="news-abstract">梧州市公安局启动移动警务系统终端流量租赁服务采购，目前处于公开招标文件预公示阶段，供应商可对资格条件、技术参数、评标办法提出意见。移动警务终端与流量租赁通常伴随终端加密、安全接入、警务App适配需求，是地市级公安每年稳定的信息化支出项，建议在预公示期内提交参数意见，争取把终端形态与安全接入要求引向自身产品体系。</div>
+        <a href="https://www.chinabidding.cn/zbyg/U-vzMr0zi.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">凤山公安圆满完成环广西世巡赛凤山赛段安保任务</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 凤山警事</span>
+        </div>
+        <div class="news-abstract">河池凤山县作为县级公安机关独立承担国际赛事赛段安保，涉及赛道沿线视频覆盖、临时通信保障、指挥调度与要人警卫。县级单位办国际赛事最容易暴露视频盲区与通信短板，且赛后往往有补建预算，建议跟进凤山、巴马、东兰一线赛道沿线监控补点与移动指挥车需求。</div>
+        <a href="http://www.gxfsx.gov.cn/xwzx/bmdt_1/t28239509.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西千里边海筑安澜：AI视觉算法与无人装备构建立体巡防</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 平安广西网</span>
+        </div>
+        <div class="news-abstract">稿件明确AI视觉算法实时研判、无人船、无人巡检车、无人机协同的立体巡防模式，并给出11分钟抓获偷越人员的实战案例，同时公布9787条群众举报线索。这说明广西边境已从单点监控走向算法+无人装备的体系化布防，对边缘算力盒子、多源视频融合、无人机机巢与反制、无人船巡检都存在直接需求，县级边境派出所是最容易切入的落地点。</div>
+        <a href="http://www.chinapeace.gov.cn/chinapeace/c100056/2026-10/15/content_12860040.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海统筹安全与发展夯实沿海治理根基：高清监控+海域雷达+无人机24小时监测</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 南天一剑</span>
+        </div>
+        <div class="news-abstract">北海在563公里海岸线上布设高清监控、海域雷达、智能预警与无人机24小时动态监测，并联动钦州城市大脑强边固防板块。海域雷达与光电联动、近海小目标识别、船舶轨迹分析是沿海三市（北海、钦州、防城港）当前最缺的能力，单个沿海县区项目体量通常在300万至800万元区间，建议以雷达+光电+AI识别一体化方案对接海防办与公安海防部门。</div>
+        <a href="http://m.toutiao.com/group/7696826626776105526/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州公安护航全区少数民族传统体育运动会开幕式：体育中心周边5公里低慢小临时管控</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 柳州警方</span>
+        </div>
+        <div class="news-abstract">安保方案明确对体育中心及周边5公里范围实施低慢小航空器临时管控，投入反制力量侦测处置无人机黑飞，并配合安检、人流管控与视频巡查。低空管控已从重大活动特例变为地市级公安常态化配置，反无人机侦测+反制+指挥调度一体化的单套投入通常在50万至200万元，柳州、崇左、南宁近期连续三场大型活动是可复用的采购由头。</div>
+        <a href="https://lz.pagx.cn/news.html?aid=472351&mainCid=30019" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">崇左警方护航环广西世巡赛：千余警力配无人机与机器狗</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 崇左市公安局</span>
+        </div>
+        <div class="news-abstract">崇左投入千余名警力保障世巡赛崇左赛段，公开使用无人机与机器狗参与赛道巡查与人群管控。机器狗+无人机的地面空中协同是广西公安首次在大型赛事成规模使用，说明巡逻机器人已进入试用采购阶段。建议以赛事安保复盘为名，向崇左、防城港、北海公安推送机器人巡检+无人机机巢+赛道沿线视频补点的组合方案。</div>
+        <a href="http://m.toutiao.com/group/7696744065500512810/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平南公安通报2起网络谣言典型案例：含AI生成视频编造房屋爆炸</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 广西新闻网</span>
+        </div>
+        <div class="news-abstract">平南公安在净网2026专项行动中查处2起案例，其中一起为利用抖音AI功能生成虚假爆炸视频并散布，被处罚款300元。AI生成内容已成为县级公安网安取证的新难点，涉及AI伪造检测、视频溯源、网络舆情监测等技术需求。建议向县级网安部门推送AI内容鉴伪与舆情监测工具，单县预算通常不大但复制面广。</div>
+        <a href="http://news.gxnews.com.cn/staticpages/20261015/newgx6ad03b8a-22004221.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁警方发布反诈预警：四类骗局专骗老年人</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 广西网络广播电视台</span>
+        </div>
+        <div class="news-abstract">南宁警方针对老年群体发布专项反诈预警，梳理四类高发骗局。养老诈骗预警需要社区网格、银行网点、运营商多方数据联动，落地形态包括社区智慧屏宣传、网格员App推送、重点人员画像。南宁作为首府，社区一级的智慧治理终端与宣传屏更新是相对容易切入的小额高频项目。</div>
+        <a href="https://news.gxtv.cn/article/detail_17c1852893ae60d6ee99485ae9887cf8.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西平安建设工作取得阶段性成效：完善立体化信息化社会治安防控体系</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 新华网</span>
+        </div>
+        <div class="news-abstract">自治区层面明确把科技赋能作为平安建设支撑，公安、教育、应急、消防、交通、市场监管多部门联动完善立体化、信息化社会治安防控体系，刑事案件与治安案件连年下降。今年以来全区立偷渡刑事案件2935起，发起5轮春雷行动抓获2903人，黑名单入库人员抓获率达91.41%。这类跨部门联动考核最容易转化为综治视联网、雪亮工程补点、社会资源接入平台的追加预算，建议以边境与沿海地市为重点，按区级考核指标倒推县区级补建清单。</div>
+        <a href="http://www.gx.xinhuanet.com/20261014/370abb86314a44188a43389ee3ba9ec5/c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">守南疆国门护万家灯火：广西强边固防科技装备成体系落地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 平安广西网</span>
+        </div>
+        <div class="news-abstract">报道披露了完整的技术清单：凭祥智控云中心、友谊关跨境智慧口岸、东兴L4级智能安防巡逻车、大新县高空瞭望+无人机云控+AI指挥中心（警情响应时间缩短40%）、百色化峒边境检查站智慧查验（日均验放1900辆车次）、钦州云上警哨与3.4万艘船舶定位、487个抵海网格配2030名网格员、172个联防所。这是本年度广西公安科技装备最集中、最有标杆价值的一次公开，且明确指向边境三市与沿海三市，可直接作为方案汇报的对标案例和需求佐证。</div>
+        <a href="http://www.chinapeace.gov.cn/chinapeace/c100056/2026-10/14/content_12859882.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西公安数字化改革之环食药侦综合应用系统采购中标：654万元落地中国移动广西</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">项目编号GXZC2026-G3-002973-GLZB，采购人为自治区公安厅，中标金额654万元，含系统门户、情报预警、多跨协同、案件管理、技术支撑、移动警务应用、数据治理、政务网部署及测评共9个子系统，120个日历日内交付。情报预警与多跨协同两个子系统必然涉及视频与物联数据接入，作为联合体或分包方仍有切入空间，建议尽快联系中标方与代理机构广西国力招标摸清分包结构。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261014_27485273.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西公安数字化改革之刑侦综合应用系统升级项目招标：预算1550.5万元分10个分标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 广西公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">自治区公安厅本级项目，预算15505000元，拆分为10个分标，含声纹语音比对引擎、DNA实验室相关、国产化适配改造等，投标截止2026年11月11日9时30分。这是本季度广西公安最大的信息化单体项目，分标结构意味着可分包参与。建议立即下载标书核对各分标技术参数，重点评估视频图像与音视频处理相关分标的适配空间，11月11日前完成投标或联合体谈判。</div>
+        <a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_cggg/t28225914.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">宜州公安等多部门联合开展夜间噪声扰民专项整治行动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 河池市公安局</span>
+        </div>
+        <div class="news-abstract">河池宜州分局联动市场监管、生态环境部门，以城区江滨路夜宵摊集中区为重点，每日23时起动态巡逻加定点值守，签订噪声管控承诺书10余份、下发整改通知书5份、开出罚单3笔。夜间噪声治理对声学抓拍、噪声自动监测、夜市区域视频覆盖有直接需求，河池、柳州、南宁的夜市集中区都可按声纹识别+视频取证一体化方案切入。</div>
+        <a href="http://gaj.hechi.gov.cn/jwzx/gddt/t28222210.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林以基层治理现代化助力更高水平平安建设：临桂四维防控警情响应缩至3分钟</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 中国长安网</span>
+        </div>
+        <div class="news-abstract">临桂分局金水警务站建成步巡+车巡+犬巡+无人机巡四维防控模式，警情响应由15分钟压缩到3分钟，精准盘查重点人员4900余人次；同时组建18支义警队伍、联动150家商户成立守望联盟、统筹516名保安纳入警保联动体系，协助破案50余起。桂林全市还实现观护基地与一站式取证中心全覆盖。这类警务站+社会资源接入的模式可复制性强，无人机机场、警务站可视化终端、警保联动对讲与视频调度是明确商机。</div>
+        <a href="http://chinapeace.gov.cn/chinapeace/c100056/2026-10/13/content_12859688.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">独峒派出所：鼓楼坪前办实事 三省坡上护平安，探索数字化智能化赋能基层治理</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 柳州市公安局</span>
+        </div>
+        <div class="news-abstract">三江侗族自治县独峒派出所构建一村一警一阵地治理网络，组建10支侗乡义警巡逻队，并与湖南通道、贵州黎平建立省际警务协作机制，跨省边界治安警情同比下降30%，文中明确表态要探索数字化、智能化赋能基层治理新路径。省际边界民族地区是视频监控与联防联控的薄弱带，跨省视频共享、义警调度App、边界卡口是三个可直接落地的点。</div>
+        <a href="http://gaj.liuzhou.gov.cn/xwzx/jwdt/202610/t20261013_3803640.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">劝阻拦截涉诈资金452万元 柳州银行再获公安机关表扬</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">柳州银行通过警银协同机制累计劝阻拦截涉诈资金29起、452.44万元，获公安机关表扬。警银联动是反诈资金拦截的最后一环，涉及银行网点人脸核验、异常交易预警、与公安反诈平台的接口对接。广西各地市反诈中心仍在扩容，银行侧的反诈预警终端与视频联动存在稳定的行业线商机。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1012/c179469-41719475.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1012-1018.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1012-1018.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1012-1018.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1012-1018.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
