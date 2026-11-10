@@ -2,190 +2,421 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>🏭 广西工业/企业行业简报（2026.10.19—10.25）</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>工业企业 · 广西行业双周简报 | 2026.10.19-10.25</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>🏭 广西工业/企业行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.19 — 10.25</span>
-      <span>📊 本周 8 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>工业企业行业要闻</h1>
+    <div class="date">2026年10月19日 — 10月25日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期是制造业十大支柱产业冲刺四季度、园区载体集中开工、安全生产专项整治三线并行。政策端工信厅明确聚力十大现代化支柱产业，1—8月工业机器人产量同比增长2.5倍，同时启动人工智能应用服务商资源池征集（10月22日开放申报）、安排4422万元工业振兴资金支持45个药械项目。载体端钦州引进20多家龙头企业形成广西首个风电装备制造集群，来宾兴宾区今年签约57个项目其中制造业46个，昭平城北工业园三期与粤桂智能制造标准厂房一期（3488万元）在建，凭祥综保区跨境产业链服务中心一期（7.06亿元）招标。安全端桂平木乐服装企业逐企排查，全区非煤矿山监管执法与尾矿库涉重金属隐患排查培训班开班。安防机会集中在园区标准厂房的周界、视频、出入口、消防与管理平台；企业技改配套的AI视频安全监测、粉尘涉爆、危化品管控；矿山八条硬措施的井下人员定位与尾矿库在线监测。建议主攻钦州风电装备园、来宾林业家居园、凭祥综保区三个园区总包，并用AI安全生产视频分析切入桂平服装、来宾板材等劳动密集型企业。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">17条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西工信厅征集2026年人工智能应用服务商资源池，10月22日开放申报</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 南宁市融媒体中心</span>
+        </div>
+        <div class="news-abstract">自治区工信厅面向全国征集人工智能应用服务商，覆盖AI+制造、安全生产、质量管理等场景，入选企业进入广西AI应用服务商资源池并向区内制造业企业推荐对接。这是安防企业把AI视频分析（安全帽识别、工服识别、危险区域闯入、明火烟雾检测、人员离岗）包装成"AI+安全生产"服务商身份的最好窗口。建议以"工业AI视觉安全监测"方向申报，同步准备3个以上广西本地制造业落地案例，进池后可直接对接十大支柱产业链主企业。</div>
+        <a href="http://m.toutiao.com/group/7699715156879688219/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂平市持续开展木乐服装企业安全生产隐患大排查大整治</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">桂平市对木乐服装企业逐企、逐坊、逐户排查生产车间、物料仓库、安全疏散通道、配电区域，同步覆盖消防设施配备、危化品存放、员工安全培训，问题逐一登记建台账、明确整改责任人和时限，并持续"回头看"确保闭环。木乐是广西最大的休闲运动服装产业集群，企业数量多、单体小、消防基础薄弱，最适配轻量化产品：无线烟感+电气火灾监测+AI烟火识别摄像机+一键报警。建议以"整镇打包、按点位计费、统一运维"模式对接桂平市应急局与木乐镇政府。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1023/c179409-41730852.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年全区非煤矿山安全监管执法暨尾矿库涉重金属安全隐患排查整治业务培训班开班</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 广西壮族自治区应急管理厅</span>
+        </div>
+        <div class="news-abstract">10月21日全区非煤矿山安全监管执法暨尾矿库涉重金属安全隐患排查整治业务培训班在南宁开班，120余名执法骨干参训，强调打好安全生产治本攻坚三年行动"收官战"、推进矿山领域"八条硬措施"、保持"打非治违"高压严管。执法能力强化会直接转化为企业端监测设备采购：井下人员定位、尾矿库在线安全监测（位移、浸润线、库水位、干滩长度）、视频AI识别违规作业、边坡雷达。建议锁定河池、百色、贺州三市矿山企业，以"尾矿库在线监测系统合规改造"为切入口。</div>
+        <a href="http://yjglt.gxzf.gov.cn/xxfw/xwdt/t28259018.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西中烟柳州卷烟厂联合工房消防自动灭火喷淋系统改良项目（重2）招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 广西中烟工业有限责任公司</span>
+        </div>
+        <div class="news-abstract">广西中烟柳州卷烟厂联合工房消防自动灭火喷淋系统改良项目（重2）公开招标，同期还有新型小包图像检测装置硬件、人工智能应用开发项目供应商入库等中标公告，以及智能制造培训训练器具采购。烟草厂房的消防改造属高标准工程，需与既有火灾报警、视频监控、气体灭火系统联动，并通过烟草行业安全评审。建议关注柳州卷烟厂后续的消防联动控制、图像检测装置配套与AI应用开发入库，这是高毛利、低竞争的细分市场。</div>
+        <a href="https://www.gxzygygs.com/tzgg/index-3.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026广西高端绿色家居板材补链强链延链对接活动在南宁举行，来宾布局12个林业产业园区</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 来宾市林业局（自治区园区办转载）</span>
+        </div>
+        <div class="news-abstract">由自治区林业局与中国林科院木材工业研究所共同举办的板材补链强链延链对接活动在南宁举办，近140人参会；广西林草产业总产值连续四年全国第一，来宾布局建设12个林业产业园区基本实现县域全覆盖。人造板企业最突出的安全痛点是木粉粉尘爆炸与原料堆场火灾，需要防爆摄像机、粉尘浓度监测、火花探测熄灭系统、堆场热成像。建议以粉尘涉爆安全监测打包方案进入来宾、贵港、柳州三市板材园区。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/gzdt/t28256038.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海海城30万吨南珠精深加工、博白20亿元智能家具家居等重大项目审批公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 采招网（广西重大项目审批公示）</span>
+        </div>
+        <div class="news-abstract">广西重大项目审批公示集中更新，含北海市海城区南珠精深加工项目（总投资1.8亿元，新建厂房、冷链仓储及配套设施）、博白县智能家具家居生产项目（总投资20亿元，建设智能家具家居生产线及配套设施）、南宁武鸣富通电子产品物流园（4.18亿元，11万平方米厂房仓库）。三个项目均处前期或建设期，是安防设备进场定标的黄金窗口，尤其20亿元家具项目需要整厂消防、除尘防爆、周界与产线监控。建议按公示清单逐个对接业主与总包。</div>
+        <a href="https://m.bidcenter.com.cn/zhaobiao/zbkeyw-54151-450000-17.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西安排4422万元工业振兴专项资金支持45个药械研发创新项目</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-22</span>
+          <span class="source-tag">📍 金台资讯（人民网）</span>
+        </div>
+        <div class="news-abstract">自治区工信厅安排4422万元工业振兴专项资金，支持45个医药和医疗器械研发创新与成果产业化项目。药械企业扩产必然带来洁净车间环境监控、GMP合规视频留痕、高价值物料追溯、实验室门禁与温湿度监测需求，且对系统合规性与审计追溯的要求明显高于一般制造业。建议梳理45个立项项目清单，锁定玉林、桂林、南宁三地药械企业，推"GMP合规视频+环境监测+分级门禁"一体化方案，这是复购率与毛利都较好的细分。</div>
+        <a href="http://m.toutiao.com/group/7699393059523494400/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贺州推动传统产业"链上革新、绿智转型"</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-22</span>
+          <span class="source-tag">📍 广西壮族自治区园区发展和投资促进服务中心</span>
+        </div>
+        <div class="news-abstract">贺州聚焦传统优势产业做"链上革新、绿智转型"，重点在碳酸钙、金属新材料、绿色家居等产业链推进智能化改造与绿色化升级。碳酸钙粉体加工同样是粉尘涉爆行业，且企业分散、点多面广、单体规模小，适合用"无线传输+AI边缘计算"的轻量化方案批量覆盖。建议以贺州碳酸钙产业集群为试点，做"粉尘防爆+厂区周界+能耗监测"的园区级统建方案，用统一平台降低单企业投入门槛。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/gzdt/t28251985.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">来宾兴宾区今年签约57个项目其中制造业46个，强盛木业当月签约当月投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-21</span>
+          <span class="source-tag">📍 广西壮族自治区园区发展和投资促进服务中心</span>
+        </div>
+        <div class="news-abstract">兴宾区以"扶上马、送一程"全周期服务推进招商，截至当前全区招商引资签约项目57个，其中制造业项目46个，实体经济占比持续提升；广西强盛木业9月落户凤凰镇，当月开工投产，6条板材生产线已全部建成。板材加工属粉尘涉爆高风险行业，木粉除尘、防火防爆、车间视频监控是刚需；园区新建标准厂房还需要周界、门禁、消防联动。建议对接兴宾区招商专班，拿"新签约制造业项目清单"做前置方案，把安防纳入标准厂房交付标准。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/gzdt/t28248124.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">粤桂合作特别试验区社学片区智能制造标准厂房项目（一期）招标，控制价3488.19万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-21</span>
+          <span class="source-tag">📍 广西公共资源交易平台（梧州）</span>
+        </div>
+        <div class="news-abstract">粤桂合作特别试验区社学片区智能制造标准厂房项目（一期）招标控制价3488.19万元，工期730天，建设3栋标准厂房、1栋产业工人宿舍、1栋设备用房及门卫室，总建筑面积18656.61平方米。门卫室+宿舍+厂房的组合就是园区安防标准场景：周界防范、出入口人车核验、宿舍门禁、消防控制室与应急广播。3488万元对应弱电约200—350万元，建议在施工总包确定后立即做专业分包对接。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/wzggzy/projectDetails.html?categorynum=001001001003&infoid=be8b7320-9684-4180-bb1d-5f3636bc60f5" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西凭祥综合保税区跨境产业链服务中心（一期）中标候选人公示，总投资约7.06亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-21</span>
+          <span class="source-tag">📍 广西公共资源交易平台</span>
+        </div>
+        <div class="news-abstract">广西凭祥综合保税区跨境产业链服务中心（一期）中标候选人公示，总投资约7.06亿元，总建筑面积36800.77平方米，工期730天，建设1#标准厂房、2#仓库、3#生产辅助用房及门卫室。综保区仓库对海关监管视频、智能卡口、周界防范、货物追溯的要求远高于普通园区，且必须与海关信息系统对接。建议联合有海关监管场所智能化经验的集成商，锁定视频监控+智能卡口+仓储管理系统分包，这是高门槛、低竞争的标的。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001001004&infoid=ecd87068-a241-4666-9658-cccbe9e697d3" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钦州构建广西首个风电装备制造产业集群，引进20多家海工和风电装备龙头企业</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-21</span>
+          <span class="source-tag">📍 广西日报（自治区园区办转载）</span>
+        </div>
+        <div class="news-abstract">钦州市大力发展新能源风电装备产业，引进20多家海工和风电装备龙头企业，形成"装备制造+海上发电+外贸出口"完整链条，构建广西首个风电装备制造产业集群；10月19日一批风电叶片在北部湾港钦州港区大榄坪作业区装船出口。风电装备制造涉及大型构件吊装、喷砂涂装、总装测试，属高危作业场景，需要AI视频识别违规吊装、危险区域入侵、未戴安全帽；厂区面积大还需周界防范与车辆调度。建议以"大件吊装AI安全监控"为差异化卖点对接钦州风电装备企业。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/gzdt/t28248118.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">昭平县城北工业园标准厂房及配套基础设施项目（三期）推进，6#厂房消防安装中</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-20</span>
+          <span class="source-tag">📍 昭平县人民政府</span>
+        </div>
+        <div class="news-abstract">昭平县城北工业园标准厂房及配套基础设施项目（三期）持续推进，6#厂房正进行水电、消防安装施工。标准厂房交付前的消防安装阶段是弱电介入的关键窗口，园区级视频监控、周界报警、出入口道闸、消防控制室联网都需在此阶段定标定型。建议直接对接昭平县工业园区管委会和施工总包，争取园区安防与消防联网分包，同时把"园区一卡通+能耗监测"作为增值项捆绑。</div>
+        <a href="http://www.gxzp.gov.cn/zwgk/zdlyxxgk/zdxm/t14649549.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁太阳纸业年产30万吨生活用纸项目（一、二期）竣工环保验收公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-20</span>
+          <span class="source-tag">📍 环评公示平台</span>
+        </div>
+        <div class="news-abstract">南宁太阳纸业年产30万吨生活用纸项目（一、二期）竣工环境保护验收公示，一、二期合计产能50万吨，配套建设3.15万立方米/日污水处理站。造纸属火灾高风险行业（纸垛自燃、粉尘），且环保验收要求排污口在线监测、视频留痕、工况参数上传联网。建议以"纸垛热成像预警+排污口视频+在线监测联网"三件套切入，这是造纸行业复购率最高、验收刚需最明确的组合。</div>
+        <a href="https://cdn-ibao-private.craininternational.com.cn/infor/view?id=111972" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">工信厅厅长袁煌：聚力打造制造业十大现代化支柱产业，1—8月工业机器人产量增长2.5倍</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-19</span>
+          <span class="source-tag">📍 百色市工业和信息化局</span>
+        </div>
+        <div class="news-abstract">自治区工信厅厅长袁煌介绍广西聚力打造制造业十大现代化支柱产业，1—8月工业机器人产量同比增长2.5倍、新能源汽车产量同比增长78.4%，一批企业获评国家级智能制造示范工厂和卓越级智能工厂。产量高增长意味着产线扩张与技改投资仍在加速，新产线配套的机器视觉检测、产线安全监控、AGV调度、能耗监测是刚性需求。建议以"新产线同步交付安防与视觉检测"为卖点，绑定汽车、机器人两条产业链的整机厂与一级供应商。</div>
+        <a href="http://gxj.baise.gov.cn/xwzx/gzdt/t28237591.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">梧州市烟草专卖局启动卷烟分拣线"异标合一"技改</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-19</span>
+          <span class="source-tag">📍 中国网广西</span>
+        </div>
+        <div class="news-abstract">梧州市烟草专卖局（公司）启动卷烟分拣线"异标合一"改造，盘活现有产线不新增成套设备，重点实施包装机升级迭代，重塑包装工序、优化工位布局，实现常规烟与异型烟混流生产同步封装，技改后烟包不再二次装箱、直接甩箱装载。烟草物流技改的核心诉求是分拣准确率与全过程可追溯，配套需要高速读码、分拣口视频复核、异物检测、输送线安全防护。建议以"分拣线视觉复核+异物检测"切入，对接广西中烟物流条线与梧州市局。</div>
+        <a href="http://guangxi.china.com.cn/2026-10/19/content_43498611.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">永福县签约罗汉果精深加工提取项目，总投资2.5亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-19</span>
+          <span class="source-tag">📍 广西壮族自治区农业农村厅</span>
+        </div>
+        <div class="news-abstract">永福县人民政府与广西藤茵生物科技签订罗汉果精深加工提取项目投资意向，计划总投资2.5亿元，拟新建植物提取物生产车间及配套设施，重点开展罗汉果精深加工提取。食品与植物提取车间对洁净区环境监控、生产过程视频留痕、原料仓储温湿度、人员更衣与洗手消毒门禁有明确合规要求。2.5亿元项目对应智能化投资约300—500万元，建议在初步设计阶段介入，主推"洁净车间环境监测+全过程视频+分区门禁"合规包。</div>
+        <a href="http://nynct.gxzf.gov.cn/xwdt/gxlb/gl/t28238611.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是「人工智能＋制造」「5G工厂」申报红利集中释放，专项资金口子开到11月中。</strong>10月21日工信厅连发两文，组织2026年5G工厂名录遴选（10月30日截止，纳入项目库者专项资金优先支持）、征集第二批「人工智能＋制造」标志性产品与工业高质量数据集（11月12日截止）。</p>
-    <p><strong>二是绿色制造与智能产线成为传统产业焕新主线。</strong>贺州以「密闭智能产线＋AI智钙云图」推动钙基材料绿色智造，梧州藤县以全智能产线＋多家国家级绿色工厂交出「绿色账本」，钦州引进20多家龙头企业构建广西首个风电装备制造产业集群；10月23日国家卓越级智能工厂名单公示，柳州3家企业入选。</p>
-    <p><strong>三是产业链项目加速落地，造纸与新能源电池供需两旺。</strong>广西金洲浆纸业林浆纸一体化年产150万吨高档纸板项目环评二次公示；10月23日广西新能源汽车及电池产品供需对接活动在南宁举办，超长期特别国债设备更新政策同步宣讲。</p>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>2026年广西5G工厂名录遴选 · 10月30日截止</li>
-      <li>第二批「人工智能＋制造」成果征集 · 11月12日截止</li>
-      <li>国家卓越级智能工厂名单 · 柳州3家企业入选</li>
-      <li>金洲浆纸业150万吨高档纸板项目 · 环评二次公示</li>
-      <li>广西新能源汽车及电池供需对接 · 超长期国债设备更新</li>
-      <li>贺州「AI智钙云图」、藤县国家级绿色工厂集群</li>
-      <li>钦州风电装备制造产业集群 · 20多家龙头企业</li>
-    </ul>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1019-1025.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1019-1025.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1019-1025.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1019-1025.html">公安</a>
   </div>
-  <div class="section">
-    <div class="section-title">📋 政策与申报红利</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-21</span>
-          </div>
-          <h4><a href="http://gxt.gxzf.gov.cn/wzsy/tzgg_6719901/tzgg/t28246781.shtml" target="_blank" rel="noopener noreferrer">广西组织开展2026年5G工厂名录遴选工作</a></h4>
-          <div class="card-body">
-            <p>自治区工信厅、广西通信管理局转发工信部通知，组织制造业、采矿业、电力、港口等重点领域企业申报2026年5G工厂名录，企业须于10月30日前通过“5G＋工业互联网发展管理平台”填报，纳入项目库者将在专项资金安排上优先支持。</p>
-            <p><strong>🔍 海康视角：</strong>5G工厂是厂区网络化、无人化改造的“总纲”，直接带动AI视觉质检、设备巡检机器人、厂区智能安防与人员定位等配套需求。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/tzgg_6719901/tzgg/t28246781.shtml" target="_blank" rel="noopener noreferrer">广西工信厅（两化融合推进处）</a> <span class="opp-tag">🎯 5G全连接工厂</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-21</span>
-          </div>
-          <h4><a href="http://gxt.gxzf.gov.cn/wzsy/tzgg_6719901/tzgg/t28247367.shtml" target="_blank" rel="noopener noreferrer">征集2026年第二批广西“人工智能＋制造”标志性产品、典型应用场景及工业高质量数据集</a></h4>
-          <div class="card-body">
-            <p>面向制造业十大支柱产业征集“AI＋制造”标志性产品、典型应用场景和工业高质量数据集，重点覆盖产品设计、质量管控、设备管理、仓储物流、安全管控、能碳管理等场景，推动设备换芯、机器换人、生产换线、数智换脑，申报截止11月12日。</p>
-            <p><strong>🔍 海康视角：</strong>明确将“安全管控、工业信息安全和管控”列入场景征集方向，是AI视觉、周界防护、行为分析、安全生产智能管控方案切入的官方入口。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/tzgg_6719901/tzgg/t28247367.shtml" target="_blank" rel="noopener noreferrer">广西工信厅（人工智能产业发展处）</a> <span class="opp-tag">🎯 AI+制造场景</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-23</span>
-          </div>
-          <h4><a href="http://gxj.liuzhou.gov.cn/" target="_blank" rel="noopener noreferrer">国家卓越级智能工厂项目名单公示，柳州3家企业入选</a></h4>
-          <div class="card-body">
-            <p>工信部卓越级智能工厂项目名单公示，柳州3家企业入选，彰显其在高端装备制造、智能网联及新能源汽车领域的智能制造成效。柳州已建成广西智能制造标杆企业、智能工厂、数字化车间167家，数量居全区第一。</p>
-            <p><strong>🔍 海康视角：</strong>标杆智能工厂扩容即意味着数字化车间、无人产线持续铺开，是工业视觉、产线检测、智能巡检、厂区一体化安防的规模复制市场。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://gxj.liuzhou.gov.cn/" target="_blank" rel="noopener noreferrer">柳州市工信局（通知公告栏）</a> <span class="opp-tag">🎯 智能工厂标杆</span></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">🏭 智能制造与绿色转型</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-21</span>
-          </div>
-          <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28248443.shtml" target="_blank" rel="noopener noreferrer">贺州：链上革新 绿智转型（密闭智能产线＋“AI智钙云图”）</a></h4>
-          <div class="card-body">
-            <p>贺州以技改攻坚、链条延伸、绿色智造推动碳酸钙、冶金循环等传统产业升级，园区密闭智能化产线＋中控系统实现全流程精准调控，贺州学院研发“AI智钙云图”为中小企业提供数字化服务，并争创国家级绿色低碳炼钢集聚区。</p>
-            <p><strong>🔍 海康视角：</strong>碳酸钙/冶金园区密闭车间、中控平台的智能化改造，带动视频AI、粉尘与安全监测、智能巡检、园区综合安防平台落地。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28248443.shtml" target="_blank" rel="noopener noreferrer">自治区园区办（转载贺州日报）</a> <span class="opp-tag">🎯 绿色智能产线</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-20</span>
-          </div>
-          <h4><a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28242908.shtml" target="_blank" rel="noopener noreferrer">梧州藤县工业的“绿色账本”：全智能产线＋多家国家级绿色工厂</a></h4>
-          <div class="card-body">
-            <p>藤县以绿色制造体系建设推动陶瓷等传统产业节能降碳，宏胜陶瓷全智能化产线＋窑炉余热回收实现综合节能10%以上，简一陶瓷、欧神诺陶瓷等多家企业获评国家级绿色工厂，售电量居全区县域第一。</p>
-            <p><strong>🔍 海康视角：</strong>绿色工厂创建普遍要求能源环境管理体系与智能产线配套，是能耗监测、智能巡检、厂区安防联动方案切入的载体。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28242908.shtml" target="_blank" rel="noopener noreferrer">自治区园区办（转载广西云-广西日报）</a> <span class="opp-tag">🎯 绿色工厂改造</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-20</span>
-          </div>
-          <h4><a href="http://www.gxzf.gov.cn/html/sydt/t28241757.shtml" target="_blank" rel="noopener noreferrer">构建广西首个风电装备制造产业集群（钦州引进20多家龙头企业）</a></h4>
-          <div class="card-body">
-            <p>钦州引进20多家海工和风电装备龙头企业，形成“装备制造＋海上发电＋外贸出口”完整链条，构建广西首个风电装备制造产业集群，10月19日一批风电叶片完成装船出口。</p>
-            <p><strong>🔍 海康视角：</strong>大型装备制造基地与临港工厂对厂区周界、大件物流管控、设备巡检与安全生产监控有刚性需求，可结合智慧园区方案打包切入。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/html/sydt/t28241757.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区人民政府门户网站（转载广西日报）</a> <span class="opp-tag">🎯 风电装备基地</span></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">📈 产业链项目与供需对接</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目进展</span>
-            <span class="card-date">10-23</span>
-          </div>
-          <h4><a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28255976.shtml" target="_blank" rel="noopener noreferrer">广西新能源汽车及电池产品供需对接活动在南宁举办</a></h4>
-          <div class="card-body">
-            <p>由自治区新能源汽车及电池产业“五个一”机制专班统筹，上汽通用五菱、东风柳汽、比亚迪南宁基地、柳州国轩等整车与电池企业现场对接，围绕定制化开发、联合测试、批量供货等洽谈，并宣讲超长期特别国债支持工业设备更新等政策。</p>
-            <p><strong>🔍 海康视角：</strong>整车与电池工厂的产线自动化、设备更新将释放大量机器视觉、工业读码、智能仓储与厂区安防升级需求，设备更新专项资金是配套预算来源。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/gxdt/t28255976.shtml" target="_blank" rel="noopener noreferrer">广西工信厅（装备工业处）</a> <span class="opp-tag">🎯 电池产线安全</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目进展</span>
-            <span class="card-date">10-19</span>
-          </div>
-          <h4><a href="http://zmqzcyyq.gxzf.gov.cn/zwgk/fdzdgknr/gsgg/t28240415.shtml" target="_blank" rel="noopener noreferrer">广西金洲浆纸业林浆纸一体化年产150万吨高档纸板项目环评第二次公示</a></h4>
-          <div class="card-body">
-            <p>广西金洲浆纸业拟建年产150万吨高档纸板项目环评征求意见稿形成并公示，公众意见期10月19日至10月23日，项目位于钦州港经济技术开发区金光工业园现有厂区范围。</p>
-            <p><strong>🔍 海康视角：</strong>大型制浆造纸新项目在建设期即需同步规划厂区周界防护、火灾与粉尘监测、智能巡检与DCS联动安防，是安防方案前置嵌入的关键窗口。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://zmqzcyyq.gxzf.gov.cn/zwgk/fdzdgknr/gsgg/t28240415.shtml" target="_blank" rel="noopener noreferrer">中马钦州产业园区行政审批局</a> <span class="opp-tag">🎯 制浆造纸厂区安防</span></div>
-        </div>
-  </div>
-</main>
-<div class="footer">
-  <p><strong>📌 数据来源</strong>：中国政府采购网广西分网、广西壮族自治区公共资源交易中心、广西各行业主管部门官网及各市人民政府门户网站等官方公开渠道</p>
-  <p style="margin-top:4px;">仅供内部参考 · 面向海康威视广西区域行业机会跟踪 · 2026.10.19—10.25</p>
-</div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
