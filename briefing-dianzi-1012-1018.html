@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>电子电器 · 广西行业双周简报 | 2026.10.12-10.18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>电子电器行业要闻</h1>
+    <div class="date">2026年10月12日 — 10月18日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期电子电器以算力、芯片、线路板三条线为主。算力侧，南宁五象云谷词元工厂投产，投资36亿元、Token处理能力2000亿/小时；润建股份牵头的广西词元经济概念验证中心入选自治区首批名单；《广西数字经济发展白皮书（2026年）》披露2025年工业领域人工智能核心产业产值突破890亿元，数据中心机房的视频监控、门禁、动环、消防联动需求明确。芯片与元器件侧，北海永星电子银河芯片产业园投产、灵川县调研芯之源与盛龙半导体1.5亿元LED产线、陆川义德电子元器件项目备案，半导体厂房对洁净区管控、人员出入管理、视频追溯要求高。线路板与显示侧，荔浦高新技术产业园集聚27家光电企业、成为广西最大线路板生产基地，新鸿兴层压电子高多层精密线路板项目进入环评。来宾新石器无人车X6T下线、防城港人形机器人数据采集中心投运，测试场景本身即产生视觉采集需求。建议围绕洁净厂房与数据中心两类高价值场景打包方案。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">13条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">防城港构建人形机器人数据采集与测试中心，打造面向东盟的AI策源地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-18</span>
+          <span class="source-tag">📍 新华网广西频道</span>
+        </div>
+        <div class="news-abstract">防城港已建成以人形机器人数据采集与测试中心为核心，配套AI与机器人产业人才培养基地、AI科创教育基地的闭环体系。数据采集中心本身就是大规模视觉采集场景：多机位动作捕捉、多模态数据标注工位、测试场地全域覆盖与同步回放、设备与人员安全管控。这类新型基础设施对摄像机同步性、色彩一致性与数据管理要求高。建议以多机位同步采集系统加数据管理平台方案对接，并向其东盟培训输出场景延伸。</div>
+        <a href="http://www.gx.news.cn/20261018/94fc7d158dfa4970b824b9295d698b62/c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海永星电子银河芯片产业园投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-17</span>
+          <span class="source-tag">📍 新华网广西频道</span>
+        </div>
+        <div class="news-abstract">北海银河芯片产业园由永星电子投建并投产，是北海电子信息主导产业的重点项目。芯片产业园安防需求集中在高等级洁净厂房：人流物流分区管控与双门互锁、更衣风淋环节合规识别、防静电手环与工装佩戴检测、生产区无死角高清与工艺追溯录像、危化品与特气间泄漏联动、园区周界与保密区管控。半导体项目对设备稳定性与洁净室安装工艺要求高，建议以洁净厂房专用监控加洁净区出入管控方案切入，同步提供等电位与洁净施工资质。</div>
+        <a href="http://www.gx.xinhuanet.com/20261017/869865ed8d8c4f759fba51528b4ccdc9/c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北部湾把港口优势转化为产业优势，电子信息等主导产业加快集聚</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-17</span>
+          <span class="source-tag">📍 中国新闻网</span>
+        </div>
+        <div class="news-abstract">报道指出北部湾依托港口与平陆运河通航优势，推动电子信息、绿色化工、装备制造等主导产业集聚。临港电子信息产业集聚意味着新建厂房成批出现，且多以「两头在外」的加工贸易模式运营，对厂区封闭管理、货物进出核验、海关监管区视频取证、集装箱号识别有刚性要求。建议以「临港园区安防+海关辅助监管」组合方案对接北部湾各市园区管委会，把视频取证与数据留存合规作为差异化能力突出。</div>
+        <a href="http://www.chinanews.com.cn/aseaninfo/2026/10-17/10716204.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">荔浦高新技术产业园光电产业集聚27家企业，成广西最大线路板生产基地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 桂林市人民政府</span>
+        </div>
+        <div class="news-abstract">荔浦高新技术产业园集聚27家光电企业，产品覆盖LED显示屏、PCB线路板，已形成广西最大线路板生产基地。PCB生产是安防与视觉检测的高密度场景：曝光、钻孔、电镀、AOI检测各工序的洁净与防静电管控、药水线区域防腐蚀监控、危化品仓储管控、废水排口在线监测与视频取证、成品外观AOI视觉检测。园区企业多为中小规模、采购分散，建议以园区为平台做集中采购与共享运维，用一套方案覆盖多家企业。</div>
+        <a href="http://www.guilin.gov.cn/ywdt/xqdt/t28231910.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁五象云谷词元工厂投产：投资36亿元、Token处理能力2000亿/小时</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 南宁五象新区规划建设管理委员会</span>
+        </div>
+        <div class="news-abstract">词元工厂以智算底座加Token服务模式运营，投资36亿元、处理能力达2000亿Token/小时，是面向东盟的算力出口枢纽。数据中心机房安防刚需明确：园区周界与多层分区门禁、机柜列间与冷通道监控、生物识别加双因子进入管控、动环监测、气体灭火联动、蓄电池与配电间热成像测温。此类项目单体体量大、对可靠性和平台集成要求高，建议以数据中心安防加动环一体化平台方案对接运营方，争取一期扩容与东盟节点复制。</div>
+        <a href="http://nnwxxq.gxzf.gov.cn/xxfb/dtzx/t28228003.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁辰逸产业园总平面图调整批前公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 南宁市江南区人民政府</span>
+        </div>
+        <div class="news-abstract">辰逸产业园总平调整进入批前公示，说明园区规划方案仍在优化、尚未开工。总平阶段是智能化设计介入的最佳时点：园区周界与道路监控点位、出入口道闸与人脸门禁、消防控制室位置、弱电管廊与机房面积都可在此时争取调整。产业园通常由民营投资方建设、分期招商，安防投入视招商情况分批实施。建议在公示期即与建设单位接触，提供智能化专项设计与投资估算，用「不增加总投资、只优化配置」的思路换取设计主导权。</div>
+        <a href="https://www.nnjn.gov.cn/xxgk/xxgkml/jcxxgk/xzxk/bljg/cxghxk/t6744976.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西词元经济及智能应用概念验证中心等9家平台获首批认定，南宁高新区2家上榜</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 南宁高新技术产业开发区管理委员会</span>
+        </div>
+        <div class="news-abstract">自治区科技厅公布2026年第一批9家广西科技成果转化基地（概念验证中心），南宁高新区润建股份牵头的词元经济及智能应用概念验证中心入选，依托五象云谷词元工厂智算底座开展AI应用验证。概念验证中心会持续采购算力、视觉算法测试环境与数据采集设备，是AI视觉产品做本地化验证和东盟适配的低成本通道。建议申请成为其共建或验证合作单位，用真实场景数据换算法调优，同时借其渠道向东盟输出方案。</div>
+        <a href="https://gxq.nanning.gov.cn/zwgk/zwdt/yqdt/t6744825.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">新鸿兴层压电子（桂林）高多层精密线路板项目环评公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 中国采招网</span>
+        </div>
+        <div class="news-abstract">项目为高多层精密线路板生产，进入环评公示阶段。高多层板产线对层间对位精度要求极高，视觉检测与工艺追溯是核心配套：内层AOI与X-Ray靶标检测、压合工序温度与压力监控、电镀线药水浓度与液位监测、无尘车间的粒子与温湿度联动、废水站视频取证。环评到开工约3—6个月，是植入设备清单的窗口。建议对接项目业主与设计院，把视觉检测工位与洁净区监控纳入工艺设备配套清单，避免被划入土建总包。</div>
+        <a href="https://m.bidcenter.com.cn/news-17-447258305.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">陆川县义德电子元器件制造项目完成备案</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 广西投资项目在线审批监管平台</span>
+        </div>
+        <div class="news-abstract">义德电子元器件制造项目在陆川完成备案，进入前期阶段。电子元器件制造属劳动密集型+精密制造，安防需求为车间人员出入与考勤、洁净与防静电区管控、产线工位监控与工艺追溯、成品仓出入库核对、消防与电气火灾监测。备案阶段介入可影响后续设计与招标参数。建议对接陆川县工信局与项目业主，在厂房设计阶段提供弱电与安防点位图，争取设计指定，同时准备县域小体量项目的分期付款方案降低业主门槛。</div>
+        <a href="http://www.ixbang.com/bdrc/1002562-r450922/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市政府答复政协提案：5G基站达3.46万个、设50亿元人工智能产业基金</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">答复披露南宁已建成5G基站3.46万个，并设立规模50亿元的人工智能产业基金，同步推进算力基础设施与AI应用场景开放。5G与算力底座完善意味着前端设备可大规模走无线回传与边缘智能，降低老旧场景布线成本；50亿元基金则意味着本地AI企业会有采购与试点预算。建议对接基金已投或被投企业清单，以「算法+硬件」联合体形式参与政府场景开放项目，同时推5G+AI摄像机在城管、应急、园区的无线部署方案。</div>
+        <a href="https://www.nanning.gov.cn/zwgk/fdzdgknr/jytajg/zxta/t6743283.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林灵川县调研芯之源、盛龙半导体，1.5亿元LED产线推进</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 新浪财经</span>
+        </div>
+        <div class="news-abstract">灵川县调研芯之源半导体与盛龙半导体，其中1.5亿元LED产线项目正在推进。LED外延与封装产线对洁净度、静电防护与工艺追溯要求严格，安防切入点包括洁净区人员出入与更衣流程管控、固晶焊线工位的显微视觉检测、老化测试区的温度与烟火监测、防静电门禁与人员定位。县级项目单体投资不大但数量多，建议以标准化洁净车间监控包+视觉检测模组的方式供货，通过设备商与总包渠道批量覆盖。</div>
+        <a href="https://finance.sina.com.cn/wm/2026-10-12/doc-iniuyhxi8437765.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">《广西数字经济发展白皮书（2026年）》发布：工业AI核心产业产值突破890亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">白皮书披露2025年广西工业领域人工智能核心产业产值突破890亿元、工业机器人产量增长86.3%，认定智能制造标杆企业12家、智能工厂（先进级）39家、数字化车间（基础级）60家。这组数字说明智改数转已形成规模化存量客户池，39家智能工厂与60个数字化车间是本年度最明确的技改采购名单。建议按名单逐一摸排，重点推产线视觉质检、安全生产行为识别、设备状态监测三类已有广西落地案例的应用。</div>
+        <a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6741891.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">来宾市首台本土智造无人驾驶装备下线，新石器（华南）智造中心落成</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">新石器无人车X6T在来宾高新区下线，标志新石器（华南）无人驾驶装备智能制造中心落成，从签约到投产仅半年。无人车制造与测试环节需要大量视觉能力：整车下线检测的全景影像记录、传感器标定工位的视觉定位、测试场地的全域监控与轨迹回放、厂区无人车与人员混行的安全避障。企业正在牵引智能网联与智慧物流配套企业集聚，建议以「测试场地全域感知+下线检测影像系统」切入，同时对接其智慧物流场景的园区配送需求。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1012/c229260-41719511.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1012-1018.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1012-1018.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1012-1018.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1012-1018.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
