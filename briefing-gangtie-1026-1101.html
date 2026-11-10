@@ -1,154 +1,359 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广西钢铁/有色/矿山行业简报 · 2026.10.26 — 11.01</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>钢铁有色 · 广西行业双周简报 | 2026.10.26-11.01</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>⛏️ 广西钢铁/有色/矿山行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.26 — 11.01</span>
-      <span>📊 本周 5 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>钢铁有色行业要闻</h1>
+    <div class="date">2026年10月26日 — 11月1日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期钢铁有色三条主线同时发力。一是智能化标杆落地：广西钢铁（柳钢防城港基地）入选工信部2026年度卓越级智能工厂，成为广西钢铁行业首家，关键设备数控化率100%、劳动生产率提升17.5%、运营成本降4.5%，“玄铁”钢铁大模型已铺开72项工业场景、50余项岗位智能体，冷轧厂上线21套机器人系统，为后续厂区全域视频、安全行为识别、设备智能巡检扩容打开明确空间。二是关键金属与再生金属双线扩产：河池南丹关键金属试验区自2025年10月以来新签约项目30个、总投资282.72亿元，已开工22个，建成广西首个有色金属行业大模型和2个国家级创新平台；梧州临港再生有色金属材料集群跻身国家级中小企业特色产业集群，园区再生资源处理能力超560万吨，明确要“以数字化、智能化赋能首位产业”，加快培育智能工厂、数字化车间。三是通道与园区载体扩容：防城港赤沙作业区11—16号泊位一次性获批对外开放，预计年进出口钢材90万吨、货值约30亿元；401号泊位二期堆场智能化升级进入验收冲刺；来宾泛铝基地10个项目集中签约，中国—东盟50万吨再生铝示范基地场地平整招标延期至11月11日开标。商机集中在厂区周界与人员安全、天车与皮带通廊无人化视频、高温与煤气区域热成像、危化品库管控、园区出入口与物流车辆管控、冶炼车间AI行为分析。建议优先经营广西钢铁、盛隆冶金、金海不锈钢、金升/鑫源等链主企业，围绕卓越级智能工厂复评与安全环保提级做年度框架。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">10条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">防城港401号泊位智能化升级进入收官，盛隆冶金借平陆运河转向双向物流</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 开屏新闻</span>
+        </div>
+        <div class="news-abstract">401号泊位为20万吨级散货专业化泊位，设计年通过能力670万吨，配4台桥式抓斗卸船机、4台全自动斗轮堆取料机，融合高清监控、斗轮机远程智能识别、无人自动化作业，二期后方堆场与智能化升级已进入验收冲刺。盛隆冶金依托码头与平陆运河形成“向南出海+向西进江”双向物流格局，盛隆码头二期榕木江作业区西7—9号泊位为2万吨级通用泊位，预计2027年建成。港口全流程自动化对高清视频、远程操控、人员闯入与皮带异物识别需求持续放量，建议跟进二期验收后的补点扩容及盛隆厂区周界改造。</div>
+        <a href="http://m.toutiao.com/group/7702398696855470619/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西钢铁入选国家卓越级智能工厂，系广西钢企首家</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 广西云-广西日报</span>
+        </div>
+        <div class="news-abstract">工信部2026年度卓越级智能工厂公示结束，广西钢铁（柳钢防城港基地）成为广西钢铁行业首家入选企业，已落地72项工业场景、50余项岗位智能体，关键设备数控化率100%、劳动生产率提升17.5%、运营成本降4.5%，并建成一体化数字驾驶舱实现“一屏统管”。卓越级评定对安全、环保、设备、物流一体化管控有硬性要求，企业下一步必然补齐厂区全域视频覆盖、高温与煤气区域热成像、人员定位与违规行为AI识别、智能巡检机器人等能力。建议以“智能工厂复评+安全环保提级”为切入，对接柳钢集团数智化部门，主推钢铁大模型与视频AI融合方案，并复制到柳州基地。</div>
+        <a href="http://fcg.gxnews.com.cn/staticpages/20261029/newgx6ae2a7d6-22009300.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">梧州临港再生有色金属材料产业集群入选国家级中小企业特色产业集群</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 梧州临港经济区管委会</span>
+        </div>
+        <div class="news-abstract">工信部第五批中小企业特色产业集群名单公布，以梧州临港经济区为核心承载区的龙圩区再生有色金属材料产业集群上榜，成为园区第7张“国字号”招牌。园区再生资源综合处理能力超560万吨，形成再生铜132.5万吨、再生铝170万吨、再生铅165万吨、再生锌40万吨产能，1—9月工业总产值增速超34%，正冲刺千亿园区。园区明确提出以数字化、智能化赋能首位产业，加快培育智能工厂、数字化车间，并推进“六张网”建设。拆解、分选、熔炼环节的料场防盗、危废库监控、车辆过磅与厂区封闭管理需求集中，建议以园区管委会为总入口做整体封闭化与视频AI联网方案。</div>
+        <a href="http://www.wuzhou.gov.cn/wzlgjjqglwyh/zjlg/yqzx/t28302144.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国-东盟年产50万吨再生铝及精深加工示范基地场地平整招标延期至11月11日开标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·来宾）</span>
+        </div>
+        <div class="news-abstract">项目编号E4513002881002581001，招标人为来宾市河南工业园区建设开发有限公司，因澄清距原开标时间不足15日，开标延至2026年11月11日10:00。50万吨级再生铝基地属重大产业载体，场地平整之后紧接主体建设与配套设施，安防需求将在2027年集中释放。建议现在就与来宾市河南工业园区建设开发有限公司建立联系，跟踪后续房建、市政及智能化标段，提前介入设计阶段，把视频监控、周界防范、道闸、消防联动写入技术规格书，避免被总包低价打包。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/lbggzy/projectDetails.html?categorynum=001001001002&infoid=2f8300cf-a3c1-4b12-a5c2-39574b46ac28" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">河池南丹关键金属高质量发展综合试验区建设全面起势</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 中国网广西</span>
+        </div>
+        <div class="news-abstract">自治区新闻办发布会披露，试验区自2025年10月以来新签约产业项目30个、总投资282.72亿元，已开工22个、到位资金34.44亿元；今年1—9月全市有色金属规上产值336.44亿元、增12.31%，园区产值319.4亿元、增19.8%；已建成广西首个有色金属行业大模型和2个国家级创新平台，企业投入37亿元实施技改18个。矿区采选、绿色冶炼的“人工智能+”场景正在铺开，尾矿库、危化品库、井下与厂区周界是高价值安防点位。建议围绕南丹试验区管委会和广西关键金属集团，打包“矿山+冶炼”一体化视频监控、尾矿库位移与坝体监测、危化品出入库管控方案。</div>
+        <a href="http://guangxi.china.com.cn/2026-10/28/content_43499939.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">智能化时代，钢铁是怎样炼成的？——广西钢铁“数字炼钢”全景</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 现代物流报</span>
+        </div>
+        <div class="news-abstract">报道详述广西钢铁冷轧厂已深度应用21套机器人系统，拆捆、取样、送样、运管各司其职；AI表面检测把带钢抽检变成全幅面实时“体检”；无人天车与智能库管让钢卷进出库可追溯；轧辊吊装机械手加装5G通信与机器视觉。基地关键设备数控化率100%、劳动生产率提升17.5%、运营成本降低4.5%，宽厚板产线板材收得率提升1%至2%、九成以上合同自动匹配。机器视觉与5G视频回传在钢铁产线已成标配，但多数仍局限工艺检测，尚未覆盖人员安全与作业规范。建议以“AI表面检测之外的安全视觉”为差异点，向冷轧、宽厚板产线推广高温区域热成像、危险区域闯入、未戴安全帽与违规操作识别。</div>
+        <a href="http://news.xd56b.com/20261028/40872.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西友发坤达管道钦州开业，40万吨螺旋焊管基地落地自贸区</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 天津友发钢管集团</span>
+        </div>
+        <div class="news-abstract">10月28日广西友发坤达管道科技有限公司在钦州港片区开业，占地约120亩，规划3条螺旋焊管生产线、设计产能40万吨，可生产219至4220毫米螺旋焊管、630至8000毫米丁字焊管及3PE防腐管，定位友发集团“钦州+佛山”华南双基地中的出海门户，服务东盟市场与西部陆海新通道。新建厂区从零起步，视频监控、周界防范、出入口道闸、成品堆场管控需一次性规划。建议在产线安装阶段介入，主推“厂区封闭化+堆场智能盘点”组合，并借盛隆冶金、柳钢销售中心等合作方关系做交叉引荐。</div>
+        <a href="https://en.yfgg.com/newdetails/2117081578277707776.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西工业互联网“百场路演”再生金属材料行业智改数转对接会在梧州举办</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 广西工信／铁合金在线</span>
+        </div>
+        <div class="news-abstract">10月22日梧州专场由自治区工信厅主办，梧州市工信局、广西工业互联网产业联盟承办，中国电信梧州分公司、用友、智促科技、中国铁塔梧州分公司等协办，按铜、铅、铝、不锈钢四大细分品类分组开展需求问诊，聚焦设备联网、生产管控、数据采集、运营管理。会议把“设备联网+数据采集”定为主攻方向，正是视频监控与工业视觉的入口；铁塔、电信已在场，渠道竞争激烈。建议跟进金海不锈钢、弘毅新材料、智慧鑫源、锐异环境等已公开表达改造需求的企业，从“视频+物联”侧切入设备状态可视化与安全生产监管，避开纯软件正面竞争。</div>
+        <a href="https://www.cnfeol.com/gangtie/n_081656440484.aspx" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港赤沙作业区11—16号泊位一次性获批对外开放，钢材出海通道打通</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 防城港日报／自治区园区办</span>
+        </div>
+        <div class="news-abstract">自治区人民政府批复同意防城港口岸企沙港区赤沙作业区11—16号泊位对外启用，6个泊位一次性获批创防城港建市以来单次开放数量新高，码头总长1148.5米，可满足3万至5万吨级外贸船舶靠泊，预计年进出口钢材90万吨、货值约30亿元，首船5万吨钢材已发往土耳其。防城海关依托“智慧湾”信息化监管、视频监控自动巡检、智慧鉴重、智慧电讯检疫实施全链条管控。口岸开放对卡口、周界、视频监控、电子围栏、堆场货物管控是刚性配套，且需与海关监管系统对接。建议联合码头运营方与海关技术服务商，主推口岸智能监管加堆场周界方案。</div>
+        <a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28267457.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳钢股份：平陆运河开通后可优化物流路径，拟收购广西钢铁13%股权</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 证券之星／同花顺</span>
+        </div>
+        <div class="news-abstract">柳钢股份在投资者关系平台答复称，平陆运河通航后可依托“江海联运”进一步优化原料进厂与产品外销物流路径，压降综合物流成本；公司正推进以发行股份及支付现金方式向柳钢集团购买广西钢铁13%股权，交易完成后将进一步聚焦防城港核心优质资产、巩固双基地协同布局；3万吨能源用高端钢材出口订单已属公司产品，后续将深耕东盟、拓展中东。资产整合推进意味着防城港基地后续资本开支与信息化投入会更集中。建议把广西钢铁作为重点客户深度经营，围绕卓越级智能工厂复评、安全环保提级、物流可视化打包年度框架。</div>
+        <a href="https://school.10jqka.com.cn/20261026/c681097197.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是政策端加码矿山生态修复。</strong>10月28日自治区自然资源厅下达2026年专项资金，1688.08万元支持9市申报国家示范工程、1454.37万元推进涉重金属废弃矿山调查评估、712.5万元奖补14市57县，力争“十五五”期间市县历史遗留矿山图斑动态“清零”。修复后的矿区、排土场、尾矿库需要长期看护，是安防的新场景。</p>
-    <p><strong>二是钢铁行业仍在“减量调结构”。</strong>三季度部分钢铁企业经济运行座谈会在柳钢召开，25家钢企判断四季度“谨慎偏弱”；柳钢10月28日内部调度会提出以“四问”冲刺四季度，降本增效、数智赋能成为主线，安全与效率类投入反而更刚性。</p>
-    <p><strong>三是临港与铝加工项目持续落地。</strong>防城港赤沙作业区6个泊位一次性获批启用并完成钢材首航，预计年进出口钢材90万吨；百色田阳3万吨铝型材项目水保获批、总投资2亿元，新建厂区同步产生周界、门禁、粉尘防爆等配套需求。</p>
-  </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>历史遗留矿山“清零” · 修复区周界视频与边坡位移监测</li>
-      <li>涉重金属废弃矿山调查 · 矿区环境监测+视频取证平台</li>
-      <li>柳钢降本增效 · 皮带通廊巡检机器人与AI废钢判级</li>
-      <li>防城港钢材泊位开放 · 港口智能闸口与岸线周界监控</li>
-      <li>百色田阳铝型材新厂 · 铝屑粉尘防爆与高温区热成像</li>
-      <li>绿色矿山三年行动 · 无人值守称重与运矿车辆管控</li>
-    </ul>
-  </div>
-  <div class="section">
-    <div class="section-title">政策·生态修复</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-28</span>
-          </div>
-          <h4><a href="https://dnr.gxzf.gov.cn/xwzx/zrzx/t28275493.shtml" target="_blank" rel="noopener noreferrer">目标清零！广西下达专项资金推进历史遗留矿山生态修复</a></h4>
-          <div class="card-body">
-            <p>自治区自然资源厅下达2026年自然资源领域资金预算：1688.08万元支持9市申报国家“十五五”示范工程，1454.37万元支持百色、河池等9市开展涉重金属废弃矿山调查评估（调查面积2226.78公顷），另安排712.5万元奖补14市57县，<strong>力争“十五五”期间市县矿山图斑动态“清零”</strong>。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>修复后的矿区、排土场需长期看护，可切入太阳能4G球机、边坡位移与雨量监测、矿区周界入侵报警，打包“矿山生态修复监测监管平台”。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://dnr.gxzf.gov.cn/xwzx/zrzx/t28275493.shtml" target="_blank" rel="noopener noreferrer">广西自然资源厅</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">产业·运行</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-27</span>
-          </div>
-          <h4><a href="https://www.liuzhousteel.com/xwzx/lgxw/content_2771" target="_blank" rel="noopener noreferrer">三季度部分钢铁企业经济运行座谈会在柳钢集团召开</a></h4>
-          <div class="card-body">
-            <p>10月23日，中国钢铁工业协会主办、柳钢集团协办的2026年三季度部分钢铁企业经济运行座谈会在柳州召开，中国宝武、鞍钢、河钢、首钢、沙钢等25家钢企参会。<strong>多数代表判断四季度形势“谨慎偏弱”</strong>，供强需弱、焦煤涨价持续挤压效益，呼吁建立产能治理新机制、把自律控产降库存落到实处。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>降本增效压力下钢企更愿为“减人”买单：皮带通廊巡检机器人、AI废钢判级、无人天车、煤气区域人员定位是重点方向。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://www.liuzhousteel.com/xwzx/lgxw/content_2771" target="_blank" rel="noopener noreferrer">柳钢集团</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="https://www.liuzhousteel.com/xwzx/lgxw/content_2769" target="_blank" rel="noopener noreferrer">柳钢集团召开三季度经济运行分析调度会 冲刺四季度</a></h4>
-          <div class="card-body">
-            <p>10月28日，柳钢集团召开三季度经济运行分析调度会暨中层干部大会，党委书记、董事长李斌提出“四问”反思，要求四季度抓精益协同、极致挖潜、拓市创效、安全合规等六方面工作，明确“聚焦创新与数智，培育提质增效新动能”，<strong>并强调严守安全合规、筑牢风险“防火墙”</strong>。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>安全合规被列为硬任务，可跟进厂区高温区域热成像、危险区域电子围栏、视频AI违章与未戴安全帽识别。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://www.liuzhousteel.com/xwzx/lgxw/content_2769" target="_blank" rel="noopener noreferrer">柳钢集团</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">项目·临港与铝加工</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-27</span>
-          </div>
-          <h4><a href="http://www.fcgs.gov.cn/zxzx/jrfcg/csdt/t28265487.shtml" target="_blank" rel="noopener noreferrer">防城港又一条钢材出海通道跑起来 6个泊位首航</a></h4>
-          <div class="card-body">
-            <p>10月23日，装载约5万吨钢材的巴拿马籍“长信516”轮从防城港口岸企沙港区赤沙作业区12号泊位离港驶往土耳其。该批11—16号共6个泊位一次性获批对外启用，码头总长1148.5米，可停靠3万至5万吨级外贸船，<strong>预计年进出口钢材90万吨、货值约30亿元</strong>。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>新泊位需补齐口岸监管配套：智能闸口、岸线与周界视频、集卡定位，海关“智慧湾”视频自动巡检可延伸到码头作业面。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://www.fcgs.gov.cn/zxzx/jrfcg/csdt/t28265487.shtml" target="_blank" rel="noopener noreferrer">防城港市人民政府</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="http://www.gxty.gov.cn/zfxxgk/fdzdgknr_1_1_1/gsgg_1/bmgg/t28270934.shtml" target="_blank" rel="noopener noreferrer">百色田阳3万吨铝型材及光伏深加工项目水保获批</a></h4>
-          <div class="card-body">
-            <p>百色市田阳区水利局10月26日批复广西伟众铝业年产3万吨铝型材、铝板带及光伏深加工项目水保方案（补报）。项目位于头塘镇新山铝产业示范园1-1地块，占地69亩，新建挤压、表面处理、包装、深加工车间及检测中心、配电站等，<strong>总投资2亿元，其中土建投资1.2亿元</strong>，2026年4月已完工。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>铝加工车间存在铝屑粉尘与高温工序，投产后可推防爆型视频监控、粉尘浓度联动报警、厂区周界与人员出入管控。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://www.gxty.gov.cn/zfxxgk/fdzdgknr_1_1_1/gsgg_1/bmgg/t28270934.shtml" target="_blank" rel="noopener noreferrer">百色市田阳区人民政府</a></div>
-        </div>
-  </div>
+
   <div class="footer">
-    <p><strong>广西钢铁/有色/矿山行业简报</strong> · 数据来源：政府官网及行业公开渠道</p>
-    <p style="margin-top:6px;">仅供内部行业研究参考 · 生成于 11.01</p>
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-</main>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1026-1101.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1026-1101.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1026-1101.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1026-1101.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
