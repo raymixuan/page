@@ -1,154 +1,395 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广西教育行业简报 · 2026.10.26 — 11.01</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>教育行业 · 广西行业双周简报 | 2026.10.26-11.01</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>🎓 广西教育行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.26 — 11.01</span>
-      <span>📊 本周 5 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>教育行业行业要闻</h1>
+    <div class="date">2026年10月26日 — 11月1日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期教育行业“基建+安全+信息化”三条线同时放量。基建端，广西建设职业技术学院新校区体育馆（5636.78万，预计11月招标）、桂林理工大学南宁空港校区学生宿舍10组团（7446.68万，11月24日投标截止）、广西机电职业技术学院校企合作大楼（7078.33万，预计12月招标）三个项目一周内集中释放，正处于技术规格书可介入的窗口期，其中体育馆项目已明确把消防工程和室外总平“智能工程”列入建设内容。信息化端，崇左宁明县义教薄弱环节信息化设备采购380.22万+145.55万落标，含30台带AI功能的希沃交互智能平板和集中控制管理软件；柳州市电化教育站校园网络与广播系统208.8万、鱼峰区交互一体机100.8万正在招标；桂林电子科技大学“国门智慧学校”双平台融合应用与人工智能教育服务296万启动磋商。安全端信号最强：南宁市教育局直属学校视频监控公安联网服务63.36万成交（中国电信中标，含平安校园中心机房软硬件运维），柳南区教育局校园安全监管服务352.86万落标（中国移动中标，服务期三年），北海推动“明厨亮灶+智慧监管”深度融合让家长手机看后厨，防城区“互联网+明厨亮灶+AI”已实现预警抓拍与整改闭环、检查336家次立案4起，校外托管机构首次纳入同一监管体系，自治区层面完成2万多所学校、1300余万人次防灾避险演练。建议把“平安校园+明厨亮灶+AI”打包成标准方案，优先攻南宁、柳州、崇左三地教育局集采入口，同时抢三个新校区建设项目的智能化分包。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">14条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">桂林理工大学南宁空港校区学生宿舍10组团施工招标（7446.68万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 桂林理工大学国有资产与实验室管理处</span>
+        </div>
+        <div class="news-abstract">项目经桂发改社会〔2026〕328号批准，建设地点崇左扶绥县空港大道21号，新建1栋学生宿舍组团、总建筑面积22696.43平方米，财政资金100%出资，合同估算价7446.68万元，工期344天，投标截止2026年11月24日09:30。宿舍类项目安防标配为出入口人脸门禁、视频监控、消防报警联动、智能电控与违规用电监测，且使用主体明确、验收标准清晰。建议在投标截止前联系校方基建与保卫部门，以“宿舍安全智能化”专项切入，争取作为暂估价或专业分包纳入总包范围。</div>
+        <a href="https://zcglc.glut.edu.cn/info/1192/3834.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西机电职业技术学院校企合作大楼施工总承包招标计划（7078.33万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 广西壮族自治区公共资源交易平台</span>
+        </div>
+        <div class="news-abstract">新建1栋校企合作教学实训综合楼，总建筑面积22680.74平方米（地上19650.18、地下3030.56），建设内容包括建筑工程、安装工程、给排水、电气、消防、暖通及附属配套，预算7078.3328万元，预计2026年12月招标，工期525天，项目联系人已公开。实训楼涉及大量贵重实训设备与实训室，对视频监控、门禁分级授权、实验室安全预警需求强。建议提前接触学院基建与实训中心，把实验室危化品监测、设备防盗监控、实训过程录播作为专项提出，形成技术壁垒。</div>
+        <a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/fjsz/zbgg/t28281143.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西国门智慧学校智慧教育双平台融合应用与人工智能教育服务采购（296万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">采购人为桂林电子科技大学，预算与最高限价均为296万元，内容含调研总结、培育课程体系构建、分层分类研修指导、成果案例打磨推广、平台搭建与技术支持，响应截止2026年11月10日09:30，履约期1年。这是边境“国门学校”数字化标杆项目，平台侧落地后会带动前端采集设备与边缘算力需求。建议与桂电既有合作方组联合体投标，在方案中预留课堂行为分析、校园安全预警、AI教学分析的扩展接口，为后续硬件采购埋点，避免只做一次性服务。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202610/t20261030_27595076.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州市柳南区教育局校园安全监管服务项目中标（352.86万，服务期三年）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">项目编号LZZC2026-G3-040017-GXHY，中国移动通信集团广西有限公司柳州分公司以352.8575万元中标，评审总得分97.40，服务期自项目验收合格之日起三年。校园安全监管服务外包已成柳州模式，三年期意味着平台、前端、值守一体化打包。运营商中标后通常需要本地集成商承担前端施工与运维。建议主动接触移动柳州分公司争取分包，同时向柳南区教育局推介AI行为分析、防欺凌预警、一键报警联动等增量能力，为下一轮续约做技术储备。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261030_27590028.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西建设职业技术学院新校区体育馆及配套总平项目招标计划（5636.78万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 广西壮族自治区公共资源交易平台</span>
+        </div>
+        <div class="news-abstract">项目位于南宁东盟经济开发区发展大道9号，拟建1栋体育馆，用地33111.15平方米、建筑面积8321.18平方米，室外配套总平26822.70平方米，合同估算价5636.7762万元，预计2026年11月招标。建设内容明确包含消防工程、电气工程及室外总平的“智能工程”，是安防分包的正式入口。建议在施工总包招标前对接学院基建处，把视频监控、出入口控制、消防联动、能耗管理写入智能化专业分包需求，避免被总包低价打包后压缩点位与品牌空间。</div>
+        <a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/fjsz/zbgg/t28278550.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">崇左宁明县2026年义教薄弱环节改善与能力提升补助信息化设备采购中标（380.22万+145.55万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·崇左）</span>
+        </div>
+        <div class="news-abstract">采购人宁明县教育局，分标1由南宁景恒教育科技以380.2246万元中标，含698台希沃学生机、17台教师机、永中办公软件、锐捷交换机与路由等；分标2由广西宁明昌盈建筑以145.545万元中标，含135套办公计算机、30台带AI功能的希沃交互智能平板、视频展台、集中控制管理软件与推拉黑板。边境县义教信息化的“AI交互平板+集中管控”已成标配，下一步必然延伸到教室安全监控与校园网络。建议跟踪宁明县后续薄改资金批次，主推校园安全与设备运维一体化。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/czggzy/projectDetails.html?categorynum=001002005004&infoid=b18ab4c0-42e1-4ced-b113-7440c1771687" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年南宁市教育局直属学校视频监控公安联网服务采购成交（63.36万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西）</span>
+        </div>
+        <div class="news-abstract">项目编号NNZC2026-C3-990965-GXKL，中国电信股份有限公司南宁分公司以63.36万元成交，评审得分85.00。服务含教育局视频监控集成运维、监控汇聚线路资源、平安校园中心机房硬件系统维护与软件系统维护四部分。这是南宁市直属学校视频监控与公安联网的年度运维盘，金额不大但卡位关键——掌握汇聚平台与线路即掌握后续前端扩容话语权。建议以运维服务商或分包身份切入，摸清直属学校前端点位存量与老化情况，为下一轮设备更新储备方案与参数。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001002008003&infoid=48548bfc-45fb-402a-8d47-a8f231b73619" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年柳州市鱼峰区教育局交互一体机设备采购（100.8万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">采购人柳州市鱼峰区教育局，预算100.8万元，开标2026年11月17日09:20，合同要求签约后30日内安装调试完毕并交付，采用远程异地评标。交互一体机属教室前端设备，本身安防属性弱，但可带动教室摄像头、录播、电子班牌与校园设备运维管理平台。建议以“一体机+教室安全与录播”组合报价，向鱼峰区教育局信息中心主推设备统一运维平台与远程管控能力，争取从单次设备采购转为三年期运维服务。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202610/t20261027_27569081.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州市电化教育站校园网络设备和广播系统公开招标（208.8万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">预算208.8万元，覆盖柳州市第九中学网络设备、太阳村镇小学新建校园无线网络、柳江实验高中风雨球馆音响与舞台灯光、柳州高级中学初中部与铁二中校园广播、铁一中柳东校区UPS等，开标2026年11月18日09:20，要求签约后30日内安装调试完毕。项目把网络、广播、扩声打包，是典型的校园弱电总包。建议以广播系统与网络设备为切入点投标，在方案中叠加应急广播与消防联动、操场与楼道视频联动能力，用“平时广播、急时联动”提升技术分。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202610/t20261026_27558783.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海推动学校食堂“明厨亮灶”与“智慧监管”深度融合，家长手机可看后厨</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 中国纪检监察报／广西纪检监察网</span>
+        </div>
+        <div class="news-abstract">北海市纪委监委推动市教育局搭建学校食堂智慧监管平台，将“明厨亮灶”与“智慧监管”深度融合，家长可通过手机查看后厨画面、每日食谱、食材验收信息；同时推行线上平台竞价机制，供应商在规定时段“不见面”报价、系统按规则自动确定中标方。纪委监委主导的整改带有强推进属性，落地节奏快、覆盖全市中小学。建议以“明厨亮灶+AI违规识别+家长端小程序”整体方案对接北海市教育局，重点解决摄像头覆盖盲区、AI抓拍准确率与预警闭环，形成可向全区复制的样板。</div>
+        <a href="https://www.gxjjw.gov.cn/staticpages/20261026/gxjjw6adea25e-207754.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">马山县周鹿镇开展校园食品安全专项检查，核验“互联网+明厨亮灶”运行成效</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 南宁新闻网／南宁市融媒体中心</span>
+        </div>
+        <div class="news-abstract">马山县人大常委会组织县乡两级人大代表，联合县食安办、市场监管局深入周鹿镇中心小学、周鹿初中、周鹿中学检查，紧盯后厨管理、食材管控、智慧监管等关键环节，实地核验“互联网+明厨亮灶”运行成效，督促学校常态化回看监控、市场监管部门加大线上巡查频次，推动监管从“人防”向“人防+技防”转变。乡镇学校是明厨亮灶覆盖最薄弱环节，设备老化、存储不足、无AI分析普遍存在。建议以县为单位打包乡镇学校后厨改造，主推轻量化AI盒子加云存储方案，配合监管局的线上巡查做账号分权与预警推送。</div>
+        <a href="http://www-n.nntv.cn/nnnews/2026/10-26/xDLgPXRr.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">全区教育系统防灾避险演练和安全教育培训覆盖2万多所学校</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 人民网广西频道／自治区应急管理厅</span>
+        </div>
+        <div class="news-abstract">行动覆盖全区高校、中职、中学、小学、幼儿园2万多所，参与演练师生1300余万人次。北海推行“跟练式督导+场景化演练+清单化查改”，组建校园最小应急单元800余支；钦州组织26名督学督导28个校区，推动1429所学校开展1500多场演练；玉林对疏散通道、老旧校舍、后山边坡、实验室危化品逐项复核建账；桂林医科大学开展地震与实验室火灾复合型演练，350余名师生参与、5分钟完成集结。演练暴露的路线不合理、岗位空缺会回流到预案修订，随之带来应急广播、疏散指示、一键报警、校园周界与实验室危化品监测的补建需求。建议以“演练评估+技防补短板”打包方案对接各市教育局安稳科。</div>
+        <a href="http://yjglt.gxzf.gov.cn/xxfw/xwdt/t28264163.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城区学校食堂“互联网+明厨亮灶+AI”实现预警闭环，检查336家次立案4起</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 中国质量新闻网</span>
+        </div>
+        <div class="news-abstract">防城港市防城区市场监管局依托“互联网+明厨亮灶+AI”系统，实时抓拍后厨人员违规操作和环境安全隐患并推送预警，接到预警后逐条线下核实、下发整改通知或提醒函，推动实现“一网统管、透明共治”，把临时检查变成实时监督。累计检查学校和校外托管机构食堂336家次，发现隐患394个、已完成整改253个、立案4起。校外托管机构首次被纳入同一监管体系，是新增市场。建议以防城区为样板，向防城港全市及周边县区推广“AI抓拍+预警工单+整改销号”闭环产品，突出预警准确率与工单流转效率。</div>
+        <a href="http://m.toutiao.com/group/7700867933152510504/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">金秀瑶族自治县民族高中运动场项目（三期）招标计划（540万）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·来宾）</span>
+        </div>
+        <div class="news-abstract">招标人为金秀瑶族自治县教育体育局，建设内容为足球场、篮球场、地面硬化、围墙等附属设施，估算投资540万元，预计2026年12月招标。运动场项目看似纯土建，但围墙、照明、场地围网是安防配套的天然载体，县级学校普遍缺少操场视频覆盖与夜间照明联动，器材与设施防盗需求也强。建议在施工招标阶段接触县教育体育局，把操场周界视频、照明智能控制、应急广播作为附属工程一并提出，单值不高但落地快、可复制到周边县。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/lbggzy/projectDetails.html?categorynum=001001001006&infoid=6ef23ce9-4af6-49a6-afa3-3906de7ff9df" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是校园安全从“搞演练”转向“建闭环”。</strong>10月29日自治区教育厅通报，全区防灾避险演练覆盖2万多所学校、1300余万人次师生；北海组建校园最小应急单元800余支，钦州1429所学校开展1500多场演练，玉林对疏散通道、老旧校舍、后山边坡逐项建账、清单销号，安全投入从“活动”变成“清单”。</p>
-    <p><strong>二是AI教育进入整省推进阶段。</strong>教育部“扶光计划”10月28日在南宁启动，广西成为全国首个实施省区，覆盖14个设区市、20个项目县、60所学校，重点向边境国门、民族山区、运河沿线学校倾斜，智慧教室与课堂分析类设备需求随之释放。</p>
-    <p><strong>三是防溺水与游泳教育加速铺开。</strong>自治区教育厅完成14市近300所学校实地指导，明确力争2027年全区将游泳科目纳入中考选考，并对111个县（市、区）全覆盖定期指导，泳池与开放水域的智能看护成为刚需。</p>
-  </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>校园最小应急单元 · 一键报警+单兵图传+应急广播联动</li>
-      <li>老旧校舍与后山边坡排查 · 边坡位移监测与危房视频巡查</li>
-      <li>扶光计划60所项目校 · AI课堂分析+智慧教室终端更新</li>
-      <li>游泳纳入中考选考 · 泳池AI防溺水与水域越界报警</li>
-      <li>柳州校园足球四级联赛 · 球场智能跟拍与赛事直播</li>
-      <li>乡村小规模学校补短板 · 双师课堂录播+校园安防一体机</li>
-    </ul>
-  </div>
-  <div class="section">
-    <div class="section-title">校园安全</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28279177.shtml" target="_blank" rel="noopener noreferrer">全区教育系统防灾避险演练和安全教育培训扎实推进</a></h4>
-          <div class="card-body">
-            <p>自治区教育厅10月29日通报，本轮防灾避险演练覆盖全区高校、中职、中小学、幼儿园2万多所，参与师生1300余万人次。北海组建校园最小应急单元800余支；钦州推动1429所学校开展1500多场演练；<strong>玉林对疏散通道、老旧校舍、后山边坡逐项建账、清单销号</strong>。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>最小应急单元要配硬装备：一键报警、单兵图传、应急广播与疏散通道AI人流密度检测，可整校打包成方案。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28279177.shtml" target="_blank" rel="noopener noreferrer">广西教育厅</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="http://jyj.liuzhou.gov.cn/xwzx/mtjj/202610/t20261026_3807605.shtml" target="_blank" rel="noopener noreferrer">广西第一届“千里杯”校园足球联赛柳州赛区开赛</a></h4>
-          <div class="card-body">
-            <p>10月25日，广西第一届“千里杯”青少年校园足球联赛（柳州赛区）暨柳州市第十二届联赛在柳州市第六中学开赛，37所学校51支队伍、近千人参赛。柳州已构建班级、校级、县区级、市级四级联赛体系，<strong>足球覆盖学生从3.9万人增至27万人</strong>，班级联赛参与率100%。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>赛事常态化带来场地智能化需求：球场智能跟拍与直播、运动数据采集、看台与出入口客流管控。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jyj.liuzhou.gov.cn/xwzx/mtjj/202610/t20261026_3807605.shtml" target="_blank" rel="noopener noreferrer">柳州日报</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">AI与数字教育</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-tech">技术</span>
-            <span class="card-date">10-30</span>
-          </div>
-          <h4><a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28286850.shtml" target="_blank" rel="noopener noreferrer">“扶光计划”中小学人工智能素养提升项目在广西率先启动</a></h4>
-          <div class="card-body">
-            <p>教育部“扶光计划”中小学人工智能素养提升项目10月28日在南宁启动，<strong>广西成为全国首个实施省（区）</strong>，300余名代表参会。项目覆盖14个设区市、20个项目县、60所学校，重点向边境国门、民族山区和运河沿线学校倾斜，构建“自治区—市—县—校”四级联动。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>60所项目校+20个项目县将带动智慧教室、AI课堂分析、教师研修录播与边缘算力设备更新，可提前做校级方案。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28286850.shtml" target="_blank" rel="noopener noreferrer">广西教育厅</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28259867.shtml" target="_blank" rel="noopener noreferrer">来宾市教育体育局谈“十五五”：AI通识课纳入课表</a></h4>
-          <div class="card-body">
-            <p>10月26日，自治区教育厅“聚力‘十五五’ 教育启新程”笔谈刊发来宾市教育体育局局长余国军文章，提出全市中小学全面开设人工智能通识课并纳入教学计划课表，用好国家中小学智慧教育平台和广西智慧教育平台，加大乡村学校、小规模学校建设投入，<strong>以最高标准抓校园安全、推进游泳教育普及</strong>。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>乡村小规模学校“补短板”是明确预算落点：双师课堂录播、校园安防一体机、AI通识课终端可组合打包。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28259867.shtml" target="_blank" rel="noopener noreferrer">广西教育厅</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">防溺水与游泳</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-31</span>
-          </div>
-          <h4><a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28286519.shtml" target="_blank" rel="noopener noreferrer">广西推动中小学游泳教育实地指导实现14市全覆盖</a></h4>
-          <div class="card-body">
-            <p>自治区教育厅组织游泳教育专家指导组开展三轮实地指导，已覆盖14个设区市、深入近300所义务教育阶段学校，重点核查防溺水与游泳课程开设、师资、场地与安全管理。<strong>下一步力争2027年全区各地全部将游泳科目纳入中考选考</strong>，并对111个县（市、区）全覆盖定期指导。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>泳池与开放水域是AI视觉强场景：顶置摄像头防溺水识别、水域越界报警、乡镇泳池远程值守。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jyt.gxzf.gov.cn/jyxw/jyyw/t28286519.shtml" target="_blank" rel="noopener noreferrer">广西教育厅</a></div>
-        </div>
-  </div>
+
   <div class="footer">
-    <p><strong>广西教育行业简报</strong> · 数据来源：政府官网及行业公开渠道</p>
-    <p style="margin-top:6px;">仅供内部行业研究参考 · 生成于 11.01</p>
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-</main>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1026-1101.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1026-1101.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1026-1101.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1026-1101.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
