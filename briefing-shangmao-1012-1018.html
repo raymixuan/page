@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>智慧商贸 · 广西行业双周简报 | 2026.10.12-10.18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>智慧商贸行业要闻</h1>
+    <div class="date">2026年10月12日 — 10月18日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期商贸三条主线。一是平陆运河通航满月带动港口与物流枢纽兑现：钦州自动化码头完成13个江海联运泊位改造，9号10号泊位扩建及5个专用泊位待投产；北海铁山港5G无人集卡与无人智能闸口常态化运行，全港24个泊位年通过能力6919万吨；南宁交投智慧联运港10月14日开园，709亩、投资18.6亿元。二是县域商业政策落地：10月10日全区激发下沉市场消费活力工作会议在北流召开，商务厅同步解读18条举措，明确千集万店改造、乡镇商贸中心与农贸市场升级，并征集四季度消费券执行服务商。三是口岸与综保区升级：梧州跨境一锁首票东盟产品出口、综保区发动机保税再制造160台出海，凭祥友谊关15秒通关放大口岸流量。安防机会集中在港口与物流园区、县域商贸载体、口岸监管区三类主体。建议优先跟进钦州、北海港区数智化升级标段，并抓消费券服务商带来的商户端收银与客流分析改造。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">19条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">钦州港完成13个江海联运泊位改造，5个江海联运专用泊位将陆续投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-17</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">为承接平陆运河货量，钦州港已完成13个江海联运泊位改造，9号10号泊位扩建及5个江海联运专用泊位将陆续建成投产，并将与7至10号泊位一体化运营，打造北部湾港首个集江海联运、海铁联运于一体的全自动化集装箱码头。泊位成批新建与一体化运营，对应岸电监控、泊位周界、船舶靠离泊视觉识别、堆场全场覆盖与统一调度平台扩容，是未来12个月最确定的港口安防增量。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1017/c179464-41724908.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平陆运河通航满月，江海联运智慧调度中心实现全链条可视化调度</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-17</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">北部湾港集团建成一屏总览、全域协同、智慧运营、安全高效的江海联运智慧调度中心，整合港口、船舶、航道全域数据，实时刷新吞吐量、集装箱量、船舶在港停时；广西水运江河海一体化智慧调度平台8月25日试运行，汇聚海事、航道、港口、气象多源数据。南宁港六景作业区吞吐量已达26.66万吨。多源数据汇聚必然需要新增前端感知点位，包括航道、船闸、锚地视频与AIS融合，属于典型的平台已建、前端补点机会。</div>
+        <a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6746537.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西北部湾国际生鲜冷链园区前9月吞吐量超10万吨，同比增长53.65%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 广西新闻网（广西日报）</span>
+        </div>
+        <div class="news-abstract">园区总投资12.62亿元、20万吨级多温区冷库，集聚生鲜贸易、跨境电商、食品加工、冷链配送企业100余家，是平陆运河出海口唯一国家级骨干冷链物流基地，已从过境仓储转向进口原料就地加工、全国分销。100多家入驻企业叠加20万吨多温区冷库，意味着冷库温度监测、库门管理、装卸月台监控、消防联动、周界与车辆调度是持续刚需，且加工车间涉及食品安全生产可视化，可按企业分批做轻量化改造，切入点多、决策链短。</div>
+        <a href="https://www.gxnews.com.cn/staticpages/20261016/newgx6ad22e23-22005161.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">梧州综合保税区完成首单汽车发动机保税再制造出口，160台发往美国</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">10月13日160台保税再制造丰田2AR发动机经梧州海关放行出口美国，刷新综保区保税再制造汽车发动机单批交付纪录；综保区累计进出口保税再制造汽车变速箱、发动机超1200台，规模全国同类试点领先。再制造涉及旧件入区、拆解、再造、出口全流程可追溯，对应工位级视频留证、料件出入库门禁、周界防范与视频长期保存，随着产业集群扩大，园区安防与追溯系统有明确扩容需求。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1016/c390645-41723856.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">凭祥市依托友谊关口岸15秒通关激活县域消费，跨境电商进出口额218亿元居广西县域首位</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 广西壮族自治区商务厅</span>
+        </div>
+        <div class="news-abstract">友谊关口岸实现15秒通关、24小时运行，构建口岸进口、落地加工、县域集散、城乡消费链条；中国东盟（崇左）水果交易中心入驻企业91家、前9月交易额82.95亿元；建成县级电商公共服务中心1个、镇村服务站38个。口岸24小时运行加县域集散，带来口岸卡口、监管场所、落地加工厂区、乡镇商超四类场景的安防与追溯需求，且明确要补齐乡镇商超、农贸市场短板，是边境县项目的直接入口。</div>
+        <a href="http://swt.gxzf.gov.cn/zfxxgk/fdzdgknr/zwdt/gxsw/t28234444.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西新柳邕农产品批发市场招商运营调度中心二次装修工程中标，282.59万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 中国招标与采购网</span>
+        </div>
+        <div class="news-abstract">项目为广西新柳邕农产品批发市场临建招商及运营调度中心一层、三层二次装修，中标签约合同价282.59万元、合同价267.59万元，工期90日历天。批发市场正在建独立的招商与运营调度中心，说明市场管理侧要从人工向集中调度转型，调度中心的拼接屏、坐席、市场全域视频汇聚、电子结算与车辆出入联动通常是同一批采购，建议在装修阶段同步跟进弱电与显示系统增项。</div>
+        <a href="https://www.chinamae.com/purchases/14de59e7c160e432bc9eaebef5569a1b.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钦州港东站日均到发铁海联运班列最高35列，与自动化码头零距离对接</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 新华网广西频道</span>
+        </div>
+        <div class="news-abstract">钦州港东站股道由3条扩至13条、职工66人，场站日均常态具备3000标箱装卸能力，龙门吊已实现远程控制自动化并配无人机做装后检查，与钦州自动化集装箱码头零距离对接。铁海联运量能持续放大，直接带出铁路场站的周界、龙门吊远程操控视频回传、箱区智能理货、无人机巡检与人员定位需求，采购主体为国铁南宁局与中铁联集广西公司，属于铁路侧独立于港口的另一条预算线。</div>
+        <a href="http://www.gx.news.cn/20261015/0cc4c7aec7e046c99048c3f84f3d319d/c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海铁山港：5G无人集卡与无人智能闸口投用，24个泊位年通过能力6919万吨</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 科技日报</span>
+        </div>
+        <div class="news-abstract">北海码头无人智能闸口实现单证电子化、无纸化，车辆通行从分钟级压缩到秒级；5G无人驾驶集卡与有人集卡协同作业，全国首套木薯干负压除尘带斗自动化远控改造完成。闸口无人化、集卡混行协同必然要求卡口多路视频、车牌与箱号识别、车路协同感知、堆场全景监控同步升级，且西港区南4号南5号泊位新交工验收、配套4座仓库，新泊位与新仓库的安防为增量预算，采购主体为北部湾港北海码头有限公司。</div>
+        <a href="http://www.stdaily.com/web/gdxw/2026-10/15/content_596878.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁罗文农贸市场盘活存量发展夜市经济，划定1141平方米71个摊位</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 南宁市人民政府国有资产监督管理委员会</span>
+        </div>
+        <div class="news-abstract">南宁农业发展集团利用日间农贸经营结束后的通道和停车位划定约1141平方米夜市区域、设71个摊位，实行日间恢复通行停车、夜间规范摆摊的分时管理，并将闲置铺面改造为储物驿站，明确要求落实消防安全、油烟管控、噪声控制并配安保保洁常态化巡查。农贸市场分时复用场景对夜间照明监控、消防通道占用AI识别、人流密度预警、摊位用电安全监测有直接需求，且采购主体为市属国企，决策链清晰。</div>
+        <a href="https://gzw.nanning.gov.cn/tslm/qyzc/qydt/t6744973.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钦州自动化集装箱码头建成全国港口首个全域智慧安防系统，全场4000多个摄像头</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 科技日报</span>
+        </div>
+        <div class="news-abstract">码头融合TOS、ECS、GOS三大自动化系统，配高精度磁钉导航IGV与自动化双小车岸桥，建成全国港口首个全域智慧安防系统，全场4000多个摄像头可主动研判安全态势，并配全天候智能理货、智港盾及智慧港口混合交通大模型。本期最直接的对标情报：北部湾港已把视频加AI作为港口安全主架构，后续9号10号泊位扩建和内1至5号江海联运泊位新建大概率按同一架构复制扩容，是视频监控、AI算法与平台的明确续建机会。</div>
+        <a href="http://www.stdaily.com/web/gdxw/2026-10/14/content_595991.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">全国首票东盟产品经跨境一锁出口业务落地梧州综保区</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 人民网广西频道（广西日报）</span>
+        </div>
+        <div class="news-abstract">一批越南烘焙咖啡豆经梧州综保区归集、加装跨境一锁电子锁后陆路直达香港口岸，自动快速验放。此前梧州已通过该模式推动冷杉木板材、半导体模块等10余批次产品出海。电子锁加自动验放的本质是关锁联动与在途监管，需要卡口车牌与箱号识别、GPS与电子锁数据回传、监管场所全景监控与视频存证对接海关系统，采购主体为梧州综保区管委会与梧州海关，业务量上升后卡口与监管场所改造会跟进。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1014/c179430-41721138.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">玉林牛腩粉产业冷链物流网一期双温区冷库取得施工许可，单标段造价6422万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 天工网</span>
+        </div>
+        <div class="news-abstract">玉林市天盛园区管理服务有限公司建设的玉林牛腩粉产业冷链物流网项目一期分两个标段推进：4号5号双温区冷库、管理用房、门卫室一造价6422万元，1至3号加工车间、门卫室二造价8006万元，本期已取得施工许可。双温区冷库与加工车间的组合，对应库温监测、月台与库门管理、加工车间视频与卫生规范AI识别、消防联动，属于施工期即可介入的智能化分包。</div>
+        <a href="http://www.tgnet.com/projects/guangxi/all/wuliucangchu/zhutishigong" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年活力中国调研行广西活动启动，南宁综保区二期智慧监管实现进口水果通关提速40%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 南宁市人民政府（南宁日报）</span>
+        </div>
+        <div class="news-abstract">采访团走访中国东盟国家人工智能应用合作中心、南宁国际铁路港、南宁港六景作业区。南宁综保区二期2025年9月封关运营，南宁邮局海关以智慧监管、两港一区、培育产业为抓手，铁路进口水果通关提速40%以上、转关货物通关时长压缩60%以上，前8月综保区进出口99.8亿元、增长128.9%。通关提速依赖监管场所视频、智能审图与卡口自动验放，业务量翻倍意味着现有监管设施需扩容，是海关侧的技术改造入口。</div>
+        <a href="https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6743674.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">田东县城乡农产品交易市场提升工程（田东县冷链物流基地）发布更正公告，开工提前至11月8日</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 百色市住房和城乡建设局</span>
+        </div>
+        <div class="news-abstract">招标人为广西田东芒乡城市开发有限公司，属县级城乡农产品交易市场与冷链物流基地打包建设，原定12月8日开工提前至11月8日，说明资金与用地已落实、进入实质施工阶段。农贸市场改造是县域商贸载体的标准场景，视频监控、摊位级人脸抓拍、食品安全快检室联网、消防联动、冷库温控与门禁是常规配置，建议直接对接招标人与代理机构广西信德，在施工总包阶段嵌入弱电与智能化分包。</div>
+        <a href="http://zjj.baise.gov.cn/wsgs/ztbgs/t28221092.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">玉林福达农产品冷链物流园（第十一版）规划总平面图批后公布</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 陆川县自然资源局</span>
+        </div>
+        <div class="news-abstract">规划总平面图9月16日经陆川县自然资源局批复（陆自然资函〔2026〕70号），本期为第十一版调整后正式公布，意味着方案已锁定、即将进入施工图与招标阶段。冷链物流园的智能化配置通常包含园区周界与道路监控、冷库温湿度与门禁、车辆出入口与地磅联动、消防联动及园区综合管理平台，属于可在设计阶段介入、影响品牌选型的关键窗口，建议尽快对接福达与陆川县自然资源局摸清建设时序。</div>
+        <a href="http://luchuan.gov.cn/xxgk/fdgk/ghjh/jsxmgh/t28219995.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">商务厅厅长邹展业到北流调研县域商贸物流，实地察看泓勇物流园仓储冷链配套</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 玉林市人民政府</span>
+        </div>
+        <div class="news-abstract">调研组走访北流市供销社展销中心、泓勇物流园、诚众东云公司、百香之恋产业园，重点察看园区仓储、冷链物流、供应链配送配套建设运营，要求完善县域物流基础设施布局、提升城乡流通网络效能。北流被定为全区下沉市场消费激活示范点位，泓勇物流园等载体的冷链仓储与配送环节需要温控监测、库区监控、装卸月台管理与消防联动，属县级可快速落地的中小型项目。</div>
+        <a href="http://www.yulin.gov.cn/jryl/xsqdt/t28219494.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">全区激发下沉市场消费活力工作会议在北流召开，明确县域商业提档升级路径</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西壮族自治区商务厅</span>
+        </div>
+        <div class="news-abstract">10月10日会议在玉林北流召开，商务厅厅长邹展业出席，玉林、梧州及北流、凭祥、阳朔、富川作经验交流，邮政广西、京东、汽车流通协会参与。会议明确要摸清县域家底、年内完成一县一档、突出典型示范。县域商业载体成批改造是安防最易规模化的场景，包括乡镇商贸中心、集农贸市场、村级便利店与寄递站点的视频监控、出入口控制、消防与食品安全可视化，可依托一县一档数据先行圈定目标县。</div>
+        <a href="http://swt.gxzf.gov.cn/zfxxgk/fdzdgknr/zwdt/gxsw/t28215748.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">商务厅解读关于进一步激发下沉市场活力活跃县域消费的意见，明确农贸市场与商圈改造任务</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西壮族自治区商务厅</span>
+        </div>
+        <div class="news-abstract">解读明确四方面抓手：县城支持传统百货、老旧购物中心升级改造并引进品牌连锁；乡镇深化千集万店改造提升，支持乡镇商贸中心、集农贸市场建设升级、优化共配站点；村级建设改造新型便利店与寄递物流综合服务站；需求旺盛地区推动核心商圈、特色商业街区建设。广西已累计投入中央服务业专项资金5.96亿元支持75个试点县超370个项目。这条是全年可复用的项目清单来源，直接对应监控、出入口、消防、客流分析四类产品。</div>
+        <a href="http://swt.gxzf.gov.cn/zfxxgk/fdzdgknr/zwdt/gxsw/t28215818.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区商务厅征集2026年四季度零售和服务消费券活动执行服务商</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西壮族自治区商务厅</span>
+        </div>
+        <div class="news-abstract">面向全区发放商超、百货、成品油等零售消费券及餐饮、票根加餐饮住宿消费券，服务期2026年10月至12月，要求服务商具备实名认证、风控防刷单、商户组织与大数据能力，并在各地市有分支机构。消费券落地必然带动参与商户的收银核销终端与客流统计改造，尤其商超、加油站的收银区监控与人流分析可借活动一并升级，可跟踪中标服务商名单，做商户侧二次销售。</div>
+        <a href="http://swt.gxzf.gov.cn/zfxxgk/fdzdgknr/tzgg/t28216897.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1012-1018.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1012-1018.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1012-1018.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1012-1018.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
