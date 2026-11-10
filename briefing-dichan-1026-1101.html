@@ -1,166 +1,395 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广西地产建筑行业简报 · 2026.10.26 — 11.01</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>智慧建筑 · 广西行业双周简报 | 2026.10.26-11.01</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>🏗️ 广西地产建筑行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.26 — 11.01</span>
-      <span>📊 本周 6 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>智慧建筑行业要闻</h1>
+    <div class="date">2026年10月26日 — 11月1日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本周广西智慧建筑主线是城市更新与消防整治双线推进。10月27日自治区住建厅发布会披露，今年以来全区改造城镇老旧小区3.89万套、城市危旧房2万套，保障房73万套惠及150多万人。项目端，横州市城区地下管网综合改造（二期）由中国铁建大桥局以1.2988亿元中标；柳南区住建局公开10至11月采购意向，和平路文化区危旧房改造378.37万元、柳太路及柳邕路2栋危旧房改造183.95万元，均计划11月采购；玉林秀岭时代小区招标10台垂直电梯、预算267.6万元。消防侧，柳州鱼峰区高层小区、贵港港北区养老机构、百色西林县医院因消防控制室无人值班被罚，桂林叠彩区、桂平市公布11月检查计划。安防机会集中在老旧小区与危旧房改造的门禁、周界、视频与消防联动补建，市政工程的施工期监控与智慧市政接入，以及消防控制室合规带来的远程值守与消防物联网平台。建议优先跟横州管网、柳南危旧房两个采购时点明确的项目。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">14条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">自治区领导分赴全区各地督导检查消防安全工作 压紧压实各方责任 筑牢消防安全防线</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-01</span>
+          <span class="source-tag">📍 广西云-广西日报</span>
+        </div>
+        <div class="news-abstract">自治区领导分赴柳州、来宾、崇左、河池、百色、贺州、梧州、南宁八地，检查对象覆盖高校、医院、社区、农贸市场、养老机构、高层建筑小区和人员密集场所，并明确要求健全长效治理机制、加强消防力量建设。高层级督导通常在一个月内转化为属地排查整治任务和补短板预算。建议立即梳理八地消防大队与行业主管部门的整治清单，主推高层建筑消防水系统监测、消防通道占用识别、养老与医疗场所智慧消防托管，抢占排查后的整改窗口。</div>
+        <a href="https://gxxwfb.gxnews.com.cn/article.v2019.php?id=22010476" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">横州市城区地下管网综合改造工程（二期）中标候选人公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·南宁）</span>
+        </div>
+        <div class="news-abstract">项目中标价1.2988亿元、工期730日历天，第一中标候选人为中国铁建大桥工程局集团，招标人为广西横县宝华城市建设投资发展公司，10月29日开标。地下管网综合改造涉及管廊、检查井、泵站等大量有限空间与开挖作业面，施工期需要临时监控、气体检测、井盖位移监测和人员定位；建成后管网监测数据要接入市政平台。建议同步接触中标单位与业主，推施工期安全监控包与建成后智慧管网感知设备，避免只做竣工后的零星补装。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/nnggzy/projectDetails.html?categorynum=001001001004&infoid=0f58a8d6-2c20-4b59-aa54-8d27a5f974d8" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">秀岭时代小区电梯采购及安装公开招标公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·玉林）</span>
+        </div>
+        <div class="news-abstract">项目采购垂直电梯10台，预算267.6万元，招标人为玉林市玉东投资集团，资金来源业主自筹，投标截止2026年11月20日9时，交货安装周期90天。电梯采购包通常不含梯内视频、五方对讲与电梯物联网，属可单独承接的配套口。建议直接对接玉东投资集团与招标代理广西嘉华，以“电梯配套安防包”（梯内摄像机、五方对讲、运行状态监测、电动车进梯识别）报价，并借玉东新区后续安置房项目形成批量。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/ylggzy/projectDetails.html?categorynum=001001001001&infoid=8d2b45ff-b01a-4ec0-826c-cbdd312e37b5" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">海城区西藏新村危旧房改造提速推进 “原拆原建”托起居民安居梦</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 人民网·金台资讯（来源：海城区委宣传部）</span>
+        </div>
+        <div class="news-abstract">这是广西首个“业主自筹+政府补贴+原拆原建”危旧房改造项目，13栋住宅经鉴定全部为危房，首栋8号楼已封顶，每户出资约10万元换约100平方米新房，并配套公租房优惠安置与每户500至1000元搬家补贴。原拆原建意味着重建后小区需从零建设门禁、视频、周界、消防与充电设施，属完整弱电盘子。建议跟踪海城区住建局与代建单位，在主体施工阶段介入智能化专项设计，并把该模式作为可复制样板向其他地市住建部门推介。</div>
+        <a href="http://m.toutiao.com/group/7702434094076756490/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林市叠彩区消防救援局关于印发2026年叠彩区九小场所消防安全专项检查工作计划的通知</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 桂林市叠彩区人民政府</span>
+        </div>
+        <div class="news-abstract">叠彩区消防救援局明确11月15日至30日对经营性自建房、宾馆、餐饮、人员密集场所开展专项检查，采取双随机方式，每组2名执法人员加1名专职消防员。九小场所普遍缺少独立式感烟、简易喷淋和视频监控，检查期是集中补装的强窗口。建议在11月15日前完成对叠彩区目标场所的摸排与方案报价，主推无线联网型感烟探测、独立式电气火灾监控、轻量化AI摄像机与九小场所云监管平台，可复制到桂林其他城区。</div>
+        <a href="http://www.glsdcqzf.gov.cn/gsgg/t28289575.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市西乡塘区衡阳西路片区城中村改造项目安置住房配套基础设施-纵11路工程供水管道迁改土方工程专业分包评审结果公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西）</span>
+        </div>
+        <div class="news-abstract">这是南宁西乡塘区衡阳西路片区城中村改造安置住房的配套基础设施项目，纵11路涉及供水管道迁改土方工程已完成分包评审，第一成交候选人为广西正庚建筑工程。配套市政工程进入实施期，说明该片区安置房主体建设临近，后续将产生安置房小区智能化、道路视频监控、临时施工监控等需求。建议以总包为切入点建立联系，跟踪衡阳西路片区整体改造进度，提前锁定安置房智能化专项。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001006002&infoid=11dd9379-8585-4785-ba9c-bb153b5387a2" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西持续推进房地产平稳健康发展新闻发布会在南宁召开</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 广西住房和城乡建设厅</span>
+        </div>
+        <div class="news-abstract">全区口径的城市更新与保障房盘子已经明确：老旧小区3.89万套、城市危旧房2万套、城中村4.76万户、保障房73万套惠及150多万人，叠加58个“好房子”项目，构成后续安防改造的存量基数。发布会同时提到保障房数字化建设、公租房申请“高效办成一件事”，说明住建系统对数据打通和平台侧有预算倾向。建议以“老旧小区改造安防标准包”（单元门禁+周界+高空抛物+消防联动+充电桩监测）切入各市住建局，并争取进入保障房智慧社区平台技术方案比选。</div>
+        <a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28271663.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">无人值班、管理不规范，广西这3家单位被罚款</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 广西消防救援总队</span>
+        </div>
+        <div class="news-abstract">柳州鱼峰区高层小区、贵港港北区养老服务机构、百色西林县某医院三家单位因消防控制室无人值班、管理不规范被处罚，依据是24小时值班、每班不少于2人及持证上岗要求。这类处罚案例会直接推动物业、养老、医疗三类主体采购远程值守与在岗监测手段。建议以“消防控制室远程值守+值班人员在岗AI识别+火警联动闭环”方案，定向推给三地物业服务企业和民政、卫健主管部门，并借处罚通报开展合规宣讲。</div>
+        <a href="http://m.toutiao.com/group/7701526614613443091/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市青秀区民族大道77号9栋1单元加装电梯工程批前公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 南宁市青秀区自然资源局</span>
+        </div>
+        <div class="news-abstract">项目加装1台电梯，地上8层，电梯井及连廊总建筑面积152.97平方米，建筑高度24.7米，已经青秀区加梯办联合审查会议通过。单个加梯项目体量小但数量密集，且每台电梯都需配套梯内视频、五方对讲和运行监测。建议与青秀区加梯办及本地加梯总包建立合作，把“加梯安防标配包”做成标准化报价按台计费批量承接，并向南宁其他城区加梯办复制。</div>
+        <a href="http://www.qingxiu.gov.cn/gongkai/fdzdgk/zdlyxxgk/zrzygl/ghgl/t6753587.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州市柳南区住房和城乡建设局2026年10月至11月政府采购意向</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">两个危旧房改造项目分别预算378.37万元和183.95万元，均计划2026年11月采购，改造内容含结构加固、屋面防水、防雷接地、立面修缮、更换阳台门窗。这类改造往往在结构加固完成后同步补建单元门禁、楼道视频、消防应急照明与疏散指示。建议在11月采购公告发布前接触柳南区住建局，把安防与消防弱电子项作为专业分包或后续追加内容提前植入设计，同时关注柳太路、柳邕路两个小区100户居民的门禁与对讲需求。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=mujx+GB%2F4tQVNqt2lmik8g==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂平市消防救援局关于加强2026年11月份消防监督抽查未抽中单位消防安全管理的工作提示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 贵港桂平市人民政府（桂平市消防救援局）</span>
+        </div>
+        <div class="news-abstract">文件对未抽中单位提出五项要求，重点是火灾自动报警及消防联动系统、消防水灭火系统、防排烟系统保持正常，消防控制室落实24小时值班值守，并按标准配足微型消防站装备。这类“未抽中也要自查”的提示，实际把合规压力扩散到全部社会单位，形成普惠性采购需求。建议以“消防设施物联监测+微型消防站装备包+值班托管”组合方案对接桂平市消防救援局与重点行业主管部门，用政府背书方式批量覆盖辖区单位。</div>
+        <a href="http://www.guiping.gov.cn/xxgk/zdlyxxgk/qtlyxx/ssjygk/t28265450.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">精治老旧小区 点亮幸福邻里（贺州91个老旧小区治理）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 人民网·金台资讯（来源：广西日报）</span>
+        </div>
+        <div class="news-abstract">贺州全市91个老旧小区，按“五有标准”新建改造82个街道社区党群服务阵地、建成69个“邻里驿站”，并将3至4个相邻楼栋划为一个治理单元、配备楼栋长和党员联户。治理单元细化到楼栋，是加装视频监控、门禁、烟感和高空抛物的天然抓手。建议对接贺州市住建局与八步区组织部门，把“邻里驿站”作为社区级安防与消防值守节点，推“驿站+微型消防站+视频联网”一体化方案。</div>
+        <a href="http://m.toutiao.com/group/7701222564449780243/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市住建局关于《南宁市城市更新“十五五”规划》第二次报批前的公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 南宁市住房和城乡建设局</span>
+        </div>
+        <div class="news-abstract">规划范围为中心城区665平方千米、期限2026—2030年，明确八大更新任务并划定重点更新片区，还提出建立城市更新数据库支撑项目管理与评估。数据库加项目库的组合，意味着后续每个更新片区都会配建感知设施与数据接入。公示期为10月26日至11月1日，此后进入立项、选址与资金申报阶段。建议在公示期内对接南宁市住建局规划与城建科室，围绕“城市更新片区智慧化底座”提交感知层与平台层建议，争取写入实施方案。</div>
+        <a href="https://zjj.nanning.gov.cn/xxgk/fdzdgknr/jhzj/zzqgh/t6752258.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">国债赋能惠民生 新梯交付暖民心——港口区两个老旧小区加装电梯项目相继交付启用</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 防城港市港口区人民政府（港口区住建局）</span>
+        </div>
+        <div class="news-abstract">西湾上城小区6台、欧景蓝湾小区10台共16台加装电梯交付，资金来自超长期特别国债，属2026年第二批电梯更新项目。住建部门明确要求参建单位落实常态化巡检、24小时应急处置机制，这正是电梯物联网与困人应急救援联动的直接采购口。建议以“电梯运行监测+一键报警+视频对讲+集中值守平台”打包方案对接港口区住建局与小区物管会，并向防城港市住建局复制到剩余老旧小区更新任务。</div>
+        <a href="http://www.gkq.gov.cn/yw/gkqyw/t28263811.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是“好房子”标准落地见效。</strong>广西二手房交易已占商品房交易总量44.8%，58个“好房子”标准项目开工或上市，现房销售占比达37.7%，住宅竞争从“有没有”转向“好不好”，为智慧社区前装打开入口。</p>
-    <p><strong>二是城市更新进入规划实施期。</strong>南宁665平方公里“十五五”更新规划公示、桂林名城保护与城市更新融合方案座谈、北海398户原拆原建8号楼封顶，老旧小区与危旧房改造形成持续项目流。</p>
-    <p><strong>三是城市治理数字化被点名。</strong>广西城市管理研究会完成换届，把“智慧城管建设”列入新一届理事会重点任务，城市管理AI视频分析从可选项变成考核项。</p>
-  </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>58个“好房子”项目开工上市 · 智慧社区平台与智能家居前装打包</li>
-      <li>南宁665平方公里城市更新 · 老旧小区视频监控与门禁批量更新</li>
-      <li>北海398户原拆原建 · 新建小区周界、人脸门禁、梯控成套</li>
-      <li>今年2万套城市危旧房改造 · 施工期塔吊与基坑智慧工地监测</li>
-      <li>桂林历史街区保护更新 · 文保级监控与客流热力分析系统</li>
-      <li>智慧城管列入重点任务 · 城市管理AI视频分析平台</li>
-    </ul>
-  </div>
-  <div class="section">
-    <div class="section-title">🏠 住房政策</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-30</span>
-          </div>
-          <h4><a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28279349.shtml" target="_blank" rel="noopener noreferrer">从“有没有”到“好不好” 广西以“好房子”建设破局存量时代</a></h4>
-          <div class="card-body">
-            <p>广西二手房交易已占商品房交易总量44.8%，标志市场迈入存量时代。全区出台《好房子技术标准》，从层高、隔音、防水等指标提档；截至9月底58个采用“好房子”标准的项目开工或上市，现房销售面积占比37.7%，“白名单”项目1007个、发放贷款1333亿元。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>58个高品质住宅是智慧社区标配入口，可切入AI人脸门禁、高空抛物监测、智能家居前装。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28279349.shtml" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅官网</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-30</span>
-          </div>
-          <h4><a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28281636.shtml" target="_blank" rel="noopener noreferrer">广西织密安居保障网 持续完善住房保障体系</a></h4>
-          <div class="card-body">
-            <p>全区建设筹集各类保障房73万套、惠及150多万困难群众，今年安排1000万元专项资金补贴高校毕业生租房。贺州平桂区收购1300套存量商品房用作保租房。今年已改造城市危旧房2万套，4.76万户城中村群众居住条件明显改善。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>保障房与城中村改造集中交付，公租房人脸门禁、视频联网、消防通道占用检测是刚性配置。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28281636.shtml" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅官网</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">🏗️ 城市更新</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="https://zjj.nanning.gov.cn/xxgk/fdzdgknr/jhzj/zzqgh/t6752258.html" target="_blank" rel="noopener noreferrer">《南宁市城市更新“十五五”规划》第二次报批前公示</a></h4>
-          <div class="card-body">
-            <p>规划范围覆盖兴宁、青秀、江南、西乡塘、良庆、邕宁6个城区位于中心城区的部分，总面积约665平方公里，期限2026—2030年。涵盖既有建筑改造、老旧小区整治、完整社区建设、城中村更新、城市基础设施改造等八大任务，公示期至11月1日。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>665平方公里更新盘子将批量释放老旧小区安防改造、完整社区视频联网与智慧物业需求。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://zjj.nanning.gov.cn/xxgk/fdzdgknr/jhzj/zzqgh/t6752258.html" target="_blank" rel="noopener noreferrer">南宁市住房和城乡建设局</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="https://m.sohu.com/a/1094595421_121106875/" target="_blank" rel="noopener noreferrer">自治区住建厅召开桂林历史文化名城保护与城市更新融合专项方案座谈会</a></h4>
-          <div class="card-body">
-            <p>10月27日座谈会在桂林召开，中国城市规划学会理事长杨保军、自治区住建厅厅长龙杏华出席。方案坚持“山水城市”理念，兼顾保护性、发展性与民生性，并要求象山景区及周边一体化规划，优化景观视廊、排查与整体风貌不匹配的商业设施。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>历史街区与景区一体化更新，需文保级视频监控、客流热力分析、古建消防预警等定制方案。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://m.sohu.com/a/1094595421_121106875/" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅（搜狐号转载）</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28260371.shtml" target="_blank" rel="noopener noreferrer">北海西藏新村危旧房“原拆原建”8号楼主体封顶</a></h4>
-          <div class="card-body">
-            <p>西藏新村13栋住宅全部鉴定为D级危房，398户913人半个月内完成搬迁安置。项目总投资约8700万元，政府投入4500万元、居民自筹4200万元，折合每平方米自筹仅1077元。目前319户参与筹款、进度达70%，8号楼封顶、9号楼建至二层。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>原拆原建从施工到回迁全周期，可打包智慧工地监测、临时安置区监控、新小区门禁梯控。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28260371.shtml" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅官网</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">🏙️ 城市治理</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-30</span>
-          </div>
-          <h4><a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28285255.shtml" target="_blank" rel="noopener noreferrer">广西城市管理研究会第二届会员大会在南宁召开</a></h4>
-          <div class="card-body">
-            <p>10月28日换届大会在南宁举行，选举产生新一届理事会，自治区住建厅副厅长刘哲出席。会议明确新一届理事会围绕执法规范化建设、城市管理进社区、垃圾治理和环卫提质、智慧城管建设等重点任务，发挥参谋助手作用并搭好政企对接平台。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>“智慧城管建设”被列为重点任务，是城市管理AI视频分析、违建识别、渣土车监管的切入窗口。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://zjt.gxzf.gov.cn/xwdt/btdt/t28285255.shtml" target="_blank" rel="noopener noreferrer">广西住房和城乡建设厅官网</a></div>
-        </div>
-  </div>
+
   <div class="footer">
-    <p><strong>广西地产建筑行业简报</strong> · 数据来源：政府官网及行业公开渠道</p>
-    <p style="margin-top:6px;">仅供内部行业研究参考 · 生成于 11.01</p>
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-</main>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1026-1101.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1026-1101.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1026-1101.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1026-1101.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
