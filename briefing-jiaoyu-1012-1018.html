@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>教育行业 · 广西行业双周简报 | 2026.10.12-10.18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>教育行业行业要闻</h1>
+    <div class="date">2026年10月12日 — 10月18日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期广西教育系统“基建放量+AI场景定调+安全整改”三线并行。基建端，广西大学新校区二期体育运动用房3.288亿元完成测绘采购、留学生用房批后公布，广西开放大学五象校区三期7500万元列入11月采购意向，河池金城江启动2027年全区教育基建设计单位入围。AI端，教育厅公示43个人工智能赋能教育应用场景，柳州职业技术大学257.84万元AI实训室、南宁职业技术大学450万元智能网联与低空实训室同步招标。安全端，北流校园安全百日攻坚排查681所学校、345家托管机构，隐患296处、挂牌督办28处；环江、藤县幼儿园消防整改与围墙改造密集挂网。安防机会：高校新校区与体育场馆的赛事级视频、出入口安检、消防联动属设计阶段植入型；职教AI实训室的“AI视觉教学套装”可复用算法与设备；县乡校点“四个100%”补盲与幼儿园消防整改可县级打包。建议立即卡住金城江2027年设计入围与广西大学二期弱电设计口。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">19条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西大学新校区二期体育运动用房测绘服务成交结果公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 广西大学</span>
+        </div>
+        <div class="news-abstract">测绘由广西万众工程检测有限公司成交。测绘完成即进入施工图设计与施工招标，按高校基建节奏，弱电智能化标包预计2027年上半年出图。当前应锁定设计院与代建单位，提前做技术交流与参数引导，避免开标时被竞品抢先定义参数。</div>
+        <a href="https://www.gxu.edu.cn/info/1364/42312.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">环江县教育局采购意向：第四幼儿园教学楼维修及大安乡中心幼儿园消防整改161.02万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">两个幼儿园项目合计161.02万元，其中明确含“消防整改”。幼儿园消防整改通常连带视频监控、一键报警、应急照明与疏散指示，是可打包的标准包，10月采购，属近期可落地的小额确定性机会，单校投入低、决策快。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=Exl3AZOSHZs7IB0FH0%2FPww==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西开放大学五象校区三期工程7500万元采购意向，11层学生宿舍含人防地下室</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">新建11层学生宿舍及人防地下室，总建筑面积26834平方米，预算7500万元，2026年11月采购。施工总包招标后智能化分包随之启动，宿舍楼消防报警、视频监控、门禁与归寝、应急广播是标准配置，属可提前锁定分包的确定性项目。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=69D+DFR7lLazpRrPovzmPg==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西梧州农业学校工业机器人实训基地设备采购411.8万元中标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">工业机器人实训基地设备由汇博中标，金额411.8万元。机器人实训区必须配人机隔离安全光幕与区域视频，可作为二期配套切入；同时该校其他专业实训室仍有年度预算，可做全校实训安全监控整体方案，并复制到同城其他中职院校。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202610/t20261015_27501266.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">藤县天平镇第一初级中学学生宿舍楼工程中标，含消防工程</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 采招网</span>
+        </div>
+        <div class="news-abstract">项目资金来源为农村义务教育校舍安全保障长效机制补助，招标范围含消防工程。这类“长效机制补助”项目广西每年两批、覆盖所有县区，宿舍楼标配消防报警与视频监控，适合按县打包做标准化方案，复制成本极低，一年可复制数十个校点。</div>
+        <a href="https://m.bidcenter.com.cn/news-4-447456862.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">藤县塘步镇中心幼儿园挡土墙、教学楼维修及围墙改造202万元竞争性磋商</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">含围墙改造80米、更换大门、铝合金窗更换等，10月29日开标。围墙改造是周界防范的前置条件，可捆绑电子围栏、周界摄像机、门口人脸门禁一体机，把土建小项目做成安防小包，是县域幼儿园最容易复制的打法，可整县推广。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202610/t20261015_27497566.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区教育厅公示2026年人工智能赋能教育应用场景评审结果，43个场景入选</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 广西壮族自治区教育厅</span>
+        </div>
+        <div class="news-abstract">共43个场景入选，其中高等教育14个、职业教育18个、基础教育11个，含AI辅导员、AI学生成长档案、AI赋能体育素养评价等。这份名单实质是2027年教育信息化预算的方向指引，43个场景落地都要摄像机、边缘算力盒子与算法平台。</div>
+        <a href="http://jyt.gxzf.gov.cn/zfxxgk/fdzdgknr/tzgg_58179/t28224314.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">河池市金城江区教育局2027年教育基建项目设计服务议标，择优入围3家</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 金城江区人民政府</span>
+        </div>
+        <div class="news-abstract">择优入围3家设计单位，承接2027年中小学幼儿园新建、改扩建、危房重建、校舍维修加固全过程设计，10月18日报名截止。入围设计单位等于掌握2027年全区校园智能化的设计口，现在做设计院关系，等于提前一年锁定参数与品牌。</div>
+        <a href="http://www.jcj.gov.cn/tzgg/t28222559.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西农业职业技术大学开展应急理论培训及地震避险演练</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">学校图书馆联合保卫处组织应急理论培训与地震避险演练。演练背后是应急广播、疏散指示、消防联动与应急指挥平台的真实需求，高校每年有安全教育与应急演练专项经费，可打包“演练+装备+平台”一体化方案，形成年度服务合同。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1014/c179462-41721891.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区教育厅公布教育领域涉黑涉恶线索举报方式，重点排查6类问题</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 桂林市教育局（转自治区教育厅）</span>
+        </div>
+        <div class="news-abstract">举报范围含校外团伙非法侵入校园、校园周边重点场所违规经营等6类问题。对应安防抓手明确：校园周界防入侵与AI翻越识别、一键报警与公安联网、校门外及周边重点场所人脸布控，是可向教育局申报的专项整治配套项目，资金多来自平安建设专项。</div>
+        <a href="https://jyj.guilin.gov.cn/gggs/t28222783.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西大学新校区二期体育运动用房及室外运动场项目3.288亿元测绘服务采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西大学</span>
+        </div>
+        <div class="news-abstract">新建1栋体育运动用房及室外运动场，总建筑面积34648平方米，含消防工程，投资3.288亿元。体育场馆属大流量人群场所，赛事级视频、出入口安检与票证核验、消防联动、应急广播是标配，3.288亿元体量下智能化分包可达千万级，必须从设计阶段介入。</div>
+        <a href="https://www.gxu.edu.cn/info/1364/42248.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西大学新校区二期留学生用房及生活服务中心组团批后公布</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 南宁市自然资源局</span>
+        </div>
+        <div class="news-abstract">留学生用房及生活服务中心组团规划获批并公布。留学生公寓是涉外管理重点场所，人脸门禁、访客预约与多语种访客机、宿舍归寝分析、公共厨房烟火检测、周界防入侵均为刚需，且高校对此类项目预算相对宽松，适合做整体方案打包。</div>
+        <a href="https://zrzyj.nanning.gov.cn/zwgk_57/xxgk/ghgl/ghgs/phgs/t6742003.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州职业技术大学“AI+专业群”人工智能训练实训室采购257.84万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">采购人工智能场景创新平台20套、机械臂20套、边缘智能资源包等。AI实训室本身就是AI视觉教学场景，可提供教学版算法训练平台加实训摄像机套装，把“视频AI”做成课程载体；12月采购，现在可做方案植入。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=65lmSxmAl%2FrUUjHaDIdXXg==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁职业技术大学智能网联汽车与低空智能应用实训室450万元招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">A分标380万元含智能传感器、环境感知、智能座舱、V2X路侧感知OBU；B分标70万元含大载重无人机与拆装飞行训练平台，11月2日开标。V2X路侧感知OBU、智能路侧杆件、无人机及反制均是海康主航道，可直接投或与集成商联合体投。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202610/t20261012_27473676.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西工业职业技术学院武鸣校区人工智能产教融合实训基地改造项目成交</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西工业职业技术学院</span>
+        </div>
+        <div class="news-abstract">武鸣校区AI产教融合实训基地改造项目成交金额45.8万元。改造类项目金额不大但决策链短、周期快，实训基地改造通常同步配套监控与门禁，适合做“改造+安防”打包升级，也是切入该校后续大额项目的敲门砖，宜先做样板间。</div>
+        <a href="https://www.gxgy.edu.cn/zbzp/zbxx/content_82040" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北流市校园安全百日攻坚：排查681所学校、345家托管机构，隐患296处</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">覆盖681所中小学幼儿园及345间校外托管机构，重点核查校园安防“四个100%”，排查隐患296处、整改268处，28处挂牌督办。681所学校加345家托管机构就是一份现成的乡镇校点补盲清单，一键报警、视频监控、封闭管理均为硬指标。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1012/c229260-41719634.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色市右江区六塘小学续建工程中标候选人公示，含建筑智能化工程</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 百色市住房和城乡建设局</span>
+        </div>
+        <div class="news-abstract">3#女生宿舍楼续建，工期150日历天，招标范围明确含消防工程与建筑智能化工程。女生宿舍楼的智能化核心是人脸门禁、归寝分析、周界防范与公共区域视频，150天工期意味着弱电分包需在总包进场后两个月内定标。</div>
+        <a href="http://zjj.baise.gov.cn/wsgs/ztbgs/t28216570.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海市海城区实验幼儿园开园，新增720个普惠学位</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 北海市海城区人民政府</span>
+        </div>
+        <div class="news-abstract">海城区近年筹措资金6亿元、建成6所学校、新增12000余个学位、新建改建4所公办幼儿园。新开园意味着安防系统刚交付、进入运维与增补期；更关键是海城区仍有后续学校建设计划，可由此锁定区教育局的长期供货关系。</div>
+        <a href="http://www.bhhc.gov.cn/zfxxgk/fdzdgknr/ldzc/ldjhhhd/t28213754.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西大学一卡通系统运维服务成交20万元，服务期至2027年11月</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 招标网</span>
+        </div>
+        <div class="news-abstract">服务期2026年11月25日至2027年11月24日，含门禁系统、考勤设备运维及等保测评配合。这是一卡通与门禁存量运维盘，通过运维切入可掌握设备台账与故障数据，为2027年整体升级换代争取主导权，是守住老客户的低成本方式。</div>
+        <a href="https://rl.zhaobiao.cn/succeed_v_709088b0f30007a5e06ec53d2354bbac.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1012-1018.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1012-1018.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1012-1018.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1012-1018.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
