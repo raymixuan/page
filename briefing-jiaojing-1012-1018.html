@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>交警行业 · 广西行业双周简报 | 2026.10.12-10.18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>交警行业行业要闻</h1>
+    <div class="date">2026年10月12日 — 10月18日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期交警整治与采购双轮驱动。整治侧，南宁连续开展电动自行车不戴头盔、不系安全带两个专项行动，首次成规模采用无人机空中宣传加地面执勤的空地结合勤务；灵川、环江、天等、大化、桂平围绕涉牌货车、电动自行车、炸街改装、非法营运、农村道路持续加码，移动执法终端、车载布控球、无人机机巢正从试点走向常态配备。采购侧信号更明确：贵港交管支队公开2027-2028年度公路交通安全防控体系运维意向199.468万元，含20套固定测速卡口、3套区间测速、10套违停抓拍、26套高空监控瞭望、6套禁止线抓拍及G358根竹段7套电警16套高点，预计12月采购；柳州交管支队无人机应用系统硬件82.2万元预计11月启动；崇左智能交通第三期要求信号绿波带控制系统与GB/T28181-2022接入；贺州存量清零攻坚125万元含信号灯、电子警察、支路哨兵。建议锁定贵港、贺州两个12月前窗口，按卡口+高点+平台联网打包报方案。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">15条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">南宁交警发布环广西世巡赛出行提示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-17</span>
+          <span class="source-tag">📍 南宁日报</span>
+        </div>
+        <div class="news-abstract">南宁交警针对世巡赛南宁段发布交通管制与绕行提示。赛事交通组织对信号临时配时、可变情报板发布、路口诱导屏联动有强需求，且需要在短时间内完成多路口协调控制。南宁正在推进的信号联网与诱导系统如能承接此类临时管控场景，具备向其他赛事城市复制的条件。</div>
+        <a href="http://m.toutiao.com/group/7697460582135513638/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">天等开出首张机动车炸街扰民罚单：依据生态环境法典处罚1800元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">天等县公安局交管大队依据新施行的生态环境法典，对非法改装排气管噪声扰民行为开出首张罚单，罚款1800元。炸街治理的取证难点在于噪声数值固定与车辆识别同步，需要声学抓拍阵列与卡口视频联动。这是新法落地后的首个案例，全区各市县都将跟进，声学抓拍设备存在明确的窗口期机会。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1016/c412510-41723606.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁交警开展不系安全带专项整治：无人机空中宣传加地面执勤空地结合</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 广西新闻网</span>
+        </div>
+        <div class="news-abstract">10月14日南宁市公安局交管支队在全市统一部署不系安全带专项整治，各大队设检查点，在沙井收费站等点位用无人机悬停循环播放提示，形成无人机空中宣传加地面执勤的空地结合勤务模式，高速公路管理三大队同步开展。这是南宁交警首次公开把无人机作为常态化勤务装备使用，对应无人机机巢、车载起降平台、喊话挂载与视频回传的持续采购需求。</div>
+        <a href="http://news.gxnews.com.cn/staticpages/20261015/newgx6ad05ab1-22004283.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林市交管、车管服务窗口2026年10月17、18日周末业务办理通告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 桂林市人民政府</span>
+        </div>
+        <div class="news-abstract">桂林市公安局交管支队与车辆和驾驶人管理所公布周末延时服务安排，涉及七星、临桂、永福、恭城、阳朔、灌阳等多地车驾管窗口与检测站，办理期满换证、补换号牌、机动车检验等业务，并提示需提前在交管12123预约。窗口延时服务背后是自助服务终端、自助体检拍照机、车驾管业务自助机的持续投放需求，检测站与登记服务站的视频监管同样是标配。</div>
+        <a href="http://www.guilin.gov.cn/ywdt/bmxx/t28232398.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">崇左公安交管圆满完成环广西世巡赛崇左赛段安保：铁骑编队护航</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 崇左市公安局交管支队</span>
+        </div>
+        <div class="news-abstract">崇左交管支队以铁骑编队方式完成世巡赛崇左赛段交通安保，并为200余名外籍人员办理临时驾驶证。国际赛事交通安保需要摩托铁骑车载视频、赛道沿线临时监控、移动指挥车与信号临时管控。铁骑车载取证设备与赛事沿线视频补点是可复用的产品线，崇左、防城港、北海沿海三市赛事常态化值得跟踪。</div>
+        <a href="http://m.toutiao.com/group/7696560484769727039/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港交管支队2027-2028年度公路交通安全防控体系运维保障服务采购意向：199.468万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">采购需求非常具体：20套固定测速卡口、3套区间测速卡口、10套违停抓拍、26套高空监控瞭望、6套禁止线抓拍、2个交警执法站监控设备，以及G358根竹路段7套电警和16套高点硬件及配套，含用网用电保障，预算199.468万元，预计2026年12月采购。这是本季度广西交警最明确的运维+硬件混合包，26套高空瞭望是核心标的，建议11月前完成方案与报价预沟通。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=u1sR4OjYL2RYo%2FUwSV%2FDog==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">崇左市公安局交警支队智能交通第三期项目更正公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">项目编号CZZC2026-G1-990188-YZLZ，更正公告涉及信号绿波带控制系统，并明确要求符合GA/T1049.2-2024协议与GB/T28181-2022接入标准。绿波带控制与国标接入是本期技术门槛所在，能同时满足信控优化与视频联网双重要求的供应商范围有限。建议立刻索取更正后文件，核对绿波带算法要求与既有信控品牌兼容性，判断是否需要联合体投标。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/gzgg/202610/t20261014_27492674.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贺州深化道路交通安全风险隐患排查治理暨存量清零攻坚行动项目：125万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 乙方宝招标信息</span>
+        </div>
+        <div class="news-abstract">项目预算125万元，内容含信号灯及控制系统、电子警察、支路哨兵、太阳能路灯，明确要求接入统一联网信号控制平台，预计2026年11月采购。支路哨兵是近两年农村与城郊事故预防的新品类，单价低但数量大，配合信号灯联网改造可形成组合包。建议以存量清零攻坚的政策口径切入，向贺州支队提交隐患排查点位与设备配置对应清单。</div>
+        <a href="https://www.yfbzb.com/inviteBid/detail/20261014_638457563.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁交警开展电动自行车未佩戴安全头盔专项整治</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 南宁市人民政府</span>
+        </div>
+        <div class="news-abstract">南宁在全市范围开展电动自行车不戴头盔专项整治。电动自行车违法取证长期依赖人工，涉及电动自行车号牌识别、骑乘人员头盔佩戴AI检测、非机动车道视频覆盖三类技术需求。南宁电动自行车保有量居全区首位，若推进非现场执法，将是千万元级的视频与算法改造市场，建议提前做算法准确率测试与试点点位方案。</div>
+        <a href="https://www.nanning.gov.cn/ywzx/bmdt/2026nbmdt/t6743733.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州交管支队公安交通集成指挥平台警用无人机应用系统硬件采购：82.2万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">柳州市公安局交通管理支队为公安交通集成指挥平台配套采购警用无人机应用系统硬件，预算82.2万元，预计2026年11月启动采购。关键在于系统要接入既有集成指挥平台，意味着飞控数据、图传、AI识别结果都要与平台对接，具备平台侧适配能力的厂商优势明显。建议提前对接柳州支队指挥中心，明确接口规范与机巢部署点位。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=9A3vvE4h3WxAXbZxHo7fjA==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂平交警紧盯国省道风险隐患推进事故预防：升级合成指挥中心</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 桂平市人民政府</span>
+        </div>
+        <div class="news-abstract">桂平市公安局交管大队围绕国省道风险隐患推进事故预防，重点升级合成指挥中心，整合多警种情报资源，强化重点车辆与重点路段的动态管控。县级交警合成指挥中心升级通常包含大屏拼接、视频汇聚、卡口数据融合与研判应用，单县体量在100万至300万元。桂平是人口大县、国省道里程长，具备示范复制价值。</div>
+        <a href="http://www.guiping.gov.cn/xxgk/zdlyxxgk/shgysy/jtly/jtglyfw/t28219987.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂平交警四措并举筑牢农村道路交通安全防线</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 桂平市人民政府</span>
+        </div>
+        <div class="news-abstract">桂平交警从源头管理、路面管控、宣传教育、隐患治理四方面强化农村道路交通安全。农村道路是广西事故预防的主战场，对应支路哨兵、农村公路卡口、弯道预警、村口减速带与视频监控等低成本高频设备。建议把桂平与贺州存量清零项目合并研究，形成农村道路安全提升的标准化产品包。</div>
+        <a href="http://www.guiping.gov.cn/xxgk/zdlyxxgk/shgysy/jtly/jtglyfw/t28220068.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">环江开展整治电动自行车违法活动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">环江毛南族自治县开展电动自行车交通违法集中整治。县域电动自行车管理普遍缺乏非现场执法手段，主要靠路面警力，对便携式执法终端、移动抓拍设备、简易卡口有实际需求。此类县级项目单体金额不高，但河池、百色、来宾等下辖县数量多，适合以标准化轻量方案批量覆盖。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1013/c179409-41720523.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">大化多部门联动整治道路运输乱象：一次设卡多项检查</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 大化瑶族自治县人民政府</span>
+        </div>
+        <div class="news-abstract">大化交通运输综合行政执法大队联合公安交管大队，在城区重点路段开展打非治违与交通安全联合整治，一次设卡同步查非法营运、酒驾与车辆安全隐患，今年累计出动执法人员252人次。联合执法对移动执法车、车载布控球、酒精检测数据回传、执法记录仪联网有组合需求，县级交通运输执法队伍装备更新是可切入的细分市场。</div>
+        <a href="http://www.gxdh.gov.cn/xwdt/dhxw/t28217648.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">灵川交警严查涉牌违法货车</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">灵川交警针对货车涉牌违法开展专项整治，重点查处遮挡、污损、伪造号牌等行为。货车涉牌违法取证高度依赖卡口相机的识别能力与补光条件，尤其是夜间与雨雾天气。这为卡口相机升级、多帧融合识别算法提供了直接需求由头，桂林周边国道与高速出入口是重点点位。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1012/c349603-41719683.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1012-1018.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1012-1018.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1012-1018.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1012-1018.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
