@@ -1,166 +1,413 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广西交通运输行业简报 · 2026.10.26 — 11.01</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>交通行业 · 广西行业双周简报 | 2026.10.26-11.01</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>🚄 广西交通运输行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.26 — 11.01</span>
-      <span>📊 本周 6 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>交通行业行业要闻</h1>
+    <div class="date">2026年10月26日 — 11月1日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期交通条线是「通车收官＋数字化改造」双线并行。硬件侧，平塘至天峨高速10月30日通过竣工验收（59.1公里、总投资118.3亿元、2处收费站），桐金高速10月23日通车（19.8公里），龙门大桥通车后钦北防进入半小时经济圈，路网加密直接催生新增路段监控、隧道机电、收费站与服务区安防需求。数字化侧，广西高速公路联网收费系统「手机+」无卡便捷通行项目646.1万元公开招标（11月16日开标），混合车道11月1日起全面停发纸质发票，收费系统改造进入实施期。水运与港口是本周期最亮的一块：西部陆海新通道智慧水运大模型在西江20座船闸和钦州港5个码头正式上岗，过闸排档从20分钟压到20秒；防城港渔澫港区401号泊位二期智能化升级进入收官验收。建议重点跟G7522南宁至北海段、灌阳至平乐高速配套机电，以及平陆运河沿线与北部湾港的智慧化增量。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">16条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西交投集团公告公示：G7522贵阳-北海公路（南宁至北海段）多个技术服务项目公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-01</span>
+          <span class="source-tag">📍 广西交通投资集团</span>
+        </div>
+        <div class="news-abstract">广西交投集团本周公告公示密集，涉及G7522贵阳-北海公路（南宁至北海段）项目不动产确权登记技术服务中标候选人公示（11月3日）、该项目500kV及35kV/110kV/220kV输电线路迁改工程可研与施工图评审/编制服务询比采购（11月6日），以及广西智投机电工程有限公司2026年第二批机电设备（光伏发电及储能成套设备）采购、施工劳务合作（充电桩综合施工）采购等。G7522南宁至北海段是广西当前体量最大的高速新建项目之一，输电线路迁改说明已进入实质性施工准备阶段。这是长周期大项目的早期入口，建议从现在开始跟踪该项目的机电工程（监控、收费、通信、隧道机电）招标计划，同时关注沿线服务区光伏储能与充电桩的配套机会。</div>
+        <a href="http://gxjttzjt.com/channels/19.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平塘至天峨高速公路通过竣工验收，59.1公里、总投资118.3亿元、设2处收费站</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-31</span>
+          <span class="source-tag">📍 广西交通投资集团</span>
+        </div>
+        <div class="news-abstract">2026年10月30日，由广西交通投资集团投资建设的平塘至天峨高速通过自治区交通运输厅组织的竣工验收，工程质量与综合评价均评定为优良。项目属广西高速网「纵10」线天峨（黔桂界）至北海高速的重要组成部分，起于南丹县云阳关，经南丹、天峨，止于天峨枢纽互通，全长59.1公里，双向六车道、设计速度100km/h，桥梁39座、隧道14座、桥隧比43.4%，设互通立交3处、收费站2处、服务区与停车区各1处。竣工验收意味着项目从建设期转入运营期，运营期的安防需求是持续的：14座隧道的机电与视频监控（隧道事件检测、火灾报警、紧急电话）、2处收费站的卡口与车道监控、服务区的周界与停车场管理。建议以「隧道机电＋运营期监控运维」打包对接广西交投天峨运营公司。</div>
+        <a href="http://www.gxjttzjt.com/contents/13/22416.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">西部陆海新通道智慧水运大模型正式上岗，西江20座船闸与钦州港5个码头投入使用</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 中国交通报（北部湾港集团）</span>
+        </div>
+        <div class="news-abstract">由广西北部湾国际港务集团牵头、联合交通运输部天津水运工程科学研究院等研发的西部陆海新通道智慧水运大模型，已在西江船闸群和北部湾钦州港调度一线正式上岗一个多月。实测效果：长洲枢纽四线船闸联合排档方案编制耗时从约20分钟降至20秒以内，闸室利用率提高约5%，预计年增过闸船舶约6700艘次、通货能力提升1100万吨；钦州港72小时船舶昼夜靠离泊计划编制耗时从1.5小时压缩至1分钟以内，已推广至集装箱、散杂货、油品等5个不同类型码头。技术底座是涵盖8000万条数据、3500万节点的智慧水运知识图谱。这条对安防厂商的启示是：水运智慧化的下一层需求是「感知数据供给」——船闸与港区的视频、AIS、雷达、气象数据要喂给大模型，前端感知设备的密度和精度会成为瓶颈和机会。</div>
+        <a href="http://m.toutiao.com/group/7702262819526181419/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港渔澫港区401号泊位二期智能化升级进入收官验收，全自动堆取料与智能装车</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 国际在线广西频道</span>
+        </div>
+        <div class="news-abstract">10月28日「2026西部陆海新通道广西行」媒体采访团走访防城港渔澫港区401号泊位。该泊位是20万吨级散货专业化泊位，设计年通过能力670万吨，主接煤炭、铁矿石、铝土矿。一期2021年12月投产，二期后方堆场、配套设施及智能化升级工程已进入收官验收阶段，重点聚焦全自动堆取料、智能装车、全流程联动调度三大升级，全面替代传统人工操作。现场配备4台桥式抓斗卸船机、4台全自动斗轮堆取料机，运用高清摄像头、斗轮机远程自动智能识别及自动化作业技术。2026年7月「非洲—防城港—新疆」海铁联运通道在此开通。可切入的是港区智能视频（大机防碰撞、皮带异物检测、堆场盘点）、以及作业安全管控系统。</div>
+        <a href="http://m.toutiao.com/group/7702120937923232271/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">《综合交通枢纽发展「十五五」规划》印发，南宁、钦州—北海—防城港、柳州、桂林入选全国性枢纽城市</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 广西卫视</span>
+        </div>
+        <div class="news-abstract">交通运输部等八部门印发《综合交通枢纽发展「十五五」规划》，部署19条重点任务、6个专栏。广西相关要点：南宁、钦州—北海—防城港、柳州、桂林入选全国性综合交通枢纽城市；南宁五象站、北海涠洲岛码头列入「新建综合客运枢纽港站」；凭祥（友谊关）列入需提升对外辐射、对内连通功能的边境口岸。规划明确要「推动枢纽港站安全智慧绿色发展」，要求枢纽机场接入轨道交通、港口码头后方堆场接入铁路专用线。这是一个五年期的政策红利窗口，南宁五象站新建意味着从站房智能化（人脸进站、安检、视频监控、客流分析）到周边枢纽配套的一整套需求。建议立即建立广西四大枢纽城市的项目跟踪清单。</div>
+        <a href="http://m.toutiao.com/group/7702299839639388713/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">龙门大桥通车带动钦北防进入「半小时经济圈」，广西首座千米级跨海悬索桥</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 广西云-广西日报</span>
+        </div>
+        <div class="news-abstract">10月29日「桂在交旅」采风团走访龙门大桥。大桥是广西首座千米级跨海悬索桥，也是平陆运河出海口标志性工程，全线总长7.637公里、桥梁总长6.597公里、主塔高174米，飞架龙门港镇与钦州港区之间。通车后防城港至钦州港车程由1.5小时压缩至约25分钟，推动钦北防一体化和「半小时经济圈」。跨海特大桥的安防配置是高标准场景：主塔与桥面的高清视频全覆盖、结构健康监测、船舶防撞预警、气象与风速监测、以及桥区交通事件检测（逆行、停车、抛洒物）。可切入方向是「跨海大桥智慧管养平台」——把视频、结构监测、通航安全整合到统一平台，这是海康这类厂商能拿高价值订单的方向。</div>
+        <a href="https://m.weibo.cn/detail/5359474677384239" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钦州自动化集装箱码头自研智慧港口混合交通大模型与「智港盾」作业风险管控系统</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 北青网</span>
+        </div>
+        <div class="news-abstract">北部湾港钦州自动化集装箱码头是全球首个U型工艺布局、全国首个海铁联运全自动化集装箱码头，岸线总长1302米，可满足20万吨级集装箱船靠泊，设计年吞吐量260万标箱，现有航线43条。码头自主研发全国首例「智慧港口混合交通大模型」及「智港盾」作业风险管控系统，底层以IGV智能导引运输车替代人工集卡，依托高精地图和多源融合导航定位实现跨场域自主行驶，上层用大模型驱动IGV集群完成路径规划、避障决策与设备协同。全自动化码头的安防是全新命题：人机混行区域的安全管控、IGV与人工集卡的冲突预警、堆场高堆位的视觉盘点。「智港盾」这类作业风险管控系统正是海康视频AI＋雷视融合的强项场景，建议以感知层配套切入。</div>
+        <a href="http://m.toutiao.com/group/7701956681567191613/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁吴圩国际机场T2航站楼水电表智能化改造项目询价，预算30.07万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 广西壮族自治区公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">项目编号ZJZB-2026-24346，采购人广西机场管理集团南宁吴圩国际机场有限公司，预算300745.99元（含税），要求自签订合同起90日历天内完成安装及系统调试，响应截止11月5日9:30。资格要求供应商具备电子与智能化工程专业承包二级及以上资质，项目经理需机电工程二级建造师、现场操作人员需持低压电工证。这是机场智慧能源管理的一个子项，虽然金额小，但说明南宁机场正在做楼宇侧的智能化改造（T3航站楼在建、T2在做存量升级）。可切入方向：机场能耗管理平台、楼宇自控与安防联动、以及T3航站楼建成后的整体智慧机场系统。建议以T2改造为切入点，争取进入T3的供应商名录。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001006001&infoid=62407264b8f213649710bd904c983cfd" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平陆运河带动广西最大水上综合能源枢纽通江达海，运河动态持续更新</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 广西壮族自治区交通运输厅</span>
+        </div>
+        <div class="news-abstract">自治区交通运输厅运河动态栏目本周披露「从水上看广西｜广西最大水上综合能源枢纽服务平陆运河通江达海」。平陆运河自9月16日建成通航后持续运营，此前关键节点包括：感知网与传输网全面建成（8月18日）、电子航道图上线运行（8月7日）、荣获两项国际大奖（10月14日）、通航满周全线运行平稳有序（9月24日）、累计过货量突破100万吨（10月22日）。平陆运河是国内首条全生命周期数字孪生智慧运河，「感知网＋传输网＋电子航道图＋数字孪生」这一套体系本身就是巨大的安防与感知设备市场，涵盖航道视频监控、船闸周界、桥梁防撞、水文气象感知。建议把平陆运河沿线作为长期跟踪的标杆项目，从运河经济带的配套安防切入。</div>
+        <a href="http://jtt.gxzf.gov.cn/ztzl/plyh/yhdt/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西高速公路收费站混合车道11月1日起全面推行电子发票，停止提供纸质票据</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 广西壮族自治区交通运输厅</span>
+        </div>
+        <div class="news-abstract">自治区交通运输厅、财政厅、税务局联合通告，自2026年11月1日起全区高速公路全面推行电子发票（票据），停止提供纸质发票，此前9月7日至10月31日为并行期。司乘通过「桂小通」微信小程序或「e路畅通·票根」小程序获取。这条政策表面是票据电子化，实质是收费站车道流程再造：收费员不再打印纸质票据，车道通行时间压缩，车道设备布局与工位设计需要调整，同时为「手机+」无卡通行铺路。对安防厂商的商机是：车道摄像机与车牌识别设备需与新的电子发票/无卡通行流程做数据打通，收费亭监控、车道事件检测（倒车、滞留、闯关）也要适配新流程。建议与联网收费清分结算中心及捷通公司对接。</div>
+        <a href="http://www.bsyj.gov.cn/ztfw/jt/wyk/jyzctz/t28272311.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">灌阳至平乐高速平乐连接线、平乐收费站、新圩服务区（右侧）工程施工中标，2.07亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 广西壮族自治区公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">项目编号E4500002802005881，10月19日开标，中标人为中铁一局集团有限公司与广西桂秦公路工程有限公司联合体，中标价206876122.84元，招标人为广西新平高速公路有限公司，代理机构为广西交投宏冠工程咨询有限公司。施工范围含平乐连接线、平乐收费站、新圩服务区（右侧）。这是灌阳至平乐高速的配套工程，土建中标意味着后续的机电、房建装修、以及收费站与服务区的智能化系统将在未来12-18个月内陆续招标。建议提前介入设计阶段，争取在收费站的卡口/车道监控、服务区的停车场管理与周界防范、以及连接线的交通监控上形成技术方案前置。</div>
+        <a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_gcjs/jtgc/zbjggs_43228/t28270413.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁绿城风景道横州市平陆运河西岸连接线旅游公路勘察设计中标，全长11.727公里</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 南宁市公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">项目编号E4501002816025316001，招标人与建设单位为横州市交通运输局，建设规模为南宁绿城风景道横州市平陆运河西岸连接线旅游公路，起点平塘江口，经石排村、丕地村、叭村、三阳村、凤凰屯，终点新福镇，四级公路标准、总里程11.727公里、计划总投资约7625万元。预中标人为广西路桥工程集团有限公司，投标报价272万元，服务期120日完成提级论证、可研、一阶段施工图勘察设计。这是平陆运河经济带文旅配套路网的典型项目，四级旅游公路的安防配置相对轻量，但「风景道」概念下会有沿线景观监控、游客服务点、应急救援呼叫等需求。建议以运河经济带沿线文旅公路的整体智慧化方案做打包跟踪。</div>
+        <a href="https://ggzy.jgswj.gxzf.gov.cn/nnggzy/projectDetails.html?categorynum=001001003004&infoid=7202d6a9-365d-4fa8-9c5a-1daeec906ebc" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西高速公路联网收费系统「手机+」无卡便捷通行项目招标，预算646.1万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">采购主体为广西壮族自治区收费公路联网收费清分结算中心，项目编号GXZC2026-G3-003428-YZLZ，预算646.1万元（省中心300.28万元、站级及车道345.82万元），11月16日9:30开标，工期自签订合同起26个月。建设范围包括省级运营支撑服务、省级在线计费系统优化升级、省级其它系统适配性改造（清分结算、交易对账、稽核管理、客户服务、运行监测、部省传输）、站级系统升级、车道软件升级（不含广西交投车道软件）。目标节点明确：2026年底全区出口MTC车道小客车无卡停车通行全覆盖。这条商机对海康的价值在车道侧——无卡通行意味着车道要新增车牌识别、车型识别、手机信标识别的多模态融合，以及车道视频取证。可切入车牌识别相机、车道一体化设备、稽核取证视频。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202610/t20261026_27561500.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桐金高速（桐木至金秀段）建成通车，主线19.8公里、双向四车道</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 广西交通（自治区交通运输厅）</span>
+        </div>
+        <div class="news-abstract">10月23日，柳州至金秀公路（桐木至金秀段）通车现场会在来宾市金秀瑶族自治县举行，自治区交通运输厅总规划师李素艳宣布通车。项目属广西高速网「联4线」，起于金秀县桐木镇四坪屯附近，设桐木枢纽互通与贺巴高速蒙山至象州段相接，止于金秀县金田村附近，主线全长19.8公里、双向四车道、设计速度100km/h。项目串联盘王界、圣堂山等国家级旅游景点，形成瑶山生态旅游通道。新通车路段的标准配置需求包括：全程视频监控、隧道与高边坡监测、收费站卡口、以及旅游旺季的车流与客流分析。金秀是生态旅游县，可推「旅游公路＋景区联动」的智慧旅游交通方案。</div>
+        <a href="http://m.toutiao.com/group/7700774435409740307/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平南县公安局平容高速视频监控项目建设公开招标，预算749.5万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 贵港市公共资源交易平台</span>
+        </div>
+        <div class="news-abstract">项目编号GGZC2026-G1-210278-JZJT，采购人平南县公安局，预算总金额7495093元，11月16日9:00开标，合同履约期自签订合同起30个日历日内交付安装使用并验收合格。内容是平容高速（平南至容县高速）的视频监控项目建设。这是典型的「公安建设、服务高速」模式——高速通车前的公安视频监控配套，采购主体是县公安局而非交投，说明平容高速即将通车或已通车，公安侧需要在高速沿线布建卡口、监控与服务区治安点位。749万元体量在县级公安项目里属较大单，且工期只有30天，对交付能力要求高。建议立即组织投标，重点在高速场景的前端选型（远距离、强逆光、抗风）与专网传输方案。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/pnggzy/projectDetails.html?categorynum=001002005002&infoid=1ac5b8d2-4a9b-45fe-9d36-08e0d921a587" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁机场旅客吞吐量达1164.4万人次同比增9.1%，冬春航季运营客运航线101条</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 南宁市人民政府（南宁日报）</span>
+        </div>
+        <div class="news-abstract">截至10月17日，南宁吴圩国际机场完成运输航班8.1万架次、旅客吞吐量1164.4万人次，同比分别增长5%和9.1%，增幅高于行业平均。2026/2027冬春航季（10月25日至2027年3月27日）共31家国内外航空公司计划运营客运航线101条，其中国内86条、国际地区15条，通达国内外城市82个。机场正在推进「经邕飞·东盟行」中转服务与「邕易联·空铁通」空铁换乘品牌。吞吐量持续增长直接推高机场安防压力：航站楼人流密度监控、安检通道效率优化、行李系统监控、机坪与围界防范都面临扩容需求。结合T3航站楼在建，建议以「智慧机场安防整体解决方案」对接广西机场管理集团。</div>
+        <a href="https://www.nanning.gov.cn/ywzx/bmdt/2026nbmdt/t6751683.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是港口规划落地开闸。</strong>《百色港总体规划（2035年）》获自治区政府批复，“一港八区”、17个作业区、适配右江2000吨级航道，平陆运河上游港口群正式进入建设与前期报批阶段。</p>
-    <p><strong>二是枢纽扩能带动监管压力。</strong>钦州水上服务区综合能源站投用、防城港东湾液体化工码头首船5000吨酸性油接卸，油气加注与危化品作业量上来，安全监管与智能感知配套被同步推上台面。</p>
-    <p><strong>三是公路水路安全管养加密。</strong>国道324线隆安8公里灾害防治完工、浦北拆除10根违建电线杆、漓江美丽航道入选全国试点，巡查、隐患治理与应急处置走向常态化、精细化。</p>
-  </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>百色港17个作业区规划落地 · 港区周界、卡口与智慧港口平台同步规划</li>
-      <li>平陆运河能源站油气加注 · 防爆监控、气体探测与船岸联动报警</li>
-      <li>东湾液体化工码头扩品 · 危化泊位AI行为识别与人员定位</li>
-      <li>国道324线边坡治理完工 · 边坡位移监测与雨量视频巡查配套</li>
-      <li>浦北涉路违建整治 · 无人机路产巡查与AI变化检测取证</li>
-      <li>漓江美丽航道全国试点 · 航道视频监控与船舶动态识别</li>
-    </ul>
-  </div>
-  <div class="section">
-    <div class="section-title">规划与枢纽</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-30</span>
-          </div>
-          <h4><a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t28282241.shtml" target="_blank" rel="noopener noreferrer">《百色港总体规划（2035年）》获自治区批复</a></h4>
-          <div class="card-body">
-            <p>自治区政府批复原则同意《百色港总体规划（2035年）》，构建“一港八区”格局，覆盖右江区、田阳、田东、平果、西林、隆林、田林、乐业8个港区，规划17个作业区，适配右江2000吨级航道，配套二塘、头塘、祥周、那厘等作业区进港铁路专用线。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>新港区从零起步，周界防护、港区卡口、岸线视频与智慧港口平台可同步规划。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t28282241.shtml" target="_blank" rel="noopener noreferrer">广西交通运输厅</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t28280894.shtml" target="_blank" rel="noopener noreferrer">平陆运河钦州水上服务区综合能源站投用</a></h4>
-          <div class="card-body">
-            <p>全国首座岸基水上综合能源站——中国石油平陆运河钦州水上服务区综合能源站投运，配大流量岸基加注设备，每分钟可加注柴油450升、LNG150公斤，服务区可同时停靠23艘5000吨级船舶，同步提供船员休憩、物资采购与船舶污染物接收服务。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>油气加注属高危作业，防爆摄像、可燃气体探测与船岸联动报警是硬需求。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t28280894.shtml" target="_blank" rel="noopener noreferrer">广西交通运输厅</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-30</span>
-          </div>
-          <h4><a href="https://www.bbwport.com/bbwport/document?documentId=2496&amp;columnsId=2070" target="_blank" rel="noopener noreferrer">防城港东湾液体化工码头首卸5000吨新货种</a></h4>
-          <div class="card-body">
-            <p>10月25日，载5000吨工业级酸性油的“云翔65”轮靠泊北部湾港防城港东湾液体化工码头1#泊位并完成接卸，该货种10月22日通过审批、3天实现首船落地，卸船后交化工企业加工再装船出口欧洲，标志面向东盟危化品接卸能力提升。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>液体化工泊位扩品，AI视频行为识别、人员定位与泄漏预警需求随之增加。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://www.bbwport.com/bbwport/document?documentId=2496&amp;columnsId=2070" target="_blank" rel="noopener noreferrer">北部湾港集团</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">公路安全管养</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/t28264704.shtml" target="_blank" rel="noopener noreferrer">国道324线隆安段8公里灾害防治工程完工</a></h4>
-          <div class="card-body">
-            <p>隆安公路养护中心实施的国道324线K1766+500至K1774+500路段灾害防治工程完工，针对多处滑坡分别采取削坡减载、路堑挡土墙、锚杆挂网喷砼、修复坡顶截水沟与路基边沟等措施，消除汛期边坡再次失稳滑坡风险，保障沿线群众出行与物资运输。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>边坡治理后可配套位移监测、雨量站与视频巡查，形成公路地灾预警点位。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/t28264704.shtml" target="_blank" rel="noopener noreferrer">广西交通运输厅</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/t28278429.shtml" target="_blank" rel="noopener noreferrer">浦北公路养护中心拆除10根违建电线杆</a></h4>
-          <div class="card-body">
-            <p>浦北公路养护中心联合浦北县交通运输综合行政执法大队巡查省道207线K153至K155福旺镇华新村路段时，发现施工单位未经审批在公路用地内架设电线杆10根，现场制止并宣讲公路法，随后联动清拆全部电线杆、平整复原公路用地。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>路产巡查靠人盯效率低，无人机航拍比对与AI变化检测可提升发现率。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/t28278429.shtml" target="_blank" rel="noopener noreferrer">广西交通运输厅</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">水运服务提质</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/t28278733.shtml" target="_blank" rel="noopener noreferrer">漓江美丽航道案例获评全国交通运输服务实践案例</a></h4>
-          <div class="card-body">
-            <p>自治区桂林航道和船检管理中心报送的《党建领航水运建设 服务为民显担当》案例获评2026年度全国交通运输服务实践案例。漓江美丽航道项目入选全国首批内河航运高质量发展交通强国专项试点，特枯水期与“6·20”洪水期间实现游船无滞航、无转点发船。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>旅游航道安全监管要求高，航道视频、船舶动态识别与水位监测可打包。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://jtt.gxzf.gov.cn/xwdt/jtxw/t28278733.shtml" target="_blank" rel="noopener noreferrer">广西交通运输厅</a></div>
-        </div>
-  </div>
+
   <div class="footer">
-    <p><strong>广西交通运输行业简报</strong> · 数据来源：政府官网及行业公开渠道</p>
-    <p style="margin-top:6px;">仅供内部行业研究参考 · 生成于 11.01</p>
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-</main>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1026-1101.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1026-1101.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1026-1101.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1026-1101.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
