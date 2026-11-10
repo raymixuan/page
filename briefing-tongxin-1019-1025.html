@@ -2,190 +2,349 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>📡 广西通信运营商行业简报（2026.10.19—10.25）</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>运营商 · 广西行业双周简报 | 2026.10.19-10.25</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>📡 广西通信运营商行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.19 — 10.25</span>
-      <span>📊 本周 8 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>运营商行业要闻</h1>
+    <div class="date">2026年10月19日 — 10月25日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期运营商侧呈现“网络提质、算力出海、政企下沉”三条线。网络侧，广西通信管理局披露全区县城及以上区域5G基站已开通5G-A RedCap，高铁沿线实现5G连续覆盖，2026年全国高铁场景与移动物联网质量专项测试中广西5个重点单项进入全国领先榜；环广西世巡赛期间全行业投入1808人次、508辆车次、临时布放光缆16.8公里、开通专线21条，河池赛段新建补盲站点87个、敷设光缆117公里，是一次移动场景全域覆盖的实战演练。算力侧，南宁国际通信业务出入口局作为国家第二批、30年来首次增设的节点打通面向东盟的低时延通道，五象云谷词元工厂每小时产能2000亿词元，10月18日签下2亿美元AI词元跨境销售合同，为国产词元出海第一单，智算中心整体拟投36亿元。政企侧，柳州电信量子云印章在三江侗族自治县财政局、八江镇人民政府常态化运行；广西移动第十七批DICT联盟合作伙伴25家入围；移动崇左联合申报的“边江智州”获绽放杯广西区域赛一等奖。建议围绕5G-A RedCap承载视频与感知类终端、重大活动临时组网、地市DICT生态伙伴三个抓手布局，同时提前介入智算中心与数据中心的安防、动环、能碳一体化配套。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">9条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西信息通信业顺利完成2026环广西世巡赛通信保障</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 广西壮族自治区通信管理局</span>
+        </div>
+        <div class="news-abstract">赛事设6个赛段、总里程1068.6公里，串联崇左、百色、河池、来宾、南宁5市，22支车队154名车手参赛。全行业累计投入保障1808人次、车辆508辆次、应急发电机108台次，临时布放光缆16.8公里、开通专线21条。河池赛段赛前完成信号路测1708公里、梳理弱覆盖和盲区93段、新建补盲站点87个、敷设光缆117公里；崇左部署应急通信车5辆、完成23个小区扩容；百色形成场景化应急处置清单，保障2013个小区；南宁巡查线路163公里、机房36个。这份清单本质上是一次移动场景全域覆盖的演练：应急通信车、临时专线、无线+有线双路由，正是大型活动安保指挥体系的底层需求。可切入点是赛事与活动安保的移动视频回传、临时卡口与人流密度分析、指挥车改造，以及赛后把补盲站点转化为沿线视频监控的联网资源。</div>
+        <a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_c7cb039305844f9ca43afa414e45bb96.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国移动广西公司2026年集团类客户DICT联盟合作伙伴（第十七批）25家入围</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-23</span>
+          <span class="source-tag">📍 中国移动通信集团广西有限公司</span>
+        </div>
+        <div class="news-abstract">经评选，第十七批共25家公司入围广西移动DICT联盟，名单以附件形式公示。DICT联盟是地市政企项目的主要分包与交付通道，入围意味着可以跟着移动的标走区县政务、教育、医疗、园区类项目。对安防企业的直接价值是：广西移动在各地市承建的视频监控、智慧城市、数字乡村项目需要大量前端设备、平台软件与施工交付伙伴，联盟名单就是可对接的资源池；同时也要注意移动自研+集采的比重在上升，进入名单后应尽早绑定具体地市公司与行业条线，在项目前期方案阶段介入，而不是等招标公告发布才响应。</div>
+        <a href="https://www.10086.cn/aboutus/news/pannounce/gx/index_771_775_detail_56063.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西强化5G-A RedCap新技术应用，典型场景5G提质增效</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-22</span>
+          <span class="source-tag">📍 广西壮族自治区通信管理局</span>
+        </div>
+        <div class="news-abstract">官方明确5G-A RedCap作为轻量化5G技术，广泛应用于工业感知、智慧监测、公共安防等海量物联场景。目前广西已实现县城及以上区域5G基站开通5G-A RedCap，并推进新建高铁线路同步开通4G/5G网络，实现全区高铁沿线5G信号连续覆盖；2026年度全国高铁场景与移动物联网质量专项测试中，广西移动、广西联通上榜高铁场景广昆线优质网络，广西移动获评移动物联网网络评价领先运营商，南宁移动在综合网络质量、道路场景、咖啡厅场景同步上榜。对安防的直接含义是：低功耗摄像机、周界雷达、水情地质监测杆、单兵与车载终端可批量走RedCap通道，替代部分4G专网与有线回传，县级项目不再受模组成本制约；采购主体是三家运营商与铁塔，适合以终端与平台供应商身份进入其集采与行业方案清单。</div>
+        <a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_da325aaabbaa463493e570374bbbef3c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州电信推动量子云印章落地基层服务，已进入县财政局与乡镇政府</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-22</span>
+          <span class="source-tag">📍 人民邮电报（新浪财经）</span>
+        </div>
+        <div class="news-abstract">《柳州市量子科技应用产业高质量发展三年行动方案（2026—2028年）》围绕量子计算、量子通信、量子精密测量三大方向，明确优先在政务安全等领域打造应用试点。柳州电信以量子安全为底座，叠加智能审批、全程留痕、电子存证能力，打造量子云印章方案，已在三江侗族自治县财政局、八江镇人民政府实现常态化应用，构建用印申请、线上审批、智能核验、全程留痕的闭环体系，移动端远程审批破解人员不在岗的办事堵点。这是政务侧“安全可信”类需求的明确入口。对安防企业的意义在于，政务大厅、乡镇便民服务中心的“可信身份+可信签章+视频留痕”往往一体化招标，可顺着量子云印章的落地单位切入窗口视频、自助终端与档案室管控。</div>
+        <a href="https://finance.sina.com.cn/roll/2026-10-22/doc-inivzumx6035851.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">湘江边的“织网人”：广西移动为重大能源项目与高山林区建网</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-21</span>
+          <span class="source-tag">📍 中移党建（搜狐转载）</span>
+        </div>
+        <div class="news-abstract">桂林灌阳分公司党员突击队为灌阳抽水蓄能电站项目徒步勘测超100公里，敲定7处基站点位、3条主干光缆路由，敷设主干光缆28公里，建成2座5G、5座4G基站，实现施工、办公、生活区域信号全覆盖、千兆网络全线贯通；猫儿山从2001年首个2G基站到如今5G，并在山顶部署5G+4K摄像头用于漓江源头森林防火。两个信号：一是重大能源项目的“三通一平”里已经包含通信与视频，抽水蓄能、矿山、园区类项目的安防弱电有机会随主体工程一起打包；二是高山林火监控已从试点变成常态化建设，猫儿山模式可复制到保护区与国有林场。</div>
+        <a href="https://roll.sohu.com/a/1090770073_121615309" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">光伏+储能+微波：河池铁塔破解深山基站供电难题，实现“一站多商”</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-20</span>
+          <span class="source-tag">📍 金台资讯（人民网）</span>
+        </div>
+        <div class="news-abstract">环江大安才平桥基站地处偏僻山坳、无市电接入，河池铁塔联合河池移动、中兴通讯及润建股份采用“光伏+储能一体化+微波传输”方案，省去长距离电力管线和传输施工，开通后同时承载移动、电信、联通三家4G/5G设备，实现“一站多商、资源共享”；赛前完成赛道沿线17处关键节点补点建设，对283个重点保障基站两轮全覆盖巡检、整改隐患25处，预置应急发电机182台、油机448台次。这套方案的价值在于解决了山区无电无传输点位的建站成本，也意味着偏远林区、水库、边境线的视频监控点可以照此模式落地——光伏供电+储能+微波/卫星回传，正是森林防火、水文监测、边海防监控最缺的一环。</div>
+        <a href="http://m.toutiao.com/group/7698681821776609855/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">恭城月柿文化活动季：全县建成移动5G基站超60个，MR覆盖率98.35%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-19</span>
+          <span class="source-tag">📍 CCTIME飞象网</span>
+        </div>
+        <div class="news-abstract">恭城瑶族自治县全县柿子种植规模28.36万亩，“恭城月柿”连续4年入选中国区域品牌百强。中国移动广西桂林分公司为活动季制定专项保障方案，在核心区域部署4.9G与4G多频段设备、采用双光纤传输路由，依托莲花镇传输机房基带资源实现信号深度覆盖与容量倍增，并配备通信保障车与10人专项团队全天候值守。截至目前在恭城建设5G基站超60个，4G、5G网络覆盖率与MR覆盖率均达98.35%。县域覆盖率达到这个水平，说明乡镇一级已具备承载视频类业务的能力，农业农村局、文旅局主导的田园综合体、景区、产业园项目可以直接上高清视频与AI分析。可切入点是农业园区周界与农事监控、景区客流与停车管理、直播基地固定机位与网络配套。</div>
+        <a href="http://www.cctime.com/html/2026-10-19/1744868.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">人工智能应用“智”惠东盟：南宁国际通信业务出入口局与五象云谷词元工厂</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-19</span>
+          <span class="source-tag">📍 经济参考报（证券时报网）</span>
+        </div>
+        <div class="news-abstract">南宁国际通信业务出入口局是国家批复的第二批、也是继北上广之后新增的国际通信业务出入口局，开通后将有效解决广西及西部地区去向东盟的国际互联网“绕路”难题，降低时延，为跨境算力、跨境医疗、跨境金融创造落地条件；五象云谷词元工厂每小时最高产能2000亿词元，已接入16款主流大模型，企业开通算力调用只需90秒，底层算力调度、硬件运维与模型适配由平台承担。算力与跨境链路的成型会直接带动数据中心、智算园区的物理安全需求——周界、机房门禁与视频、动力环境监控、消防与防雷，以及园区级低空防控。可跟进主体是润建股份、五象云谷、南A中心及后续入驻的AI企业，切入点是智算中心的“安防+动环+能碳”一体化。</div>
+        <a href="https://stcn.com/article/detail/4224637.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">全国首个商业化运营的Token工厂拿下2亿美元AI词元出海首单</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-19</span>
+          <span class="source-tag">📍 21世纪经济报道</span>
+        </div>
+        <div class="news-abstract">润建股份全资子公司五象云谷与境外客户签署《AI词元跨境销售服务合同》，金额2亿美元（约13.38亿元），合同期一年，设年度最低采购金额；算力实体全部部署在境内五象云谷智算中心，客户通过跨境网络调用，按实际消耗词元结算。五象云谷智算中心整体拟投36亿元，不含服务器已投近13亿元，是广西等级最高、规模最大的智算中心，当前产能约2000亿Token/小时、中期规划2万亿Token/小时。持续的重资产投入意味着园区扩建、机房改造、UPS与液冷配套会陆续招标，安防侧对应机楼周界、重要区域双鉴探测、机房视频与门禁分级、施工期临时监控。润建同时是本地通信运维与数字化服务商，具备做总集的条件，适合作为渠道合作对象而非单纯甲方。</div>
+        <a href="http://m.toutiao.com/group/7698271183581495808/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是「十五五」规划与5G-A RedCap双落地，物联接入底座成型。</strong>广西通信管理局「十五五」规划经工信部转载，部署22项重点任务、14个专栏，布局超级基站、卫星通信、无人机通信、AI＋反诈；全区县城及以上5G基站已开通RedCap，明确指向工业感知、智慧监测、公共安防等海量物联场景。</p>
-    <p><strong>二是铁塔与运营商采购密集释放，站址智能化与楼宇智能化同步招标。</strong>中国铁塔广西公司发布2026—2028年铁塔维护更新改造服务采购（约3337.45万元）与新办公楼智能化系统建设（约379.23万元）；联通防城港智慧校园统一数据中心（100.67万元）、南宁智慧监管平台运维（67.83万元）询比采购。</p>
-    <p><strong>三是算力出海与AI行业应用同步突破，数据中心配套与AI监控需求放大。</strong>润建股份五象云谷2亿美元海外Token订单落地南宁，跨境光缆达15条；桂林遇龙河全域智能监控以AI算法分析游客行为、竹筏航速与水域污染；环广西世巡赛以「竞赛专网＋5G备份网」完成通信保障。</p>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>广西5G-A RedCap · 县城及以上5G基站已开通</li>
-      <li>《广西信息通信行业发展「十五五」规划》 · 22项重点任务</li>
-      <li>中国铁塔广西铁塔维护更新改造 · 约3337.45万元</li>
-      <li>铁塔广西新办公楼智能化系统 · 约379.23万元</li>
-      <li>联通防城港智慧校园数据中心 · 100.67万元</li>
-      <li>联通南宁智慧监管平台运维 · 67.83万元</li>
-      <li>2亿美元海外Token订单落地南宁 · 15条跨境光缆</li>
-    </ul>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1019-1025.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1019-1025.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1019-1025.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1019-1025.html">公安</a>
   </div>
-  <div class="section">
-    <div class="section-title">📋 规划与技术演进</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-tech">技术</span>
-            <span class="card-date">10-22</span>
-          </div>
-          <h4><a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_da325aaabbaa463493e570374bbbef3c.html" target="_blank" rel="noopener noreferrer">广西强化5G-A RedCap新技术应用：县城及以上5G基站已开通RedCap</a></h4>
-          <div class="card-body">
-            <p>广西信息通信业加快推进5G-A RedCap轻量化5G规模化部署，已实现县城及以上区域5G基站开通RedCap。文章明确指出RedCap“广泛应用于工业感知、智慧监测、公共安防等海量物联场景”，并在全国高铁、移动物联网质量专项测试中广西5个重点单项上榜。</p>
-            <p><strong>🔍 海康视角：</strong>RedCap低成本广连接特性是安防摄像头、物联网传感终端、智慧监测设备规模组网的接入底座，可切入园区/水利/交通物联安防方案。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_da325aaabbaa463493e570374bbbef3c.html" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局</a> <span class="opp-tag">🎯 RedCap物联接入</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-19</span>
-          </div>
-          <h4><a href="https://wap.miit.gov.cn/xwfb/gxdt/dfdt/art/2026/art_deb89b9d61984a6daa4615c3abe50d32.html" target="_blank" rel="noopener noreferrer">《广西信息通信行业发展“十五五”规划》发布：布局超级基站、卫星通信、AI＋反诈</a></h4>
-          <div class="card-body">
-            <p>规划围绕基础设施、行业治理、网络与数据安全、赋能千行百业、面向东盟国际合作5方面部署22项重点任务、14个专栏。提出2030年每万人5G（含5G-A）基站达50个、50G-PON端口6万个、自然村5G通达率超99.9%，并布局超级基站、卫星通信、无人机通信、AI＋反诈等。</p>
-            <p><strong>🔍 海康视角：</strong>超级基站/应急通信设施、城市数字化、智慧口岸、AI＋反诈工程均含视频监控、智能感知、指挥调度类采购预期。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://wap.miit.gov.cn/xwfb/gxdt/dfdt/art/2026/art_deb89b9d61984a6daa4615c3abe50d32.html" target="_blank" rel="noopener noreferrer">工业和信息化部 / 广西通信管理局</a> <span class="opp-tag">🎯 超级基站/应急通信</span></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">🏗️ 铁塔与运营商采购</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">招标</span>
-            <span class="card-date">10-21</span>
-          </div>
-          <h4><a href="https://m.bidcenter.com.cn/enterprise/gxzzzzqtxglj/" target="_blank" rel="noopener noreferrer">中国铁塔广西分公司2026-2028年铁塔维护更新改造服务采购（预算约3337.45万元）</a></h4>
-          <div class="card-body">
-            <p>招标人为中国铁塔股份有限公司广西壮族自治区分公司，招标编号FA-450001-20261020170429，预算约3337.45万元，代理机构为广西壮族自治区通信产业服务有限公司，覆盖全区铁塔维护更新改造。</p>
-            <p><strong>🔍 海康视角：</strong>铁塔站址维护更新常配套站址监控、动环监测、智能门禁、蓄电池防盗等设备，是安防产品配套的稳定渠道。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/enterprise/gxzzzzqtxglj/" target="_blank" rel="noopener noreferrer">中国铁塔电子采购平台（采招网收录）</a> <span class="opp-tag">🎯 铁塔站址智能化</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">招标</span>
-            <span class="card-date">10-20</span>
-          </div>
-          <h4><a href="https://m.bidcenter.com.cn/enterprise/gxzzzzqtxglj/" target="_blank" rel="noopener noreferrer">中国铁塔广西分公司新办公楼智能化系统建设项目（第二次）招标（预算约379.23万元）</a></h4>
-          <div class="card-body">
-            <p>招标人为中国铁塔广西分公司，预算约379.23万元，建设新办公楼智能化系统；同类项目“业务展厅与党建赋能中心建设”预算447.73万元，已于10月14日发布（窗口前）。</p>
-            <p><strong>🔍 海康视角：</strong>办公楼智能化系统含门禁、视频监控、会议、机房、大屏等子系统，是楼宇安防集成的直接商机。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://m.bidcenter.com.cn/enterprise/gxzzzzqtxglj/" target="_blank" rel="noopener noreferrer">中国铁塔电子采购平台（采招网收录）</a> <span class="opp-tag">🎯 楼宇智能化集成</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">招标</span>
-            <span class="card-date">10-23</span>
-          </div>
-          <h4><a href="https://m.qixin.com/bidding/abb40302-adb5-41ea-96aa-fc1e4146488b" target="_blank" rel="noopener noreferrer">中国联通广西多地分公司密集采购：防城港智慧校园数据中心、南宁智慧监管平台运维</a></h4>
-          <div class="card-body">
-            <p>①中国联通防城港市分公司“智慧校园统一数据中心建设”询比采购，预算约100.67万元；②中国联通南宁市分公司“智慧监管平台运维服务”询比采购，预算约67.83万元。同期联通广西还有光缆接头盒、密码资源服务（玉林）、尾矿库安全风险监测预警系统（桂林）等多类采购。</p>
-            <p><strong>🔍 海康视角：</strong>智慧校园（含视频监控、门禁、AI数据中心）、智慧监管、尾矿库监测预警均为安防/智能化强相关，可联合运营商投标或做产品配套。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://m.qixin.com/bidding/abb40302-adb5-41ea-96aa-fc1e4146488b" target="_blank" rel="noopener noreferrer">启信宝（中国联通广西分公司招投标信息）</a> <span class="opp-tag">🎯 智慧校园数据中心</span></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">☁️ 算力与行业应用</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目进展</span>
-            <span class="card-date">10-19</span>
-          </div>
-          <h4><a href="http://dsjfzj.gxzf.gov.cn/zgdmxxg/xxgjs/t28257186.shtml" target="_blank" rel="noopener noreferrer">广西打通中国—东盟数字新通道：2亿美元海外Token订单落地南宁</a></h4>
-          <div class="card-body">
-            <p>润建股份五象云谷词元工厂与某科技公司签订2亿美元海外Token服务订单，采用“国内Token、海外调用、按量计费”模式。依托南宁国际通信业务出入口局已建成15条跨境光缆，至新加坡、马来西亚、泰国、越南时延约20—30毫秒，工厂Token吞吐约2000亿/小时。</p>
-            <p><strong>🔍 海康视角：</strong>智算中心/数据中心机房建设带动动环监控、门禁、消防、周界安防配套需求，该项目此前已有总控室动环监控大屏采购先例。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://dsjfzj.gxzf.gov.cn/zgdmxxg/xxgjs/t28257186.shtml" target="_blank" rel="noopener noreferrer">中国新闻网 / 自治区大数据发展局</a> <span class="opp-tag">🎯 数据中心安防</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-19</span>
-          </div>
-          <h4><a href="http://www.gx.chinanews.com/kjny/2026-10-19/detail-ihfmihph4199991.shtml" target="_blank" rel="noopener noreferrer">桂林遇龙河全域智能监控：AI算法分析游客行为、竹筏航速与水域污染</a></h4>
-          <div class="card-body">
-            <p>遇龙河景区指挥中心已实现全流域覆盖智能摄像头回传高清画面，AI算法对游客行为、竹筏航速、水域污染等数据智能分析，隐患秒级预警。</p>
-            <p><strong>🔍 海康视角：</strong>典型“视频监控＋AI行为分析＋文旅/水利监管”落地样板，可复制到景区、水域、生态监测类安防项目。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://www.gx.chinanews.com/kjny/2026-10-19/detail-ihfmihph4199991.shtml" target="_blank" rel="noopener noreferrer">中新网广西新闻</a> <span class="opp-tag">🎯 AI视频监控</span></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-23</span>
-          </div>
-          <h4><a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_c7cb039305844f9ca43afa414e45bb96.html" target="_blank" rel="noopener noreferrer">广西信息通信业完成2026环广西世巡赛通信保障（竞赛专网＋5G备份网）</a></h4>
-          <div class="card-body">
-            <p>广西信息通信业完成2026环广西公路自行车世界巡回赛通信保障，运营商构建“竞赛专网＋5G备份网”双网保障，运用物联网、大数据、5G-A技术融合指挥视频会议、集群通信系统，形成覆盖指挥、数据、通讯的全链条智能化支撑。</p>
-            <p><strong>🔍 海康视角：</strong>大型赛事/活动的临时监控、应急指挥、物联网卡调度、视频回传方案可复制到文旅、体育、政务活动场景。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_c7cb039305844f9ca43afa414e45bb96.html" target="_blank" rel="noopener noreferrer">广西壮族自治区通信管理局</a> <span class="opp-tag">🎯 大型活动通信保障</span></div>
-        </div>
-  </div>
-</main>
-<div class="footer">
-  <p><strong>📌 数据来源</strong>：中国政府采购网广西分网、广西壮族自治区公共资源交易中心、广西各行业主管部门官网及各市人民政府门户网站等官方公开渠道</p>
-  <p style="margin-top:4px;">仅供内部参考 · 面向海康威视广西区域行业机会跟踪 · 2026.10.19—10.25</p>
-</div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
