@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>文体卫 · 广西行业双周简报 | 2026.10.12-10.18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>文体卫行业要闻</h1>
+    <div class="date">2026年10月12日 — 10月18日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期文体卫“医疗大基建+赛事密集+文旅放量”三头并进。医疗端最值得盯：广西中医药大学第一附属医院病房改造2.71亿元、改造45920平方米，设计招标明确含智能化系统，11月2日截止；广西妇幼保健院厢竹院区门诊楼改造4135.97万元已定标，含智能化与消防工程；玉林市中心医院、儿童医院总平调整后为2500床、37.58万平方米；北海市人民医院采购本地算力一体机98万元加存储防火墙97万元，指向医疗AI本地闭环。赛事端，北海中国—东盟体育实训基地体育场10月底完工承接区运会开幕式，民运会刚闭幕，环广西世巡赛南宁站与凤山赛段均明确禁飞无人机。文旅端，平陆运河横州国庆7天47.08万人次、扶绥龙头乡5.6万人次，漓江提出“一张图”作战与一线指挥部。安防机会：医院改扩建的智能化设计口；赛事级安防与低空反制；景区创4A的视频客流统计与防溺水AI。建议本周即对接一附院设计招标与灵山150万元采购。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">20条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西第十六届民运会闭幕，会旗交接百色，2030年由百色承办</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-18</span>
+          <span class="source-tag">📍 新华网广西频道</span>
+        </div>
+        <div class="news-abstract">闭幕式完成会旗交接，下一届全区少数民族传统体育运动会由百色市承办。百色从现在起有四年场馆建设与安保体系筹备期，体育场馆智能化、赛事指挥中心、反无人机是提前布局的长线机会，宜尽早与市体育局建立技术对接。</div>
+        <a href="http://gx.news.cn/20261018/65f04b7492504ce0b187cdfa492fc14e/c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁交警发布环广西世巡赛出行提示，推荐9个最佳安全观赛点</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-17</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">赛道以上林、马山等县区国省道为主，交警推荐9个视野好、安全条件佳的观赛点。山区国省道监控盲区多，移动布控球加4G/5G图传是刚需；9个观赛点的人流密度监测与喊话广播，也是可即时供货的轻量方案，适合在赛事前两周快速交付。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1017/c179430-41724803.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西妇幼保健院厢竹院区门诊楼提升改造项目中标4135.97万元，含智能化工程</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 南宁市公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">中标人中九建工，中标范围明确包含智能化工程与消防工程，工期240日历天。中标人已定，智能化分包是现实切入点；妇幼机构特有需求包括婴儿防盗、产科病区门禁、母婴同室探视管理，240天工期意味着年底至明年初进场。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/nnggzy/projectDetails.html?categorynum=001001001005&infoid=2653ade5-e0b9-46df-94ed-d3812d1d863a" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平陆运河马道枢纽研学与游船火热，9月至10月开行243班次、2.89万人次</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 中国青年网（转人民网）</span>
+        </div>
+        <div class="news-abstract">已开通4条客运航线，9月17日至10月11日开行243班次、运送28932人次，单日研学团队达900名学生。船岸协同监控、码头客流管控、研学团队AI人数清点、水上应急救援与落水识别，是运河文旅新增的一整条安防需求线。</div>
+        <a href="http://t.m.youth.cn/transfer/index/url/tour.youth.cn/xw/202610/t20261016_16917715.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">大新县托育服务综合指导中心中标候选人公示，150个托位、3726平方米</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-16</span>
+          <span class="source-tag">📍 广西壮族自治区公共资源交易平台</span>
+        </div>
+        <div class="news-abstract">新建5层建筑、总建筑面积3726平方米、设150个托位，投资约1835.8万元。托育机构按现行要求必须视频全覆盖并支持家长远程查看、婴幼儿出入与交接记录，是政策强制型需求，随工程同步落地的确定性较高。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001001004&infoid=b53d6759-3731-4051-864b-c30d95826215" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西疾控事业“十五五”规划印发：数智疾控、AI风险研判、空地一体化防护网</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 广西壮族自治区人民政府</span>
+        </div>
+        <div class="news-abstract">规划提出深化传染病监测预警与应急指挥信息平台建设、构建人工智能风险研判模型、形成空地一体化防护网立体防控虫媒传染病，并推进疾控机构标准化建设含新建改扩建。这是五年期规划，视频会商、应急指挥、无人机与机构改扩建安防均有明确落点。</div>
+        <a href="https://www.lax.gov.cn/lagk/xxgkml/shgysyjslygk/jbylwsly/ggylwszzygh/t6745435.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">漓江生态环境提档升级，建设桂林世界级旅游城市，构建“一张图”作战体系</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-15</span>
+          <span class="source-tag">📍 新华网广西频道</span>
+        </div>
+        <div class="news-abstract">要求建立“一张图”“一张表”项目化作战体系，推进漓江支流湿地公园与一线指挥部建设。漓江流域生态监控是明确视频AI场景：禁渔期船只识别、非法采砂、排污口异常排放；旅游秩序治理可做人流热力、黑导游与非法营运车辆识别，一线指挥部需指挥中心大屏与视频会商。</div>
+        <a href="http://www.gx.news.cn/20261015/6e99f8ecd6644584a0c470ae684199ae/c.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">玉林市中心医院、玉林市儿童医院总平面规划调整公示，2500床、37.58万平方米</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 广西玉林高新技术产业开发区管理委员会</span>
+        </div>
+        <div class="news-abstract">总建筑面积375762平方米、2500张病床、2897个机动车位，新增妇幼保健业务综合大楼并增设手术室夹层，消防扑救场地优化为沿建筑长边连续布置。37万平方米加2500床的三甲综合体，全院安防是千万级盘子，规划调整后即进施工图，须尽快锁定设计院。</div>
+        <a href="http://ydxq.yulin.gov.cn/xxgk/fdzdgx/ghjh/t28225021.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钟山县紧密型县域医疗卫生健康共同体智慧医院建设项目因投诉暂停采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">项目原定10月15日开标，因财政部门收到当事人投诉依法暂停，暂停期最长不超过30日，恢复时间另行通知。暂停不等于终止，恢复后立即开标；竞争已白热化，应提前备好技术参数与质疑应对材料，恢复公告一出即响应。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/gzgg/202610/t20261014_27493468.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">玉林市妇幼保健院“智慧医院”项目中标候选人公示，中国移动广西188.68万元列第一</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-14</span>
+          <span class="source-tag">📍 广西科文招标有限公司</span>
+        </div>
+        <div class="news-abstract">项目由中国银行出资建设，中国移动广西公司以188.68万元成为第一中标候选人。银行出资的“智慧医院”模式在广西已成套路，可复制到其他医院；此类项目多含自助机、排队叫号、导视屏，与视频监控、门禁可捆绑打包。</div>
+        <a href="http://kwbid.com.cn/newsdetail.jsp?aid=MjAyNjEwMTQwMzA4MDM1MDQ=&id=5" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国—东盟（北海）体育实训基地体育场10月底完工，将承接区运会开幕式</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 北海市人民政府</span>
+        </div>
+        <div class="news-abstract">体育场进入收尾阶段，10月底完工，将作为广西第十六届运动会、第十一届残运会开幕式场地，后续可承接大型演唱会。区运会级赛事需赛事级安防：人脸票证核验、场馆周界、反无人机、指挥调度中心，场馆交付与赛事临近形成“临时保障+永久系统”双窗口。</div>
+        <a href="http://www.beihai.gov.cn/swbm/bhswxcb/bk1/xcdt_2/xcdt/t28218204.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西第十六届少数民族传统体育运动会开幕，2148名运动员、9片赛场</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 央广网广西频道</span>
+        </div>
+        <div class="news-abstract">17个竞赛项目、9片赛场，75%赛场设在6所院校，赛场免费向公众开放。开放赛场加校园场地意味着无票证管控、人流不可控，需移动视频、临时布控、无人机反制；赛事结束后院校场馆留下常态化安防需求，可顺势转化。</div>
+        <a href="http://gx.cnr.cn/cnrgx/gxrd/20261013/t20261013_527840541.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">环广西世巡赛凤山赛段10月16日开赛，通告明确管制路段内禁止放飞无人机</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 凤山县人民政府</span>
+        </div>
+        <div class="news-abstract">发布交通管制、“低慢小”航空器禁飞、家禽家畜圈养等管控要求。禁飞无人机被写入赛事通告，说明县域赛事已有明确低空管控诉求，便携式无人机侦测与反制设备比固定式更易在县级预算内成交，是可复制的产品线，可向其他县区赛事推广。</div>
+        <a href="http://www.gxfsx.gov.cn/tsyy/bmrl/cshd/t28219265.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平陆运河文旅火爆：横州国庆7天接待游客47.08万人次</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">国庆假期横州接待游客47.08万人次、旅游消费8810万元，平塘江口成热门打卡地，将建古盐埠文化街区、研学基地并创建4A景区。创建4A景区必须配套视频监控、客流统计、SOS一键报警与广播；临江临水点位还需防溺水AI识别。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1013/c409434-41720564.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">扶绥文旅串珠成链：龙头乡7天接待5.6万人次、消费1100万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-13</span>
+          <span class="source-tag">📍 人民网广西频道</span>
+        </div>
+        <div class="news-abstract">龙谷湾为4A级景区，上龙·溪语谧静市集占地64亩、设300余个铺位。县域景区点位分散、单点预算小，适合云化加轻量化方案；夜市集需人流密度预警、烟火检测、摊位用电监测，可按“一个平台管多点”打包，降低单点建设成本。</div>
+        <a href="http://gx.people.com.cn/n2/2026/1013/c179464-41720171.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西中医药大学第一附属医院病房改造提升工程设计服务招标，总投资2.71亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西中医药大学第一附属医院</span>
+        </div>
+        <div class="news-abstract">改造面积45920平方米，涉及住院综合楼地下1层及地上1至23层，招标范围明确含智能化系统、医用气体、电梯改造，财政资金27062.09万元，设计服务预算638.88万元，11月2日投标截止。设计阶段是植入全院视频、护理对讲、ICU探视、婴儿防盗、门禁梯控的唯一窗口，务必参与。</div>
+        <a href="http://m.gxzyy.com.cn/public_cggg/2026/mbkBQNaz.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西科技大学第二附属医院放射治疗中心大楼正式落成</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西壮族自治区卫生健康委员会</span>
+        </div>
+        <div class="news-abstract">改扩建面积2100余平方米，建成直线加速器机房、核磁共振机房、CT机房、DSA机房、DR机房及处置室。放疗中心属辐射防护区，需要机房防闯入门禁联锁、剂量区域声光警示、专用视频监控与对讲；大楼刚交付，正处设备调试期，是弱电补装窗口。</div>
+        <a href="https://wsjkw.gxzf.gov.cn/xwdt_49370/xwdtzs/t28215599.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海市人民医院采购意向：医疗算力一体机98万元、存储与防火墙97万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">需求明确“医疗数据不宜上云、本地闭环运行”，并提到救援指挥调度场景，11月采购。本地算力一体机是视频AI分析落地的前提，可捆绑算法盒子做视频结构化、烟火检测、黑名单布控；“救援指挥调度”指向急诊与创伤中心建设。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=0XxRGDitF+8e3OxGTsoxCQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">灵山县城南片区健身中心配套设备采购意向150.25万元，点名视频监控与出入口控制</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">采购清单直接列明智能管理平台、能耗监测系统、公共广播、场馆大屏扩声、出入口控制系统、视频监控系统、信息网络、充电桩、光伏，预算150.247万元，10月采购。这是本周最直接的“点名式”清单，出入口控制加视频加广播三项均为海康主航道，可整包投。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=lhcDcNZhLfmvO6JbwWrWgA==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026环广西公路自行车世界巡回赛（南宁站）实施临时交通管制</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-12</span>
+          <span class="source-tag">📍 南宁市公安局</span>
+        </div>
+        <div class="news-abstract">10月18日赛事期间对滨湖北路、青秀路等路段实施封闭管制。赛道沿线需要临时视频覆盖、移动卡口、无人机侦测反制与指挥车，属公安交警的应急保障类采购，决策快、账期短，是安防厂商切入公安线的实战机会，一次投入可复用多年。</div>
+        <a href="https://gaj.nanning.gov.cn/ztzl/jjzl/jttg/t6742630.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1012-1018.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1012-1018.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1012-1018.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1012-1018.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
