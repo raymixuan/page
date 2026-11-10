@@ -1,154 +1,431 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广西化工煤炭行业简报 · 2026.10.26 — 11.01</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>石化煤炭 · 广西行业双周简报 | 2026.10.26-11.01</title>
 <style>
-:root{--canvas:#f0f2f5;--surface:#fff;--ink:#1a2233;--ink-2:#4a5568;--ink-3:#718096;--accent:#1e3a5f;--accent-light:#e8eef6;--border:#d8dce5;--radius:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--canvas);color:var(--ink);line-height:1.7;font-size:16px}
-a{color:var(--accent);text-decoration:none}
-.header{background:linear-gradient(135deg,#0f2b4a 0%,#1e3a5f 60%,#2a5080 100%);color:#fff;padding:32px 20px 24px;position:relative;overflow:hidden}
-.header-inner{max-width:720px;margin:0 auto}
-.header h1{font-size:clamp(1.35rem,4.5vw,1.75rem);font-weight:700;line-height:1.35;margin-bottom:8px}
-.header .meta{font-size:.82rem;color:rgba(255,255,255,.7);display:flex;gap:16px;flex-wrap:wrap}
-.main{max-width:720px;margin:0 auto;padding:0 16px 48px}
-.summary{background:var(--surface);border-radius:var(--radius);padding:20px;margin-top:20px;border-left:4px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.summary h2{font-size:1rem;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.summary p{font-size:.92rem;color:var(--ink-2);line-height:1.75;margin-bottom:8px}
-.summary p:last-child{margin-bottom:0}
-.opp-bar{background:var(--accent-light);border-radius:var(--radius);padding:16px 18px;margin-top:14px;border:1px solid #c3d4e8}
-.opp-bar h3{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
-.opp-bar ul{list-style:none;padding:0}
-.opp-bar li{font-size:.85rem;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.opp-bar li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-.section{margin-top:28px}
-.section-title{font-size:.88rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:2px solid var(--accent);margin-bottom:14px}
-.card{background:var(--surface);border-radius:var(--radius);padding:16px 18px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid var(--border)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;line-height:1.5;white-space:nowrap}
-.tag-policy{background:#e6f5ee;color:#1e6b4a}
-.tag-project{background:#fef3e2;color:#b45309}
-.tag-tech{background:#ede9fe;color:#6d28d9}
-.tag-case{background:#ffe4e6;color:#be123c}
-.card-date{font-size:.76rem;color:var(--ink-3);margin-left:auto;white-space:nowrap}
-.card h4{font-size:.96rem;font-weight:600;line-height:1.45;color:var(--ink);margin-bottom:6px}
-.card h4 a{color:var(--ink)}
-.card-body{font-size:.85rem;color:var(--ink-2);line-height:1.7}
-.card-body p{margin-bottom:6px}
-.card-body p:last-child{margin-bottom:0}
-.card-source{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
-.card-source a{color:var(--accent)}
-.opp-tag{display:inline-block;font-size:.72rem;background:#fef9e7;color:#92400e;border:1px solid #fcd34d;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
-.footer{text-align:center;padding:24px 16px;font-size:.76rem;color:var(--ink-3);border-top:1px solid var(--border);margin-top:12px}
-.footer strong{color:var(--ink-2)}
-@media(max-width:480px){.header{padding:24px 14px 18px}.main{padding:0 12px 36px}.card{padding:14px}.summary{padding:16px 14px}}
-@media print{body{background:#fff}.card,.summary,.opp-bar{box-shadow:none;break-inside:avoid}.header{background:#1e3a5f}}
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
 </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-inner">
-    <h1>⚗️ 广西化工煤炭行业简报</h1>
-    <div class="meta">
-      <span>📅 2026.10.26 — 11.01</span>
-      <span>📊 本周 5 条动态</span>
-      <span>🔍 面向海康威视行业机会</span>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>石化煤炭行业要闻</h1>
+    <div class="date">2026年10月26日 — 11月1日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是钦州龙头炼化转入稳产增效、北海铁山港绿色化工配套集中招标、危化品安全整治持续高压。钦州方向，中国石油广西石化百万吨乙烯工程投产一周年，总投资超300亿元、配套14套化工装置，累计乙烯产量破100万吨、橡塑产品超130万吨。北海方向，铁山港公共化工管廊一期II标4231米、投资概算1.65亿元进入造价编制，绿色化工配套排水改造发布设计招标提前公示，5万吨级石化码头已投用。安全监管方向，贵港覃塘化工园区风险等级由C升D，全市会议明确要求完善封闭化管理与智能化管控平台实战应用；应急管理厅围绕北海东方希望10·5一氧化碳中毒事故召开全区工贸企业警示会，防城港出台瓶装液化气管理通知，强制实名登记与一户一档。安防机会集中在园区封闭化与卡口、重大危险源视频加气体探测联动、防爆区智能巡检与人员定位、燃气末端报警与钢瓶溯源。建议以覃塘园区安全整治为标杆打样，向铁山港、钦州石化产业园、田东锦江复制。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">18条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">中国石油广西石化百万吨乙烯工程投产一周年，累计乙烯产量破100万吨</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 中国日报网</span>
+        </div>
+        <div class="news-abstract">乙烯工程总投资超300亿元，配套14套化工装置与2套炼油装置，投产后每年减少油品产出349万吨、增产化工品306万吨；投产一年累计乙烯产量突破100万吨、橡塑产品总产量突破130万吨。其安防与仪控运维外包体量大，建议以装置区智能巡检加气体泄漏视频AI方案切入。</div>
+        <a href="https://gx.chinadaily.com.cn/a/202610/30/WS6ae3ffeae4b09a165c7927ba.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">西南成品油管道红水河穿越段隐患治理工程施工招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-30</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">针对西南成品油管道LLZ063红水河穿越U型水泥配重块裸露，需对裸露段管道进行水下摸排及隐患整治，方案采用聚丙烯袋垫平体、平衡压袋覆盖及保护挡墙，工期30天，10月30日发布非招标公告。长输管道穿越段是第三方施工破坏与泄漏的高风险点，隐患治理后必然补强沿线视频监控、光纤振动预警和高后果区人员管控。管道企业与国家管网广西公司是长期客户，可从高后果区视频加光纤预警切入其年度管道保护投资。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-17863.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西石化码头多项货种单月作业量创新高，前三季度装卸350万吨</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 中国石油石化工程信息网</span>
+        </div>
+        <div class="news-abstract">10万吨级码头前三季度累计完成货物装卸量350万吨、同比增7.46%，苯乙烯、芳烃、低硫船燃等多项货种9月单月作业量创年内新高。随着乙烯工程建成投用，码头由单一原油接卸模式转向多品类精细化工品综合装卸。多品类高危化学品轮换作业，对泊位区防爆视频、船岸界面监控、装卸臂区域气体探测联动和消防设施状态监测要求显著提高。采购主体为广西石化码头运营方，建议按泊位逐个做防爆监控升级方案。</div>
+        <a href="https://www.cppei.org.cn/lyyshgc/d257099.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">平陆运河通航赋能，田东锦江产业园谋划十五五化工新材料布局</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 中央广电总台国际在线</span>
+        </div>
+        <div class="news-abstract">园区已形成有色、化工、冶金、电力多产业循环格局，以锦盛化工烧碱装置为枢纽实现烧碱直供氧化铝、氯气供精细化工、氢气梯级利用；2025年锦鑫化工氧化铝产量225.35万吨、产值66.48亿元。多企业共用公共管廊，管廊沿线与装置区的视频、气体探测、人员定位需统一平台纳管，建议对接园区管委会做循环经济园区安全一体化管控平台。</div>
+        <a href="https://gx.cri.cn/n/20261029/43a59714-0f60-4c4b-be7a-018d765fecc6.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">来宾市4家燃气经营企业双随机一公开联合抽查结果全部合格</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 来宾市气象局</span>
+        </div>
+        <div class="news-abstract">10月21日来宾市气象局与来宾市城市管理局联合对辖区内4家燃气经营企业开展雷电灾害防御工作检查，来宾市诚丰燃气、兴宾区木材液化气站、中国石化广西来宾石油分公司、兴宾区兴源液化石油气4家全部合格。结合储配站视频监控与可燃气体报警，可打包防雷加气体报警加视频一体化安全监测服务，客户为市级城燃与液化气站运营方，单站投入不大但站点数量多。</div>
+        <a href="http://www.laibin.gov.cn/xxgk/fdzdgknr/zdlyxxgk_1/qtzdxx/xzzf/t28279892.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">10月29日24时起广西成品油价格上调，92号汽油涨至8.94元/升</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 广西壮族自治区发展和改革委员会</span>
+        </div>
+        <div class="news-abstract">受中东地缘紧张升级、国际原油价格上涨影响，国家再次对成品油价格采取调控措施，10月29日24时起广西92号汽油由8.67元/升调至8.94元/升，95号调至9.66元/升，0号车用柴油由8.36元/升调至8.64元/升。加油站是防爆视频、卸油区监控、液位与渗漏报警、可燃气体探测的集中场景，可结合中石化广西、中石油广西的加油站新形象改造做配套。</div>
+        <a href="http://fgw.gxzf.gov.cn/xwzx/xwfb/t28278529.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">河池市应急管理系统干部履职能力提升培训班，覆盖危化品领域安全监管</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-29</span>
+          <span class="source-tag">📍 河池市应急管理局</span>
+        </div>
+        <div class="news-abstract">10月27日至29日在宜州举办，80余人参训，含各县区政府分管应急管理常务副县区长、市县应急局班子成员及相关企业安全负责人。基层监管能力建设往往配套执法装备与信息化手段采购，包括执法记录仪、移动执法终端、便携气体检测和应急指挥调度。建议跟进河池及同类地市应急局的执法装备年度预算，做执法加应急指挥组合方案。</div>
+        <a href="http://yjglj.hechi.gov.cn/gddt/t28282534.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国石油广西石化举办2026年公众开放日活动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 中国石油（搜狐转载）</span>
+        </div>
+        <div class="news-abstract">10月27日举办2026年中国石油开放日走进广西石化活动，主题为千万炼油百万乙烯再启新程，邀请地方政府、主流媒体、师生代表及各族群众走进厂区，参观企业精神教育基地、化工中央控制室、标准化化验分析室、高端聚烯烃自动化包装生产线。企业主动开放透明化，说明对外部形象与安全展示有诉求，厂区参观动线的视频留痕、访客实名与人车分流管理是配套内容。可结合可视化大屏与安全体验中心做增值方案。</div>
+        <a href="https://news.sohu.com/a/1093978581_120578424" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">年产65万吨化工新材料一体化项目（二期）环评审批公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-28</span>
+          <span class="source-tag">📍 中国—马来西亚钦州产业园区行政审批局</span>
+        </div>
+        <div class="news-abstract">项目位于钦州石化产业园南港大道66号，建设单位为广西昌德新材料有限公司，10月14日受理，10月28日至11月3日公示。二期属重大变动重新报批，说明装置规模或工艺有实质调整。新建与调整装置必然配套新的可燃有毒气体检测、防爆视频、DCS与SIS联锁及消防联动系统。环评公示期至11月3日，是提前接触业主、锁定安防与仪控分包的关键窗口，建议同步跟踪该项目后续施工与设备招标。</div>
+        <a href="http://zmqzcyyq.gxzf.gov.cn/zwgk/fdzdgknr/zzxm/pzjg/t28271527.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国石油广西石化开启炼化一体化高质量发展新阶段，多项全球首套技术落地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 广西壮族自治区工业和信息化厅</span>
+        </div>
+        <div class="news-abstract">报道详列规模、技术、高端、市场四大突破：全球最大柴油吸附分离装置原料利用效率提升15%以上，中国石油自有技术首套12万吨/年官能化溶聚丁苯橡胶装置稳定投产，全球首台最大双变频器无扰动切换电机的乙烯制冷压缩机平稳运行；全年开发上市新产品20个。</div>
+        <a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/t28267830.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海铁山港片区公共化工管廊工程（一期）II标招标控制价编制询价</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 北海市铁山港（临海）工业区管理委员会</span>
+        </div>
+        <div class="news-abstract">项目建G1段（港南路至港中路段）1464米、公共管廊D段2067米、C1段700米，共计4231米；工程总投资概算1.65亿元，其中建安工程费1.19亿元。公共化工管廊是危化品输送的集中风险源，必须配套管廊沿线视频全覆盖、泄漏监测、防入侵与巡检通道管控。按4231米长度测算，仅管廊安防单项就在数百万级。项目尚在造价编制阶段，正是介入设计与清单的最佳时点，可争取把视频与气体探测纳入建安清单。</div>
+        <a href="http://www.beihai.gov.cn/xxgkbm/bhstsglhgyqglwyh/tzgg_24/t28270696.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国—东盟产业合作区铁山港（临海）工业区绿色化工产业配套项目排水改造工程设计招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 广西公共资源交易平台</span>
+        </div>
+        <div class="news-abstract">10月27日发布招标文件提前公示，公示期至10月30日，招标人为北海市铁山港区大和田城市建设开发有限责任公司，代理机构为广西华晟工程项目管理咨询有限公司。化工园区排水系统是环境安全与事故废水拦截的关键环节，通常与园区在线监测、视频监控、应急指挥平台同标段或紧邻标段实施。可借设计阶段介入，争取把排水口视频、液位与水质异常联动纳入设计范围。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001001006&infoid=1cf1cc7a-2b91-4e44-bac2-4a0c25f3e151" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港中燃开展燃气入户安装及点火作业专项自查，含安防设备安装</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 防城港中燃城市燃气发展有限公司</span>
+        </div>
+        <div class="news-abstract">为汲取唐山燃气集团7·9漏户补装新表爆燃事故教训，10月27日对阳光海岸、德城新世界2个老旧改造项目开展专项自查，施工内容为户外立管更换、安防设备安装，覆盖79户、现场抽查6户。城市燃气末端改造已明确把安防设备安装列入施工内容，老旧小区立管更换加户内报警器、自闭阀是成片推进的标准化场景，量大面广。建议与防城港中燃、广投燃气等城燃企业谈年度框架，做户内报警加立管防破坏监测组合包。</div>
+        <a href="http://www.fcgs.gov.cn/zrcsrqfzyxgs/dtxx/t28277031.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港市《关于加强瓶装液化石油气安全管理工作的通知》政策解读</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-27</span>
+          <span class="source-tag">📍 防城港市住房和城乡建设局</span>
+        </div>
+        <div class="news-abstract">为落实住建部等7部门集中开展瓶装液化石油气安全专项整治要求（建办城〔2026〕194号），通知明确全市液化石油气瓶统一由燃气企业送气到户并同步开展免费随瓶安检；企业须落实实名登记、一户一档、签订供用气合同并录入监管平台；对不符合用气条件或拒不整改用户可依规暂停供气。</div>
+        <a href="http://zjj.fcgs.gov.cn/zfxxgk/fdzdgknr/zcjd/t28273385.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海5万吨级石化码头正式投入使用</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 国家税务总局北海市税务局（转中国税务报）</span>
+        </div>
+        <div class="news-abstract">码头于8月下旬投用，是服务广西一区两地一园一通道发展布局的关键配套工程，投运后将提升广西北部湾港液体散货储运服务能力和西南区域能源供应链保障水平；建设管理企业为中国石化北海炼化有限责任公司。北海炼化招采活跃，近期有抗爆阀、EPS应急电源、便携式红外测温仪、室内话站、对讲机等零星采购，可作为长期客户按年度框架做安防与仪控耗材供应。</div>
+        <a href="https://guangxi.chinatax.gov.cn/beihai/gzdt_15219/gzdt_15220/202610/t20261026_441728.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西两支危化应急救援队伍全国大赛获奖，全区工贸企业事故警示会召开</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 人民网广西频道（广西应急管理厅）</span>
+        </div>
+        <div class="news-abstract">第四届全国危险化学品救援技能竞赛在河南濮阳举行，广西危化应急救援柳钢队获危险化学品组优秀奖、队员莫静发获个人全能三等奖，广西油气管理应急救援国家管网队同场竞技；同期应急管理厅召开全区工贸企业事故警示视频会议，深刻吸取北海东方希望新材料科技有限公司10·5一氧化碳中毒事故教训，并在梧州召开全区安全生产责任保险工作现场推进会。</div>
+        <a href="http://gx.people.com.cn/GB/349603/394524/index.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中缅天然气管道防城港支线复线用地评价、百色—文山管道支线监理招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">中缅天然气管道防城港支线复线项目开展永久用地使用林地评价咨询服务，涉及新建阀室及改扩建站场，永久用地面积约44亩；同期百色—文山天然气管道砚山支线等三个工程施工监理与无损检测招标，线路全长约141公里，含新建站场、阀室及多种管道穿越工程，工期分别至2028年或2029年。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-32151-0-0-30.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西华谊能源化工两项目获国家优质工程奖</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-10-26</span>
+          <span class="source-tag">📍 中国发展网</span>
+        </div>
+        <div class="news-abstract">10月17日中国施工企业管理协会发布2024—2026年度国家优质工程奖决定，中国化学工程第十六建设有限公司承建的广西华谊能源化工有限公司工业气体岛和合成气综合利用项目、煤炭分质利用制化工新材料示范项目一期180万吨/年乙二醇工程获评国家优质工程奖，评选涵盖工程质量、技术创新、安全管理、绿色建造、综合效益等维度。</div>
+        <a href="https://m.chinadevelopment.com.cn/checklist.php?s=index%2Fdetail%2Fid%2F2021582" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
     </div>
   </div>
-</header>
-<main class="main">
-  <div class="summary">
-    <h2>📌 本周总结</h2>
-    <p><strong>一是政策端“十五五”应急规划把化工园区指标写死。</strong>自治区政府印发应急体系建设“十五五”规划，明确2027年底前全部化工园区完成“十有两禁”、重大危险源在线监测率长期100%、2029年底前预警处置闭环率100%，并依托数字广西搭一张网，园区智能化改造从“鼓励”变成“必须”。</p>
-    <p><strong>二是治理端园区封闭化跑出可复制样板。</strong>钦州石化产业园危化车专用停车场一期建成170个标准车位、封闭化管理一期投运，风险等级由A级降至D级；玉林同期曝光30家违法违规单位、261项隐患，执法高压向县域加油站、储罐区延伸。</p>
-    <p><strong>三是产业端炼化一体化与技改扩产同步推进。</strong>中石油广西石化乙烯投产一年累计产乙烯破100万吨，300亿元投资形成14套化工装置规模；梧州荒川化学8000万元技改新增苯酚、二甲苯储罐并转入露天罐区，新建与技改项目都在放大罐区与装卸环节的监测需求。</p>
-  </div>
-  <div class="opp-bar">
-    <h3>🎯 本周项目机会速览</h3>
-    <ul>
-      <li>化工园区2027年底“十有两禁” · 园区封闭化二期人车物全要素管控与卡口升级</li>
-      <li>重大危险源在线监测率保持100% · 罐区防爆云台、气体探测与DCS数据统一接入平台</li>
-      <li>钦州危化车停车场170个车位 · 危化运输车定位、违停AI识别与应急池联动</li>
-      <li>玉林曝光30家违法单位 · 加油站防爆摄像机、可燃气体探测与吸烟打电话AI识别</li>
-      <li>中石油广西石化乙烯满产 · 装卸车台、管廊防爆视频与气体泄漏联动预警扩容</li>
-      <li>梧州荒川露天罐区新增储罐 · 罐区周界、泄漏探测与消防联动随技改同步立项</li>
-    </ul>
-  </div>
-  <div class="section">
-    <div class="section-title">十五五安全规划</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">11-01</span>
-          </div>
-          <h4><a href="http://www.gxzf.gov.cn/gxyw/t28286737.shtml" target="_blank" rel="noopener noreferrer">广西印发应急体系建设“十五五”规划</a></h4>
-          <div class="card-body">
-            <p>自治区政府正式印发该规划：<strong>2027年底前高标准完成全部化工园区“十有两禁”建设任务</strong>，高危行业重大危险源在线监测率长期保持100%，2029年底前异常预警处置闭环率100%；依托数字广西搭建全域安全生产风险监测预警“一张网”，升级平陆运河沿线地质灾害监测预警。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>“一张网”要求园区把视频、气体探测、人员定位、DCS统一接入，是平台+AI分析的大单入口。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://www.gxzf.gov.cn/gxyw/t28286737.shtml" target="_blank" rel="noopener noreferrer">广西日报</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">园区封闭化治理</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-case">案例</span>
-            <span class="card-date">10-29</span>
-          </div>
-          <h4><a href="http://m.toutiao.com/group/7702096287101878784/" target="_blank" rel="noopener noreferrer">钦州石化产业园封闭化管理一期投运</a></h4>
-          <div class="card-body">
-            <p>钦州市人大连续八年监督园区安全治理：危化品运输车辆专用停车场一期建成<strong>110亩场地、170个标准化危化车位及应急池</strong>；园区封闭化管理工程一期投运；中马产业园区安全生产和应急管理系统通过自治区验收，为区内同类项目评分最高。园区风险等级由A级降至D级。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>封闭化一期已跑通，二期必扩到人车物全要素，卡口、周界、危化车定位是明确续建需求。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://m.toutiao.com/group/7702096287101878784/" target="_blank" rel="noopener noreferrer">金台资讯（人民网）</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-policy">政策</span>
-            <span class="card-date">10-27</span>
-          </div>
-          <h4><a href="https://m.thepaper.cn/newsDetail_forward_34343774" target="_blank" rel="noopener noreferrer">玉林曝光危化品“打非治违”典型案例</a></h4>
-          <div class="card-body">
-            <p>玉林市应急管理局公布：2026年以来出动工作组4565个、23489人次，排查企业场所16735家，<strong>发现违法违规单位30家、隐患261项（重大50项）</strong>，立案17件、罚金30.8万元，移送追刑责1人。案例涉及无证经营危化品、加油站爆炸区用非防爆设备。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>罚单直指“看不见的隐患”，加油站、储罐区会加快上防爆摄像机、可燃气体探测与吸烟打电话识别。</p>
-          </div>
-          <div class="card-source">来源：<a href="https://m.thepaper.cn/newsDetail_forward_34343774" target="_blank" rel="noopener noreferrer">玉林市应急管理局</a></div>
-        </div>
-  </div>
-  <div class="section">
-    <div class="section-title">石化项目与技改</div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-27</span>
-          </div>
-          <h4><a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/t28267830.shtml" target="_blank" rel="noopener noreferrer">中石油广西石化乙烯投产一周年产乙烯破百万吨</a></h4>
-          <div class="card-body">
-            <p>120万吨/年乙烯工程投产满一年：<strong>累计乙烯产量突破100万吨、橡塑产品突破130万吨</strong>。项目总投资超300亿元，配套14套化工装置、2套炼油装置，年减少油品产出349万吨、增产化工品306万吨。依托平陆运河，高端聚烯烃、官能化橡胶已出口越南等东盟国家。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>百万吨级基地扩产后，罐区、装卸车台、管廊的防爆视频与气体联动监测将持续追加采购。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/t28267830.shtml" target="_blank" rel="noopener noreferrer">广西壮族自治区工业和信息化厅</a></div>
-        </div>
-        <div class="card">
-          <div class="card-top">
-            <span class="tag tag-project">项目</span>
-            <span class="card-date">10-26</span>
-          </div>
-          <h4><a href="http://yghz.wuzhou.gov.cn/zwgk/zfxxgk/fdzdgknr/xzsp/spxxgs/halgs/t28266300.shtml" target="_blank" rel="noopener noreferrer">梧州荒川化学核心装置技改环评获批</a></h4>
-          <div class="card-body">
-            <p>粤桂合作特别试验区批复该项目环评：<strong>总投资8000万元</strong>，厂区内技改不新增用地，新增树胶酯产能14200吨/年、石炭酸松香改性树脂10000吨/年；新增4个苯酚储罐、1个24立方米二甲苯回收储罐，苯酚罐全部转入露天罐区，同步改造RTO与天然气锅炉。</p>
-            <p style="color:#6b7280;margin-top:4px;">🔍 <strong>海康视角：</strong>露天罐区扩容后必须补防爆云台、罐区周界与泄漏气体探测，技改项目常与安防同步立项。</p>
-          </div>
-          <div class="card-source">来源：<a href="http://yghz.wuzhou.gov.cn/zwgk/zfxxgk/fdzdgknr/xzsp/spxxgs/halgs/t28266300.shtml" target="_blank" rel="noopener noreferrer">粤桂合作特别试验区管委会</a></div>
-        </div>
-  </div>
+
   <div class="footer">
-    <p><strong>广西化工煤炭行业简报</strong> · 数据来源：政府官网及行业公开渠道</p>
-    <p style="margin-top:6px;">仅供内部行业研究参考 · 生成于 11.01</p>
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
   </div>
-</main>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1026-1101.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1026-1101.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1026-1101.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1026-1101.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
