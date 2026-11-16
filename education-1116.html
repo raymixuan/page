@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>教育行业 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>教育行业行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本周广西教育信息化三条线：自治区层面“扶光计划”中小学人工智能素养提升项目在广西率先启动，覆盖14个设区市、20个项目县、60所学校，将带动AI课堂分析与终端配套；院校端广西中医药大学启动校园智慧门岗升级需求调研，广西农业职业技术大学“智慧大脑平台”二次招标并放宽实测要求；县域端容县377所学校实现“互联网+明厨亮灶”全覆盖。建议以“智慧门岗+防欺凌+明厨亮灶+录播”组合切入院校与县区教育局。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">10条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">“扶光计划”中小学人工智能素养提升项目在广西率先启动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西教育技术和信息化中心</span>
+        </div>
+        <div class="news-abstract">“扶光计划”中小学人工智能素养提升项目在广西率先启动，为全国首个启动省区，覆盖14个设区市、20个项目县、60所学校。项目将带来AI课堂行为分析、智能算力终端、教学资源平台需求，建议以“AI课堂分析+智慧教室终端+区域AI教育平台”三层架构对接自治区教育信息化中心与各项目县教育局，抢占60所示范校。</div>
+        <a href="http://gxjs.gxeduyun.edu.cn/S697/a/3516.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西中医药大学校园智慧门岗系统升级建设项目需求市场调研</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西中医药大学</span>
+        </div>
+        <div class="news-abstract">广西中医药大学保卫处发布校园智慧门岗系统升级需求市场调研公告，涵盖前端感知、出入管控、车辆安全、平台与智能化应用四部分，11月14日17时前反馈。市场调研是参数定型关键窗口，建议立即提交“人脸门禁+车牌识别+访客一体机+校园安防平台”技术建议书，把多校区联网、黑名单布控、车辆轨迹回溯写入需求。</div>
+        <a href="https://www.gxtcmu.edu.cn/wzb/tzgg/content_90829" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西农业职业技术大学智慧校园安全消防应急处突指挥中心（智慧大脑平台）重新招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西农业职业技术大学招标采购中心</span>
+        </div>
+        <div class="news-abstract">项目首次公告11月9日、11月13日更正，提交截止延至11月19日15时，并删除远程反控核验及视频弹窗复核、融合应用主机、云内人车轨迹检索、云存储、原系统资源继承等核心功能实测要求。参数放宽意味着竞争加剧，建议抓住“智慧大脑+消防应急处突指挥”集成场景，突出视频融合、轨迹检索与既有系统利旧。</div>
+        <a href="https://www.gxnzd.edu.cn/zc/info/1017/7459.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西工商职业技术学院智慧教学平台建设项目竞争性磋商</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西工商职业技术学院</span>
+        </div>
+        <div class="news-abstract">广西工商职业技术学院发布学校智慧教学平台建设项目竞争性磋商公告，预算270910元。金额不大但属教学核心平台，通常与录播、巡课、督导评课联动，建议以“平台+常态化录播+AI课堂分析”捆绑报价，用低门槛平台切入，再争取后续教室终端与存储扩容，形成高职院校智慧教学的标准复制包。</div>
+        <a href="http://www.gxgsxy.com/info/1716/163171.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西制造工程职业技术学院智慧校园数据分析及可视化应用系统运维采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西制造工程职业技术学院</span>
+        </div>
+        <div class="news-abstract">学院就智慧校园数据分析及可视化应用系统运维及增值拓展服务采用单一来源采购，金额93500元。运维单一来源说明既有平台已形成厂商锁定，建议从“数据治理+视频数据接入”角度切入，推动将安防视频结构化数据、门禁与能耗数据纳入可视化驾驶舱，用增值拓展名义替换部分模块，逐步取得平台话语权。</div>
+        <a href="https://www.gxzzzy.edu.cn/info/1013/6812.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林市逸仙中学阶梯教室扩声、录播系统采购竞争性谈判</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 桂林市政府采购</span>
+        </div>
+        <div class="news-abstract">桂林市逸仙中学发布阶梯教室扩声、录播系统采购竞争性谈判公告，预算73.5万元，含互动录播主机、机械云台摄像机3台、多目云台摄像机1台及校级资源管理平台。校级平台是后续多教室扩展的入口，建议以“录播主机+校级资源平台”组合应标，承诺与教育局区域平台对接，为桂林市直属学校录播教室批量改造预埋标准。</div>
+        <a href="http://gl.zfcg.zcygov.cn/site/detail?articleId=mHIC0YLe7I+4DDNnWl7yTA==&parentId=139019" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西水利电力职业技术学院安防系统维修维护建设设备采购询价</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西水利电力职业技术学院</span>
+        </div>
+        <div class="news-abstract">学院发布2026年安防系统维修维护建设设备采购询价，含摄像头65台、录像机2台、硬盘16块，预算14.25万元。存量设备批量替换说明原系统进入生命周期末端，建议以“前端替换+平台升级”思路报价，用AI超脑替换旧NVR实现人脸、周界、人群聚集等智能分析，把一次性维修单转化为智慧校园安防升级项目。</div>
+        <a href="http://www.gxsdxy.cn/zcglzx/info/1375/53982.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">容县377所学校实现“互联网+明厨亮灶”全覆盖</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 中国消费网</span>
+        </div>
+        <div class="news-abstract">容县377所学校全部完成“互联网+明厨亮灶”建设，累计检查学校食堂825家次、校外托管机构286家次，隐患整改率100%。县域全覆盖模式验证了AI明厨亮灶在校园食品安全的可复制性，建议以容县为样板向玉林其他县区及贵港、钦州推介，方案含后厨违规识别（未戴帽、吸烟、鼠患）、家长端查看与监管平台对接。</div>
+        <a href="https://www.ccn.com.cn/Content/2026/11-13/1105135133.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西财经学院明秀校区第一食堂“互联网+明厨亮灶”项目询价</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-15</span>
+          <span class="source-tag">📍 广西财经学院</span>
+        </div>
+        <div class="news-abstract">广西财经学院就明秀校区第一食堂“互联网+明厨亮灶”项目公开询价，属高校食堂智慧监管补建需求。高校食堂人流密集、后厨分区复杂，建议以“AI违规行为识别+温湿度与消毒监测+师生端公示”组合应标，并预留与自治区校园食品安全监管平台对接接口，为驻邕高校批量复制打样。</div>
+        <a href="https://www.gxufe.edu.cn/www/myweb/informationShow.html?informationid=953810" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">岑溪市“法润青苗·律动校园”法治教育巡回展演聚焦校园欺凌预防</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西文明网</span>
+        </div>
+        <div class="news-abstract">岑溪市开展法治教育巡回展演，以防校园欺凌、未成年人保护为重点走进各中小学。防欺凌已从教育宣传转向技防落地，建议同步向梧州、岑溪教育局推介“校园防欺凌智能音频监测+一键报警+厕所与楼道盲区覆盖”方案，用声纹关键词识别与求助按钮联动保卫处，把宣传活动转化为技防项目立项契机。</div>
+        <a href="http://gx.wenming.cn/jlhj/sxdt/202611/t20261111_7032567.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction-1116.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy-1116.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education-1116.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security-1116.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
