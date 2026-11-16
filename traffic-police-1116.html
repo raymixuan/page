@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>交警交通 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>交警交通行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期交通条线以“隐患治理+灾后修复+高速监测”为主线。崇左交警智能交通三期1323万元由铁塔系拿下，运营商在智能交通总集领域持续挤压设备商；贵港交警释放隐患治理三标包及监控设备灾后修复380.67万元，是典型存量设备更换与卡口补建窗口。环江233万元路口信号灯+不礼让行人抓拍、资源至兴安高速视频监测465.35万元，说明县域路口治理与高速视频加密是最确定落点。不系安全带、飙车炸街专项执法加压，将带动卡口算法升级与声呐抓拍需求。建议提前介入县域路口、高速沿线、灾后修复三类项目。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">8条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">崇左市公安局交警支队智能交通第三期建设项目中标，金额1323万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">崇左市公安局交警支队智能交通第三期建设项目公布中标结果，金额1323万元，中标方中国铁塔南宁市分公司。这是本期广西智能交通最大单体，运营商以总集身份承接，信号控制、电子警察、卡口设备大概率二次分包。建议立即对接铁塔南宁分公司争取前端设备与平台软件分包，并预判四期方向。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202611/t20261109_27643913.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港市公安局交通管理支队道路交通监控设备灾后修复项目采购意向380.67万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">贵港市公安局交通管理支队公开采购意向，项目为道路交通监控设备灾后修复，预算380.67万元。灾后修复类项目特点是点位分散、工期紧、需快速恢复在线率，涉及电子警察、卡口、监控球机及配套供电通信的整批更换。建议以“快速交付+备件库+在线率承诺”为卖点投标，同时借修复契机推动老旧标清设备向智能卡口升级，扩大单点价值。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=c%2FvoJZdfe1Pe%2FCk+A+sMkA==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港市公安局交通管理支队道路交通安全隐患治理和风险防控整治项目分三标包采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 招标网</span>
+        </div>
+        <div class="news-abstract">贵港交警发布道路交通安全隐患治理和风险防控整治项目，拆三标包：卡口抓拍约63万元、交通安全设施约16万元、支路哨兵系统约44.1万元，合计约123万元。“支路哨兵”是近年新增的支路汇入主路预警设备，属新型品类。建议重点投标卡口与支路哨兵两包，用雷达视频一体机做差异化。</div>
+        <a href="https://zb.zhaobiao.cn/fore_v_52a457b6563f0393252493023b9ba43d.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">环江毛南族自治县城区重点路口交通管控设施提升项目采购意向233万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 乙方宝（环江毛南族自治县综合行政执法局）</span>
+        </div>
+        <div class="news-abstract">环江县综合行政执法局公开采购意向，城区重点路口交通管控设施提升项目预算233万元，预计12月采购，建设内容明确为交通信号灯及机动车不礼让行人抓拍设备，用于消除重点路口人车冲突隐患。属县域路口治理标准配置包，建议以信号控制与违法抓拍一体化方案投标，同步推销配时优化服务。</div>
+        <a href="https://www.yfbzb.com/inviteBid/detail/20261113_647502878.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西资源（梅溪）至兴安高速公路视频监测优化提升专项工程招标，预算465.35万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 电力招标网</span>
+        </div>
+        <div class="news-abstract">广西资源（梅溪）至兴安高速公路视频监测优化提升专项工程发布招标公告，预算465.35万元，12月5日开标。项目属高速视频监测加密与优化，涉及全程覆盖补盲、事件检测、隧道及重点路段监控提升。高速视频监测是部级年度考核硬指标，后续多条路段将跟进，建议以整体方案投标突出事件检测算法。</div>
+        <a href="https://m.dlzb.com/23-0-71348465-1.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年高速公路交通安全智能监控设备运维服务项目中标，金额107.35万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 比地招标网</span>
+        </div>
+        <div class="news-abstract">广西高速公路交通安全智能监控设备运维服务项目公布中标结果，中标金额107.35万元，中标方为中国移动广西公司。项目属高速交警侧智能监控设备的年度运维，覆盖卡口、视频、诱导屏等设施。运营商持续以低价运维锁定高速交警客户，再向设备更新延伸。建议以专业运维分包或设备原厂技术支持身份介入，守住设备更换环节的主动权。</div>
+        <a href="https://m.bidizhaobiao.com/clsbzb/120_4621_03.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州交警启动不系安全带专项抓拍执法，卡口识别能力再受考验</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西交通台</span>
+        </div>
+        <div class="news-abstract">柳州交警发布不系安全带违法行为专项查处信息，依托电子警察与卡口对驾驶人未系安全带进行自动抓拍取证并依法处罚。此类专项执法对前端卡口的二次识别算法（安全带状态、遮阳板、打电话）提出更高要求，老旧卡口往往无法满足。建议主动向柳州及各地市交警推介卡口算法升级包与新增反向卡口方案，把执法需求转化为设备更新订单。</div>
+        <a href="https://www.sina.cn/media/1838687261" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">梧州“活力夜广西”嘉年华期间实施道路交通管制，大型活动交通保障需求凸显</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 网易号（梧州交警）</span>
+        </div>
+        <div class="news-abstract">梧州市举办“活力夜广西”嘉年华活动期间对相关路段实施交通管制，需要临时交通组织、警力布控与路况诱导。大型活动交通保障是移动监控、临时卡口、交通诱导屏、指挥车的高频使用场景，广西各地市全年活动密集。建议打包“大型活动交通安保包”（移动布控球+便携卡口+诱导屏+指挥调度），向各地市交警支队做常态化租赁或采购推介。</div>
+        <a href="http://m.163.com/dy/article/LBJ4SRT00514RIHB.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction-1116.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy-1116.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education-1116.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security-1116.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
