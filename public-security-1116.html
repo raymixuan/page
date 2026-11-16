@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>公安行业 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>公安行业行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期公安条线“大额存量升级+雪亮补盲”并行。自治区公安厅数侦总队抛出1.25亿元BHF智能卡口升级采购意向，为全区年内最大单体安防预算，标志省级卡口从“看得见”转向“认得准”。市县层面，象州雪亮二三期575.2万元招标、柳江雪亮二期465万元配525台人脸车牌抓拍、凭祥天网运维150.35万元、玉林雪亮平台驻场运维83万元，形成“前端补点+后端运维”双轮。防城港边境2000余个摄像头与126个沿边联防所建设打开立体防控空间。建议锁定卡口智能化改造、雪亮运维续签、边境防控三类机会。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">8条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西公安厅数侦总队BHF智能卡口系统升级改造项目采购意向1.25亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西政府采购网（广西公安厅）</span>
+        </div>
+        <div class="news-abstract">自治区公安厅数侦总队公开BHF智能卡口系统升级改造项目采购意向，预算1.25亿元，预计2027年1月采购。这是本期全区最大单体安防预算，指向省级卡口向智能化、结构化、大数据研判升级，涉及前端相机更新、边缘算力、视图库与研判平台。建议立即高层对接，围绕算法适配、视图结构化、省级平台级联做方案预研。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=vx7FBvPzKcAl0%2FjWic41ww==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">象州县低位视频监控升级改造项目（雪亮工程二、三期）公开招标，预算575.2万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 中国安全防范产品行业协会（中国政府采购网）</span>
+        </div>
+        <div class="news-abstract">象州县发布低位视频监控升级改造招标公告，属雪亮工程二、三期内容，预算575.2万元，11月25日开标。项目聚焦低位监控点位补盲与老旧设备替换，是典型县域雪亮续建标包，对前端性价比、平台级联与本地运维响应要求高。建议以县域雪亮整体方案参与，捆绑乡镇综治中心显示与存储扩容。</div>
+        <a href="http://project.21csp.com.cn/c171/202611/11430978.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳江区公共安全视频建设联网应用雪亮二期升级改造项目465万元，配置525台人脸车牌抓拍</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西政府采购网（柳江区委政法委）</span>
+        </div>
+        <div class="news-abstract">柳江区委政法委公开雪亮二期升级改造采购意向，预算465万元，明确采购525台带人脸和车牌抓拍摄像头，平台全线升级并配智能相机，使用雪亮专网、视频图片30天存储。这是高密度前端+平台同步升级的复合标包，人脸车牌双抓拍为核心门槛，建议以“前端+视图库+专网”整体方案投标。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=bqVtAkz8iqDGiFC3Vom+KQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">凭祥市公安局“天网”监控系统三、四期2026年度综合运维服务采购意向150.35万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 广西政府采购网（凭祥市公安局）</span>
+        </div>
+        <div class="news-abstract">凭祥市公安局公开11至12月采购意向，唯一项目为“天网”监控系统三、四期2026年度综合运维服务，预算150.35万元，预计12月采购。边境口岸城市天网运维属高价值续签类，涉及点位巡检、故障处置与平台保障。建议以运维为切口绑定客户，同步挖掘三、四期设备进入更换周期的存量替换机会。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=0TRTO1RVx7WXv9QT3ff+pQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">玉林市公共安全视频监控建设联网应用项目配套机柜、专线链路租赁及平台运维服务83.04万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 乙方宝（玉林市委政法委）</span>
+        </div>
+        <div class="news-abstract">玉林市委政法委公开采购意向，项目为公共安全视频监控建设联网应用配套机柜、专线链路租赁及平台运维技术保障服务，预算83.04万元，预计12月采购。需求含机柜租赁、雪亮光纤专线、平台驻场运维、设备维护与应急保障。属雪亮工程后端运维典型标包，建议联合运营商或独立承接驻场运维，掌握平台侧话语权。</div>
+        <a href="https://www.yfbzb.com/inviteBid/detail/20261113_647699757.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港边境2000余个高清摄像头化身“智慧眼”，全区126个沿海沿边联防所已建成97个</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西云-广西日报</span>
+        </div>
+        <div class="news-abstract">广西日报报道强边固防三年行动进展：防城港东兴边境线已布设两千余个高清摄像头，实现监控补光全覆盖，曾依托预警5分钟拦截网逃人员；全区今年计划分3批建126个沿海沿边联防所、警务室，已建成97个，配500余名联防员。建议跟进剩余29个联防所及后续批次视频、周界、报警设备配套。</div>
+        <a href="https://v.gxnews.com.cn/a/22013847" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林市公安局数字侦查支队罗飞翔入选2026“最美基层民警”候选人，牵头研发反诈一站式超级智能体</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-14</span>
+          <span class="source-tag">📍 广西公安（自治区公安厅官方微博）</span>
+        </div>
+        <div class="news-abstract">自治区公安厅推介候选人罗飞翔，其为桂林市公安局数字侦查支队政委，牵头研发“反诈一站式超级智能体”等实战工具，创新跨境电诈“十查”研判战法，协助破获现案积案550余起，“飞翔工作法”全国推广。说明广西公安对AI大模型+视频侦查工具接受度高，建议以反诈智能体、视频研判平台切入数字侦查条线。</div>
+        <a href="https://www.sina.cn/news/detail/5365131609378955.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港市公安局港北分局港北天眼前端建设及386路天眼数据传输与视频数据治理项目启动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西招标网（贵港市公安局）</span>
+        </div>
+        <div class="news-abstract">贵港市公安局港北分局推进港北天眼前端建设，及386路天眼前端数据传输线路服务、386路视频数据治理项目，属存量前端补点与数据治理同步实施。386路规模意味着公安正从“建前端”转向“治数据”，涉及视频质量诊断、结构化解析、目录治理。建议以“前端+数据治理+运维”组合方案跟进。</div>
+        <a href="https://www.yfbzb.com/zbzt/99/420/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction-1116.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy-1116.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education-1116.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security-1116.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
