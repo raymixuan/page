@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>通信运营商 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>通信运营商行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期通信运营商呈底座扩容加感知下沉两条主线。广西移动披露乡镇农村基站超12万、自然村5G覆盖超99%、5G-A主城区连续覆盖，并在贺州、桂林、南宁、贵港搭建警用无人机调度平台，形成空中发现、平台研判、地面处置闭环；自治区通管局部署2027年双万兆与算力网络建设，广西东信易通获批工信部700号段号码保护试点。铁塔侧在北海自然保护区监测平台（7个监控点位加无人机远程控制）、北海海洋综合管理平台12个点位运维、北海网络专线与平台运维58.03万元、钦州监控设备安装维护7.2万元等项目密集出手，通信塔变感知塔的运维型商机正在放量。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">8条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西移动筑牢立足广西、面向东盟的数智底座</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">中国移动广西公司披露，截至2026年10月乡镇农村建成基站超12万，行政村4G/5G覆盖率双100%、自然村5G超99%，贵港实现5G-A乡镇以上连续覆盖、三区两县全部具备万兆光网接入能力。更关键的是在贺州、桂林、南宁、贵港依托5G低空专网搭建警用无人机调度平台，形成空中发现、平台研判、地面处置闭环，是安防企业与运营商合作切入低空警务的直接接口。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/szsh/t28328584.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西通信管理局部署2027年双万兆与算力网络建设</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 搜狐·通信信息报</span>
+        </div>
+        <div class="news-abstract">广西通信管理局召开会议部署2027年重点任务，明确推进双万兆与算力网络等基础设施建设，同步拓展5G加工业互联网应用并强化国际节点与应用安全。双万兆与算力网络并行部署意味着广西将出现一批万兆园区、算力节点机房新建改造项目，涉及机房动环、周界安防、AI能耗管理与算力调度可视化，是运营商集采之外可切入的配套市场。</div>
+        <a href="https://news.sohu.com/a/1099720650_128075" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西企业获批工信部号码保护服务试点，700专用号段落地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 工业和信息化部</span>
+        </div>
+        <div class="news-abstract">工信部批复10家企业开展号码保护服务业务试点并核配700专用号段，广西东信易通科技有限公司成为唯一入选的广西企业。试点优先在外卖、网约车等高频场景落地，通过中间号隐藏真实号码，服务反诈与个人信息保护。号码治理与反诈能力建设会带动运营商侧通话行为分析、异常号码识别与反诈预警平台扩容，属通信运营商条线的软件类机会。</div>
+        <a href="https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2026/art_18a3cbf1ce5840ee8a491331f3af46fe.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西信息通信业举办2026年通信建设质量监督人员培训</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西壮族自治区通信管理局</span>
+        </div>
+        <div class="news-abstract">11月9日至10日，广西信息通信业组织2026年通信建设质量监督人员培训，各市通信发展管理办公室、各电信企业区市公司建设部门及在桂参建单位共160余人参加，聚焦工程全流程管理、施工现场质量管控与安全生产制度落实。培训强化施工质量与安全监管，意味着基站、管线、机房施工验收趋严，安防施工类项目需提前对齐质量监督标准与验收资料要求。</div>
+        <a href="https://gxca.miit.gov.cn/xwdt/gzdt/art/2026/art_911a7d00d88f443a84482a76ec250301.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国铁塔广西分公司2026年北海市某自然保护区监测平台维护服务采购预公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 中国铁塔电子采购平台</span>
+        </div>
+        <div class="news-abstract">铁塔广西分公司11月12日预公示北海市某自然保护区监测平台维护服务采购，内容含7个监控点位的网络传输服务、6个站点的巡检维护与雷达频段使用备发电服务，以及监测平台升级（云资源扩容、系统框架升级、无人机远程控制、单点登录）。自然保护地视频加雷达加无人机立体监测已成标准架构，平台升级类项目是切入林草与保护地行业的高确定性入口。</div>
+        <a href="https://ebid.chinatowercom.cn/zgtt/gggs/003005/20261112/2120808353759358977.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">铁塔能源广西分公司2026年北海市海洋综合管理平台运维服务采购预公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 中国铁塔电子采购平台</span>
+        </div>
+        <div class="news-abstract">铁塔能源广西分公司11月9日预公示北海市海洋综合管理平台运维服务采购，需为海洋综合管理平台12个点位提供设备维护服务，服务期自合同签订起1年，拟确定1家供应商承担100%份额，要求具备特种作业操作证及发电机维护业绩。海洋综合管理平台的岸基雷达、AIS、光电与视频点位运维外溢需求明确，是切入海洋渔业与海防监控运维的口子。</div>
+        <a href="https://ebid.chinatowercom.cn/zgtt/gggs/003005/20261109/2119626559895470082.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">铁塔广西分公司2026年北海市某单位网络专线及平台运维服务成交候选公示，58.03万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 中国铁塔电子采购平台</span>
+        </div>
+        <div class="news-abstract">铁塔广西分公司11月11日公示北海市某单位网络专线及平台运维服务采购成交候选供应商，中国电信北海分公司以不含税总价580,324.31元排名第一。项目为专线加平台运维打包模式，说明铁塔正以站址资源换取政企平台运维份额。对安防厂商而言，此类项目是借道铁塔进入政法、海洋等单位视频专网运维的稳定通道。</div>
+        <a href="https://ebid.chinatowercom.cn/zgtt/gggs/003003/20261111/7bd76af1-577d-4942-8e80-6dda66c1d130.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">铁塔钦州市分公司2026年监控设备安装维护服务项目（第二次）比选，预算7.2万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 启信宝</span>
+        </div>
+        <div class="news-abstract">铁塔钦州市分公司11月13日发布2026年监控设备安装维护服务项目第二次比选，预算7.197767万元，内容含智能球型摄像机安装调试及三年维护服务。项目首次比选因有效供应商不足而失败，二次比选门槛较低。金额虽小，但铁塔三年维护加设备安装模式是安防企业稳定接入运营商体系、获取后续点位扩容订单的实用切口。</div>
+        <a href="https://m.qixin.com/bidding/ec802e0e-93b7-4855-9c94-06661df4d942" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction-1116.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy-1116.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education-1116.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security-1116.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
