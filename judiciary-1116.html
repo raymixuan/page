@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>司法行业 · 广西行业双周简报 | 2026.09.28-10.12</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>司法行业行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期司法条线最鲜明的信号是算力、信创、大模型三线并进。自治区监狱管理局公开343.19万元人工智能算力租赁，要求算力不低于11200T、支撑671B大模型，明确用于3个智能体向全区20个监狱单位推广；贵港监狱394.81万元监控存储扩容及信创监控平台要求国产CPU与操作系统；法院侧容县融合科技法庭66.33万元、北海海城区法院98万元方言语音识别系统相继挂网；南宁市第一看守所智慧出入管理13万元小额意向也已公开。全区监狱、法院、看守所三级智能化改造进入集中释放期，建议优先跟进算力底座与信创平台两类入口型项目。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">7条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西壮族自治区监狱管理局公开人工智能算力租赁服务采购意向，预算343.19万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">自治区监狱管理局11月10日公开2026年11月政府采购意向，拟投入343.19万元采购人工智能算力租赁服务，要求算力不低于11200T、支撑671B参数大模型（FP16精度），服务周期3年，预计2026年12月采购，用于支撑3个智能体应用向全区20个监狱单位推广。这是广西监狱系统首个明确的大模型算力底座项目，算力落地后必然配套视频结构化、行为识别与智能巡查应用。</div>
+        <a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=iGo9eAo6eqd09iNbuVPSZw==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贵港监狱监控系统存储扩容及信创监控平台采购公开招标，预算394.81万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西公共资源交易平台</span>
+        </div>
+        <div class="news-abstract">广西壮族自治区贵港监狱11月10日发布监控系统存储扩容及信创监控平台采购招标，预算3,948,053元，采购云存储节点5台（8U/48盘位）、企业级硬盘240块（单盘不低于30TB）、防火墙1台（国产CPU与操作系统），12月2日9:00开标。项目明确要求信创化，说明监狱监控平台国产化替代已进入实质采购阶段，具备国产化平台与存储适配能力的厂商优势明显。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001002005002&infoid=219d2978-e957-47dd-8eec-43c99d416ebe" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">容县人民法院派出法庭融合科技法庭建设竞争性谈判，预算66.33万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">容县人民法院11月9日发布派出法庭融合科技法庭建设竞争性谈判公告，预算663,337.4元，采购高清庭审主机5台、高清室内枪机特写20台、全景枪机5台、桌面话筒30支、功放5台、壁挂音箱10台、液晶电视10台及席位显示主机30套，11月13日9:00开标。项目是典型基层法庭庭审加监控加扩声融合包，可作为广西派出法庭标准化改造模板批量复制。</div>
+        <a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=Ul51hGtvIfAYuBbiEMuirQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北海市海城区人民法院采购意向：语音识别系统10套，预算98万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">北海市海城区人民法院11月10日公开2026年11月至12月政府采购意向，拟投入98万元采购语音识别系统10套，要求支持方言切换识别转写与庭审笔录智能修正，预计2026年12月采购。方言识别是广西庭审场景的核心痛点，该类项目通常与庭审主机、音视频采集同步实施，是切入法院智能庭审语料与音频前端设备的直接机会。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=w4wCoHlXcYe6RvTxJvnBhQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西监狱系统网络安全服务采购意向公开，预算180.39万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">自治区监狱管理局同步公开广西监狱系统网络安全服务采购意向，预算180.39万元，预计2026年12月采购。服务内容通常覆盖等保测评整改、边界防护、终端管控与安全运营，涉及监狱监控专网、门禁与报警系统安全加固。与343.19万元AI算力租赁形成算力加安全组合，建议打包跟进，从网络安全服务切入带动视频专网设备更新。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=+XArv2a15jKQ9l2DXdXMJQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市第一看守所智慧出入管理系统设备采购意向，预算13万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">南宁市第一看守所11月12日公开2026年11月至12月采购意向，拟投入13万元采购智慧出入管理系统设备，含门禁一体机、车牌识别一体机、门控制系统等一批并包安装，预计2026年12月采购。看守所出入口是监所安全第一道防线，此类小额项目常作为AB门改造与人员车辆一体化管控的起点，可延伸至监室智能分析与周界高压电网联动。</div>
+        <a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=q0WDHAQmDYDRoyr2uLRG2Q==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">全区司法行政戒毒系统身体康复训练业务培训班举办，课程含人工智能赋能戒毒康复</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西壮族自治区司法厅</span>
+        </div>
+        <div class="news-abstract">自治区戒毒管理局11月2日至6日举办全区司法行政戒毒系统身体康复训练业务培训班，课程设置包含人工智能赋能戒毒康复内容，探索以智能感知与数据分析辅助戒毒人员体质评估与康复训练。戒毒场所对人员定位、生命体征监测、行为异常预警的需求正从看得见向看得懂演进，智慧戒毒所建设有望在培训试点后进入实质采购阶段。</div>
+        <a href="http://sft.gxzf.gov.cn/zwgk/jdgl/gzyw/t28324330.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/real-estate-construction-1116.html">地产</a>
+    <a href="https://raymixuan.github.io/page/power-energy-1116.html">电力</a>
+    <a href="https://raymixuan.github.io/page/education-1116.html">教育</a>
+    <a href="https://raymixuan.github.io/page/public-security-1116.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
