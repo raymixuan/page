@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>文体卫 · 广西行业双周简报 | 2026.11.09-11.15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>文体卫行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是医疗设施建设与文旅消费活动双向发力。梧州市第二人民医院改扩建项目主体及室外工程完成中标候选人公示，含智能化、消防安全与变配电配套，总床位296床；广西国际壮医医院特殊医技楼工程总承包招标澄清；广西医疗卫生服务体系十五五规划提出推进病房改造与床旁智能交互升级。大化县人民医院智慧医疗12套系统720万元落地。安防机会集中在智慧医院安防与物联网、病房智能化，建议优先跟进梧州二院与壮医医院。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">14条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">梧州市第二人民医院改扩建项目-主体及室外工程施工中标候选人公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·梧州）</span>
+        </div>
+        <div class="news-abstract">梧州市第二人民医院改扩建项目主体及室外工程施工完成中标候选人公示，用地约14449.62平方米，新建7层住院楼6518平方米、改扩建3#住院楼4100平方米、6#食堂消防改造931平方米、新建地下停车库2316平方米，明确含消防安全、变配电、智能化配套，总床位296床。精神专科医院对防出走、重点区域管控、行为异常识别要求特殊。建议围绕人脸门禁、周界防范、行为分析与一键报警的专科安防方案跟进其智能化分包。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/wzggzy/projectDetails.html?categorynum=001001001004&infoid=445c3f9c-387d-4a2f-ac6e-29bbcd83cdfb" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西国际壮医医院特殊医技楼工程项目第1次澄清</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西）</span>
+        </div>
+        <div class="news-abstract">广西国际壮医医院特殊医技楼工程发布第1次澄清，调整设计负责人要求与计划工期，总承包计划工期335日历天（施工图设计30天、施工305天），投标截止延至11月30日，计划2026年12月20日开工、2027年11月20日竣工。特殊医技楼涉及放射、核医学等特殊科室，对辐射防护区域门禁、视频监控、环境与辐射剂量监测、医废通道管控要求高。建议以总承包联合体或智能化专业分包参与。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001001002&infoid=33e8f4cb-6836-4339-b76f-3d2c6b10a076" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">《广西医疗卫生服务体系暨医疗机构设置十五五规划》印发</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西壮族自治区人民政府办公厅</span>
+        </div>
+        <div class="news-abstract">广西印发医疗卫生服务体系暨医疗机构设置十五五规划（桂政办发〔2026〕80号），提出推进病房改造升级，有序推动四人间及以上病房改造为二人间或三人间，迭代升级床旁智能交互系统、智能输液管理系统等功能模块，提升病房智慧化管理水平，开展无障碍环境建设。规划为医院智能化提供了明确方向与资金依据，床旁交互、智能输液、护理呼叫、病区门禁与视频探视是直接对应的产品线。建议按规划梳理全区病房改造项目清单，形成智慧病房标准方案。</div>
+        <a href="http://www.gxzf.gov.cn/html/zfwj/zxwj/t28304066.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西儿童医疗中心科研楼重点实验室装修项目竞争性谈判</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西政府采购网</span>
+        </div>
+        <div class="news-abstract">广西儿童医疗中心科研楼重点实验室装修项目（GXZC2026-J2-003715-GXGG）竞争性谈判，预算350万元、最高限价344.86万元，位于南宁市厢竹大道61号科研楼6至8层，涉及面积约757.3平方米，内容包括建筑工程、装修装饰、给排水、通风空调、消防、生物安全、强电与弱电智能化工程，工期65日历天。实验室弱电智能化涉及门禁分级、环境监测、视频监控与生物安全柜联动。建议以弱电智能化专业分包切入。</div>
+        <a href="https://zfcg.gxzf.gov.cn/site/detail?articleId=F4xyD7gRbSbdFYxwVx76HQ==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">大化瑶族自治县人民医院2026年11月至12月政府采购意向（智慧医疗建设720万元）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">大化瑶族自治县人民医院公开采购意向，拟启动智慧医疗建设项目，采购建设12套业务信息系统，预算720万元，预计2026年12月采购。县级医院智慧化补短板是本期医疗信息化的主力市场，12套系统通常覆盖HIS、EMR、LIS、PACS及安防相关的视频监控、门禁、平安医院、后勤运维等模块。建议在采购意向阶段即与院方信息科对接，围绕平安医院与安防物联网模块提供方案，并争取纳入整体建设包。</div>
+        <a href="http://www.ccgp-guangxi.gov.cn/site/detail?articleId=lUsx+7Lf61xwGPGT0WBb0w==&parentId=66485" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">横州市中医医院信息化提升改造项目硬件采购公开招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·南宁）</span>
+        </div>
+        <div class="news-abstract">横州市中医医院信息化提升改造项目硬件采购（NNZC2026-G1-270187-HZSG）公开招标，预算165万元，要求合同签订后45日内完成到货安装调试，投标截止2026年12月1日14时30分。医院信息化硬件采购通常包含服务器、存储、网络与终端，配套机房动环监控、UPS、消防与门禁需求。建议以机房建设与动环监控为切入点，或与集成商合作提供机房智能化与安防配套。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/nnggzy/projectDetails.html?categorynum=001002005002&infoid=3fbe166e-b564-4980-bdc1-ad9fa1cdad18" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">梧州市工人医院LIMS系统采购招标（三位一体智慧医院建设）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 仪器信息网</span>
+        </div>
+        <div class="news-abstract">梧州市工人医院LIMS系统采购招标，预算102.5万元，用于促进梧州市第二人民医院三位一体智慧医院建设，主要包含实验室管理系统、病案管理系统、病案归档系统和合理用药系统，响应文件截止2026年11月25日9时。三位一体智慧医院建设强调业务系统与安防、后勤系统的数据贯通，实验室与病案库房的门禁分级、温湿度监测、视频监控是配套需求。建议以医院物联网与安防平台对接其业务系统，形成整体交付能力。</div>
+        <a href="https://www.instrument.com.cn/event/bid/t167816.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西医科大学附属肿瘤医院掌上智慧医院系统项目结果公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 医疗招标采购网</span>
+        </div>
+        <div class="news-abstract">中国银行广西壮族自治区分行委托招标的广西医科大学附属肿瘤医院掌上智慧医院系统项目（KWAD5G2026845）公示中标候选人，第一中标候选人为广西海天科技，含税报价212.67万元。银行参与医院智慧化项目说明金融机构正通过场景共建切入医疗。掌上智慧医院通常涉及线上挂号、缴费、报告查询与院内导航，与院内安防系统的身份体系存在整合空间。建议关注银医合作类项目的软硬件打包机会，提供院内人脸识别与自助终端配套。</div>
+        <a href="https://www.120bid.com/view/20414/wb4Wz6EBMqitpwL590mH.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林医院单机检查报告无纸化智能管理平台采购院内招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">桂林某人民医院就单机检查报告无纸化智能管理平台采购开展院内公开招标，采购内容为平台1项；同期该院核心业务系统CA数字证书认证平台建设、医疗设备数据互联互通管理服务等项目陆续推进。无纸化与CA认证对医疗数据安全提出更高要求，配套需求包括终端身份认证、报告打印与领取核验、病案库房出入管控。建议以医疗数据安全与身份核验为切口，提供CA+人脸核验+门禁联动方案。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-20606-450300-0-0.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年中国联通河池市分公司大化文旅局体育中心及公共体育场场馆系统数据集成服务项目</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 招标360</span>
+        </div>
+        <div class="news-abstract">2026年中国联通河池市分公司就大化文旅局体育中心及公共体育场场馆系统数据集成服务项目采购。公共体育场馆智慧化通常包含场馆视频监控、人流统计与限流、票务与闸机核验、灯光与广播联动、赛事直播与回放、消防与应急疏散。运营商以数据集成方式承接，需要安防设备与平台供应商配合。建议与联通河池分公司建立合作，提供场馆安防与客流管理子系统，向大化及河池其他场馆延伸。</div>
+        <a href="https://www.bid360.com.cn/sa/guangxi_liantong/2.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026活力夜广西嘉年华暨西江夜游首航（梧州站）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西壮族自治区文化和旅游厅</span>
+        </div>
+        <div class="news-abstract">2026活力夜广西嘉年华、广西精品消费月梧州站暨西江夜游首航活动于11月13日至15日在梧州河西码头与骑楼城举办，包含非遗火秀、无人机光影秀、荧光醒狮、粤剧、AI互动与主题游船夜游。大型夜间文旅活动对临时视频监控、无人机反制与低空管控、人流热力监测、应急广播与指挥调度需求集中。建议围绕文旅活动安保提供临时监控+无人机侦测+指挥调度的一体化保障服务，形成可复用的活动安保产品。</div>
+        <a href="http://m.toutiao.com/group/7707361937180459561/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">遇见广西康养同行文旅推介走进香港 多元康养产品引客入桂</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 广西壮族自治区文化和旅游厅</span>
+        </div>
+        <div class="news-abstract">11月10日，遇见广西康养同行文化旅游（香港）推介会暨引客入桂对接洽谈会在香港举行，南宁、桂林、河池、贺州、崇左五城集中亮相，河池启动十万港人游巴马专项行动，2026年1至9月广西接待香港过夜入境游客同比增长35.9%。入境游客快速增长对景区多语种导览、客流统计、智能安防与应急服务提出更高要求。建议围绕康养景区与度假区提供客流分析、周界与视频监控、一键报警与AED联动方案。</div>
+        <a href="http://m.toutiao.com/group/7706944493731299891/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贺州文旅：2026广西文化旅游发展大会签约21个项目</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-14</span>
+          <span class="source-tag">📍 中国日报</span>
+        </div>
+        <div class="news-abstract">贺州承办2026广西文化旅游发展大会，在相关招商活动上签约21个项目，涵盖温泉度假、精品民宿与微短剧制作；2026年前三季度贺州游客量与消费实现两位数增长，酒店与民宿登记入住量同比增长一倍以上，黄姚古镇2025年接待约159万人次、增长近27%。文旅项目集中签约将带来景区与民宿的安防与智能化新建需求，包括景区视频监控与人流管理、民宿智能门锁与入住核验、消防与用电安全监测。建议以黄姚古镇为样板打造智慧景区方案。</div>
+        <a href="https://www.chinadaily.com.cn/a/202611/14/WS6af7de2ee4b03ebf8519c5fa.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">一条向海运河 解锁广西全新打卡地图（交旅融合）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-15</span>
+          <span class="source-tag">📍 钦州市旅游局</span>
+        </div>
+        <div class="news-abstract">2026桂在交旅——溯源灵渠 运河向海大型行进式采风活动走进横州、钦州，串联中铁南横高速飞龙服务区、中华茉莉园、西津国家湿地公园、平陆运河马道枢纽、钦州坭兴陶博物馆、龙门大桥、三娘湾等节点，广西将实施串珠成链工程、构建快进慢游交通体系、规划建设全域旅游公路。交旅融合线路建设需要沿线视频监控、服务区智慧停车与客流分析、景区卡口与票务核验、应急救援呼叫柱。建议以交旅融合线路整体智慧化打包跟进。</div>
+        <a href="http://m.163.com/dy/article/LBQITHTQ0514UA7E.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1109-1115.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1109-1115.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1109-1115.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1109-1115.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
