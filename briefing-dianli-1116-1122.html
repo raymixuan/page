@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>电力央企 · 广西行业双周简报 | 2026.11.16-11.22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>电力央企行业要闻</h1>
+    <div class="date">2026年11月16日 — 11月22日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期电力主线是储能规模化招标与主配网集中投产。百色平果400兆瓦每800兆瓦时独立储能EPC招标，总投资10亿元、单价1.25元每瓦时，配套220千伏升压站及3公里送出线路；田东200兆瓦每400兆瓦时配套储能设备及安装招标2.6亿元。南网储能旗下贵港、南宁两家蓄能发电公司同期在北交所挂牌增资扩股引入战投。自治区能源局公示青秀汇能宁福一期、广西国轩新能源2个绿电直连项目；2027年新能源增量项目机制电价竞价结果出炉，风电57个项目85.73亿千瓦时0.359元每千瓦时、光伏8775个项目13.95亿千瓦时0.305元每千瓦时。玉林陆川东山嶂106.25兆瓦、古岭90兆瓦等5个项目同日开竣工；国电电力桂林平乐白蔑二期50兆瓦EPC明确无人值班少人值守。电网侧南宁500千伏邕州站2号主变扩建、500千伏珠福乙线、桂林220千伏瑶乡站间隔扩建、横州35千伏镇安站增容陆续投产。建议锁定独立储能EPC与无人值班风电场的远程集中监控、消防联动、周界防范打包机会。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">15条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">陆川5个重点项目同日开工竣工，绿色能源占近九成</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-21</span>
+          <span class="source-tag">📍 玉林晚报（新浪转载）</span>
+        </div>
+        <div class="news-abstract">11月20日陆川县东山嶂风电场等5个重点项目同日开工竣工，总投资12.1亿元。东山嶂为自治区级重大能源项目，装机106.25兆瓦、17台6.25兆瓦机组、投资约5.3亿元，年上网电量22953.5万千瓦时；同步开工古岭风电场90兆瓦、投资5.3亿元。山地风电场安防痛点是机位分散、无市电、通信弱，需求含风机塔筒与箱变视频、周界防盗、林火烟雾识别、升压站无人值守监控与无线回传。建议提供风光储一体化低功耗监控方案。</div>
+        <a href="https://k.sina.com.cn/article_6073664274_16a04c31202001oaoi.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">横州35千伏镇安（镇龙）站增容改造工程投运</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 中国日报广西频道</span>
+        </div>
+        <div class="news-abstract">横州市35千伏镇安（镇龙）站增容改造工程投运，属灾后电网补强项目。县域35千伏站数量多、位置偏、值守难，是配网侧安防智能化的长尾市场，需求集中在站端视频与门禁、周界入侵报警、环境与温湿度监测、简易消防联动、远程运维。采购主体为广西电网南宁供电局横州分局，建议以县域变电站辅控标准化包批量推广，用统一平台纳管几十座小站，降低单站成本。</div>
+        <a href="https://gx.chinadaily.com.cn/a/202611/20/WS6b002d40e4b0e14252fcc8c7.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">田林县板桃风电项目进入风机吊装阶段</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 右江日报（头条号转载）</span>
+        </div>
+        <div class="news-abstract">百色田林县板桃风电项目进入风机吊装阶段。吊装期是安防需求集中释放的时点：吊装作业面视频监控与远程旁站、大型吊装设备防碰撞与人员闯入报警、临时营地与设备堆场周界防盗、林区防火烟雾识别。采购主体为项目业主与EPC总包，建议以基建期临时安防加运营期永久安防打包租赁模式切入，用4G、5G布控球解决山区无网络问题，降低业主一次性投入。</div>
+        <a href="http://m.toutiao.com/group/7709687097719849514/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南网储能贵港蓄能发电公司增资扩股引入战略投资者</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 北京产权交易所（头条号转载）</span>
+        </div>
+        <div class="news-abstract">南网储能旗下贵港蓄能发电有限公司在北交所挂牌增资扩股，拟引入战略投资者，新股东持股上限39%。抽水蓄能电站扩股意味着后续机组建设与技改资金到位，电站地下厂房、上下库、开关站的视频监控、门禁与人员定位、水工安全监测、消防联动将同步扩容。采购主体为南网储能及贵港蓄能公司，建议以南方电网合格供应商渠道提前布局，围绕抽蓄电站无人值班少人值守做智能巡检与安全防范方案。</div>
+        <a href="http://m.toutiao.com/group/7709458237048816137/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南网储能南宁蓄能发电公司增资扩股</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 北京产权交易所（头条号转载）</span>
+        </div>
+        <div class="news-abstract">南网储能同步为南宁蓄能发电有限公司挂牌增资扩股，新股东持股不超过33%。南宁抽水蓄能电站处于建设推进期，增资将为机电安装与配套工程提供资金。抽蓄项目安防需求集中在上下库周界与水域防溺水、地下洞室人员定位与门禁、厂用电与开关站无人值守监控、大坝安全监测视频复核。建议与南网储能建立框架合作，把贵港、南宁两个项目做成广西抽蓄安防标准样板。</div>
+        <a href="http://m.toutiao.com/group/7709458240257524224/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国华电贵港发电2号机组灵活性改造煤耗核定及性能验收试验采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 千里马招标网</span>
+        </div>
+        <div class="news-abstract">中国华电集团贵港发电有限公司就2号机组灵活性改造煤耗核定及性能验收试验开展询比采购。火电灵活性改造期间机组频繁深度调峰，设备与管道热应力风险上升，需要炉膛与管道区域高温视频、防爆监控、检修作业人员定位与安全帽识别、输煤栈桥智能巡检。采购主体为华电贵港发电，建议从检修技改配套安防切入，围绕检修作业安全管控平台提供人员定位与视频联动，形成年度服务。</div>
+        <a href="https://wap.qianlima.com/gjxx/508462/index_6_0.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西2027年新能源增量项目机制电价竞价结果出炉</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 国际能源网（风电频道）</span>
+        </div>
+        <div class="news-abstract">广西公布2027年新能源增量项目机制电价竞价结果：风电57个项目、85.73亿千瓦时，机制电价0.359元每千瓦时；光伏8775个项目、13.95亿千瓦时，机制电价0.305元每千瓦时。近万个光伏项目意味着分布式场站数量激增，运维靠人工不现实，集中监控、故障诊断、无人机巡检、周界与防盗是刚需。建议面向分布式光伏投资商与整县开发主体，推集中监控加智能运维订阅式服务，按站收费快速铺量。</div>
+        <a href="https://wind.in-en.com/html/wind-2471836.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">国电电力桂林平乐白蔑风电场二期50兆瓦项目EPC招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 国家能源集团招标网</span>
+        </div>
+        <div class="news-abstract">国电电力桂林平乐白蔑风电场二期50兆瓦项目EPC招标，拟布置8台6.25兆瓦机组，新建110千伏升压站，明确按无人值班少人值守模式设计。无人值班对安防智能化是直接利好：升压站需要全景视频加热成像测温、周界电子围栏、门禁与远程开门、消防与安防联动、设备状态智能巡检。采购主体为国电电力广西公司，建议在EPC阶段就与总包绑定，把智能化清单前置进设计，避免后期变更。</div>
+        <a href="http://www.chnenergybidding.com.cn/bidweb/001/001002/001002002/20261117/a6ae434b-e5a5-4cc7-b200-667781d7eb1b.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西电网一批主配网工程集中投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西电网（头条号转载）</span>
+        </div>
+        <div class="news-abstract">广西电网多个主配网工程投产送电：桂林220千伏瑶乡变电站间隔扩建、荔浦恒祥站110千伏送出工程提前5个月投运、梧州毅浔站220千伏工程、黄姚古镇配网改造含智慧景区配套。主配网集中投产带来变电站视频监控扩容、智能巡检机器人、周界与环境监测、配网台区智能终端需求；黄姚古镇类文旅配网还涉及景区客流与用电安全监测。采购主体为广西电网各地市供电局，建议按地市局分批跟进物资与施工框架。</div>
+        <a href="http://m.toutiao.com/group/7709054399628263979/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">500千伏珠福乙线验收，国能广投北海电厂二期配套送出</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西电网（头条号转载）</span>
+        </div>
+        <div class="news-abstract">500千伏珠福乙线完成验收，作为国能广投北海电厂二期配套送出工程，计划年底投产。500千伏线路与开关站的验收投产，需要线路通道可视化、防外破视频与激光防外破装置、塔基倾斜与微气象监测、变电站周界与主变消防联动。采购主体为广西电网建设分公司与国能广投北海发电，建议抓住年底投产前的补装窗口，主推输电通道可视化与防外破一体化装置。</div>
+        <a href="http://m.toutiao.com/group/7709075166055957043/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色平果400兆瓦每800兆瓦时独立储能电站EPC招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 北极星储能网</span>
+        </div>
+        <div class="news-abstract">笃盛新能源（平果）有限公司招标百色平果市400兆瓦每800兆瓦时独立储能电站EPC，总投资10亿元，折合1.25元每瓦时，配置160套2.5兆瓦每5兆瓦时液冷集装箱储能系统，配套新建220千伏升压站及1回3公里送出线路接入平果500千伏永安变电站，占地约90亩。储能电站安防需求明确：电池舱热失控早期探测与视频联动、站区周界与电子围栏、消防联动、升压站无人值守监控。建议以EPC联合体或业主直采方式切入消防加视频加周界打包。</div>
+        <a href="https://m.bjx.com.cn/mnews/20261116/1520296.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色田东200兆瓦每400兆瓦时配套储能电站设备及安装招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 北极星储能网</span>
+        </div>
+        <div class="news-abstract">百色田东县200兆瓦每400兆瓦时配套储能电站启动设备及安装招标，使用国有资金约2.6亿元，折合0.62元每瓦时。项目为新能源配套储能，站区相对集中、值守人员少，安防以远程集中监控为主，需求包括舱级消防探测与灭火联动、视频全景与热成像、周界入侵报警、站端数据上送集控中心。采购主体为当地能源国企平台，建议绑定一次调频与能量管理系统厂家做配套安防包，提高中标概率。</div>
+        <a href="https://m.bjx.com.cn/mnews/20261116/1520291.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西能源局公示拟开展绿电直连项目</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 广西壮族自治区发展和改革委员会（能源局）</span>
+        </div>
+        <div class="news-abstract">自治区能源局公示拟纳入广西绿电直连项目清单的2个项目：青秀汇能宁福一期、广西国轩新能源，公示期11月16日至20日。绿电直连要求源荷储一体化运行与精准计量，配套需求包括直连线路与开关站监控、发电侧与负荷侧数据采集与协同控制、计量装置防窃电与视频取证。采购主体为项目业主与广西电网，建议围绕源网荷储一体化监控平台提供采集终端与站端视频，抢占新业态标准话语权。</div>
+        <a href="http://fgw.gxzf.gov.cn/zfxxgkzl/wjzx/xinxigongshi/t28344453.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁500千伏邕州变电站2号主变扩建工程投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 广西电网</span>
+        </div>
+        <div class="news-abstract">南宁500千伏邕州变电站2号主变扩建工程投产，提升首府核心区供电能力。枢纽变电站扩建后消防风险与运维复杂度同步上升，需求包括主变泡沫灭火与水喷雾联动、主变热成像测温、站区周界与电子围栏、机器人与无人机联合巡检、辅控系统一体化。采购主体为广西电网南宁供电局，建议以辅控系统改造为抓手，把视频、消防、环境、门禁整合进统一平台，形成可复制的500千伏站标准配置。</div>
+        <a href="https://m.weibo.cn/detail/5365943775002628" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁已建成风电装机超1159.5兆瓦</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 腾讯新闻</span>
+        </div>
+        <div class="news-abstract">南宁市已建成风电装机超1159.5兆瓦，今年7月核准17个风电项目、合计570兆瓦、总投资32.38亿元。南宁从无风到规模化开发，后续将面临大量分散风机的集中运维压力，对应区域集中监控中心、风机视频与振动监测、无人机自动巡检、林火与入侵识别。采购主体为南宁市发改部门与各风电业主，建议推动业主共建区域集控运维中心，把安防与运维数据打捆，形成持续性服务收入。</div>
+        <a href="http://news.qq.com/rain/a/20261116A0AUK700" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1116-1122.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1116-1122.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1116-1122.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1116-1122.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
