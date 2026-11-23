@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>工业企业 · 广西行业双周简报 | 2026.11.09-11.15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>工业企业行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是人工智能赋能制造业全面铺开。自治区将实施四个200工程，培育200个AI产品、200个高质量数据集、200个典型应用场景与200个服务商。柳南区技改投资13.86亿元占工业投资82%，梧州累计智能工厂24家、数字化车间25家，防城港广西华昇上线AI系统105个。安防机会集中在AI视觉质检、安全生产行为识别、厂区视频监控与园区智慧管控平台，建议优先跟进柳州、梧州、贵港的智能工厂改造。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">9条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西将实施人工智能赋能制造业四个200工程</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 南宁五象新区管委会·南宁市融媒体中心</span>
+        </div>
+        <div class="news-abstract">广西将实施人工智能赋能制造业四个200工程，培育200个标志性AI产品、200个行业高质量数据集、200个AI典型应用场景、200个AI赋能服务商。两年来全区新增智能产品258个，2025年服务机器人产量突破80万台，工业机器人产量增幅86%。这意味着未来两年制造业AI场景将成批释放，其中视觉质检、安全生产行为识别、人员定位与厂区智能监控是最容易与安防产品线结合的方向。建议提前布局场景清单申报，把视频AI能力包装为可入库的典型应用场景。</div>
+        <a href="http://nnwxxq.gxzf.gov.cn/xxfb/mtjj/t28323642.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">向新行 向高攀——广西黎塘工业园区见闻</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西工信厅·新华社</span>
+        </div>
+        <div class="news-abstract">黎塘工业园区入园企业200余家、规上98家，拥有14家企业技术中心、4家智能工厂示范企业、7家数字化车间、22家数字化转型企业，电子信息产业产值19.7亿元同比增长41.3%。园区密集的规上企业群是安防与工业智能化的集中承载点，需求覆盖厂区周界与视频监控、危化与消防监测、能源管理、人员车辆出入管控。建议以园区管委会为切入口，推动园区级智慧管控平台统一建设，再向企业侧延伸子系统，形成园区+企业两级复制的销售路径。</div>
+        <a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/t28323763.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">工业力量⑦｜智造三重奏 柳南区聚焦智改数转</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 柳南区人民政府·柳州日报</span>
+        </div>
+        <div class="news-abstract">柳南区前三季度技改投资13.86亿元，占工业投资82.0%，同比增长38.6%；数字化改造签约92家、验收49家，26家企业获补贴804.6万元。高比例技改投资意味着设备更新与产线改造集中落地，配套的视频监控、机器视觉检测、安全生产监测、能耗采集需求同步释放。补贴政策降低了企业采购门槛，建议梳理柳南区92家签约企业名单，围绕数字化车间验收标准提供含视频AI的达标方案，抢在验收窗口前完成方案植入。</div>
+        <a href="http://www.liunan.gov.cn/xwzx/lndt/t19700101_3814132.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">技改撬动产能提升 数智激活制造活力｜梧州市实施人工智能+行动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-15</span>
+          <span class="source-tag">📍 梧州发布·新浪财经</span>
+        </div>
+        <div class="news-abstract">梧州全市累计拥有广西智能制造标杆企业2家、智能工厂24家、数字化车间25家，30个应用场景入选广西人工智能+制造典型应用场景；三威新材配备中间产品智能仓储、纤维板表面瑕疵视觉检测、智能柔性订单裁切系统，板面瑕疵检测准确率99%以上。视觉检测是安防企业切入制造业最直接的通道，可从板材、陶瓷、食品、金属表面检测切入，叠加厂区安防与安全生产监控形成整体方案。建议重点跟进梧州24家智能工厂与25家数字化车间的二次改造需求。</div>
+        <a href="https://finance.sina.com.cn/jjxw/2026-11-15/doc-iniyverz1937184.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港：上线AI系统105个 无一员工被优化</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">广西华昇新材料近三年上线AI系统105个，覆盖分解槽液位智能控制、AI+在线检测改造、无人化智能配加药等场景，入选全国制造业数字化转型典型案例。该案例说明氧化铝等流程工业对AI闭环控制与在线检测的接受度已成熟，配套的高温高危区域视频监控、人员定位、违章行为识别、设备状态视觉巡检需求同步增长。建议以流程工业AI+视频为主线，向防城港、百色等氧化铝与冶金集群推广可复制的场景包。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/szjj/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">摆脱拼算力拼模型思维——广西集成推动人工智能差异化发展</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-15</span>
+          <span class="source-tag">📍 中国经济网</span>
+        </div>
+        <div class="news-abstract">广西提出北上广研发+广西集成+东盟应用路径，前8个月人工智能及新一代信息技术产业增加值增长12.2%，人工智能+制造场景达377个，累计征集AI场景超千个、遴选发布开放场景279个。场景开放清单是供应商切入的政策入口，279个开放场景中大量涉及视觉识别、行为分析、安全监测。建议对照开放场景清单逐条匹配自有产品，优先申报安全生产与厂区管理类场景，通过入选标杆场景获得示范项目与推广背书。</div>
+        <a href="http://m.toutiao.com/group/7708168155482407487/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西人工智能应用服务商资源池征集工作正式启动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">自治区工信厅组织开展2026年广西人工智能应用服务商资源池征集，重点聚焦有色金属及关键金属材料、先进钢铁材料、现代绿色化工、人工智能及新一代信息技术、机械及高端装备制造、新能源汽车及电池、食品加工、林产加工及纸业、生物医药及健康、绿色建材十大现代化支柱产业。入池意味着获得面向全区制造业需求侧的官方推荐资格。建议尽快准备解决方案与案例材料申报入池，并同步申请制造业子池，为后续场景对接与项目投标建立资质优势。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/szsh/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西：新兴产业高质量发展 新质生产力澎湃成势</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西壮族自治区工业和信息化厅</span>
+        </div>
+        <div class="news-abstract">广西前三季度高技术制造业增加值同比增长9.8%，人工智能及新一代信息技术产业增加值增长11.1%，新能源汽车及电池产业增长16.2%，工业机器人、集成电路、电子元件产量分别增长2.1倍、69.0%、13.1%；上汽通用五菱智能岛制造体系入选全国首批领航级智能工厂培育名单，制造效率提升30%。新兴产业高速扩张带来新建产线与新厂房的安防与智能化整体配套需求，建议锁定新能源汽车、电池、集成电路三条链的扩产项目，从厂房弱电总包切入。</div>
+        <a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/t28337815.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">立实业潮头 以创新搏浪（南宁民企：南亚电器智能产线、桂润环境智慧运维）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 南宁发布</span>
+        </div>
+        <div class="news-abstract">南宁南亚电器智能生产线高速运转，为世纪工程配套高低压配电设备；桂润环境在智慧运维监控中心通过3RCM区域远程实时监视及控制系统，在多个项目布设监控设备并增加AI功能模块，实现数据波动自动调整与无人化运维。环保设施无人化运维是安防视频AI与远程监控的新兴场景，覆盖污水厂、垃圾处理站、泵站等分散站点，需要低带宽视频、边缘AI与集中监管平台。建议以环保运维为切口，向水务、环卫等城市基础设施运维市场延伸。</div>
+        <a href="http://m.toutiao.com/group/7707185769958261298/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1109-1115.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1109-1115.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1109-1115.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1109-1115.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
