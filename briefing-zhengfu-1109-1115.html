@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>政府行业 · 广西行业双周简报 | 2026.11.09-11.15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>政府行业行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是应急消防装备更新与水利安全监测同步发力。广西消防救援总队超长期特别国债资金支持的设备更新项目预算1.47亿元；防城港市本级应急救灾物资195.5万元落地。南宁邕北灌区工程安全监测系统设备及安装工程I标593万元招标计划公开；平果六龙等13座小型水库改造提升启动勘察设计招标。安防机会集中在应急指挥与消防物联网、水利工程安全监测，建议优先跟进邕北灌区与平果13座水库项目。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">14条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">广西消防救援总队超长期特别国债资金支持消防救援领域设备更新项目招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 电力招标网</span>
+        </div>
+        <div class="news-abstract">广西壮族自治区消防救援总队就超长期特别国债资金支持的消防救援领域设备更新项目公开招标，预算14694万元，采购高层供水消防车水罐泡沫12吨2辆、举高喷射消防车18米级9辆、30米级9辆、60米级大跨距2辆、云梯消防车30米级5辆、50米级7辆、登高平台消防车30米级14辆、50米级6辆，投标截止2026年12月1日10时。车辆采购将同步带动车载图传、现场指挥与无人机配套需求。建议关注车载视频回传、现场通信指挥与消防物联网配套标段。</div>
+        <a href="https://m.dlzb.com/23-0-71240306-1.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026年度防城港市本级应急救灾物资采购项目竞争性谈判</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西）</span>
+        </div>
+        <div class="news-abstract">2026年度防城港市本级应急救灾物资采购项目（森林草原防灭火个人防护套装等应急物资一批）（FCZC2026-J1-990186-GSZX）竞争性谈判，预算1955348元，响应截止2026年11月17日9时30分。应急物资采购通常同步配套应急指挥通信、现场照明与便携监控设备。建议在物资包之外提供应急指挥箱、单兵图传与便携布控球等增值方案，帮助采购单位提升现场处置能力，形成差异化竞争。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001002007001&infoid=2f9f12c5-3549-4b03-b16d-eef4277d05c8" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州市市直机关办公区域消防维保服务采购成交结果公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 中国政府采购网</span>
+        </div>
+        <div class="news-abstract">柳州市市直机关保障中心办公区域消防维保服务采购（LZZC2026-C3-990746-LZSZ）公布成交结果，中标金额1710225元，中标供应商为广西柳州桂旺消防技术有限责任公司。机关办公区域消防维保是政府行业稳定的年度服务市场，涵盖消防设施检测、火灾自动报警系统维护、消防水系统与灭火器管理，并与智慧消防物联网平台对接。建议以智慧消防物联网+维保一体化方式投标，通过平台化提升管理效率并锁定多年服务合同。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202611/t20261109_27642727.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西南宁市邕北灌区工程安全监测系统设备及安装工程I标招标计划</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西）</span>
+        </div>
+        <div class="news-abstract">广西南宁邕北灌区建设开发有限公司公开招标计划，邕北灌区工程安全监测系统设备及安装工程I标预算593万元，预计2026年12月至2027年1月招标。灌区设计灌溉面积149万亩，输水工程全长455.57公里，本次涉及总干2#隧洞、暗涵、检修支洞、灵马泵站、马山引水隧洞检修洞等安全监测设备及安装。大型灌区安全监测涉及隧洞变形与渗压监测、泵站机组状态监测、视频监控与闸站远程控制，建议以灌区安全监测整体方案投标。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001002006&infoid=0b6cfcbc-235b-41ce-8a6f-e9e103a9d4b8" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西平果市六龙等13座小型水库老旧水库改造提升项目前期工作服务勘察设计招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西）</span>
+        </div>
+        <div class="news-abstract">平果市水电工程管理站就广西平果市六龙等13座小型水库老旧水库改造提升项目前期工作服务开展勘察设计招标（E4510002866007099），涉及安邦、塘狂、咸曹一二、道峨、百排、六来、那谭、六龙、龙胆、过路、灵塘、那供13座水库，服务期45日历天，内容含安全排查、分析评估、可研编制、工程勘察、初步设计。小型水库改造必然配套雨水情监测、大坝安全监测、视频监控与预警广播。建议在勘察设计阶段植入监测设施方案，为后续施工招标建立技术口径。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001002001&infoid=84011c7e-8cf4-47a8-9762-0ef3b82e746b" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">韦韬主持召开自治区政府常务会议 审议农村供水保障能力提升三年攻坚方案</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 广西日报</span>
+        </div>
+        <div class="news-abstract">11月11日自治区主席韦韬主持召开自治区十四届人民政府第136次常务会议，审议《广西农村供水保障能力提升三年攻坚方案（2026—2028年）》，提出抢抓国家加快六张网建设机遇，加快构建八桂现代水网，分区分类实施城乡供水一体化、规模化供水、老旧管网改造，并研究加强沿海乡镇船舶规范化管理。农村供水与管网改造将配套水质在线监测、管网压力流量监测、水厂视频监控与安防、智慧水务平台。建议以县域智慧水务整体方案跟进三年攻坚项目。</div>
+        <a href="http://m.toutiao.com/group/7707109288258404864/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">环北部湾广西水资源配置工程施工D3标智慧工地信息化建设服务采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">中国电建水电八局就环北部湾广西水资源配置工程施工D3标智慧工地信息化建设服务开展采购，同期玉林片区智慧类项目密集挂网。重大水利工程施工期智慧工地是安防与信息化融合的高价值场景，涵盖施工现场视频监控与AI违章识别、人员实名制与定位、车辆与渣土运输管控、隧洞与深基坑安全监测、环境与噪声扬尘监测、智慧工地平台。建议以水利工程智慧工地标准包方式跟进，向环北部湾、平陆运河等重大项目复制。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-32264-450900-1-0.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西一表通改革：2.59万张报表整合为4962张 精简率超80%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">截至10月26日，广西全区2.59万张报表整合为4962张，41.7万个数据项压减到7.15万个，精简率均超80%，依托一表通系统实现表单统一制发、任务一键派发、数据一次采集、多方复用。数字政府改革推进意味着政务系统整合与数据共享需求持续释放，配套的政务云安全、身份认证、数据安全监测与政务大厅智能化改造需求同步增长。建议围绕政务数据安全与政务大厅智能服务提供方案。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/jyzf/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">面向东盟、立足沿江临海 南宁探索临灾预警南宁实践</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 中国气象局</span>
+        </div>
+        <div class="news-abstract">南宁作为全国气象灾害预警高质量试点，天气雷达从2部增至5部、1公里高度覆盖率93.29%，联合多部门共建雨情水情监测站219个，预警公众覆盖率达99.88%，聚焦物流交通、城市暴雨积涝防御、校园安全等七大数字孪生应用场景，上下学天气警示铃覆盖全市3500余所校园。临灾预警体系建设带来监测站网、预警发布终端、城市积涝监测设备与数字孪生平台需求。建议围绕城市生命线与气象预警融合提供感知层与平台层方案。</div>
+        <a href="http://m.toutiao.com/group/7706862375562904106/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">天哨护航平陆运河水上船舶 水上交通气象灾害智能警报系统启用</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 南宁日报</span>
+        </div>
+        <div class="news-abstract">11月12日南宁市水上交通天哨警报器及气象灾害智能警报系统在平陆运河新福水上综合服务区启用，融合北斗定位，具备恶劣天气智能感知、风险智能研判、警报精准触达、叫应自主反馈全链条能力，基于1公里、逐5分钟高时空分辨率多源融合气象数据与天气雷达数据，建立恶劣天气智能识别模型，实现按对象分级推送、按位置精准送达，电脑端、设备端、手机端三端联动。该系统是预警到人的典型样板，建议向水上交通、公路、工地等场景复制推广。</div>
+        <a href="https://m.weibo.cn/detail/5364754501863805" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州市水利局关于柳北区公用塘水库降等的批复</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 柳州市水利局</span>
+        </div>
+        <div class="news-abstract">柳州市水利局批复柳北区公用塘水库降等（柳水利运管〔2026〕9号），同期发布融水县乌支山水电站水工程建设规划同意书准予许可决定，并推进水利抗震救灾安全防线建设。水库降等与除险加固是水利安全监管的常态化工作，配套需求包括大坝安全监测、雨水情自动测报、视频监控与预警广播。建议跟踪柳州各水库降等与改造清单，提供小型水库标准化监测方案，单库投资小但可批量复制。</div>
+        <a href="http://slj.liuzhou.gov.cn" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西市场监管局构建食品安全全链条分级分类治理体系</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 中国消费者报</span>
+        </div>
+        <div class="news-abstract">广西市场监管局构建食品安全全链条分级分类治理体系，划定20类重点监管领域并按风险分四级，在19家大型农批市场设置联合服务岗亭，布设139个行刑衔接实验室与基层联络点，搭建畜禽产品一码溯源体系覆盖707家农批农贸市场、1756家学校食材供应商，累计溯源数据690万条，并上线食品真伪查验工具与AI食安科普系统。食品安全监管数字化带来农批市场视频监控、明厨亮灶、溯源终端与AI识别需求，建议以明厨亮灶加农批市场智慧监管方案跟进。</div>
+        <a href="http://finance.sina.cn/2026-11-12/detail-iniymmzr3970865.d.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市2026年政府工作报告：提速六景化工园区建设 打造面向东盟现代绿色化工产业基地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 南宁发布</span>
+        </div>
+        <div class="news-abstract">南宁市2026年政府工作报告提出重点打造新能源、有色金属精深加工及关键金属材料、现代绿色化工、林产加工及纸业等大进大出临港产业，提速六景化工园区建设，打造面向东盟的现代绿色化工产业基地；六景化工园区今年9月通过自治区认定，成为南宁首个专业化工园区、全区首个通过认定的新建化工园区。新建化工园区必须同步建设封闭化管理、危险化学品车辆管控、重大危险源监测预警与应急指挥平台。建议提前对接园区管委会，围绕园区智慧监管平台整体规划。</div>
+        <a href="http://m.toutiao.com/group/7706876474376159763/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">富川瑶族自治县殡仪馆建设项目配电工程招标代理服务机构结果公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 富川瑶族自治县人民政府</span>
+        </div>
+        <div class="news-abstract">富川瑶族自治县民政局公开遴选殡仪馆建设项目配电工程招标代理服务机构并公布结果，项目进入施工配套招标阶段。殡葬服务设施属政府投资的民生项目，安防需求包括业务大厅与告别厅视频监控、骨灰存放区门禁与防盗、火化车间环境与安全监控、消防与应急广播。建议关注其弱电与智能化标段，围绕特殊场所管理规范提供合规安防方案，并向县域民政系统其他项目延伸。</div>
+        <a href="http://www.gxfc.gov.cn/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1109-1115.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1109-1115.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1109-1115.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1109-1115.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
