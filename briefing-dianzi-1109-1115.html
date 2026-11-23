@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>电子电器 · 广西行业双周简报 | 2026.11.09-11.15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>电子电器行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是电子信息与新能源电池双链扩张。南宁华芯振邦4条产线全面投产、月产能2.5万片12英寸晶圆封测，填补广西晶圆级先进封测空白；南宁新能源电池建成产能超100GWh，宁福今年整体产能将达40GWh，比亚迪在邕建成产能80GWh。福绵智能家电前三季度产值2.6亿元增长171.19%。安防机会集中在洁净厂房监控与洁净区管控、消防与气体监测、仓储视觉识别，建议优先跟进南宁、玉林、贵港扩产项目。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">8条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">华芯振邦4条产线全面投产 月产能达2.5万片12英寸晶圆封测</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">广西自贸试验区南宁片区华芯振邦4条产线全面投产，月产能达2.5万片12英寸晶圆封测，填补广西晶圆级先进封测领域空白，封测代工产品出口越南、泰国、马来西亚。半导体封测厂房对洁净区人员管控、防静电门禁、全流程视频追溯、化学品与特气泄漏监测要求极高，单厂智能化投资通常在千万元级。建议围绕洁净厂房出入口控制、洁净服与人员行为视觉识别、厂务监控系统形成专用方案，切入南宁片区半导体产业链。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/szzf/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁：一块电池链起的千亿产业城</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西壮族自治区产业园区改革发展办公室</span>
+        </div>
+        <div class="news-abstract">南宁将新能源产业作为千亿级重点产业打造，已建成产能超100GWh，跻身全球重要新能源电池产业集聚区。南宁产投集团布局铝基新材料，投建20万吨电池铝箔技改、年产20GWh铝基新材料涂碳、年产10万吨高精电池铝箔等项目。电池与材料产线对粉尘、温湿度、静电与消防安全极为敏感，配套需求包括车间视频监控、极片与卷绕视觉检测、消防预警与气体灭火联动、AGV通道管控。建议以锂电池厂房智能化总包为抓手，覆盖南宁、横州、隆安等基地。</div>
+        <a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28329290.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">一块电池链起的千亿产业城：宁福40GWh、比亚迪80GWh、宝钠钠电即将投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 金台资讯</span>
+        </div>
+        <div class="news-abstract">广西宁福新能源完成产能三级跳，今年整体产能将达40GWh，第三代全极耳氟芯大圆柱电池已出口中东、欧洲、北美、东南亚与南亚；比亚迪在南宁布局6个项目，建成储能与动力电池产能80GWh；宝钠新材料2GWh钠离子动力电池与储能电池项目即将投产。三条技术路线并行扩产，形成持续的厂房新建与产线改造需求。建议按项目节点跟踪宁福三工厂爬坡、宝钠投产，提前介入安防与消防弱电标段。</div>
+        <a href="http://m.toutiao.com/group/7706714079351554596/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">龙安镇：代表铺新路 老厂焕新颜（125亩智能电子家电制造产业园）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 九派快讯</span>
+        </div>
+        <div class="news-abstract">广西瀚鸿五金制品投资9000万元，盘活废弃红砖厂105亩与村集体低效用地20亩，建成125亩现代化智能电子家电制造产业园，一期年产50万台智能节能电风扇生产线已于今年1月投产、预计年产值6000万元，二期计划投入8000万元建设电磁炉、暖菜板生产线。县域家电产业园改造是轻量化安防的典型市场，需求以厂区监控、出入口道闸、仓库与成品区防盗、消防预警为主。建议以县域园区打包方式推广标准化方案。</div>
+        <a href="http://m.toutiao.com/group/7706914870213476899/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">福绵区家电制造产业快速壮大 前三季度产值同比增长171.19%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西日报·新浪财经</span>
+        </div>
+        <div class="news-abstract">玉林福绵智能家电灯饰制造分园内，广西汉光科技每10秒有一台小家电完成整机组装下线，产品发往非洲、东南亚；前三季度规上家电制造产业产值2.6亿元，同比增长171.19%，月产能超30万台，今年冲刺400万台产销目标，并新引入自动化机械手。高速装配线对成品外观视觉检测、包装条码识别、成品仓出入库管理需求迫切。建议围绕家电总装线的视觉质检与仓储物流识别切入，叠加厂区安防形成整厂方案。</div>
+        <a href="https://t.cj.sina.cn/articles/view/7517400647/1c0126e4705909eedm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂创向新｜云芯半导体：一颗氮化镓点亮算力时代的广西芯</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 国际在线</span>
+        </div>
+        <div class="news-abstract">广西云芯半导体作为广西第一家第三代半导体芯片IC制造企业，其氮化镓宽禁带半导体功率器件项目在创新创业大赛获二等奖，公司搭建广西、广东、江苏三地四节点架构，南宁两个基地负责外延生长与IC封装，芯片从投片到出货周期仅3周，为行业平均的六分之一，计划投入3000万元扩建外延产能与千级洁净封装车间。千级洁净车间建设将带来环境监控、人员净化管控与全流程视频追溯需求，建议跟进其产线扩建的弱电与洁净区管控标段。</div>
+        <a href="https://gx.cri.cn/2026-11-13/c67e8bf8-6c4a-46d3-a86f-bf814c635267.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">《广西数字经济发展白皮书（2026年）》正式发布</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">白皮书显示全区已建成25个工业高质量数据集，覆盖有色金属、钢铁等特色优势行业；2025年工业领域人工智能核心产业产值突破890亿元，工业机器人产量增长86.3%，工业人形机器人、智能眼镜等一批智能产品实现首产首用；认定智能制造标杆企业12家、智能工厂39家、数字化车间60家。数据集与智能产品首产首用意味着新增产线与测试场景集中出现，配套的视觉采集、行为识别与安全监控需求同步增长。建议对照25个数据集方向梳理可复用的视频与感知数据方案。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/szgx/szjj/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁电子信息产业起势腾飞：形成芯片设计—封装测试—模组制造半导体产业链</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 南宁市工业和信息化局</span>
+        </div>
+        <div class="news-abstract">南宁电子信息产业向高新技术领域迈进，形成芯片设计、封装测试、模组制造的半导体产业链，华芯振邦建成广西首个集成电路晶圆级封测制造项目，南宁泰克制造的国产自主品牌企业级大容量内存条累计出货量排名全国前列，高技术制造业占规上工业增加值比重提升至25.7%。电子信息制造集群的形成将带来持续的洁净厂房、测试车间与仓储智能化需求。建议在南宁建立电子信息行业样板点，以点带面覆盖封测、模组、内存条等细分厂房的安防与智能化。</div>
+        <a href="http://www.xxtq.gov.cn/search/search?channelid=271110&keyword=%E6%9C%88%E4%BA%A7&searchword=%E6%9C%88%E4%BA%A7" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1109-1115.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1109-1115.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1109-1115.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1109-1115.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
