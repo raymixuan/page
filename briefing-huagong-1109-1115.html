@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>石化煤炭 · 广西行业双周简报 | 2026.11.09-11.15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>石化煤炭行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是重大项目攻坚与化工园区规范化并行。田东锦盛化工新材料一体化项目总投资44.64亿元，一期25万吨离子膜烧碱、30万吨甲烷氯化物，锁定2027年1月中间交接；柳化氯碱32万吨氯化新材料3号主变试运行成功；华谊钦州基地总投资超900亿元。多个化工项目进入环评审批。安防机会集中在园区封闭化管理、重大危险源监测预警、人员定位与特殊作业管控，建议优先跟进田东、钦州、柳州三大集聚区。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">15条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">锦盛化工新材料一体化项目吹响攻坚冲锋号 全力冲刺节点目标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 田东县人民政府</span>
+        </div>
+        <div class="news-abstract">广西田东锦盛化工化工新材料一体化项目总投资44.64亿元、占地1400亩，一期规划建设25万吨/年离子膜烧碱、30万吨/年甲烷氯化物及配套公辅工程，已全面进入攻坚建设阶段，确保2027年1月15日前实现中间交接，达产后年新增产值23亿元。氯碱与甲烷氯化物属重点监管危险化工工艺，安防需求覆盖可燃有毒气体检测报警、重大危险源视频监控、人员定位与二道门管控、特殊作业票管理与消防联动。建议在中间交接前的仪表与弱电施工窗口切入。</div>
+        <a href="http://www.gxtd.gov.cn/xxgk/fdzdgknr/zwdt/zwyw/t28335403.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">丁辛醇扩能周期尾声再添变量 广西华谊钦州32万吨装置临近放行</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 慧正资讯</span>
+        </div>
+        <div class="news-abstract">广西华谊钦州32万吨/年丁辛醇及丙烯酸酯项目环保设施竣工公示至11月12日，装置临近放行；华谊钦州化工新材料一体化基地总投资超900亿元，分三期建设。大型石化基地的环保设施竣工公示意味着即将转入试生产，试生产前必须完成安全仪表、气体检测、视频监控、消防联动的联调验收。建议紧盯华谊钦州三期及配套装置的安防与消防弱电标段，同时关注其现有装置的智能化升级与运维托管需求。</div>
+        <a href="http://m.toutiao.com/group/7707631613118661162/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">院士团队世界首创技术 40000吨生物基乙二醇项目签约</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 兴园化工园区研究院</span>
+        </div>
+        <div class="news-abstract">11月9日中科柏易金与广西产投资本签约，落地钦州年产4万吨绿色醇基高端化学品项目，采用院士团队世界首创技术，计划2028年投产。新建绿色化工装置从签约到投产周期较长，但设计阶段即确定自控与安防架构，是植入技术口径的最佳时点。建议在设计院阶段介入，围绕装置区视频监控、可燃有毒气体检测、DCS与SIS联动、人员定位与门禁管控提供符合石化规范的方案，锁定后续采购。</div>
+        <a href="http://m.toutiao.com/group/7707136477515334184/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百亿项目加速跑 感受广西产业园区热力（云图智领159亿元绿色化工）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 广西日报</span>
+        </div>
+        <div class="news-abstract">云图控股落地广西的百亿级绿色化工项目总投资约159亿元，一期土建已完工，90万吨高效复合肥生产线完成调试并于9月15日进入试运行投产，全部达产后预计年产值190亿元、提供约1500个就业岗位。复合肥装置涉及氨、硝酸铵等危化品，对气体检测、防爆视频监控、仓库温湿度与消防预警要求高。建议在试运行阶段跟进其安全设施完善与后续二期建设的安防需求。</div>
+        <a href="https://m.weibo.cn/detail/5364538600065826" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西华谊能源化工10万吨/年超高分子量聚乙烯项目</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 电力招标网</span>
+        </div>
+        <div class="news-abstract">广西华谊能源化工10万吨/年超高分子量聚乙烯项目投资137586万元，位于钦州石化产业园7号地块，建设2条5万吨/年生产线，基础设计中标结果已于11月5日公示。项目处于基础设计完成、即将进入详细设计与采购阶段，是植入自控与安防技术规格的关键窗口。建议围绕聚合与粉料输送区域的粉尘防爆视频监控、气体检测、洁净包装区门禁与称重防错提供方案，争取进入设计选型清单。</div>
+        <a href="https://m.dlzb.com/35-0-257099-1.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">年产10万吨焦亚硫酸钠、3万吨碳酸氢钠项目拟审批公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 贵港市生态环境局</span>
+        </div>
+        <div class="news-abstract">贵港市生态环境局对年产10万吨焦亚硫酸钠、3万吨碳酸氢钠项目作出拟审批意见公示，建设地点为贵港覃塘产业园区新材料科技园，公示期至11月18日。项目通过环评后即进入设计与施工阶段，二氧化硫等有毒气体监测、防腐蚀视频监控、液体罐区液位与泄漏监测是核心安防需求。建议在环评批复后立即对接业主，提供罐区与装置区一体化监测预警方案。</div>
+        <a href="http://sthj.gxgg.gov.cn/zfxxgkzl/zfxxgk/hjpj/npzxmgs/t28330019.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钦州石化产业园区鹿耳片区临时集中供热项目环评审批公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 中国—马来西亚钦州产业园区行政审批局</span>
+        </div>
+        <div class="news-abstract">中马钦州产业园区行政审批局对钦州石化产业园区鹿耳片区临时集中供热项目生态环境影响报告表作出拟审批意见公示，建设单位为广西创享热力有限公司，公示期至11月17日。集中供热项目涉及锅炉与高温蒸汽管网，需配置锅炉房视频监控、火焰与烟感探测、蒸汽管道泄漏监测、燃气泄漏报警与联锁。建议以热力站与管网监测为切口，向钦州石化园区多家用热企业延伸能源与安全监测服务。</div>
+        <a href="http://zmqzcyyq.gxzf.gov.cn/zwgk/fdzdgknr/zzxm/pzjg/t28327017.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">《广西田东石化工业园区总体规划及产业规划（2025-2035年）》环评第二次公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 田东县人民政府</span>
+        </div>
+        <div class="news-abstract">田东石化工业园区管理服务中心就园区总体规划及产业规划（2025-2035年）生态环境影响报告书开展第二次公众参与公示。园区级规划环评通过后，将明确封闭化管理、风险防控与应急体系要求，是推动园区智慧监管平台建设的政策依据。建议提前对接园区管委会，围绕园区封闭化卡口、重大危险源在线监测预警、有毒有害气体环境监测、应急指挥平台提供总体规划级方案，争取纳入园区基础设施投资盘子。</div>
+        <a href="http://www.gxtd.gov.cn/xxgk/fdzdgknr/zdlyxxgk/shgysy/hjbhly/jsxm/t28334867.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南宁市宾阳县华运石化油气电一体站项目环评审批前公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 南宁市宾阳生态环境局</span>
+        </div>
+        <div class="news-abstract">南宁市宾阳生态环境局对宾阳县华运石化油气电一体站项目环境影响评价文件进行审批前公示，公示期至11月13日。油气电一体站是加油、加气、充电复合业态，安防需求覆盖储罐区液位与泄漏监测、可燃气体报警、加油区与充电区视频监控、烟火识别、防爆门禁与应急广播。此类站点在全区县乡道路沿线数量多、单体投资小但标准化程度高。建议打包标准化方案，联合能源企业批量复制。</div>
+        <a href="http://www.binyang.gov.cn/gk/xxgkml/shgysyjslygk/hjbhly/jsxmhjyxpjsp/t6762503.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">主变试运行成功 为柳州这一重大项目投产蓄能（柳化氯碱32万吨氯化新材料）</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-11</span>
+          <span class="source-tag">📍 氯碱化工信息网</span>
+        </div>
+        <div class="news-abstract">广西柳化氯碱新增3号主变压器完成试运行试验，220kV变电站增容项目取得关键突破，为32万吨/年氯化新材料产业集群项目投产提供电力保障。该项目涵盖盐化工、化工新材料、精细化工、氢能利用等八大集群子项，聚焦废盐资源化利用与高端耗氯新材料。变电站增容完成意味着烧碱一期即将送电投产，安全仪表、气体检测、防爆视频与消防联动需同步到位。建议紧盯其投产前的安防联调窗口。</div>
+        <a href="http://www.ljhgxxw.com/index.php?a=show&c=content&id=2852" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">32万吨/年氯化新材料产业集群项目碱蒸发设备、工艺管道、电气仪表安装施工工程采购招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 乙方宝</span>
+        </div>
+        <div class="news-abstract">广西柳化氯碱就32万吨/年氯化新材料产业集群项目（废盐综合利用制30万吨/年烧碱一期）碱蒸发设备、工艺管道、电气仪表安装施工工程采购招标，供应商包工不包料，涉及307变电所电气施工、碱蒸发电气图纸与仪表桥架布置。电气仪表安装标段是弱电与自控系统落地的关键环节，视频监控、气体检测、DCS与SIS接线均需在此阶段完成。建议与电气仪表总包方建立合作，同步承接安防与监测子系统。</div>
+        <a href="https://www.yfbzb.com/inviteBid/detail/20261109_645809827.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">华谊钦州30万吨烧碱、40万吨聚氯乙烯项目PVC包装单元自动包装生产线运营服务中标候选人公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 电力招标网</span>
+        </div>
+        <div class="news-abstract">广西华谊氯碱化工就华谊钦州化工新材料一体化基地30万吨/年烧碱、40万吨/年聚氯乙烯项目PVC包装单元自动包装生产线操作及检维修运营服务完成中标候选人公示。自动包装线是视觉检测与安全监控的高价值场景，涉及包装袋外观与喷码识别、码垛机器人区域安全光幕与视频联动、成品仓出入库识别、粉尘环境防爆监控。建议围绕PVC包装与仓储环节提供视觉检测+安全监控组合方案，切入其运营服务链条。</div>
+        <a href="https://m.dlzb.com/37-0-42685459-1.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">东兴市天然气综合利用开发项目镇村瓶改管工程一期设计资格预审</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">东兴市天然气综合利用开发项目镇村瓶改管工程（一期）已由东兴市发改局以东发改核〔2026〕2号批准建设，资金来自企业自筹，现开展设计资格预审；同期防城港市港口区老旧燃气庭院管网及户内设施更新改造工程二标段也已招标。燃气管网改造需配套管网压力与泄漏监测、调压站视频监控、第三方施工破坏预警与GIS一张图。建议以城镇燃气安全监测平台为切入点，联合燃气公司推进管网感知层建设。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-22228-450600-1-1.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色市平果生态环境局关于年产3000吨塑料颗粒生产项目环评审批公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 百色市平果生态环境局</span>
+        </div>
+        <div class="news-abstract">百色市平果生态环境局受理并公示年产3000吨塑料颗粒生产项目环评文件，申请单位为平果市振超塑料再生有限公司，建设地点位于平果工业园区。再生塑料造粒属易燃粉尘与废气排放行业，需配置车间粉尘浓度监测、VOCs在线监测、防爆视频监控与消防预警。县域小型化工与再生资源项目数量多、单体小，适合以标准化安防包快速复制。建议与园区管委会合作，形成入园企业安防标配清单。</div>
+        <a href="http://www.pingguo.gov.cn/xxgk/fdzdgknr/zdlyxxgk/hjbh/jsxmhjyxpjsp/t28316338.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">26.11 氯化新材料产业集群项目组采购气动切断阀</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 乙方宝</span>
+        </div>
+        <div class="news-abstract">广西柳化氯碱氯化新材料产业集群项目组就32万吨项目采购气动切断阀，要求提供防爆合格证、阀门计算书与性能测试报告，报价需备注电磁阀品牌型号与产地。气动切断阀是安全仪表系统SIS的执行元件，其采购启动说明SIS联锁系统进入实施阶段，配套的联锁逻辑、气体检测报警联动、紧急切断与视频联动复核需求随之落地。建议关注其SIS与安全监控的集成标段，提供报警联动与视频复核一体化方案。</div>
+        <a href="https://www.yfbzb.com/inviteBid/detail/20261113_647386163.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1109-1115.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1109-1115.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1109-1115.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1109-1115.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
