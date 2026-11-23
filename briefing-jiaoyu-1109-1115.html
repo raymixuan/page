@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>教育行业 · 广西行业双周简报 | 2026.11.09-11.15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>教育行业行业要闻</h1>
+    <div class="date">2026年11月9日 — 11月15日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是智慧校园硬件与平台集中采购。都安职教中心办学条件改善项目预算300万元，含一站式学生社区智能设备、AI智慧考阅卷、理化生实验室与数智化教室；广西中医药大学智慧门岗系统升级开展市场调研，广西农业职业技术大学智慧校园安全消防应急处突指挥中心（智慧大脑平台）重新招标。安防机会集中在校园智慧门岗与人车管控、智慧大脑与应急指挥平台、实训室智能化，建议优先跟进都安、农职大、中医药大学。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">12条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">都安瑶族自治县职业教育中心办学条件改善项目（重）招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·都安）</span>
+        </div>
+        <div class="news-abstract">都安瑶族自治县职业教育中心办学条件改善项目（重）招标，预算300万元，建设内容明确包含一站式学生社区智能设备、AI智慧考阅卷系统、理化生实验室、数智化教室、校园网络升级改造。这是本期县级职教项目中智能化口径最完整的单体，一站式学生社区智能设备通常含门禁、自助服务终端、视频监控与宿舍管理，AI阅卷涉及高速扫描与图像识别。建议以智慧校园整体方案投标，重点突出多子系统统一平台与网络升级的协同。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/daxggzy/projectDetails.html?categorynum=001002005002&infoid=18bd94c2-d5eb-46ac-a060-4ba7fba4e600" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西工商职业技术学院学校智慧教学平台建设项目竞争性磋商</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西工商职业技术学院</span>
+        </div>
+        <div class="news-abstract">广西工商职业技术学院就学校智慧教学平台建设项目开展竞争性磋商，预算270910元。项目规模不大但属平台类采购，通常涉及录播教室、教学督导巡课、课堂行为分析与教学资源管理，与校园视频监控系统存在复用关系。建议以平台+教室终端组合方式响应，强调与学校现有视频监控、门禁与网络的身份打通，通过小项目建立校内平台入口，为后续教室改造与安防升级铺路。</div>
+        <a href="https://www.gxgsxy.edu.cn/info/1716/163171.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西中医药大学校园智慧门岗系统升级建设项目需求市场调研公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-10</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">广西中医药大学发布校园智慧门岗系统升级建设项目需求市场调研公告，涵盖前端感知升级、出入管控升级、车辆安全管理、平台与智能化应用。市场调研阶段是影响技术参数的关键窗口，高校门岗升级通常涉及人脸门禁、车牌识别道闸、访客预约与核验、非机动车管控、周界与重点区域监控、与校园一卡通和学工系统对接。建议尽快提交调研反馈与技术方案，争取参数倾向性，并突出多校区统一管理与假期模式等高校特有需求。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-450100-1-100.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西农业职业技术大学智慧校园安全消防应急处突指挥中心建设项目（智慧大脑平台建设）（重）与智慧校园运维服务</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">广西农业职业技术大学就智慧校园安全消防应急处突指挥中心建设项目（智慧大脑平台建设）（重）开展竞争性谈判，11月17日9时30分提交；同期该校2026-2027年智慧校园师生综合应用服务系统、数据分析及可视化应用系统运维服务以单一来源方式公示，另有智慧校园正版化服务询价。智慧大脑平台是校园安防从设备堆叠走向统一指挥的关键，涵盖视频汇聚、消防联动、应急预案、可视化大屏与处突调度。建议以指挥中心整体方案投标，并借运维服务了解现有系统架构。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27689-0-4-1.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西工业职业技术学院数字化整理实训中心设备采购项目（重）竞争性谈判</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西工业职业技术学院</span>
+        </div>
+        <div class="news-abstract">广西工业职业技术学院就数字化整理实训中心设备采购项目（重）开展竞争性谈判，预算1088200元，采购内容包含实训中心管理共享平台与虚拟仿真实验。实训中心管理共享平台通常需要实训室门禁与预约管理、设备使用状态监测、实训过程视频录制与回放、安全准入考核联动。建议以实训室智慧管理平台为切入点，将门禁、视频、设备管理与虚拟仿真整合，形成可向全区职业院校复制的标准产品。</div>
+        <a href="https://www.gxgy.edu.cn/zbzp/zbxx/content_83392" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">右江民族医学院学位点建设科研仪器设备采购项目竞争性谈判</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 中国政府采购网广西分网</span>
+        </div>
+        <div class="news-abstract">右江民族医学院学位点建设科研仪器设备采购项目开展竞争性谈判，预算288.064万元。医学院校科研仪器采购通常伴随实验室建设，配套需求包括实验室门禁与人员权限分级、危化品与试剂智能柜管理、实验室视频监控与温湿度环境监测、气瓶与气体泄漏报警。建议在设备供货之外提供实验室安全智能化配套方案，突出与仪器使用记录联动的安全准入管理。</div>
+        <a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202611/t20261112_27672156.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">北部湾大学金属基超强性强韧化系统等四套仪器设备采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 北部湾大学</span>
+        </div>
+        <div class="news-abstract">北部湾大学就金属基超强性强韧化系统等四套仪器设备采购，预算85.9万元。材料类大型仪器对实验室环境与安全管理要求高，需配套温湿度与振动监测、设备运行状态远程监控、实验室视频监控与门禁权限管理。建议以高校大型仪器共享平台的配套安全监测为切口，提供仪器环境监测+视频+门禁一体化方案，并可延伸至大型仪器共享预约系统。</div>
+        <a href="https://www.bbgu.edu.cn/info/1037/268281.htm" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">玉林市公共实训基地建设项目实训室教学仪器设备采购项目（集中采购）竞争性谈判</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-12</span>
+          <span class="source-tag">📍 玉林市人民政府</span>
+        </div>
+        <div class="news-abstract">玉林市公共实训基地建设项目实训室教学仪器设备采购项目开展集中采购竞争性谈判，预算1696469元。公共实训基地面向社会培训与技能鉴定，人员流动性大，对实训室门禁与身份核验、培训过程视频留证、设备安全操作监控、考场防作弊监控需求突出。建议以实训基地智慧管理平台为核心，整合门禁、视频、考勤与技能鉴定录像，形成可复制的地市级实训基地方案。</div>
+        <a href="http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/zfcgly/zbgg_30157/t28334579.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西壮族自治区中学购置实验设备项目（二期）更正澄清公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">广西壮族自治区中学购置实验设备项目（二期）发布更正澄清公告，项目编号GXZC2026-G1-003441-CGZX。自治区级集中采购的中学实验设备项目覆盖面广、标准化程度高，配套需求包括实验室危化品存储与智能柜管理、实验操作视频监控与考试录像、通风与气体报警。建议关注其澄清后的技术参数变化，并准备实验室安全智能化配套产品包，作为设备供货的增值选项。</div>
+        <a href="http://gxggzy.gxzf.gov.cn/zfcgzxrk/zfcgzxrk_gzgg/zfcgzxrk_cggg_gkzb_118475/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西电力职业技术学院电力具身智能实训室采购公开招标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">广西电力职业技术学院就电力具身智能实训室采购开展公开招标，属玉林片区智慧类项目。具身智能实训室通常配置机器人本体、视觉感知系统、边缘算力与实训管理平台，需要实训室安全围栏与光幕、多角度视频录制与回放、人员误入急停联动。建议以实训安全与过程录制方案配合机器人供货商，形成联合投标或分包合作，切入电力类职业院校实训室建设市场。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-32264-450900-1-0.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西水利电力职业技术学院220kV智慧变电站实训基地设备采购中标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-09</span>
+          <span class="source-tag">📍 广西招标网</span>
+        </div>
+        <div class="news-abstract">广西水利电力职业技术学院220kV智慧变电站实训基地设备采购完成中标。智慧变电站实训基地需还原真实变电站的智能辅控场景，包括站端视频监控与巡检机器人、周界防范、环境与SF6气体监测、一键顺控与防误闭锁演示。此类实训基地既是教学设备采购，也是电网智能辅控方案的展示窗口。建议与中标方或校方合作，提供辅控系统实训模块，形成教学与产业双通道。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-17475-0-4-7.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西体育运动学校教育质量提升计划训练设备采购项目中标公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-13</span>
+          <span class="source-tag">📍 广西公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">广西体育运动学校教育质量提升计划训练设备采购项目（GXZC2026-G1-003245-GXJT）发布中标公告，涉及蹦床、攀爬绳、保护架等训练器材。体育类院校训练场馆的安防与智能化需求包括场馆视频监控与训练动作回放、人员进出与运动员管理、器械使用安全监控、消防与应急疏散。建议以训练场馆视频回放与安全管理为切入点，与体育类院校建立合作，延伸至全区体育场馆智慧化改造。</div>
+        <a href="http://gxggzy.gxzf.gov.cn/jyfw/jyfw_zfcg/zfcg_gkzb/gkzb_zbgg/t28337514.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1109-1115.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1109-1115.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1109-1115.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1109-1115.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
