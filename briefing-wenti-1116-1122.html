@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>文体卫 · 广西行业双周简报 | 2026.11.16-11.22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>文体卫行业要闻</h1>
+    <div class="date">2026年11月16日 — 11月22日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期文体卫呈文旅数字化提速、医疗基建密集、康养平台化三条线。11月18—20日2026年智慧旅游交流推广活动在桂林举办，大华科技、超星集团现场路演，友商已在自治区文旅厅层面占位；柳州以消防升级、3万余张座椅更换盘活体育中心存量资产，单场上座率98.46%。医疗方面，自治区人民医院北院院区直线加速器机房985.46万元施工招标，含消防工程与建筑智能化，12月10日开标；桂林医科大学一附院乐群、漓东院区改造415万元中标候选人公示。康养方面，广旅养老集团11月13日揭牌，现有17个项目4200张床位，“十五五”规划50家以上机构、1万张床位、200个社区站点，自治区领导专题调研“AI+养老”。建议抓三块：景区与街区客流安防一体化、医院改扩建的智能化弱电与消防联动分包、养老机构智慧照护与跌倒报警；同时警惕大华在文旅侧的方案绑定，尽早以“安防+客流+应急指挥”整体方案介入下一批景区提档项目。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">14条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">2026年智慧旅游交流推广活动在桂林举办，大华科技等企业现场路演</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-22</span>
+          <span class="source-tag">📍 广西壮族自治区文化和旅游厅</span>
+        </div>
+        <div class="news-abstract">活动11月18—20日在桂林举办，设元境沉浸体验区、数智管控运营区、慧游便民服务区三个体验区，大华科技等文旅科技服务商现场路演。这是本期最重要的竞争情报：友商已在自治区文旅厅层面完成方案绑定，主打数智管控运营。建议做三件事：摸清活动后续是否形成推荐名录或试点景区名单；针对数智管控运营场景做对标方案，突出客流密度分析、AI寻人、一键求助联动、应急指挥；抢在下一批景区提档立项前接触地市文旅局。</div>
+        <a href="http://wlt.gxzf.gov.cn/zwdt/gzdt/t28366209.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">柳州盘活存量体育资产：体育中心消防系统升级、3万余张座椅更换，单场上座率98.46%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-22</span>
+          <span class="source-tag">📍 央广网广西频道</span>
+        </div>
+        <div class="news-abstract">柳州对体育中心实施消防系统升级、3万余张座椅更换、照明提升等改造，单场赛事上座率达98.46%，并带动60家商户票根联动。存量场馆改造是本期最实在的安防商机：3万座级场馆需大空间人流密度监测、看台通道拥堵预警、出入口闸机与票务核验、消防联动与应急疏散广播、周界与停车诱导，单馆智能化改造常在千万元级。建议以大型场馆安全运营一张图方案对接柳州市体育局与场馆运营方，重点讲高上座率下的疏散与限流能力。</div>
+        <a href="http://gx.cnr.cn/cnrgx/hydt/20261122/t20261122_527879704.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">妙皇乡主题巡游亮相象州梦幻夜，与匹克球城市挑战赛联动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-22</span>
+          <span class="source-tag">📍 微观象州</span>
+        </div>
+        <div class="news-abstract">11月21日晚妙皇乡主题巡游在象州梦幻夜街区上演，并与匹克球城市挑战赛形成联动。象州梦幻夜是县域夜间文旅街区，此类街区普遍存在客流统计、治安监控、消防通道占用识别、大客流预警等需求，且县级财政单笔预算有限（多在50—200万元）。建议以县域夜间文旅街区安全套餐标准化产品切入，含客流计数摄像机、消防通道占用AI、一键报警柱、街区广播联动，用低总价快速成交，再以象州为样板复制到其他县夜游项目。</div>
+        <a href="http://m.toutiao.com/group/7711024993991148059/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贺州从“中途站”变“慢游”目的地：黄姚古镇沉浸式夜游、姑婆山AI健康场景</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 光明网</span>
+        </div>
+        <div class="news-abstract">贺州推动黄姚古镇推出沉浸式夜游《千年灯火·梦境黄姚》、姑婆山布局AI健康场景，西溪温泉接待121万人次。沉浸式夜游对夜间低照度成像、光影设备联动、游客密度与流向分析、防踩踏预警有强需求；AI健康场景则涉及体征采集、紧急呼救与视频联动。贺州已承办2026年广西文化旅游产业招商推介会，后续项目储备充足。建议以夜游安全加客流分析加一键呼救组合方案对接贺州市文广旅局及黄姚、姑婆山、西溪温泉三家运营主体。</div>
+        <a href="http://m.toutiao.com/group/7710008964968202792/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区民政厅厅长专访：医养结合机构185家、老年助餐点638个，AI赋能旅居康养</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 中国社会报</span>
+        </div>
+        <div class="news-abstract">专访披露广西医养结合机构达185家、老年助餐点638个，正推进“线上网络化+线下网格化”服务体系和AI赋能旅居康养。185家医养结合机构与638个助餐点是清晰可数的目标客户清单：每家机构需智慧照护与安全监控，每个助餐点需视频监控、食品安全明厨亮灶、老人身份核验与刷卡终端。建议按地市拆分清单做网格化拜访，用明厨亮灶加助餐点安全监控这一低门槛产品先建立合作，再向机构智慧照护升级。</div>
+        <a href="http://m.toutiao.com/group/7710185182178837055/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">第十一届博博会落下帷幕，广西展区精彩收官</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 广西壮族自治区文化和旅游厅</span>
+        </div>
+        <div class="news-abstract">第十一届博物馆及相关产品与技术博览会闭幕，广西展区以博物馆数字化、文创等为主题参展收官。博博会是博物馆数字化装备的集中展示场，通常伴随一批博物馆展陈提升与数字化保护项目立项。广西各级博物馆普遍存在老旧监控改造、库房环境监测、观众流量统计、数字展陈升级需求。建议梳理参展的广西馆名单，逐一对接其2027年预算编制，重点推库房环境监测加观众流量分析加安防平台升级组合。</div>
+        <a href="http://wlt.gxzf.gov.cn/zwdt/gzdt/t28355364.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区人民医院北院院区直线加速器机房建设项目施工招标，985.46万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 南宁市公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">投资985.46万元，建筑面积1496.97平方米，招标范围明确含消防工程与建筑智能化，12月10日开标。放疗机房是医院最特殊的安防场景：辐射区域门禁与联锁、剂量监测与视频对讲、患者身份核验、消防与气体灭火联动。项目虽小但技术门槛高，是进入自治区人民医院体系的口子。建议以放疗机房专用门禁联锁加抗辐射视频对讲专项方案接触医院基建处与总包，同时跟进该院北院区扩建（约5亿元）后续标段。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/nnggzy/projectDetails.html?categorynum=001001001001&infoid=a905c0b5-ff81-4aa5-a0cb-c94bdc59117b" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂林医科大学第一附属医院改造工程中标候选人公示，415万元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">项目投资415万元，涉及乐群院区皮肤科及漓东院区PGD实验室改造，招标范围含建筑智能化。PGD（胚胎植入前遗传学诊断）实验室对环境与安全要求极高：门禁分级授权、环境参数监测、样本流转追溯、视频全程留痕、消防与气体灭火联动，是医院智能化里单价最高、竞争最少的细分场景。建议以生殖医学实验室智慧化管理专项方案接触中标单位与医院基建科争取智能化分包，并向区内其他开展辅助生殖的三甲医院复制。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001001004&infoid=05b7d5b0-7acf-4235-a3dc-8d0ccf4b4c94" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">青秀山年接待游客突破千万人次，智慧景区系统全面上线</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 中国旅游报（光明网转载）</span>
+        </div>
+        <div class="news-abstract">青秀山年接待游客破千万，最高单日23.4万人次，已建成线上预约、客流实时监测、智能导览、一键求助、智能广播等智慧景区系统。这是广西智慧景区建设水平最高的样板，也意味着系统进入迭代期：单日23.4万人次的承载压力要求更精准的分区客流预测、热力图与限流联动、AI寻人与走失儿童找回、应急指挥调度。建议以千万级客流景区安全运营升级为命题接触青秀山管委会，主打既有系统利旧加AI能力升级，避免全盘替换抵触。</div>
+        <a href="http://m.toutiao.com/group/7709380851187909154/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区领导在南宁调研“AI+养老”工作</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区人民政府门户网站·政务活动</span>
+        </div>
+        <div class="news-abstract">11月18日自治区领导在南宁专题调研“AI+养老”工作，与广旅养老集团揭牌形成政策呼应。领导调研通常预示后续会有专项政策或试点资金落地。AI+养老的技术落点非常具体：无感跌倒检测、离床离位监测、异常行为识别、语音呼叫、健康数据采集与预警、家属端远程探视，全部依托视频与雷达感知终端。建议提前准备AI+养老场景清单与试点方案，一旦专项政策发布即可申报，争取进入首批试点名单。</div>
+        <a href="http://www.gxzf.gov.cn/zwhd/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西召开全区文物保护工作视频调度会，要求全面排查整治守牢文物安全底线</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西壮族自治区文化和旅游厅</span>
+        </div>
+        <div class="news-abstract">会议11月12日召开，要求开展全面排查整治、坚决守牢文物安全底线，推动文物工作从“保得住”向“活起来、传下去”跃升。文物安全直接对应技防需求：古建筑消防物联网、电气火灾监测、防雷、周界入侵报警、温湿度与白蚁监测、视频监控联网到县级监管平台。全面排查整治意味着县级文物部门将产生一批小型技防采购。建议制作文物建筑消防安全加视频联网标准包，面向县级文管所推广，单点投资可控、可批量复制。</div>
+        <a href="http://wlt.gxzf.gov.cn/zwdt/gzdt/t28350051.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2026“活力夜广西”嘉年华梧州站暨西江夜游首航活动举行</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西壮族自治区文化和旅游厅</span>
+        </div>
+        <div class="news-abstract">活动在梧州举行，同步启动西江夜游首航。夜游航线是安防密度最高的文旅场景之一：码头与船舶周界监控、落水与越界AI识别、船载视频与AIS联动、客流计数与限流、一键报警柱、应急广播。西江夜游首航意味着梧州将形成常态化水上旅游线路，需要整套水上安全监控与应急指挥系统。建议以水上旅游安全监控加落水识别加应急广播为专项方案，对接梧州市文广体旅局与航运企业，抢在运营方安全验收前介入。</div>
+        <a href="http://wlt.gxzf.gov.cn/zwdt/gzdt/t28345878.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广旅养老集团揭牌成立，为广西首家自治区级国有专业化养老平台</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 中国网广西</span>
+        </div>
+        <div class="news-abstract">11月13日揭牌，为广西首家自治区级国有专业化养老平台，现有17个项目、4200张床位，“十五五”规划发展50家以上机构、1万张床位、200个站点。国有平台统一建设即标准化采购：智慧照护（床旁呼叫、跌倒检测、体征监测）、人员定位、视频监控与家属远程探视、消防安全与电气火灾监测、机构级管理平台，1万张床位对应智能化投入可达亿元级。建议直接对接集团信息化部门，参与其智慧养老标准制定，做成集团级框架。</div>
+        <a href="http://guangxi.china.com.cn/2026-11/17/content_43503453.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">象鼻山围挡拆除，象山景区启动提档升级专项行动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 半月谈（腾讯新闻转载）</span>
+        </div>
+        <div class="news-abstract">桂林象山景区拆除围挡，启动提档升级专项行动。象鼻山是桂林城市地标与免费开放景区，提档升级通常包含游览组织优化、出入口与预约核验、客流引导、监控补盲、应急救援点建设。景区提档是典型的小步快跑型采购：分批实施、单批几十万至数百万元，决策快、门槛低。建议以桂林世界级旅游城市建设为背景，向象山区与桂林旅游发展集团提交免费开放景区客流与安全管控方案，用免费景区大客流管控这一独特痛点切入。</div>
+        <a href="http://news.qq.com/rain/a/20261116A03PVW00" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1116-1122.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1116-1122.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1116-1122.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1116-1122.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
