@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>钢铁有色 · 广西行业双周简报 | 2026.11.16-11.22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>钢铁有色行业要闻</h1>
+    <div class="date">2026年11月16日 — 11月22日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期广西钢铁有色政策与项目双线推进。11月17日自治区政府常务会议审议《广西矿产资源“十五五”规划》，明确矿业权整合、小散乱矿山治理与绿色矿山建设，并公布新增10座国家级绿色矿山。项目端集中投产：田林年产8万吨铝合金导体新材料一期11月18日试产、二期2027年1月动工；平果鑫煌新材料竣工投产，全市再生铝产能达320万吨；钦州广投强强碳基年产60万吨预焙阳极智能化项目投产，为广西单体规模最大；来宾兴宾区金属及关键金属新材料集群获评自治区级特色集群，2025年产值260.34亿元。安防机会有三：新建与技改厂区的全厂视频监控与AI行为分析，田林、平果、钦州三个新投产项目正处弱电配套窗口期；绿色矿山与矿业权整合带来的矿区周界、人员定位、边坡监测、运输卡口；再生金属与固废项目的地磅无人值守、危废库房视频、消防联动。建议优先跟田林二期与钦州强强碳基技改，同步摸清平果、来宾园区标准厂房弱电总包口径。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">13条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">百色田林年产8万吨铝合金导体新材料项目一期试产，达产年产值20亿元</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 广西壮族自治区工业和信息化厅（转广西日报）</span>
+        </div>
+        <div class="news-abstract">11月18日一期试产，总投资1.8亿元，1.148万平方米厂房内布置22条自动化生产线，一期3万吨，二期5万吨计划2027年1月动工，达产年产值20亿元，并明确推进零碳工厂与智能化改造。新厂房加智能化改造是弱电与安防打包窗口：车间高清监控、铝水高温区热成像、机台人员防护识别、成品库出入口与地磅、厂区周界。建议在二期设计阶段介入，与智能化总包绑定。</div>
+        <a href="http://gxt.gxzf.gov.cn/wzsy/zwdt/mtgz/t28363295.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贺州赴京拜会中国有色集团，推动黄金稀土钨铝电子产业合作</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 贺州融媒</span>
+        </div>
+        <div class="news-abstract">11月16—17日贺州市主要领导赴京拜会中国有色集团，围绕黄金、稀土、钨、铝电子新材料及中色平桂提质升级洽谈。央企二级公司落地往往伴随总部级安防标准，即按集团统一平台接入、统一编码、统一运维，对本地集成商是门槛也是机会，一旦进入集团合格供应商名录可承接多个厂区。建议提前摸清中色平桂现有安防品牌与平台版本，准备与集团平台对接的技术方案和迁移路径，在提质升级立项阶段介入。</div>
+        <a href="http://m.toutiao.com/group/7710188334181646898/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">南丹：废渣堆里淘出亿元产业，1.97亿元大宗固废综合利用中心落地</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 广西法治日报</span>
+        </div>
+        <div class="news-abstract">南丹通过3万立方米历史废渣公开拍卖，推动总投资1.97亿元的大宗固废综合利用中心（大厂分中心）建设。有色矿区历史堆渣治理是监管与安全双驱动项目：渣场边坡位移与降雨量监测、堆体温度红外监测防自燃、淋溶水在线监测、作业区人员定位、运输车辆出入卡口，均需联网至县级监管平台。建议以“矿山固废堆场安全监测一张网”对接南丹县及河池市生态环境、应急管理部门。</div>
+        <a href="http://m.toutiao.com/group/7709678062710932022/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">田阳金盛铝箔年产2万吨电子铝箔项目通过节能审查，12月开工</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 百色市田阳区人民政府</span>
+        </div>
+        <div class="news-abstract">项目节能审查意见公开，计划2026年12月开工、2027年5月投产，产品为2万吨电子铝箔。电子铝箔属精密压延，车间对洁净度、温湿度、静电控制要求高，监控需防尘防油雾并支持洁净区无死角覆盖；轧机区域属高危险源，需人员闯入与安全光幕联动、轧机状态与视频叠加。开工在即，智能化弱电通常与主体同步招标。建议立即接触业主与总包，以“洁净车间监控+轧机安全联动”专项方案进入技术交流名单。</div>
+        <a href="http://www.gxty.gov.cn/zfxxgk/fdzdgknr_1_1_1/zdlyxxgk/zdjsxmpzhsslygk/ylfw/t28355969.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西来宾广投银海铝业推进电解铝节能降耗智能化提升技改</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 企查查</span>
+        </div>
+        <div class="news-abstract">广投银海铝业为广西单体已投产规模最大电解铝企业，正推进电解铝节能降耗智能化提升技改。电解铝车间是强磁场、高温、高粉尘三重恶劣环境，普通摄像机易失效，需专用抗磁防尘型号；电解槽区人员安全（防烫伤、防误入）、阳极更换作业监控、整流所无人巡检都是刚性需求。建议以“抗磁摄像机+电解槽区人员安全AI+整流所巡检机器人”切入技改，强调同类电解铝企业的实测案例数据。</div>
+        <a href="https://www.qcc.com/creport/919f051f67ec5e89cdcecb20e4ee9093.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区政府常务会议审议《广西矿产资源“十五五”规划》</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区人民政府门户网站</span>
+        </div>
+        <div class="news-abstract">11月17日第137次常务会议审议该规划，明确矿业权整合、小散乱矿山治理、绿色矿山建设与“高端化、智能化、绿色化、规模化、园区化”路径。全区矿山将进入关闭整合与标准化改造期：保留的骨干矿山须配套矿区周界防范、卡口车辆识别、人员定位与边坡监测，被整合矿区需临时看护监控。建议梳理14个地市矿山名录，锁定整合后保留的规模矿山做智能矿山方案储备，并准备矿业权整合验收所需的视频与监测举证材料。</div>
+        <a href="http://www.gxzf.gov.cn/zzqzyxx/t28350319.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西新增10座国家级绿色矿山</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区自然资源厅</span>
+        </div>
+        <div class="news-abstract">自然资源厅公布广西新增10座国家级绿色矿山。绿色矿山评价指标中矿区环境数字化、生产管理信息化、视频监控全覆盖、粉尘与地灾在线监测均属硬性得分项，直接对应摄像机、环境监测、位移监测与集中监控平台采购，单矿智能化投入通常百万元级。建议按名单逐矿对接，推“周界+卡口+粉尘+边坡位移”一体化方案，并提供绿色矿山复核用的监控点位台账模板。</div>
+        <a href="https://dnr.gxzf.gov.cn/xwzx/zrzx/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">来宾兴宾区金属及关键金属新材料产业集群获评自治区级特色产业集群</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 来宾市工业和信息化局（转来宾市融媒体中心）</span>
+        </div>
+        <div class="news-abstract">兴宾区集群为全区本次新认定5个之一，以广投银海铝业、汇元锰业、华锡冶炼为链主，2025年产值260.34亿元，近三年年均增速28.58%，拥有国家级绿色工厂1家，12家汽车龙头企业落地泛铝件（来宾）基地。集群化意味着园区级统建需求：安防总控平台、危化与高温工艺监控、物流车辆卡口、环保在线监测联网。建议以来宾工业园区为切入口做“园区安防+环保+应急”一张网方案，再复制到其他新认定集群。</div>
+        <a href="http://gxj.laibin.gov.cn/gxdt/t28350361.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色平果：铝水就地“变身”，再生铝产能已达320万吨</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 平果市人民政府门户网站（转百色融媒）</span>
+        </div>
+        <div class="news-abstract">广西鑫煌新材料竣工投产，占地2.86万平方米、总投资1亿元，一期4万吨铝杆、二期20条漆包线；平果已建成再生铝产能320万吨、政府投资标准厂房71.61万平方米，规上工业企业从61家增至146家。71.61万平方米标准厂房的消防、监控、门禁属交付标配，漆包线车间另需洁净与静电环境监测。建议对接平果经开区，把标准厂房智能化配套做成标准化产品包（每万平方米配置清单加报价），以量换价批量复制。</div>
+        <a href="http://www.pingguo.gov.cn/zwdt/bm/t28354032.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">钦州：广西单体规模最大预焙阳极智能化生产项目焙烧工序投产</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 钦州发布</span>
+        </div>
+        <div class="news-abstract">钦南区金窝工业园广投强强碳基焙烧工序投产，全面达产年产60万吨预焙阳极，为广西单体规模最大全流程智能化项目；依托平陆运河江海联运年省物流开支4080万元。碳素焙烧车间高温、高粉尘、强电磁，对摄像机耐温防尘、火焰与烟雾识别、行车定位有专门要求，是差异化方案的高价值场景。建议以“耐高温摄像机+焙烧炉火焰识别+堆垛天车防撞”组合切入，并覆盖原料堆场与港口转运卡口。</div>
+        <a href="http://m.toutiao.com/group/7709517386373726746/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">中国—东盟年产50万吨再生铝及精深加工示范基地项目场地平整中标</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区公共资源交易中心</span>
+        </div>
+        <div class="news-abstract">项目位于来宾市河南工业园区，场地平整标段中标价580万元、工期80天。场地平整是土建第一道工序，主体工程与智能化弱电招标将在未来6—12个月陆续释放。50万吨级再生铝基地安防体量可观：视频监控数百路、周界电子围栏数公里、出入口与地磅多套、消防联动与可燃气体探测、厂区级安防平台。建议现在跟进业主与设计院，在初步设计阶段把点位与平台架构写入技术规格书。</div>
+        <a href="http://ggzy.jgswj.gxzf.gov.cn/gxggzy/projectDetails.html?categorynum=001001001005&infoid=d2d33ffe-54da-4886-b13b-13e604a48319" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">盛隆冶金发布工业电视及超低排放改造相关采购</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 企查查</span>
+        </div>
+        <div class="news-abstract">盛隆冶金近期采购信息涉及工业电视系统与超低排放改造配套。工业电视是钢铁企业生产监控的传统叫法，实际对应全厂视频监控扩容与老旧模拟设备替换，属存量改造型商机；超低排放改造要求对料场、烧结、焦化等无组织排放点位做视频留证与智能识别，直接产生摄像机与AI分析需求。建议准备两套材料：模拟转高清IP的平滑迁移与利旧清单，以及超低排放评估监测用的视频举证台账。</div>
+        <a href="https://www.qcc.com/ctenderlist/7226ab6647a6c9c2c9e7ac5cda76ad08" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">防城港：临港重工业如何点“废”成金</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 广西壮族自治区产业园区改革发展办公室（转防城港日报）</span>
+        </div>
+        <div class="news-abstract">防城港以欣贸再生年处理300万吨废钢、源盛环保年消纳600万吨废渣、赤泥综合利用等项目，把临港重工业固废做成新产业。再生金属与固废场地的安防刚需明确：废钢料场大范围周界与堆料体积测量、进出厂地磅与车牌识别无人值守、危废暂存库双人双锁视频留证、破碎剪切区人员闯入报警、粉尘噪声在线监测联网。建议以“无人地磅+料场AI盘点+危废视频存证”对接经开区与两家企业技改预算。</div>
+        <a href="http://yqb.gxzf.gov.cn/zwdt123/dszx/t28342658.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1116-1122.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1116-1122.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1116-1122.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1116-1122.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
