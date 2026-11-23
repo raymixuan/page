@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>公安行业 · 广西行业双周简报 | 2026.11.16-11.22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>公安行业行业要闻</h1>
+    <div class="date">2026年11月16日 — 11月22日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是“科技兴警”落到预算。11月19日玉林市委书记张惠强到市公安局调研，明确要求“深化科技兴警、加强人工智能赋能”，让侦查中心“升级设施设备”，并考察情报指挥中心“情指行”一体化与大数据实战中心；自治区公安厅同期传达学习党的二十届五中全会精神，为明年预算定调。项目端呈“省厅大平台+县市小前端”双线并进：广西机场公安综合业务应用平台11月17日招标文件预公示，含驾驶舱、净空保护区、实战应用、交通管理等8个子系统；崇左江州区政法委11月16日启动乡村治安智能防控设备安装磋商，配全景摄像机22台、卡口摄像机4台、智能球机2台，实现人脸抓拍与车辆结构化；上思县公安局执法办案中心第一期11月19日以199.44万元成交；东兴市公安局11月16日发布采购意向含移动警务流量套餐。机会方向：AI赋能的情指行一体化、执法办案中心音视频与智能审讯、乡村雪亮补盲、移动警务终端与专网流量。建议优先跟玉林、崇左、防城港。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">10条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">玉林市委书记调研市公安局，要求深化科技兴警、加强人工智能赋能</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 玉林市人民政府/玉林发布</span>
+        </div>
+        <div class="news-abstract">市委书记张惠强11月19日实地走访命案防控专班、侦查中心、情报指挥中心、大数据实战中心，明确要求“升级设施设备”“加强人工智能赋能”“提升新质战斗力”，并提出“两降两升”硬指标。这类书记层面调研通常会转化为次年公安信息化专项预算，是最高优先级的商机线索。可切入方向：侦查中心研判大屏与视频侦查系统、情指行一体化平台升级、AI大模型在反诈与网络犯罪研判中的落地、命案防控的智能预警模型。建议一周内对接玉林市公安局科信部门，以“AI赋能实战”为主题做方案汇报。</div>
+        <a href="http://www.yulin.gov.cn/jryl/zwxx/t28360046.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">上思县公安局执法办案中心采购项目第一期199.44万元成交</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 全国公共资源交易平台（广西·防城港）</span>
+        </div>
+        <div class="news-abstract">项目编号FCZC2026-C1-210086-GXGC，成交金额1994402.38元，中标方为广西森安科技有限公司，评审得分84分，代理服务费2.99万元。执法办案中心是公安信息化中含金量较高的细分场景，标准配置包括入区登记、人身安全检查、随身物品保管、讯问室同步录音录像、智能审讯、电子笔录、办案区全景监控与行为分析、涉案财物管理。第一期已定标意味着二期、三期及运维续保仍有空间，且防城港边境三县市（上思、东兴、防城）同类需求密集。建议跟进森安科技做分包，同时摸排东兴、防城分局的执法办案管理中心提质增效项目。</div>
+        <a href="https://ggzy.jgswj.gxzf.gov.cn/fcgggzy/projectDetails.html?categorynum=001002008003&infoid=63c28f36-9937-4af9-8793-54334006a1ad" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">贺州市公安局载人自转旋翼机采购与安装项目合同公告</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 中国招标与采购网</span>
+        </div>
+        <div class="news-abstract">载人自转旋翼机属低空警务装备，说明广西地市公安正在补齐空中巡查能力。旋翼机采购通常捆绑机载光电吊舱、图传链路、地面站与指挥中心接入，这些才是安防厂商的实际切入面——高清光电吊舱、红外热成像、4G/5G图传、与视频专网和情指中心的对接协议。贺州山地多、森林覆盖率高，低空巡查在森林防火、搜救、群体性事件处置中需求刚性。可切入方向：机载感知设备供货、地面指挥席位建设、低空管控平台。建议同步关注玉林、梧州、百色等山地市的低空警务装备预算。</div>
+        <a href="https://m.chinabidding.cn/xzjg_2560_gaj/2.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">自治区公安厅及法检司四部门传达学习党的二十届五中全会精神</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区公安厅</span>
+        </div>
+        <div class="news-abstract">11月18日自治区高级法院、检察院、公安厅、司法厅联合传达学习五中全会精神，同期徐国华任自治区副主席。这类会议本身不产生采购，但决定了2027年公安工作的重点方向与预算口径——通常会在“加快推进公安工作现代化”“提升新质战斗力”“科技兴警”上落子。对安防企业的实际价值在于：提前判断明年自治区公安厅本级的信息化专项投向（情指行一体化、大数据平台、AI大模型、通信保障基础改造）。建议以本次会议精神为切入口，整理一份“AI+公安实战”能力汇报材料，报自治区公安厅科信总队。</div>
+        <a href="http://gat.gxzf.gov.cn/jwzx/gayw/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西公安数字化改革之广西机场公安综合业务应用平台招标文件预公示</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西壮族自治区公安厅/广西招标网</span>
+        </div>
+        <div class="news-abstract">项目编号GXZC2026-G3-003817-YZLZ，预公示即进入招标前最后窗口，是提技术参数的黄金期。建设内容为8个子系统：综合应用管理工作台、机场公安驾驶舱、净空保护区子系统、机场公安实战应用、机场公安交通管理、监督检查、机场便民助企小程序、基础信息数据管理。净空保护区子系统意味着需要低空目标探测、无人机反制与视频联动；实战应用与驾驶舱则需要视频专网、AI分析与数据中台能力。这是省厅级标杆项目，中标方将获得全区机场公安复制权。建议立刻组织参数质疑与建议函，重点争取视频结构化、低空探测接口标准写入。</div>
+        <a href="https://gx.bidcenter.com.cn/zhaobiao/zbkeyw-27250-0-2-0.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">梧州公安完成西江夜游首航安保，无人机+巡逻艇构“水陆空”立体防控</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西梧州市公安局</span>
+        </div>
+        <div class="news-abstract">11月13—15日“活力夜广西”嘉年华梧州主场暨西江夜游首航仪式举行，面对水域开放、岸线绵长、人流密集、环节叠加（首航仪式、无人机光影秀、非遗火秀、骑楼城消费活动）的复杂场景，梧州公安一体化运作安保指挥部，水上巡逻艇与海事执法船全程护航，岸线定点值守+动态巡逻，空中警用无人机对水域及岸线人流不间断巡查并与地面、水上力量实时联动，同时对擅自操纵“低慢小”航空器闯入禁飞区行为依法处置。这条线索的价值在于：大型水上文旅活动安保已成为固定需求，可切入无人机机巢与自动巡飞、低空反制（侦测+干扰）、水域岸线视频补点、一体化安保指挥平台、人流密度热力分析。梧州正打造西江夜游常态化运营，配套安防将持续投入。</div>
+        <a href="http://gaj.wuzhou.gov.cn/gzdt/t28347442.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">百色右江区获评平安中国建设示范县，“水陆空”立体防控成样板</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 腾讯新闻/右江区融媒体</span>
+        </div>
+        <div class="news-abstract">右江区被授牌2021—2025年度平安中国建设示范县，构建“天上飞、路面巡、视频查、精准宣、多维防”立体化防控体系，新兴派出所推行“一室三队一专职”警务模式，依托大数据研判打造小案快破技战法，3年快侦快破民生小案307起，刑事案件、治安案件分别下降46.4%、29.2%。示范县称号通常伴随综治与公安信息化的追加投入，且会形成可复制的“样板工程”采购逻辑。可切入方向：无人机机巢与自动巡飞、视频巡查AI算法、小案快破的多维数据碰撞平台、综治中心与公安平台的数据打通。建议以“示范县升级”为题做整体方案。</div>
+        <a href="http://news.qq.com/rain/a/20261117A09HW100" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">崇左市江州区乡村治安智能防控设备安装项目竞争性磋商</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 中国共产党崇左市江州区委员会政法委员会/广西政府采购</span>
+        </div>
+        <div class="news-abstract">政法委直接采购的乡村雪亮补盲项目，需求写得很实：全景摄像机22台、卡口摄像机4台、智能球机2台、终端服务器2台、补光灯4台，配套防雷器、接入交换机、防水箱、监控杆。功能要求覆盖高清视频采集、人脸抓拍、车辆号牌与车型识别、人车结构化、异常事件识别、重点目标动态跟踪、现场取证，并强调前端数据统一采集、本地闭环存储、专线传输、平台集中应用。这是典型的区县级小规模高密度前端项目，11月27日9时30分截止响应，时间极紧。可切入点是结构化算法与平台侧对接能力，建议立即报名并绑定本地集成商。</div>
+        <a href="https://www.chinamae.com/purchases/663c52f958dc7e840a74d9709c1975a8.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">东兴市公安局发布2026年11月至12月政府采购意向，含120套移动警务流量套餐</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 东兴市公安局/政府采购意向公开</span>
+        </div>
+        <div class="news-abstract">意向清单中明确“120套移动警务流量套餐”，属于移动警务终端与专网服务的组合采购。东兴是边境口岸城市，移动警务除常规勤务外还承担边海防巡查、口岸管控、跨境协作场景，对终端的三防等级、北斗定位、加密通信、视频回传要求高于内地。同期防城港市公安局防城分局、上思县公安局也在推进移动警务通流量服务采购，说明防城港全市正在统一换装。可切入方向：终端+流量+MDM管控平台+警务应用适配整体打包，或与运营商合作做终端供货。建议在12月意向转正式公告前完成方案报备。</div>
+        <a href="https://www.yfbzb.com/zbzt/99/418/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">金秀公安长垌派出所：视频监控接入综合指挥室，建治安风险预测模型</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 来宾市公安局</span>
+        </div>
+        <div class="news-abstract">长垌派出所把景区视频监控资源整合接入综合指挥室，构建“信息主导、精准指挥”体系，建立治安风险预测模型，实现视频巡查、精准调度、快速处置全时在线，同时实现7个行政村“一村一辅警”全覆盖、重点景区设警务室。这是广西“枫桥式派出所”标准动作，也是县域公安最真实的技术需求：多源视频汇聚、小成本指挥室改造、轻量化AI分析、移动端巡查。单所投资额不大（通常30—80万元），但全区上千个派出所的复制量极大。建议打包“派出所智慧指挥室标准化方案”，通过来宾、河池、百色等地市公安局统推。</div>
+        <a href="http://gaj.laibin.gov.cn/lbjx/t28340789.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1116-1122.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1116-1122.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1116-1122.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1116-1122.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
