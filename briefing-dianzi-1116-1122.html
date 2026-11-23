@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a56db">
+<title>电子电器 · 广西行业双周简报 | 2026.11.16-11.22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a56db 0%, #3b82f6 50%, #60a5fa 100%);
+    color: #fff;
+    padding: 28px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .header .source {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.1);
+    margin-bottom: 20px;
+  }
+  .summary-card h2 {
+    font-size: 16px;
+    color: #1a56db;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .summary-card h2::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, #1a56db, #60a5fa);
+    border-radius: 2px;
+  }
+  .summary-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .news-list {
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .news-item:active { transform: scale(0.98); transition: transform 0.1s; }
+  .news-item .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .news-item .news-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .news-item .news-meta .date-tag { color: #6b7280; }
+  .news-item .news-meta .source-tag { color: #1a56db; }
+  .news-item .news-abstract {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .news-item .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .news-item .news-link::after { content: '\2192'; font-size: 11px; }
+  .section-title {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 10px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-title .count {
+    background: #e0ecff;
+    color: #1a56db;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px 14px 30px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footer .divider {
+    width: 40px;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 auto 12px;
+    border-radius: 1px;
+  }
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+  }
+  .nav-bottom a {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 4px 2px;
+  }
+  .nav-bottom a.active { color: #1a56db; font-weight: 600; }
+  @media (min-width: 600px) {
+    .nav-bottom { display: none; }
+    body { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body id="top">
+  <div class="header">
+    <span class="tag">广西区域 · 双周简报</span>
+    <h1>电子电器行业要闻</h1>
+    <div class="date">2026年11月16日 — 11月22日</div>
+    <div class="source">海康威视广西行业经理视角 · 聚焦安防智能化机会</div>
+  </div>
+
+  <div class="container">
+    <div class="summary-card">
+      <h2>本期概览</h2>
+      <p>本期主线是算力底座成型与AI场景落地同步加速。基础设施侧，11月16日《中国能源报》披露广西算力总规模超5000PFlops，中国—东盟信息港产业园已建成双环网主干配加18座智能开关房、供电可靠性99.999%；11月18日披露南宁五象云谷AI智算产业园已建成5000P智算集群。产业侧，11月22日百色高新区入选全国首批91家高标准数字园区，已建5G基站171个、依托广西移动智算中心提供500P算力；1—10月全区集成电路产量同比增长61.7%，人工智能及新一代信息技术产业增加值增长11.2%。生态侧，11月17日桂琼人工智能应用合作中心在润建股份揭牌，11月18日广西与越南太原省签署合作备忘录明确加强人工智能合作。机会方向：智算中心机房周界与机柜级视频巡检、园区5G加AI安防、数据跨境机房等保与密码应用、AI视觉质检在电子信息产线落地。建议围绕百色高新区与五象云谷做方案预埋。</p>
+    </div>
+
+    <div class="section-title">
+      <span>📰 新闻速览</span>
+      <span class="count">13条</span>
+    </div>
+
+    <div class="news-list">
+            <div class="news-item">
+        <div class="news-title">百色高新区入选全国首批91家高标准数字园区，依托智算中心提供500P算力</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-22</span>
+          <span class="source-tag">📍 广西壮族自治区人民政府网</span>
+        </div>
+        <div class="news-abstract">工信部、商务部联合公布首批91家高标准数字园区建设对象，百色高新技术产业开发区入选。园区已建成5G基站171个、5G覆盖率基本100%、开通企业千兆宽带专线72条；依托广西移动智算中心（百色）提供500P算力；已培育广西智能制造标杆企业2家、先进级智能工厂11家、基础级智能工厂16家。下一步聚焦铝产业链链主带动、中小企业数字化转型、零碳数字化管控。这是国家级建设任务，园区必然要建统一数据采集与安全监管平台。</div>
+        <a href="http://www.gxzf.gov.cn/zzqzyxx/t28365936.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西1—10月集成电路产量同比增长61.7%，工业机器人产量增3.1倍</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-22</span>
+          <span class="source-tag">📍 南宁晚报/广西壮族自治区统计局</span>
+        </div>
+        <div class="news-abstract">11月20日自治区统计局公布1—10月数据：规上工业增加值同比增长2.7%，人工智能及新一代信息技术产业增加值增长11.2%，现代绿色化工增17.9%、新能源汽车及电池增14.6%；装备制造业、高技术制造业增加值分别增11.2%、9.7%；工业机器人、集成电路产量分别增长3.1倍、61.7%。产量高增说明本地电子制造与装备产线在快速扩产，产线视觉检测、设备联网、AGV调度需求同步上升。</div>
+        <a href="http://m.toutiao.com/group/7710824813878624822/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">全国首个面向东盟的气象人工智能专项赛事在南宁决赛并举办技术交流</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 中国网</span>
+        </div>
+        <div class="news-abstract">2026年AI赋能千行百业超级联赛“人工智能+气象”创新应用大赛11月16至17日在南宁完成决赛，11月18日举办技术交流活动。大赛设AI+气象数智计量、AI+短时降水预报、AI+众创气象服务三大赛道，吸引国内及东盟六国1000余名科创人员、104支队伍晋级决赛，产生55个奖项，依托中国电信“息壤”智算平台支撑多模型并发推演。短时强降水、内涝、台风预警模型可与城市视频监控、排水防涝、应急指挥融合。</div>
+        <a href="http://m.toutiao.com/group/7710054396596175370/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">桂琼人工智能应用合作中心在润建股份揭牌，聚焦算力与行业AI应用</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 市场资讯/润建股份</span>
+        </div>
+        <div class="news-abstract">11月17日在自治区发改委指导下，桂琼人工智能应用合作中心在润建股份海南分公司揭牌，广西对接海南自贸港工作专班到场调研。中心定位服务窗口、出海通道、对接平台、落地支撑，聚焦技术创新、场景应用、成果转化、人才交流。润建股份以“token为核、绿算协同、智维百业”为战略，依托五象云谷词元工厂、曲尺人工智能开放平台推动AI深入工厂、园区实际场景。润建是广西本地重要的算网与AI集成商，既是潜在竞争对手也是渠道伙伴。</div>
+        <a href="http://m.toutiao.com/group/7710208567705485824/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西就公共数据资源登记管理实施细则公开征求意见</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-20</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">自治区数据局就《广西壮族自治区公共数据资源登记管理实施细则（征求意见稿）》公开征求意见。公共数据资源登记是数据要素市场化配置的前置环节，涉及数据目录编制、权属确认、登记备案、授权运营。对安防行业的机会在于：视频监控数据、物联感知数据是公共数据的大宗来源，未来城市级视频资源共享、授权运营都需要合规的登记与脱敏机制。建议关注细则中关于感知数据、视频数据的条款，提前储备视频数据治理与脱敏溯源能力。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/zzzq/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2027年度数字经济及人工智能产业链招商服务项目成交</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-19</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">项目由广西东博会国际会展有限公司以93.0491万元成交，11月9日开标。金额不大，但反映自治区数据局已启动2027年度数字经济与AI产业链招商常态化运作，后续会有系列招商推介与项目对接活动。对安防企业的价值在活动资源：这类招商活动往往聚集区内外AI与数字经济企业，是寻找算法、算力、平台合作方的场合。建议关注东博会体系下AI专题活动排期，提前报名并准备面向东盟的场景方案。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/t28358346.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西自贸试验区做强面向东盟数字经贸，五象云谷建成5000P智算集群</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西南宁五象新区规划建设管理委员会</span>
+        </div>
+        <div class="news-abstract">五象云谷AI智算产业园是目前广西最高等级、最大规模算力基地，已建成5000P智算集群，词元工厂每小时2000亿词元产能；南宁片区规上数字经济企业超80家、数字经济规模超600亿元；已建成12条通往越南、老挝、缅甸的跨境陆缆，南宁至河内时延从107毫秒降至18毫秒。中国—东盟国家人工智能应用合作中心累计签约国内AI项目102个。机房扩容带动配套安防、动环、门禁、消防放量。</div>
+        <a href="http://nnwxxq.gxzf.gov.cn/xxfb/dtzx/t28353473.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西启动中小企业数智化转型服务平台第二批团购活动</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区大数据发展局</span>
+        </div>
+        <div class="news-abstract">自治区数据局11月18日发布第二批团购活动通知及服务商参与公告，11月16日还公示了《2026年广西中小企业数智化转型服务第二批入围服务商名单》。这是政府补贴驱动的中小企业数字化转型通道：入围服务商可获得批量客户，企业以团购价采购数智化产品。若海康或其集成商能入围服务商名单，等于拿到全区中小企业的批量入口，产品可含轻量级视频云、AI边缘盒子、智慧园区SaaS、安全生产小系统。建议研究入围条件并申报。</div>
+        <a href="http://dsjfzj.gxzf.gov.cn/zfxxgkzl/gggs/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西与越南太原省签署合作备忘录，明确加强人工智能等领域合作</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西云-广西日报</span>
+        </div>
+        <div class="news-abstract">11月18日自治区党委书记陈刚在南宁与越南太原省委书记郑春长会谈，共同见证签署组织部、商务厅两份合作备忘录，双方明确在互联互通、人工智能、经贸投资、文化旅游、干部培训等领域加强合作，并强调“北上广研发+广西集成+东盟应用”差异化路径与“智联通”。跨境园区、边境口岸、智慧城市项目往往跟随政府间合作走，一旦有具体落地项目，视频监控、周界、通关卡口、人脸核验是标配。建议跟踪商务厅与越南太原省后续项目清单。</div>
+        <a href="http://m.toutiao.com/group/7709512829560242730/" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西制造业十大支柱产业观察：人工智能及新一代信息技术增加值增11.1%，宝骏基地实现多车型混线</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-18</span>
+          <span class="source-tag">📍 广西壮族自治区园区发展和投资促进服务中心</span>
+        </div>
+        <div class="news-abstract">前三季度广西人工智能及新一代信息技术产业增加值增长11.1%，与新能源汽车及电池16.2%、现代绿色化工19.5%共同构成新兴产业加速跑格局。上汽通用五菱宝骏基地智能岛制造车间依托“人工智能+制造”实现多车型混线生产；华锡高峰公司“AI看矿管家”对81台选矿摇床智能调控；柳工装载机智能工厂焊接机器人AI视觉实时定位校正，制造周期缩短50%。结合点就是工业视觉：外观检测、尺寸测量、装配防错。</div>
+        <a href="http://tzcjj.gxzf.gov.cn/gzdt/t28350478.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西人工智能及新一代信息技术产业规上产值953.4亿元，新签约项目168个</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西广播电视台</span>
+        </div>
+        <div class="news-abstract">2025年广西工业领域人工智能核心产业产值突破890亿元，291个“人工智能+制造”场景落地；2026年1—8月人工智能及新一代信息技术产业规上工业产值达953.4亿元、同比增长26.2%；新签约项目168个、总投资301.5亿元；累计征集AI场景超千个、发布开放场景279个，AI赋能千行百业超级联赛涌现93个优秀场景、57项技术进入转化应用通道。建议紧盯开放场景清单，以场景供应商身份切入。</div>
+        <a href="https://m.weibo.cn/detail/5366199242197569" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西电子政务外网云计算中心（一期）2027—2028年度消防维保采购结果公布</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-17</span>
+          <span class="source-tag">📍 广西壮族自治区信息中心</span>
+        </div>
+        <div class="news-abstract">同期公布的还有空调维保服务采购结果、《广西数字基础设施重点实验室学术服务》采购结果、《制造业十大支柱产业高质量数据集建设赋能产业发展机制研究》服务项目采购公告。电子政务外网云计算中心是自治区核心政务云机房，其消防维保、空调维保分年度外包，说明机房运维已高度专业化分工。这类项目价值不在单笔金额，而在进入政务云机房服务商体系——一旦成为维保服务商，后续动环监控升级、消防改造、安防扩容都有优先机会。</div>
+        <a href="http://gxxxzx.gxzf.gov.cn/tzgg/index.shtml" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+      <div class="news-item">
+        <div class="news-title">广西算力总规模超5000PFlops，中国—东盟信息港产业园供电可靠性达99.999%</div>
+        <div class="news-meta">
+          <span class="date-tag">📅 2026-11-16</span>
+          <span class="source-tag">📍 中国能源报</span>
+        </div>
+        <div class="news-abstract">中国—东盟信息港产业园聚集中国移动五象数字信息中心、五象云谷、广西浪潮云计算等算力企业，中国移动项目有1.5万个机架、22.5万台服务器；园区已建成双环网主干配加18座智能开关房，实现80毫秒隔离故障、800毫秒恢复非故障区域；广西电网已梳理算力中心用户54户并“一企一策”。这类高等级数据中心对机房周界入侵、机柜级视频巡检、双因子门禁、配电间热成像、漏水检测、气体灭火联动有刚性需求。</div>
+        <a href="http://paper.people.com.cn/zgnyb/pc/content/202611/16/content_30191990.html" class="news-link" target="_blank" rel="noopener">查看原文</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    本简报由海康威视广西区域行业经理整理<br>
+    数据来源：各级政府官网、行业媒体、政府采购平台<br>
+    仅供内部参考，不构成投资或项目决策依据
+  </div>
+
+  <div class="nav-bottom">
+    <a href="#top">↑ 顶部</a>
+    <a href="https://raymixuan.github.io/page/briefing-dichan-1116-1122.html">地产</a>
+    <a href="https://raymixuan.github.io/page/briefing-dianli-1116-1122.html">电力</a>
+    <a href="https://raymixuan.github.io/page/briefing-jiaoyu-1116-1122.html">教育</a>
+    <a href="https://raymixuan.github.io/page/briefing-gongan-1116-1122.html">公安</a>
+  </div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+// 标记当前激活的底部导航
+var currentPage = location.pathname.split('/').pop();
+document.querySelectorAll('.nav-bottom a').forEach(function(a) {
+  var href = a.getAttribute('href');
+  if (href.indexOf(currentPage) !== -1 && href !== '#top') {
+    a.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
